@@ -1,0 +1,676 @@
+Merge pull request #657 from cortinico/fix-readme-version-no-v
+
+Remove the 'v' from the version name in the README | 2019-03-18 09:57:26 | 1aacbfa580d9ac4df580db923cc727500f546050
+
+Merge pull request #641 from cortinico/fix-viewpager-overlapping
+
+Fix overlap of the ViewPager on the bottom AppIntro bar | 2019-02-24 10:47:45 | ac4cdd7f1d605a9332ad97a45c358836e9cf0246
+
+Merge pull request #642 from cortinico/fix-layout2-background-resource
+
+Replace the Layout2 background color with the proper resource | 2019-02-23 16:41:38 | cdab107afd7ad3ce4885ec02469de2838582adea
+
+Merge pull request #636 from cortinico/fix-updated-readme-with-correct-urls
+
+Updating URLs in the Readme file | 2019-01-26 14:51:03 | 68e4d5909ab415164ed6091cd46c0a4cb17384f6
+
+Merge pull request #628 from cortinico/fix-335-default-background-color
+
+Extracting ViewPager background color to a resource (#335) | 2019-01-10 15:50:19 | 47acf4ca51c2d075e2996a0fffe0a3e3b92bcd8e
+
+Merge pull request #618 from GabrielBB/patch-1
+
+Adding version 5.1.0 Warning to README | 2018-11-20 23:23:17 | 16c9be342a40b06f006baaa8e5cf96be2d745cbc
+
+Refactor library module name to fix Kotlin compatibility. | 2018-10-22 17:40:19 | 816381272d7f75aaf078561c91e3543a5016152f
+
+Merge pull request #594 from cortinico/fix-object-public-apis
+
+Do not expose public methods with `Object` parameters (#590) | 2018-10-19 20:14:16 | 908e401e70c59446816defb3196d70c07ac9e669
+
+Merge pull request #574 from apl-devs/fix-for-573
+
+Add prefix for resources (Closes: #573) | 2018-09-06 06:56:08 | 2db6b7bd8d84f5219374e69bb68fccf817b46823
+
+Add prefix for resources (Closes: #573) | 2018-09-05 21:28:21 | 071b319dc8aaa8fbb1dabbae67f311b3935b95e5
+
+Merge pull request #572 from cortinico/fix-kotlin-backing-fields
+
+Fix for titleString & descriptionString in the SliderPage | 2018-09-01 17:04:32 | f1b3b947b77de841b7cf900669e0fdf163078efa
+
+Merge pull request #524 from dlackty/patch-1
+
+Correct license name | 2018-03-17 11:03:04 | 3d3f03a53ea989afbb0b601147b0efd94f6b09e3
+
+Merge pull request #491 from rodrigost23/rodrigost23-patch-1
+
+Portuguese translation | 2018-01-17 17:41:33 | 63ef35b6fa4dac9843de4e456c324991a34c0132
+
+Merge pull request #479 from apl-devs/fix-for-478
+
+Read pagerIndicatorEnabled value each time a new page is selected | 2017-08-23 19:09:47 | 0011d89e4bd89d55405ae47aab98a69554370fd9
+
+Fix blank fragments in example app -- credit goes to @chihung93 for fix | 2017-07-22 15:26:53 | 2fbd6cebf666981446c40c218ad3af86d35c7293
+
+fix empty page | 2017-07-21 02:35:36 | 7c1a5db02ade394a35aa6cf407f2ca32cad1d24a
+
+Merge pull request #454 from apl-devs/fix-for-416
+
+Fix permission request on last slide (Closes #416). | 2017-07-03 08:10:29 | d2d88251947793ccbb3aaaeb45d5de17339ce832
+
+Merge pull request #456 from apl-devs/fix-for-455
+
+Fix IndexOutOfBoundsException when no slides are passed (Closes #455) | 2017-07-03 08:10:23 | abe71d07a08d788b7eb8fe1513d6758a3e9a89fb
+
+Merge pull request #448 from friederbluemle/fix-lint
+
+[Example App]: Fix lint errors | 2017-06-18 11:02:06 | 2d7e72e11c9f64fcb0f9b01d14b7394be3abcb1b
+
+Merge pull request #426 from to0x97/patch-1
+
+strings.xml for french language | 2017-05-26 07:40:09 | f1b3a055162bbbe3b2db2c457560a68ea6875635
+
+Merge pull request #415 from almic/patch-2
+
+Allow users to change Bar color on AppIntro2, too | 2017-05-26 07:39:17 | ef28708995b4f3c4e6e59a47c59db23e58f0b131
+
+Merge pull request #394 from mtrakal/fix/issue361
+
+Issue #361 check NPE on views | 2017-01-16 02:18:26 | 92a5b6de8f051707a4575c0d3b2aae37370a8bcb
+
+fixes crashing issues | 2016-11-30 19:13:54 | 354ead31a219c9b79cffebc72bb0587b95175029
+
+fixed string errors, built signed apk | 2016-11-29 02:02:46 | 43c449c6d13e8817db9f5de4c1bd5db889665ae3
+
+Merge pull request #241 from RafaG/patch-1
+
+Set visibility of Skip button | 2016-06-19 07:17:32 | b457b4dd524a0fc80df33e0844b36512e9b7d39f
+
+Merge pull request #214 from maxee/feature/extended_slide_policy_readme_update
+
+[WIP] Feature/extended slide policy readme update, bugfixes | 2016-04-20 18:05:37 | 5f3062254dd6f70c8e9b4840343448a5b034d4ac
+
+AppIntroBase, AppIntroViewPager: Mostly reverted last commit, improved touch event dispatching for slide policy | 2016-04-15 15:53:53 | 8d849dc11a524fc0500431e73aee80289dc1b74e
+
+Merge pull request #210 from ofirmiron/patch-1
+
+Update README.md | 2016-04-16 17:44:10 | 43caba883ec268c0e06228669ba9c07f3a5aac9d
+
+AppIntroBase, AppIntroViewPager: Mostly reverted last commit, improved touch event dispatching for slide policy | 2016-04-15 15:53:53 | 20400ed7c1343a46b3fef76920d1e88ccf54e5ce
+
+Merge branch 'refs/heads/fix/gradle_version' | 2016-04-03 12:12:40 | 56621c2f700b49ea794488cd1e06e867684589f0
+
+import missing class (fix compilation error) | 2016-03-27 19:27:03 | 576392ede3882ecaf28871656f784a1d422bea6d
+
+Merge pull request #167 from ervinmartirosyan/patch-1
+
+Update README.md | 2016-03-12 18:07:26 | 04fa2891b1acd76019c742674beffe4c8bdeadbf
+
+Merge pull request #182 from championswimmer/patch-1
+
+allow users to set color of the arrow button | 2016-03-12 18:04:50 | e60a9fd3c9fee95bf74d5dedb1ee1171d78d7bdf
+
+Closes #159 and fixes broken Google Play Badge | 2016-01-24 19:39:02 | e35e642d2ece9d7ca791f9d0b799e4530fde2354
+
+fixed missing ResourceCompat error by replacing with ContextCompat. | 2016-01-02 22:48:29 | 6909597a96ab034e2ff48a8a2f7690062b9dd69d
+
+Call onRequestPermissionsResult() of super class in AppIntro and AppIntro2
+ - This fixes an issue where requestPermissions() called from a fragment will not deliver the correct result to the fragment.
+ - More information here:
+   http://stackoverflow.com/a/33995827/2663152
+   http://stackoverflow.com/questions/10564474/wrong-requestcode-in-onactivityresult#comment13675437_10564488 (Works similarly for this) | 2015-12-19 18:01:34 | 65029dbff90bdb5f1742dfa13f61a895b3617086
+
+[WIP] added semi-support for Android 6.0 permissions that is talked about in #84. Currently very buggy and not ready for production.
+
+Testing has only been done with AppIntro and not AppIntro2.
+
+Two new methods: slideSelected() and askForPermissions().
+
+slideSelected() gets the current slide and returns it as an int.
+
+askForPermission() takes a String array (String[]) and then goes on to request permission. See example app for how to actually request permissions for each slide. The process is tricky because the Android code doesn't have support for single permissions. That means you must pass a String[] rather than just a String if you're using one permission. The array only has one item at position 0 which would deem it worthless, however, the Android team didn't provide support for passing strings to their methods.
+
+Bugs:
+1. The request dialog pops up as the Next button is pressed rather than after. Desired result: slide talks about permission, the user presses next, and then a permission is show WITHOUT going to the next slide. After the user chooses allow or deny, he's taken to the next slide regardless of his previous answer.
+
+2. Currently, only onNextPressed works. I tried doing an onPageScrolled but that caused a permission request to pop up for every inch (or whatever measurement scrolling is) that the page was scrolled. This obviously is not desired.
+
+More time and testing will go into this, but I wanted to get the basic concept out there so people get a sense of progress. | 2015-11-24 09:15:36 | 441620a8e14088738a0cb8f35231033b857512c4
+
+Merge pull request #77 from Fleker/master
+
+Support for DPAD, based on reported bug for Nexus Player remote | 2015-08-29 08:16:49 | 6a90ec8834de51b386b9e556511bd7bc40ba5f25
+
+Support for DPAD, based on reported bug for Nexus Player remote | 2015-08-24 04:44:08 | 23a839bb122e36fa01fedf5357aa861d960d4b8c
+
+Merge pull request #53 from porokoro/fix-lint-errors
+
+Fix lint errors in the example app | 2015-07-19 20:19:37 | 76c9f65606176487e84256abb8ced3aac11eb59c
+
+Merge pull request #14 from sleepingAnt/patch-1
+
+Update AndroidManifest.xml | 2015-06-10 09:45:15 | 647017098f06d7c1bd9eff1eb3e4ff89bce864dc
+
+String fix | 2015-06-04 23:08:58 | e02a1d90268d59b04d8b29762c68877a7852a397
+
+Merge and fix conflicts | 2020-01-29 17:19:29 | 140a09b1b1cd751b93773b22fbd09a337879ad4e
+
+Merge pull request #742 from AppIntro/fix-741-orientation-change-crash
+
+Fix Crash on orientation changes due to UninitiatedPropertyAccessException | 2020-01-25 00:08:42 | e2cb65b21e37fce3ecd431c10ed2530d27266a8d
+
+Merge pull request #739 from AppIntro/fix-visibility-issues
+
+Fix Visibility leakage before releasing 6.0.0 | 2020-01-24 09:27:40 | 59419d244b1e9d8987824159aea77c038538cae3
+
+Merge pull request #730 from AppIntro/fix-686-new-approach-to-permission
+
+New Approach to Permission & Cleanup | 2020-01-23 22:18:35 | 229df228c8ccc4e32b217297d62557482712a1cf
+
+Merge pull request #731 from AppIntro/fix-detekt-max-issues
+
+Decrease Detekt Max Issues to 1 | 2020-01-23 09:13:42 | df2d988fe360de6b22b0cec21edd7fc8a416ad25
+
+Multiple fixes and general code cleanup | 2020-01-23 00:26:31 | 02bbf9d3f403fb1e717f5adcad248e5d19ba5e32
+
+Applied all the fixes suggested by Detekt | 2019-05-23 23:27:23 | 277ac27678ebb8f12f9856372a4e29bf9395c9c6
+
+Merge pull request #657 from cortinico/fix-readme-version-no-v
+
+Remove the 'v' from the version name in the README | 2019-03-18 09:57:26 | 1aacbfa580d9ac4df580db923cc727500f546050
+
+Merge pull request #641 from cortinico/fix-viewpager-overlapping
+
+Fix overlap of the ViewPager on the bottom AppIntro bar | 2019-02-24 10:47:45 | ac4cdd7f1d605a9332ad97a45c358836e9cf0246
+
+Merge pull request #642 from cortinico/fix-layout2-background-resource
+
+Replace the Layout2 background color with the proper resource | 2019-02-23 16:41:38 | cdab107afd7ad3ce4885ec02469de2838582adea
+
+Merge pull request #636 from cortinico/fix-updated-readme-with-correct-urls
+
+Updating URLs in the Readme file | 2019-01-26 14:51:03 | 68e4d5909ab415164ed6091cd46c0a4cb17384f6
+
+Merge pull request #628 from cortinico/fix-335-default-background-color
+
+Extracting ViewPager background color to a resource (#335) | 2019-01-10 15:50:19 | 47acf4ca51c2d075e2996a0fffe0a3e3b92bcd8e
+
+Merge pull request #618 from GabrielBB/patch-1
+
+Adding version 5.1.0 Warning to README | 2018-11-20 23:23:17 | 16c9be342a40b06f006baaa8e5cf96be2d745cbc
+
+Refactor library module name to fix Kotlin compatibility. | 2018-10-22 17:40:19 | 816381272d7f75aaf078561c91e3543a5016152f
+
+Merge pull request #594 from cortinico/fix-object-public-apis
+
+Do not expose public methods with `Object` parameters (#590) | 2018-10-19 20:14:16 | 908e401e70c59446816defb3196d70c07ac9e669
+
+Merge pull request #574 from apl-devs/fix-for-573
+
+Add prefix for resources (Closes: #573) | 2018-09-06 06:56:08 | 2db6b7bd8d84f5219374e69bb68fccf817b46823
+
+Add prefix for resources (Closes: #573) | 2018-09-05 21:28:21 | 071b319dc8aaa8fbb1dabbae67f311b3935b95e5
+
+Merge pull request #572 from cortinico/fix-kotlin-backing-fields
+
+Fix for titleString & descriptionString in the SliderPage | 2018-09-01 17:04:32 | f1b3b947b77de841b7cf900669e0fdf163078efa
+
+Merge pull request #524 from dlackty/patch-1
+
+Correct license name | 2018-03-17 11:03:04 | 3d3f03a53ea989afbb0b601147b0efd94f6b09e3
+
+Merge pull request #491 from rodrigost23/rodrigost23-patch-1
+
+Portuguese translation | 2018-01-17 17:41:33 | 63ef35b6fa4dac9843de4e456c324991a34c0132
+
+Merge pull request #479 from apl-devs/fix-for-478
+
+Read pagerIndicatorEnabled value each time a new page is selected | 2017-08-23 19:09:47 | 0011d89e4bd89d55405ae47aab98a69554370fd9
+
+Fix blank fragments in example app -- credit goes to @chihung93 for fix | 2017-07-22 15:26:53 | 2fbd6cebf666981446c40c218ad3af86d35c7293
+
+fix empty page | 2017-07-21 02:35:36 | 7c1a5db02ade394a35aa6cf407f2ca32cad1d24a
+
+Merge pull request #454 from apl-devs/fix-for-416
+
+Fix permission request on last slide (Closes #416). | 2017-07-03 08:10:29 | d2d88251947793ccbb3aaaeb45d5de17339ce832
+
+Merge pull request #456 from apl-devs/fix-for-455
+
+Fix IndexOutOfBoundsException when no slides are passed (Closes #455) | 2017-07-03 08:10:23 | abe71d07a08d788b7eb8fe1513d6758a3e9a89fb
+
+Merge pull request #448 from friederbluemle/fix-lint
+
+[Example App]: Fix lint errors | 2017-06-18 11:02:06 | 2d7e72e11c9f64fcb0f9b01d14b7394be3abcb1b
+
+Merge pull request #426 from to0x97/patch-1
+
+strings.xml for french language | 2017-05-26 07:40:09 | f1b3a055162bbbe3b2db2c457560a68ea6875635
+
+Merge pull request #415 from almic/patch-2
+
+Allow users to change Bar color on AppIntro2, too | 2017-05-26 07:39:17 | ef28708995b4f3c4e6e59a47c59db23e58f0b131
+
+Merge pull request #394 from mtrakal/fix/issue361
+
+Issue #361 check NPE on views | 2017-01-16 02:18:26 | 92a5b6de8f051707a4575c0d3b2aae37370a8bcb
+
+fixes crashing issues | 2016-11-30 19:13:54 | 354ead31a219c9b79cffebc72bb0587b95175029
+
+fixed string errors, built signed apk | 2016-11-29 02:02:46 | 43c449c6d13e8817db9f5de4c1bd5db889665ae3
+
+Merge pull request #241 from RafaG/patch-1
+
+Set visibility of Skip button | 2016-06-19 07:17:32 | b457b4dd524a0fc80df33e0844b36512e9b7d39f
+
+Merge pull request #214 from maxee/feature/extended_slide_policy_readme_update
+
+[WIP] Feature/extended slide policy readme update, bugfixes | 2016-04-20 18:05:37 | 5f3062254dd6f70c8e9b4840343448a5b034d4ac
+
+AppIntroBase, AppIntroViewPager: Mostly reverted last commit, improved touch event dispatching for slide policy | 2016-04-15 15:53:53 | 8d849dc11a524fc0500431e73aee80289dc1b74e
+
+Merge pull request #210 from ofirmiron/patch-1
+
+Update README.md | 2016-04-16 17:44:10 | 43caba883ec268c0e06228669ba9c07f3a5aac9d
+
+AppIntroBase, AppIntroViewPager: Mostly reverted last commit, improved touch event dispatching for slide policy | 2016-04-15 15:53:53 | 20400ed7c1343a46b3fef76920d1e88ccf54e5ce
+
+Merge branch 'refs/heads/fix/gradle_version' | 2016-04-03 12:12:40 | 56621c2f700b49ea794488cd1e06e867684589f0
+
+import missing class (fix compilation error) | 2016-03-27 19:27:03 | 576392ede3882ecaf28871656f784a1d422bea6d
+
+Merge pull request #167 from ervinmartirosyan/patch-1
+
+Update README.md | 2016-03-12 18:07:26 | 04fa2891b1acd76019c742674beffe4c8bdeadbf
+
+Merge pull request #182 from championswimmer/patch-1
+
+allow users to set color of the arrow button | 2016-03-12 18:04:50 | e60a9fd3c9fee95bf74d5dedb1ee1171d78d7bdf
+
+Closes #159 and fixes broken Google Play Badge | 2016-01-24 19:39:02 | e35e642d2ece9d7ca791f9d0b799e4530fde2354
+
+fixed missing ResourceCompat error by replacing with ContextCompat. | 2016-01-02 22:48:29 | 6909597a96ab034e2ff48a8a2f7690062b9dd69d
+
+Call onRequestPermissionsResult() of super class in AppIntro and AppIntro2
+ - This fixes an issue where requestPermissions() called from a fragment will not deliver the correct result to the fragment.
+ - More information here:
+   http://stackoverflow.com/a/33995827/2663152
+   http://stackoverflow.com/questions/10564474/wrong-requestcode-in-onactivityresult#comment13675437_10564488 (Works similarly for this) | 2015-12-19 18:01:34 | 65029dbff90bdb5f1742dfa13f61a895b3617086
+
+[WIP] added semi-support for Android 6.0 permissions that is talked about in #84. Currently very buggy and not ready for production.
+
+Testing has only been done with AppIntro and not AppIntro2.
+
+Two new methods: slideSelected() and askForPermissions().
+
+slideSelected() gets the current slide and returns it as an int.
+
+askForPermission() takes a String array (String[]) and then goes on to request permission. See example app for how to actually request permissions for each slide. The process is tricky because the Android code doesn't have support for single permissions. That means you must pass a String[] rather than just a String if you're using one permission. The array only has one item at position 0 which would deem it worthless, however, the Android team didn't provide support for passing strings to their methods.
+
+Bugs:
+1. The request dialog pops up as the Next button is pressed rather than after. Desired result: slide talks about permission, the user presses next, and then a permission is show WITHOUT going to the next slide. After the user chooses allow or deny, he's taken to the next slide regardless of his previous answer.
+
+2. Currently, only onNextPressed works. I tried doing an onPageScrolled but that caused a permission request to pop up for every inch (or whatever measurement scrolling is) that the page was scrolled. This obviously is not desired.
+
+More time and testing will go into this, but I wanted to get the basic concept out there so people get a sense of progress. | 2015-11-24 09:15:36 | 441620a8e14088738a0cb8f35231033b857512c4
+
+Merge pull request #77 from Fleker/master
+
+Support for DPAD, based on reported bug for Nexus Player remote | 2015-08-29 08:16:49 | 6a90ec8834de51b386b9e556511bd7bc40ba5f25
+
+Support for DPAD, based on reported bug for Nexus Player remote | 2015-08-24 04:44:08 | 23a839bb122e36fa01fedf5357aa861d960d4b8c
+
+Merge pull request #53 from porokoro/fix-lint-errors
+
+Fix lint errors in the example app | 2015-07-19 20:19:37 | 76c9f65606176487e84256abb8ced3aac11eb59c
+
+Merge pull request #14 from sleepingAnt/patch-1
+
+Update AndroidManifest.xml | 2015-06-10 09:45:15 | 647017098f06d7c1bd9eff1eb3e4ff89bce864dc
+
+String fix | 2015-06-04 23:08:58 | e02a1d90268d59b04d8b29762c68877a7852a397
+
+Merge pull request #730 from AppIntro/fix-686-new-approach-to-permission
+
+New Approach to Permission & Cleanup | 2020-01-23 22:18:35 | 229df228c8ccc4e32b217297d62557482712a1cf
+
+Merge pull request #731 from AppIntro/fix-detekt-max-issues
+
+Decrease Detekt Max Issues to 1 | 2020-01-23 09:13:42 | df2d988fe360de6b22b0cec21edd7fc8a416ad25
+
+Multiple fixes and general code cleanup | 2020-01-23 00:26:31 | 02bbf9d3f403fb1e717f5adcad248e5d19ba5e32
+
+Applied all the fixes suggested by Detekt | 2019-05-23 23:27:23 | 277ac27678ebb8f12f9856372a4e29bf9395c9c6
+
+Merge pull request #657 from cortinico/fix-readme-version-no-v
+
+Remove the 'v' from the version name in the README | 2019-03-18 09:57:26 | 1aacbfa580d9ac4df580db923cc727500f546050
+
+Merge pull request #641 from cortinico/fix-viewpager-overlapping
+
+Fix overlap of the ViewPager on the bottom AppIntro bar | 2019-02-24 10:47:45 | ac4cdd7f1d605a9332ad97a45c358836e9cf0246
+
+Merge pull request #642 from cortinico/fix-layout2-background-resource
+
+Replace the Layout2 background color with the proper resource | 2019-02-23 16:41:38 | cdab107afd7ad3ce4885ec02469de2838582adea
+
+Merge pull request #636 from cortinico/fix-updated-readme-with-correct-urls
+
+Updating URLs in the Readme file | 2019-01-26 14:51:03 | 68e4d5909ab415164ed6091cd46c0a4cb17384f6
+
+Merge pull request #628 from cortinico/fix-335-default-background-color
+
+Extracting ViewPager background color to a resource (#335) | 2019-01-10 15:50:19 | 47acf4ca51c2d075e2996a0fffe0a3e3b92bcd8e
+
+Merge pull request #618 from GabrielBB/patch-1
+
+Adding version 5.1.0 Warning to README | 2018-11-20 23:23:17 | 16c9be342a40b06f006baaa8e5cf96be2d745cbc
+
+Refactor library module name to fix Kotlin compatibility. | 2018-10-22 17:40:19 | 816381272d7f75aaf078561c91e3543a5016152f
+
+Merge pull request #594 from cortinico/fix-object-public-apis
+
+Do not expose public methods with `Object` parameters (#590) | 2018-10-19 20:14:16 | 908e401e70c59446816defb3196d70c07ac9e669
+
+Merge pull request #574 from apl-devs/fix-for-573
+
+Add prefix for resources (Closes: #573) | 2018-09-06 06:56:08 | 2db6b7bd8d84f5219374e69bb68fccf817b46823
+
+Add prefix for resources (Closes: #573) | 2018-09-05 21:28:21 | 071b319dc8aaa8fbb1dabbae67f311b3935b95e5
+
+Merge pull request #572 from cortinico/fix-kotlin-backing-fields
+
+Fix for titleString & descriptionString in the SliderPage | 2018-09-01 17:04:32 | f1b3b947b77de841b7cf900669e0fdf163078efa
+
+Merge pull request #524 from dlackty/patch-1
+
+Correct license name | 2018-03-17 11:03:04 | 3d3f03a53ea989afbb0b601147b0efd94f6b09e3
+
+Merge pull request #491 from rodrigost23/rodrigost23-patch-1
+
+Portuguese translation | 2018-01-17 17:41:33 | 63ef35b6fa4dac9843de4e456c324991a34c0132
+
+Merge pull request #479 from apl-devs/fix-for-478
+
+Read pagerIndicatorEnabled value each time a new page is selected | 2017-08-23 19:09:47 | 0011d89e4bd89d55405ae47aab98a69554370fd9
+
+Fix blank fragments in example app -- credit goes to @chihung93 for fix | 2017-07-22 15:26:53 | 2fbd6cebf666981446c40c218ad3af86d35c7293
+
+fix empty page | 2017-07-21 02:35:36 | 7c1a5db02ade394a35aa6cf407f2ca32cad1d24a
+
+Merge pull request #454 from apl-devs/fix-for-416
+
+Fix permission request on last slide (Closes #416). | 2017-07-03 08:10:29 | d2d88251947793ccbb3aaaeb45d5de17339ce832
+
+Merge pull request #456 from apl-devs/fix-for-455
+
+Fix IndexOutOfBoundsException when no slides are passed (Closes #455) | 2017-07-03 08:10:23 | abe71d07a08d788b7eb8fe1513d6758a3e9a89fb
+
+Merge pull request #448 from friederbluemle/fix-lint
+
+[Example App]: Fix lint errors | 2017-06-18 11:02:06 | 2d7e72e11c9f64fcb0f9b01d14b7394be3abcb1b
+
+Merge pull request #426 from to0x97/patch-1
+
+strings.xml for french language | 2017-05-26 07:40:09 | f1b3a055162bbbe3b2db2c457560a68ea6875635
+
+Merge pull request #415 from almic/patch-2
+
+Allow users to change Bar color on AppIntro2, too | 2017-05-26 07:39:17 | ef28708995b4f3c4e6e59a47c59db23e58f0b131
+
+Merge pull request #394 from mtrakal/fix/issue361
+
+Issue #361 check NPE on views | 2017-01-16 02:18:26 | 92a5b6de8f051707a4575c0d3b2aae37370a8bcb
+
+fixes crashing issues | 2016-11-30 19:13:54 | 354ead31a219c9b79cffebc72bb0587b95175029
+
+fixed string errors, built signed apk | 2016-11-29 02:02:46 | 43c449c6d13e8817db9f5de4c1bd5db889665ae3
+
+Merge pull request #241 from RafaG/patch-1
+
+Set visibility of Skip button | 2016-06-19 07:17:32 | b457b4dd524a0fc80df33e0844b36512e9b7d39f
+
+Merge pull request #214 from maxee/feature/extended_slide_policy_readme_update
+
+[WIP] Feature/extended slide policy readme update, bugfixes | 2016-04-20 18:05:37 | 5f3062254dd6f70c8e9b4840343448a5b034d4ac
+
+AppIntroBase, AppIntroViewPager: Mostly reverted last commit, improved touch event dispatching for slide policy | 2016-04-15 15:53:53 | 8d849dc11a524fc0500431e73aee80289dc1b74e
+
+Merge pull request #210 from ofirmiron/patch-1
+
+Update README.md | 2016-04-16 17:44:10 | 43caba883ec268c0e06228669ba9c07f3a5aac9d
+
+AppIntroBase, AppIntroViewPager: Mostly reverted last commit, improved touch event dispatching for slide policy | 2016-04-15 15:53:53 | 20400ed7c1343a46b3fef76920d1e88ccf54e5ce
+
+Merge branch 'refs/heads/fix/gradle_version' | 2016-04-03 12:12:40 | 56621c2f700b49ea794488cd1e06e867684589f0
+
+import missing class (fix compilation error) | 2016-03-27 19:27:03 | 576392ede3882ecaf28871656f784a1d422bea6d
+
+Merge pull request #167 from ervinmartirosyan/patch-1
+
+Update README.md | 2016-03-12 18:07:26 | 04fa2891b1acd76019c742674beffe4c8bdeadbf
+
+Merge pull request #182 from championswimmer/patch-1
+
+allow users to set color of the arrow button | 2016-03-12 18:04:50 | e60a9fd3c9fee95bf74d5dedb1ee1171d78d7bdf
+
+Closes #159 and fixes broken Google Play Badge | 2016-01-24 19:39:02 | e35e642d2ece9d7ca791f9d0b799e4530fde2354
+
+fixed missing ResourceCompat error by replacing with ContextCompat. | 2016-01-02 22:48:29 | 6909597a96ab034e2ff48a8a2f7690062b9dd69d
+
+Call onRequestPermissionsResult() of super class in AppIntro and AppIntro2
+ - This fixes an issue where requestPermissions() called from a fragment will not deliver the correct result to the fragment.
+ - More information here:
+   http://stackoverflow.com/a/33995827/2663152
+   http://stackoverflow.com/questions/10564474/wrong-requestcode-in-onactivityresult#comment13675437_10564488 (Works similarly for this) | 2015-12-19 18:01:34 | 65029dbff90bdb5f1742dfa13f61a895b3617086
+
+[WIP] added semi-support for Android 6.0 permissions that is talked about in #84. Currently very buggy and not ready for production.
+
+Testing has only been done with AppIntro and not AppIntro2.
+
+Two new methods: slideSelected() and askForPermissions().
+
+slideSelected() gets the current slide and returns it as an int.
+
+askForPermission() takes a String array (String[]) and then goes on to request permission. See example app for how to actually request permissions for each slide. The process is tricky because the Android code doesn't have support for single permissions. That means you must pass a String[] rather than just a String if you're using one permission. The array only has one item at position 0 which would deem it worthless, however, the Android team didn't provide support for passing strings to their methods.
+
+Bugs:
+1. The request dialog pops up as the Next button is pressed rather than after. Desired result: slide talks about permission, the user presses next, and then a permission is show WITHOUT going to the next slide. After the user chooses allow or deny, he's taken to the next slide regardless of his previous answer.
+
+2. Currently, only onNextPressed works. I tried doing an onPageScrolled but that caused a permission request to pop up for every inch (or whatever measurement scrolling is) that the page was scrolled. This obviously is not desired.
+
+More time and testing will go into this, but I wanted to get the basic concept out there so people get a sense of progress. | 2015-11-24 09:15:36 | 441620a8e14088738a0cb8f35231033b857512c4
+
+Merge pull request #77 from Fleker/master
+
+Support for DPAD, based on reported bug for Nexus Player remote | 2015-08-29 08:16:49 | 6a90ec8834de51b386b9e556511bd7bc40ba5f25
+
+Support for DPAD, based on reported bug for Nexus Player remote | 2015-08-24 04:44:08 | 23a839bb122e36fa01fedf5357aa861d960d4b8c
+
+Merge pull request #53 from porokoro/fix-lint-errors
+
+Fix lint errors in the example app | 2015-07-19 20:19:37 | 76c9f65606176487e84256abb8ced3aac11eb59c
+
+Merge pull request #14 from sleepingAnt/patch-1
+
+Update AndroidManifest.xml | 2015-06-10 09:45:15 | 647017098f06d7c1bd9eff1eb3e4ff89bce864dc
+
+String fix | 2015-06-04 23:08:58 | e02a1d90268d59b04d8b29762c68877a7852a397
+
+Merge and fix conflicts | 2020-01-29 17:19:29 | 140a09b1b1cd751b93773b22fbd09a337879ad4e
+
+Merge pull request #742 from AppIntro/fix-741-orientation-change-crash
+
+Fix Crash on orientation changes due to UninitiatedPropertyAccessException | 2020-01-25 00:08:42 | e2cb65b21e37fce3ecd431c10ed2530d27266a8d
+
+Merge pull request #739 from AppIntro/fix-visibility-issues
+
+Fix Visibility leakage before releasing 6.0.0 | 2020-01-24 09:27:40 | 59419d244b1e9d8987824159aea77c038538cae3
+
+Merge pull request #730 from AppIntro/fix-686-new-approach-to-permission
+
+New Approach to Permission & Cleanup | 2020-01-23 22:18:35 | 229df228c8ccc4e32b217297d62557482712a1cf
+
+Merge pull request #731 from AppIntro/fix-detekt-max-issues
+
+Decrease Detekt Max Issues to 1 | 2020-01-23 09:13:42 | df2d988fe360de6b22b0cec21edd7fc8a416ad25
+
+Multiple fixes and general code cleanup | 2020-01-23 00:26:31 | 02bbf9d3f403fb1e717f5adcad248e5d19ba5e32
+
+Applied all the fixes suggested by Detekt | 2019-05-23 23:27:23 | 277ac27678ebb8f12f9856372a4e29bf9395c9c6
+
+Merge pull request #657 from cortinico/fix-readme-version-no-v
+
+Remove the 'v' from the version name in the README | 2019-03-18 09:57:26 | 1aacbfa580d9ac4df580db923cc727500f546050
+
+Merge pull request #641 from cortinico/fix-viewpager-overlapping
+
+Fix overlap of the ViewPager on the bottom AppIntro bar | 2019-02-24 10:47:45 | ac4cdd7f1d605a9332ad97a45c358836e9cf0246
+
+Merge pull request #642 from cortinico/fix-layout2-background-resource
+
+Replace the Layout2 background color with the proper resource | 2019-02-23 16:41:38 | cdab107afd7ad3ce4885ec02469de2838582adea
+
+Merge pull request #636 from cortinico/fix-updated-readme-with-correct-urls
+
+Updating URLs in the Readme file | 2019-01-26 14:51:03 | 68e4d5909ab415164ed6091cd46c0a4cb17384f6
+
+Merge pull request #628 from cortinico/fix-335-default-background-color
+
+Extracting ViewPager background color to a resource (#335) | 2019-01-10 15:50:19 | 47acf4ca51c2d075e2996a0fffe0a3e3b92bcd8e
+
+Merge pull request #618 from GabrielBB/patch-1
+
+Adding version 5.1.0 Warning to README | 2018-11-20 23:23:17 | 16c9be342a40b06f006baaa8e5cf96be2d745cbc
+
+Refactor library module name to fix Kotlin compatibility. | 2018-10-22 17:40:19 | 816381272d7f75aaf078561c91e3543a5016152f
+
+Merge pull request #594 from cortinico/fix-object-public-apis
+
+Do not expose public methods with `Object` parameters (#590) | 2018-10-19 20:14:16 | 908e401e70c59446816defb3196d70c07ac9e669
+
+Merge pull request #574 from apl-devs/fix-for-573
+
+Add prefix for resources (Closes: #573) | 2018-09-06 06:56:08 | 2db6b7bd8d84f5219374e69bb68fccf817b46823
+
+Add prefix for resources (Closes: #573) | 2018-09-05 21:28:21 | 071b319dc8aaa8fbb1dabbae67f311b3935b95e5
+
+Merge pull request #572 from cortinico/fix-kotlin-backing-fields
+
+Fix for titleString & descriptionString in the SliderPage | 2018-09-01 17:04:32 | f1b3b947b77de841b7cf900669e0fdf163078efa
+
+Merge pull request #524 from dlackty/patch-1
+
+Correct license name | 2018-03-17 11:03:04 | 3d3f03a53ea989afbb0b601147b0efd94f6b09e3
+
+Merge pull request #491 from rodrigost23/rodrigost23-patch-1
+
+Portuguese translation | 2018-01-17 17:41:33 | 63ef35b6fa4dac9843de4e456c324991a34c0132
+
+Merge pull request #479 from apl-devs/fix-for-478
+
+Read pagerIndicatorEnabled value each time a new page is selected | 2017-08-23 19:09:47 | 0011d89e4bd89d55405ae47aab98a69554370fd9
+
+Fix blank fragments in example app -- credit goes to @chihung93 for fix | 2017-07-22 15:26:53 | 2fbd6cebf666981446c40c218ad3af86d35c7293
+
+fix empty page | 2017-07-21 02:35:36 | 7c1a5db02ade394a35aa6cf407f2ca32cad1d24a
+
+Merge pull request #454 from apl-devs/fix-for-416
+
+Fix permission request on last slide (Closes #416). | 2017-07-03 08:10:29 | d2d88251947793ccbb3aaaeb45d5de17339ce832
+
+Merge pull request #456 from apl-devs/fix-for-455
+
+Fix IndexOutOfBoundsException when no slides are passed (Closes #455) | 2017-07-03 08:10:23 | abe71d07a08d788b7eb8fe1513d6758a3e9a89fb
+
+Merge pull request #448 from friederbluemle/fix-lint
+
+[Example App]: Fix lint errors | 2017-06-18 11:02:06 | 2d7e72e11c9f64fcb0f9b01d14b7394be3abcb1b
+
+Merge pull request #426 from to0x97/patch-1
+
+strings.xml for french language | 2017-05-26 07:40:09 | f1b3a055162bbbe3b2db2c457560a68ea6875635
+
+Merge pull request #415 from almic/patch-2
+
+Allow users to change Bar color on AppIntro2, too | 2017-05-26 07:39:17 | ef28708995b4f3c4e6e59a47c59db23e58f0b131
+
+Merge pull request #394 from mtrakal/fix/issue361
+
+Issue #361 check NPE on views | 2017-01-16 02:18:26 | 92a5b6de8f051707a4575c0d3b2aae37370a8bcb
+
+fixes crashing issues | 2016-11-30 19:13:54 | 354ead31a219c9b79cffebc72bb0587b95175029
+
+fixed string errors, built signed apk | 2016-11-29 02:02:46 | 43c449c6d13e8817db9f5de4c1bd5db889665ae3
+
+Merge pull request #241 from RafaG/patch-1
+
+Set visibility of Skip button | 2016-06-19 07:17:32 | b457b4dd524a0fc80df33e0844b36512e9b7d39f
+
+Merge pull request #214 from maxee/feature/extended_slide_policy_readme_update
+
+[WIP] Feature/extended slide policy readme update, bugfixes | 2016-04-20 18:05:37 | 5f3062254dd6f70c8e9b4840343448a5b034d4ac
+
+AppIntroBase, AppIntroViewPager: Mostly reverted last commit, improved touch event dispatching for slide policy | 2016-04-15 15:53:53 | 8d849dc11a524fc0500431e73aee80289dc1b74e
+
+Merge pull request #210 from ofirmiron/patch-1
+
+Update README.md | 2016-04-16 17:44:10 | 43caba883ec268c0e06228669ba9c07f3a5aac9d
+
+AppIntroBase, AppIntroViewPager: Mostly reverted last commit, improved touch event dispatching for slide policy | 2016-04-15 15:53:53 | 20400ed7c1343a46b3fef76920d1e88ccf54e5ce
+
+Merge branch 'refs/heads/fix/gradle_version' | 2016-04-03 12:12:40 | 56621c2f700b49ea794488cd1e06e867684589f0
+
+import missing class (fix compilation error) | 2016-03-27 19:27:03 | 576392ede3882ecaf28871656f784a1d422bea6d
+
+Merge pull request #167 from ervinmartirosyan/patch-1
+
+Update README.md | 2016-03-12 18:07:26 | 04fa2891b1acd76019c742674beffe4c8bdeadbf
+
+Merge pull request #182 from championswimmer/patch-1
+
+allow users to set color of the arrow button | 2016-03-12 18:04:50 | e60a9fd3c9fee95bf74d5dedb1ee1171d78d7bdf
+
+Closes #159 and fixes broken Google Play Badge | 2016-01-24 19:39:02 | e35e642d2ece9d7ca791f9d0b799e4530fde2354
+
+fixed missing ResourceCompat error by replacing with ContextCompat. | 2016-01-02 22:48:29 | 6909597a96ab034e2ff48a8a2f7690062b9dd69d
+
+Call onRequestPermissionsResult() of super class in AppIntro and AppIntro2
+ - This fixes an issue where requestPermissions() called from a fragment will not deliver the correct result to the fragment.
+ - More information here:
+   http://stackoverflow.com/a/33995827/2663152
+   http://stackoverflow.com/questions/10564474/wrong-requestcode-in-onactivityresult#comment13675437_10564488 (Works similarly for this) | 2015-12-19 18:01:34 | 65029dbff90bdb5f1742dfa13f61a895b3617086
+
+[WIP] added semi-support for Android 6.0 permissions that is talked about in #84. Currently very buggy and not ready for production.
+
+Testing has only been done with AppIntro and not AppIntro2.
+
+Two new methods: slideSelected() and askForPermissions().
+
+slideSelected() gets the current slide and returns it as an int.
+
+askForPermission() takes a String array (String[]) and then goes on to request permission. See example app for how to actually request permissions for each slide. The process is tricky because the Android code doesn't have support for single permissions. That means you must pass a String[] rather than just a String if you're using one permission. The array only has one item at position 0 which would deem it worthless, however, the Android team didn't provide support for passing strings to their methods.
+
+Bugs:
+1. The request dialog pops up as the Next button is pressed rather than after. Desired result: slide talks about permission, the user presses next, and then a permission is show WITHOUT going to the next slide. After the user chooses allow or deny, he's taken to the next slide regardless of his previous answer.
+
+2. Currently, only onNextPressed works. I tried doing an onPageScrolled but that caused a permission request to pop up for every inch (or whatever measurement scrolling is) that the page was scrolled. This obviously is not desired.
+
+More time and testing will go into this, but I wanted to get the basic concept out there so people get a sense of progress. | 2015-11-24 09:15:36 | 441620a8e14088738a0cb8f35231033b857512c4
+
+Merge pull request #77 from Fleker/master
+
+Support for DPAD, based on reported bug for Nexus Player remote | 2015-08-29 08:16:49 | 6a90ec8834de51b386b9e556511bd7bc40ba5f25
+
+Support for DPAD, based on reported bug for Nexus Player remote | 2015-08-24 04:44:08 | 23a839bb122e36fa01fedf5357aa861d960d4b8c
+
+Merge pull request #53 from porokoro/fix-lint-errors
+
+Fix lint errors in the example app | 2015-07-19 20:19:37 | 76c9f65606176487e84256abb8ced3aac11eb59c
+
+Merge pull request #14 from sleepingAnt/patch-1
+
+Update AndroidManifest.xml | 2015-06-10 09:45:15 | 647017098f06d7c1bd9eff1eb3e4ff89bce864dc
+
+String fix | 2015-06-04 23:08:58 | e02a1d90268d59b04d8b29762c68877a7852a397
+

@@ -1,0 +1,475 @@
+Do not set app:hintEnabled and remove styles in/for md_dialog_stub_input, fixes #1857 | 2020-02-12 23:45:42 | 1f7b433b4cd1ae9ec2b96e8e1bc506160d1f37a4
+
+maybeSetAdditionalPadding -> additionalPaddingForFont, fix formatting, add kdoc. additionalPaddingForFont doesn't need a height parameter, can just use measuredHeight. Part of #1936. | 2020-02-12 20:05:55 | 985e16176a8b885f3c18e1db02ce859bca7b90f9
+
+Add missing kotlin-coroutines-android dependency (#1939)
+
+The files module needs Dispatchers.Main | 2020-02-03 16:23:44 | 9c4bd07c2f88d556e3f345f3305e1e6655bdfdc7
+
+Only try to access LeakCanary in debug variant | 2019-07-01 21:17:16 | 60640972676b1c8edcfd4e5030ccdc3e80a490d0
+
+Dispatch checks/unchecks with payloads, may help #1777 | 2019-04-18 02:02:53 | 43ae14a6e39db644d44140421b4104a771cdfadc
+
+Check items fix (#1771) | 2019-03-31 22:08:58 | c86ebb91d0bdea7ea99f1aca032d445b6da7fb39
+
+Begin re-implementing debug mode, shows button layout correctly. Also fixed various button/content layout problems. | 2019-03-16 07:46:42 | eeb332099b1c41617f27ca2dd9e1dc4355a64bdb
+
+Don't crash in the sample while debugMode isn't reimplemented yet | 2019-03-06 00:53:43 | 6a17fcd82f65ac401de450e1974a252c8d3c2eab
+
+Remove old 'debug' mode painting logic | 2019-02-28 02:15:06 | f019bb3ad88bcf31779bd0af362539ac94b306c1
+
+Fix Int.hexValue extension to use 00 as the prefix when alpha is 0 | 2019-01-10 19:32:37 | 3a6adb499d6a73ef6f2b74dd03773238292357e9
+
+Color chooser cleanup fixes, etc. Resolves #1689. | 2019-01-03 22:27:00 | f566cd2e1c92653cce1fe1e7c5bfafd2299024e0
+
+Made the ARGB seek bars easier to grab in the color chooser dialog, fix some other color chooser logical issues. Resolves #1668. | 2018-11-29 19:36:57 | 42f84d471684d29fe0256664c375f06db3682c63
+
+Remove usages of ?selectableItemBackground, it isn't needed - this may end up fixing #1629 | 2018-11-21 06:08:35 | 93a5dd709692ed373ccdc3338e58a49964b7a647
+
+Fixed a title layout bug when there is an icon and a title, esp one-line titles. Resolves #1654. | 2018-11-18 02:41:37 | 8c1efbd00db6fc02cbefa751b5ffe7f274ab6934
+
+Cleanup, fix, and flattern custom ARGB layout | 2018-10-13 04:22:48 | 7bd607e1f02a40941b6a42b7edd2eced80cd2fca
+
+For sure fix cursor position in input dialogs, resolves #1597 | 2018-09-10 20:55:55 | 39fe615ada220d532f30acc10baa243ef6cdaddb
+
+File/folder chooser crash fix, resolves #1587. | 2018-09-02 00:31:06 | c7e024c0205d894dc78769298872221326af744b
+
+Resolve #1573, fixes dialog callbacks (show/cancel/dismiss) not working due to a simple logical error. | 2018-08-16 05:01:13 | c5e7dc4a3311e5d4a8068732eae1ccdfc3ad2346
+
+Sample fix | 2017-12-03 22:31:56 | 375b1f5557b8cf34015bc60755c4b27bda4c3123
+
+Update support library, also fix #1467 | 2017-10-25 18:49:33 | 6e1ad71605f7ee3903a562fffc14bfa2f51106f1
+
+Merge pull request #1452 from DreaminginCodeZH/patch-1
+
+Update MaterialProgressBar to v1.4.2 | 2017-09-09 14:13:49 | 8869ff6d347e8d651dd99992153ca9109ac083fc
+
+Merge branch 'master' into patch-1 | 2017-09-09 14:07:41 | 4b575487a96e840c7165d86c65994c2878574773
+
+Merge pull request #1455 from rosenpin/patch-1
+
+Update support libraries version to 26.0.2 | 2017-09-07 22:19:01 | 6fbb71286eb90f2ef18e934a6a3761bd5f481b84
+
+Update MaterialProgressBar to v1.4.2
+
+This release worked around a framework `ColorFilter` bug when hardware acceleration is enabled on API 18-20. | 2017-09-02 22:39:56 | 5531724cc85ea673a54e3b6f40d8b4aa8e7cc9e2
+
+Merge pull request #1449 from jhw866/set-tint-sdk-bug
+
+Moved usage of setButtonTintList for Checkboxes and RadioButtons to API 22 | 2017-08-30 17:10:36 | 894967c58e9e1452aa1baaf3c39241d9b6e09a11
+
+Merge pull request #1408 from BedrockDev/patch-1
+
+Fixed copy-paste error | 2017-07-18 18:34:36 | 6af8769d5cb167b5378808aecfb2436d12eea31d
+
+Resolved #1384, RTL checkbox prompt fix | 2017-06-28 18:38:27 | b7843f500f762c8da8829016714e9aaa43569e2c
+
+Merge pull request #1366 from DreaminginCodeZH/patch-1
+
+Remove MaterialProgressBar styles | 2017-05-01 16:36:37 | cc2aebff702d2849c0578cafb7f46e6876f81285
+
+Merge pull request #1341 from yaa110/patch-1
+
+Update support library version to 25.3.1 | 2017-04-01 18:04:51 | f028ee3a68796e4dd24d0f1acd9ed7638a8f9fb9
+
+Only want Stetho in the debug variant. | 2017-03-19 03:43:00 | fdcc1d26ca46c2766b7a936b6d1a7f167cf25898
+
+Merge pull request #1298 from javiersantos/patch-folderchooser
+
+Fix issue when selecting a Folder | 2017-02-17 16:30:50 | 294ca1c8c2198f7474b72d62ab9555021c66a2d1
+
+Merge pull request #1263 from ankitagrawal2411/ankitagrawal2411-patch-1
+
+Update DefaultRvAdapter.java | 2017-01-16 16:50:15 | 2dc5419e5468b1de8603c9bf0fd9372d57792b9b
+
+Merge pull request #1248 from AndreaCioccarelli/patch-3
+
+DialogBase.java general fixes and wide error handling | 2016-12-28 14:31:29 | 50f2ebdfcb6a000f70b09443f0b710d5efaca318
+
+Merge pull request #1247 from AndreaCioccarelli/master
+
+fix bug #1244 | 2016-12-28 14:30:50 | fd59be5ae2b3b26c2450abf247efdac369439eaf
+
+Merge pull request #1213 from varanasisaigithub/patch-1
+
+Updated bintray Link | 2016-11-06 01:22:47 | e68fda6372bc66cdc62fdf1c1a2f9dcd3099954b
+
+Merge pull request #1178 from rndstr/patch-1
+
+fix typo in ToC list link | 2016-09-10 17:19:35 | e79d3c0117eb4a50cdda8b274bffe50897c0040b
+
+fix typo in ToC list link | 2016-09-10 16:50:33 | 276d6659aae0d472295aca6771823c96f34e56d5
+
+Merge pull request #1169 from pylerSM/patch-1
+
+Update readme with new APIs | 2016-08-30 17:28:28 | 502d5280eb99f90b1e022ebaae35037ff6d55ef7
+
+Merge pull request #1164 from BetterXP/patch-1
+
+Option to change "go up" label | 2016-08-26 14:23:33 | 78207568fdb2fa7b8aa3a8d7a2b2a3934533d374
+
+Merge pull request #1156 from zateo/bugfix/sub-index-bounds
+
+Bugfix/sub index bounds | 2016-08-13 17:53:39 | 9a6b3f3a3d45e4f89d587cd66cd7448d2f22b3cf
+
+Completely retired AlertDialogWrapper. Moved completely away from ListView support. Other fixes. Resolves #1136. | 2016-08-07 23:20:09 | 33bf2717c261fe61ee3075a92f553900228b3382
+
+Prefixed more view IDs in the commons module | 2016-08-07 20:31:55 | a4730f214c0772b41f9cd21db91bbb9bc92ce9d1
+
+Added md_ prefix to all view IDs. Resolves #1134. | 2016-08-07 19:34:26 | b06245afa897373971ba90a7dc9f3adc3334f6d4
+
+Merge pull request #1103 from garretyoder/master
+
+Add tag methods for ColorChooserDialog, fixes #1102 | 2016-06-23 16:14:14 | 52d347055d9c6e8f9ba2f2f39447969f437dc563
+
+Merge pull request #1045 from auchri/patch-2
+
+Fix typo | 2016-04-15 18:35:11 | 5c563a6b72c907c021130fe14636aee1f20d25ab
+
+Merge pull request #930 from TheFinestArtist/patch-3
+
+Update README.md | 2016-01-28 14:39:53 | 24e06274442ce061968d55c23b3de4b1a346da13
+
+Merge pull request #926 from ervinmartirosyan/fix/extra_checkable_bg
+
+Fixed extra Checkable background on press for API <21, fixes #925 | 2016-01-27 00:26:55 | 3eca2ace40da248edda99759e26d0930702908c0
+
+Merge pull request #924 from pra85/patch-1
+
+Mention initial copyright year | 2016-01-26 14:53:21 | b1f280c0e838f9546f1ba28545b54d2ef0b9cd8c
+
+Merge pull request #921 from DavidMont/dimen-patch
+
+update: fixed changing textSize for dialogs with progress for v14 | 2016-01-22 15:26:37 | 1892f5ce88722c47b54e82343d7c60f4a4cfb2a3
+
+update: fixed changing textSize for dialogs with progress | 2016-01-22 07:21:48 | 93e29450c77d030a23a9312ab0b5e839c867b855
+
+Merge pull request #920 from DavidMont/dimen-patch
+
+Overriding the md_content_textsize for dialogs with progress doesn't change font size | 2016-01-22 03:55:38 | b736b78af09f62804f75b0b4a0e831d5892749f5
+
+fixed changing textSize for dialogs with progress | 2016-01-22 02:55:11 | 6bdfca84eb96e66944ecb0d3977228f0c4362582
+
+Merge pull request #918 from DVDAndroid/patch-1
+
+File chooser not shown after first permission request | 2016-01-21 21:34:01 | 7d747d69ab32def7a91f92975ecebd905db6fc7b
+
+Merge pull request #904 from jlelse/patch-1
+
+Upgrade to latest gradle plugin | 2016-01-15 15:48:03 | 36839fe9e5f700c50ef9dfaf7ef21b62aa23fff6
+
+Merge pull request #895 from AndreiAncuta/patch-1
+
+Update README.md | 2016-01-03 16:18:58 | e05228b4896ab80ef58300b7ef75ba93aadbf918
+
+Merge pull request #891 from TheFinestArtist/patch-1
+
+Update README.md | 2015-12-30 18:58:27 | 897aad4b5da705798f861119ac753b53408032ec
+
+Merge pull request #888 from DVDAndroid/patch-1
+
+Accept only allowed HTML color codes | 2015-12-29 16:02:13 | 9d49abcf81b68d5ab45324951fbf66c5135bc50a
+
+File/folder chooser dialog fixes | 2015-12-18 18:18:28 | ce067363f6e0129f91d3990ae1078e244756a88d
+
+Re-enable Javadoc/sources - fixed missing dependencies generate warnings | 2015-12-13 07:47:21 | f63ce57051a74f67ee77eee0c259811dc359455a
+
+Merge pull request #834 from JasperG/patch-1
+
+Removed setting content before checking for custom contentView | 2015-11-20 15:17:02 | 9b5a08132289da58effb62440d2eda2729f7fbef
+
+Merge pull request #800 from Ph1b/patch-2
+
+Update README.md | 2015-10-29 15:20:16 | efbbca006b19a0d14b3b308fe0b3a48161788998
+
+One more time, https://github.com/afollestad/material-dialogs/issues/776 should be officially fixed | 2015-10-27 16:01:22 | 989d036248096cad3b92e676fe77cc61e09d9db0
+
+Fixed issues with radio buttons in single choice lists, should fix https://github.com/afollestad/material-dialogs/issues/790 | 2015-10-27 15:10:27 | c75f3830dec08c1773edc6a31872f7d5a86fc2a6
+
+Fixed a bug in the color chooser, added custom user input feature to color chooser | 2015-10-18 04:46:27 | 1de1782eb9c058364e6e93a883b2b89cace078bd
+
+Typo fix | 2015-10-08 17:42:26 | 986e2819cdfc551ed828d785f872009eb839460a
+
+README fix | 2015-10-06 17:46:43 | 0a17402c0b1239904c567585e93cde692cbf87ab
+
+README fix | 2015-09-23 17:52:13 | a3c1564c14cb9c3216bec10ae62d4ee5ff198c6b
+
+Merge pull request #699 from egor-n/patch-1
+
+Fix a small type in README | 2015-09-19 15:36:23 | 19c1e3df7c8ad0fc35af8f7ccca00eb92fc89ba7
+
+README fix | 2015-09-17 20:40:21 | 70f7f401b69c2ec8db5a84ed796af8edeae9122e
+
+Merge pull request #675 from Ph1b/patch-1
+
+Fixed wrong code example | 2015-09-06 16:29:04 | 63e7457e824874baf37530419f1994999dcd3e97
+
+Typo fix | 2015-08-30 01:08:10 | 0a9feb19b690569f7118cd81acbc36ac3a95e5b8
+
+Removed bintray-release plugin until it works again. Massive update to ColorChooserDialog, small fix to ChangelogDialog. | 2015-08-24 05:41:40 | d61de58d0344a91942bb990bb51053753351f417
+
+Typo fix | 2015-08-23 01:05:45 | 3425104808e48dce9190221da4b84c9ccb986f03
+
+Added MaterialDialogPreference. Resolves #549. Also fixed callback leaks. | 2015-05-31 02:27:06 | 83210add5b3aaa92c95b2ee8d9ddb79f186e289b
+
+Made single choice dialog more efficient, fixed last radio button not animating on Lollipop. Resolves #514. | 2015-05-12 01:29:14 | 0f69dc329c900be5c95bda70f0622be285d3ac3d
+
+Fix for previous commiti that fixed framework leak | 2015-05-11 23:58:42 | f7d09c4ae1aa11ae4745e115205be43f5fef5b13
+
+Small typo fix. | 2015-04-28 19:14:10 | a384b06540ac0e6135c65077496512bf20c686aa
+
+Use AppCompat 22.1 elements; fix MDTintHelper EditText inactivated state | 2015-04-22 06:02:55 | 615f8be9fd05a9442fbcfabbee4a4a862a17354b
+
+This will be the newer version once I get an APK ready, gonna reclone the project to see if it fixes Android Studio's weird issues with this specific project. | 2015-04-18 03:19:39 | 7a3c738b3409c7808a02164a92d0a70c074026f8
+
+More attempts at fixing APK generation issues | 2015-04-14 20:26:52 | 677c9a9b3e6ba69c5beee342cff466c5031f14fa
+
+More crash fixes, resolves #439. | 2015-04-12 17:14:41 | 611131ececcbcf3679aa11b3403d77ebbc4c7514
+
+Crash fix, resolves #439 | 2015-04-11 02:18:10 | cd8c277f0a56feaf2c0c1423a92251d8e9278456
+
+Various padding fixes, padding won't be reduced when there's no title in progress or input dialogs. Fixes #414 | 2015-04-08 01:44:20 | 86c75cf2b819f19fc793135ca1e93c22bfd80ce4
+
+Removed unused variable, fixed light theme on Gingerbread for #410 | 2015-04-07 20:52:12 | 4e64d810ecbd4979ee050b3e0b6e7de0791da3e6
+
+README fix. | 2015-04-07 01:02:00 | c6656b6ec6450518dd34cb00b9818b4db4459304
+
+README fix. | 2015-04-07 01:01:10 | 522a13f104d6418d4c1440e8b32eab98e8d6f95c
+
+README fix. | 2015-04-07 00:13:02 | 37ba753d01bc300b4d15af9e5b39004d44e36886
+
+More internal dialog theming fixes, removed unused method. | 2015-04-06 20:08:18 | 048308fced7ac46094f52efe9cd308c3b9fd07c8
+
+More theming fixes (hopefully) | 2015-04-06 17:25:18 | e109a67d0aa618a53121a3cf55aee99eec562831
+
+Merge pull request #402 from adennie/fix-support-deps
+
+Fix support deps | 2015-04-06 16:30:11 | 331a8dfac620837104dcd8e925a52ca3e83315ef
+
+Merge branch 'master' into fix-support-deps | 2015-04-06 15:26:37 | 27f2e6000d67cc8e3744b4d076cbbe0be3e53f26
+
+Dialog custom view theme issues should be fixed? | 2015-04-06 14:48:22 | 33a400604147a373fc6eccdd65f41fa9bd29a147
+
+Merge branch 'master' into fix-support-deps | 2015-04-06 12:17:22 | 0c80f680ee25be1ee9eef3a335c4e71e7d4e5bae
+
+fix support dependencies
+
+specify that appcompat-v7 and recyclerview-v7 are aar dependencies, so that the generated POM file is correct.
+bump the versions of recyclerview-v7 and support-annotations to 22.0.0, to align with the version of appcompat-v7 | 2015-04-05 18:07:34 | ccfa1c13d2a46afca6b88a2f92ebffd481b48f93
+
+Updated gravity global theming attributes in REAMDE and fixes attr enums. | 2015-04-01 16:15:24 | e352a4fd4ecb5b2e32a3ad10bb01788e2e3de806
+
+Release 0.6.7.0 (fixed version in README) | 2015-03-30 20:36:56 | 14f7a4c25bc75685ebb3bfde0f60539227a9a11d
+
+Small fix related to setting the correct initial visibility of stacked action buttons | 2015-03-30 19:58:23 | 320f48c86d32e39e3fc932b3f19c264e38fe38dc
+
+Comment typo fix | 2015-03-30 19:53:28 | 64df9eb8e31dcb5ff616578138ec68e495b7ba4c
+
+Should hopefully fix #379 | 2015-03-30 16:17:54 | c10175bb94cb7fe4eda542f395725e48bfad8be7
+
+README fixes. | 2015-03-30 14:26:09 | 1cc70adc078700166d16dffabebef0139360f0c2
+
+Merge pull request #376 from vyscond/patch-1
+
+Update README.md | 2015-03-29 15:13:53 | bd790674fb573d122ec5ed0a3ce649fdf644618d
+
+Quick fix 0.6.6.3 | 2015-03-29 03:42:36 | b12cf016e50a11b096e7eea36c9945d2b080ec57
+
+Quick fix 0.6.6.3 | 2015-03-29 03:41:48 | 9d0a6875e47f1b39fd24c95d6a6ba3af5ec52d8a
+
+Release 0.6.6.2. Various bug fixes and sample projec updates. | 2015-03-28 15:02:05 | 77545ec78705b1f52a1893fc1a2a1320ef262dea
+
+An update will go out for the sample project, to fix various crash issues and < API 10 compatibility. Library is not updated yet. | 2015-03-28 00:27:54 | 871aac5fedbd3f3a7cbf6a4c569e7aae47f52fb0
+
+#373 should be fixed | 2015-03-27 23:16:53 | d8a91475d2e1cc71ea4020aa74e64d0aa8b45bd0
+
+Quick fix 0.6.6.1 | 2015-03-26 22:21:25 | 492ac32123bd8995628ecaf7edee8d03e54fe16d
+
+Release 0.6.5.2. Fixed #361. Also fixed MaterialListPreference and some other list dialog logic. | 2015-03-24 23:27:24 | ac5bef0c4adb1eaefff87cf11ef29efe832b00c4
+
+Fixed #362, fixed #363 | 2015-03-24 22:40:18 | aa28a38068f89094a4e378e54c98175f4b9598f7
+
+Quick fix, 0.6.5.1 | 2015-03-24 19:10:57 | cf3edf93b04eda19949ebe1d68ddf7109f05444f
+
+Update MaterialMultiSelectListPreference.java
+
+fix issue #339 | 2015-03-21 06:44:41 | 436703a16121ae04f3c6e641ed135845a46ccfbb
+
+Merge pull request #347 from AliMehrpour/patch-1
+
+Add autoDismiss method to AlertDialogWrapper | 2015-03-19 15:01:39 | 6f6e8e55e745953cb6b14492f97b486af9b2cddb
+
+MaterialEditTextPreference fixes | 2015-03-18 02:23:32 | 024598a196c7e44f1cc1ffd45a6730b30c8607c0
+
+Merge pull request #334 from andrey-blak/fix_content_gravity
+
+Fixed contentGravity isn't set for dialogs without title | 2015-03-17 14:51:39 | 100afae8b2db7e2394b29b851afb0023a1bb46b1
+
+Fixed #335, fixed #333 | 2015-03-17 14:44:56 | a8053d50bb14f528ffa7e2014b05ebbf1a2f2890
+
+Quick fix release 0.6.4.4 (effects API 15 and below mostly) | 2015-03-16 22:07:27 | 53103863a6a3e51cff9733dc5d8265ba29caf57e
+
+Readme fix. | 2015-03-14 03:48:01 | 130d83c72ecd0ccb3100e34d964cb046bed19891
+
+Merge pull request #301 from intrications/patch-1
+
+Remove duplicated code from README | 2015-03-07 14:45:49 | 0d6ea915b3b3e64a8995de69b2dacc526a7c8a2b
+
+#298 should be fixed | 2015-03-05 21:13:54 | 56d10ce1e7b7d51169254ffad023478f76a456f8
+
+Merge pull request #259 from msutherland4807/master
+
+MaterialEditTextPreference bugs | 2015-02-16 18:59:45 | 3bbe5d281bbfdded059ca90081ac3dd85bf91db6
+
+MaterialEditTextPreference bugs
+
+Altered MaterialEditTextPreference to use the inner EditText view from
+parent class.
+
+EditText now also uses colorAccent from theme to color the underline | 2015-02-16 18:42:05 | aaab0d8a0b81c683080f8b693973a6a599bb4424
+
+Crash fix when multi choice dialog has no items and positive text attempts to send the callback. | 2015-02-08 08:11:26 | 63fa5124f8a25cbaa15b2daab4505424b5b8f513
+
+Stacked gravity only applied to stacked buttons. Quick fix release 0.6.2.3. | 2015-02-04 20:00:41 | 612cf7c8c4febd475b385d5d3caf56a5d305a124
+
+Small fix, actually release 0.6.2.2 | 2015-02-03 04:47:34 | dbee2ab4fca09a777caecf52d2a7fb8646cc9671
+
+Merge pull request #207 from mariusmuja/fix_button_stacking
+
+Fix button stacking when positive button text is very long | 2015-01-21 23:47:27 | 4e194cf2461d44670ca561748f2d5e9fd3c05e0b
+
+Quick fix, release 0.6.1.1 | 2015-01-19 03:58:04 | ef196e2bf02be7cdcc2341ce7c7e368a95a779e7
+
+Merge pull request #193 from mariusmuja/button_stacking_bug_fix
+
+Use width of button frame instead on windows decor width when checking for button stacking | 2015-01-16 02:17:58 | 274ad1cfffdddd2304ac6de834c80a1d3794f382
+
+Merge pull request #179 from teslacoil/master
+
+Additional fix for vibrating windows | 2015-01-10 17:36:02 | 92343c044d42ce14a27296ea648c5fa9c02c2dfb
+
+Additional fix for vibrating windows
+
+Previously we only checked if the listview could scroll down, which was
+incorrect when the listview had already been scrolled to the bottom | 2015-01-10 01:56:05 | 37cd212aae30739cf257dee5413f341602c3cb23
+
+Fix vibrating windows
+
+Some windows with just the right amount of scrollable content would trigger the
+removal of the bottom margin, however the new layout pass would show that the
+content is no longer scrollable so the bottom margin would be reenabled.
+This would cause the window to continously vibrate up and down.
+
+This fix verifies the available space before adding the margin, and doesn't
+add it, if it would cause the content to scroll. | 2015-01-06 22:19:13 | 781681a0941a1a2afa38fe3b505e46d7fd6c808a
+
+Release 0.5.6, quick fix. | 2015-01-04 21:52:55 | 213a74ad2d4f9b80a68079234cefd047a54e8621
+
+Typo fixes | 2015-01-03 23:56:26 | af399397f904bc750312831d46c8e698b9c84a6d
+
+Gradle building fixes. | 2015-01-03 05:30:18 | 18621672f352f238d85bfbb1d06db68df0cb993d
+
+README fix. | 2015-01-03 03:57:08 | e0ff299a2ac3fcfd3f7e5abc0aae6ea34ab2490a
+
+Cleanup and fixes. | 2015-01-03 03:45:46 | 9b00c4bc81d07b1b71d0c86404b69980d288d42b
+
+Cleanup and fixes. | 2015-01-03 03:40:37 | fa253630e4a4fe839bfcd15d1b791f0109bbe842
+
+Cleanup and fixes. | 2015-01-03 03:38:15 | d1550e5657bbb049266fc2f1be8abf0ecb9ae0f2
+
+More padding fixes, made members protected instead of private for subclass access, README update, etc. | 2014-12-29 07:51:37 | 81197a67c6a95ff4140f7f413f766b7b09fa9583
+
+Padding fixes. Single choice dialogs will wait to send callback until positive action button is pressed if it's available. | 2014-12-28 07:12:48 | 45523dcec422ed6d978f5d848ee034079a3417d9
+
+Sample crash fix | 2014-12-22 18:51:00 | 86c18b2d7d29107b717c65c18f1d8c9f5a1e5c61
+
+Tweak onClick() code to behave like AlertDialog is expected to
+
+Couple things:
+- List clicks and button clicks don't interfere with each other
+- Multichoice clicks shouldn't autodismiss
+
+This is more realistic behavior for an alert dialog with many listener interfaces. This should also not interfere with existing implementations (and fix it for anyone that needs the listeners to behave separately) | 2014-12-16 13:55:45 | 09f52ebb330bcdd701bd734f455f721313a7b418
+
+Crash fix for Huawei devices | 2014-12-15 19:20:44 | 3e8ed207a68be525f0097a94c4c47526acc61fbe
+
+Fixed crash when itemsCallbackMultiChoice() was called with no selectedIndices (null as per the javadoc)
+
+Also fixed a typo and updated buildToolsVersion | 2014-12-12 12:49:57 | 95766492d8d5cfe5c0bfad440a636130b39ce1e3
+
+Updates and fixes | 2014-12-06 03:47:36 | 288efe0248b1e1652c5b343294395a24a84d9d2d
+
+Updates and fixes | 2014-12-06 03:43:15 | d183b4fed2ce8b4a0a8fb779d4044447044954d1
+
+Stacking algorithm fixes. Release 0.3.6. | 2014-12-04 18:37:43 | ecbb165fcc182685ca88fd9a8fb38a2ebe4c258c
+
+Stacking algorithm fixes. Release 0.3.6. | 2014-12-04 18:35:40 | 331e24009fe8507fdc48abef6f892aebb5c12860
+
+Sample fixes. | 2014-12-03 03:52:04 | 12fc7b02140d9b054fa9e2bc2172dc35290bbee0
+
+Sample fixes. | 2014-12-03 03:52:01 | 5ae96e59f70fa6604e444d24953af6b2d2e2202b
+
+Sample fixes. | 2014-12-03 03:51:26 | 1f3419ad6b611c23e01ae56944b4d4beab8740e7
+
+Sample fixes. | 2014-12-03 03:51:02 | d50ba13cf5bc1303f9bcd064cd66f7643ff98bab
+
+Important padding and logic fixes for 3.2. | 2014-12-02 03:44:51 | b298d612618c47833a07bf7eaed7b92a3bf61813
+
+Important padding and logic fixes for 3.2. | 2014-12-02 03:44:14 | 76ba0aa4f713d1ad36fcad43ce1857930d92fb57
+
+Updates and fixes | 2014-12-01 03:00:38 | 0d887a9a59cb2d66109fa982c5b4f0aa9402562b
+
+Updates and fixes | 2014-12-01 02:58:53 | 548e7e94cff0602943c34ae6378fbe5f29744db9
+
+Merge pull request #59 from egor-n/patch-1
+
+Update README.md | 2014-11-23 16:41:14 | e9773f4b8c4d18b3b9371d132f7bfc7ee4eac394
+
+fix issue #58 | 2014-11-23 16:22:40 | 0e173cd0b053e283e0e276b22992e093c49be5a7
+
+Release 0.2.1 with an important fix. | 2014-11-20 21:10:44 | 87fffc984c7532d59290c510b08d1e10752d2851
+
+Release 0.2.1 with an important fix. | 2014-11-20 21:10:17 | 241e65b7fccb94119e1ba7bddf0deab0ef8f73f6
+
+Padding fixes. | 2014-11-18 14:54:08 | 1fb5af070c1cba32cef01324405be77ab0bbde4f
+
+Padding fixes. | 2014-11-18 14:53:18 | f8e64e4dbe0b59cddece72463b69bd06681b872a
+
+Padding fixes. | 2014-11-18 14:46:30 | f90afeb0b615c2541f0ad7deec0d9a9e7fe998c4
+
+Padding fixes. | 2014-11-18 14:39:24 | ea4797d1820efeac6cd69ef8e938c42d35ef11dd
+
+Padding fixes. | 2014-11-18 14:38:26 | 78cdfd4fa217428df62595c297e8c5cca7c476e9
+
+Small fix for selectors. | 2014-11-15 06:12:51 | 1cf497693a3d99355eb34efea8a7c9d5e89a8a45
+
+Merge pull request #27 from balysv/patch-1
+
+Do not enforce use of Activity as Context in MaterialDialog.Builder | 2014-11-10 18:38:14 | 6d33ae386d16520858a7bb45ebb90b77247e838d
+
+Prefixed more than just the attrs now. Other updates. | 2014-11-10 18:32:28 | e9046f96b01788c15977ee4c7e9cedfb63f6f99d
+
+Prefixed more than just the attrs now. Other updates. | 2014-11-10 18:32:04 | 3266aa19ab2704bdc115739a4e2091997b67f225
+
+Prefixed more than just the attrs now. Other updates. | 2014-11-10 18:32:03 | b32dc9b676cd7a92ab5c59e034a31079bc9937b2
+
+Important fixes for invisible choice mode controls on pre-Lollipop. | 2014-11-06 21:07:51 | 41981c43e034225cc946b47174c775dba95241fc
+
+Padding fixes. | 2014-11-06 17:57:56 | 5e9a3c266ea2aaf5e8a55e4856beac0316d97c77
+
+Padding fixes. | 2014-11-06 17:57:15 | 6add1bf789d28dee24406f0ade77f702703b7a01
+
+Text color fixes. | 2014-11-06 17:41:19 | c7d7e87c951ad75343bec1cbf42db94a2f3d11e7
+
+Text color fixes. | 2014-11-06 17:40:41 | 499f88116e0a6629c66cf95078d1941423d7acc7
+
+Padding fixes. | 2014-11-06 17:35:52 | 8d81fdf9aa979808f90642f7e99dcc02bd85c5fa
+
+Padding fixes. | 2014-11-06 17:34:46 | ea4ffb5f037fb707e0e176ca84d9e494b0d57b6a
+
+Padding fixes. | 2014-11-06 17:07:17 | 966318b8427a79b6ad6a4148590071b735d1857d
+
+Typo fixes. | 2014-11-06 02:22:58 | c7d3f3a890ef320a0a04405e1c000508fddf3647
+
+Stacking algorithm fixes. | 2014-11-06 00:39:02 | 6053f70452e5afecdbfc5595663e1b54b5cfcff4
+

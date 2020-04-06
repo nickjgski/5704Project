@@ -1,0 +1,3179 @@
+childrenRecursiveSequence: fix NoSuchElementException being thrown when hasNext() returned true (#388) | 2017-05-29 16:55:01 | d2e3ff2186668e4e8b7e46a26a432e715b08212d
+
+A couple of DSL Preview fixes
+
+1. Do not launch the compilation automatically. It's probably better to let user launch the build manually (the preview will be updated anyway after the build).
+2. Do not generate the new synthetic XML file if the source class is the same. That caused blinks on file switching. | 2017-05-03 14:54:58 | b9ecd364d3793860c6d269cbe6df63bcbb87add5
+
+Fix compilation error (#272)
+
+The example to create a table doesn't compile. This fixes it.  See #260. | 2016-12-13 20:24:54 | 7b239fb78d2316c874afcce0e1e2fee51f4ef94f
+
+fix broken link to jarjar library | 2016-09-26 18:40:51 | 18d65aece0a852b7d1c053040ecd8ed9cce74aab
+
+Update Async.kt
+
+fixes issue #241 | 2016-09-03 10:55:34 | b2ac80dd2dea60f538d77666c146c191f7ed0d12
+
+fix broken dependency version | 2016-09-29 10:08:30 | 0eccfa8e1ac5a8e84efb2f6029a9bab477e22d8a
+
+Preview plugin: fix compatibility with Anko 0.9 | 2016-08-09 20:04:04 | 123f54fe320e0b7733e3f18503f1877e44cd57dd
+
+Merge pull request #94 from Ribesg/patch-2
+
+Explain the various Anko libs in README. Fix #84 | 2016-05-10 17:49:31 | 5b02b4f12c9e5eeeffef15444796e2c639300eea
+
+Merge pull request #175 from richarth/patch-1
+
+Value of SQLite modifier NOT_NULL should be "NOT NULL" | 2016-04-19 23:41:05 | f93e98d7be5fe1948a384970ebe07d59d466ceaa
+
+Merge pull request #145 from georgeci/hotfix/remove_isaccessible
+
+Few  corrections for SQLite static module | 2016-03-11 16:09:12 | 14009b0e342ce7ad9c20efe823d8d144084112ad
+
+README: fix typo (minor) | 2016-03-02 20:22:05 | 00a38a40d886e0f2bc08a313e8a39594236eb122
+
+Merge pull request #139 from Kotlin/ab/compilation-fixed
+
+Compilation fixed | 2016-01-21 16:52:26 | 0023ec8a383a2a26319a4ccdecb11de74d2487a3
+
+Compilation fixed | 2016-01-21 16:23:43 | 17e812254c86942afd8e941eb5ecf6a899573538
+
+Merge pull request #125 from Ribesg/patch-3
+
+Add Int.withAlpha to Helpers | 2015-12-14 18:37:02 | 499f3351705babb6e8bab54be40db5925b94f1e3
+
+Merge pull request #124 from cypressious/patch-1
+
+Add Bintray Badge | 2015-12-14 18:25:09 | c26b01718a7a377d07522e39c92bab7f7d567ece
+
+Merge pull request #100 from colriot/patch-1
+
+Update README wrt Kotlin Beta Candidate | 2015-11-05 15:05:34 | 5b0c7bbbfe1d8321d4ed299b8821ee548aed3815
+
+Merge pull request #106 from JetBrains/yanex-patch-1
+
+Update CHANGELOG | 2015-11-05 12:20:50 | 1cc19ab5582bd4ffccb2b642257effdc82208867
+
+Merge pull request #99 from n3455/patch-1
+
+Corrected typo in readme | 2015-10-31 01:49:17 | 912d6630e5da0f466fb3d674f6a04c8d2564a655
+
+Merge pull request #89 from Ribesg/patch-1
+
+Change .layoutParams() to .lparams() in README. Fixes #88 | 2015-09-30 01:36:04 | 38b390ab2b917c5f1e6aaf574155c619261aa0b2
+
+Merge pull request #86 from mr-max/patch-1
+
+Allow getting MenuItems as Sequence | 2015-09-22 16:22:57 | 0b76ef9918a20d732ef582dbd63fc38963e065b0
+
+Fix tests after renaming layoutParams() and dropping 'Support' suffixes | 2015-09-17 12:46:35 | 9b0cc0efa3b1a612842fbfc1a2400386652acee7
+
+Remove "Support" suffixes, move each library contents inside its own package | 2015-09-17 11:03:16 | 1fbfa3c475745635cc8415e250d1f1ff8fbf2493
+
+Update DSL functional tests, fix test generator, make generated code a bit more readable | 2015-09-04 17:58:24 | 894fc7589a7f96f890b753eb53fec0d7fa06b18e
+
+Minor: fix type mismatch error | 2015-07-09 22:21:14 | 3a3f613f4e1f222c810639ba49a3e9b1e38687c0
+
+Support suffix must be added to all support views from android.support | 2015-06-13 13:59:11 | 5e1799b1b1cf35d8e7a0e975fdfd9a03de95adb6
+
+Merge pull request #51 from EddieRingle/fix/doc/git-clone-url
+
+BUILDING.md: Fix git clone URL | 2015-05-30 20:11:48 | 1f08a25929f7010ab4ecb2858c4aafefa5184bbb
+
+fixed formatting | 2015-05-26 08:39:44 | 0426b0eb173f09c8f1c4a90a3c9f7a41a08ef193
+
+Merge pull request #44 from shirohata/fix-include
+
+Fixed include() return type | 2015-05-25 18:05:38 | 57a18deb7b2bb782b07e0e3ed52135d66188bc63
+
+fix: IllegalArgumentException in AnkoLogger | 2015-05-22 09:23:36 | 28e0e2daa06ff234058a7ebd58b562b212436c42
+
+Merge pull request #40 from phajduk/readme
+
+README: fixed notificationManager | 2015-05-14 13:30:41 | 5b72bc2e94247ce55b9f25fbdf21e20ac1e1152c
+
+README: fixed notificationManager | 2015-05-14 12:10:46 | a5ea5080eac8de35d864f4fa791088bf9d2762f9
+
+Bugfixes in main/support-v4 Fragment uniformity | 2015-05-08 16:12:26 | 141195388b455ecf8935c16096bbad432695418f
+
+README: fix intentFor() example | 2015-05-05 15:17:08 | 1246aae9b445a59e4330eb7608b84385e777b9e1
+
+Merge pull request #34 from kamoljan/patch-2
+
+README.md file correction | 2015-05-05 14:50:04 | e556759db8d4b714ea74640843d7183515112686
+
+README: indentation fixes | 2015-04-29 18:26:27 | 8cc919a94c7b6352162c2e239b08ac9a6456b239
+
+README: fix section title. | 2015-04-03 18:25:22 | 0896a844b8021d3f58988062a781efa72480b5ab
+
+README: fix formatting, remove obsolete description. | 2015-04-03 08:57:07 | bf7f94666c210548c25486241c75a1a8739294c0
+
+README: fix broken links. | 2015-04-03 08:25:11 | f62908c4204b074b820ee3ef47f67ed4bd898afa
+
+README: fix template project link | 2015-04-02 18:39:10 | 096c436dc1f9d9a86c516997d5143e0a4b39c9ea
+
+Null-safe call fixes in Preview plugin | 2015-03-31 17:13:45 | f63b3cc8b6ec8c7fd05e8341e3ebcf69901c957f
+
+README: remove @aar suffix | 2015-02-19 22:33:47 | 825ccfe34514c52a64dac329cd4f73a327064e06
+
+Layout test fixes | 2015-01-14 14:46:08 | d0058c8aaf19d4a7bd08d67e58e5395387b693eb
+
+Fix top-level Views bug in Activity | 2014-12-13 23:11:01 | c1405b3071dee6db184696ded5f0274e317f3d1f
+
+Compile tests fixed and optimized | 2014-12-04 18:13:32 | 1a50e08d38df8c4af05501187a205437d2a219ad
+
+readFile() fixed | 2014-12-02 16:54:18 | 813db5c84572e10acf7f28d13dc378a982869b75
+
+Code formatting fixes in static files | 2014-11-13 15:09:56 | a62f96d4b32b910430b12e6d581f7665c8fa9583
+
+Code indent fixes. | 2014-11-12 17:53:16 | 9d6d2834544fde8d1a33a71f2d125fb2cafac56e
+
+Style-related fixes. | 2014-10-01 12:01:25 | 4ca393dd976a6398edc9ed3409422529a106a059
+
+README: Extending Koan, relative link fix | 2014-09-30 20:43:40 | 72c640c4f67436a98409c37e747de9e08eb4345a
+
+README.md fixed. | 2014-09-29 21:52:36 | 5fea24d1a92ba74660c0e993cce0bdc53984df88
+
+README identation fixes. | 2014-09-29 18:26:29 | 44df09a4e8b93a56951788b665ebff40e3c289ca
+
+Styles fixed.
+Indentation fixes in Helpers.kt. | 2014-09-26 10:51:49 | 1475aa67e38f5b09978f8e850e01533b6402681b
+
+BasicGeneratorTest fixed. | 2014-09-26 08:19:42 | 6eed33071414d89ffe95f355655c1524bc2faffb
+
+Generate DSL for several Android versions.
+Support Maven artifacts generation.
+Tests fixed. | 2014-09-18 12:15:34 | 1ecd3fae8fb65bb90309f6f750229cf69929f2d0
+
+Indents fixes. | 2014-09-16 14:31:35 | 016a1836d3deec7c2250ff9dd4f519f88a3e912a
+
+README typo fix. | 2014-09-16 14:23:48 | 5470e36daa0c143398fbbbad992a21eda01fec09
+
+Indents fixed. | 2014-09-12 20:09:50 | 5f6206e2330cf5ef538cbf3838b1883394343d05
+
+fix: Replace Snackbar's message type from String to CharSequence (#655)
+
+Fix #654 | 2018-07-20 13:23:41 | b3d22457e23ae70b5d54a316f33b00138792cfc8
+
+Use `base` suffix instead of prefix `internal` for static library artifacts | 2018-07-06 17:38:24 | 360aa5d72f2ffa8de1da821e50143e3ef581f0a3
+
+Update plugin version to 0.10.4-2 (hotfix) | 2018-01-09 13:00:44 | 5002ea56e7e651a286a50d8a7a791ccfa2ee2024
+
+Minor: fix formatting | 2017-11-15 19:55:03 | 64f8406e52447d364a44112fe535b68dff05ec8b
+
+Add attrs.json and views.json to xml converter resources and fix path
+
+ Fixes #370 | 2017-11-14 15:04:58 | 97b66dd1bc4ab82a001bd41e965fa8977cbe81ee
+
+Merge pull request #396 from luiqn2007/patch-1
+
+Update README.md | 2017-06-06 12:37:45 | 459edd5cc2ac558aacdc7a2bccf16d0ef6b0b8e6
+
+childrenRecursiveSequence: fix NoSuchElementException being thrown when hasNext() returned true (#388) | 2017-05-29 16:55:01 | 4584577b6bf3b4f8d8d1733f53408537e2aac759
+
+A couple of DSL Preview fixes
+
+1. Do not launch the compilation automatically. It's probably better to let user launch the build manually (the preview will be updated anyway after the build).
+2. Do not generate the new synthetic XML file if the source class is the same. That caused blinks on file switching. | 2017-05-03 14:54:58 | b9ecd364d3793860c6d269cbe6df63bcbb87add5
+
+Fix compilation error (#272)
+
+The example to create a table doesn't compile. This fixes it.  See #260. | 2016-12-13 20:24:54 | 7b239fb78d2316c874afcce0e1e2fee51f4ef94f
+
+fix broken link to jarjar library | 2016-09-26 18:40:51 | 18d65aece0a852b7d1c053040ecd8ed9cce74aab
+
+Update Async.kt
+
+fixes issue #241 | 2016-09-03 10:55:34 | b2ac80dd2dea60f538d77666c146c191f7ed0d12
+
+fix broken dependency version | 2016-09-29 10:08:30 | 0eccfa8e1ac5a8e84efb2f6029a9bab477e22d8a
+
+Preview plugin: fix compatibility with Anko 0.9 | 2016-08-09 20:04:04 | 123f54fe320e0b7733e3f18503f1877e44cd57dd
+
+Merge pull request #94 from Ribesg/patch-2
+
+Explain the various Anko libs in README. Fix #84 | 2016-05-10 17:49:31 | 5b02b4f12c9e5eeeffef15444796e2c639300eea
+
+Merge pull request #175 from richarth/patch-1
+
+Value of SQLite modifier NOT_NULL should be "NOT NULL" | 2016-04-19 23:41:05 | f93e98d7be5fe1948a384970ebe07d59d466ceaa
+
+Merge pull request #145 from georgeci/hotfix/remove_isaccessible
+
+Few  corrections for SQLite static module | 2016-03-11 16:09:12 | 14009b0e342ce7ad9c20efe823d8d144084112ad
+
+README: fix typo (minor) | 2016-03-02 20:22:05 | 00a38a40d886e0f2bc08a313e8a39594236eb122
+
+Merge pull request #139 from Kotlin/ab/compilation-fixed
+
+Compilation fixed | 2016-01-21 16:52:26 | 0023ec8a383a2a26319a4ccdecb11de74d2487a3
+
+Compilation fixed | 2016-01-21 16:23:43 | 17e812254c86942afd8e941eb5ecf6a899573538
+
+Merge pull request #125 from Ribesg/patch-3
+
+Add Int.withAlpha to Helpers | 2015-12-14 18:37:02 | 499f3351705babb6e8bab54be40db5925b94f1e3
+
+Merge pull request #124 from cypressious/patch-1
+
+Add Bintray Badge | 2015-12-14 18:25:09 | c26b01718a7a377d07522e39c92bab7f7d567ece
+
+Merge pull request #100 from colriot/patch-1
+
+Update README wrt Kotlin Beta Candidate | 2015-11-05 15:05:34 | 5b0c7bbbfe1d8321d4ed299b8821ee548aed3815
+
+Merge pull request #106 from JetBrains/yanex-patch-1
+
+Update CHANGELOG | 2015-11-05 12:20:50 | 1cc19ab5582bd4ffccb2b642257effdc82208867
+
+Merge pull request #99 from n3455/patch-1
+
+Corrected typo in readme | 2015-10-31 01:49:17 | 912d6630e5da0f466fb3d674f6a04c8d2564a655
+
+Merge pull request #89 from Ribesg/patch-1
+
+Change .layoutParams() to .lparams() in README. Fixes #88 | 2015-09-30 01:36:04 | 38b390ab2b917c5f1e6aaf574155c619261aa0b2
+
+Merge pull request #86 from mr-max/patch-1
+
+Allow getting MenuItems as Sequence | 2015-09-22 16:22:57 | 0b76ef9918a20d732ef582dbd63fc38963e065b0
+
+Fix tests after renaming layoutParams() and dropping 'Support' suffixes | 2015-09-17 12:46:35 | 9b0cc0efa3b1a612842fbfc1a2400386652acee7
+
+Remove "Support" suffixes, move each library contents inside its own package | 2015-09-17 11:03:16 | 1fbfa3c475745635cc8415e250d1f1ff8fbf2493
+
+Update DSL functional tests, fix test generator, make generated code a bit more readable | 2015-09-04 17:58:24 | 894fc7589a7f96f890b753eb53fec0d7fa06b18e
+
+Minor: fix type mismatch error | 2015-07-09 22:21:14 | 3a3f613f4e1f222c810639ba49a3e9b1e38687c0
+
+Support suffix must be added to all support views from android.support | 2015-06-13 13:59:11 | 5e1799b1b1cf35d8e7a0e975fdfd9a03de95adb6
+
+Merge pull request #51 from EddieRingle/fix/doc/git-clone-url
+
+BUILDING.md: Fix git clone URL | 2015-05-30 20:11:48 | 1f08a25929f7010ab4ecb2858c4aafefa5184bbb
+
+fixed formatting | 2015-05-26 08:39:44 | 0426b0eb173f09c8f1c4a90a3c9f7a41a08ef193
+
+Merge pull request #44 from shirohata/fix-include
+
+Fixed include() return type | 2015-05-25 18:05:38 | 57a18deb7b2bb782b07e0e3ed52135d66188bc63
+
+fix: IllegalArgumentException in AnkoLogger | 2015-05-22 09:23:36 | 28e0e2daa06ff234058a7ebd58b562b212436c42
+
+Merge pull request #40 from phajduk/readme
+
+README: fixed notificationManager | 2015-05-14 13:30:41 | 5b72bc2e94247ce55b9f25fbdf21e20ac1e1152c
+
+README: fixed notificationManager | 2015-05-14 12:10:46 | a5ea5080eac8de35d864f4fa791088bf9d2762f9
+
+Bugfixes in main/support-v4 Fragment uniformity | 2015-05-08 16:12:26 | 141195388b455ecf8935c16096bbad432695418f
+
+README: fix intentFor() example | 2015-05-05 15:17:08 | 1246aae9b445a59e4330eb7608b84385e777b9e1
+
+Merge pull request #34 from kamoljan/patch-2
+
+README.md file correction | 2015-05-05 14:50:04 | e556759db8d4b714ea74640843d7183515112686
+
+README: indentation fixes | 2015-04-29 18:26:27 | 8cc919a94c7b6352162c2e239b08ac9a6456b239
+
+README: fix section title. | 2015-04-03 18:25:22 | 0896a844b8021d3f58988062a781efa72480b5ab
+
+README: fix formatting, remove obsolete description. | 2015-04-03 08:57:07 | bf7f94666c210548c25486241c75a1a8739294c0
+
+README: fix broken links. | 2015-04-03 08:25:11 | f62908c4204b074b820ee3ef47f67ed4bd898afa
+
+README: fix template project link | 2015-04-02 18:39:10 | 096c436dc1f9d9a86c516997d5143e0a4b39c9ea
+
+Null-safe call fixes in Preview plugin | 2015-03-31 17:13:45 | f63b3cc8b6ec8c7fd05e8341e3ebcf69901c957f
+
+README: remove @aar suffix | 2015-02-19 22:33:47 | 825ccfe34514c52a64dac329cd4f73a327064e06
+
+Layout test fixes | 2015-01-14 14:46:08 | d0058c8aaf19d4a7bd08d67e58e5395387b693eb
+
+Fix top-level Views bug in Activity | 2014-12-13 23:11:01 | c1405b3071dee6db184696ded5f0274e317f3d1f
+
+Compile tests fixed and optimized | 2014-12-04 18:13:32 | 1a50e08d38df8c4af05501187a205437d2a219ad
+
+readFile() fixed | 2014-12-02 16:54:18 | 813db5c84572e10acf7f28d13dc378a982869b75
+
+Code formatting fixes in static files | 2014-11-13 15:09:56 | a62f96d4b32b910430b12e6d581f7665c8fa9583
+
+Code indent fixes. | 2014-11-12 17:53:16 | 9d6d2834544fde8d1a33a71f2d125fb2cafac56e
+
+Style-related fixes. | 2014-10-01 12:01:25 | 4ca393dd976a6398edc9ed3409422529a106a059
+
+README: Extending Koan, relative link fix | 2014-09-30 20:43:40 | 72c640c4f67436a98409c37e747de9e08eb4345a
+
+README.md fixed. | 2014-09-29 21:52:36 | 5fea24d1a92ba74660c0e993cce0bdc53984df88
+
+README identation fixes. | 2014-09-29 18:26:29 | 44df09a4e8b93a56951788b665ebff40e3c289ca
+
+Styles fixed.
+Indentation fixes in Helpers.kt. | 2014-09-26 10:51:49 | 1475aa67e38f5b09978f8e850e01533b6402681b
+
+BasicGeneratorTest fixed. | 2014-09-26 08:19:42 | 6eed33071414d89ffe95f355655c1524bc2faffb
+
+Generate DSL for several Android versions.
+Support Maven artifacts generation.
+Tests fixed. | 2014-09-18 12:15:34 | 1ecd3fae8fb65bb90309f6f750229cf69929f2d0
+
+Indents fixes. | 2014-09-16 14:31:35 | 016a1836d3deec7c2250ff9dd4f519f88a3e912a
+
+README typo fix. | 2014-09-16 14:23:48 | 5470e36daa0c143398fbbbad992a21eda01fec09
+
+Indents fixed. | 2014-09-12 20:09:50 | 5f6206e2330cf5ef538cbf3838b1883394343d05
+
+fix: Replace Snackbar's message type from String to CharSequence (#655)
+
+Fix #654 | 2018-07-20 13:23:41 | b3d22457e23ae70b5d54a316f33b00138792cfc8
+
+Use `base` suffix instead of prefix `internal` for static library artifacts | 2018-07-06 17:38:24 | 360aa5d72f2ffa8de1da821e50143e3ef581f0a3
+
+Update plugin version to 0.10.4-2 (hotfix) | 2018-01-09 13:00:44 | 5002ea56e7e651a286a50d8a7a791ccfa2ee2024
+
+Minor: fix formatting | 2017-11-15 19:55:03 | 64f8406e52447d364a44112fe535b68dff05ec8b
+
+Add attrs.json and views.json to xml converter resources and fix path
+
+ Fixes #370 | 2017-11-14 15:04:58 | 97b66dd1bc4ab82a001bd41e965fa8977cbe81ee
+
+Merge pull request #396 from luiqn2007/patch-1
+
+Update README.md | 2017-06-06 12:37:45 | 459edd5cc2ac558aacdc7a2bccf16d0ef6b0b8e6
+
+childrenRecursiveSequence: fix NoSuchElementException being thrown when hasNext() returned true (#388) | 2017-05-29 16:55:01 | 4584577b6bf3b4f8d8d1733f53408537e2aac759
+
+A couple of DSL Preview fixes
+
+1. Do not launch the compilation automatically. It's probably better to let user launch the build manually (the preview will be updated anyway after the build).
+2. Do not generate the new synthetic XML file if the source class is the same. That caused blinks on file switching. | 2017-05-03 14:54:58 | b9ecd364d3793860c6d269cbe6df63bcbb87add5
+
+Fix compilation error (#272)
+
+The example to create a table doesn't compile. This fixes it.  See #260. | 2016-12-13 20:24:54 | 7b239fb78d2316c874afcce0e1e2fee51f4ef94f
+
+fix broken link to jarjar library | 2016-09-26 18:40:51 | 18d65aece0a852b7d1c053040ecd8ed9cce74aab
+
+Update Async.kt
+
+fixes issue #241 | 2016-09-03 10:55:34 | b2ac80dd2dea60f538d77666c146c191f7ed0d12
+
+fix broken dependency version | 2016-09-29 10:08:30 | 0eccfa8e1ac5a8e84efb2f6029a9bab477e22d8a
+
+Preview plugin: fix compatibility with Anko 0.9 | 2016-08-09 20:04:04 | 123f54fe320e0b7733e3f18503f1877e44cd57dd
+
+Merge pull request #94 from Ribesg/patch-2
+
+Explain the various Anko libs in README. Fix #84 | 2016-05-10 17:49:31 | 5b02b4f12c9e5eeeffef15444796e2c639300eea
+
+Merge pull request #175 from richarth/patch-1
+
+Value of SQLite modifier NOT_NULL should be "NOT NULL" | 2016-04-19 23:41:05 | f93e98d7be5fe1948a384970ebe07d59d466ceaa
+
+Merge pull request #145 from georgeci/hotfix/remove_isaccessible
+
+Few  corrections for SQLite static module | 2016-03-11 16:09:12 | 14009b0e342ce7ad9c20efe823d8d144084112ad
+
+README: fix typo (minor) | 2016-03-02 20:22:05 | 00a38a40d886e0f2bc08a313e8a39594236eb122
+
+Merge pull request #139 from Kotlin/ab/compilation-fixed
+
+Compilation fixed | 2016-01-21 16:52:26 | 0023ec8a383a2a26319a4ccdecb11de74d2487a3
+
+Compilation fixed | 2016-01-21 16:23:43 | 17e812254c86942afd8e941eb5ecf6a899573538
+
+Merge pull request #125 from Ribesg/patch-3
+
+Add Int.withAlpha to Helpers | 2015-12-14 18:37:02 | 499f3351705babb6e8bab54be40db5925b94f1e3
+
+Merge pull request #124 from cypressious/patch-1
+
+Add Bintray Badge | 2015-12-14 18:25:09 | c26b01718a7a377d07522e39c92bab7f7d567ece
+
+Merge pull request #100 from colriot/patch-1
+
+Update README wrt Kotlin Beta Candidate | 2015-11-05 15:05:34 | 5b0c7bbbfe1d8321d4ed299b8821ee548aed3815
+
+Merge pull request #106 from JetBrains/yanex-patch-1
+
+Update CHANGELOG | 2015-11-05 12:20:50 | 1cc19ab5582bd4ffccb2b642257effdc82208867
+
+Merge pull request #99 from n3455/patch-1
+
+Corrected typo in readme | 2015-10-31 01:49:17 | 912d6630e5da0f466fb3d674f6a04c8d2564a655
+
+Merge pull request #89 from Ribesg/patch-1
+
+Change .layoutParams() to .lparams() in README. Fixes #88 | 2015-09-30 01:36:04 | 38b390ab2b917c5f1e6aaf574155c619261aa0b2
+
+Merge pull request #86 from mr-max/patch-1
+
+Allow getting MenuItems as Sequence | 2015-09-22 16:22:57 | 0b76ef9918a20d732ef582dbd63fc38963e065b0
+
+Fix tests after renaming layoutParams() and dropping 'Support' suffixes | 2015-09-17 12:46:35 | 9b0cc0efa3b1a612842fbfc1a2400386652acee7
+
+Remove "Support" suffixes, move each library contents inside its own package | 2015-09-17 11:03:16 | 1fbfa3c475745635cc8415e250d1f1ff8fbf2493
+
+Update DSL functional tests, fix test generator, make generated code a bit more readable | 2015-09-04 17:58:24 | 894fc7589a7f96f890b753eb53fec0d7fa06b18e
+
+Minor: fix type mismatch error | 2015-07-09 22:21:14 | 3a3f613f4e1f222c810639ba49a3e9b1e38687c0
+
+Support suffix must be added to all support views from android.support | 2015-06-13 13:59:11 | 5e1799b1b1cf35d8e7a0e975fdfd9a03de95adb6
+
+Merge pull request #51 from EddieRingle/fix/doc/git-clone-url
+
+BUILDING.md: Fix git clone URL | 2015-05-30 20:11:48 | 1f08a25929f7010ab4ecb2858c4aafefa5184bbb
+
+fixed formatting | 2015-05-26 08:39:44 | 0426b0eb173f09c8f1c4a90a3c9f7a41a08ef193
+
+Merge pull request #44 from shirohata/fix-include
+
+Fixed include() return type | 2015-05-25 18:05:38 | 57a18deb7b2bb782b07e0e3ed52135d66188bc63
+
+fix: IllegalArgumentException in AnkoLogger | 2015-05-22 09:23:36 | 28e0e2daa06ff234058a7ebd58b562b212436c42
+
+Merge pull request #40 from phajduk/readme
+
+README: fixed notificationManager | 2015-05-14 13:30:41 | 5b72bc2e94247ce55b9f25fbdf21e20ac1e1152c
+
+README: fixed notificationManager | 2015-05-14 12:10:46 | a5ea5080eac8de35d864f4fa791088bf9d2762f9
+
+Bugfixes in main/support-v4 Fragment uniformity | 2015-05-08 16:12:26 | 141195388b455ecf8935c16096bbad432695418f
+
+README: fix intentFor() example | 2015-05-05 15:17:08 | 1246aae9b445a59e4330eb7608b84385e777b9e1
+
+Merge pull request #34 from kamoljan/patch-2
+
+README.md file correction | 2015-05-05 14:50:04 | e556759db8d4b714ea74640843d7183515112686
+
+README: indentation fixes | 2015-04-29 18:26:27 | 8cc919a94c7b6352162c2e239b08ac9a6456b239
+
+README: fix section title. | 2015-04-03 18:25:22 | 0896a844b8021d3f58988062a781efa72480b5ab
+
+README: fix formatting, remove obsolete description. | 2015-04-03 08:57:07 | bf7f94666c210548c25486241c75a1a8739294c0
+
+README: fix broken links. | 2015-04-03 08:25:11 | f62908c4204b074b820ee3ef47f67ed4bd898afa
+
+README: fix template project link | 2015-04-02 18:39:10 | 096c436dc1f9d9a86c516997d5143e0a4b39c9ea
+
+Null-safe call fixes in Preview plugin | 2015-03-31 17:13:45 | f63b3cc8b6ec8c7fd05e8341e3ebcf69901c957f
+
+README: remove @aar suffix | 2015-02-19 22:33:47 | 825ccfe34514c52a64dac329cd4f73a327064e06
+
+Layout test fixes | 2015-01-14 14:46:08 | d0058c8aaf19d4a7bd08d67e58e5395387b693eb
+
+Fix top-level Views bug in Activity | 2014-12-13 23:11:01 | c1405b3071dee6db184696ded5f0274e317f3d1f
+
+Compile tests fixed and optimized | 2014-12-04 18:13:32 | 1a50e08d38df8c4af05501187a205437d2a219ad
+
+readFile() fixed | 2014-12-02 16:54:18 | 813db5c84572e10acf7f28d13dc378a982869b75
+
+Code formatting fixes in static files | 2014-11-13 15:09:56 | a62f96d4b32b910430b12e6d581f7665c8fa9583
+
+Code indent fixes. | 2014-11-12 17:53:16 | 9d6d2834544fde8d1a33a71f2d125fb2cafac56e
+
+Style-related fixes. | 2014-10-01 12:01:25 | 4ca393dd976a6398edc9ed3409422529a106a059
+
+README: Extending Koan, relative link fix | 2014-09-30 20:43:40 | 72c640c4f67436a98409c37e747de9e08eb4345a
+
+README.md fixed. | 2014-09-29 21:52:36 | 5fea24d1a92ba74660c0e993cce0bdc53984df88
+
+README identation fixes. | 2014-09-29 18:26:29 | 44df09a4e8b93a56951788b665ebff40e3c289ca
+
+Styles fixed.
+Indentation fixes in Helpers.kt. | 2014-09-26 10:51:49 | 1475aa67e38f5b09978f8e850e01533b6402681b
+
+BasicGeneratorTest fixed. | 2014-09-26 08:19:42 | 6eed33071414d89ffe95f355655c1524bc2faffb
+
+Generate DSL for several Android versions.
+Support Maven artifacts generation.
+Tests fixed. | 2014-09-18 12:15:34 | 1ecd3fae8fb65bb90309f6f750229cf69929f2d0
+
+Indents fixes. | 2014-09-16 14:31:35 | 016a1836d3deec7c2250ff9dd4f519f88a3e912a
+
+README typo fix. | 2014-09-16 14:23:48 | 5470e36daa0c143398fbbbad992a21eda01fec09
+
+Indents fixed. | 2014-09-12 20:09:50 | 5f6206e2330cf5ef538cbf3838b1883394343d05
+
+fix: Replace Snackbar's message type from String to CharSequence (#655)
+
+Fix #654 | 2018-07-20 13:23:41 | b3d22457e23ae70b5d54a316f33b00138792cfc8
+
+Use `base` suffix instead of prefix `internal` for static library artifacts | 2018-07-06 17:38:24 | 360aa5d72f2ffa8de1da821e50143e3ef581f0a3
+
+Update plugin version to 0.10.4-2 (hotfix) | 2018-01-09 13:00:44 | 5002ea56e7e651a286a50d8a7a791ccfa2ee2024
+
+Minor: fix formatting | 2017-11-15 19:55:03 | 64f8406e52447d364a44112fe535b68dff05ec8b
+
+Add attrs.json and views.json to xml converter resources and fix path
+
+ Fixes #370 | 2017-11-14 15:04:58 | 97b66dd1bc4ab82a001bd41e965fa8977cbe81ee
+
+Merge pull request #396 from luiqn2007/patch-1
+
+Update README.md | 2017-06-06 12:37:45 | 459edd5cc2ac558aacdc7a2bccf16d0ef6b0b8e6
+
+childrenRecursiveSequence: fix NoSuchElementException being thrown when hasNext() returned true (#388) | 2017-05-29 16:55:01 | 4584577b6bf3b4f8d8d1733f53408537e2aac759
+
+A couple of DSL Preview fixes
+
+1. Do not launch the compilation automatically. It's probably better to let user launch the build manually (the preview will be updated anyway after the build).
+2. Do not generate the new synthetic XML file if the source class is the same. That caused blinks on file switching. | 2017-05-03 14:54:58 | b9ecd364d3793860c6d269cbe6df63bcbb87add5
+
+Fix compilation error (#272)
+
+The example to create a table doesn't compile. This fixes it.  See #260. | 2016-12-13 20:24:54 | 7b239fb78d2316c874afcce0e1e2fee51f4ef94f
+
+fix broken link to jarjar library | 2016-09-26 18:40:51 | 18d65aece0a852b7d1c053040ecd8ed9cce74aab
+
+Update Async.kt
+
+fixes issue #241 | 2016-09-03 10:55:34 | b2ac80dd2dea60f538d77666c146c191f7ed0d12
+
+fix broken dependency version | 2016-09-29 10:08:30 | 0eccfa8e1ac5a8e84efb2f6029a9bab477e22d8a
+
+Preview plugin: fix compatibility with Anko 0.9 | 2016-08-09 20:04:04 | 123f54fe320e0b7733e3f18503f1877e44cd57dd
+
+Merge pull request #94 from Ribesg/patch-2
+
+Explain the various Anko libs in README. Fix #84 | 2016-05-10 17:49:31 | 5b02b4f12c9e5eeeffef15444796e2c639300eea
+
+Merge pull request #175 from richarth/patch-1
+
+Value of SQLite modifier NOT_NULL should be "NOT NULL" | 2016-04-19 23:41:05 | f93e98d7be5fe1948a384970ebe07d59d466ceaa
+
+Merge pull request #145 from georgeci/hotfix/remove_isaccessible
+
+Few  corrections for SQLite static module | 2016-03-11 16:09:12 | 14009b0e342ce7ad9c20efe823d8d144084112ad
+
+README: fix typo (minor) | 2016-03-02 20:22:05 | 00a38a40d886e0f2bc08a313e8a39594236eb122
+
+Merge pull request #139 from Kotlin/ab/compilation-fixed
+
+Compilation fixed | 2016-01-21 16:52:26 | 0023ec8a383a2a26319a4ccdecb11de74d2487a3
+
+Compilation fixed | 2016-01-21 16:23:43 | 17e812254c86942afd8e941eb5ecf6a899573538
+
+Merge pull request #125 from Ribesg/patch-3
+
+Add Int.withAlpha to Helpers | 2015-12-14 18:37:02 | 499f3351705babb6e8bab54be40db5925b94f1e3
+
+Merge pull request #124 from cypressious/patch-1
+
+Add Bintray Badge | 2015-12-14 18:25:09 | c26b01718a7a377d07522e39c92bab7f7d567ece
+
+Merge pull request #100 from colriot/patch-1
+
+Update README wrt Kotlin Beta Candidate | 2015-11-05 15:05:34 | 5b0c7bbbfe1d8321d4ed299b8821ee548aed3815
+
+Merge pull request #106 from JetBrains/yanex-patch-1
+
+Update CHANGELOG | 2015-11-05 12:20:50 | 1cc19ab5582bd4ffccb2b642257effdc82208867
+
+Merge pull request #99 from n3455/patch-1
+
+Corrected typo in readme | 2015-10-31 01:49:17 | 912d6630e5da0f466fb3d674f6a04c8d2564a655
+
+Merge pull request #89 from Ribesg/patch-1
+
+Change .layoutParams() to .lparams() in README. Fixes #88 | 2015-09-30 01:36:04 | 38b390ab2b917c5f1e6aaf574155c619261aa0b2
+
+Merge pull request #86 from mr-max/patch-1
+
+Allow getting MenuItems as Sequence | 2015-09-22 16:22:57 | 0b76ef9918a20d732ef582dbd63fc38963e065b0
+
+Fix tests after renaming layoutParams() and dropping 'Support' suffixes | 2015-09-17 12:46:35 | 9b0cc0efa3b1a612842fbfc1a2400386652acee7
+
+Remove "Support" suffixes, move each library contents inside its own package | 2015-09-17 11:03:16 | 1fbfa3c475745635cc8415e250d1f1ff8fbf2493
+
+Update DSL functional tests, fix test generator, make generated code a bit more readable | 2015-09-04 17:58:24 | 894fc7589a7f96f890b753eb53fec0d7fa06b18e
+
+Minor: fix type mismatch error | 2015-07-09 22:21:14 | 3a3f613f4e1f222c810639ba49a3e9b1e38687c0
+
+Support suffix must be added to all support views from android.support | 2015-06-13 13:59:11 | 5e1799b1b1cf35d8e7a0e975fdfd9a03de95adb6
+
+Merge pull request #51 from EddieRingle/fix/doc/git-clone-url
+
+BUILDING.md: Fix git clone URL | 2015-05-30 20:11:48 | 1f08a25929f7010ab4ecb2858c4aafefa5184bbb
+
+fixed formatting | 2015-05-26 08:39:44 | 0426b0eb173f09c8f1c4a90a3c9f7a41a08ef193
+
+Merge pull request #44 from shirohata/fix-include
+
+Fixed include() return type | 2015-05-25 18:05:38 | 57a18deb7b2bb782b07e0e3ed52135d66188bc63
+
+fix: IllegalArgumentException in AnkoLogger | 2015-05-22 09:23:36 | 28e0e2daa06ff234058a7ebd58b562b212436c42
+
+Merge pull request #40 from phajduk/readme
+
+README: fixed notificationManager | 2015-05-14 13:30:41 | 5b72bc2e94247ce55b9f25fbdf21e20ac1e1152c
+
+README: fixed notificationManager | 2015-05-14 12:10:46 | a5ea5080eac8de35d864f4fa791088bf9d2762f9
+
+Bugfixes in main/support-v4 Fragment uniformity | 2015-05-08 16:12:26 | 141195388b455ecf8935c16096bbad432695418f
+
+README: fix intentFor() example | 2015-05-05 15:17:08 | 1246aae9b445a59e4330eb7608b84385e777b9e1
+
+Merge pull request #34 from kamoljan/patch-2
+
+README.md file correction | 2015-05-05 14:50:04 | e556759db8d4b714ea74640843d7183515112686
+
+README: indentation fixes | 2015-04-29 18:26:27 | 8cc919a94c7b6352162c2e239b08ac9a6456b239
+
+README: fix section title. | 2015-04-03 18:25:22 | 0896a844b8021d3f58988062a781efa72480b5ab
+
+README: fix formatting, remove obsolete description. | 2015-04-03 08:57:07 | bf7f94666c210548c25486241c75a1a8739294c0
+
+README: fix broken links. | 2015-04-03 08:25:11 | f62908c4204b074b820ee3ef47f67ed4bd898afa
+
+README: fix template project link | 2015-04-02 18:39:10 | 096c436dc1f9d9a86c516997d5143e0a4b39c9ea
+
+Null-safe call fixes in Preview plugin | 2015-03-31 17:13:45 | f63b3cc8b6ec8c7fd05e8341e3ebcf69901c957f
+
+README: remove @aar suffix | 2015-02-19 22:33:47 | 825ccfe34514c52a64dac329cd4f73a327064e06
+
+Layout test fixes | 2015-01-14 14:46:08 | d0058c8aaf19d4a7bd08d67e58e5395387b693eb
+
+Fix top-level Views bug in Activity | 2014-12-13 23:11:01 | c1405b3071dee6db184696ded5f0274e317f3d1f
+
+Compile tests fixed and optimized | 2014-12-04 18:13:32 | 1a50e08d38df8c4af05501187a205437d2a219ad
+
+readFile() fixed | 2014-12-02 16:54:18 | 813db5c84572e10acf7f28d13dc378a982869b75
+
+Code formatting fixes in static files | 2014-11-13 15:09:56 | a62f96d4b32b910430b12e6d581f7665c8fa9583
+
+Code indent fixes. | 2014-11-12 17:53:16 | 9d6d2834544fde8d1a33a71f2d125fb2cafac56e
+
+Style-related fixes. | 2014-10-01 12:01:25 | 4ca393dd976a6398edc9ed3409422529a106a059
+
+README: Extending Koan, relative link fix | 2014-09-30 20:43:40 | 72c640c4f67436a98409c37e747de9e08eb4345a
+
+README.md fixed. | 2014-09-29 21:52:36 | 5fea24d1a92ba74660c0e993cce0bdc53984df88
+
+README identation fixes. | 2014-09-29 18:26:29 | 44df09a4e8b93a56951788b665ebff40e3c289ca
+
+Styles fixed.
+Indentation fixes in Helpers.kt. | 2014-09-26 10:51:49 | 1475aa67e38f5b09978f8e850e01533b6402681b
+
+BasicGeneratorTest fixed. | 2014-09-26 08:19:42 | 6eed33071414d89ffe95f355655c1524bc2faffb
+
+Generate DSL for several Android versions.
+Support Maven artifacts generation.
+Tests fixed. | 2014-09-18 12:15:34 | 1ecd3fae8fb65bb90309f6f750229cf69929f2d0
+
+Indents fixes. | 2014-09-16 14:31:35 | 016a1836d3deec7c2250ff9dd4f519f88a3e912a
+
+README typo fix. | 2014-09-16 14:23:48 | 5470e36daa0c143398fbbbad992a21eda01fec09
+
+Indents fixed. | 2014-09-12 20:09:50 | 5f6206e2330cf5ef538cbf3838b1883394343d05
+
+Minor: fix formatting | 2017-11-15 19:55:03 | 64f8406e52447d364a44112fe535b68dff05ec8b
+
+Add attrs.json and views.json to xml converter resources and fix path
+
+ Fixes #370 | 2017-11-14 15:04:58 | 97b66dd1bc4ab82a001bd41e965fa8977cbe81ee
+
+Merge pull request #396 from luiqn2007/patch-1
+
+Update README.md | 2017-06-06 12:37:45 | 459edd5cc2ac558aacdc7a2bccf16d0ef6b0b8e6
+
+childrenRecursiveSequence: fix NoSuchElementException being thrown when hasNext() returned true (#388) | 2017-05-29 16:55:01 | 4584577b6bf3b4f8d8d1733f53408537e2aac759
+
+A couple of DSL Preview fixes
+
+1. Do not launch the compilation automatically. It's probably better to let user launch the build manually (the preview will be updated anyway after the build).
+2. Do not generate the new synthetic XML file if the source class is the same. That caused blinks on file switching. | 2017-05-03 14:54:58 | b9ecd364d3793860c6d269cbe6df63bcbb87add5
+
+Fix compilation error (#272)
+
+The example to create a table doesn't compile. This fixes it.  See #260. | 2016-12-13 20:24:54 | 7b239fb78d2316c874afcce0e1e2fee51f4ef94f
+
+fix broken link to jarjar library | 2016-09-26 18:40:51 | 18d65aece0a852b7d1c053040ecd8ed9cce74aab
+
+Update Async.kt
+
+fixes issue #241 | 2016-09-03 10:55:34 | b2ac80dd2dea60f538d77666c146c191f7ed0d12
+
+fix broken dependency version | 2016-09-29 10:08:30 | 0eccfa8e1ac5a8e84efb2f6029a9bab477e22d8a
+
+Preview plugin: fix compatibility with Anko 0.9 | 2016-08-09 20:04:04 | 123f54fe320e0b7733e3f18503f1877e44cd57dd
+
+Merge pull request #94 from Ribesg/patch-2
+
+Explain the various Anko libs in README. Fix #84 | 2016-05-10 17:49:31 | 5b02b4f12c9e5eeeffef15444796e2c639300eea
+
+Merge pull request #175 from richarth/patch-1
+
+Value of SQLite modifier NOT_NULL should be "NOT NULL" | 2016-04-19 23:41:05 | f93e98d7be5fe1948a384970ebe07d59d466ceaa
+
+Merge pull request #145 from georgeci/hotfix/remove_isaccessible
+
+Few  corrections for SQLite static module | 2016-03-11 16:09:12 | 14009b0e342ce7ad9c20efe823d8d144084112ad
+
+README: fix typo (minor) | 2016-03-02 20:22:05 | 00a38a40d886e0f2bc08a313e8a39594236eb122
+
+Merge pull request #139 from Kotlin/ab/compilation-fixed
+
+Compilation fixed | 2016-01-21 16:52:26 | 0023ec8a383a2a26319a4ccdecb11de74d2487a3
+
+Compilation fixed | 2016-01-21 16:23:43 | 17e812254c86942afd8e941eb5ecf6a899573538
+
+Merge pull request #125 from Ribesg/patch-3
+
+Add Int.withAlpha to Helpers | 2015-12-14 18:37:02 | 499f3351705babb6e8bab54be40db5925b94f1e3
+
+Merge pull request #124 from cypressious/patch-1
+
+Add Bintray Badge | 2015-12-14 18:25:09 | c26b01718a7a377d07522e39c92bab7f7d567ece
+
+Merge pull request #100 from colriot/patch-1
+
+Update README wrt Kotlin Beta Candidate | 2015-11-05 15:05:34 | 5b0c7bbbfe1d8321d4ed299b8821ee548aed3815
+
+Merge pull request #106 from JetBrains/yanex-patch-1
+
+Update CHANGELOG | 2015-11-05 12:20:50 | 1cc19ab5582bd4ffccb2b642257effdc82208867
+
+Merge pull request #99 from n3455/patch-1
+
+Corrected typo in readme | 2015-10-31 01:49:17 | 912d6630e5da0f466fb3d674f6a04c8d2564a655
+
+Merge pull request #89 from Ribesg/patch-1
+
+Change .layoutParams() to .lparams() in README. Fixes #88 | 2015-09-30 01:36:04 | 38b390ab2b917c5f1e6aaf574155c619261aa0b2
+
+Merge pull request #86 from mr-max/patch-1
+
+Allow getting MenuItems as Sequence | 2015-09-22 16:22:57 | 0b76ef9918a20d732ef582dbd63fc38963e065b0
+
+Fix tests after renaming layoutParams() and dropping 'Support' suffixes | 2015-09-17 12:46:35 | 9b0cc0efa3b1a612842fbfc1a2400386652acee7
+
+Remove "Support" suffixes, move each library contents inside its own package | 2015-09-17 11:03:16 | 1fbfa3c475745635cc8415e250d1f1ff8fbf2493
+
+Update DSL functional tests, fix test generator, make generated code a bit more readable | 2015-09-04 17:58:24 | 894fc7589a7f96f890b753eb53fec0d7fa06b18e
+
+Minor: fix type mismatch error | 2015-07-09 22:21:14 | 3a3f613f4e1f222c810639ba49a3e9b1e38687c0
+
+Support suffix must be added to all support views from android.support | 2015-06-13 13:59:11 | 5e1799b1b1cf35d8e7a0e975fdfd9a03de95adb6
+
+Merge pull request #51 from EddieRingle/fix/doc/git-clone-url
+
+BUILDING.md: Fix git clone URL | 2015-05-30 20:11:48 | 1f08a25929f7010ab4ecb2858c4aafefa5184bbb
+
+fixed formatting | 2015-05-26 08:39:44 | 0426b0eb173f09c8f1c4a90a3c9f7a41a08ef193
+
+Merge pull request #44 from shirohata/fix-include
+
+Fixed include() return type | 2015-05-25 18:05:38 | 57a18deb7b2bb782b07e0e3ed52135d66188bc63
+
+fix: IllegalArgumentException in AnkoLogger | 2015-05-22 09:23:36 | 28e0e2daa06ff234058a7ebd58b562b212436c42
+
+Merge pull request #40 from phajduk/readme
+
+README: fixed notificationManager | 2015-05-14 13:30:41 | 5b72bc2e94247ce55b9f25fbdf21e20ac1e1152c
+
+README: fixed notificationManager | 2015-05-14 12:10:46 | a5ea5080eac8de35d864f4fa791088bf9d2762f9
+
+Bugfixes in main/support-v4 Fragment uniformity | 2015-05-08 16:12:26 | 141195388b455ecf8935c16096bbad432695418f
+
+README: fix intentFor() example | 2015-05-05 15:17:08 | 1246aae9b445a59e4330eb7608b84385e777b9e1
+
+Merge pull request #34 from kamoljan/patch-2
+
+README.md file correction | 2015-05-05 14:50:04 | e556759db8d4b714ea74640843d7183515112686
+
+README: indentation fixes | 2015-04-29 18:26:27 | 8cc919a94c7b6352162c2e239b08ac9a6456b239
+
+README: fix section title. | 2015-04-03 18:25:22 | 0896a844b8021d3f58988062a781efa72480b5ab
+
+README: fix formatting, remove obsolete description. | 2015-04-03 08:57:07 | bf7f94666c210548c25486241c75a1a8739294c0
+
+README: fix broken links. | 2015-04-03 08:25:11 | f62908c4204b074b820ee3ef47f67ed4bd898afa
+
+README: fix template project link | 2015-04-02 18:39:10 | 096c436dc1f9d9a86c516997d5143e0a4b39c9ea
+
+Null-safe call fixes in Preview plugin | 2015-03-31 17:13:45 | f63b3cc8b6ec8c7fd05e8341e3ebcf69901c957f
+
+README: remove @aar suffix | 2015-02-19 22:33:47 | 825ccfe34514c52a64dac329cd4f73a327064e06
+
+Layout test fixes | 2015-01-14 14:46:08 | d0058c8aaf19d4a7bd08d67e58e5395387b693eb
+
+Fix top-level Views bug in Activity | 2014-12-13 23:11:01 | c1405b3071dee6db184696ded5f0274e317f3d1f
+
+Compile tests fixed and optimized | 2014-12-04 18:13:32 | 1a50e08d38df8c4af05501187a205437d2a219ad
+
+readFile() fixed | 2014-12-02 16:54:18 | 813db5c84572e10acf7f28d13dc378a982869b75
+
+Code formatting fixes in static files | 2014-11-13 15:09:56 | a62f96d4b32b910430b12e6d581f7665c8fa9583
+
+Code indent fixes. | 2014-11-12 17:53:16 | 9d6d2834544fde8d1a33a71f2d125fb2cafac56e
+
+Style-related fixes. | 2014-10-01 12:01:25 | 4ca393dd976a6398edc9ed3409422529a106a059
+
+README: Extending Koan, relative link fix | 2014-09-30 20:43:40 | 72c640c4f67436a98409c37e747de9e08eb4345a
+
+README.md fixed. | 2014-09-29 21:52:36 | 5fea24d1a92ba74660c0e993cce0bdc53984df88
+
+README identation fixes. | 2014-09-29 18:26:29 | 44df09a4e8b93a56951788b665ebff40e3c289ca
+
+Styles fixed.
+Indentation fixes in Helpers.kt. | 2014-09-26 10:51:49 | 1475aa67e38f5b09978f8e850e01533b6402681b
+
+BasicGeneratorTest fixed. | 2014-09-26 08:19:42 | 6eed33071414d89ffe95f355655c1524bc2faffb
+
+Generate DSL for several Android versions.
+Support Maven artifacts generation.
+Tests fixed. | 2014-09-18 12:15:34 | 1ecd3fae8fb65bb90309f6f750229cf69929f2d0
+
+Indents fixes. | 2014-09-16 14:31:35 | 016a1836d3deec7c2250ff9dd4f519f88a3e912a
+
+README typo fix. | 2014-09-16 14:23:48 | 5470e36daa0c143398fbbbad992a21eda01fec09
+
+Indents fixed. | 2014-09-12 20:09:50 | 5f6206e2330cf5ef538cbf3838b1883394343d05
+
+Minor: fix formatting | 2017-11-15 19:55:03 | 64f8406e52447d364a44112fe535b68dff05ec8b
+
+Add attrs.json and views.json to xml converter resources and fix path
+
+ Fixes #370 | 2017-11-14 15:04:58 | 97b66dd1bc4ab82a001bd41e965fa8977cbe81ee
+
+Merge pull request #396 from luiqn2007/patch-1
+
+Update README.md | 2017-06-06 12:37:45 | 459edd5cc2ac558aacdc7a2bccf16d0ef6b0b8e6
+
+childrenRecursiveSequence: fix NoSuchElementException being thrown when hasNext() returned true (#388) | 2017-05-29 16:55:01 | 4584577b6bf3b4f8d8d1733f53408537e2aac759
+
+A couple of DSL Preview fixes
+
+1. Do not launch the compilation automatically. It's probably better to let user launch the build manually (the preview will be updated anyway after the build).
+2. Do not generate the new synthetic XML file if the source class is the same. That caused blinks on file switching. | 2017-05-03 14:54:58 | b9ecd364d3793860c6d269cbe6df63bcbb87add5
+
+Fix compilation error (#272)
+
+The example to create a table doesn't compile. This fixes it.  See #260. | 2016-12-13 20:24:54 | 7b239fb78d2316c874afcce0e1e2fee51f4ef94f
+
+fix broken link to jarjar library | 2016-09-26 18:40:51 | 18d65aece0a852b7d1c053040ecd8ed9cce74aab
+
+Update Async.kt
+
+fixes issue #241 | 2016-09-03 10:55:34 | b2ac80dd2dea60f538d77666c146c191f7ed0d12
+
+fix broken dependency version | 2016-09-29 10:08:30 | 0eccfa8e1ac5a8e84efb2f6029a9bab477e22d8a
+
+Preview plugin: fix compatibility with Anko 0.9 | 2016-08-09 20:04:04 | 123f54fe320e0b7733e3f18503f1877e44cd57dd
+
+Merge pull request #94 from Ribesg/patch-2
+
+Explain the various Anko libs in README. Fix #84 | 2016-05-10 17:49:31 | 5b02b4f12c9e5eeeffef15444796e2c639300eea
+
+Merge pull request #175 from richarth/patch-1
+
+Value of SQLite modifier NOT_NULL should be "NOT NULL" | 2016-04-19 23:41:05 | f93e98d7be5fe1948a384970ebe07d59d466ceaa
+
+Merge pull request #145 from georgeci/hotfix/remove_isaccessible
+
+Few  corrections for SQLite static module | 2016-03-11 16:09:12 | 14009b0e342ce7ad9c20efe823d8d144084112ad
+
+README: fix typo (minor) | 2016-03-02 20:22:05 | 00a38a40d886e0f2bc08a313e8a39594236eb122
+
+Merge pull request #139 from Kotlin/ab/compilation-fixed
+
+Compilation fixed | 2016-01-21 16:52:26 | 0023ec8a383a2a26319a4ccdecb11de74d2487a3
+
+Compilation fixed | 2016-01-21 16:23:43 | 17e812254c86942afd8e941eb5ecf6a899573538
+
+Merge pull request #125 from Ribesg/patch-3
+
+Add Int.withAlpha to Helpers | 2015-12-14 18:37:02 | 499f3351705babb6e8bab54be40db5925b94f1e3
+
+Merge pull request #124 from cypressious/patch-1
+
+Add Bintray Badge | 2015-12-14 18:25:09 | c26b01718a7a377d07522e39c92bab7f7d567ece
+
+Merge pull request #100 from colriot/patch-1
+
+Update README wrt Kotlin Beta Candidate | 2015-11-05 15:05:34 | 5b0c7bbbfe1d8321d4ed299b8821ee548aed3815
+
+Merge pull request #106 from JetBrains/yanex-patch-1
+
+Update CHANGELOG | 2015-11-05 12:20:50 | 1cc19ab5582bd4ffccb2b642257effdc82208867
+
+Merge pull request #99 from n3455/patch-1
+
+Corrected typo in readme | 2015-10-31 01:49:17 | 912d6630e5da0f466fb3d674f6a04c8d2564a655
+
+Merge pull request #89 from Ribesg/patch-1
+
+Change .layoutParams() to .lparams() in README. Fixes #88 | 2015-09-30 01:36:04 | 38b390ab2b917c5f1e6aaf574155c619261aa0b2
+
+Merge pull request #86 from mr-max/patch-1
+
+Allow getting MenuItems as Sequence | 2015-09-22 16:22:57 | 0b76ef9918a20d732ef582dbd63fc38963e065b0
+
+Fix tests after renaming layoutParams() and dropping 'Support' suffixes | 2015-09-17 12:46:35 | 9b0cc0efa3b1a612842fbfc1a2400386652acee7
+
+Remove "Support" suffixes, move each library contents inside its own package | 2015-09-17 11:03:16 | 1fbfa3c475745635cc8415e250d1f1ff8fbf2493
+
+Update DSL functional tests, fix test generator, make generated code a bit more readable | 2015-09-04 17:58:24 | 894fc7589a7f96f890b753eb53fec0d7fa06b18e
+
+Minor: fix type mismatch error | 2015-07-09 22:21:14 | 3a3f613f4e1f222c810639ba49a3e9b1e38687c0
+
+Support suffix must be added to all support views from android.support | 2015-06-13 13:59:11 | 5e1799b1b1cf35d8e7a0e975fdfd9a03de95adb6
+
+Merge pull request #51 from EddieRingle/fix/doc/git-clone-url
+
+BUILDING.md: Fix git clone URL | 2015-05-30 20:11:48 | 1f08a25929f7010ab4ecb2858c4aafefa5184bbb
+
+fixed formatting | 2015-05-26 08:39:44 | 0426b0eb173f09c8f1c4a90a3c9f7a41a08ef193
+
+Merge pull request #44 from shirohata/fix-include
+
+Fixed include() return type | 2015-05-25 18:05:38 | 57a18deb7b2bb782b07e0e3ed52135d66188bc63
+
+fix: IllegalArgumentException in AnkoLogger | 2015-05-22 09:23:36 | 28e0e2daa06ff234058a7ebd58b562b212436c42
+
+Merge pull request #40 from phajduk/readme
+
+README: fixed notificationManager | 2015-05-14 13:30:41 | 5b72bc2e94247ce55b9f25fbdf21e20ac1e1152c
+
+README: fixed notificationManager | 2015-05-14 12:10:46 | a5ea5080eac8de35d864f4fa791088bf9d2762f9
+
+Bugfixes in main/support-v4 Fragment uniformity | 2015-05-08 16:12:26 | 141195388b455ecf8935c16096bbad432695418f
+
+README: fix intentFor() example | 2015-05-05 15:17:08 | 1246aae9b445a59e4330eb7608b84385e777b9e1
+
+Merge pull request #34 from kamoljan/patch-2
+
+README.md file correction | 2015-05-05 14:50:04 | e556759db8d4b714ea74640843d7183515112686
+
+README: indentation fixes | 2015-04-29 18:26:27 | 8cc919a94c7b6352162c2e239b08ac9a6456b239
+
+README: fix section title. | 2015-04-03 18:25:22 | 0896a844b8021d3f58988062a781efa72480b5ab
+
+README: fix formatting, remove obsolete description. | 2015-04-03 08:57:07 | bf7f94666c210548c25486241c75a1a8739294c0
+
+README: fix broken links. | 2015-04-03 08:25:11 | f62908c4204b074b820ee3ef47f67ed4bd898afa
+
+README: fix template project link | 2015-04-02 18:39:10 | 096c436dc1f9d9a86c516997d5143e0a4b39c9ea
+
+Null-safe call fixes in Preview plugin | 2015-03-31 17:13:45 | f63b3cc8b6ec8c7fd05e8341e3ebcf69901c957f
+
+README: remove @aar suffix | 2015-02-19 22:33:47 | 825ccfe34514c52a64dac329cd4f73a327064e06
+
+Layout test fixes | 2015-01-14 14:46:08 | d0058c8aaf19d4a7bd08d67e58e5395387b693eb
+
+Fix top-level Views bug in Activity | 2014-12-13 23:11:01 | c1405b3071dee6db184696ded5f0274e317f3d1f
+
+Compile tests fixed and optimized | 2014-12-04 18:13:32 | 1a50e08d38df8c4af05501187a205437d2a219ad
+
+readFile() fixed | 2014-12-02 16:54:18 | 813db5c84572e10acf7f28d13dc378a982869b75
+
+Code formatting fixes in static files | 2014-11-13 15:09:56 | a62f96d4b32b910430b12e6d581f7665c8fa9583
+
+Code indent fixes. | 2014-11-12 17:53:16 | 9d6d2834544fde8d1a33a71f2d125fb2cafac56e
+
+Style-related fixes. | 2014-10-01 12:01:25 | 4ca393dd976a6398edc9ed3409422529a106a059
+
+README: Extending Koan, relative link fix | 2014-09-30 20:43:40 | 72c640c4f67436a98409c37e747de9e08eb4345a
+
+README.md fixed. | 2014-09-29 21:52:36 | 5fea24d1a92ba74660c0e993cce0bdc53984df88
+
+README identation fixes. | 2014-09-29 18:26:29 | 44df09a4e8b93a56951788b665ebff40e3c289ca
+
+Styles fixed.
+Indentation fixes in Helpers.kt. | 2014-09-26 10:51:49 | 1475aa67e38f5b09978f8e850e01533b6402681b
+
+BasicGeneratorTest fixed. | 2014-09-26 08:19:42 | 6eed33071414d89ffe95f355655c1524bc2faffb
+
+Generate DSL for several Android versions.
+Support Maven artifacts generation.
+Tests fixed. | 2014-09-18 12:15:34 | 1ecd3fae8fb65bb90309f6f750229cf69929f2d0
+
+Indents fixes. | 2014-09-16 14:31:35 | 016a1836d3deec7c2250ff9dd4f519f88a3e912a
+
+README typo fix. | 2014-09-16 14:23:48 | 5470e36daa0c143398fbbbad992a21eda01fec09
+
+Indents fixed. | 2014-09-12 20:09:50 | 5f6206e2330cf5ef538cbf3838b1883394343d05
+
+fix: Replace Snackbar's message type from String to CharSequence (#655)
+
+Fix #654 | 2018-07-20 13:23:41 | b3d22457e23ae70b5d54a316f33b00138792cfc8
+
+Use `base` suffix instead of prefix `internal` for static library artifacts | 2018-07-06 17:38:24 | 360aa5d72f2ffa8de1da821e50143e3ef581f0a3
+
+Update plugin version to 0.10.4-2 (hotfix) | 2018-01-09 13:00:44 | 5002ea56e7e651a286a50d8a7a791ccfa2ee2024
+
+Minor: fix formatting | 2017-11-15 19:55:03 | 64f8406e52447d364a44112fe535b68dff05ec8b
+
+Add attrs.json and views.json to xml converter resources and fix path
+
+ Fixes #370 | 2017-11-14 15:04:58 | 97b66dd1bc4ab82a001bd41e965fa8977cbe81ee
+
+Merge pull request #396 from luiqn2007/patch-1
+
+Update README.md | 2017-06-06 12:37:45 | 459edd5cc2ac558aacdc7a2bccf16d0ef6b0b8e6
+
+childrenRecursiveSequence: fix NoSuchElementException being thrown when hasNext() returned true (#388) | 2017-05-29 16:55:01 | 4584577b6bf3b4f8d8d1733f53408537e2aac759
+
+A couple of DSL Preview fixes
+
+1. Do not launch the compilation automatically. It's probably better to let user launch the build manually (the preview will be updated anyway after the build).
+2. Do not generate the new synthetic XML file if the source class is the same. That caused blinks on file switching. | 2017-05-03 14:54:58 | b9ecd364d3793860c6d269cbe6df63bcbb87add5
+
+Fix compilation error (#272)
+
+The example to create a table doesn't compile. This fixes it.  See #260. | 2016-12-13 20:24:54 | 7b239fb78d2316c874afcce0e1e2fee51f4ef94f
+
+fix broken link to jarjar library | 2016-09-26 18:40:51 | 18d65aece0a852b7d1c053040ecd8ed9cce74aab
+
+Update Async.kt
+
+fixes issue #241 | 2016-09-03 10:55:34 | b2ac80dd2dea60f538d77666c146c191f7ed0d12
+
+fix broken dependency version | 2016-09-29 10:08:30 | 0eccfa8e1ac5a8e84efb2f6029a9bab477e22d8a
+
+Preview plugin: fix compatibility with Anko 0.9 | 2016-08-09 20:04:04 | 123f54fe320e0b7733e3f18503f1877e44cd57dd
+
+Merge pull request #94 from Ribesg/patch-2
+
+Explain the various Anko libs in README. Fix #84 | 2016-05-10 17:49:31 | 5b02b4f12c9e5eeeffef15444796e2c639300eea
+
+Merge pull request #175 from richarth/patch-1
+
+Value of SQLite modifier NOT_NULL should be "NOT NULL" | 2016-04-19 23:41:05 | f93e98d7be5fe1948a384970ebe07d59d466ceaa
+
+Merge pull request #145 from georgeci/hotfix/remove_isaccessible
+
+Few  corrections for SQLite static module | 2016-03-11 16:09:12 | 14009b0e342ce7ad9c20efe823d8d144084112ad
+
+README: fix typo (minor) | 2016-03-02 20:22:05 | 00a38a40d886e0f2bc08a313e8a39594236eb122
+
+Merge pull request #139 from Kotlin/ab/compilation-fixed
+
+Compilation fixed | 2016-01-21 16:52:26 | 0023ec8a383a2a26319a4ccdecb11de74d2487a3
+
+Compilation fixed | 2016-01-21 16:23:43 | 17e812254c86942afd8e941eb5ecf6a899573538
+
+Merge pull request #125 from Ribesg/patch-3
+
+Add Int.withAlpha to Helpers | 2015-12-14 18:37:02 | 499f3351705babb6e8bab54be40db5925b94f1e3
+
+Merge pull request #124 from cypressious/patch-1
+
+Add Bintray Badge | 2015-12-14 18:25:09 | c26b01718a7a377d07522e39c92bab7f7d567ece
+
+Merge pull request #100 from colriot/patch-1
+
+Update README wrt Kotlin Beta Candidate | 2015-11-05 15:05:34 | 5b0c7bbbfe1d8321d4ed299b8821ee548aed3815
+
+Merge pull request #106 from JetBrains/yanex-patch-1
+
+Update CHANGELOG | 2015-11-05 12:20:50 | 1cc19ab5582bd4ffccb2b642257effdc82208867
+
+Merge pull request #99 from n3455/patch-1
+
+Corrected typo in readme | 2015-10-31 01:49:17 | 912d6630e5da0f466fb3d674f6a04c8d2564a655
+
+Merge pull request #89 from Ribesg/patch-1
+
+Change .layoutParams() to .lparams() in README. Fixes #88 | 2015-09-30 01:36:04 | 38b390ab2b917c5f1e6aaf574155c619261aa0b2
+
+Merge pull request #86 from mr-max/patch-1
+
+Allow getting MenuItems as Sequence | 2015-09-22 16:22:57 | 0b76ef9918a20d732ef582dbd63fc38963e065b0
+
+Fix tests after renaming layoutParams() and dropping 'Support' suffixes | 2015-09-17 12:46:35 | 9b0cc0efa3b1a612842fbfc1a2400386652acee7
+
+Remove "Support" suffixes, move each library contents inside its own package | 2015-09-17 11:03:16 | 1fbfa3c475745635cc8415e250d1f1ff8fbf2493
+
+Update DSL functional tests, fix test generator, make generated code a bit more readable | 2015-09-04 17:58:24 | 894fc7589a7f96f890b753eb53fec0d7fa06b18e
+
+Minor: fix type mismatch error | 2015-07-09 22:21:14 | 3a3f613f4e1f222c810639ba49a3e9b1e38687c0
+
+Support suffix must be added to all support views from android.support | 2015-06-13 13:59:11 | 5e1799b1b1cf35d8e7a0e975fdfd9a03de95adb6
+
+Merge pull request #51 from EddieRingle/fix/doc/git-clone-url
+
+BUILDING.md: Fix git clone URL | 2015-05-30 20:11:48 | 1f08a25929f7010ab4ecb2858c4aafefa5184bbb
+
+fixed formatting | 2015-05-26 08:39:44 | 0426b0eb173f09c8f1c4a90a3c9f7a41a08ef193
+
+Merge pull request #44 from shirohata/fix-include
+
+Fixed include() return type | 2015-05-25 18:05:38 | 57a18deb7b2bb782b07e0e3ed52135d66188bc63
+
+fix: IllegalArgumentException in AnkoLogger | 2015-05-22 09:23:36 | 28e0e2daa06ff234058a7ebd58b562b212436c42
+
+Merge pull request #40 from phajduk/readme
+
+README: fixed notificationManager | 2015-05-14 13:30:41 | 5b72bc2e94247ce55b9f25fbdf21e20ac1e1152c
+
+README: fixed notificationManager | 2015-05-14 12:10:46 | a5ea5080eac8de35d864f4fa791088bf9d2762f9
+
+Bugfixes in main/support-v4 Fragment uniformity | 2015-05-08 16:12:26 | 141195388b455ecf8935c16096bbad432695418f
+
+README: fix intentFor() example | 2015-05-05 15:17:08 | 1246aae9b445a59e4330eb7608b84385e777b9e1
+
+Merge pull request #34 from kamoljan/patch-2
+
+README.md file correction | 2015-05-05 14:50:04 | e556759db8d4b714ea74640843d7183515112686
+
+README: indentation fixes | 2015-04-29 18:26:27 | 8cc919a94c7b6352162c2e239b08ac9a6456b239
+
+README: fix section title. | 2015-04-03 18:25:22 | 0896a844b8021d3f58988062a781efa72480b5ab
+
+README: fix formatting, remove obsolete description. | 2015-04-03 08:57:07 | bf7f94666c210548c25486241c75a1a8739294c0
+
+README: fix broken links. | 2015-04-03 08:25:11 | f62908c4204b074b820ee3ef47f67ed4bd898afa
+
+README: fix template project link | 2015-04-02 18:39:10 | 096c436dc1f9d9a86c516997d5143e0a4b39c9ea
+
+Null-safe call fixes in Preview plugin | 2015-03-31 17:13:45 | f63b3cc8b6ec8c7fd05e8341e3ebcf69901c957f
+
+README: remove @aar suffix | 2015-02-19 22:33:47 | 825ccfe34514c52a64dac329cd4f73a327064e06
+
+Layout test fixes | 2015-01-14 14:46:08 | d0058c8aaf19d4a7bd08d67e58e5395387b693eb
+
+Fix top-level Views bug in Activity | 2014-12-13 23:11:01 | c1405b3071dee6db184696ded5f0274e317f3d1f
+
+Compile tests fixed and optimized | 2014-12-04 18:13:32 | 1a50e08d38df8c4af05501187a205437d2a219ad
+
+readFile() fixed | 2014-12-02 16:54:18 | 813db5c84572e10acf7f28d13dc378a982869b75
+
+Code formatting fixes in static files | 2014-11-13 15:09:56 | a62f96d4b32b910430b12e6d581f7665c8fa9583
+
+Code indent fixes. | 2014-11-12 17:53:16 | 9d6d2834544fde8d1a33a71f2d125fb2cafac56e
+
+Style-related fixes. | 2014-10-01 12:01:25 | 4ca393dd976a6398edc9ed3409422529a106a059
+
+README: Extending Koan, relative link fix | 2014-09-30 20:43:40 | 72c640c4f67436a98409c37e747de9e08eb4345a
+
+README.md fixed. | 2014-09-29 21:52:36 | 5fea24d1a92ba74660c0e993cce0bdc53984df88
+
+README identation fixes. | 2014-09-29 18:26:29 | 44df09a4e8b93a56951788b665ebff40e3c289ca
+
+Styles fixed.
+Indentation fixes in Helpers.kt. | 2014-09-26 10:51:49 | 1475aa67e38f5b09978f8e850e01533b6402681b
+
+BasicGeneratorTest fixed. | 2014-09-26 08:19:42 | 6eed33071414d89ffe95f355655c1524bc2faffb
+
+Generate DSL for several Android versions.
+Support Maven artifacts generation.
+Tests fixed. | 2014-09-18 12:15:34 | 1ecd3fae8fb65bb90309f6f750229cf69929f2d0
+
+Indents fixes. | 2014-09-16 14:31:35 | 016a1836d3deec7c2250ff9dd4f519f88a3e912a
+
+README typo fix. | 2014-09-16 14:23:48 | 5470e36daa0c143398fbbbad992a21eda01fec09
+
+Indents fixed. | 2014-09-12 20:09:50 | 5f6206e2330cf5ef538cbf3838b1883394343d05
+
+Fix compilation error (#272)
+
+The example to create a table doesn't compile. This fixes it.  See #260. | 2016-12-13 20:24:54 | 7b239fb78d2316c874afcce0e1e2fee51f4ef94f
+
+fix broken link to jarjar library | 2016-09-26 18:40:51 | 18d65aece0a852b7d1c053040ecd8ed9cce74aab
+
+Update Async.kt
+
+fixes issue #241 | 2016-09-03 10:55:34 | b2ac80dd2dea60f538d77666c146c191f7ed0d12
+
+fix broken dependency version | 2016-09-29 10:08:30 | 0eccfa8e1ac5a8e84efb2f6029a9bab477e22d8a
+
+Preview plugin: fix compatibility with Anko 0.9 | 2016-08-09 20:04:04 | 123f54fe320e0b7733e3f18503f1877e44cd57dd
+
+Merge pull request #94 from Ribesg/patch-2
+
+Explain the various Anko libs in README. Fix #84 | 2016-05-10 17:49:31 | 5b02b4f12c9e5eeeffef15444796e2c639300eea
+
+Merge pull request #175 from richarth/patch-1
+
+Value of SQLite modifier NOT_NULL should be "NOT NULL" | 2016-04-19 23:41:05 | f93e98d7be5fe1948a384970ebe07d59d466ceaa
+
+Merge pull request #145 from georgeci/hotfix/remove_isaccessible
+
+Few  corrections for SQLite static module | 2016-03-11 16:09:12 | 14009b0e342ce7ad9c20efe823d8d144084112ad
+
+README: fix typo (minor) | 2016-03-02 20:22:05 | 00a38a40d886e0f2bc08a313e8a39594236eb122
+
+Merge pull request #139 from Kotlin/ab/compilation-fixed
+
+Compilation fixed | 2016-01-21 16:52:26 | 0023ec8a383a2a26319a4ccdecb11de74d2487a3
+
+Compilation fixed | 2016-01-21 16:23:43 | 17e812254c86942afd8e941eb5ecf6a899573538
+
+Merge pull request #125 from Ribesg/patch-3
+
+Add Int.withAlpha to Helpers | 2015-12-14 18:37:02 | 499f3351705babb6e8bab54be40db5925b94f1e3
+
+Merge pull request #124 from cypressious/patch-1
+
+Add Bintray Badge | 2015-12-14 18:25:09 | c26b01718a7a377d07522e39c92bab7f7d567ece
+
+Merge pull request #100 from colriot/patch-1
+
+Update README wrt Kotlin Beta Candidate | 2015-11-05 15:05:34 | 5b0c7bbbfe1d8321d4ed299b8821ee548aed3815
+
+Merge pull request #106 from JetBrains/yanex-patch-1
+
+Update CHANGELOG | 2015-11-05 12:20:50 | 1cc19ab5582bd4ffccb2b642257effdc82208867
+
+Merge pull request #99 from n3455/patch-1
+
+Corrected typo in readme | 2015-10-31 01:49:17 | 912d6630e5da0f466fb3d674f6a04c8d2564a655
+
+Merge pull request #89 from Ribesg/patch-1
+
+Change .layoutParams() to .lparams() in README. Fixes #88 | 2015-09-30 01:36:04 | 38b390ab2b917c5f1e6aaf574155c619261aa0b2
+
+Merge pull request #86 from mr-max/patch-1
+
+Allow getting MenuItems as Sequence | 2015-09-22 16:22:57 | 0b76ef9918a20d732ef582dbd63fc38963e065b0
+
+Fix tests after renaming layoutParams() and dropping 'Support' suffixes | 2015-09-17 12:46:35 | 9b0cc0efa3b1a612842fbfc1a2400386652acee7
+
+Remove "Support" suffixes, move each library contents inside its own package | 2015-09-17 11:03:16 | 1fbfa3c475745635cc8415e250d1f1ff8fbf2493
+
+Update DSL functional tests, fix test generator, make generated code a bit more readable | 2015-09-04 17:58:24 | 894fc7589a7f96f890b753eb53fec0d7fa06b18e
+
+Minor: fix type mismatch error | 2015-07-09 22:21:14 | 3a3f613f4e1f222c810639ba49a3e9b1e38687c0
+
+Support suffix must be added to all support views from android.support | 2015-06-13 13:59:11 | 5e1799b1b1cf35d8e7a0e975fdfd9a03de95adb6
+
+Merge pull request #51 from EddieRingle/fix/doc/git-clone-url
+
+BUILDING.md: Fix git clone URL | 2015-05-30 20:11:48 | 1f08a25929f7010ab4ecb2858c4aafefa5184bbb
+
+fixed formatting | 2015-05-26 08:39:44 | 0426b0eb173f09c8f1c4a90a3c9f7a41a08ef193
+
+Merge pull request #44 from shirohata/fix-include
+
+Fixed include() return type | 2015-05-25 18:05:38 | 57a18deb7b2bb782b07e0e3ed52135d66188bc63
+
+fix: IllegalArgumentException in AnkoLogger | 2015-05-22 09:23:36 | 28e0e2daa06ff234058a7ebd58b562b212436c42
+
+Merge pull request #40 from phajduk/readme
+
+README: fixed notificationManager | 2015-05-14 13:30:41 | 5b72bc2e94247ce55b9f25fbdf21e20ac1e1152c
+
+README: fixed notificationManager | 2015-05-14 12:10:46 | a5ea5080eac8de35d864f4fa791088bf9d2762f9
+
+Bugfixes in main/support-v4 Fragment uniformity | 2015-05-08 16:12:26 | 141195388b455ecf8935c16096bbad432695418f
+
+README: fix intentFor() example | 2015-05-05 15:17:08 | 1246aae9b445a59e4330eb7608b84385e777b9e1
+
+Merge pull request #34 from kamoljan/patch-2
+
+README.md file correction | 2015-05-05 14:50:04 | e556759db8d4b714ea74640843d7183515112686
+
+README: indentation fixes | 2015-04-29 18:26:27 | 8cc919a94c7b6352162c2e239b08ac9a6456b239
+
+README: fix section title. | 2015-04-03 18:25:22 | 0896a844b8021d3f58988062a781efa72480b5ab
+
+README: fix formatting, remove obsolete description. | 2015-04-03 08:57:07 | bf7f94666c210548c25486241c75a1a8739294c0
+
+README: fix broken links. | 2015-04-03 08:25:11 | f62908c4204b074b820ee3ef47f67ed4bd898afa
+
+README: fix template project link | 2015-04-02 18:39:10 | 096c436dc1f9d9a86c516997d5143e0a4b39c9ea
+
+Null-safe call fixes in Preview plugin | 2015-03-31 17:13:45 | f63b3cc8b6ec8c7fd05e8341e3ebcf69901c957f
+
+README: remove @aar suffix | 2015-02-19 22:33:47 | 825ccfe34514c52a64dac329cd4f73a327064e06
+
+Layout test fixes | 2015-01-14 14:46:08 | d0058c8aaf19d4a7bd08d67e58e5395387b693eb
+
+Fix top-level Views bug in Activity | 2014-12-13 23:11:01 | c1405b3071dee6db184696ded5f0274e317f3d1f
+
+Compile tests fixed and optimized | 2014-12-04 18:13:32 | 1a50e08d38df8c4af05501187a205437d2a219ad
+
+readFile() fixed | 2014-12-02 16:54:18 | 813db5c84572e10acf7f28d13dc378a982869b75
+
+Code formatting fixes in static files | 2014-11-13 15:09:56 | a62f96d4b32b910430b12e6d581f7665c8fa9583
+
+Code indent fixes. | 2014-11-12 17:53:16 | 9d6d2834544fde8d1a33a71f2d125fb2cafac56e
+
+Style-related fixes. | 2014-10-01 12:01:25 | 4ca393dd976a6398edc9ed3409422529a106a059
+
+README: Extending Koan, relative link fix | 2014-09-30 20:43:40 | 72c640c4f67436a98409c37e747de9e08eb4345a
+
+README.md fixed. | 2014-09-29 21:52:36 | 5fea24d1a92ba74660c0e993cce0bdc53984df88
+
+README identation fixes. | 2014-09-29 18:26:29 | 44df09a4e8b93a56951788b665ebff40e3c289ca
+
+Styles fixed.
+Indentation fixes in Helpers.kt. | 2014-09-26 10:51:49 | 1475aa67e38f5b09978f8e850e01533b6402681b
+
+BasicGeneratorTest fixed. | 2014-09-26 08:19:42 | 6eed33071414d89ffe95f355655c1524bc2faffb
+
+Generate DSL for several Android versions.
+Support Maven artifacts generation.
+Tests fixed. | 2014-09-18 12:15:34 | 1ecd3fae8fb65bb90309f6f750229cf69929f2d0
+
+Indents fixes. | 2014-09-16 14:31:35 | 016a1836d3deec7c2250ff9dd4f519f88a3e912a
+
+README typo fix. | 2014-09-16 14:23:48 | 5470e36daa0c143398fbbbad992a21eda01fec09
+
+Indents fixed. | 2014-09-12 20:09:50 | 5f6206e2330cf5ef538cbf3838b1883394343d05
+
+fix: Replace Snackbar's message type from String to CharSequence (#655)
+
+Fix #654 | 2018-07-20 13:23:41 | b3d22457e23ae70b5d54a316f33b00138792cfc8
+
+Use `base` suffix instead of prefix `internal` for static library artifacts | 2018-07-06 17:38:24 | 360aa5d72f2ffa8de1da821e50143e3ef581f0a3
+
+Update plugin version to 0.10.4-2 (hotfix) | 2018-01-09 13:00:44 | 5002ea56e7e651a286a50d8a7a791ccfa2ee2024
+
+Minor: fix formatting | 2017-11-15 19:55:03 | 64f8406e52447d364a44112fe535b68dff05ec8b
+
+Add attrs.json and views.json to xml converter resources and fix path
+
+ Fixes #370 | 2017-11-14 15:04:58 | 97b66dd1bc4ab82a001bd41e965fa8977cbe81ee
+
+Merge pull request #396 from luiqn2007/patch-1
+
+Update README.md | 2017-06-06 12:37:45 | 459edd5cc2ac558aacdc7a2bccf16d0ef6b0b8e6
+
+childrenRecursiveSequence: fix NoSuchElementException being thrown when hasNext() returned true (#388) | 2017-05-29 16:55:01 | 4584577b6bf3b4f8d8d1733f53408537e2aac759
+
+A couple of DSL Preview fixes
+
+1. Do not launch the compilation automatically. It's probably better to let user launch the build manually (the preview will be updated anyway after the build).
+2. Do not generate the new synthetic XML file if the source class is the same. That caused blinks on file switching. | 2017-05-03 14:54:58 | b9ecd364d3793860c6d269cbe6df63bcbb87add5
+
+Fix compilation error (#272)
+
+The example to create a table doesn't compile. This fixes it.  See #260. | 2016-12-13 20:24:54 | 7b239fb78d2316c874afcce0e1e2fee51f4ef94f
+
+fix broken link to jarjar library | 2016-09-26 18:40:51 | 18d65aece0a852b7d1c053040ecd8ed9cce74aab
+
+Update Async.kt
+
+fixes issue #241 | 2016-09-03 10:55:34 | b2ac80dd2dea60f538d77666c146c191f7ed0d12
+
+fix broken dependency version | 2016-09-29 10:08:30 | 0eccfa8e1ac5a8e84efb2f6029a9bab477e22d8a
+
+Preview plugin: fix compatibility with Anko 0.9 | 2016-08-09 20:04:04 | 123f54fe320e0b7733e3f18503f1877e44cd57dd
+
+Merge pull request #94 from Ribesg/patch-2
+
+Explain the various Anko libs in README. Fix #84 | 2016-05-10 17:49:31 | 5b02b4f12c9e5eeeffef15444796e2c639300eea
+
+Merge pull request #175 from richarth/patch-1
+
+Value of SQLite modifier NOT_NULL should be "NOT NULL" | 2016-04-19 23:41:05 | f93e98d7be5fe1948a384970ebe07d59d466ceaa
+
+Merge pull request #145 from georgeci/hotfix/remove_isaccessible
+
+Few  corrections for SQLite static module | 2016-03-11 16:09:12 | 14009b0e342ce7ad9c20efe823d8d144084112ad
+
+README: fix typo (minor) | 2016-03-02 20:22:05 | 00a38a40d886e0f2bc08a313e8a39594236eb122
+
+Merge pull request #139 from Kotlin/ab/compilation-fixed
+
+Compilation fixed | 2016-01-21 16:52:26 | 0023ec8a383a2a26319a4ccdecb11de74d2487a3
+
+Compilation fixed | 2016-01-21 16:23:43 | 17e812254c86942afd8e941eb5ecf6a899573538
+
+Merge pull request #125 from Ribesg/patch-3
+
+Add Int.withAlpha to Helpers | 2015-12-14 18:37:02 | 499f3351705babb6e8bab54be40db5925b94f1e3
+
+Merge pull request #124 from cypressious/patch-1
+
+Add Bintray Badge | 2015-12-14 18:25:09 | c26b01718a7a377d07522e39c92bab7f7d567ece
+
+Merge pull request #100 from colriot/patch-1
+
+Update README wrt Kotlin Beta Candidate | 2015-11-05 15:05:34 | 5b0c7bbbfe1d8321d4ed299b8821ee548aed3815
+
+Merge pull request #106 from JetBrains/yanex-patch-1
+
+Update CHANGELOG | 2015-11-05 12:20:50 | 1cc19ab5582bd4ffccb2b642257effdc82208867
+
+Merge pull request #99 from n3455/patch-1
+
+Corrected typo in readme | 2015-10-31 01:49:17 | 912d6630e5da0f466fb3d674f6a04c8d2564a655
+
+Merge pull request #89 from Ribesg/patch-1
+
+Change .layoutParams() to .lparams() in README. Fixes #88 | 2015-09-30 01:36:04 | 38b390ab2b917c5f1e6aaf574155c619261aa0b2
+
+Merge pull request #86 from mr-max/patch-1
+
+Allow getting MenuItems as Sequence | 2015-09-22 16:22:57 | 0b76ef9918a20d732ef582dbd63fc38963e065b0
+
+Fix tests after renaming layoutParams() and dropping 'Support' suffixes | 2015-09-17 12:46:35 | 9b0cc0efa3b1a612842fbfc1a2400386652acee7
+
+Remove "Support" suffixes, move each library contents inside its own package | 2015-09-17 11:03:16 | 1fbfa3c475745635cc8415e250d1f1ff8fbf2493
+
+Update DSL functional tests, fix test generator, make generated code a bit more readable | 2015-09-04 17:58:24 | 894fc7589a7f96f890b753eb53fec0d7fa06b18e
+
+Minor: fix type mismatch error | 2015-07-09 22:21:14 | 3a3f613f4e1f222c810639ba49a3e9b1e38687c0
+
+Support suffix must be added to all support views from android.support | 2015-06-13 13:59:11 | 5e1799b1b1cf35d8e7a0e975fdfd9a03de95adb6
+
+Merge pull request #51 from EddieRingle/fix/doc/git-clone-url
+
+BUILDING.md: Fix git clone URL | 2015-05-30 20:11:48 | 1f08a25929f7010ab4ecb2858c4aafefa5184bbb
+
+fixed formatting | 2015-05-26 08:39:44 | 0426b0eb173f09c8f1c4a90a3c9f7a41a08ef193
+
+Merge pull request #44 from shirohata/fix-include
+
+Fixed include() return type | 2015-05-25 18:05:38 | 57a18deb7b2bb782b07e0e3ed52135d66188bc63
+
+fix: IllegalArgumentException in AnkoLogger | 2015-05-22 09:23:36 | 28e0e2daa06ff234058a7ebd58b562b212436c42
+
+Merge pull request #40 from phajduk/readme
+
+README: fixed notificationManager | 2015-05-14 13:30:41 | 5b72bc2e94247ce55b9f25fbdf21e20ac1e1152c
+
+README: fixed notificationManager | 2015-05-14 12:10:46 | a5ea5080eac8de35d864f4fa791088bf9d2762f9
+
+Bugfixes in main/support-v4 Fragment uniformity | 2015-05-08 16:12:26 | 141195388b455ecf8935c16096bbad432695418f
+
+README: fix intentFor() example | 2015-05-05 15:17:08 | 1246aae9b445a59e4330eb7608b84385e777b9e1
+
+Merge pull request #34 from kamoljan/patch-2
+
+README.md file correction | 2015-05-05 14:50:04 | e556759db8d4b714ea74640843d7183515112686
+
+README: indentation fixes | 2015-04-29 18:26:27 | 8cc919a94c7b6352162c2e239b08ac9a6456b239
+
+README: fix section title. | 2015-04-03 18:25:22 | 0896a844b8021d3f58988062a781efa72480b5ab
+
+README: fix formatting, remove obsolete description. | 2015-04-03 08:57:07 | bf7f94666c210548c25486241c75a1a8739294c0
+
+README: fix broken links. | 2015-04-03 08:25:11 | f62908c4204b074b820ee3ef47f67ed4bd898afa
+
+README: fix template project link | 2015-04-02 18:39:10 | 096c436dc1f9d9a86c516997d5143e0a4b39c9ea
+
+Null-safe call fixes in Preview plugin | 2015-03-31 17:13:45 | f63b3cc8b6ec8c7fd05e8341e3ebcf69901c957f
+
+README: remove @aar suffix | 2015-02-19 22:33:47 | 825ccfe34514c52a64dac329cd4f73a327064e06
+
+Layout test fixes | 2015-01-14 14:46:08 | d0058c8aaf19d4a7bd08d67e58e5395387b693eb
+
+Fix top-level Views bug in Activity | 2014-12-13 23:11:01 | c1405b3071dee6db184696ded5f0274e317f3d1f
+
+Compile tests fixed and optimized | 2014-12-04 18:13:32 | 1a50e08d38df8c4af05501187a205437d2a219ad
+
+readFile() fixed | 2014-12-02 16:54:18 | 813db5c84572e10acf7f28d13dc378a982869b75
+
+Code formatting fixes in static files | 2014-11-13 15:09:56 | a62f96d4b32b910430b12e6d581f7665c8fa9583
+
+Code indent fixes. | 2014-11-12 17:53:16 | 9d6d2834544fde8d1a33a71f2d125fb2cafac56e
+
+Style-related fixes. | 2014-10-01 12:01:25 | 4ca393dd976a6398edc9ed3409422529a106a059
+
+README: Extending Koan, relative link fix | 2014-09-30 20:43:40 | 72c640c4f67436a98409c37e747de9e08eb4345a
+
+README.md fixed. | 2014-09-29 21:52:36 | 5fea24d1a92ba74660c0e993cce0bdc53984df88
+
+README identation fixes. | 2014-09-29 18:26:29 | 44df09a4e8b93a56951788b665ebff40e3c289ca
+
+Styles fixed.
+Indentation fixes in Helpers.kt. | 2014-09-26 10:51:49 | 1475aa67e38f5b09978f8e850e01533b6402681b
+
+BasicGeneratorTest fixed. | 2014-09-26 08:19:42 | 6eed33071414d89ffe95f355655c1524bc2faffb
+
+Generate DSL for several Android versions.
+Support Maven artifacts generation.
+Tests fixed. | 2014-09-18 12:15:34 | 1ecd3fae8fb65bb90309f6f750229cf69929f2d0
+
+Indents fixes. | 2014-09-16 14:31:35 | 016a1836d3deec7c2250ff9dd4f519f88a3e912a
+
+README typo fix. | 2014-09-16 14:23:48 | 5470e36daa0c143398fbbbad992a21eda01fec09
+
+Indents fixed. | 2014-09-12 20:09:50 | 5f6206e2330cf5ef538cbf3838b1883394343d05
+
+fix broken link to jarjar library | 2016-09-26 18:40:51 | 18d65aece0a852b7d1c053040ecd8ed9cce74aab
+
+Update Async.kt
+
+fixes issue #241 | 2016-09-03 10:55:34 | b2ac80dd2dea60f538d77666c146c191f7ed0d12
+
+fix broken dependency version | 2016-09-29 10:08:30 | 0eccfa8e1ac5a8e84efb2f6029a9bab477e22d8a
+
+Preview plugin: fix compatibility with Anko 0.9 | 2016-08-09 20:04:04 | 123f54fe320e0b7733e3f18503f1877e44cd57dd
+
+Merge pull request #94 from Ribesg/patch-2
+
+Explain the various Anko libs in README. Fix #84 | 2016-05-10 17:49:31 | 5b02b4f12c9e5eeeffef15444796e2c639300eea
+
+Merge pull request #175 from richarth/patch-1
+
+Value of SQLite modifier NOT_NULL should be "NOT NULL" | 2016-04-19 23:41:05 | f93e98d7be5fe1948a384970ebe07d59d466ceaa
+
+Merge pull request #145 from georgeci/hotfix/remove_isaccessible
+
+Few  corrections for SQLite static module | 2016-03-11 16:09:12 | 14009b0e342ce7ad9c20efe823d8d144084112ad
+
+README: fix typo (minor) | 2016-03-02 20:22:05 | 00a38a40d886e0f2bc08a313e8a39594236eb122
+
+Merge pull request #139 from Kotlin/ab/compilation-fixed
+
+Compilation fixed | 2016-01-21 16:52:26 | 0023ec8a383a2a26319a4ccdecb11de74d2487a3
+
+Compilation fixed | 2016-01-21 16:23:43 | 17e812254c86942afd8e941eb5ecf6a899573538
+
+Merge pull request #125 from Ribesg/patch-3
+
+Add Int.withAlpha to Helpers | 2015-12-14 18:37:02 | 499f3351705babb6e8bab54be40db5925b94f1e3
+
+Merge pull request #124 from cypressious/patch-1
+
+Add Bintray Badge | 2015-12-14 18:25:09 | c26b01718a7a377d07522e39c92bab7f7d567ece
+
+Merge pull request #100 from colriot/patch-1
+
+Update README wrt Kotlin Beta Candidate | 2015-11-05 15:05:34 | 5b0c7bbbfe1d8321d4ed299b8821ee548aed3815
+
+Merge pull request #106 from JetBrains/yanex-patch-1
+
+Update CHANGELOG | 2015-11-05 12:20:50 | 1cc19ab5582bd4ffccb2b642257effdc82208867
+
+Merge pull request #99 from n3455/patch-1
+
+Corrected typo in readme | 2015-10-31 01:49:17 | 912d6630e5da0f466fb3d674f6a04c8d2564a655
+
+Merge pull request #89 from Ribesg/patch-1
+
+Change .layoutParams() to .lparams() in README. Fixes #88 | 2015-09-30 01:36:04 | 38b390ab2b917c5f1e6aaf574155c619261aa0b2
+
+Merge pull request #86 from mr-max/patch-1
+
+Allow getting MenuItems as Sequence | 2015-09-22 16:22:57 | 0b76ef9918a20d732ef582dbd63fc38963e065b0
+
+Fix tests after renaming layoutParams() and dropping 'Support' suffixes | 2015-09-17 12:46:35 | 9b0cc0efa3b1a612842fbfc1a2400386652acee7
+
+Remove "Support" suffixes, move each library contents inside its own package | 2015-09-17 11:03:16 | 1fbfa3c475745635cc8415e250d1f1ff8fbf2493
+
+Update DSL functional tests, fix test generator, make generated code a bit more readable | 2015-09-04 17:58:24 | 894fc7589a7f96f890b753eb53fec0d7fa06b18e
+
+Minor: fix type mismatch error | 2015-07-09 22:21:14 | 3a3f613f4e1f222c810639ba49a3e9b1e38687c0
+
+Support suffix must be added to all support views from android.support | 2015-06-13 13:59:11 | 5e1799b1b1cf35d8e7a0e975fdfd9a03de95adb6
+
+Merge pull request #51 from EddieRingle/fix/doc/git-clone-url
+
+BUILDING.md: Fix git clone URL | 2015-05-30 20:11:48 | 1f08a25929f7010ab4ecb2858c4aafefa5184bbb
+
+fixed formatting | 2015-05-26 08:39:44 | 0426b0eb173f09c8f1c4a90a3c9f7a41a08ef193
+
+Merge pull request #44 from shirohata/fix-include
+
+Fixed include() return type | 2015-05-25 18:05:38 | 57a18deb7b2bb782b07e0e3ed52135d66188bc63
+
+fix: IllegalArgumentException in AnkoLogger | 2015-05-22 09:23:36 | 28e0e2daa06ff234058a7ebd58b562b212436c42
+
+Merge pull request #40 from phajduk/readme
+
+README: fixed notificationManager | 2015-05-14 13:30:41 | 5b72bc2e94247ce55b9f25fbdf21e20ac1e1152c
+
+README: fixed notificationManager | 2015-05-14 12:10:46 | a5ea5080eac8de35d864f4fa791088bf9d2762f9
+
+Bugfixes in main/support-v4 Fragment uniformity | 2015-05-08 16:12:26 | 141195388b455ecf8935c16096bbad432695418f
+
+README: fix intentFor() example | 2015-05-05 15:17:08 | 1246aae9b445a59e4330eb7608b84385e777b9e1
+
+Merge pull request #34 from kamoljan/patch-2
+
+README.md file correction | 2015-05-05 14:50:04 | e556759db8d4b714ea74640843d7183515112686
+
+README: indentation fixes | 2015-04-29 18:26:27 | 8cc919a94c7b6352162c2e239b08ac9a6456b239
+
+README: fix section title. | 2015-04-03 18:25:22 | 0896a844b8021d3f58988062a781efa72480b5ab
+
+README: fix formatting, remove obsolete description. | 2015-04-03 08:57:07 | bf7f94666c210548c25486241c75a1a8739294c0
+
+README: fix broken links. | 2015-04-03 08:25:11 | f62908c4204b074b820ee3ef47f67ed4bd898afa
+
+README: fix template project link | 2015-04-02 18:39:10 | 096c436dc1f9d9a86c516997d5143e0a4b39c9ea
+
+Null-safe call fixes in Preview plugin | 2015-03-31 17:13:45 | f63b3cc8b6ec8c7fd05e8341e3ebcf69901c957f
+
+README: remove @aar suffix | 2015-02-19 22:33:47 | 825ccfe34514c52a64dac329cd4f73a327064e06
+
+Layout test fixes | 2015-01-14 14:46:08 | d0058c8aaf19d4a7bd08d67e58e5395387b693eb
+
+Fix top-level Views bug in Activity | 2014-12-13 23:11:01 | c1405b3071dee6db184696ded5f0274e317f3d1f
+
+Compile tests fixed and optimized | 2014-12-04 18:13:32 | 1a50e08d38df8c4af05501187a205437d2a219ad
+
+readFile() fixed | 2014-12-02 16:54:18 | 813db5c84572e10acf7f28d13dc378a982869b75
+
+Code formatting fixes in static files | 2014-11-13 15:09:56 | a62f96d4b32b910430b12e6d581f7665c8fa9583
+
+Code indent fixes. | 2014-11-12 17:53:16 | 9d6d2834544fde8d1a33a71f2d125fb2cafac56e
+
+Style-related fixes. | 2014-10-01 12:01:25 | 4ca393dd976a6398edc9ed3409422529a106a059
+
+README: Extending Koan, relative link fix | 2014-09-30 20:43:40 | 72c640c4f67436a98409c37e747de9e08eb4345a
+
+README.md fixed. | 2014-09-29 21:52:36 | 5fea24d1a92ba74660c0e993cce0bdc53984df88
+
+README identation fixes. | 2014-09-29 18:26:29 | 44df09a4e8b93a56951788b665ebff40e3c289ca
+
+Styles fixed.
+Indentation fixes in Helpers.kt. | 2014-09-26 10:51:49 | 1475aa67e38f5b09978f8e850e01533b6402681b
+
+BasicGeneratorTest fixed. | 2014-09-26 08:19:42 | 6eed33071414d89ffe95f355655c1524bc2faffb
+
+Generate DSL for several Android versions.
+Support Maven artifacts generation.
+Tests fixed. | 2014-09-18 12:15:34 | 1ecd3fae8fb65bb90309f6f750229cf69929f2d0
+
+Indents fixes. | 2014-09-16 14:31:35 | 016a1836d3deec7c2250ff9dd4f519f88a3e912a
+
+README typo fix. | 2014-09-16 14:23:48 | 5470e36daa0c143398fbbbad992a21eda01fec09
+
+Indents fixed. | 2014-09-12 20:09:50 | 5f6206e2330cf5ef538cbf3838b1883394343d05
+
+fix: Replace Snackbar's message type from String to CharSequence (#655)
+
+Fix #654 | 2018-07-20 13:23:41 | b3d22457e23ae70b5d54a316f33b00138792cfc8
+
+Use `base` suffix instead of prefix `internal` for static library artifacts | 2018-07-06 17:38:24 | 360aa5d72f2ffa8de1da821e50143e3ef581f0a3
+
+Update plugin version to 0.10.4-2 (hotfix) | 2018-01-09 13:00:44 | 5002ea56e7e651a286a50d8a7a791ccfa2ee2024
+
+Minor: fix formatting | 2017-11-15 19:55:03 | 64f8406e52447d364a44112fe535b68dff05ec8b
+
+Add attrs.json and views.json to xml converter resources and fix path
+
+ Fixes #370 | 2017-11-14 15:04:58 | 97b66dd1bc4ab82a001bd41e965fa8977cbe81ee
+
+Merge pull request #396 from luiqn2007/patch-1
+
+Update README.md | 2017-06-06 12:37:45 | 459edd5cc2ac558aacdc7a2bccf16d0ef6b0b8e6
+
+childrenRecursiveSequence: fix NoSuchElementException being thrown when hasNext() returned true (#388) | 2017-05-29 16:55:01 | 4584577b6bf3b4f8d8d1733f53408537e2aac759
+
+A couple of DSL Preview fixes
+
+1. Do not launch the compilation automatically. It's probably better to let user launch the build manually (the preview will be updated anyway after the build).
+2. Do not generate the new synthetic XML file if the source class is the same. That caused blinks on file switching. | 2017-05-03 14:54:58 | b9ecd364d3793860c6d269cbe6df63bcbb87add5
+
+Fix compilation error (#272)
+
+The example to create a table doesn't compile. This fixes it.  See #260. | 2016-12-13 20:24:54 | 7b239fb78d2316c874afcce0e1e2fee51f4ef94f
+
+fix broken link to jarjar library | 2016-09-26 18:40:51 | 18d65aece0a852b7d1c053040ecd8ed9cce74aab
+
+Update Async.kt
+
+fixes issue #241 | 2016-09-03 10:55:34 | b2ac80dd2dea60f538d77666c146c191f7ed0d12
+
+fix broken dependency version | 2016-09-29 10:08:30 | 0eccfa8e1ac5a8e84efb2f6029a9bab477e22d8a
+
+Preview plugin: fix compatibility with Anko 0.9 | 2016-08-09 20:04:04 | 123f54fe320e0b7733e3f18503f1877e44cd57dd
+
+Merge pull request #94 from Ribesg/patch-2
+
+Explain the various Anko libs in README. Fix #84 | 2016-05-10 17:49:31 | 5b02b4f12c9e5eeeffef15444796e2c639300eea
+
+Merge pull request #175 from richarth/patch-1
+
+Value of SQLite modifier NOT_NULL should be "NOT NULL" | 2016-04-19 23:41:05 | f93e98d7be5fe1948a384970ebe07d59d466ceaa
+
+Merge pull request #145 from georgeci/hotfix/remove_isaccessible
+
+Few  corrections for SQLite static module | 2016-03-11 16:09:12 | 14009b0e342ce7ad9c20efe823d8d144084112ad
+
+README: fix typo (minor) | 2016-03-02 20:22:05 | 00a38a40d886e0f2bc08a313e8a39594236eb122
+
+Merge pull request #139 from Kotlin/ab/compilation-fixed
+
+Compilation fixed | 2016-01-21 16:52:26 | 0023ec8a383a2a26319a4ccdecb11de74d2487a3
+
+Compilation fixed | 2016-01-21 16:23:43 | 17e812254c86942afd8e941eb5ecf6a899573538
+
+Merge pull request #125 from Ribesg/patch-3
+
+Add Int.withAlpha to Helpers | 2015-12-14 18:37:02 | 499f3351705babb6e8bab54be40db5925b94f1e3
+
+Merge pull request #124 from cypressious/patch-1
+
+Add Bintray Badge | 2015-12-14 18:25:09 | c26b01718a7a377d07522e39c92bab7f7d567ece
+
+Merge pull request #100 from colriot/patch-1
+
+Update README wrt Kotlin Beta Candidate | 2015-11-05 15:05:34 | 5b0c7bbbfe1d8321d4ed299b8821ee548aed3815
+
+Merge pull request #106 from JetBrains/yanex-patch-1
+
+Update CHANGELOG | 2015-11-05 12:20:50 | 1cc19ab5582bd4ffccb2b642257effdc82208867
+
+Merge pull request #99 from n3455/patch-1
+
+Corrected typo in readme | 2015-10-31 01:49:17 | 912d6630e5da0f466fb3d674f6a04c8d2564a655
+
+Merge pull request #89 from Ribesg/patch-1
+
+Change .layoutParams() to .lparams() in README. Fixes #88 | 2015-09-30 01:36:04 | 38b390ab2b917c5f1e6aaf574155c619261aa0b2
+
+Merge pull request #86 from mr-max/patch-1
+
+Allow getting MenuItems as Sequence | 2015-09-22 16:22:57 | 0b76ef9918a20d732ef582dbd63fc38963e065b0
+
+Fix tests after renaming layoutParams() and dropping 'Support' suffixes | 2015-09-17 12:46:35 | 9b0cc0efa3b1a612842fbfc1a2400386652acee7
+
+Remove "Support" suffixes, move each library contents inside its own package | 2015-09-17 11:03:16 | 1fbfa3c475745635cc8415e250d1f1ff8fbf2493
+
+Update DSL functional tests, fix test generator, make generated code a bit more readable | 2015-09-04 17:58:24 | 894fc7589a7f96f890b753eb53fec0d7fa06b18e
+
+Minor: fix type mismatch error | 2015-07-09 22:21:14 | 3a3f613f4e1f222c810639ba49a3e9b1e38687c0
+
+Support suffix must be added to all support views from android.support | 2015-06-13 13:59:11 | 5e1799b1b1cf35d8e7a0e975fdfd9a03de95adb6
+
+Merge pull request #51 from EddieRingle/fix/doc/git-clone-url
+
+BUILDING.md: Fix git clone URL | 2015-05-30 20:11:48 | 1f08a25929f7010ab4ecb2858c4aafefa5184bbb
+
+fixed formatting | 2015-05-26 08:39:44 | 0426b0eb173f09c8f1c4a90a3c9f7a41a08ef193
+
+Merge pull request #44 from shirohata/fix-include
+
+Fixed include() return type | 2015-05-25 18:05:38 | 57a18deb7b2bb782b07e0e3ed52135d66188bc63
+
+fix: IllegalArgumentException in AnkoLogger | 2015-05-22 09:23:36 | 28e0e2daa06ff234058a7ebd58b562b212436c42
+
+Merge pull request #40 from phajduk/readme
+
+README: fixed notificationManager | 2015-05-14 13:30:41 | 5b72bc2e94247ce55b9f25fbdf21e20ac1e1152c
+
+README: fixed notificationManager | 2015-05-14 12:10:46 | a5ea5080eac8de35d864f4fa791088bf9d2762f9
+
+Bugfixes in main/support-v4 Fragment uniformity | 2015-05-08 16:12:26 | 141195388b455ecf8935c16096bbad432695418f
+
+README: fix intentFor() example | 2015-05-05 15:17:08 | 1246aae9b445a59e4330eb7608b84385e777b9e1
+
+Merge pull request #34 from kamoljan/patch-2
+
+README.md file correction | 2015-05-05 14:50:04 | e556759db8d4b714ea74640843d7183515112686
+
+README: indentation fixes | 2015-04-29 18:26:27 | 8cc919a94c7b6352162c2e239b08ac9a6456b239
+
+README: fix section title. | 2015-04-03 18:25:22 | 0896a844b8021d3f58988062a781efa72480b5ab
+
+README: fix formatting, remove obsolete description. | 2015-04-03 08:57:07 | bf7f94666c210548c25486241c75a1a8739294c0
+
+README: fix broken links. | 2015-04-03 08:25:11 | f62908c4204b074b820ee3ef47f67ed4bd898afa
+
+README: fix template project link | 2015-04-02 18:39:10 | 096c436dc1f9d9a86c516997d5143e0a4b39c9ea
+
+Null-safe call fixes in Preview plugin | 2015-03-31 17:13:45 | f63b3cc8b6ec8c7fd05e8341e3ebcf69901c957f
+
+README: remove @aar suffix | 2015-02-19 22:33:47 | 825ccfe34514c52a64dac329cd4f73a327064e06
+
+Layout test fixes | 2015-01-14 14:46:08 | d0058c8aaf19d4a7bd08d67e58e5395387b693eb
+
+Fix top-level Views bug in Activity | 2014-12-13 23:11:01 | c1405b3071dee6db184696ded5f0274e317f3d1f
+
+Compile tests fixed and optimized | 2014-12-04 18:13:32 | 1a50e08d38df8c4af05501187a205437d2a219ad
+
+readFile() fixed | 2014-12-02 16:54:18 | 813db5c84572e10acf7f28d13dc378a982869b75
+
+Code formatting fixes in static files | 2014-11-13 15:09:56 | a62f96d4b32b910430b12e6d581f7665c8fa9583
+
+Code indent fixes. | 2014-11-12 17:53:16 | 9d6d2834544fde8d1a33a71f2d125fb2cafac56e
+
+Style-related fixes. | 2014-10-01 12:01:25 | 4ca393dd976a6398edc9ed3409422529a106a059
+
+README: Extending Koan, relative link fix | 2014-09-30 20:43:40 | 72c640c4f67436a98409c37e747de9e08eb4345a
+
+README.md fixed. | 2014-09-29 21:52:36 | 5fea24d1a92ba74660c0e993cce0bdc53984df88
+
+README identation fixes. | 2014-09-29 18:26:29 | 44df09a4e8b93a56951788b665ebff40e3c289ca
+
+Styles fixed.
+Indentation fixes in Helpers.kt. | 2014-09-26 10:51:49 | 1475aa67e38f5b09978f8e850e01533b6402681b
+
+BasicGeneratorTest fixed. | 2014-09-26 08:19:42 | 6eed33071414d89ffe95f355655c1524bc2faffb
+
+Generate DSL for several Android versions.
+Support Maven artifacts generation.
+Tests fixed. | 2014-09-18 12:15:34 | 1ecd3fae8fb65bb90309f6f750229cf69929f2d0
+
+Indents fixes. | 2014-09-16 14:31:35 | 016a1836d3deec7c2250ff9dd4f519f88a3e912a
+
+README typo fix. | 2014-09-16 14:23:48 | 5470e36daa0c143398fbbbad992a21eda01fec09
+
+Indents fixed. | 2014-09-12 20:09:50 | 5f6206e2330cf5ef538cbf3838b1883394343d05
+
+fix: Replace Snackbar's message type from String to CharSequence (#655)
+
+Fix #654 | 2018-07-20 13:23:41 | b3d22457e23ae70b5d54a316f33b00138792cfc8
+
+Use `base` suffix instead of prefix `internal` for static library artifacts | 2018-07-06 17:38:24 | 360aa5d72f2ffa8de1da821e50143e3ef581f0a3
+
+Update plugin version to 0.10.4-2 (hotfix) | 2018-01-09 13:00:44 | 5002ea56e7e651a286a50d8a7a791ccfa2ee2024
+
+Minor: fix formatting | 2017-11-15 19:55:03 | 64f8406e52447d364a44112fe535b68dff05ec8b
+
+Add attrs.json and views.json to xml converter resources and fix path
+
+ Fixes #370 | 2017-11-14 15:04:58 | 97b66dd1bc4ab82a001bd41e965fa8977cbe81ee
+
+Merge pull request #396 from luiqn2007/patch-1
+
+Update README.md | 2017-06-06 12:37:45 | 459edd5cc2ac558aacdc7a2bccf16d0ef6b0b8e6
+
+childrenRecursiveSequence: fix NoSuchElementException being thrown when hasNext() returned true (#388) | 2017-05-29 16:55:01 | 4584577b6bf3b4f8d8d1733f53408537e2aac759
+
+A couple of DSL Preview fixes
+
+1. Do not launch the compilation automatically. It's probably better to let user launch the build manually (the preview will be updated anyway after the build).
+2. Do not generate the new synthetic XML file if the source class is the same. That caused blinks on file switching. | 2017-05-03 14:54:58 | b9ecd364d3793860c6d269cbe6df63bcbb87add5
+
+Fix compilation error (#272)
+
+The example to create a table doesn't compile. This fixes it.  See #260. | 2016-12-13 20:24:54 | 7b239fb78d2316c874afcce0e1e2fee51f4ef94f
+
+fix broken link to jarjar library | 2016-09-26 18:40:51 | 18d65aece0a852b7d1c053040ecd8ed9cce74aab
+
+Update Async.kt
+
+fixes issue #241 | 2016-09-03 10:55:34 | b2ac80dd2dea60f538d77666c146c191f7ed0d12
+
+fix broken dependency version | 2016-09-29 10:08:30 | 0eccfa8e1ac5a8e84efb2f6029a9bab477e22d8a
+
+Preview plugin: fix compatibility with Anko 0.9 | 2016-08-09 20:04:04 | 123f54fe320e0b7733e3f18503f1877e44cd57dd
+
+Merge pull request #94 from Ribesg/patch-2
+
+Explain the various Anko libs in README. Fix #84 | 2016-05-10 17:49:31 | 5b02b4f12c9e5eeeffef15444796e2c639300eea
+
+Merge pull request #175 from richarth/patch-1
+
+Value of SQLite modifier NOT_NULL should be "NOT NULL" | 2016-04-19 23:41:05 | f93e98d7be5fe1948a384970ebe07d59d466ceaa
+
+Merge pull request #145 from georgeci/hotfix/remove_isaccessible
+
+Few  corrections for SQLite static module | 2016-03-11 16:09:12 | 14009b0e342ce7ad9c20efe823d8d144084112ad
+
+README: fix typo (minor) | 2016-03-02 20:22:05 | 00a38a40d886e0f2bc08a313e8a39594236eb122
+
+Merge pull request #139 from Kotlin/ab/compilation-fixed
+
+Compilation fixed | 2016-01-21 16:52:26 | 0023ec8a383a2a26319a4ccdecb11de74d2487a3
+
+Compilation fixed | 2016-01-21 16:23:43 | 17e812254c86942afd8e941eb5ecf6a899573538
+
+Merge pull request #125 from Ribesg/patch-3
+
+Add Int.withAlpha to Helpers | 2015-12-14 18:37:02 | 499f3351705babb6e8bab54be40db5925b94f1e3
+
+Merge pull request #124 from cypressious/patch-1
+
+Add Bintray Badge | 2015-12-14 18:25:09 | c26b01718a7a377d07522e39c92bab7f7d567ece
+
+Merge pull request #100 from colriot/patch-1
+
+Update README wrt Kotlin Beta Candidate | 2015-11-05 15:05:34 | 5b0c7bbbfe1d8321d4ed299b8821ee548aed3815
+
+Merge pull request #106 from JetBrains/yanex-patch-1
+
+Update CHANGELOG | 2015-11-05 12:20:50 | 1cc19ab5582bd4ffccb2b642257effdc82208867
+
+Merge pull request #99 from n3455/patch-1
+
+Corrected typo in readme | 2015-10-31 01:49:17 | 912d6630e5da0f466fb3d674f6a04c8d2564a655
+
+Merge pull request #89 from Ribesg/patch-1
+
+Change .layoutParams() to .lparams() in README. Fixes #88 | 2015-09-30 01:36:04 | 38b390ab2b917c5f1e6aaf574155c619261aa0b2
+
+Merge pull request #86 from mr-max/patch-1
+
+Allow getting MenuItems as Sequence | 2015-09-22 16:22:57 | 0b76ef9918a20d732ef582dbd63fc38963e065b0
+
+Fix tests after renaming layoutParams() and dropping 'Support' suffixes | 2015-09-17 12:46:35 | 9b0cc0efa3b1a612842fbfc1a2400386652acee7
+
+Remove "Support" suffixes, move each library contents inside its own package | 2015-09-17 11:03:16 | 1fbfa3c475745635cc8415e250d1f1ff8fbf2493
+
+Update DSL functional tests, fix test generator, make generated code a bit more readable | 2015-09-04 17:58:24 | 894fc7589a7f96f890b753eb53fec0d7fa06b18e
+
+Minor: fix type mismatch error | 2015-07-09 22:21:14 | 3a3f613f4e1f222c810639ba49a3e9b1e38687c0
+
+Support suffix must be added to all support views from android.support | 2015-06-13 13:59:11 | 5e1799b1b1cf35d8e7a0e975fdfd9a03de95adb6
+
+Merge pull request #51 from EddieRingle/fix/doc/git-clone-url
+
+BUILDING.md: Fix git clone URL | 2015-05-30 20:11:48 | 1f08a25929f7010ab4ecb2858c4aafefa5184bbb
+
+fixed formatting | 2015-05-26 08:39:44 | 0426b0eb173f09c8f1c4a90a3c9f7a41a08ef193
+
+Merge pull request #44 from shirohata/fix-include
+
+Fixed include() return type | 2015-05-25 18:05:38 | 57a18deb7b2bb782b07e0e3ed52135d66188bc63
+
+fix: IllegalArgumentException in AnkoLogger | 2015-05-22 09:23:36 | 28e0e2daa06ff234058a7ebd58b562b212436c42
+
+Merge pull request #40 from phajduk/readme
+
+README: fixed notificationManager | 2015-05-14 13:30:41 | 5b72bc2e94247ce55b9f25fbdf21e20ac1e1152c
+
+README: fixed notificationManager | 2015-05-14 12:10:46 | a5ea5080eac8de35d864f4fa791088bf9d2762f9
+
+Bugfixes in main/support-v4 Fragment uniformity | 2015-05-08 16:12:26 | 141195388b455ecf8935c16096bbad432695418f
+
+README: fix intentFor() example | 2015-05-05 15:17:08 | 1246aae9b445a59e4330eb7608b84385e777b9e1
+
+Merge pull request #34 from kamoljan/patch-2
+
+README.md file correction | 2015-05-05 14:50:04 | e556759db8d4b714ea74640843d7183515112686
+
+README: indentation fixes | 2015-04-29 18:26:27 | 8cc919a94c7b6352162c2e239b08ac9a6456b239
+
+README: fix section title. | 2015-04-03 18:25:22 | 0896a844b8021d3f58988062a781efa72480b5ab
+
+README: fix formatting, remove obsolete description. | 2015-04-03 08:57:07 | bf7f94666c210548c25486241c75a1a8739294c0
+
+README: fix broken links. | 2015-04-03 08:25:11 | f62908c4204b074b820ee3ef47f67ed4bd898afa
+
+README: fix template project link | 2015-04-02 18:39:10 | 096c436dc1f9d9a86c516997d5143e0a4b39c9ea
+
+Null-safe call fixes in Preview plugin | 2015-03-31 17:13:45 | f63b3cc8b6ec8c7fd05e8341e3ebcf69901c957f
+
+README: remove @aar suffix | 2015-02-19 22:33:47 | 825ccfe34514c52a64dac329cd4f73a327064e06
+
+Layout test fixes | 2015-01-14 14:46:08 | d0058c8aaf19d4a7bd08d67e58e5395387b693eb
+
+Fix top-level Views bug in Activity | 2014-12-13 23:11:01 | c1405b3071dee6db184696ded5f0274e317f3d1f
+
+Compile tests fixed and optimized | 2014-12-04 18:13:32 | 1a50e08d38df8c4af05501187a205437d2a219ad
+
+readFile() fixed | 2014-12-02 16:54:18 | 813db5c84572e10acf7f28d13dc378a982869b75
+
+Code formatting fixes in static files | 2014-11-13 15:09:56 | a62f96d4b32b910430b12e6d581f7665c8fa9583
+
+Code indent fixes. | 2014-11-12 17:53:16 | 9d6d2834544fde8d1a33a71f2d125fb2cafac56e
+
+Style-related fixes. | 2014-10-01 12:01:25 | 4ca393dd976a6398edc9ed3409422529a106a059
+
+README: Extending Koan, relative link fix | 2014-09-30 20:43:40 | 72c640c4f67436a98409c37e747de9e08eb4345a
+
+README.md fixed. | 2014-09-29 21:52:36 | 5fea24d1a92ba74660c0e993cce0bdc53984df88
+
+README identation fixes. | 2014-09-29 18:26:29 | 44df09a4e8b93a56951788b665ebff40e3c289ca
+
+Styles fixed.
+Indentation fixes in Helpers.kt. | 2014-09-26 10:51:49 | 1475aa67e38f5b09978f8e850e01533b6402681b
+
+BasicGeneratorTest fixed. | 2014-09-26 08:19:42 | 6eed33071414d89ffe95f355655c1524bc2faffb
+
+Generate DSL for several Android versions.
+Support Maven artifacts generation.
+Tests fixed. | 2014-09-18 12:15:34 | 1ecd3fae8fb65bb90309f6f750229cf69929f2d0
+
+Indents fixes. | 2014-09-16 14:31:35 | 016a1836d3deec7c2250ff9dd4f519f88a3e912a
+
+README typo fix. | 2014-09-16 14:23:48 | 5470e36daa0c143398fbbbad992a21eda01fec09
+
+Indents fixed. | 2014-09-12 20:09:50 | 5f6206e2330cf5ef538cbf3838b1883394343d05
+
+fix: Replace Snackbar's message type from String to CharSequence
+Fix #654 | 2018-07-19 18:58:48 | cc71d2973a55aa09fde635e1f0912ce60c63f6fc
+
+Use `base` suffix instead of prefix `internal` for static library artifacts | 2018-07-06 17:38:24 | 360aa5d72f2ffa8de1da821e50143e3ef581f0a3
+
+Update plugin version to 0.10.4-2 (hotfix) | 2018-01-09 13:00:44 | 5002ea56e7e651a286a50d8a7a791ccfa2ee2024
+
+Minor: fix formatting | 2017-11-15 19:55:03 | 64f8406e52447d364a44112fe535b68dff05ec8b
+
+Add attrs.json and views.json to xml converter resources and fix path
+
+ Fixes #370 | 2017-11-14 15:04:58 | 97b66dd1bc4ab82a001bd41e965fa8977cbe81ee
+
+Merge pull request #396 from luiqn2007/patch-1
+
+Update README.md | 2017-06-06 12:37:45 | 459edd5cc2ac558aacdc7a2bccf16d0ef6b0b8e6
+
+childrenRecursiveSequence: fix NoSuchElementException being thrown when hasNext() returned true (#388) | 2017-05-29 16:55:01 | 4584577b6bf3b4f8d8d1733f53408537e2aac759
+
+A couple of DSL Preview fixes
+
+1. Do not launch the compilation automatically. It's probably better to let user launch the build manually (the preview will be updated anyway after the build).
+2. Do not generate the new synthetic XML file if the source class is the same. That caused blinks on file switching. | 2017-05-03 14:54:58 | b9ecd364d3793860c6d269cbe6df63bcbb87add5
+
+Fix compilation error (#272)
+
+The example to create a table doesn't compile. This fixes it.  See #260. | 2016-12-13 20:24:54 | 7b239fb78d2316c874afcce0e1e2fee51f4ef94f
+
+fix broken link to jarjar library | 2016-09-26 18:40:51 | 18d65aece0a852b7d1c053040ecd8ed9cce74aab
+
+Update Async.kt
+
+fixes issue #241 | 2016-09-03 10:55:34 | b2ac80dd2dea60f538d77666c146c191f7ed0d12
+
+fix broken dependency version | 2016-09-29 10:08:30 | 0eccfa8e1ac5a8e84efb2f6029a9bab477e22d8a
+
+Preview plugin: fix compatibility with Anko 0.9 | 2016-08-09 20:04:04 | 123f54fe320e0b7733e3f18503f1877e44cd57dd
+
+Merge pull request #94 from Ribesg/patch-2
+
+Explain the various Anko libs in README. Fix #84 | 2016-05-10 17:49:31 | 5b02b4f12c9e5eeeffef15444796e2c639300eea
+
+Merge pull request #175 from richarth/patch-1
+
+Value of SQLite modifier NOT_NULL should be "NOT NULL" | 2016-04-19 23:41:05 | f93e98d7be5fe1948a384970ebe07d59d466ceaa
+
+Merge pull request #145 from georgeci/hotfix/remove_isaccessible
+
+Few  corrections for SQLite static module | 2016-03-11 16:09:12 | 14009b0e342ce7ad9c20efe823d8d144084112ad
+
+README: fix typo (minor) | 2016-03-02 20:22:05 | 00a38a40d886e0f2bc08a313e8a39594236eb122
+
+Merge pull request #139 from Kotlin/ab/compilation-fixed
+
+Compilation fixed | 2016-01-21 16:52:26 | 0023ec8a383a2a26319a4ccdecb11de74d2487a3
+
+Compilation fixed | 2016-01-21 16:23:43 | 17e812254c86942afd8e941eb5ecf6a899573538
+
+Merge pull request #125 from Ribesg/patch-3
+
+Add Int.withAlpha to Helpers | 2015-12-14 18:37:02 | 499f3351705babb6e8bab54be40db5925b94f1e3
+
+Merge pull request #124 from cypressious/patch-1
+
+Add Bintray Badge | 2015-12-14 18:25:09 | c26b01718a7a377d07522e39c92bab7f7d567ece
+
+Merge pull request #100 from colriot/patch-1
+
+Update README wrt Kotlin Beta Candidate | 2015-11-05 15:05:34 | 5b0c7bbbfe1d8321d4ed299b8821ee548aed3815
+
+Merge pull request #106 from JetBrains/yanex-patch-1
+
+Update CHANGELOG | 2015-11-05 12:20:50 | 1cc19ab5582bd4ffccb2b642257effdc82208867
+
+Merge pull request #99 from n3455/patch-1
+
+Corrected typo in readme | 2015-10-31 01:49:17 | 912d6630e5da0f466fb3d674f6a04c8d2564a655
+
+Merge pull request #89 from Ribesg/patch-1
+
+Change .layoutParams() to .lparams() in README. Fixes #88 | 2015-09-30 01:36:04 | 38b390ab2b917c5f1e6aaf574155c619261aa0b2
+
+Merge pull request #86 from mr-max/patch-1
+
+Allow getting MenuItems as Sequence | 2015-09-22 16:22:57 | 0b76ef9918a20d732ef582dbd63fc38963e065b0
+
+Fix tests after renaming layoutParams() and dropping 'Support' suffixes | 2015-09-17 12:46:35 | 9b0cc0efa3b1a612842fbfc1a2400386652acee7
+
+Remove "Support" suffixes, move each library contents inside its own package | 2015-09-17 11:03:16 | 1fbfa3c475745635cc8415e250d1f1ff8fbf2493
+
+Update DSL functional tests, fix test generator, make generated code a bit more readable | 2015-09-04 17:58:24 | 894fc7589a7f96f890b753eb53fec0d7fa06b18e
+
+Minor: fix type mismatch error | 2015-07-09 22:21:14 | 3a3f613f4e1f222c810639ba49a3e9b1e38687c0
+
+Support suffix must be added to all support views from android.support | 2015-06-13 13:59:11 | 5e1799b1b1cf35d8e7a0e975fdfd9a03de95adb6
+
+Merge pull request #51 from EddieRingle/fix/doc/git-clone-url
+
+BUILDING.md: Fix git clone URL | 2015-05-30 20:11:48 | 1f08a25929f7010ab4ecb2858c4aafefa5184bbb
+
+fixed formatting | 2015-05-26 08:39:44 | 0426b0eb173f09c8f1c4a90a3c9f7a41a08ef193
+
+Merge pull request #44 from shirohata/fix-include
+
+Fixed include() return type | 2015-05-25 18:05:38 | 57a18deb7b2bb782b07e0e3ed52135d66188bc63
+
+fix: IllegalArgumentException in AnkoLogger | 2015-05-22 09:23:36 | 28e0e2daa06ff234058a7ebd58b562b212436c42
+
+Merge pull request #40 from phajduk/readme
+
+README: fixed notificationManager | 2015-05-14 13:30:41 | 5b72bc2e94247ce55b9f25fbdf21e20ac1e1152c
+
+README: fixed notificationManager | 2015-05-14 12:10:46 | a5ea5080eac8de35d864f4fa791088bf9d2762f9
+
+Bugfixes in main/support-v4 Fragment uniformity | 2015-05-08 16:12:26 | 141195388b455ecf8935c16096bbad432695418f
+
+README: fix intentFor() example | 2015-05-05 15:17:08 | 1246aae9b445a59e4330eb7608b84385e777b9e1
+
+Merge pull request #34 from kamoljan/patch-2
+
+README.md file correction | 2015-05-05 14:50:04 | e556759db8d4b714ea74640843d7183515112686
+
+README: indentation fixes | 2015-04-29 18:26:27 | 8cc919a94c7b6352162c2e239b08ac9a6456b239
+
+README: fix section title. | 2015-04-03 18:25:22 | 0896a844b8021d3f58988062a781efa72480b5ab
+
+README: fix formatting, remove obsolete description. | 2015-04-03 08:57:07 | bf7f94666c210548c25486241c75a1a8739294c0
+
+README: fix broken links. | 2015-04-03 08:25:11 | f62908c4204b074b820ee3ef47f67ed4bd898afa
+
+README: fix template project link | 2015-04-02 18:39:10 | 096c436dc1f9d9a86c516997d5143e0a4b39c9ea
+
+Null-safe call fixes in Preview plugin | 2015-03-31 17:13:45 | f63b3cc8b6ec8c7fd05e8341e3ebcf69901c957f
+
+README: remove @aar suffix | 2015-02-19 22:33:47 | 825ccfe34514c52a64dac329cd4f73a327064e06
+
+Layout test fixes | 2015-01-14 14:46:08 | d0058c8aaf19d4a7bd08d67e58e5395387b693eb
+
+Fix top-level Views bug in Activity | 2014-12-13 23:11:01 | c1405b3071dee6db184696ded5f0274e317f3d1f
+
+Compile tests fixed and optimized | 2014-12-04 18:13:32 | 1a50e08d38df8c4af05501187a205437d2a219ad
+
+readFile() fixed | 2014-12-02 16:54:18 | 813db5c84572e10acf7f28d13dc378a982869b75
+
+Code formatting fixes in static files | 2014-11-13 15:09:56 | a62f96d4b32b910430b12e6d581f7665c8fa9583
+
+Code indent fixes. | 2014-11-12 17:53:16 | 9d6d2834544fde8d1a33a71f2d125fb2cafac56e
+
+Style-related fixes. | 2014-10-01 12:01:25 | 4ca393dd976a6398edc9ed3409422529a106a059
+
+README: Extending Koan, relative link fix | 2014-09-30 20:43:40 | 72c640c4f67436a98409c37e747de9e08eb4345a
+
+README.md fixed. | 2014-09-29 21:52:36 | 5fea24d1a92ba74660c0e993cce0bdc53984df88
+
+README identation fixes. | 2014-09-29 18:26:29 | 44df09a4e8b93a56951788b665ebff40e3c289ca
+
+Styles fixed.
+Indentation fixes in Helpers.kt. | 2014-09-26 10:51:49 | 1475aa67e38f5b09978f8e850e01533b6402681b
+
+BasicGeneratorTest fixed. | 2014-09-26 08:19:42 | 6eed33071414d89ffe95f355655c1524bc2faffb
+
+Generate DSL for several Android versions.
+Support Maven artifacts generation.
+Tests fixed. | 2014-09-18 12:15:34 | 1ecd3fae8fb65bb90309f6f750229cf69929f2d0
+
+Indents fixes. | 2014-09-16 14:31:35 | 016a1836d3deec7c2250ff9dd4f519f88a3e912a
+
+README typo fix. | 2014-09-16 14:23:48 | 5470e36daa0c143398fbbbad992a21eda01fec09
+
+Indents fixed. | 2014-09-12 20:09:50 | 5f6206e2330cf5ef538cbf3838b1883394343d05
+
+fix: Replace Snackbar's message type from String to CharSequence (#655)
+
+Fix #654 | 2018-07-20 13:23:41 | b3d22457e23ae70b5d54a316f33b00138792cfc8
+
+Use `base` suffix instead of prefix `internal` for static library artifacts | 2018-07-06 17:38:24 | 360aa5d72f2ffa8de1da821e50143e3ef581f0a3
+
+Update plugin version to 0.10.4-2 (hotfix) | 2018-01-09 13:00:44 | 5002ea56e7e651a286a50d8a7a791ccfa2ee2024
+
+Minor: fix formatting | 2017-11-15 19:55:03 | 64f8406e52447d364a44112fe535b68dff05ec8b
+
+Add attrs.json and views.json to xml converter resources and fix path
+
+ Fixes #370 | 2017-11-14 15:04:58 | 97b66dd1bc4ab82a001bd41e965fa8977cbe81ee
+
+Merge pull request #396 from luiqn2007/patch-1
+
+Update README.md | 2017-06-06 12:37:45 | 459edd5cc2ac558aacdc7a2bccf16d0ef6b0b8e6
+
+childrenRecursiveSequence: fix NoSuchElementException being thrown when hasNext() returned true (#388) | 2017-05-29 16:55:01 | 4584577b6bf3b4f8d8d1733f53408537e2aac759
+
+A couple of DSL Preview fixes
+
+1. Do not launch the compilation automatically. It's probably better to let user launch the build manually (the preview will be updated anyway after the build).
+2. Do not generate the new synthetic XML file if the source class is the same. That caused blinks on file switching. | 2017-05-03 14:54:58 | b9ecd364d3793860c6d269cbe6df63bcbb87add5
+
+Fix compilation error (#272)
+
+The example to create a table doesn't compile. This fixes it.  See #260. | 2016-12-13 20:24:54 | 7b239fb78d2316c874afcce0e1e2fee51f4ef94f
+
+fix broken link to jarjar library | 2016-09-26 18:40:51 | 18d65aece0a852b7d1c053040ecd8ed9cce74aab
+
+Update Async.kt
+
+fixes issue #241 | 2016-09-03 10:55:34 | b2ac80dd2dea60f538d77666c146c191f7ed0d12
+
+fix broken dependency version | 2016-09-29 10:08:30 | 0eccfa8e1ac5a8e84efb2f6029a9bab477e22d8a
+
+Preview plugin: fix compatibility with Anko 0.9 | 2016-08-09 20:04:04 | 123f54fe320e0b7733e3f18503f1877e44cd57dd
+
+Merge pull request #94 from Ribesg/patch-2
+
+Explain the various Anko libs in README. Fix #84 | 2016-05-10 17:49:31 | 5b02b4f12c9e5eeeffef15444796e2c639300eea
+
+Merge pull request #175 from richarth/patch-1
+
+Value of SQLite modifier NOT_NULL should be "NOT NULL" | 2016-04-19 23:41:05 | f93e98d7be5fe1948a384970ebe07d59d466ceaa
+
+Merge pull request #145 from georgeci/hotfix/remove_isaccessible
+
+Few  corrections for SQLite static module | 2016-03-11 16:09:12 | 14009b0e342ce7ad9c20efe823d8d144084112ad
+
+README: fix typo (minor) | 2016-03-02 20:22:05 | 00a38a40d886e0f2bc08a313e8a39594236eb122
+
+Merge pull request #139 from Kotlin/ab/compilation-fixed
+
+Compilation fixed | 2016-01-21 16:52:26 | 0023ec8a383a2a26319a4ccdecb11de74d2487a3
+
+Compilation fixed | 2016-01-21 16:23:43 | 17e812254c86942afd8e941eb5ecf6a899573538
+
+Merge pull request #125 from Ribesg/patch-3
+
+Add Int.withAlpha to Helpers | 2015-12-14 18:37:02 | 499f3351705babb6e8bab54be40db5925b94f1e3
+
+Merge pull request #124 from cypressious/patch-1
+
+Add Bintray Badge | 2015-12-14 18:25:09 | c26b01718a7a377d07522e39c92bab7f7d567ece
+
+Merge pull request #100 from colriot/patch-1
+
+Update README wrt Kotlin Beta Candidate | 2015-11-05 15:05:34 | 5b0c7bbbfe1d8321d4ed299b8821ee548aed3815
+
+Merge pull request #106 from JetBrains/yanex-patch-1
+
+Update CHANGELOG | 2015-11-05 12:20:50 | 1cc19ab5582bd4ffccb2b642257effdc82208867
+
+Merge pull request #99 from n3455/patch-1
+
+Corrected typo in readme | 2015-10-31 01:49:17 | 912d6630e5da0f466fb3d674f6a04c8d2564a655
+
+Merge pull request #89 from Ribesg/patch-1
+
+Change .layoutParams() to .lparams() in README. Fixes #88 | 2015-09-30 01:36:04 | 38b390ab2b917c5f1e6aaf574155c619261aa0b2
+
+Merge pull request #86 from mr-max/patch-1
+
+Allow getting MenuItems as Sequence | 2015-09-22 16:22:57 | 0b76ef9918a20d732ef582dbd63fc38963e065b0
+
+Fix tests after renaming layoutParams() and dropping 'Support' suffixes | 2015-09-17 12:46:35 | 9b0cc0efa3b1a612842fbfc1a2400386652acee7
+
+Remove "Support" suffixes, move each library contents inside its own package | 2015-09-17 11:03:16 | 1fbfa3c475745635cc8415e250d1f1ff8fbf2493
+
+Update DSL functional tests, fix test generator, make generated code a bit more readable | 2015-09-04 17:58:24 | 894fc7589a7f96f890b753eb53fec0d7fa06b18e
+
+Minor: fix type mismatch error | 2015-07-09 22:21:14 | 3a3f613f4e1f222c810639ba49a3e9b1e38687c0
+
+Support suffix must be added to all support views from android.support | 2015-06-13 13:59:11 | 5e1799b1b1cf35d8e7a0e975fdfd9a03de95adb6
+
+Merge pull request #51 from EddieRingle/fix/doc/git-clone-url
+
+BUILDING.md: Fix git clone URL | 2015-05-30 20:11:48 | 1f08a25929f7010ab4ecb2858c4aafefa5184bbb
+
+fixed formatting | 2015-05-26 08:39:44 | 0426b0eb173f09c8f1c4a90a3c9f7a41a08ef193
+
+Merge pull request #44 from shirohata/fix-include
+
+Fixed include() return type | 2015-05-25 18:05:38 | 57a18deb7b2bb782b07e0e3ed52135d66188bc63
+
+fix: IllegalArgumentException in AnkoLogger | 2015-05-22 09:23:36 | 28e0e2daa06ff234058a7ebd58b562b212436c42
+
+Merge pull request #40 from phajduk/readme
+
+README: fixed notificationManager | 2015-05-14 13:30:41 | 5b72bc2e94247ce55b9f25fbdf21e20ac1e1152c
+
+README: fixed notificationManager | 2015-05-14 12:10:46 | a5ea5080eac8de35d864f4fa791088bf9d2762f9
+
+Bugfixes in main/support-v4 Fragment uniformity | 2015-05-08 16:12:26 | 141195388b455ecf8935c16096bbad432695418f
+
+README: fix intentFor() example | 2015-05-05 15:17:08 | 1246aae9b445a59e4330eb7608b84385e777b9e1
+
+Merge pull request #34 from kamoljan/patch-2
+
+README.md file correction | 2015-05-05 14:50:04 | e556759db8d4b714ea74640843d7183515112686
+
+README: indentation fixes | 2015-04-29 18:26:27 | 8cc919a94c7b6352162c2e239b08ac9a6456b239
+
+README: fix section title. | 2015-04-03 18:25:22 | 0896a844b8021d3f58988062a781efa72480b5ab
+
+README: fix formatting, remove obsolete description. | 2015-04-03 08:57:07 | bf7f94666c210548c25486241c75a1a8739294c0
+
+README: fix broken links. | 2015-04-03 08:25:11 | f62908c4204b074b820ee3ef47f67ed4bd898afa
+
+README: fix template project link | 2015-04-02 18:39:10 | 096c436dc1f9d9a86c516997d5143e0a4b39c9ea
+
+Null-safe call fixes in Preview plugin | 2015-03-31 17:13:45 | f63b3cc8b6ec8c7fd05e8341e3ebcf69901c957f
+
+README: remove @aar suffix | 2015-02-19 22:33:47 | 825ccfe34514c52a64dac329cd4f73a327064e06
+
+Layout test fixes | 2015-01-14 14:46:08 | d0058c8aaf19d4a7bd08d67e58e5395387b693eb
+
+Fix top-level Views bug in Activity | 2014-12-13 23:11:01 | c1405b3071dee6db184696ded5f0274e317f3d1f
+
+Compile tests fixed and optimized | 2014-12-04 18:13:32 | 1a50e08d38df8c4af05501187a205437d2a219ad
+
+readFile() fixed | 2014-12-02 16:54:18 | 813db5c84572e10acf7f28d13dc378a982869b75
+
+Code formatting fixes in static files | 2014-11-13 15:09:56 | a62f96d4b32b910430b12e6d581f7665c8fa9583
+
+Code indent fixes. | 2014-11-12 17:53:16 | 9d6d2834544fde8d1a33a71f2d125fb2cafac56e
+
+Style-related fixes. | 2014-10-01 12:01:25 | 4ca393dd976a6398edc9ed3409422529a106a059
+
+README: Extending Koan, relative link fix | 2014-09-30 20:43:40 | 72c640c4f67436a98409c37e747de9e08eb4345a
+
+README.md fixed. | 2014-09-29 21:52:36 | 5fea24d1a92ba74660c0e993cce0bdc53984df88
+
+README identation fixes. | 2014-09-29 18:26:29 | 44df09a4e8b93a56951788b665ebff40e3c289ca
+
+Styles fixed.
+Indentation fixes in Helpers.kt. | 2014-09-26 10:51:49 | 1475aa67e38f5b09978f8e850e01533b6402681b
+
+BasicGeneratorTest fixed. | 2014-09-26 08:19:42 | 6eed33071414d89ffe95f355655c1524bc2faffb
+
+Generate DSL for several Android versions.
+Support Maven artifacts generation.
+Tests fixed. | 2014-09-18 12:15:34 | 1ecd3fae8fb65bb90309f6f750229cf69929f2d0
+
+Indents fixes. | 2014-09-16 14:31:35 | 016a1836d3deec7c2250ff9dd4f519f88a3e912a
+
+README typo fix. | 2014-09-16 14:23:48 | 5470e36daa0c143398fbbbad992a21eda01fec09
+
+Indents fixed. | 2014-09-12 20:09:50 | 5f6206e2330cf5ef538cbf3838b1883394343d05
+
+fix: Replace Snackbar's message type from String to CharSequence (#655)
+
+Fix #654 | 2018-07-20 13:23:41 | b3d22457e23ae70b5d54a316f33b00138792cfc8
+
+Use `base` suffix instead of prefix `internal` for static library artifacts | 2018-07-06 17:38:24 | 360aa5d72f2ffa8de1da821e50143e3ef581f0a3
+
+Update plugin version to 0.10.4-2 (hotfix) | 2018-01-09 13:00:44 | 5002ea56e7e651a286a50d8a7a791ccfa2ee2024
+
+Minor: fix formatting | 2017-11-15 19:55:03 | 64f8406e52447d364a44112fe535b68dff05ec8b
+
+Add attrs.json and views.json to xml converter resources and fix path
+
+ Fixes #370 | 2017-11-14 15:04:58 | 97b66dd1bc4ab82a001bd41e965fa8977cbe81ee
+
+Merge pull request #396 from luiqn2007/patch-1
+
+Update README.md | 2017-06-06 12:37:45 | 459edd5cc2ac558aacdc7a2bccf16d0ef6b0b8e6
+
+childrenRecursiveSequence: fix NoSuchElementException being thrown when hasNext() returned true (#388) | 2017-05-29 16:55:01 | 4584577b6bf3b4f8d8d1733f53408537e2aac759
+
+A couple of DSL Preview fixes
+
+1. Do not launch the compilation automatically. It's probably better to let user launch the build manually (the preview will be updated anyway after the build).
+2. Do not generate the new synthetic XML file if the source class is the same. That caused blinks on file switching. | 2017-05-03 14:54:58 | b9ecd364d3793860c6d269cbe6df63bcbb87add5
+
+Fix compilation error (#272)
+
+The example to create a table doesn't compile. This fixes it.  See #260. | 2016-12-13 20:24:54 | 7b239fb78d2316c874afcce0e1e2fee51f4ef94f
+
+fix broken link to jarjar library | 2016-09-26 18:40:51 | 18d65aece0a852b7d1c053040ecd8ed9cce74aab
+
+Update Async.kt
+
+fixes issue #241 | 2016-09-03 10:55:34 | b2ac80dd2dea60f538d77666c146c191f7ed0d12
+
+fix broken dependency version | 2016-09-29 10:08:30 | 0eccfa8e1ac5a8e84efb2f6029a9bab477e22d8a
+
+Preview plugin: fix compatibility with Anko 0.9 | 2016-08-09 20:04:04 | 123f54fe320e0b7733e3f18503f1877e44cd57dd
+
+Merge pull request #94 from Ribesg/patch-2
+
+Explain the various Anko libs in README. Fix #84 | 2016-05-10 17:49:31 | 5b02b4f12c9e5eeeffef15444796e2c639300eea
+
+Merge pull request #175 from richarth/patch-1
+
+Value of SQLite modifier NOT_NULL should be "NOT NULL" | 2016-04-19 23:41:05 | f93e98d7be5fe1948a384970ebe07d59d466ceaa
+
+Merge pull request #145 from georgeci/hotfix/remove_isaccessible
+
+Few  corrections for SQLite static module | 2016-03-11 16:09:12 | 14009b0e342ce7ad9c20efe823d8d144084112ad
+
+README: fix typo (minor) | 2016-03-02 20:22:05 | 00a38a40d886e0f2bc08a313e8a39594236eb122
+
+Merge pull request #139 from Kotlin/ab/compilation-fixed
+
+Compilation fixed | 2016-01-21 16:52:26 | 0023ec8a383a2a26319a4ccdecb11de74d2487a3
+
+Compilation fixed | 2016-01-21 16:23:43 | 17e812254c86942afd8e941eb5ecf6a899573538
+
+Merge pull request #125 from Ribesg/patch-3
+
+Add Int.withAlpha to Helpers | 2015-12-14 18:37:02 | 499f3351705babb6e8bab54be40db5925b94f1e3
+
+Merge pull request #124 from cypressious/patch-1
+
+Add Bintray Badge | 2015-12-14 18:25:09 | c26b01718a7a377d07522e39c92bab7f7d567ece
+
+Merge pull request #100 from colriot/patch-1
+
+Update README wrt Kotlin Beta Candidate | 2015-11-05 15:05:34 | 5b0c7bbbfe1d8321d4ed299b8821ee548aed3815
+
+Merge pull request #106 from JetBrains/yanex-patch-1
+
+Update CHANGELOG | 2015-11-05 12:20:50 | 1cc19ab5582bd4ffccb2b642257effdc82208867
+
+Merge pull request #99 from n3455/patch-1
+
+Corrected typo in readme | 2015-10-31 01:49:17 | 912d6630e5da0f466fb3d674f6a04c8d2564a655
+
+Merge pull request #89 from Ribesg/patch-1
+
+Change .layoutParams() to .lparams() in README. Fixes #88 | 2015-09-30 01:36:04 | 38b390ab2b917c5f1e6aaf574155c619261aa0b2
+
+Merge pull request #86 from mr-max/patch-1
+
+Allow getting MenuItems as Sequence | 2015-09-22 16:22:57 | 0b76ef9918a20d732ef582dbd63fc38963e065b0
+
+Fix tests after renaming layoutParams() and dropping 'Support' suffixes | 2015-09-17 12:46:35 | 9b0cc0efa3b1a612842fbfc1a2400386652acee7
+
+Remove "Support" suffixes, move each library contents inside its own package | 2015-09-17 11:03:16 | 1fbfa3c475745635cc8415e250d1f1ff8fbf2493
+
+Update DSL functional tests, fix test generator, make generated code a bit more readable | 2015-09-04 17:58:24 | 894fc7589a7f96f890b753eb53fec0d7fa06b18e
+
+Minor: fix type mismatch error | 2015-07-09 22:21:14 | 3a3f613f4e1f222c810639ba49a3e9b1e38687c0
+
+Support suffix must be added to all support views from android.support | 2015-06-13 13:59:11 | 5e1799b1b1cf35d8e7a0e975fdfd9a03de95adb6
+
+Merge pull request #51 from EddieRingle/fix/doc/git-clone-url
+
+BUILDING.md: Fix git clone URL | 2015-05-30 20:11:48 | 1f08a25929f7010ab4ecb2858c4aafefa5184bbb
+
+fixed formatting | 2015-05-26 08:39:44 | 0426b0eb173f09c8f1c4a90a3c9f7a41a08ef193
+
+Merge pull request #44 from shirohata/fix-include
+
+Fixed include() return type | 2015-05-25 18:05:38 | 57a18deb7b2bb782b07e0e3ed52135d66188bc63
+
+fix: IllegalArgumentException in AnkoLogger | 2015-05-22 09:23:36 | 28e0e2daa06ff234058a7ebd58b562b212436c42
+
+Merge pull request #40 from phajduk/readme
+
+README: fixed notificationManager | 2015-05-14 13:30:41 | 5b72bc2e94247ce55b9f25fbdf21e20ac1e1152c
+
+README: fixed notificationManager | 2015-05-14 12:10:46 | a5ea5080eac8de35d864f4fa791088bf9d2762f9
+
+Bugfixes in main/support-v4 Fragment uniformity | 2015-05-08 16:12:26 | 141195388b455ecf8935c16096bbad432695418f
+
+README: fix intentFor() example | 2015-05-05 15:17:08 | 1246aae9b445a59e4330eb7608b84385e777b9e1
+
+Merge pull request #34 from kamoljan/patch-2
+
+README.md file correction | 2015-05-05 14:50:04 | e556759db8d4b714ea74640843d7183515112686
+
+README: indentation fixes | 2015-04-29 18:26:27 | 8cc919a94c7b6352162c2e239b08ac9a6456b239
+
+README: fix section title. | 2015-04-03 18:25:22 | 0896a844b8021d3f58988062a781efa72480b5ab
+
+README: fix formatting, remove obsolete description. | 2015-04-03 08:57:07 | bf7f94666c210548c25486241c75a1a8739294c0
+
+README: fix broken links. | 2015-04-03 08:25:11 | f62908c4204b074b820ee3ef47f67ed4bd898afa
+
+README: fix template project link | 2015-04-02 18:39:10 | 096c436dc1f9d9a86c516997d5143e0a4b39c9ea
+
+Null-safe call fixes in Preview plugin | 2015-03-31 17:13:45 | f63b3cc8b6ec8c7fd05e8341e3ebcf69901c957f
+
+README: remove @aar suffix | 2015-02-19 22:33:47 | 825ccfe34514c52a64dac329cd4f73a327064e06
+
+Layout test fixes | 2015-01-14 14:46:08 | d0058c8aaf19d4a7bd08d67e58e5395387b693eb
+
+Fix top-level Views bug in Activity | 2014-12-13 23:11:01 | c1405b3071dee6db184696ded5f0274e317f3d1f
+
+Compile tests fixed and optimized | 2014-12-04 18:13:32 | 1a50e08d38df8c4af05501187a205437d2a219ad
+
+readFile() fixed | 2014-12-02 16:54:18 | 813db5c84572e10acf7f28d13dc378a982869b75
+
+Code formatting fixes in static files | 2014-11-13 15:09:56 | a62f96d4b32b910430b12e6d581f7665c8fa9583
+
+Code indent fixes. | 2014-11-12 17:53:16 | 9d6d2834544fde8d1a33a71f2d125fb2cafac56e
+
+Style-related fixes. | 2014-10-01 12:01:25 | 4ca393dd976a6398edc9ed3409422529a106a059
+
+README: Extending Koan, relative link fix | 2014-09-30 20:43:40 | 72c640c4f67436a98409c37e747de9e08eb4345a
+
+README.md fixed. | 2014-09-29 21:52:36 | 5fea24d1a92ba74660c0e993cce0bdc53984df88
+
+README identation fixes. | 2014-09-29 18:26:29 | 44df09a4e8b93a56951788b665ebff40e3c289ca
+
+Styles fixed.
+Indentation fixes in Helpers.kt. | 2014-09-26 10:51:49 | 1475aa67e38f5b09978f8e850e01533b6402681b
+
+BasicGeneratorTest fixed. | 2014-09-26 08:19:42 | 6eed33071414d89ffe95f355655c1524bc2faffb
+
+Generate DSL for several Android versions.
+Support Maven artifacts generation.
+Tests fixed. | 2014-09-18 12:15:34 | 1ecd3fae8fb65bb90309f6f750229cf69929f2d0
+
+Indents fixes. | 2014-09-16 14:31:35 | 016a1836d3deec7c2250ff9dd4f519f88a3e912a
+
+README typo fix. | 2014-09-16 14:23:48 | 5470e36daa0c143398fbbbad992a21eda01fec09
+
+Indents fixed. | 2014-09-12 20:09:50 | 5f6206e2330cf5ef538cbf3838b1883394343d05
+
+fix: Replace Snackbar's message type from String to CharSequence (#655)
+
+Fix #654 | 2018-07-20 13:23:41 | b3d22457e23ae70b5d54a316f33b00138792cfc8
+
+Use `base` suffix instead of prefix `internal` for static library artifacts | 2018-07-06 17:38:24 | 360aa5d72f2ffa8de1da821e50143e3ef581f0a3
+
+Update plugin version to 0.10.4-2 (hotfix) | 2018-01-09 13:00:44 | 5002ea56e7e651a286a50d8a7a791ccfa2ee2024
+
+Minor: fix formatting | 2017-11-15 19:55:03 | 64f8406e52447d364a44112fe535b68dff05ec8b
+
+Add attrs.json and views.json to xml converter resources and fix path
+
+ Fixes #370 | 2017-11-14 15:04:58 | 97b66dd1bc4ab82a001bd41e965fa8977cbe81ee
+
+Merge pull request #396 from luiqn2007/patch-1
+
+Update README.md | 2017-06-06 12:37:45 | 459edd5cc2ac558aacdc7a2bccf16d0ef6b0b8e6
+
+childrenRecursiveSequence: fix NoSuchElementException being thrown when hasNext() returned true (#388) | 2017-05-29 16:55:01 | 4584577b6bf3b4f8d8d1733f53408537e2aac759
+
+A couple of DSL Preview fixes
+
+1. Do not launch the compilation automatically. It's probably better to let user launch the build manually (the preview will be updated anyway after the build).
+2. Do not generate the new synthetic XML file if the source class is the same. That caused blinks on file switching. | 2017-05-03 14:54:58 | b9ecd364d3793860c6d269cbe6df63bcbb87add5
+
+Fix compilation error (#272)
+
+The example to create a table doesn't compile. This fixes it.  See #260. | 2016-12-13 20:24:54 | 7b239fb78d2316c874afcce0e1e2fee51f4ef94f
+
+fix broken link to jarjar library | 2016-09-26 18:40:51 | 18d65aece0a852b7d1c053040ecd8ed9cce74aab
+
+Update Async.kt
+
+fixes issue #241 | 2016-09-03 10:55:34 | b2ac80dd2dea60f538d77666c146c191f7ed0d12
+
+fix broken dependency version | 2016-09-29 10:08:30 | 0eccfa8e1ac5a8e84efb2f6029a9bab477e22d8a
+
+Preview plugin: fix compatibility with Anko 0.9 | 2016-08-09 20:04:04 | 123f54fe320e0b7733e3f18503f1877e44cd57dd
+
+Merge pull request #94 from Ribesg/patch-2
+
+Explain the various Anko libs in README. Fix #84 | 2016-05-10 17:49:31 | 5b02b4f12c9e5eeeffef15444796e2c639300eea
+
+Merge pull request #175 from richarth/patch-1
+
+Value of SQLite modifier NOT_NULL should be "NOT NULL" | 2016-04-19 23:41:05 | f93e98d7be5fe1948a384970ebe07d59d466ceaa
+
+Merge pull request #145 from georgeci/hotfix/remove_isaccessible
+
+Few  corrections for SQLite static module | 2016-03-11 16:09:12 | 14009b0e342ce7ad9c20efe823d8d144084112ad
+
+README: fix typo (minor) | 2016-03-02 20:22:05 | 00a38a40d886e0f2bc08a313e8a39594236eb122
+
+Merge pull request #139 from Kotlin/ab/compilation-fixed
+
+Compilation fixed | 2016-01-21 16:52:26 | 0023ec8a383a2a26319a4ccdecb11de74d2487a3
+
+Compilation fixed | 2016-01-21 16:23:43 | 17e812254c86942afd8e941eb5ecf6a899573538
+
+Merge pull request #125 from Ribesg/patch-3
+
+Add Int.withAlpha to Helpers | 2015-12-14 18:37:02 | 499f3351705babb6e8bab54be40db5925b94f1e3
+
+Merge pull request #124 from cypressious/patch-1
+
+Add Bintray Badge | 2015-12-14 18:25:09 | c26b01718a7a377d07522e39c92bab7f7d567ece
+
+Merge pull request #100 from colriot/patch-1
+
+Update README wrt Kotlin Beta Candidate | 2015-11-05 15:05:34 | 5b0c7bbbfe1d8321d4ed299b8821ee548aed3815
+
+Merge pull request #106 from JetBrains/yanex-patch-1
+
+Update CHANGELOG | 2015-11-05 12:20:50 | 1cc19ab5582bd4ffccb2b642257effdc82208867
+
+Merge pull request #99 from n3455/patch-1
+
+Corrected typo in readme | 2015-10-31 01:49:17 | 912d6630e5da0f466fb3d674f6a04c8d2564a655
+
+Merge pull request #89 from Ribesg/patch-1
+
+Change .layoutParams() to .lparams() in README. Fixes #88 | 2015-09-30 01:36:04 | 38b390ab2b917c5f1e6aaf574155c619261aa0b2
+
+Merge pull request #86 from mr-max/patch-1
+
+Allow getting MenuItems as Sequence | 2015-09-22 16:22:57 | 0b76ef9918a20d732ef582dbd63fc38963e065b0
+
+Fix tests after renaming layoutParams() and dropping 'Support' suffixes | 2015-09-17 12:46:35 | 9b0cc0efa3b1a612842fbfc1a2400386652acee7
+
+Remove "Support" suffixes, move each library contents inside its own package | 2015-09-17 11:03:16 | 1fbfa3c475745635cc8415e250d1f1ff8fbf2493
+
+Update DSL functional tests, fix test generator, make generated code a bit more readable | 2015-09-04 17:58:24 | 894fc7589a7f96f890b753eb53fec0d7fa06b18e
+
+Minor: fix type mismatch error | 2015-07-09 22:21:14 | 3a3f613f4e1f222c810639ba49a3e9b1e38687c0
+
+Support suffix must be added to all support views from android.support | 2015-06-13 13:59:11 | 5e1799b1b1cf35d8e7a0e975fdfd9a03de95adb6
+
+Merge pull request #51 from EddieRingle/fix/doc/git-clone-url
+
+BUILDING.md: Fix git clone URL | 2015-05-30 20:11:48 | 1f08a25929f7010ab4ecb2858c4aafefa5184bbb
+
+fixed formatting | 2015-05-26 08:39:44 | 0426b0eb173f09c8f1c4a90a3c9f7a41a08ef193
+
+Merge pull request #44 from shirohata/fix-include
+
+Fixed include() return type | 2015-05-25 18:05:38 | 57a18deb7b2bb782b07e0e3ed52135d66188bc63
+
+fix: IllegalArgumentException in AnkoLogger | 2015-05-22 09:23:36 | 28e0e2daa06ff234058a7ebd58b562b212436c42
+
+Merge pull request #40 from phajduk/readme
+
+README: fixed notificationManager | 2015-05-14 13:30:41 | 5b72bc2e94247ce55b9f25fbdf21e20ac1e1152c
+
+README: fixed notificationManager | 2015-05-14 12:10:46 | a5ea5080eac8de35d864f4fa791088bf9d2762f9
+
+Bugfixes in main/support-v4 Fragment uniformity | 2015-05-08 16:12:26 | 141195388b455ecf8935c16096bbad432695418f
+
+README: fix intentFor() example | 2015-05-05 15:17:08 | 1246aae9b445a59e4330eb7608b84385e777b9e1
+
+Merge pull request #34 from kamoljan/patch-2
+
+README.md file correction | 2015-05-05 14:50:04 | e556759db8d4b714ea74640843d7183515112686
+
+README: indentation fixes | 2015-04-29 18:26:27 | 8cc919a94c7b6352162c2e239b08ac9a6456b239
+
+README: fix section title. | 2015-04-03 18:25:22 | 0896a844b8021d3f58988062a781efa72480b5ab
+
+README: fix formatting, remove obsolete description. | 2015-04-03 08:57:07 | bf7f94666c210548c25486241c75a1a8739294c0
+
+README: fix broken links. | 2015-04-03 08:25:11 | f62908c4204b074b820ee3ef47f67ed4bd898afa
+
+README: fix template project link | 2015-04-02 18:39:10 | 096c436dc1f9d9a86c516997d5143e0a4b39c9ea
+
+Null-safe call fixes in Preview plugin | 2015-03-31 17:13:45 | f63b3cc8b6ec8c7fd05e8341e3ebcf69901c957f
+
+README: remove @aar suffix | 2015-02-19 22:33:47 | 825ccfe34514c52a64dac329cd4f73a327064e06
+
+Layout test fixes | 2015-01-14 14:46:08 | d0058c8aaf19d4a7bd08d67e58e5395387b693eb
+
+Fix top-level Views bug in Activity | 2014-12-13 23:11:01 | c1405b3071dee6db184696ded5f0274e317f3d1f
+
+Compile tests fixed and optimized | 2014-12-04 18:13:32 | 1a50e08d38df8c4af05501187a205437d2a219ad
+
+readFile() fixed | 2014-12-02 16:54:18 | 813db5c84572e10acf7f28d13dc378a982869b75
+
+Code formatting fixes in static files | 2014-11-13 15:09:56 | a62f96d4b32b910430b12e6d581f7665c8fa9583
+
+Code indent fixes. | 2014-11-12 17:53:16 | 9d6d2834544fde8d1a33a71f2d125fb2cafac56e
+
+Style-related fixes. | 2014-10-01 12:01:25 | 4ca393dd976a6398edc9ed3409422529a106a059
+
+README: Extending Koan, relative link fix | 2014-09-30 20:43:40 | 72c640c4f67436a98409c37e747de9e08eb4345a
+
+README.md fixed. | 2014-09-29 21:52:36 | 5fea24d1a92ba74660c0e993cce0bdc53984df88
+
+README identation fixes. | 2014-09-29 18:26:29 | 44df09a4e8b93a56951788b665ebff40e3c289ca
+
+Styles fixed.
+Indentation fixes in Helpers.kt. | 2014-09-26 10:51:49 | 1475aa67e38f5b09978f8e850e01533b6402681b
+
+BasicGeneratorTest fixed. | 2014-09-26 08:19:42 | 6eed33071414d89ffe95f355655c1524bc2faffb
+
+Generate DSL for several Android versions.
+Support Maven artifacts generation.
+Tests fixed. | 2014-09-18 12:15:34 | 1ecd3fae8fb65bb90309f6f750229cf69929f2d0
+
+Indents fixes. | 2014-09-16 14:31:35 | 016a1836d3deec7c2250ff9dd4f519f88a3e912a
+
+README typo fix. | 2014-09-16 14:23:48 | 5470e36daa0c143398fbbbad992a21eda01fec09
+
+Indents fixed. | 2014-09-12 20:09:50 | 5f6206e2330cf5ef538cbf3838b1883394343d05
+
+fix: Replace Snackbar's message type from String to CharSequence (#655)
+
+Fix #654 | 2018-07-20 13:23:41 | b3d22457e23ae70b5d54a316f33b00138792cfc8
+
+Use `base` suffix instead of prefix `internal` for static library artifacts | 2018-07-06 17:38:24 | 360aa5d72f2ffa8de1da821e50143e3ef581f0a3
+
+Update plugin version to 0.10.4-2 (hotfix) | 2018-01-09 13:00:44 | 5002ea56e7e651a286a50d8a7a791ccfa2ee2024
+
+Minor: fix formatting | 2017-11-15 19:55:03 | 64f8406e52447d364a44112fe535b68dff05ec8b
+
+Add attrs.json and views.json to xml converter resources and fix path
+
+ Fixes #370 | 2017-11-14 15:04:58 | 97b66dd1bc4ab82a001bd41e965fa8977cbe81ee
+
+Merge pull request #396 from luiqn2007/patch-1
+
+Update README.md | 2017-06-06 12:37:45 | 459edd5cc2ac558aacdc7a2bccf16d0ef6b0b8e6
+
+childrenRecursiveSequence: fix NoSuchElementException being thrown when hasNext() returned true (#388) | 2017-05-29 16:55:01 | 4584577b6bf3b4f8d8d1733f53408537e2aac759
+
+A couple of DSL Preview fixes
+
+1. Do not launch the compilation automatically. It's probably better to let user launch the build manually (the preview will be updated anyway after the build).
+2. Do not generate the new synthetic XML file if the source class is the same. That caused blinks on file switching. | 2017-05-03 14:54:58 | b9ecd364d3793860c6d269cbe6df63bcbb87add5
+
+Fix compilation error (#272)
+
+The example to create a table doesn't compile. This fixes it.  See #260. | 2016-12-13 20:24:54 | 7b239fb78d2316c874afcce0e1e2fee51f4ef94f
+
+fix broken link to jarjar library | 2016-09-26 18:40:51 | 18d65aece0a852b7d1c053040ecd8ed9cce74aab
+
+Update Async.kt
+
+fixes issue #241 | 2016-09-03 10:55:34 | b2ac80dd2dea60f538d77666c146c191f7ed0d12
+
+fix broken dependency version | 2016-09-29 10:08:30 | 0eccfa8e1ac5a8e84efb2f6029a9bab477e22d8a
+
+Preview plugin: fix compatibility with Anko 0.9 | 2016-08-09 20:04:04 | 123f54fe320e0b7733e3f18503f1877e44cd57dd
+
+Merge pull request #94 from Ribesg/patch-2
+
+Explain the various Anko libs in README. Fix #84 | 2016-05-10 17:49:31 | 5b02b4f12c9e5eeeffef15444796e2c639300eea
+
+Merge pull request #175 from richarth/patch-1
+
+Value of SQLite modifier NOT_NULL should be "NOT NULL" | 2016-04-19 23:41:05 | f93e98d7be5fe1948a384970ebe07d59d466ceaa
+
+Merge pull request #145 from georgeci/hotfix/remove_isaccessible
+
+Few  corrections for SQLite static module | 2016-03-11 16:09:12 | 14009b0e342ce7ad9c20efe823d8d144084112ad
+
+README: fix typo (minor) | 2016-03-02 20:22:05 | 00a38a40d886e0f2bc08a313e8a39594236eb122
+
+Merge pull request #139 from Kotlin/ab/compilation-fixed
+
+Compilation fixed | 2016-01-21 16:52:26 | 0023ec8a383a2a26319a4ccdecb11de74d2487a3
+
+Compilation fixed | 2016-01-21 16:23:43 | 17e812254c86942afd8e941eb5ecf6a899573538
+
+Merge pull request #125 from Ribesg/patch-3
+
+Add Int.withAlpha to Helpers | 2015-12-14 18:37:02 | 499f3351705babb6e8bab54be40db5925b94f1e3
+
+Merge pull request #124 from cypressious/patch-1
+
+Add Bintray Badge | 2015-12-14 18:25:09 | c26b01718a7a377d07522e39c92bab7f7d567ece
+
+Merge pull request #100 from colriot/patch-1
+
+Update README wrt Kotlin Beta Candidate | 2015-11-05 15:05:34 | 5b0c7bbbfe1d8321d4ed299b8821ee548aed3815
+
+Merge pull request #106 from JetBrains/yanex-patch-1
+
+Update CHANGELOG | 2015-11-05 12:20:50 | 1cc19ab5582bd4ffccb2b642257effdc82208867
+
+Merge pull request #99 from n3455/patch-1
+
+Corrected typo in readme | 2015-10-31 01:49:17 | 912d6630e5da0f466fb3d674f6a04c8d2564a655
+
+Merge pull request #89 from Ribesg/patch-1
+
+Change .layoutParams() to .lparams() in README. Fixes #88 | 2015-09-30 01:36:04 | 38b390ab2b917c5f1e6aaf574155c619261aa0b2
+
+Merge pull request #86 from mr-max/patch-1
+
+Allow getting MenuItems as Sequence | 2015-09-22 16:22:57 | 0b76ef9918a20d732ef582dbd63fc38963e065b0
+
+Fix tests after renaming layoutParams() and dropping 'Support' suffixes | 2015-09-17 12:46:35 | 9b0cc0efa3b1a612842fbfc1a2400386652acee7
+
+Remove "Support" suffixes, move each library contents inside its own package | 2015-09-17 11:03:16 | 1fbfa3c475745635cc8415e250d1f1ff8fbf2493
+
+Update DSL functional tests, fix test generator, make generated code a bit more readable | 2015-09-04 17:58:24 | 894fc7589a7f96f890b753eb53fec0d7fa06b18e
+
+Minor: fix type mismatch error | 2015-07-09 22:21:14 | 3a3f613f4e1f222c810639ba49a3e9b1e38687c0
+
+Support suffix must be added to all support views from android.support | 2015-06-13 13:59:11 | 5e1799b1b1cf35d8e7a0e975fdfd9a03de95adb6
+
+Merge pull request #51 from EddieRingle/fix/doc/git-clone-url
+
+BUILDING.md: Fix git clone URL | 2015-05-30 20:11:48 | 1f08a25929f7010ab4ecb2858c4aafefa5184bbb
+
+fixed formatting | 2015-05-26 08:39:44 | 0426b0eb173f09c8f1c4a90a3c9f7a41a08ef193
+
+Merge pull request #44 from shirohata/fix-include
+
+Fixed include() return type | 2015-05-25 18:05:38 | 57a18deb7b2bb782b07e0e3ed52135d66188bc63
+
+fix: IllegalArgumentException in AnkoLogger | 2015-05-22 09:23:36 | 28e0e2daa06ff234058a7ebd58b562b212436c42
+
+Merge pull request #40 from phajduk/readme
+
+README: fixed notificationManager | 2015-05-14 13:30:41 | 5b72bc2e94247ce55b9f25fbdf21e20ac1e1152c
+
+README: fixed notificationManager | 2015-05-14 12:10:46 | a5ea5080eac8de35d864f4fa791088bf9d2762f9
+
+Bugfixes in main/support-v4 Fragment uniformity | 2015-05-08 16:12:26 | 141195388b455ecf8935c16096bbad432695418f
+
+README: fix intentFor() example | 2015-05-05 15:17:08 | 1246aae9b445a59e4330eb7608b84385e777b9e1
+
+Merge pull request #34 from kamoljan/patch-2
+
+README.md file correction | 2015-05-05 14:50:04 | e556759db8d4b714ea74640843d7183515112686
+
+README: indentation fixes | 2015-04-29 18:26:27 | 8cc919a94c7b6352162c2e239b08ac9a6456b239
+
+README: fix section title. | 2015-04-03 18:25:22 | 0896a844b8021d3f58988062a781efa72480b5ab
+
+README: fix formatting, remove obsolete description. | 2015-04-03 08:57:07 | bf7f94666c210548c25486241c75a1a8739294c0
+
+README: fix broken links. | 2015-04-03 08:25:11 | f62908c4204b074b820ee3ef47f67ed4bd898afa
+
+README: fix template project link | 2015-04-02 18:39:10 | 096c436dc1f9d9a86c516997d5143e0a4b39c9ea
+
+Null-safe call fixes in Preview plugin | 2015-03-31 17:13:45 | f63b3cc8b6ec8c7fd05e8341e3ebcf69901c957f
+
+README: remove @aar suffix | 2015-02-19 22:33:47 | 825ccfe34514c52a64dac329cd4f73a327064e06
+
+Layout test fixes | 2015-01-14 14:46:08 | d0058c8aaf19d4a7bd08d67e58e5395387b693eb
+
+Fix top-level Views bug in Activity | 2014-12-13 23:11:01 | c1405b3071dee6db184696ded5f0274e317f3d1f
+
+Compile tests fixed and optimized | 2014-12-04 18:13:32 | 1a50e08d38df8c4af05501187a205437d2a219ad
+
+readFile() fixed | 2014-12-02 16:54:18 | 813db5c84572e10acf7f28d13dc378a982869b75
+
+Code formatting fixes in static files | 2014-11-13 15:09:56 | a62f96d4b32b910430b12e6d581f7665c8fa9583
+
+Code indent fixes. | 2014-11-12 17:53:16 | 9d6d2834544fde8d1a33a71f2d125fb2cafac56e
+
+Style-related fixes. | 2014-10-01 12:01:25 | 4ca393dd976a6398edc9ed3409422529a106a059
+
+README: Extending Koan, relative link fix | 2014-09-30 20:43:40 | 72c640c4f67436a98409c37e747de9e08eb4345a
+
+README.md fixed. | 2014-09-29 21:52:36 | 5fea24d1a92ba74660c0e993cce0bdc53984df88
+
+README identation fixes. | 2014-09-29 18:26:29 | 44df09a4e8b93a56951788b665ebff40e3c289ca
+
+Styles fixed.
+Indentation fixes in Helpers.kt. | 2014-09-26 10:51:49 | 1475aa67e38f5b09978f8e850e01533b6402681b
+
+BasicGeneratorTest fixed. | 2014-09-26 08:19:42 | 6eed33071414d89ffe95f355655c1524bc2faffb
+
+Generate DSL for several Android versions.
+Support Maven artifacts generation.
+Tests fixed. | 2014-09-18 12:15:34 | 1ecd3fae8fb65bb90309f6f750229cf69929f2d0
+
+Indents fixes. | 2014-09-16 14:31:35 | 016a1836d3deec7c2250ff9dd4f519f88a3e912a
+
+README typo fix. | 2014-09-16 14:23:48 | 5470e36daa0c143398fbbbad992a21eda01fec09
+
+Indents fixed. | 2014-09-12 20:09:50 | 5f6206e2330cf5ef538cbf3838b1883394343d05
+
+fix: Replace Snackbar's message type from String to CharSequence (#655)
+
+Fix #654 | 2018-07-20 13:23:41 | b3d22457e23ae70b5d54a316f33b00138792cfc8
+
+Use `base` suffix instead of prefix `internal` for static library artifacts | 2018-07-06 17:38:24 | 360aa5d72f2ffa8de1da821e50143e3ef581f0a3
+
+Update plugin version to 0.10.4-2 (hotfix) | 2018-01-09 13:00:44 | 5002ea56e7e651a286a50d8a7a791ccfa2ee2024
+
+Minor: fix formatting | 2017-11-15 19:55:03 | 64f8406e52447d364a44112fe535b68dff05ec8b
+
+Add attrs.json and views.json to xml converter resources and fix path
+
+ Fixes #370 | 2017-11-14 15:04:58 | 97b66dd1bc4ab82a001bd41e965fa8977cbe81ee
+
+Merge pull request #396 from luiqn2007/patch-1
+
+Update README.md | 2017-06-06 12:37:45 | 459edd5cc2ac558aacdc7a2bccf16d0ef6b0b8e6
+
+childrenRecursiveSequence: fix NoSuchElementException being thrown when hasNext() returned true (#388) | 2017-05-29 16:55:01 | 4584577b6bf3b4f8d8d1733f53408537e2aac759
+
+A couple of DSL Preview fixes
+
+1. Do not launch the compilation automatically. It's probably better to let user launch the build manually (the preview will be updated anyway after the build).
+2. Do not generate the new synthetic XML file if the source class is the same. That caused blinks on file switching. | 2017-05-03 14:54:58 | b9ecd364d3793860c6d269cbe6df63bcbb87add5
+
+Fix compilation error (#272)
+
+The example to create a table doesn't compile. This fixes it.  See #260. | 2016-12-13 20:24:54 | 7b239fb78d2316c874afcce0e1e2fee51f4ef94f
+
+fix broken link to jarjar library | 2016-09-26 18:40:51 | 18d65aece0a852b7d1c053040ecd8ed9cce74aab
+
+Update Async.kt
+
+fixes issue #241 | 2016-09-03 10:55:34 | b2ac80dd2dea60f538d77666c146c191f7ed0d12
+
+fix broken dependency version | 2016-09-29 10:08:30 | 0eccfa8e1ac5a8e84efb2f6029a9bab477e22d8a
+
+Preview plugin: fix compatibility with Anko 0.9 | 2016-08-09 20:04:04 | 123f54fe320e0b7733e3f18503f1877e44cd57dd
+
+Merge pull request #94 from Ribesg/patch-2
+
+Explain the various Anko libs in README. Fix #84 | 2016-05-10 17:49:31 | 5b02b4f12c9e5eeeffef15444796e2c639300eea
+
+Merge pull request #175 from richarth/patch-1
+
+Value of SQLite modifier NOT_NULL should be "NOT NULL" | 2016-04-19 23:41:05 | f93e98d7be5fe1948a384970ebe07d59d466ceaa
+
+Merge pull request #145 from georgeci/hotfix/remove_isaccessible
+
+Few  corrections for SQLite static module | 2016-03-11 16:09:12 | 14009b0e342ce7ad9c20efe823d8d144084112ad
+
+README: fix typo (minor) | 2016-03-02 20:22:05 | 00a38a40d886e0f2bc08a313e8a39594236eb122
+
+Merge pull request #139 from Kotlin/ab/compilation-fixed
+
+Compilation fixed | 2016-01-21 16:52:26 | 0023ec8a383a2a26319a4ccdecb11de74d2487a3
+
+Compilation fixed | 2016-01-21 16:23:43 | 17e812254c86942afd8e941eb5ecf6a899573538
+
+Merge pull request #125 from Ribesg/patch-3
+
+Add Int.withAlpha to Helpers | 2015-12-14 18:37:02 | 499f3351705babb6e8bab54be40db5925b94f1e3
+
+Merge pull request #124 from cypressious/patch-1
+
+Add Bintray Badge | 2015-12-14 18:25:09 | c26b01718a7a377d07522e39c92bab7f7d567ece
+
+Merge pull request #100 from colriot/patch-1
+
+Update README wrt Kotlin Beta Candidate | 2015-11-05 15:05:34 | 5b0c7bbbfe1d8321d4ed299b8821ee548aed3815
+
+Merge pull request #106 from JetBrains/yanex-patch-1
+
+Update CHANGELOG | 2015-11-05 12:20:50 | 1cc19ab5582bd4ffccb2b642257effdc82208867
+
+Merge pull request #99 from n3455/patch-1
+
+Corrected typo in readme | 2015-10-31 01:49:17 | 912d6630e5da0f466fb3d674f6a04c8d2564a655
+
+Merge pull request #89 from Ribesg/patch-1
+
+Change .layoutParams() to .lparams() in README. Fixes #88 | 2015-09-30 01:36:04 | 38b390ab2b917c5f1e6aaf574155c619261aa0b2
+
+Merge pull request #86 from mr-max/patch-1
+
+Allow getting MenuItems as Sequence | 2015-09-22 16:22:57 | 0b76ef9918a20d732ef582dbd63fc38963e065b0
+
+Fix tests after renaming layoutParams() and dropping 'Support' suffixes | 2015-09-17 12:46:35 | 9b0cc0efa3b1a612842fbfc1a2400386652acee7
+
+Remove "Support" suffixes, move each library contents inside its own package | 2015-09-17 11:03:16 | 1fbfa3c475745635cc8415e250d1f1ff8fbf2493
+
+Update DSL functional tests, fix test generator, make generated code a bit more readable | 2015-09-04 17:58:24 | 894fc7589a7f96f890b753eb53fec0d7fa06b18e
+
+Minor: fix type mismatch error | 2015-07-09 22:21:14 | 3a3f613f4e1f222c810639ba49a3e9b1e38687c0
+
+Support suffix must be added to all support views from android.support | 2015-06-13 13:59:11 | 5e1799b1b1cf35d8e7a0e975fdfd9a03de95adb6
+
+Merge pull request #51 from EddieRingle/fix/doc/git-clone-url
+
+BUILDING.md: Fix git clone URL | 2015-05-30 20:11:48 | 1f08a25929f7010ab4ecb2858c4aafefa5184bbb
+
+fixed formatting | 2015-05-26 08:39:44 | 0426b0eb173f09c8f1c4a90a3c9f7a41a08ef193
+
+Merge pull request #44 from shirohata/fix-include
+
+Fixed include() return type | 2015-05-25 18:05:38 | 57a18deb7b2bb782b07e0e3ed52135d66188bc63
+
+fix: IllegalArgumentException in AnkoLogger | 2015-05-22 09:23:36 | 28e0e2daa06ff234058a7ebd58b562b212436c42
+
+Merge pull request #40 from phajduk/readme
+
+README: fixed notificationManager | 2015-05-14 13:30:41 | 5b72bc2e94247ce55b9f25fbdf21e20ac1e1152c
+
+README: fixed notificationManager | 2015-05-14 12:10:46 | a5ea5080eac8de35d864f4fa791088bf9d2762f9
+
+Bugfixes in main/support-v4 Fragment uniformity | 2015-05-08 16:12:26 | 141195388b455ecf8935c16096bbad432695418f
+
+README: fix intentFor() example | 2015-05-05 15:17:08 | 1246aae9b445a59e4330eb7608b84385e777b9e1
+
+Merge pull request #34 from kamoljan/patch-2
+
+README.md file correction | 2015-05-05 14:50:04 | e556759db8d4b714ea74640843d7183515112686
+
+README: indentation fixes | 2015-04-29 18:26:27 | 8cc919a94c7b6352162c2e239b08ac9a6456b239
+
+README: fix section title. | 2015-04-03 18:25:22 | 0896a844b8021d3f58988062a781efa72480b5ab
+
+README: fix formatting, remove obsolete description. | 2015-04-03 08:57:07 | bf7f94666c210548c25486241c75a1a8739294c0
+
+README: fix broken links. | 2015-04-03 08:25:11 | f62908c4204b074b820ee3ef47f67ed4bd898afa
+
+README: fix template project link | 2015-04-02 18:39:10 | 096c436dc1f9d9a86c516997d5143e0a4b39c9ea
+
+Null-safe call fixes in Preview plugin | 2015-03-31 17:13:45 | f63b3cc8b6ec8c7fd05e8341e3ebcf69901c957f
+
+README: remove @aar suffix | 2015-02-19 22:33:47 | 825ccfe34514c52a64dac329cd4f73a327064e06
+
+Layout test fixes | 2015-01-14 14:46:08 | d0058c8aaf19d4a7bd08d67e58e5395387b693eb
+
+Fix top-level Views bug in Activity | 2014-12-13 23:11:01 | c1405b3071dee6db184696ded5f0274e317f3d1f
+
+Compile tests fixed and optimized | 2014-12-04 18:13:32 | 1a50e08d38df8c4af05501187a205437d2a219ad
+
+readFile() fixed | 2014-12-02 16:54:18 | 813db5c84572e10acf7f28d13dc378a982869b75
+
+Code formatting fixes in static files | 2014-11-13 15:09:56 | a62f96d4b32b910430b12e6d581f7665c8fa9583
+
+Code indent fixes. | 2014-11-12 17:53:16 | 9d6d2834544fde8d1a33a71f2d125fb2cafac56e
+
+Style-related fixes. | 2014-10-01 12:01:25 | 4ca393dd976a6398edc9ed3409422529a106a059
+
+README: Extending Koan, relative link fix | 2014-09-30 20:43:40 | 72c640c4f67436a98409c37e747de9e08eb4345a
+
+README.md fixed. | 2014-09-29 21:52:36 | 5fea24d1a92ba74660c0e993cce0bdc53984df88
+
+README identation fixes. | 2014-09-29 18:26:29 | 44df09a4e8b93a56951788b665ebff40e3c289ca
+
+Styles fixed.
+Indentation fixes in Helpers.kt. | 2014-09-26 10:51:49 | 1475aa67e38f5b09978f8e850e01533b6402681b
+
+BasicGeneratorTest fixed. | 2014-09-26 08:19:42 | 6eed33071414d89ffe95f355655c1524bc2faffb
+
+Generate DSL for several Android versions.
+Support Maven artifacts generation.
+Tests fixed. | 2014-09-18 12:15:34 | 1ecd3fae8fb65bb90309f6f750229cf69929f2d0
+
+Indents fixes. | 2014-09-16 14:31:35 | 016a1836d3deec7c2250ff9dd4f519f88a3e912a
+
+README typo fix. | 2014-09-16 14:23:48 | 5470e36daa0c143398fbbbad992a21eda01fec09
+
+Indents fixed. | 2014-09-12 20:09:50 | 5f6206e2330cf5ef538cbf3838b1883394343d05
+
+fix: Replace Snackbar's message type from String to CharSequence (#655)
+
+Fix #654 | 2018-07-20 13:23:41 | b3d22457e23ae70b5d54a316f33b00138792cfc8
+
+Use `base` suffix instead of prefix `internal` for static library artifacts | 2018-07-06 17:38:24 | 360aa5d72f2ffa8de1da821e50143e3ef581f0a3
+
+Update plugin version to 0.10.4-2 (hotfix) | 2018-01-09 13:00:44 | 5002ea56e7e651a286a50d8a7a791ccfa2ee2024
+
+Minor: fix formatting | 2017-11-15 19:55:03 | 64f8406e52447d364a44112fe535b68dff05ec8b
+
+Add attrs.json and views.json to xml converter resources and fix path
+
+ Fixes #370 | 2017-11-14 15:04:58 | 97b66dd1bc4ab82a001bd41e965fa8977cbe81ee
+
+Merge pull request #396 from luiqn2007/patch-1
+
+Update README.md | 2017-06-06 12:37:45 | 459edd5cc2ac558aacdc7a2bccf16d0ef6b0b8e6
+
+childrenRecursiveSequence: fix NoSuchElementException being thrown when hasNext() returned true (#388) | 2017-05-29 16:55:01 | 4584577b6bf3b4f8d8d1733f53408537e2aac759
+
+A couple of DSL Preview fixes
+
+1. Do not launch the compilation automatically. It's probably better to let user launch the build manually (the preview will be updated anyway after the build).
+2. Do not generate the new synthetic XML file if the source class is the same. That caused blinks on file switching. | 2017-05-03 14:54:58 | b9ecd364d3793860c6d269cbe6df63bcbb87add5
+
+Fix compilation error (#272)
+
+The example to create a table doesn't compile. This fixes it.  See #260. | 2016-12-13 20:24:54 | 7b239fb78d2316c874afcce0e1e2fee51f4ef94f
+
+fix broken link to jarjar library | 2016-09-26 18:40:51 | 18d65aece0a852b7d1c053040ecd8ed9cce74aab
+
+Update Async.kt
+
+fixes issue #241 | 2016-09-03 10:55:34 | b2ac80dd2dea60f538d77666c146c191f7ed0d12
+
+fix broken dependency version | 2016-09-29 10:08:30 | 0eccfa8e1ac5a8e84efb2f6029a9bab477e22d8a
+
+Preview plugin: fix compatibility with Anko 0.9 | 2016-08-09 20:04:04 | 123f54fe320e0b7733e3f18503f1877e44cd57dd
+
+Merge pull request #94 from Ribesg/patch-2
+
+Explain the various Anko libs in README. Fix #84 | 2016-05-10 17:49:31 | 5b02b4f12c9e5eeeffef15444796e2c639300eea
+
+Merge pull request #175 from richarth/patch-1
+
+Value of SQLite modifier NOT_NULL should be "NOT NULL" | 2016-04-19 23:41:05 | f93e98d7be5fe1948a384970ebe07d59d466ceaa
+
+Merge pull request #145 from georgeci/hotfix/remove_isaccessible
+
+Few  corrections for SQLite static module | 2016-03-11 16:09:12 | 14009b0e342ce7ad9c20efe823d8d144084112ad
+
+README: fix typo (minor) | 2016-03-02 20:22:05 | 00a38a40d886e0f2bc08a313e8a39594236eb122
+
+Merge pull request #139 from Kotlin/ab/compilation-fixed
+
+Compilation fixed | 2016-01-21 16:52:26 | 0023ec8a383a2a26319a4ccdecb11de74d2487a3
+
+Compilation fixed | 2016-01-21 16:23:43 | 17e812254c86942afd8e941eb5ecf6a899573538
+
+Merge pull request #125 from Ribesg/patch-3
+
+Add Int.withAlpha to Helpers | 2015-12-14 18:37:02 | 499f3351705babb6e8bab54be40db5925b94f1e3
+
+Merge pull request #124 from cypressious/patch-1
+
+Add Bintray Badge | 2015-12-14 18:25:09 | c26b01718a7a377d07522e39c92bab7f7d567ece
+
+Merge pull request #100 from colriot/patch-1
+
+Update README wrt Kotlin Beta Candidate | 2015-11-05 15:05:34 | 5b0c7bbbfe1d8321d4ed299b8821ee548aed3815
+
+Merge pull request #106 from JetBrains/yanex-patch-1
+
+Update CHANGELOG | 2015-11-05 12:20:50 | 1cc19ab5582bd4ffccb2b642257effdc82208867
+
+Merge pull request #99 from n3455/patch-1
+
+Corrected typo in readme | 2015-10-31 01:49:17 | 912d6630e5da0f466fb3d674f6a04c8d2564a655
+
+Merge pull request #89 from Ribesg/patch-1
+
+Change .layoutParams() to .lparams() in README. Fixes #88 | 2015-09-30 01:36:04 | 38b390ab2b917c5f1e6aaf574155c619261aa0b2
+
+Merge pull request #86 from mr-max/patch-1
+
+Allow getting MenuItems as Sequence | 2015-09-22 16:22:57 | 0b76ef9918a20d732ef582dbd63fc38963e065b0
+
+Fix tests after renaming layoutParams() and dropping 'Support' suffixes | 2015-09-17 12:46:35 | 9b0cc0efa3b1a612842fbfc1a2400386652acee7
+
+Remove "Support" suffixes, move each library contents inside its own package | 2015-09-17 11:03:16 | 1fbfa3c475745635cc8415e250d1f1ff8fbf2493
+
+Update DSL functional tests, fix test generator, make generated code a bit more readable | 2015-09-04 17:58:24 | 894fc7589a7f96f890b753eb53fec0d7fa06b18e
+
+Minor: fix type mismatch error | 2015-07-09 22:21:14 | 3a3f613f4e1f222c810639ba49a3e9b1e38687c0
+
+Support suffix must be added to all support views from android.support | 2015-06-13 13:59:11 | 5e1799b1b1cf35d8e7a0e975fdfd9a03de95adb6
+
+Merge pull request #51 from EddieRingle/fix/doc/git-clone-url
+
+BUILDING.md: Fix git clone URL | 2015-05-30 20:11:48 | 1f08a25929f7010ab4ecb2858c4aafefa5184bbb
+
+fixed formatting | 2015-05-26 08:39:44 | 0426b0eb173f09c8f1c4a90a3c9f7a41a08ef193
+
+Merge pull request #44 from shirohata/fix-include
+
+Fixed include() return type | 2015-05-25 18:05:38 | 57a18deb7b2bb782b07e0e3ed52135d66188bc63
+
+fix: IllegalArgumentException in AnkoLogger | 2015-05-22 09:23:36 | 28e0e2daa06ff234058a7ebd58b562b212436c42
+
+Merge pull request #40 from phajduk/readme
+
+README: fixed notificationManager | 2015-05-14 13:30:41 | 5b72bc2e94247ce55b9f25fbdf21e20ac1e1152c
+
+README: fixed notificationManager | 2015-05-14 12:10:46 | a5ea5080eac8de35d864f4fa791088bf9d2762f9
+
+Bugfixes in main/support-v4 Fragment uniformity | 2015-05-08 16:12:26 | 141195388b455ecf8935c16096bbad432695418f
+
+README: fix intentFor() example | 2015-05-05 15:17:08 | 1246aae9b445a59e4330eb7608b84385e777b9e1
+
+Merge pull request #34 from kamoljan/patch-2
+
+README.md file correction | 2015-05-05 14:50:04 | e556759db8d4b714ea74640843d7183515112686
+
+README: indentation fixes | 2015-04-29 18:26:27 | 8cc919a94c7b6352162c2e239b08ac9a6456b239
+
+README: fix section title. | 2015-04-03 18:25:22 | 0896a844b8021d3f58988062a781efa72480b5ab
+
+README: fix formatting, remove obsolete description. | 2015-04-03 08:57:07 | bf7f94666c210548c25486241c75a1a8739294c0
+
+README: fix broken links. | 2015-04-03 08:25:11 | f62908c4204b074b820ee3ef47f67ed4bd898afa
+
+README: fix template project link | 2015-04-02 18:39:10 | 096c436dc1f9d9a86c516997d5143e0a4b39c9ea
+
+Null-safe call fixes in Preview plugin | 2015-03-31 17:13:45 | f63b3cc8b6ec8c7fd05e8341e3ebcf69901c957f
+
+README: remove @aar suffix | 2015-02-19 22:33:47 | 825ccfe34514c52a64dac329cd4f73a327064e06
+
+Layout test fixes | 2015-01-14 14:46:08 | d0058c8aaf19d4a7bd08d67e58e5395387b693eb
+
+Fix top-level Views bug in Activity | 2014-12-13 23:11:01 | c1405b3071dee6db184696ded5f0274e317f3d1f
+
+Compile tests fixed and optimized | 2014-12-04 18:13:32 | 1a50e08d38df8c4af05501187a205437d2a219ad
+
+readFile() fixed | 2014-12-02 16:54:18 | 813db5c84572e10acf7f28d13dc378a982869b75
+
+Code formatting fixes in static files | 2014-11-13 15:09:56 | a62f96d4b32b910430b12e6d581f7665c8fa9583
+
+Code indent fixes. | 2014-11-12 17:53:16 | 9d6d2834544fde8d1a33a71f2d125fb2cafac56e
+
+Style-related fixes. | 2014-10-01 12:01:25 | 4ca393dd976a6398edc9ed3409422529a106a059
+
+README: Extending Koan, relative link fix | 2014-09-30 20:43:40 | 72c640c4f67436a98409c37e747de9e08eb4345a
+
+README.md fixed. | 2014-09-29 21:52:36 | 5fea24d1a92ba74660c0e993cce0bdc53984df88
+
+README identation fixes. | 2014-09-29 18:26:29 | 44df09a4e8b93a56951788b665ebff40e3c289ca
+
+Styles fixed.
+Indentation fixes in Helpers.kt. | 2014-09-26 10:51:49 | 1475aa67e38f5b09978f8e850e01533b6402681b
+
+BasicGeneratorTest fixed. | 2014-09-26 08:19:42 | 6eed33071414d89ffe95f355655c1524bc2faffb
+
+Generate DSL for several Android versions.
+Support Maven artifacts generation.
+Tests fixed. | 2014-09-18 12:15:34 | 1ecd3fae8fb65bb90309f6f750229cf69929f2d0
+
+Indents fixes. | 2014-09-16 14:31:35 | 016a1836d3deec7c2250ff9dd4f519f88a3e912a
+
+README typo fix. | 2014-09-16 14:23:48 | 5470e36daa0c143398fbbbad992a21eda01fec09
+
+Indents fixed. | 2014-09-12 20:09:50 | 5f6206e2330cf5ef538cbf3838b1883394343d05
+

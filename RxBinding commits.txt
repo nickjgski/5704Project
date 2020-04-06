@@ -1,0 +1,380 @@
+Merge pull request #407 from OrdonTeam/patch-1
+
+Fix ViewPagerPageScrollStateChangedObservable | 2018-01-27 20:33:41 | 589c1d7284eb149aceb4ca8e2287a33c00c8aa47
+
+Fix ViewPagerPageScrollStateChangedObservable
+
+Since onDispose is called exactly once there is no need to check is it was already disposed.
+It fixes #406 | 2017-09-12 19:50:40 | 2ea15436715c6ee497dc16da427616ef1f53dc7d
+
+Merge pull request #384 from egugue/fix-typos
+
+Fix typos (weather -> whether) | 2017-05-28 14:56:54 | 62f3913bd2ae54b50644e96e1ab489fc602b148a
+
+fixed private member access for rxbinding | 2017-05-10 00:27:28 | a9a0aaa8c085a96fec0bb428de4ea50f836408e3
+
+fixed private member access for appcompat-v7 | 2017-05-10 00:20:04 | d2420a3ba4fea269acf523dabb271f486351474b
+
+fixed private member access for design | 2017-05-10 00:18:14 | 6d30c957a03dd5a881e603735605e2b3d14a9aed
+
+fixed private member access for support.v4 | 2017-05-10 00:14:42 | 2cdd2d3af98da7acf5d6608e42fd1736a718a400
+
+fixed private member access for recyclerview | 2017-05-10 00:11:03 | b25f54437505c9c3347241897223314d9f796338
+
+Merge pull request #352 from shohhei1126/fix_package_in_androidmanifest
+
+Fix package in AndroidManifest for RxJava2 | 2017-01-31 07:01:58 | 71f3a1bf5a6ad41e13d6519a39b4ecc61ae876e1
+
+change swipe speed to FAST to fix flaky test | 2016-09-09 15:59:16 | 11af21c6519755e221a26d928f1f3eb30b09ff31
+
+Merge pull request #269 from kunny/tablayout_tostring_fix
+
+Fix typo in TabLayoutSelectionEvent.toString() | 2016-07-13 02:09:02 | 4c723236011eac7b9f46f66d08a0d7a58ec30acf
+
+Merge pull request #261 from skoric/skoric/fix_swipe_layout_test
+
+Fixed RxSwipeRefreshLayoutTest test | 2016-06-24 22:54:28 | c8492b1c695a4464ccda2d6fdde4e526e428363e
+
+Merge pull request #231 from trevorrjohn/tj/fix_nullable_field
+
+fix nullable annotation on TextViewAfterTextChangeEvent | 2016-02-19 15:11:26 | 100adc34ae88ad207801c27b983ca69783a4e8f8
+
+fix nullable annotation on TextViewAfterTextChangeEvent | 2016-02-19 15:06:38 | 63a31fd441c81a82cc9806834a75df25ecddbb50
+
+Merge pull request #199 from JakeWharton/vanniktech-master_checkstyle
+
+Add checkstyle to projects and fix some errors | 2015-11-23 15:56:32 | 1567939c6467482de3977ad54dc3e88ba33c1f5c
+
+Add checkstyle to projects and fix some errors | 2015-11-16 08:55:07 | 2225928c2400b686c0dd2794a8ebe17286f03efc
+
+Merge pull request #144 from f2prateek/patch-1
+
+Remove timestamp from ViewEvent docs. | 2015-09-16 16:41:45 | a5890c19d3cbc2adb703aadaad4744cf96d895eb
+
+Merge pull request #110 from hzsweers/z/variance_annotation
+
+Variance annotation support and fixed typeParams | 2015-08-25 14:44:08 | b134f86f186d49480f817ea29ab74550f65491dd
+
+Bump to gradle plugin 1.3.1
+
+- fixed issue when ZipAlign task would not consume previous' task output when it the file name is customized.
+- fixed packaging of Renderscript with NDK
+- Keep the createDebugCoverageReport task name.
+- Fix customized archiveBaseName handling : see http://b.android.com/182016
+- fixed for http://b.android.com/182433 | 2015-08-23 06:33:57 | 7e4428f83486b809094c2c14c337595086425bcc
+
+Merge pull request #29 from JakeWharton/jw/set-no-more
+
+Remove 'set' prefix on action factories. | 2015-05-07 21:37:03 | b75a4c42cd729570b684e57a45dc7adcdc2bb77f
+
+Remove 'set' prefix on action factories. | 2015-05-07 21:17:43 | 62782a95d845659dd731f1b33c3fb3d073c43d25
+
+Merge pull request #21 from JakeWharton/jw/fix-extension-methods
+
+Correct extension methods to use implicit 'this' reference. | 2015-04-29 16:27:31 | d7a8d773847879cbc3ce44bde27cb8d3e0203fc1
+
+Merge pull request #407 from OrdonTeam/patch-1
+
+Fix ViewPagerPageScrollStateChangedObservable | 2018-01-27 20:33:41 | 589c1d7284eb149aceb4ca8e2287a33c00c8aa47
+
+Fix ViewPagerPageScrollStateChangedObservable
+
+Since onDispose is called exactly once there is no need to check is it was already disposed.
+It fixes #406 | 2017-09-12 19:50:40 | 2ea15436715c6ee497dc16da427616ef1f53dc7d
+
+Merge pull request #384 from egugue/fix-typos
+
+Fix typos (weather -> whether) | 2017-05-28 14:56:54 | 62f3913bd2ae54b50644e96e1ab489fc602b148a
+
+fixed private member access for rxbinding | 2017-05-10 00:27:28 | a9a0aaa8c085a96fec0bb428de4ea50f836408e3
+
+fixed private member access for appcompat-v7 | 2017-05-10 00:20:04 | d2420a3ba4fea269acf523dabb271f486351474b
+
+fixed private member access for design | 2017-05-10 00:18:14 | 6d30c957a03dd5a881e603735605e2b3d14a9aed
+
+fixed private member access for support.v4 | 2017-05-10 00:14:42 | 2cdd2d3af98da7acf5d6608e42fd1736a718a400
+
+fixed private member access for recyclerview | 2017-05-10 00:11:03 | b25f54437505c9c3347241897223314d9f796338
+
+Merge pull request #352 from shohhei1126/fix_package_in_androidmanifest
+
+Fix package in AndroidManifest for RxJava2 | 2017-01-31 07:01:58 | 71f3a1bf5a6ad41e13d6519a39b4ecc61ae876e1
+
+change swipe speed to FAST to fix flaky test | 2016-09-09 15:59:16 | 11af21c6519755e221a26d928f1f3eb30b09ff31
+
+Merge pull request #269 from kunny/tablayout_tostring_fix
+
+Fix typo in TabLayoutSelectionEvent.toString() | 2016-07-13 02:09:02 | 4c723236011eac7b9f46f66d08a0d7a58ec30acf
+
+Merge pull request #261 from skoric/skoric/fix_swipe_layout_test
+
+Fixed RxSwipeRefreshLayoutTest test | 2016-06-24 22:54:28 | c8492b1c695a4464ccda2d6fdde4e526e428363e
+
+Merge pull request #231 from trevorrjohn/tj/fix_nullable_field
+
+fix nullable annotation on TextViewAfterTextChangeEvent | 2016-02-19 15:11:26 | 100adc34ae88ad207801c27b983ca69783a4e8f8
+
+fix nullable annotation on TextViewAfterTextChangeEvent | 2016-02-19 15:06:38 | 63a31fd441c81a82cc9806834a75df25ecddbb50
+
+Merge pull request #199 from JakeWharton/vanniktech-master_checkstyle
+
+Add checkstyle to projects and fix some errors | 2015-11-23 15:56:32 | 1567939c6467482de3977ad54dc3e88ba33c1f5c
+
+Add checkstyle to projects and fix some errors | 2015-11-16 08:55:07 | 2225928c2400b686c0dd2794a8ebe17286f03efc
+
+Merge pull request #144 from f2prateek/patch-1
+
+Remove timestamp from ViewEvent docs. | 2015-09-16 16:41:45 | a5890c19d3cbc2adb703aadaad4744cf96d895eb
+
+Merge pull request #110 from hzsweers/z/variance_annotation
+
+Variance annotation support and fixed typeParams | 2015-08-25 14:44:08 | b134f86f186d49480f817ea29ab74550f65491dd
+
+Bump to gradle plugin 1.3.1
+
+- fixed issue when ZipAlign task would not consume previous' task output when it the file name is customized.
+- fixed packaging of Renderscript with NDK
+- Keep the createDebugCoverageReport task name.
+- Fix customized archiveBaseName handling : see http://b.android.com/182016
+- fixed for http://b.android.com/182433 | 2015-08-23 06:33:57 | 7e4428f83486b809094c2c14c337595086425bcc
+
+Merge pull request #29 from JakeWharton/jw/set-no-more
+
+Remove 'set' prefix on action factories. | 2015-05-07 21:37:03 | b75a4c42cd729570b684e57a45dc7adcdc2bb77f
+
+Remove 'set' prefix on action factories. | 2015-05-07 21:17:43 | 62782a95d845659dd731f1b33c3fb3d073c43d25
+
+Merge pull request #21 from JakeWharton/jw/fix-extension-methods
+
+Correct extension methods to use implicit 'this' reference. | 2015-04-29 16:27:31 | d7a8d773847879cbc3ce44bde27cb8d3e0203fc1
+
+Merge pull request #441 from swolfand/patch-1
+
+change `compile` to `implementation` | 2018-04-06 13:43:42 | 88092a168a5bb25920418208ea5a29558ae6e286
+
+Merge pull request #440 from vanniktech/patch-1
+
+Remove newline between XML Header and manifest declaration. | 2018-04-06 13:43:13 | ce8e51b97cc4eb9982645297d1788079ebcb5070
+
+Merge pull request #407 from OrdonTeam/patch-1
+
+Fix ViewPagerPageScrollStateChangedObservable | 2018-01-27 20:33:41 | 589c1d7284eb149aceb4ca8e2287a33c00c8aa47
+
+Fix ViewPagerPageScrollStateChangedObservable
+
+Since onDispose is called exactly once there is no need to check is it was already disposed.
+It fixes #406 | 2017-09-12 19:50:40 | 2ea15436715c6ee497dc16da427616ef1f53dc7d
+
+Merge pull request #384 from egugue/fix-typos
+
+Fix typos (weather -> whether) | 2017-05-28 14:56:54 | 62f3913bd2ae54b50644e96e1ab489fc602b148a
+
+fixed private member access for rxbinding | 2017-05-10 00:27:28 | a9a0aaa8c085a96fec0bb428de4ea50f836408e3
+
+fixed private member access for appcompat-v7 | 2017-05-10 00:20:04 | d2420a3ba4fea269acf523dabb271f486351474b
+
+fixed private member access for design | 2017-05-10 00:18:14 | 6d30c957a03dd5a881e603735605e2b3d14a9aed
+
+fixed private member access for support.v4 | 2017-05-10 00:14:42 | 2cdd2d3af98da7acf5d6608e42fd1736a718a400
+
+fixed private member access for recyclerview | 2017-05-10 00:11:03 | b25f54437505c9c3347241897223314d9f796338
+
+Merge pull request #352 from shohhei1126/fix_package_in_androidmanifest
+
+Fix package in AndroidManifest for RxJava2 | 2017-01-31 07:01:58 | 71f3a1bf5a6ad41e13d6519a39b4ecc61ae876e1
+
+change swipe speed to FAST to fix flaky test | 2016-09-09 15:59:16 | 11af21c6519755e221a26d928f1f3eb30b09ff31
+
+Merge pull request #269 from kunny/tablayout_tostring_fix
+
+Fix typo in TabLayoutSelectionEvent.toString() | 2016-07-13 02:09:02 | 4c723236011eac7b9f46f66d08a0d7a58ec30acf
+
+Merge pull request #261 from skoric/skoric/fix_swipe_layout_test
+
+Fixed RxSwipeRefreshLayoutTest test | 2016-06-24 22:54:28 | c8492b1c695a4464ccda2d6fdde4e526e428363e
+
+Merge pull request #231 from trevorrjohn/tj/fix_nullable_field
+
+fix nullable annotation on TextViewAfterTextChangeEvent | 2016-02-19 15:11:26 | 100adc34ae88ad207801c27b983ca69783a4e8f8
+
+fix nullable annotation on TextViewAfterTextChangeEvent | 2016-02-19 15:06:38 | 63a31fd441c81a82cc9806834a75df25ecddbb50
+
+Merge pull request #199 from JakeWharton/vanniktech-master_checkstyle
+
+Add checkstyle to projects and fix some errors | 2015-11-23 15:56:32 | 1567939c6467482de3977ad54dc3e88ba33c1f5c
+
+Add checkstyle to projects and fix some errors | 2015-11-16 08:55:07 | 2225928c2400b686c0dd2794a8ebe17286f03efc
+
+Merge pull request #144 from f2prateek/patch-1
+
+Remove timestamp from ViewEvent docs. | 2015-09-16 16:41:45 | a5890c19d3cbc2adb703aadaad4744cf96d895eb
+
+Merge pull request #110 from hzsweers/z/variance_annotation
+
+Variance annotation support and fixed typeParams | 2015-08-25 14:44:08 | b134f86f186d49480f817ea29ab74550f65491dd
+
+Bump to gradle plugin 1.3.1
+
+- fixed issue when ZipAlign task would not consume previous' task output when it the file name is customized.
+- fixed packaging of Renderscript with NDK
+- Keep the createDebugCoverageReport task name.
+- Fix customized archiveBaseName handling : see http://b.android.com/182016
+- fixed for http://b.android.com/182433 | 2015-08-23 06:33:57 | 7e4428f83486b809094c2c14c337595086425bcc
+
+Merge pull request #29 from JakeWharton/jw/set-no-more
+
+Remove 'set' prefix on action factories. | 2015-05-07 21:37:03 | b75a4c42cd729570b684e57a45dc7adcdc2bb77f
+
+Remove 'set' prefix on action factories. | 2015-05-07 21:17:43 | 62782a95d845659dd731f1b33c3fb3d073c43d25
+
+Merge pull request #21 from JakeWharton/jw/fix-extension-methods
+
+Correct extension methods to use implicit 'this' reference. | 2015-04-29 16:27:31 | d7a8d773847879cbc3ce44bde27cb8d3e0203fc1
+
+Merge pull request #537 from oldergod/patch-1
+
+Publish sources to Maven Central | 2019-12-09 16:27:55 | c0b3ef1a6e17b6ed5c90799cc4aac1d915a92789
+
+Publish sources to Maven Central
+
+fixed #526 | 2019-11-27 20:20:35 | 5fe42ef2a7c830da28c82fbab9e50a4bb906dc6e
+
+Merge pull request #534 from BraisGabin/fix-tests
+
+Fix tests | 2019-11-20 13:24:30 | edf9c7417553f8ef006ea80cb4dbd865b3cf0f18
+
+Merge pull request #517 from oldergod/patch-1
+
+TabLayoutSelection.Listener : BaseOnTabSelectedListener | 2019-07-23 17:06:25 | aecdce73a36aecd8c5527d2701958c5779d68ea9
+
+Merge pull request #441 from swolfand/patch-1
+
+change `compile` to `implementation` | 2018-04-06 13:43:42 | 88092a168a5bb25920418208ea5a29558ae6e286
+
+Merge pull request #440 from vanniktech/patch-1
+
+Remove newline between XML Header and manifest declaration. | 2018-04-06 13:43:13 | ce8e51b97cc4eb9982645297d1788079ebcb5070
+
+Merge pull request #407 from OrdonTeam/patch-1
+
+Fix ViewPagerPageScrollStateChangedObservable | 2018-01-27 20:33:41 | 589c1d7284eb149aceb4ca8e2287a33c00c8aa47
+
+Fix ViewPagerPageScrollStateChangedObservable
+
+Since onDispose is called exactly once there is no need to check is it was already disposed.
+It fixes #406 | 2017-09-12 19:50:40 | 2ea15436715c6ee497dc16da427616ef1f53dc7d
+
+Merge pull request #384 from egugue/fix-typos
+
+Fix typos (weather -> whether) | 2017-05-28 14:56:54 | 62f3913bd2ae54b50644e96e1ab489fc602b148a
+
+fixed private member access for rxbinding | 2017-05-10 00:27:28 | a9a0aaa8c085a96fec0bb428de4ea50f836408e3
+
+fixed private member access for appcompat-v7 | 2017-05-10 00:20:04 | d2420a3ba4fea269acf523dabb271f486351474b
+
+fixed private member access for design | 2017-05-10 00:18:14 | 6d30c957a03dd5a881e603735605e2b3d14a9aed
+
+fixed private member access for support.v4 | 2017-05-10 00:14:42 | 2cdd2d3af98da7acf5d6608e42fd1736a718a400
+
+fixed private member access for recyclerview | 2017-05-10 00:11:03 | b25f54437505c9c3347241897223314d9f796338
+
+Merge pull request #352 from shohhei1126/fix_package_in_androidmanifest
+
+Fix package in AndroidManifest for RxJava2 | 2017-01-31 07:01:58 | 71f3a1bf5a6ad41e13d6519a39b4ecc61ae876e1
+
+change swipe speed to FAST to fix flaky test | 2016-09-09 15:59:16 | 11af21c6519755e221a26d928f1f3eb30b09ff31
+
+Merge pull request #269 from kunny/tablayout_tostring_fix
+
+Fix typo in TabLayoutSelectionEvent.toString() | 2016-07-13 02:09:02 | 4c723236011eac7b9f46f66d08a0d7a58ec30acf
+
+Merge pull request #261 from skoric/skoric/fix_swipe_layout_test
+
+Fixed RxSwipeRefreshLayoutTest test | 2016-06-24 22:54:28 | c8492b1c695a4464ccda2d6fdde4e526e428363e
+
+Merge pull request #231 from trevorrjohn/tj/fix_nullable_field
+
+fix nullable annotation on TextViewAfterTextChangeEvent | 2016-02-19 15:11:26 | 100adc34ae88ad207801c27b983ca69783a4e8f8
+
+fix nullable annotation on TextViewAfterTextChangeEvent | 2016-02-19 15:06:38 | 63a31fd441c81a82cc9806834a75df25ecddbb50
+
+Merge pull request #199 from JakeWharton/vanniktech-master_checkstyle
+
+Add checkstyle to projects and fix some errors | 2015-11-23 15:56:32 | 1567939c6467482de3977ad54dc3e88ba33c1f5c
+
+Add checkstyle to projects and fix some errors | 2015-11-16 08:55:07 | 2225928c2400b686c0dd2794a8ebe17286f03efc
+
+Merge pull request #144 from f2prateek/patch-1
+
+Remove timestamp from ViewEvent docs. | 2015-09-16 16:41:45 | a5890c19d3cbc2adb703aadaad4744cf96d895eb
+
+Merge pull request #110 from hzsweers/z/variance_annotation
+
+Variance annotation support and fixed typeParams | 2015-08-25 14:44:08 | b134f86f186d49480f817ea29ab74550f65491dd
+
+Bump to gradle plugin 1.3.1
+
+- fixed issue when ZipAlign task would not consume previous' task output when it the file name is customized.
+- fixed packaging of Renderscript with NDK
+- Keep the createDebugCoverageReport task name.
+- Fix customized archiveBaseName handling : see http://b.android.com/182016
+- fixed for http://b.android.com/182433 | 2015-08-23 06:33:57 | 7e4428f83486b809094c2c14c337595086425bcc
+
+Merge pull request #29 from JakeWharton/jw/set-no-more
+
+Remove 'set' prefix on action factories. | 2015-05-07 21:37:03 | b75a4c42cd729570b684e57a45dc7adcdc2bb77f
+
+Remove 'set' prefix on action factories. | 2015-05-07 21:17:43 | 62782a95d845659dd731f1b33c3fb3d073c43d25
+
+Merge pull request #21 from JakeWharton/jw/fix-extension-methods
+
+Correct extension methods to use implicit 'this' reference. | 2015-04-29 16:27:31 | d7a8d773847879cbc3ce44bde27cb8d3e0203fc1
+
+change swipe speed to FAST to fix flaky test | 2016-09-09 15:59:16 | 11af21c6519755e221a26d928f1f3eb30b09ff31
+
+Merge pull request #269 from kunny/tablayout_tostring_fix
+
+Fix typo in TabLayoutSelectionEvent.toString() | 2016-07-13 02:09:02 | 4c723236011eac7b9f46f66d08a0d7a58ec30acf
+
+Merge pull request #261 from skoric/skoric/fix_swipe_layout_test
+
+Fixed RxSwipeRefreshLayoutTest test | 2016-06-24 22:54:28 | c8492b1c695a4464ccda2d6fdde4e526e428363e
+
+Merge pull request #231 from trevorrjohn/tj/fix_nullable_field
+
+fix nullable annotation on TextViewAfterTextChangeEvent | 2016-02-19 15:11:26 | 100adc34ae88ad207801c27b983ca69783a4e8f8
+
+fix nullable annotation on TextViewAfterTextChangeEvent | 2016-02-19 15:06:38 | 63a31fd441c81a82cc9806834a75df25ecddbb50
+
+Merge pull request #199 from JakeWharton/vanniktech-master_checkstyle
+
+Add checkstyle to projects and fix some errors | 2015-11-23 15:56:32 | 1567939c6467482de3977ad54dc3e88ba33c1f5c
+
+Add checkstyle to projects and fix some errors | 2015-11-16 08:55:07 | 2225928c2400b686c0dd2794a8ebe17286f03efc
+
+Merge pull request #144 from f2prateek/patch-1
+
+Remove timestamp from ViewEvent docs. | 2015-09-16 16:41:45 | a5890c19d3cbc2adb703aadaad4744cf96d895eb
+
+Merge pull request #110 from hzsweers/z/variance_annotation
+
+Variance annotation support and fixed typeParams | 2015-08-25 14:44:08 | b134f86f186d49480f817ea29ab74550f65491dd
+
+Bump to gradle plugin 1.3.1
+
+- fixed issue when ZipAlign task would not consume previous' task output when it the file name is customized.
+- fixed packaging of Renderscript with NDK
+- Keep the createDebugCoverageReport task name.
+- Fix customized archiveBaseName handling : see http://b.android.com/182016
+- fixed for http://b.android.com/182433 | 2015-08-23 06:33:57 | 7e4428f83486b809094c2c14c337595086425bcc
+
+Merge pull request #29 from JakeWharton/jw/set-no-more
+
+Remove 'set' prefix on action factories. | 2015-05-07 21:37:03 | b75a4c42cd729570b684e57a45dc7adcdc2bb77f
+
+Remove 'set' prefix on action factories. | 2015-05-07 21:17:43 | 62782a95d845659dd731f1b33c3fb3d073c43d25
+
+Merge pull request #21 from JakeWharton/jw/fix-extension-methods
+
+Correct extension methods to use implicit 'this' reference. | 2015-04-29 16:27:31 | d7a8d773847879cbc3ce44bde27cb8d3e0203fc1
+

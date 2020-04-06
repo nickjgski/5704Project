@@ -1,0 +1,1252 @@
+Update CoRedux with logger fix | 2019-05-27 12:53:35 | 41af7275dc5f1fbfc6dbc30157366940ec5ed3f8
+
+Dependency updates. Add single scheduler to coroutine dispatchers | 2019-03-26 18:13:17 | f7458165207f371c18c7945c4f67a7748b6e8cb5
+
+Uncategorized fixes | 2019-03-11 09:51:06 | 3921f4e72e6b1815ecdfbb2df89c59350b573027
+
+Reduce catalog cards spacing. Other minor fixes | 2018-12-12 13:56:27 | d083d3a19669aa9cf742cc9b39213669d32365df
+
+Attempt 2 on fixing bottom layout and updating text (#1726) | 2018-11-12 18:39:07 | d3fdf1d91566d45831a57f2a68c0c4803ca5182d
+
+Use package prefixes | 2018-11-08 18:44:05 | c9b3a538b2ae979ceacd24ee0b6568a706233b86
+
+Introducing RxRedux. Dependency updates and minor changes/fixes | 2018-11-08 17:45:37 | 53ddebb6ac507d6e9599412a7fc8451b2966bb7a
+
+Faulty preload fix (#2731)
+
+* Condition for preload
+
+* Added preload fix for webtoon viewer. Replaced incorrect last-page logic
+
+* Requested refactoring
+
+* Requested changes
+
+* Requested changes | 2020-03-18 13:45:22 | 31e2fe6a4c447c8a79676973a5ddd4c6e3c7807a
+
+Manually fix zh-rCN plural strings (closes #2714) | 2020-03-16 21:58:11 | aa51968603a1fa4c179c7063d0dc6534467f3718
+
+Always recreate activity on light theme change (fixes #2720) | 2020-03-16 21:27:55 | d65a8e84f04f98e0e756c75b3a59a3c25d9e7903
+
+Fix catalogue display mode icon tint (fixes #2724) | 2020-03-16 21:24:50 | b000d96dd68e17cd3ec989122e09725216540714
+
+Fix focused text input stroke color (fixes #2703) | 2020-03-15 16:58:48 | 1ebcafb25dfed6a67fa7323b568b931b044369b5
+
+Dark snackbar in dark themes (fixes #2699) | 2020-03-13 00:12:48 | 9deaff91810029f5090f5e69daf68775180a37a5
+
+Fix common toolbar popup menu text color (fixes #2695) | 2020-03-12 23:14:43 | b9ea6e8d9699d734d8fe3b1d5c1e1ac2d7223f24
+
+Remove letter spacing from buttons (fixes #2696) | 2020-03-12 22:58:21 | f91f9c486213e13cfc2692649a809ab805e436ae
+
+Fix reader background color (fixes #2694) | 2020-03-12 22:27:19 | 24b848faacc415884b357fef3fcf693e071ee130
+
+Update visible pager settings on change (fixes #2143) | 2020-03-09 21:07:08 | e195257d2a592f390718e00214bc08e2de125bdc
+
+Add (disabled) dependency on LeakCanary for debugging memory leaks | 2020-03-09 18:04:16 | 8e539bebeae5e4895eb36d65b6966abedf253ab6
+
+Fix bug where status cannot be updated when all chapters have been read. (#2683)
+
+Minor cleanup. | 2020-03-09 15:32:59 | 07e2bdac81f109887cd14c662249747dbbf8599a
+
+Avoid passing max chapter number from tracker (fixes #2131) | 2020-03-07 23:01:26 | 0ec8def0d83650779267a0c97d873c41c9364468
+
+Minor lint fixes | 2020-03-07 22:01:53 | e4dc84a5d864a33e35327ff4f0965ec3ca3dd55d
+
+Linting fixes: extend AppCompat classes | 2020-03-05 03:37:15 | e30b1de10041fce71083965b831684ce81538727
+
+Limit saved page filenames to 127 characters (fixes #2638) | 2020-03-05 03:33:16 | 6940ad3fd9d37d81988c9f42c26e5ada0c178d8a
+
+minor reader bugs: (#2491)
+
+- fix preload on last page for R2L reader
+ - page 3 bug
+
+(cherry picked from commit 8b0458cdf6f9ff733074945d5e8f4209f73474f5) | 2020-01-17 02:45:06 | 7a4763ee68b404d51f93533d0b09c3e5c642a0be
+
+Tweak reader seekbar height for Android 5 UI bug (closes #2487)
+
+(cherry picked from commit 81418a7712a4261b2b1cb68d0af2a5c20a361be2) | 2020-01-12 03:29:31 | 82faa91ce3356d5cd52af99aafbfe3ef138eccd1
+
+fix bangumi track will override record to 0 after every track search(bind) (#2486)
+
+* fix bangumi track : the update status api must be called before update chapter api
+
+* fix bangumi track will override record to 0 after every track search(bind)
+
+(cherry picked from commit 427d2fed8cced3be89a2d0c1520f4fc12fb6452a) | 2020-01-12 03:05:03 | 005ac9e7324f37b11eddbe1976c55a3a13708c95
+
+fix bangumi tracker crash in searching english manga title (#2452)	eb5382e0	mutsumi <4182301+mutsumi63@users.noreply.github.com>	Jan 6, 2020 at 20:02 | 2020-01-07 01:02:28 | 51e049ab786719b2141914640c1fb7f27383e30e
+
+fix DOWNLOADED text showing after chapters are marked as read (#2434)	df14e6d4	Carlos <cargo8005@gmail.com>	Jan 5, 2020 at 16:36 | 2020-01-05 21:36:23 | db58c9b77ff109098b3fe435d48cf68248b7e8d2
+
+More linting fixes | 2020-02-26 23:12:44 | 0f2d4800365d7096a777d716b24cf123529e7b39
+
+Move color filter behind reader toolbars (fixes #2619) | 2020-02-23 05:07:34 | beb2d880ea0af17b74da6cd0fdc0e6aaafb75ad9
+
+Additionally sort by chapter number in recent updates (fixes #2586) | 2020-02-16 21:30:39 | eb724336f5850f2f2cdb0081addce40971026733
+
+More coroutine network call fixes | 2020-02-14 14:23:54 | 34bf9b729e25a1caa5dce5e7455344cfec06efae
+
+Restrict translucent reader UI to API 26+ (fixes #2580) | 2020-02-10 03:59:03 | f9098b53799660d44ff2b8f73ac71d3a9668f93a
+
+Explicitly switch between IO/UI dispatchers when updating list of extensions
+
+Potentially fixes #2566 | 2020-02-04 00:11:18 | 7af075633ba22a6e2951a6a0dac0588df071be6a
+
+Move JsoupExtensions back (fixes #2562) | 2020-02-03 04:45:13 | 3c41a5e91042c260641c7fe03f010fc9b98a60f4
+
+fix NPE in dateFormat (#2549)
+
+Bug #2548 fix NPE in dateFormat pref | 2020-01-29 12:23:26 | c79ebd4eeb71758b5d23d64103d352ed74c8a67e
+
+minor reader bugs: (#2491)
+
+- fix preload on last page for R2L reader
+ - page 3 bug | 2020-01-17 02:45:06 | 8b0458cdf6f9ff733074945d5e8f4209f73474f5
+
+Tweak reader seekbar height for Android 5 UI bug (closes #2487) | 2020-01-12 03:29:31 | 81418a7712a4261b2b1cb68d0af2a5c20a361be2
+
+fix bangumi track will override record to 0 after every track search(bind) (#2486)
+
+* fix bangumi track : the update status api must be called before update chapter api
+
+* fix bangumi track will override record to 0 after every track search(bind) | 2020-01-12 03:05:03 | 427d2fed8cced3be89a2d0c1520f4fc12fb6452a
+
+Minor grammar fixes | 2020-01-11 15:11:39 | 012b1b56aa843af5d58e00404c8b70197fc779dd
+
+fix bangumi tracker crash in searching english manga title (#2452)
+
+fix bangumi tracker crash in searching english manga title | 2020-01-07 01:02:28 | eb5382e0de3232a2b18441a8a22d2c5b163771cf
+
+fix DOWNLOADED text showing after chapters are marked as read (#2434)
+
+* fix DOWNLOADED text showing after chapters are marked as read | 2020-01-05 21:36:23 | df14e6d43e9cff6b8210cddb977affc8443f5dd9
+
+Update conductor-support-preference for AndroidX preference v1.1.0 compat (fixes #2431) | 2020-01-05 17:25:48 | ed7ebf2da1c52389c5872dc5783e266f5ec797e8
+
+Migrate to AndroidX (#2424)
+
+* Migrate to AndroidX (automatic conversion by Android Studio)
+
+* AndroidX dependency code updates
+
+* Fix source preference reparenting
+
+* fixes the androidx prefererences icon spacing issue
+
+(cherry picked from commit b76a15d960ec2cdf771be16377db0348b66b3179)
+
+* Fix source preference screen heading size/list padding
+
+Co-authored-by: Carlos <cargo8005@gmail.com> | 2020-01-05 16:29:27 | 78689e74432695a655d7b1cd782f23d646dd87ce
+
+add width and height to listview for browseCatalogueController (#2406)
+
+* add width and height to listview for browseCatalogueController
+
+* readd recycler has fixed size
+add width and height to list view | 2019-12-28 19:57:44 | f0053a2f788d97e51020fa6ac92712b4094f783c
+
+recycler is not fixed size (#2402) | 2019-12-28 19:10:34 | 4147fd6b19eb3c77ccba2cbd889b2e3a5687c2f4
+
+Tweak FAB sizing method (fixes #2398)
+
+Ref: https://stackoverflow.com/questions/56945314/floating-action-button-fab-icon-size-problems-after-migrating-to-sdk-28 | 2019-12-28 01:53:04 | 2bb903088e6aa8c78a6ff69a80844b05f29065fe
+
+fix: Don't send newlines and whitespace in API calls (#2348) | 2019-12-23 03:13:27 | ee4f0693412893776f154573708cbbfaec320c71
+
+Update README.md (#2372)
+
+changed  Chat to support server
+fixed grammar mistake | 2019-12-21 15:45:43 | 3a7cdfcaa4ba0820d44020cb7e6ad994f5f0975e
+
+Improve Issue reporting experience (#2189)
+
+* Improve issue reporting workflow.
+
+* Add meta request template
+
+* Remove old template
+
+* Fix label for bug
+
+* Add template text.
+
+* Remove meta request
+
+As per [review](https://github.com/inorichi/tachiyomi/pull/2189#discussion_r321668645)
+
+* Remove Acceptance Criteria
+
+As per [review](https://github.com/inorichi/tachiyomi/pull/2189#discussion_r321665449)
+
+* Requested changes from arkon
+
+All except the default template.
+
+* Revert "Remove old template"
+
+This reverts commit b9ef01f655e13e2582af68d3a454bd2db4723534. | 2019-12-01 18:49:47 | 6c9135c093edadbf66139f13b581f04cb292fbb2
+
+fix jitpack cause it's shitting out (#2274)
+
+fix jitpack shitting out | 2019-10-13 05:09:58 | b60b26bbd0d6b8c010384eb539748c84c12f0519
+
+Merge pull request #2271 from mezzode/patch-1
+
+Update link in FAQ | 2019-10-10 18:17:32 | d3cb10a74ebf181d4604680e77077e5d11de8bed
+
+Add chinese track website "bangumi" (#2032)
+
+* copy from shikimori and change parmater
+
+* add login activity
+
+* fix
+
+* login sucess
+
+* search
+
+* add...
+
+* auth fix
+
+* save status
+
+* revert shikimori
+
+* fix oauth error
+
+* add bangumi info
+
+* update read chapter index
+
+* refersh token
+
+* remove outdate file
+
+* drop comment
+
+* change icon
+
+* drop search result which type not comic
+
+* fix bind logic
+
+* set status
+
+* add ep status
+
+* format code
+
+* disable cache for `collection` api | 2019-07-23 10:35:38 | 3abae1cc75837e9b64f5f1577da827daa17f00ce
+
+Make MAL Tracking Slightly Less Shitty (#2042)
+
+* * fix cookieManager not clearing cookies properly
+* manually clear tracking prefs when !isLogged (e.g. cookies were cleared)
+
+* use full url for removing cookies
+
+* add interceptor for all non-login network calls
+* attempt auto login if cookies are missing
+* move handling of csrf token to interceptor
+
+* * move methods around to improve readability
+* fix TrackSearchAdapter not updating other fields if cover_url is missing
+* revert accidental removal of feature in https://github.com/inorichi/tachiyomi/issues/65
+* avoid login if credentials are missing
+
+* fix eol
+
+* *separate login flow from rxjava for reuse in sync
+
+* *use less expensive method of finding manga
+
+* *move variable declaration
+
+* formatting
+
+* set total chapters in remote track | 2019-06-09 12:31:19 | 9ba7312cafe5f54f0a5a6747aa44634482ad9aae
+
+Fix the category selection bug (#2052)
+
+Fixes #2051 | 2019-05-26 09:37:47 | 8ebda219c4b45a24c83e7c40c8ab218ec2fd07f2
+
+Bugfix. Sharing images with very long name (#1999)
+
+* Fix sharing with very long images name
+
+* Fix dropLast to take | 2019-05-07 09:06:38 | 003dca9d45ff122cb24f176b314389e57b4ad7f1
+
+Fix bug with update lib and parse chapters (#1927)
+
+* Fix bug with update lib and parse chapters
+
+* Fix else condition | 2019-03-25 13:53:17 | dbe8f3cfbee3b91ef5e8760c782aeb1beef5d1fc
+
+Storio imported from Jitpack. Also fix an issue with the progress bar animation on the reader | 2019-03-22 22:06:05 | f12d5ba68984ff352ab9b0f3d15287525813dad1
+
+[Anilist] Fix date parsing error (#1805)
+
+fix #1804 | 2019-01-28 08:03:03 | f8e121ee060f6fb38b5187921b441964ea87e904
+
+kitsu search fix (#1681) | 2018-10-27 17:34:05 | 8b67255186eb61bc2739a433956d843d769dfc0b
+
+Minor fixes when updating the manga viewer | 2018-10-09 12:27:00 | 788cb843fc5ff12dd7a955d42479fbdace01945c
+
+Update subsampling library with decoder fixes | 2018-09-19 10:04:36 | e502caee9f0dfc2e571100b4b5426736b6549b84
+
+Several reader fixes | 2018-09-08 10:44:35 | 116f7d1c4aca994306533b2e4d05315cf6598b81
+
+New reader (#1550)
+
+* Delete old reader
+
+* Add utility methods
+
+* Update dependencies
+
+* Add new reader
+
+* Update tracking services. Extract transition strings into resources
+
+* Restore delete read chapters
+
+* Documentation and some minor changes
+
+* Remove content providers for compressed files, they are not needed anymore
+
+* Update subsampling. New changes allow to parse magic numbers and decode tiles with a single stream. Drop support for custom image decoders. Other minor fixes | 2018-09-01 15:12:59 | 18f89cc341d85dbb734d370077307d33a8454f6f
+
+Kitsu search fix (#1524)
+
+* fixed start date,
+fixed filtering of novel
+
+* removed init switched ?.let | 2018-07-07 09:35:03 | 762c378bd61d7e2e3adbaf17aaa03b14c2597ee9
+
+Changed Kitsu to use Algoria search directly (#1514)
+
+* Changed Kitsu to use Algoria search directly, was recommended by the Kitsu Dev team
+
+* remove extra line
+
+* fixed end date bug
+added filtering out novel back in
+
+* save the retrofit instances locally for search. | 2018-06-30 10:07:37 | fd825b1049c1c94e9d4907f1f523662c46e463a3
+
+Bugfix on save instance state. Also improve initial page loading on Kissmanga | 2018-05-23 11:16:11 | 10f36f40d616c3a90dc1594fab2fb2a2383598e5
+
+Minor fix | 2018-05-05 13:29:08 | 263198dd89a4c81813ae38ce6868415b2b0efb23
+
+Bugfixes | 2018-04-30 16:31:31 | 8874fe973c9cc94c057cd6d5f2d34d5032f92948
+
+Remove F-Droid.org link (#1357)
+
+* remove fdroid.org
+
+* Update README.md
+
+* fix broken links | 2018-04-15 10:48:03 | 7789171c71540d13f78319ae0112ed66460425ed
+
+Use our OkHttpClient in updates checker. It should fix the updater on KitKat due to TLS | 2018-04-06 08:02:01 | 7464497c8874e42e9bbfb9b080bd54d7d5fd8947
+
+Update constraint layout & fix broken layouts | 2018-04-05 19:50:44 | e0d680201a42e7f7f3e2b0f8a232a35dbbab8936
+
+Dialog color fix (#1308) | 2018-03-14 17:01:30 | 2159b72e697f43923920c04df5764f79a2f6282a
+
+New colors + theme attrs (#1272)
+
+* New colors + theme attrs
+
+Added new colors.xml values and modified some themes.xml fields for more customisability when switching between themes.
+
+* Small fix for dialogs
+
+It should look more distinguishable for the Dark theme now | 2018-03-10 19:17:26 | fcdb80830b0eaddac8295066853fbde99310ae47
+
+Fix subtle bugs when installing/loading extensions | 2018-03-09 17:56:02 | af637a82c304e2321a4a2aa10de8bee8a2380c94
+
+Added country/region support for locale when displayed for sources (#1240)
+
+* Added country support for locale when displayed for sources
+
+* code review changes/comments fix | 2018-03-05 18:46:18 | 1b7a0de745599c47b4c973b9dd4e5f039a91b070
+
+Anilist search fix (#1289)
+
+* fixed issue where some anilist results not showing due to null description.
+
+* remove blank line | 2018-03-05 18:45:02 | 50e0cb65d9b879990beea85d0120e8a8f8444381
+
+Add logging to controller lifecycle to help reproducing bugs | 2018-03-04 20:04:41 | ba4807f62c7101d30536ecb0795ed4e2a7574850
+
+Bugfixes and extension installation improvements | 2018-03-02 17:10:10 | 8e50ac67bc349d6439c4db6b18aff0b72fcd2dc0
+
+Update conductor to latest snapshot (with a minor fix) | 2018-02-27 18:06:34 | 5a3e30b30ac1290a5985441ad83ae10c80e0e1ce
+
+fix restore from old backup to updated trackimpl. (#1269)
+
+* fix restore from old backup to updated trackimpl.
+added backup of tracking url for new backups
+
+* assignment not needed | 2018-02-22 20:54:05 | cf5c816483a5bc09dc311faf22703efc1fd396d9
+
+removed extra blank lines (#1259)
+
+fixed results not showing for jellybean
+made edit text max line 1 to prevent it newlines being added and moving the edit text into the list view | 2018-02-18 18:36:34 | fc1f290b855820516a0a4d7fffe8f55e6fe191e0
+
+Remove debug log | 2018-02-18 18:19:59 | 0d480dbf7c5c560a5213721b1fc0b08e31875952
+
+Library filter UI change (#1211)
+
+* similar library filter to catalog filter
+
+* removed some commented out code
+
+* code review changes
+
+* fixed accidentally removing title | 2018-02-16 14:23:15 | 6c1453eb547a6e468c0a837ebe6509248bf02e18
+
+fix author/artist not showing in mangahere (#1228) | 2018-02-05 10:19:24 | a71c805959fd9d8e074145ce0f01b29a88ee4735
+
+fix genre tags to be delimited correctly (#1215) | 2018-01-26 16:09:08 | 22f2ecc433934b9b28e3d58bfc265ea40f02454f
+
+fixed 3 dot icon (#1209) | 2018-01-24 06:19:55 | 55b7d5025b5519200023b1a9fef310ecba46ae87
+
+Added custom download option (#1185)
+
+* Added custom download option
+
+* Implemented new design. TODO comments (like always...)
+
+* W00t comments
+
+* Implemented code review.
+
+* Fixed commit breaking mistake :O
+
+* Small design fix | 2018-01-23 20:18:55 | 6a310bbaa960e91db7e665befca471fa97cc85bc
+
+Catalog visuals update 1155 (#1167)
+
+* adjusted search to be lower in navview
+
+* close drawer on search
+moved search and reset to bottom
+
+* switched sort icon to arrow
+
+* allow secondary drawer to swipe open and close
+
+* fixed click to collapse for sortgroup, and group item
+updated to rc4 flexibleadapter
+
+* added header to drawer
+
+* changed string to Search filters
+
+* collapsed sort group
+
+* fixed arrow size
+
+* added divider line
+
+* fixed vector size
+
+* add divider id and tools text | 2018-01-23 17:50:48 | 7f63e318f1a741df038e466b200fc6d81bcdaa91
+
+fixed alpha not showing for manga in library during global search (#1203) | 2018-01-21 18:15:24 | 7a4463e104fe1053214be70a4f403bb15751868b
+
+fixed ReadMangaToday search issue (#1200) | 2018-01-21 16:24:24 | e1be4ba9255c4883b0702d25fc50eedac344d386
+
+Information Page Improvements (click to search, copy to clipboard, etc) (#1139)
+
+* adds long click to copy details per inorichi/tachiyomi#1127
+
+* Added the latest update date for inorichi/tachiyomi#1098 and possible fix for inorichi/tachiyomi#1141
+
+* cleanup some mistakes I left
+
+* adds modifications to full name display for inorichi/tachiyomi#1141 and click to search on various information pieces for inorichi/tachiyomi#860
+
+* This modifies how the full title shows up in the info pages and also properly ellipsizes the titles in the catalogue/library list views
+
+* Changes full title layout in horizontal mode
+
+* Adds the tags in using AndroidTagGroup library
+
+* reverting the sdk version in the gradle build
+
+* code cleanup
+
+* added back status update | 2018-01-18 18:15:33 | 34d21c1de334e079cbc22e6c73fd888d5782be82
+
+fixed issue where some sources that use cloudflare use the Server: cloudflare as cloudflare-nginx is deprecated (#1152) | 2018-01-08 10:03:37 | 29d0cb4a154fd9f0f8b2a0c9ee1572f71a5e0f24
+
+Give view pager unique ids, avoiding subtle bugs | 2017-12-04 21:22:35 | 08baf798aa6bd49ae0f61d84b2a670f36f67bdd7
+
+Fix automatic backups (#1074)
+
+* Fix automatic backups
+
+* Small fixes
+
+* small fixes | 2017-11-28 21:55:50 | d1d1d60c30ef02012bb7d189c2e080a88328f013
+
+A few fixes and dependency updates | 2017-11-11 14:31:32 | c437a33f2aba022358b979c2571987e924cd7b52
+
+This one should finally fix travis builds | 2017-10-28 14:39:34 | 1347bfe2433133ef48a839db9146df070e79d258
+
+Trying to fix broken travis | 2017-10-28 14:24:18 | a76ee95b6d9541808ffd8011144444838ad888a9
+
+Actually use latest Glide version. Minor doc fix | 2017-10-14 16:37:23 | ca30fd6088d2150486d58e6d6db1ecf4ef20cde2
+
+fixed author/artist not showing for Mangahere. (#1032) | 2017-10-12 22:18:17 | 5b6c4758171ce54009a133e399883809b0cdef1f
+
+Shortcut fix Oreo (#1026)
+
+* Moved to Android O Shortcutmanager
+
+* Re-added possibility to change icon shape pre oreo. | 2017-10-10 10:05:33 | deec65446fff0306b19068e06ae9da5533fda2ba
+
+Global Search (#849)
+
+* Global Search
+
+* Cards are now independent of design by use of recycler.
+
+* Added local
+
+* Some attribute fixes + moved onclick to controller.
+
+* Lots of improvements to code
+
+* Reversed some stuff. Thanks API 16
+
+* Code fixes
+
+* Performance improvements
+
+* Moved adapter creation to constructor
+
+* Small changes
+
+* Removed sources settings from settings menu. Added OnChangeListener in catalogue. Made setting icon visible if room.
+
+* bug fix
+
+* Code review part uno
+
+* Code review part uno-2
+
+* Single recycler approach
+
+* Add last source used
+
+* Fix scroll state and some layout issues
+
+* Fix wrong item binding
+
+* Use data class for items
+
+* Calculate item position and count while binding
+
+* Fix background color with slices
+
+* Reuse slices. Fix card background. Flatten constraint layout
+
+* Fix global_search scroll issue
+
+* Store last state with global search
+
+* Minor changes
+
+* Remove catalogue toolbar spinner. Persist catalogue across process restarts
+
+* Save view state of recycler views. Set toolbar title with current query | 2017-09-23 11:11:39 | 54c8b3ef29d5ddb05925e119c41c37d95f189fdc
+
+Let GC take care of the presenter. Also fix #947 | 2017-08-29 07:55:42 | ecfe72bcadbf16a5c79e4bde56bb8f233b71457a
+
+License manga update and Manga Fox Title Update (#937)
+
+* update mangafox parsing to read chapter title also if it exists.
+
+* updated chapterImpl to force update chapters if chapter name changes.  This allows for chapter name changes from the source to update in app
+
+* switched from : to - since other sites that already have title use - so it provides consistency across sources.
+
+* fixed spacing for -
+
+* fixes license status for manga fox
+if manga is licensed no chapters will be shown.
+
+* 1. changed equality in chapterImp back to just the url (removed scanlator, and name comparison)
+2. Removed extra line of code assigning mangaFox title twice
+3. Modified ChapterSourceSync for scanlator/title/url comparison.
+
+* cleaned spaces, added comment, incorporated toChange code from other pull request
+
+* throw exception instead of returning empty list when licensed
+
+* space fix | 2017-08-28 07:10:19 | 5ae0589547489193826b6205f05711a07ceaa16b
+
+Also fix Batoto popular query | 2017-08-25 21:30:18 | f3f7aa9e1d87e1d401f0c2bb7deb28305ec3e9e4
+
+Batoto fix. #953 | 2017-08-25 21:10:31 | 43355970db1e08d4bc48670387ed51ada67cd8ec
+
+Add Filter by Completed for library (#941)
+
+* issue 938
+
+added filter by completed manga status
+
+* changed to use existing string
+fixed space issue in method in presenter | 2017-08-19 18:34:43 | bfa386acba1e495f00964c511f26b677599a7716
+
+Add Batoto Scanlator to Chapter view (#789)
+
+* Added scanlator for Batoto on chapter list
+
+* adjusted item_chapter layout for scanlator
+adjusted so db chapters get updated if scanlator does not match source scanlator
+
+* adjusted item_chapter layout for scanlator
+adjusted chapter holder to dynamically set title max lines depending on if scanlator exists
+
+* fixed excess blank line
+
+* changed scanlator to be instantiated instead lateint to prevent toast message erro when viewing chapters by catalog
+
+* changed item_chapter.xml to constraint layout
+
+* removed accidental changes to catalog
+
+* cleaned up code.
+
+* fixed issue where long title was running into 3 dot menu
+fixed issue where no scanlator for manga was causing date to not be bottom lined
+fixed general chapter layout to be more similar to existing
+
+* allow scanlator to be null
+
+* fixed merge issue
+
+* fixed merge issue
+
+* attempt to fix whitespace carriage return issue
+
+* attempt to fix whitespace carriage return issue
+
+* attempt to fix whitespace carriage return issue | 2017-08-15 13:05:41 | a12a34e3bb8e1868c6451607bf9dbbd89bdaad6a
+
+Dependency updates. Enable new translations. Minor fixes | 2017-07-08 14:44:01 | bb40a4d6b840eccea11695e38f2af55746345e52
+
+Add images and 'view chapters' to library updates (#785)
+
+* added option to open manga directly from library update
+added covers for manga in library update
+added ability to click covers to open manga directly from library update
+
+* Removed 3 dot option to open manga
+Adjusted covers to circles and material standard for recent chapter
+
+* fixed potential null pointer on cover click
+
+* adjusted circle imageview size for recently read | 2017-05-08 07:22:49 | fa8f5bc0d85db143bd8112f7d74625d508e6d7ed
+
+Initial AMOLED theme + some CardView fixes (#787)
+
+* Initial AMOLED theme + some CardView fixes
+
+* small fix | 2017-05-07 10:36:25 | 21184348239cd368d50daa7a00b212fd60ebc2c9
+
+Deleting categories hides manga until switch from and to library #686 (#769)
+
+* Fixed bug 686
+https://github.com/inorichi/tachiyomi/issues/686
+
+* Fixed bug 686
+https://github.com/inorichi/tachiyomi/issues/686
+
+* undo previous changes to resubscribe
+add table to mangaQueries to update on table category change
+
+* cleaned up formatting | 2017-04-27 18:16:05 | e838bb43d2ddf6d2ffb8adcfe28f80198d6c7552
+
+Small fixes (#740) | 2017-04-07 19:17:21 | 6069659e0fccadcef54b88c9b9148f305cabac8d
+
+Rewrote Backup (#650)
+
+* Rewrote Backup
+
+* Save automatic backups with datetime
+
+* Minor improvements
+
+* Remove suggested directories for backup and hardcoded strings. Rename JSON -> Backup
+
+* Bugfix
+
+* Fix tests
+
+* Run restore inside a transaction, use external cache dir for log and other minor changes | 2017-04-04 15:42:17 | 0642889b647ffb2c2ab014b33e6fd0a286065c84
+
+Kissmanga fix. Kotlin 1.1.1 | 2017-03-18 13:11:16 | 3be9881997fe8358d725a651710ae55ec382935e
+
+Add dev flavor. Bugfix in reader | 2017-03-08 17:56:27 | c437f1473cfe2cadab70b240f8ac841131caf38d
+
+Minor fixes and improvements. Dependency updates. Drop support for the old armeabi and use arm64-v8a instead | 2017-02-16 22:22:30 | 2230ad59f18a3b70f31d87109836549b814929d7
+
+Allow glide to use source's network client. Catalogue fixes | 2017-02-04 12:44:18 | ad6cdc9017a44635a6bb3071e4a634f981d9c974
+
+Language hot fix (#668) | 2017-02-02 16:01:18 | 56e7a1e2a05f4391ceef209752c9365547504f38
+
+Local manga in zip/cbz/folder format (#648)
+
+* add local source
+
+* small fixes
+
+* change Chapter to SChapter and and Manga to SManga in ChapterRecognition.
+Use ChapterRecognition.parseChapterNumber() to recognize chapter numbers.
+
+* use thread poll
+
+* update isImage()
+
+* add isImage() function to DiskUtil
+
+* improve cover handling
+
+* Support external SD cards
+
+* use R.string.app_name as root folder name | 2017-01-29 19:48:55 | 2b73a9d2a4031b7df6ba4e33470e78055af12866
+
+Bulgarian translation typos and fixes for better understanding (#655) | 2017-01-26 07:12:43 | 05c628b33cc5f3a8a89d6ab0ecbc44dd67d47e1c
+
+Fix filter input text introducing a new line. Also fix filter drawer clicks propagated to the views below | 2017-01-21 19:31:25 | 7f8bfd759fed17ba10204f5f5dc20dc0248d2c35
+
+Catalogue fixes | 2017-01-21 17:48:27 | 1e4a01399d5837fbcb6f6c8ef71deacfb1d6dd82
+
+French language (#634)
+
+* Added french string values in res
+
+* Added french in the list of languages available
+
+* Fixed remaining //
+
+* Update manga plural according to http://www.academie-francaise.fr/niky-orange
+
+* Update translation based on M2ck's remarks
+
+* Translating remaining english bits and fixing some typos
+
+* Further fixes according to M2ck's suggestions
+
+* Ninja typo fix !
+
+* Updated tapping string with french translation and updated a pretty awkward literal translation
+
+* Updated translation to new strings | 2017-01-19 21:48:11 | fb89f77db7f029b710133021709ce6736b8a0552
+
+Update subsampling with some fixes | 2017-01-19 20:12:49 | f7b94179a452cb38b67eef7343724b7cd5848da8
+
+Added Russian language (#631)
+
+* added russian res/values
+
+* Russian strings fix typo
+
+* added Russian lang in list of lang's
+
+* Russian string.xml: fixes
+
+* Russian string.xml: fixes
+
+* Russian string.xml: fixes
+
+* strings-ru fixes | 2017-01-10 19:34:45 | f717c57648a2be800e37e7aa373edaca811e0712
+
+Improve catalog search filters (#615)
+
+* Add three state (include/exclude/ignore) search filters (works for now only on MangaFox and MangaHere)
+
+* checkbox icons in xml format
+
+* fix checkbox icons referencing
+
+* fix three states filters in remaining catalogs
+
+* use Spinner for filter with more than three states (Mangasee)
+
+* use EditText for freetext filters (Mangasee)
+
+* remove pngs
+
+* Filter class/subclass
+
+* add Filter.Header
+
+* English catalogs | 2017-01-02 17:30:10 | d3e9200a7f82f7a6d463487b39016b739bfe1026
+
+Locale fix. Kotlin update to 1.0.6 | 2016-12-27 19:18:38 | a7192e866fb8758297f045332029c4c1ac023e05
+
+Kitsu fixes | 2016-12-24 10:32:45 | 97fa659283724e8b2f6370de42ccf1275b7205c3
+
+Add "Completed" filter; fix Mangahere; fix Mangafox (#604)
+
+* Add "Compled" filter to all english sources; fix Mangahere manga title extraction; fix Mangafox search.
+
+* update Mangasee
+
+* update Batoto | 2016-12-23 23:08:49 | f1d84ccb49f1891bdbb1a9b7c960174606300a70
+
+Translated some strings to Italian (#602)
+
+* Translated some strings to Italian
+
+* Added missing strings and fixed a couple of errors | 2016-12-23 23:08:27 | 1f142402514d80cbd55598f7c96f6c325b0d905d
+
+Drawerfix/readme update (#601)
+
+* Fixed back button on navigational drawers
+
+* Removing an unused import
+
+* Cleaned up code
+
+* little clean up | 2016-12-23 14:56:10 | ec87e4359b5de9fbc62fd4bc26b919c5e061c3d4
+
+Experimental Anilist and Kitsu support (#586)
+
+* Tracking tab with anilist support
+
+* Rename MangaSync to Track
+
+* Rename variables and methods to track
+
+* Kitsu implementation
+
+* Variables refactoring
+
+* Travis fix? | 2016-12-18 21:56:28 | 94ee4e7fb5d0cb8a95a4334139792f8a318ddcec
+
+Bugfixes | 2016-12-18 15:35:39 | e1a3ee1b81d1fe79d7715059cfda619aa4f82e67
+
+fixes wrong getBroadcast calls from imageNotification (#585) | 2016-12-18 14:15:44 | cc43d9daedf09dcc9fb814c80a239534fca326f3
+
+Format fixes. Move lang setting to the first entry (looks better IMO) | 2016-12-13 20:07:48 | 32511149d13e82de9d435861bed8942cf7ba8bdc
+
+Minor changes and fixes | 2016-12-03 12:08:26 | f514d466a6bbce4e57d10fac719b43f6d1090f86
+
+Italian language (#551)
+
+* Add italian language
+
+* italian language: fix aapt error
+
+* small edit | 2016-11-30 08:55:05 | a9b6db9ee9bf51a93e925909fa4e7cf94b1de063
+
+Download manager rewrite (#535)
+
+* Saving to SD working
+
+* Rename imagePath to uri
+
+* Handle android < 21
+
+* Minor changes
+
+* Separate downloader from the manager. Optimize folder lookups
+
+* Persist downloads across restarts
+
+* Fix for #511
+
+* Updated ReactiveNetwork. Add some documentation
+
+* More documentation and minor fixes
+
+* Handle persistent notifications. Other minor changes
+
+* Improve downloader and add documentation
+
+* Rename pageNumber to index in Page class
+
+* Remove unused methods
+
+* Use chop method
+
+* Make sure dest dir is created
+
+* Reset downloads dir preference
+
+* Use invalidate options menu in download fragment and fix wrong condition
+
+* Fix empty download queue after application restart
+
+* Use addAll method in download queue to avoid too many notifications
+
+* Inform download manager changes | 2016-11-20 10:20:57 | 6f297161de6d062d4280dfd5352b3e5e76353df6
+
+Minor fix | 2016-11-19 11:13:09 | 1d014a5a940cd212fb731bedb39444070ef85d23
+
+Trying to fix a crash in settings (again) | 2016-11-15 18:12:03 | 453f742732dcb1b54175ab9f388b07d0d3af8644
+
+Trying to fix a crash in settings | 2016-11-15 16:48:51 | 83349fc72d0fd70994beed45ec925a6cff54f456
+
+Added option to download page or set page as cover (#481)
+
+* Added option to download page or set page as cover
+
+* Removed network call now copies from page image
+
+* Format fix + notification feedback
+
+* Added code to prevent OutOfMemory error.  Made notification optional. Can now save image on long press. Bug fixes
+
+* Now uses glide for notification
+
+* Fixed webtoon page
+
+* Fixes + API 16 support
+
+* fixes
+
+* Fixed API 24 FileProvider error
+
+* Added page.ready check
+
+* Indention | 2016-11-14 19:48:34 | 9f625835ec4f261add92fff3f388be2d267c5eef
+
+fixes | 2016-10-25 14:08:33 | 93f90b5a6276bebc84c861cce08045fd0808390e
+
+Added code to prevent OutOfMemory error.  Made notification optional. Can now save image on long press. Bug fixes | 2016-10-06 19:51:51 | 4975787afabdcea80ff3906f60a4647f15323ed0
+
+Format fix + notification feedback | 2016-10-01 14:43:52 | 1210691fddcf71102fb1a45a0cb4d72c89492bc6
+
+Reader fixes | 2016-10-24 20:16:50 | 5b1f4f189b26bcbb2dfbd7f35f5edc17fc156a44
+
+Another crash fixed in webtoon reader | 2016-10-15 13:27:26 | 69baaac27eb7acf5f4b1353d3de9fd8709716f54
+
+Multidex debug build | 2016-10-15 09:12:16 | 33df35db1b4c0536d0c651aaf6917e803875b669
+
+More crash fixes | 2016-10-09 09:34:37 | 4a6e2a5d995c211534ee64c25470cb65b5cb1b75
+
+Crash fix | 2016-10-09 09:10:47 | 6cf84256fe195e67e811be4f364ef686e2f52fe3
+
+Allow to refresh the entire library info (fixing empty covers after restoring backups). Closes #462 | 2016-10-06 17:23:59 | 1f70be688ab55815fca2e358ca294f5525f2a45b
+
+Open from homescreen/add shortcut to launcher (#435)
+
+* Add very basic "Add to homescreen" action in manga info fragment.
+
+* Fix open from homescreen opening current manga (if a manga is open).
+Code cleanup.
+
+* Improve fix for "Opening from homescreen opens currently open manga if a manga is currently open" and fix "Going back to the main app via a Manga opened through a shortcut repeats the launcher open animation".
+
+* Implement custom icons, add star icon and optimize some things.
+
+* Remove Tachiyomi and custom image icon types.
+
+* Move icon creation task into an observable.
+Added some extra error handling. | 2016-09-29 16:38:29 | d352405ba6a92f5d2fedf3608590788cbb258622
+
+Custom color filter for reader (#434)
+
+* [WIP] Custom color filter for reader
+
+* Improvements
+
+* temp image to prevent build error
+
+* Shift all the bits
+
+* Some improvements. Removed DiscreteSeekBar
+
+* Improvements
+
+* API 16 + fixes
+
+* Reduced lag. Fixed brightness value being reset to 0
+
+* Small fixes | 2016-09-21 19:26:08 | 8be67a4431aeb2d73de6f9354f9f319b48ab2473
+
+Remove debug log | 2016-09-15 16:04:36 | 72ae243fa263564ab989da8d7ed4ff5a2eb3217c
+
+Minor UI fixes | 2016-09-06 19:22:56 | a4b71f4d11ca87b422462bdc0c065cfc34c71144
+
+Travis fix. Update gradle | 2016-09-01 18:05:11 | 46e09d174bc04a1a4595378e4e7254a1465cdcba
+
+Recycle view holders in library. Format fixes | 2016-07-30 18:21:01 | fbd2235a516dced18dae3542639eec77a2a8ab55
+
+Added the ability to view the library as a list (#394)
+
+* Added in the ability to view the library as a list
+
+* reverted LibraryAdapter and renamed libraryToggleViewEvent to LibraryToggleViewEvent for consistency
+
+* removed LibraryToggleViewEvent and directly subscribed to option change
+
+* fixed the toggleView subscription
+
+* Made the library list item layout more compliant with material design
+
+* Changed unread text style and removed background | 2016-07-27 15:37:36 | f21a030cf80c54fc0d7979f1de9578fe09b6fe7e
+
+Back button now returns to start screen. Also fix #356 | 2016-07-20 17:09:28 | 8c1bedf7963e9274a05e4f55b579f80d0a73883a
+
+Remove deprecated calls and fix a potential race condition | 2016-07-18 19:01:51 | 1090c04fe33cbefb3c0965c6df5da8029f4c3438
+
+Minor fix | 2016-07-15 16:22:24 | e16bf0698e28a7337d1a2a4a26587c52d1629af9
+
+Remove newThread usages, it probably fixes random crashes | 2016-07-08 16:23:03 | 5f1a89df6324a617e3594320d06ec85c499e7389
+
+And a few more crashes fixed in preferences | 2016-07-03 19:19:34 | 42484d718a4cda19d3e2a7fdd8e2c6ba9ffa2e72
+
+Reader fixes (MAL not updating in certain scenarios) | 2016-06-24 11:39:34 | b6df5e6ee6f5582ef8d4b8c0352f463745da5434
+
+Update Mangachan address and fix loading covers after update (#347) | 2016-06-11 13:59:04 | 4de8b6e9a87f79d21d081ae8b666bb2eb30e5a95
+
+Cloudflare fix. Closes #344 | 2016-06-09 09:32:24 | dbec4fc15e894cae0d02f8d04d665d69d273d5cf
+
+Small card fixes (#338) | 2016-06-07 18:36:40 | 86db7497e9e09ab4a9e12dd9f80ee426d5e3253a
+
+Wrong card background fix + bump gradle version (#337) | 2016-06-07 18:14:36 | 172305fc6af096f4864e6c7672172deeab47d6f2
+
+Improve getAbsolutUrl method (#336)
+
+Also fix Mangachan most popular pages | 2016-06-07 18:04:50 | dad9dcd742fa14927b752f45211796bc334239da
+
+Reader fixes and minor changes | 2016-06-02 12:11:10 | 1ac8ef5341b552a6cb43a7f872a0ca2468ebcd74
+
+Chapters FAB doesn't depend on the recognized chapter number. Cloudflare resolver fix | 2016-05-28 17:10:09 | 02a697031f9fa315b9648a0182bf963ce2da4e2e
+
+Use async method for network calls, trying to fix a crash | 2016-05-27 11:56:18 | 79bb207a8de0edff527b93121c287122d4df59a7
+
+Minor fixes | 2016-05-26 14:03:55 | 4e784cd7c3db32cc4a79ca1d80cd43ae1135af22
+
+Build debug in travis | 2016-05-10 14:13:28 | c64bd81339123fb113122ed147a7216694f92568
+
+Delete from the download queue on the main thread. It could fix some crashes | 2016-05-05 14:05:36 | 0de214c3b56d6a4eb4f702f472fe45353cec6dfc
+
+Release version manual update hotfix. (#283) | 2016-04-28 16:46:12 | 97ee7b81af83da6d91b8fc1f9eb1ff55d5948ba8
+
+Make query non nullable, it fixes some bugs in the catalogue | 2016-04-26 22:56:37 | 5d396bfb7c5ec31d24876e885144c168a14c963a
+
+Merge pull request #257 from NoodleMage/update_improv
+
+Rewrote UpdateDownloader to Kotlin + AC fixes | 2016-04-26 22:20:50 | 4b7159648aff680ae24e3fc55235116678d2a2ec
+
+Removed automatic update + duplicate fix | 2016-04-26 20:56:49 | eb9c5f95dbfd37802e5a9a8610f009b6e0f10b4b
+
+Rewrote UpdateDownloader to Kotlin
+Added auto update check (every 12 hour)
+Warning message optional fix #256
+Lots of bug fixes! | 2016-04-17 22:20:58 | 55e9d2880c9022c5e9a82649d844c4ad9d7fd434
+
+Minor changes to fix a possible crash in the downloads view | 2016-04-24 21:32:49 | bfb12bc7c170e5d09958aebe44eeacb0437674ab
+
+Allow setting versionCode in parameter (#276)
+
+Allow easier debug versionCode change | 2016-04-23 11:17:48 | cb58145361d66bd750ec046a2c915ddc820bd453
+
+Remove gradle properties and fix travis build | 2016-04-17 14:58:29 | 55de2b7d9796d70c0c2a1a342bd4134ef3be3e13
+
+Some bugfixes | 2016-04-15 12:58:36 | 17a6ea973ed717e9c7c6d662a2946a84ecccdd6b
+
+Merge pull request #245 from j2ghz/patch-1
+
+Add caching to Travis | 2016-04-09 15:57:55 | 8c9db2db6188b4eda6dfcb547d7e3ff967267540
+
+A few more crashes fixed | 2016-04-08 20:57:31 | 5fbeeade9406a664944040ea70c3d0ce7f470109
+
+A few more crashes fixed | 2016-04-07 18:39:37 | fe49286d97ab93345f8dd03b5dc1eb7ff2869fa1
+
+Minor changes trying to fix a crash | 2016-04-07 12:43:02 | 4196a0f58585241ec19e908c44154d8c3b8dc989
+
+Add commit number to version name in debug version | 2016-04-06 15:10:43 | 1844b8c5a28293e23f62bfaea668a87345e239c5
+
+Minor changes. Also fix #240 | 2016-04-06 14:45:13 | 7c503648ffffb4a7060fd7c9129e6331af79c384
+
+More crash fixes | 2016-04-06 00:18:04 | a598ebf72f33d335d5e2ef27b7da90de5782844a
+
+Crash fixes | 2016-04-04 21:25:50 | d8ac35d25935080d086e7f0298a474c4dc2c87ec
+
+Fix a bug when opening a chapter from the recents tab and changing the viewer from the reader would not update chapters for that manga anymore | 2016-04-03 16:47:56 | 5029e4a28c97b3d8fda1c9cf7f6cb1d1ba647e71
+
+Merge pull request #238 from j2ghz/patch-1
+
+Fix formatting issues when people ignore instructions | 2016-04-02 12:35:19 | 908e60dea47eeae0cae05ed78683bea9af2dedf0
+
+Minor UI fixes | 2016-03-30 08:30:13 | e04596c66893baeed748dac1593a1815f975c688
+
+Merge pull request #234 from NoodleMage/sort
+
+fix #99 | 2016-03-29 08:28:49 | c3425346b7add4d94a68de65951832a0ad64c26b
+
+fix #99 | 2016-03-28 12:07:24 | fe8e4a4f54a559cc895d9b32bfb32313abdab21d
+
+A few crashes fixed | 2016-03-21 13:50:02 | 0078cb88c340e7045d2187e7a3d445fcd90f8560
+
+Download manager in Kotlin and fix another crash in reader | 2016-03-18 23:11:34 | aaef738dda297eb75f8b2c61dd46711524c449cb
+
+Merge pull request #198 from NoodleMage/issue_27
+
+Added filter options. fix for Issue #27 | 2016-03-07 13:59:28 | bcbd541d4843625145e27f809a4fa0489069b46f
+
+Merge pull request #202 from beschoenen/patch-1
+
+Hide clear button | 2016-03-06 17:20:42 | c2a65c71e1eaa902f34a58fdb642954cfb07ba7f
+
+Merge pull request #199 from j2ghz/patch-1
+
+Prevent issues with bad formatting like #194 #196 | 2016-03-05 19:52:21 | e1448eaeda3dcae6f869ed16ca5ed7759d007e2c
+
+Readers in Kotlin. Also fix #193 | 2016-03-04 13:10:41 | ff61282104230dda341dc7555fa5a892df9dd910
+
+Catalogue in Kotlin. Support library upgraded to 23.2.0. Downloads directory now shows a list of folders, it should fix #141. | 2016-03-01 22:29:07 | ee4bf163eff0602057a24a5651e7348650699ba4
+
+Merge pull request #182 from NoodleMage/cover_edit_fix
+
+Cover change fix (hopefully :-) | 2016-02-25 15:11:17 | 4dde6d1a312524d57e6276749495f4a2f86e9992
+
+Cover change fix (hopefully :-) | 2016-02-25 15:02:58 | 9ac2f02885e86d6d84612e31295180a124cd4b94
+
+Allow to retry image when decoding fails or open in the browser. Fixes #177 and fixes #120. Also fix a bug where the current page was not restored when changing settings. | 2016-02-23 19:02:49 | 34dc85e605e76912311dbfe5b41c12739c5fe29f
+
+Fix #168 and fix #81. | 2016-02-22 15:53:33 | 4876eaafcc8d9ff5156959c1671f14caf244f17a
+
+Probable fix for #168. Maybe #81 also. Needs confirmation. | 2016-02-22 13:59:57 | 16f6be3613809cd39dc0f5d7f316d354fdc1415e
+
+Merge pull request #175 from j2ghz/patch-1
+
+Add link to wiki about debug F-Droid | 2016-02-22 11:45:50 | da0c7d74844c177a934e655e47ca933655b0b53f
+
+Add link to wiki about debug F-Droid | 2016-02-22 08:29:51 | fbd2f86f006f6b094c00db0ef99f31af60e797c0
+
+Merge pull request #167 from j2ghz/patch-1
+
+Fix link broken by PR #164 | 2016-02-20 22:36:24 | 75ae4081d80186ad91fe6193dc68093815580879
+
+Merge pull request #164 from j2ghz/patch-1
+
+Create ISSUE_TEMPLATE.md | 2016-02-20 21:07:47 | 37e119c4f239d49559cf5763130b7e9f5165193b
+
+Possible fix for #120 | 2016-02-16 17:19:54 | 1e81f75377ef0febf310ecb929eb3cc78bb41ec8
+
+Merge pull request #139 from j2ghz/patch-1
+
+Make CONTRIBUTING.md more visible | 2016-02-13 17:08:57 | 4c073e713dac87f613c3203135c78e29f3a252ad
+
+differentiate subchapters denoted by an alpha prefix | 2016-02-09 19:57:26 | 1611a274b9803efd368aba8f0601364e483a4be3
+
+Trying to fix a backpressure isue | 2016-02-05 14:42:53 | ed06469885e1b32f523491253b96695fe5e76c88
+
+Merge pull request #86 from j2ghz/patch-1
+
+CONTRIBUTING.md | 2016-01-30 17:29:30 | 486f129e620b91ed2b58435ccb0ba1ba7bffeb31
+
+Merge pull request #90 from cyalins/patch-1
+
+Reworded and shortened some strings | 2016-01-30 15:55:07 | 7461f120667c10d0be49571e14fb2ddd1d3f69e2
+
+Merge pull request #94 from NoodleMage/local_cover_small_fix
+
+Small fix for local cover loading | 2016-01-30 12:59:53 | d0580d0df11233d5d6ab8650290e01b9c28b0a9e
+
+Can now manually set cover pictures. #79
+
+Forgot to add IOHandler
+
+Removed FAB library now use the internal one. Changed getTimestamp to modification date.
+
+Rewrote IOHandler.  Fixed Drive Bug. More bug fixes. Tested working for API 16 and 23
+
+Fixed merge bugs | 2016-01-28 18:54:04 | 8b52fea602686db7544b907ab69a4e07af32a7bd
+
+Format fixes | 2016-01-27 16:47:43 | 82865dd3fdade5dc7321ce6207d28636839960cd
+
+Code optimization. Added javadoc. Removed setSize for it is not used
+
+Fixed some mistakes.
+
+Code optimization. Added comments. Few comment mistake fixes
+
+Few comments
+
+Added classes because of renaming
+
+Fixed refactor mistakes :(.
+
+typo + removed todo empty class
+
+Changed o to 0. Some renaming.  Checked for nullability on string.isEmpty() function to prevent crashes
+
+Removed redundant null check
+
+Update ChapterCache.java
+
+Another o to 0 change. Damn this .o! :) | 2016-01-26 12:26:41 | 23a6f76c37724595d3774fcc39f88065e2520b3e
+
+Trying to fix some crashes | 2016-01-26 18:18:31 | c6ecfb2f674c4fef6915fd4c6f7c830062047953
+
+Merge pull request #33 from wopian/patch-2
+
+Update readme | 2016-01-17 23:23:57 | b9bb41164ff7f24eb9a36bc8b514c801f4dc4620
+
+Merge pull request #32 from wopian/patch-1
+
+Fix some grammatical issues | 2016-01-17 23:23:43 | 2b2fa0de2fdd1352ec09b400976760bc6df06b9f
+
+Hide the search button in the library until it's fixed (or removed) | 2016-01-14 20:14:56 | 3b8246588ab5db72fd463c3833035afe44cf04a5
+
+Crash fixes | 2016-01-13 23:50:40 | 4ee95140e621386406f67f14fefed0750d28aa17
+
+Trying to fix a backpressure issue (#17). | 2016-01-05 17:47:25 | dd833852ad720b06cb4672af3490642d86dae16e
+
+Theme fixes | 2016-01-05 12:54:00 | 060da4185e67807e456bc110ffc5891a162cdd01
+
+Fix a bug when updating categories in library | 2015-12-29 21:57:58 | f9c13e0ee622bf4579a59e39024760f573724e8a
+
+Another fix for batoto chapter dates | 2015-12-05 14:49:48 | 758ebfca0b2c3b9faad2783fda4360f4e2853584
+
+Improve info fragment. Other minor changes and fixes. | 2015-12-05 01:05:42 | eb10d7737449819f87d31c26998b8257fea31ce0
+
+Avoid filename conflicts (not sure if it will be totally fixed). Check if a chapter is properly downloaded after download finishes. | 2015-12-04 17:03:56 | c52c567eae4722aeabdab5fe4f515a5dd5793a6f
+
+UI improvements
+
+- Manga order by title in library
+- New chapter list item design
+- Chapter item popup
+- Color normalisation to Material Design pallets
+- Theme and style fixes | 2015-11-30 17:45:45 | 65c07450da89f2b734d4b3350c303902a215f54d
+
+Minor fixes | 2015-11-24 19:40:28 | 725f70a54ce6eda4b473ebaa13c70ce320527372
+
+fix formatting | 2015-11-24 18:59:38 | 9074cd6f6d5d98f806a54ebfdfdfcac321fef2d9
+
+fix autoformat | 2015-11-24 18:54:42 | 1c8b68ab0e2c21c75e31e4f1f4b0455114c5bd06
+
+UI improvement Phase 1
+
+- Simplified theme/style settings and corrected UI styles
+- Move «Add To Library» button from toolbar to be simple  to find/press
+it
+- Toolbar in chapter list with sort/filtration
+- library/catalog layout fixes | 2015-11-24 17:45:53 | 18130e931f7c95a85cfa43d0e69da9f3a671b6a1
+
+Bugfixes in download manager and other minor changes | 2015-11-06 19:22:01 | 17c60644dd135842d15862b9ae51e8decfe7c340
+
+Change the download event. Fix some bugs in download manager. Other minor changes. | 2015-11-06 02:29:23 | d3a32da62cb82009e80bbd2ea7739c450e3e776b
+
+Fix bug in reader's current position | 2015-10-29 14:31:42 | 571c24d3d914b27896753078f5aeaf34677de9dc
+

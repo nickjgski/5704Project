@@ -1,0 +1,3787 @@
+Use FragmentScenario for GithubBrowserSample UI tests
+
+Replaces usages of `ActivityTestRule` with `FragmentScenario`. In the process, modernize the `DataBindingIdlingResource` by having it rely on `FragmentScenario` and fix #655 and have it look at all views within the Fragment's view hierarchy.
+
+Also rewrote EspressoTestUtil from an object to an extension method on `Fragment`.
+
+Test: ./run_all_tests.sh | 2020-02-17 00:57:16 | 1d7a759f742e8bdaf1eb4531e38ea9270301c577
+
+Merge pull request #413 from camsteffen/patch-1
+
+Unnecessary try/catch? | 2020-01-27 06:26:25 | 3283b6bbc6c9d62a616f058cdf0225185a5a69d1
+
+Merge pull request #554 from dazza5000/patch-3
+
+Update UserActivity.java | 2020-01-09 00:42:19 | f833efcb363cfa280a9d89b874852a8eb1978786
+
+Merge pull request #679 from egek92/patch-2
+
+more efficient way of sorting repos | 2020-01-09 00:36:49 | 1ac3100b404ae0e3e3ee00dc363f668376e4991f
+
+Merge pull request #713 from hegazy/fix/unused_var
+
+Minor fix for unused variable in test | 2019-12-11 18:17:24 | 07dfe3e1c129ad5479f75bb07dec8ba7a7a475ec
+
+Merge pull request #751 from android/dlam/paging-fix-scroll
+
+Fix scroll offset in paging sample | 2019-11-07 17:25:17 | 58263b343a795a6061ec72fd84af83527347c0bd
+
+Merge pull request #742 from android/yaml-fix
+
+Fix yaml extension. | 2019-11-01 16:22:43 | b88adef417583371f3fe5a01e28983fe7170036d
+
+Merge pull request #741 from android/fix-live-data-test
+
+fix live data sample test | 2019-10-16 02:51:55 | 19e3329e9e6b83bdfcdf94800aa77174a4755c3e
+
+fix live data sample test
+
+The test was initializing the view model before the Dispatchers.setMain call is
+made which make it try to use real dispatcher rather than the fake one. | 2019-10-15 05:56:07 | fe4d6a696cb79ea25c4cdc395eab9f7d2580dcc3
+
+Merge pull request #733 from jbw0033/patch-2
+
+Call setCustomAnimations() before attach/detach | 2019-09-30 21:35:27 | 48b1c9b1a12fbb9e8acd0ed2525be744d8c76294
+
+Unused variable in test fix | 2019-09-05 09:11:12 | 610c56511aada8029ae445b1a251ea10a84f203c
+
+Adds LiveDataSample (#710)
+
+* LiveData sample
+
+* Removes internal script
+
+* Adds call to super.onActivityResult to fix broken build
+
+* Bumps testing versions and fixes NavBasicSample dependencies
+
+* Fixes testing versions | 2019-08-28 15:57:33 | 4a36ccba9b3fd471b5ca1167da5c0c3d61cdd2c9
+
+Merge pull request #667 from googlesamples/dlam/fix-tests
+
+Fix syntax errors + add androidx.test.core dependency for ApplicationProvider | 2019-07-01 20:12:52 | a857a49738488facd1b6e0ef5c25844512c76594
+
+Merge pull request #651 from jbw0033/patch-1
+
+Do not select same destination after deep link | 2019-06-06 18:22:31 | 919421324064e0dac3b763d2fe0f4b1868f38bb2
+
+Merge pull request #613 from googlesamples/jabubake-patch-1
+
+Add screenshot to README | 2019-04-29 22:34:06 | f7562c627a1655041059266a1c5034424c64211b
+
+Merge pull request #563 from googlesamples/jabubake-patch-1-1
+
+Create README.md | 2019-02-28 23:33:42 | 3cfe49dcf97a8f784f78c69385131c46d0798846
+
+Merge pull request #562 from googlesamples/jabubake-patch-1
+
+Update README.md | 2019-02-28 23:09:03 | 724341ad6f2b45cbd4902b9e7b86a1fca877e6f0
+
+Make avatarUrl optional, fix testContributorClick | 2019-02-15 00:19:23 | 9acce5ead48dc94539d8f897fddc5a64f33f7eab
+
+Merge pull request #553 from dazza5000/patch-2
+
+Update TAG name in ProductListFragment | 2019-02-14 23:02:59 | 96c58ee2b09bbd012eda311673bba2587abf9364
+
+Bumps to AGP321 and fixes lint errors (#511) | 2018-12-05 16:15:07 | ad75814571fb9daa608a642e373d52d6f8697a7d
+
+Merge pull request #459 from dgngulcan/patch-3
+
+typo fix | 2018-11-22 15:26:45 | 3995cdf14b9cd4af7feebc759641dbdd3c8bf06d
+
+Merge pull request #479 from CrystalIFDE/Fix_crash_in_NavigationBasicSample
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-11-05 20:47:34 | b9e889859ad1611dafe984119d4468a4695ae385
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-10-16 09:45:33 | d54abbcf24ce7ad5ad4d6adfb274e148af47143e
+
+Migrate android-arch-components sample apps to the androidx namespace.
+
+Besides refactoring a lot of imports, this PR also makes the following changes:
+
+* Updated to targetSDK 28 and build tools 28.0.3 along with android
+  gradle plugin 3.2.0
+* Updated various compile and and androidTestCompile to their
+  implementation version.
+* Bumped Kotlin version and moved from the jre to the jdk version of
+  the stb libs.
+* Bumped Dagger to 2.16 which contains a fix for projects using the
+  androidx namespace.
+* Bumped Glide to 4.8.0 which also contains a fix for projects using
+  the androidx namespace.
+* Removed dexmaker in favor of mockito-android in some of the sample
+  projects that used it.
+* Added android.useAndroidX=true and android.enableJetifier=true to
+  various gradle.properties in projects that used data binding and/or
+  used libraries that expected the old namespace. | 2018-10-04 23:29:47 | d31d2bb632467051c2fddd3dc493cc480c44ada0
+
+typo fix | 2018-09-16 02:02:19 | 362084f0083cedfdb718e48be54fb4cfd075466d
+
+Update NetworkStateItemViewHolder.kt
+
+fix toVisbility -> toVisibility | 2018-06-11 03:00:26 | 1e70b1518b9793e04a014dfe7601c8aa4c4b4d45
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | ea59732402708c8e7bca3ecc24a7c9ca85736b55
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | 5873c442ebd0cef8f03d98c75b4c929aa31f1b99
+
+Adds admin message to root versions file and fixes gradle wrapper versions | 2018-03-01 16:49:56 | ce6cb4989e5af2e213330bcd0f7c023308f6178f
+
+Removing LifecycleRegistry reference from RepoFragment (#313)
+
+* Removing LifecycleRegistry reference from RepoFragment
+
+* fixing link to readme also
+
+* updating CI config
+
+* Updating circle CI | 2018-02-23 17:26:50 | 1880a208970751678a6f336a1ccfba5becbc03e1
+
+remove unnecessary comma (#263)
+
+* remove unnecessary comma
+
+* fix parameter name | 2018-01-16 13:10:44 | c66512848331a906354b4cd43b163322b6f4ecdd
+
+fix merge conflict
+
+Change-Id: I1a7bf761b2624c918d351c4f157e6745c3f9f540 | 2017-12-08 00:40:59 | 42c4c5a9bdb76cf67acc27d87de93535e9bcb1c7
+
+Merge pull request #212 from laurentyhuel/patch-1
+
+Delete ViewModelSubComponent.java | 2017-10-27 17:35:27 | bf2a123048e848bfc3a6bdfa7e46de2a9ea8cb14
+
+Use single version for all samples (#195)
+
+This CL adds a version file that can be applied to different gradle projects
+so that all can use the same versions and it is easy to test all of them
+after a version bump
+
+* Move basic rx java sample to shared versions
+
+* move to shared tools versions, fix build file
+
+* centralize maven repository urls
+
+* move basic rxjava kotlin sample to versions.gradle
+
+* move paging to the versions gradle file.
+
+Also added an ability to override the arch version in build.gradle file
+since paging does not work with latest version
+
+* remove unnecessary junit dependency
+
+* move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration
+
+* move migration test to versions
+
+I also had to update some migration scripts since new version of room
+enforces nullability
+
+* fix migrations, add docs to versions.gradle
+
+* move basic sample to the shared build file.
+
+The tests were also crashing on older devices so i modified them
+a bit. Not ideal tests but at least pass
+
+* fix target sdk version variable in build files | 2017-10-11 15:41:26 | acdfe580dfa09a368b0f0d26a3f321552be89ee4
+
+fix target sdk version variable in build files | 2017-10-09 20:56:36 | ccf68a8d5e61fdd2a76c5ba9e465fc339b3ec0ee
+
+Adds unit tests and fixes paths | 2017-10-09 17:10:37 | 2a7e583816e53c801b7d494fc076260f34ac27fb
+
+fix migrations, add docs to versions.gradle | 2017-10-09 16:41:12 | 9954b0227ea59eb8ffd7d053fcdbcc2a636f8b8e
+
+move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration | 2017-10-09 01:30:26 | b72f68dcf2105cb7c42945a2a7304fb6b954c6de
+
+move to shared tools versions, fix build file | 2017-10-08 21:18:50 | 07232ab017efc63a217350342ff07ff00284a834
+
+Merge pull request #126 from DougSig/master
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture(). | 2017-08-21 15:40:37 | 2444cddb9e6f7da800a757b2358b7f8cb22a23c2
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations. | 2017-08-14 18:26:51 | e8066003e1d6c4ad07391ea6d541f1a277814cbc
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations that we've been doing in other
+* kotlin samples.
+
+Change-Id: Ic0ec9f359009a0699183707ffe9a9a7e831429da | 2017-08-11 04:09:08 | bd53bba33285a34b9a3e6553502f803ab07cdb5e
+
+Kotlin Readme links fixed | 2017-08-09 14:43:56 | ee81fa1179e8836c2a86339d2e6ddaae1289469e
+
+#112 BasicRxJavaSample issues : data can not be refreshed!
+
+This issue has been fixed by keeping a reference of the last inserted object. | 2017-08-08 19:54:47 | 344b16e45f64ef3ca7db06cbae28b969f7e49d1b
+
+fix test and the code. #56 | 2017-07-10 05:47:07 | ed3fd72a9a61ccad742b08156d780ca1cd42638c
+
+Fixes DiffUtil typo bug
+
+Change-Id: I11b9336ef4b4e06366e57fb6c3bc4f29f0616183 | 2017-06-30 21:06:45 | e64d25eca8e1fa218344e769c4aedfa995002ffd
+
+also add a test w/ a dialog as show in the bug report | 2017-06-25 20:35:04 | 5516a30b6ea752e6ef24693c7e8d00076027fdda
+
+Merge pull request #72 from googlesamples/readme_fix
+
+Typo fix in the main README | 2017-06-23 12:29:36 | 9ba051470ec271f31dcba8cd46365fe310b7f49b
+
+typo fix | 2017-06-23 12:26:58 | 9b2ccf843b6cbc65fc18947b6c331a3f9cf02604
+
+Merge pull request #21 from shanuka/patch-1
+
+Update README.md | 2017-05-24 10:08:39 | 7dbab6e82a54ada26b832357b99183364f063bcc
+
+Merge "Changes to READMEs and small fixes" | 2017-05-16 20:36:52 | 76e947d8155ba7533653594ee24e62cb32f38b1c
+
+Changes to READMEs and small fixes
+
+Change-Id: Iabb76de4c1f977b8d307e51a8b48a69326542c84 | 2017-05-12 12:41:40 | edbde8e00c364bb3eaa5210330804cc79e7f4dd8
+
+Merge pull request #713 from hegazy/fix/unused_var
+
+Minor fix for unused variable in test | 2019-12-11 18:17:24 | 07dfe3e1c129ad5479f75bb07dec8ba7a7a475ec
+
+Merge pull request #751 from android/dlam/paging-fix-scroll
+
+Fix scroll offset in paging sample | 2019-11-07 17:25:17 | 58263b343a795a6061ec72fd84af83527347c0bd
+
+Merge pull request #742 from android/yaml-fix
+
+Fix yaml extension. | 2019-11-01 16:22:43 | b88adef417583371f3fe5a01e28983fe7170036d
+
+Merge pull request #741 from android/fix-live-data-test
+
+fix live data sample test | 2019-10-16 02:51:55 | 19e3329e9e6b83bdfcdf94800aa77174a4755c3e
+
+fix live data sample test
+
+The test was initializing the view model before the Dispatchers.setMain call is
+made which make it try to use real dispatcher rather than the fake one. | 2019-10-15 05:56:07 | fe4d6a696cb79ea25c4cdc395eab9f7d2580dcc3
+
+Merge pull request #733 from jbw0033/patch-2
+
+Call setCustomAnimations() before attach/detach | 2019-09-30 21:35:27 | 48b1c9b1a12fbb9e8acd0ed2525be744d8c76294
+
+Unused variable in test fix | 2019-09-05 09:11:12 | 610c56511aada8029ae445b1a251ea10a84f203c
+
+Adds LiveDataSample (#710)
+
+* LiveData sample
+
+* Removes internal script
+
+* Adds call to super.onActivityResult to fix broken build
+
+* Bumps testing versions and fixes NavBasicSample dependencies
+
+* Fixes testing versions | 2019-08-28 15:57:33 | 4a36ccba9b3fd471b5ca1167da5c0c3d61cdd2c9
+
+Merge pull request #667 from googlesamples/dlam/fix-tests
+
+Fix syntax errors + add androidx.test.core dependency for ApplicationProvider | 2019-07-01 20:12:52 | a857a49738488facd1b6e0ef5c25844512c76594
+
+Merge pull request #651 from jbw0033/patch-1
+
+Do not select same destination after deep link | 2019-06-06 18:22:31 | 919421324064e0dac3b763d2fe0f4b1868f38bb2
+
+Merge pull request #613 from googlesamples/jabubake-patch-1
+
+Add screenshot to README | 2019-04-29 22:34:06 | f7562c627a1655041059266a1c5034424c64211b
+
+Merge pull request #563 from googlesamples/jabubake-patch-1-1
+
+Create README.md | 2019-02-28 23:33:42 | 3cfe49dcf97a8f784f78c69385131c46d0798846
+
+Merge pull request #562 from googlesamples/jabubake-patch-1
+
+Update README.md | 2019-02-28 23:09:03 | 724341ad6f2b45cbd4902b9e7b86a1fca877e6f0
+
+Make avatarUrl optional, fix testContributorClick | 2019-02-15 00:19:23 | 9acce5ead48dc94539d8f897fddc5a64f33f7eab
+
+Merge pull request #553 from dazza5000/patch-2
+
+Update TAG name in ProductListFragment | 2019-02-14 23:02:59 | 96c58ee2b09bbd012eda311673bba2587abf9364
+
+Bumps to AGP321 and fixes lint errors (#511) | 2018-12-05 16:15:07 | ad75814571fb9daa608a642e373d52d6f8697a7d
+
+Merge pull request #459 from dgngulcan/patch-3
+
+typo fix | 2018-11-22 15:26:45 | 3995cdf14b9cd4af7feebc759641dbdd3c8bf06d
+
+Merge pull request #479 from CrystalIFDE/Fix_crash_in_NavigationBasicSample
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-11-05 20:47:34 | b9e889859ad1611dafe984119d4468a4695ae385
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-10-16 09:45:33 | d54abbcf24ce7ad5ad4d6adfb274e148af47143e
+
+Migrate android-arch-components sample apps to the androidx namespace.
+
+Besides refactoring a lot of imports, this PR also makes the following changes:
+
+* Updated to targetSDK 28 and build tools 28.0.3 along with android
+  gradle plugin 3.2.0
+* Updated various compile and and androidTestCompile to their
+  implementation version.
+* Bumped Kotlin version and moved from the jre to the jdk version of
+  the stb libs.
+* Bumped Dagger to 2.16 which contains a fix for projects using the
+  androidx namespace.
+* Bumped Glide to 4.8.0 which also contains a fix for projects using
+  the androidx namespace.
+* Removed dexmaker in favor of mockito-android in some of the sample
+  projects that used it.
+* Added android.useAndroidX=true and android.enableJetifier=true to
+  various gradle.properties in projects that used data binding and/or
+  used libraries that expected the old namespace. | 2018-10-04 23:29:47 | d31d2bb632467051c2fddd3dc493cc480c44ada0
+
+typo fix | 2018-09-16 02:02:19 | 362084f0083cedfdb718e48be54fb4cfd075466d
+
+Update NetworkStateItemViewHolder.kt
+
+fix toVisbility -> toVisibility | 2018-06-11 03:00:26 | 1e70b1518b9793e04a014dfe7601c8aa4c4b4d45
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | ea59732402708c8e7bca3ecc24a7c9ca85736b55
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | 5873c442ebd0cef8f03d98c75b4c929aa31f1b99
+
+Adds admin message to root versions file and fixes gradle wrapper versions | 2018-03-01 16:49:56 | ce6cb4989e5af2e213330bcd0f7c023308f6178f
+
+Removing LifecycleRegistry reference from RepoFragment (#313)
+
+* Removing LifecycleRegistry reference from RepoFragment
+
+* fixing link to readme also
+
+* updating CI config
+
+* Updating circle CI | 2018-02-23 17:26:50 | 1880a208970751678a6f336a1ccfba5becbc03e1
+
+remove unnecessary comma (#263)
+
+* remove unnecessary comma
+
+* fix parameter name | 2018-01-16 13:10:44 | c66512848331a906354b4cd43b163322b6f4ecdd
+
+fix merge conflict
+
+Change-Id: I1a7bf761b2624c918d351c4f157e6745c3f9f540 | 2017-12-08 00:40:59 | 42c4c5a9bdb76cf67acc27d87de93535e9bcb1c7
+
+Merge pull request #212 from laurentyhuel/patch-1
+
+Delete ViewModelSubComponent.java | 2017-10-27 17:35:27 | bf2a123048e848bfc3a6bdfa7e46de2a9ea8cb14
+
+Use single version for all samples (#195)
+
+This CL adds a version file that can be applied to different gradle projects
+so that all can use the same versions and it is easy to test all of them
+after a version bump
+
+* Move basic rx java sample to shared versions
+
+* move to shared tools versions, fix build file
+
+* centralize maven repository urls
+
+* move basic rxjava kotlin sample to versions.gradle
+
+* move paging to the versions gradle file.
+
+Also added an ability to override the arch version in build.gradle file
+since paging does not work with latest version
+
+* remove unnecessary junit dependency
+
+* move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration
+
+* move migration test to versions
+
+I also had to update some migration scripts since new version of room
+enforces nullability
+
+* fix migrations, add docs to versions.gradle
+
+* move basic sample to the shared build file.
+
+The tests were also crashing on older devices so i modified them
+a bit. Not ideal tests but at least pass
+
+* fix target sdk version variable in build files | 2017-10-11 15:41:26 | acdfe580dfa09a368b0f0d26a3f321552be89ee4
+
+fix target sdk version variable in build files | 2017-10-09 20:56:36 | ccf68a8d5e61fdd2a76c5ba9e465fc339b3ec0ee
+
+Adds unit tests and fixes paths | 2017-10-09 17:10:37 | 2a7e583816e53c801b7d494fc076260f34ac27fb
+
+fix migrations, add docs to versions.gradle | 2017-10-09 16:41:12 | 9954b0227ea59eb8ffd7d053fcdbcc2a636f8b8e
+
+move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration | 2017-10-09 01:30:26 | b72f68dcf2105cb7c42945a2a7304fb6b954c6de
+
+move to shared tools versions, fix build file | 2017-10-08 21:18:50 | 07232ab017efc63a217350342ff07ff00284a834
+
+Merge pull request #126 from DougSig/master
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture(). | 2017-08-21 15:40:37 | 2444cddb9e6f7da800a757b2358b7f8cb22a23c2
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations. | 2017-08-14 18:26:51 | e8066003e1d6c4ad07391ea6d541f1a277814cbc
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations that we've been doing in other
+* kotlin samples.
+
+Change-Id: Ic0ec9f359009a0699183707ffe9a9a7e831429da | 2017-08-11 04:09:08 | bd53bba33285a34b9a3e6553502f803ab07cdb5e
+
+Kotlin Readme links fixed | 2017-08-09 14:43:56 | ee81fa1179e8836c2a86339d2e6ddaae1289469e
+
+#112 BasicRxJavaSample issues : data can not be refreshed!
+
+This issue has been fixed by keeping a reference of the last inserted object. | 2017-08-08 19:54:47 | 344b16e45f64ef3ca7db06cbae28b969f7e49d1b
+
+fix test and the code. #56 | 2017-07-10 05:47:07 | ed3fd72a9a61ccad742b08156d780ca1cd42638c
+
+Fixes DiffUtil typo bug
+
+Change-Id: I11b9336ef4b4e06366e57fb6c3bc4f29f0616183 | 2017-06-30 21:06:45 | e64d25eca8e1fa218344e769c4aedfa995002ffd
+
+also add a test w/ a dialog as show in the bug report | 2017-06-25 20:35:04 | 5516a30b6ea752e6ef24693c7e8d00076027fdda
+
+Merge pull request #72 from googlesamples/readme_fix
+
+Typo fix in the main README | 2017-06-23 12:29:36 | 9ba051470ec271f31dcba8cd46365fe310b7f49b
+
+typo fix | 2017-06-23 12:26:58 | 9b2ccf843b6cbc65fc18947b6c331a3f9cf02604
+
+Merge pull request #21 from shanuka/patch-1
+
+Update README.md | 2017-05-24 10:08:39 | 7dbab6e82a54ada26b832357b99183364f063bcc
+
+Merge "Changes to READMEs and small fixes" | 2017-05-16 20:36:52 | 76e947d8155ba7533653594ee24e62cb32f38b1c
+
+Changes to READMEs and small fixes
+
+Change-Id: Iabb76de4c1f977b8d307e51a8b48a69326542c84 | 2017-05-12 12:41:40 | edbde8e00c364bb3eaa5210330804cc79e7f4dd8
+
+Merge pull request #554 from dazza5000/patch-3
+
+Update UserActivity.java | 2020-01-09 00:42:19 | f833efcb363cfa280a9d89b874852a8eb1978786
+
+Merge pull request #679 from egek92/patch-2
+
+more efficient way of sorting repos | 2020-01-09 00:36:49 | 1ac3100b404ae0e3e3ee00dc363f668376e4991f
+
+Merge pull request #713 from hegazy/fix/unused_var
+
+Minor fix for unused variable in test | 2019-12-11 18:17:24 | 07dfe3e1c129ad5479f75bb07dec8ba7a7a475ec
+
+Merge pull request #751 from android/dlam/paging-fix-scroll
+
+Fix scroll offset in paging sample | 2019-11-07 17:25:17 | 58263b343a795a6061ec72fd84af83527347c0bd
+
+Merge pull request #742 from android/yaml-fix
+
+Fix yaml extension. | 2019-11-01 16:22:43 | b88adef417583371f3fe5a01e28983fe7170036d
+
+Merge pull request #741 from android/fix-live-data-test
+
+fix live data sample test | 2019-10-16 02:51:55 | 19e3329e9e6b83bdfcdf94800aa77174a4755c3e
+
+fix live data sample test
+
+The test was initializing the view model before the Dispatchers.setMain call is
+made which make it try to use real dispatcher rather than the fake one. | 2019-10-15 05:56:07 | fe4d6a696cb79ea25c4cdc395eab9f7d2580dcc3
+
+Merge pull request #733 from jbw0033/patch-2
+
+Call setCustomAnimations() before attach/detach | 2019-09-30 21:35:27 | 48b1c9b1a12fbb9e8acd0ed2525be744d8c76294
+
+Unused variable in test fix | 2019-09-05 09:11:12 | 610c56511aada8029ae445b1a251ea10a84f203c
+
+Adds LiveDataSample (#710)
+
+* LiveData sample
+
+* Removes internal script
+
+* Adds call to super.onActivityResult to fix broken build
+
+* Bumps testing versions and fixes NavBasicSample dependencies
+
+* Fixes testing versions | 2019-08-28 15:57:33 | 4a36ccba9b3fd471b5ca1167da5c0c3d61cdd2c9
+
+Merge pull request #667 from googlesamples/dlam/fix-tests
+
+Fix syntax errors + add androidx.test.core dependency for ApplicationProvider | 2019-07-01 20:12:52 | a857a49738488facd1b6e0ef5c25844512c76594
+
+Merge pull request #651 from jbw0033/patch-1
+
+Do not select same destination after deep link | 2019-06-06 18:22:31 | 919421324064e0dac3b763d2fe0f4b1868f38bb2
+
+Merge pull request #613 from googlesamples/jabubake-patch-1
+
+Add screenshot to README | 2019-04-29 22:34:06 | f7562c627a1655041059266a1c5034424c64211b
+
+Merge pull request #563 from googlesamples/jabubake-patch-1-1
+
+Create README.md | 2019-02-28 23:33:42 | 3cfe49dcf97a8f784f78c69385131c46d0798846
+
+Merge pull request #562 from googlesamples/jabubake-patch-1
+
+Update README.md | 2019-02-28 23:09:03 | 724341ad6f2b45cbd4902b9e7b86a1fca877e6f0
+
+Make avatarUrl optional, fix testContributorClick | 2019-02-15 00:19:23 | 9acce5ead48dc94539d8f897fddc5a64f33f7eab
+
+Merge pull request #553 from dazza5000/patch-2
+
+Update TAG name in ProductListFragment | 2019-02-14 23:02:59 | 96c58ee2b09bbd012eda311673bba2587abf9364
+
+Bumps to AGP321 and fixes lint errors (#511) | 2018-12-05 16:15:07 | ad75814571fb9daa608a642e373d52d6f8697a7d
+
+Merge pull request #459 from dgngulcan/patch-3
+
+typo fix | 2018-11-22 15:26:45 | 3995cdf14b9cd4af7feebc759641dbdd3c8bf06d
+
+Merge pull request #479 from CrystalIFDE/Fix_crash_in_NavigationBasicSample
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-11-05 20:47:34 | b9e889859ad1611dafe984119d4468a4695ae385
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-10-16 09:45:33 | d54abbcf24ce7ad5ad4d6adfb274e148af47143e
+
+Migrate android-arch-components sample apps to the androidx namespace.
+
+Besides refactoring a lot of imports, this PR also makes the following changes:
+
+* Updated to targetSDK 28 and build tools 28.0.3 along with android
+  gradle plugin 3.2.0
+* Updated various compile and and androidTestCompile to their
+  implementation version.
+* Bumped Kotlin version and moved from the jre to the jdk version of
+  the stb libs.
+* Bumped Dagger to 2.16 which contains a fix for projects using the
+  androidx namespace.
+* Bumped Glide to 4.8.0 which also contains a fix for projects using
+  the androidx namespace.
+* Removed dexmaker in favor of mockito-android in some of the sample
+  projects that used it.
+* Added android.useAndroidX=true and android.enableJetifier=true to
+  various gradle.properties in projects that used data binding and/or
+  used libraries that expected the old namespace. | 2018-10-04 23:29:47 | d31d2bb632467051c2fddd3dc493cc480c44ada0
+
+typo fix | 2018-09-16 02:02:19 | 362084f0083cedfdb718e48be54fb4cfd075466d
+
+Update NetworkStateItemViewHolder.kt
+
+fix toVisbility -> toVisibility | 2018-06-11 03:00:26 | 1e70b1518b9793e04a014dfe7601c8aa4c4b4d45
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | ea59732402708c8e7bca3ecc24a7c9ca85736b55
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | 5873c442ebd0cef8f03d98c75b4c929aa31f1b99
+
+Adds admin message to root versions file and fixes gradle wrapper versions | 2018-03-01 16:49:56 | ce6cb4989e5af2e213330bcd0f7c023308f6178f
+
+Removing LifecycleRegistry reference from RepoFragment (#313)
+
+* Removing LifecycleRegistry reference from RepoFragment
+
+* fixing link to readme also
+
+* updating CI config
+
+* Updating circle CI | 2018-02-23 17:26:50 | 1880a208970751678a6f336a1ccfba5becbc03e1
+
+remove unnecessary comma (#263)
+
+* remove unnecessary comma
+
+* fix parameter name | 2018-01-16 13:10:44 | c66512848331a906354b4cd43b163322b6f4ecdd
+
+fix merge conflict
+
+Change-Id: I1a7bf761b2624c918d351c4f157e6745c3f9f540 | 2017-12-08 00:40:59 | 42c4c5a9bdb76cf67acc27d87de93535e9bcb1c7
+
+Merge pull request #212 from laurentyhuel/patch-1
+
+Delete ViewModelSubComponent.java | 2017-10-27 17:35:27 | bf2a123048e848bfc3a6bdfa7e46de2a9ea8cb14
+
+Use single version for all samples (#195)
+
+This CL adds a version file that can be applied to different gradle projects
+so that all can use the same versions and it is easy to test all of them
+after a version bump
+
+* Move basic rx java sample to shared versions
+
+* move to shared tools versions, fix build file
+
+* centralize maven repository urls
+
+* move basic rxjava kotlin sample to versions.gradle
+
+* move paging to the versions gradle file.
+
+Also added an ability to override the arch version in build.gradle file
+since paging does not work with latest version
+
+* remove unnecessary junit dependency
+
+* move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration
+
+* move migration test to versions
+
+I also had to update some migration scripts since new version of room
+enforces nullability
+
+* fix migrations, add docs to versions.gradle
+
+* move basic sample to the shared build file.
+
+The tests were also crashing on older devices so i modified them
+a bit. Not ideal tests but at least pass
+
+* fix target sdk version variable in build files | 2017-10-11 15:41:26 | acdfe580dfa09a368b0f0d26a3f321552be89ee4
+
+fix target sdk version variable in build files | 2017-10-09 20:56:36 | ccf68a8d5e61fdd2a76c5ba9e465fc339b3ec0ee
+
+Adds unit tests and fixes paths | 2017-10-09 17:10:37 | 2a7e583816e53c801b7d494fc076260f34ac27fb
+
+fix migrations, add docs to versions.gradle | 2017-10-09 16:41:12 | 9954b0227ea59eb8ffd7d053fcdbcc2a636f8b8e
+
+move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration | 2017-10-09 01:30:26 | b72f68dcf2105cb7c42945a2a7304fb6b954c6de
+
+move to shared tools versions, fix build file | 2017-10-08 21:18:50 | 07232ab017efc63a217350342ff07ff00284a834
+
+Merge pull request #126 from DougSig/master
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture(). | 2017-08-21 15:40:37 | 2444cddb9e6f7da800a757b2358b7f8cb22a23c2
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations. | 2017-08-14 18:26:51 | e8066003e1d6c4ad07391ea6d541f1a277814cbc
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations that we've been doing in other
+* kotlin samples.
+
+Change-Id: Ic0ec9f359009a0699183707ffe9a9a7e831429da | 2017-08-11 04:09:08 | bd53bba33285a34b9a3e6553502f803ab07cdb5e
+
+Kotlin Readme links fixed | 2017-08-09 14:43:56 | ee81fa1179e8836c2a86339d2e6ddaae1289469e
+
+#112 BasicRxJavaSample issues : data can not be refreshed!
+
+This issue has been fixed by keeping a reference of the last inserted object. | 2017-08-08 19:54:47 | 344b16e45f64ef3ca7db06cbae28b969f7e49d1b
+
+fix test and the code. #56 | 2017-07-10 05:47:07 | ed3fd72a9a61ccad742b08156d780ca1cd42638c
+
+Fixes DiffUtil typo bug
+
+Change-Id: I11b9336ef4b4e06366e57fb6c3bc4f29f0616183 | 2017-06-30 21:06:45 | e64d25eca8e1fa218344e769c4aedfa995002ffd
+
+also add a test w/ a dialog as show in the bug report | 2017-06-25 20:35:04 | 5516a30b6ea752e6ef24693c7e8d00076027fdda
+
+Merge pull request #72 from googlesamples/readme_fix
+
+Typo fix in the main README | 2017-06-23 12:29:36 | 9ba051470ec271f31dcba8cd46365fe310b7f49b
+
+typo fix | 2017-06-23 12:26:58 | 9b2ccf843b6cbc65fc18947b6c331a3f9cf02604
+
+Merge pull request #21 from shanuka/patch-1
+
+Update README.md | 2017-05-24 10:08:39 | 7dbab6e82a54ada26b832357b99183364f063bcc
+
+Merge "Changes to READMEs and small fixes" | 2017-05-16 20:36:52 | 76e947d8155ba7533653594ee24e62cb32f38b1c
+
+Changes to READMEs and small fixes
+
+Change-Id: Iabb76de4c1f977b8d307e51a8b48a69326542c84 | 2017-05-12 12:41:40 | edbde8e00c364bb3eaa5210330804cc79e7f4dd8
+
+Merge pull request #613 from googlesamples/jabubake-patch-1
+
+Add screenshot to README | 2019-04-29 22:34:06 | f7562c627a1655041059266a1c5034424c64211b
+
+Merge pull request #563 from googlesamples/jabubake-patch-1-1
+
+Create README.md | 2019-02-28 23:33:42 | 3cfe49dcf97a8f784f78c69385131c46d0798846
+
+Merge pull request #562 from googlesamples/jabubake-patch-1
+
+Update README.md | 2019-02-28 23:09:03 | 724341ad6f2b45cbd4902b9e7b86a1fca877e6f0
+
+Make avatarUrl optional, fix testContributorClick | 2019-02-15 00:19:23 | 9acce5ead48dc94539d8f897fddc5a64f33f7eab
+
+Merge pull request #553 from dazza5000/patch-2
+
+Update TAG name in ProductListFragment | 2019-02-14 23:02:59 | 96c58ee2b09bbd012eda311673bba2587abf9364
+
+Bumps to AGP321 and fixes lint errors (#511) | 2018-12-05 16:15:07 | ad75814571fb9daa608a642e373d52d6f8697a7d
+
+Merge pull request #459 from dgngulcan/patch-3
+
+typo fix | 2018-11-22 15:26:45 | 3995cdf14b9cd4af7feebc759641dbdd3c8bf06d
+
+Merge pull request #479 from CrystalIFDE/Fix_crash_in_NavigationBasicSample
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-11-05 20:47:34 | b9e889859ad1611dafe984119d4468a4695ae385
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-10-16 09:45:33 | d54abbcf24ce7ad5ad4d6adfb274e148af47143e
+
+Migrate android-arch-components sample apps to the androidx namespace.
+
+Besides refactoring a lot of imports, this PR also makes the following changes:
+
+* Updated to targetSDK 28 and build tools 28.0.3 along with android
+  gradle plugin 3.2.0
+* Updated various compile and and androidTestCompile to their
+  implementation version.
+* Bumped Kotlin version and moved from the jre to the jdk version of
+  the stb libs.
+* Bumped Dagger to 2.16 which contains a fix for projects using the
+  androidx namespace.
+* Bumped Glide to 4.8.0 which also contains a fix for projects using
+  the androidx namespace.
+* Removed dexmaker in favor of mockito-android in some of the sample
+  projects that used it.
+* Added android.useAndroidX=true and android.enableJetifier=true to
+  various gradle.properties in projects that used data binding and/or
+  used libraries that expected the old namespace. | 2018-10-04 23:29:47 | d31d2bb632467051c2fddd3dc493cc480c44ada0
+
+typo fix | 2018-09-16 02:02:19 | 362084f0083cedfdb718e48be54fb4cfd075466d
+
+Update NetworkStateItemViewHolder.kt
+
+fix toVisbility -> toVisibility | 2018-06-11 03:00:26 | 1e70b1518b9793e04a014dfe7601c8aa4c4b4d45
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | ea59732402708c8e7bca3ecc24a7c9ca85736b55
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | 5873c442ebd0cef8f03d98c75b4c929aa31f1b99
+
+Adds admin message to root versions file and fixes gradle wrapper versions | 2018-03-01 16:49:56 | ce6cb4989e5af2e213330bcd0f7c023308f6178f
+
+Removing LifecycleRegistry reference from RepoFragment (#313)
+
+* Removing LifecycleRegistry reference from RepoFragment
+
+* fixing link to readme also
+
+* updating CI config
+
+* Updating circle CI | 2018-02-23 17:26:50 | 1880a208970751678a6f336a1ccfba5becbc03e1
+
+remove unnecessary comma (#263)
+
+* remove unnecessary comma
+
+* fix parameter name | 2018-01-16 13:10:44 | c66512848331a906354b4cd43b163322b6f4ecdd
+
+fix merge conflict
+
+Change-Id: I1a7bf761b2624c918d351c4f157e6745c3f9f540 | 2017-12-08 00:40:59 | 42c4c5a9bdb76cf67acc27d87de93535e9bcb1c7
+
+Merge pull request #212 from laurentyhuel/patch-1
+
+Delete ViewModelSubComponent.java | 2017-10-27 17:35:27 | bf2a123048e848bfc3a6bdfa7e46de2a9ea8cb14
+
+Use single version for all samples (#195)
+
+This CL adds a version file that can be applied to different gradle projects
+so that all can use the same versions and it is easy to test all of them
+after a version bump
+
+* Move basic rx java sample to shared versions
+
+* move to shared tools versions, fix build file
+
+* centralize maven repository urls
+
+* move basic rxjava kotlin sample to versions.gradle
+
+* move paging to the versions gradle file.
+
+Also added an ability to override the arch version in build.gradle file
+since paging does not work with latest version
+
+* remove unnecessary junit dependency
+
+* move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration
+
+* move migration test to versions
+
+I also had to update some migration scripts since new version of room
+enforces nullability
+
+* fix migrations, add docs to versions.gradle
+
+* move basic sample to the shared build file.
+
+The tests were also crashing on older devices so i modified them
+a bit. Not ideal tests but at least pass
+
+* fix target sdk version variable in build files | 2017-10-11 15:41:26 | acdfe580dfa09a368b0f0d26a3f321552be89ee4
+
+fix target sdk version variable in build files | 2017-10-09 20:56:36 | ccf68a8d5e61fdd2a76c5ba9e465fc339b3ec0ee
+
+Adds unit tests and fixes paths | 2017-10-09 17:10:37 | 2a7e583816e53c801b7d494fc076260f34ac27fb
+
+fix migrations, add docs to versions.gradle | 2017-10-09 16:41:12 | 9954b0227ea59eb8ffd7d053fcdbcc2a636f8b8e
+
+move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration | 2017-10-09 01:30:26 | b72f68dcf2105cb7c42945a2a7304fb6b954c6de
+
+move to shared tools versions, fix build file | 2017-10-08 21:18:50 | 07232ab017efc63a217350342ff07ff00284a834
+
+Merge pull request #126 from DougSig/master
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture(). | 2017-08-21 15:40:37 | 2444cddb9e6f7da800a757b2358b7f8cb22a23c2
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations. | 2017-08-14 18:26:51 | e8066003e1d6c4ad07391ea6d541f1a277814cbc
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations that we've been doing in other
+* kotlin samples.
+
+Change-Id: Ic0ec9f359009a0699183707ffe9a9a7e831429da | 2017-08-11 04:09:08 | bd53bba33285a34b9a3e6553502f803ab07cdb5e
+
+Kotlin Readme links fixed | 2017-08-09 14:43:56 | ee81fa1179e8836c2a86339d2e6ddaae1289469e
+
+#112 BasicRxJavaSample issues : data can not be refreshed!
+
+This issue has been fixed by keeping a reference of the last inserted object. | 2017-08-08 19:54:47 | 344b16e45f64ef3ca7db06cbae28b969f7e49d1b
+
+fix test and the code. #56 | 2017-07-10 05:47:07 | ed3fd72a9a61ccad742b08156d780ca1cd42638c
+
+Fixes DiffUtil typo bug
+
+Change-Id: I11b9336ef4b4e06366e57fb6c3bc4f29f0616183 | 2017-06-30 21:06:45 | e64d25eca8e1fa218344e769c4aedfa995002ffd
+
+also add a test w/ a dialog as show in the bug report | 2017-06-25 20:35:04 | 5516a30b6ea752e6ef24693c7e8d00076027fdda
+
+Merge pull request #72 from googlesamples/readme_fix
+
+Typo fix in the main README | 2017-06-23 12:29:36 | 9ba051470ec271f31dcba8cd46365fe310b7f49b
+
+typo fix | 2017-06-23 12:26:58 | 9b2ccf843b6cbc65fc18947b6c331a3f9cf02604
+
+Merge pull request #21 from shanuka/patch-1
+
+Update README.md | 2017-05-24 10:08:39 | 7dbab6e82a54ada26b832357b99183364f063bcc
+
+Merge "Changes to READMEs and small fixes" | 2017-05-16 20:36:52 | 76e947d8155ba7533653594ee24e62cb32f38b1c
+
+Changes to READMEs and small fixes
+
+Change-Id: Iabb76de4c1f977b8d307e51a8b48a69326542c84 | 2017-05-12 12:41:40 | edbde8e00c364bb3eaa5210330804cc79e7f4dd8
+
+Merge pull request #613 from googlesamples/jabubake-patch-1
+
+Add screenshot to README | 2019-04-29 22:34:06 | f7562c627a1655041059266a1c5034424c64211b
+
+Merge pull request #563 from googlesamples/jabubake-patch-1-1
+
+Create README.md | 2019-02-28 23:33:42 | 3cfe49dcf97a8f784f78c69385131c46d0798846
+
+Merge pull request #562 from googlesamples/jabubake-patch-1
+
+Update README.md | 2019-02-28 23:09:03 | 724341ad6f2b45cbd4902b9e7b86a1fca877e6f0
+
+Make avatarUrl optional, fix testContributorClick | 2019-02-15 00:19:23 | 9acce5ead48dc94539d8f897fddc5a64f33f7eab
+
+Merge pull request #553 from dazza5000/patch-2
+
+Update TAG name in ProductListFragment | 2019-02-14 23:02:59 | 96c58ee2b09bbd012eda311673bba2587abf9364
+
+Bumps to AGP321 and fixes lint errors (#511) | 2018-12-05 16:15:07 | ad75814571fb9daa608a642e373d52d6f8697a7d
+
+Merge pull request #459 from dgngulcan/patch-3
+
+typo fix | 2018-11-22 15:26:45 | 3995cdf14b9cd4af7feebc759641dbdd3c8bf06d
+
+Merge pull request #479 from CrystalIFDE/Fix_crash_in_NavigationBasicSample
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-11-05 20:47:34 | b9e889859ad1611dafe984119d4468a4695ae385
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-10-16 09:45:33 | d54abbcf24ce7ad5ad4d6adfb274e148af47143e
+
+Migrate android-arch-components sample apps to the androidx namespace.
+
+Besides refactoring a lot of imports, this PR also makes the following changes:
+
+* Updated to targetSDK 28 and build tools 28.0.3 along with android
+  gradle plugin 3.2.0
+* Updated various compile and and androidTestCompile to their
+  implementation version.
+* Bumped Kotlin version and moved from the jre to the jdk version of
+  the stb libs.
+* Bumped Dagger to 2.16 which contains a fix for projects using the
+  androidx namespace.
+* Bumped Glide to 4.8.0 which also contains a fix for projects using
+  the androidx namespace.
+* Removed dexmaker in favor of mockito-android in some of the sample
+  projects that used it.
+* Added android.useAndroidX=true and android.enableJetifier=true to
+  various gradle.properties in projects that used data binding and/or
+  used libraries that expected the old namespace. | 2018-10-04 23:29:47 | d31d2bb632467051c2fddd3dc493cc480c44ada0
+
+typo fix | 2018-09-16 02:02:19 | 362084f0083cedfdb718e48be54fb4cfd075466d
+
+Update NetworkStateItemViewHolder.kt
+
+fix toVisbility -> toVisibility | 2018-06-11 03:00:26 | 1e70b1518b9793e04a014dfe7601c8aa4c4b4d45
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | ea59732402708c8e7bca3ecc24a7c9ca85736b55
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | 5873c442ebd0cef8f03d98c75b4c929aa31f1b99
+
+Adds admin message to root versions file and fixes gradle wrapper versions | 2018-03-01 16:49:56 | ce6cb4989e5af2e213330bcd0f7c023308f6178f
+
+Removing LifecycleRegistry reference from RepoFragment (#313)
+
+* Removing LifecycleRegistry reference from RepoFragment
+
+* fixing link to readme also
+
+* updating CI config
+
+* Updating circle CI | 2018-02-23 17:26:50 | 1880a208970751678a6f336a1ccfba5becbc03e1
+
+remove unnecessary comma (#263)
+
+* remove unnecessary comma
+
+* fix parameter name | 2018-01-16 13:10:44 | c66512848331a906354b4cd43b163322b6f4ecdd
+
+fix merge conflict
+
+Change-Id: I1a7bf761b2624c918d351c4f157e6745c3f9f540 | 2017-12-08 00:40:59 | 42c4c5a9bdb76cf67acc27d87de93535e9bcb1c7
+
+Merge pull request #212 from laurentyhuel/patch-1
+
+Delete ViewModelSubComponent.java | 2017-10-27 17:35:27 | bf2a123048e848bfc3a6bdfa7e46de2a9ea8cb14
+
+Use single version for all samples (#195)
+
+This CL adds a version file that can be applied to different gradle projects
+so that all can use the same versions and it is easy to test all of them
+after a version bump
+
+* Move basic rx java sample to shared versions
+
+* move to shared tools versions, fix build file
+
+* centralize maven repository urls
+
+* move basic rxjava kotlin sample to versions.gradle
+
+* move paging to the versions gradle file.
+
+Also added an ability to override the arch version in build.gradle file
+since paging does not work with latest version
+
+* remove unnecessary junit dependency
+
+* move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration
+
+* move migration test to versions
+
+I also had to update some migration scripts since new version of room
+enforces nullability
+
+* fix migrations, add docs to versions.gradle
+
+* move basic sample to the shared build file.
+
+The tests were also crashing on older devices so i modified them
+a bit. Not ideal tests but at least pass
+
+* fix target sdk version variable in build files | 2017-10-11 15:41:26 | acdfe580dfa09a368b0f0d26a3f321552be89ee4
+
+fix target sdk version variable in build files | 2017-10-09 20:56:36 | ccf68a8d5e61fdd2a76c5ba9e465fc339b3ec0ee
+
+Adds unit tests and fixes paths | 2017-10-09 17:10:37 | 2a7e583816e53c801b7d494fc076260f34ac27fb
+
+fix migrations, add docs to versions.gradle | 2017-10-09 16:41:12 | 9954b0227ea59eb8ffd7d053fcdbcc2a636f8b8e
+
+move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration | 2017-10-09 01:30:26 | b72f68dcf2105cb7c42945a2a7304fb6b954c6de
+
+move to shared tools versions, fix build file | 2017-10-08 21:18:50 | 07232ab017efc63a217350342ff07ff00284a834
+
+Merge pull request #126 from DougSig/master
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture(). | 2017-08-21 15:40:37 | 2444cddb9e6f7da800a757b2358b7f8cb22a23c2
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations. | 2017-08-14 18:26:51 | e8066003e1d6c4ad07391ea6d541f1a277814cbc
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations that we've been doing in other
+* kotlin samples.
+
+Change-Id: Ic0ec9f359009a0699183707ffe9a9a7e831429da | 2017-08-11 04:09:08 | bd53bba33285a34b9a3e6553502f803ab07cdb5e
+
+Kotlin Readme links fixed | 2017-08-09 14:43:56 | ee81fa1179e8836c2a86339d2e6ddaae1289469e
+
+#112 BasicRxJavaSample issues : data can not be refreshed!
+
+This issue has been fixed by keeping a reference of the last inserted object. | 2017-08-08 19:54:47 | 344b16e45f64ef3ca7db06cbae28b969f7e49d1b
+
+fix test and the code. #56 | 2017-07-10 05:47:07 | ed3fd72a9a61ccad742b08156d780ca1cd42638c
+
+Fixes DiffUtil typo bug
+
+Change-Id: I11b9336ef4b4e06366e57fb6c3bc4f29f0616183 | 2017-06-30 21:06:45 | e64d25eca8e1fa218344e769c4aedfa995002ffd
+
+also add a test w/ a dialog as show in the bug report | 2017-06-25 20:35:04 | 5516a30b6ea752e6ef24693c7e8d00076027fdda
+
+Merge pull request #72 from googlesamples/readme_fix
+
+Typo fix in the main README | 2017-06-23 12:29:36 | 9ba051470ec271f31dcba8cd46365fe310b7f49b
+
+typo fix | 2017-06-23 12:26:58 | 9b2ccf843b6cbc65fc18947b6c331a3f9cf02604
+
+Merge pull request #21 from shanuka/patch-1
+
+Update README.md | 2017-05-24 10:08:39 | 7dbab6e82a54ada26b832357b99183364f063bcc
+
+Merge "Changes to READMEs and small fixes" | 2017-05-16 20:36:52 | 76e947d8155ba7533653594ee24e62cb32f38b1c
+
+Changes to READMEs and small fixes
+
+Change-Id: Iabb76de4c1f977b8d307e51a8b48a69326542c84 | 2017-05-12 12:41:40 | edbde8e00c364bb3eaa5210330804cc79e7f4dd8
+
+Merge pull request #613 from googlesamples/jabubake-patch-1
+
+Add screenshot to README | 2019-04-29 22:34:06 | f7562c627a1655041059266a1c5034424c64211b
+
+Merge pull request #563 from googlesamples/jabubake-patch-1-1
+
+Create README.md | 2019-02-28 23:33:42 | 3cfe49dcf97a8f784f78c69385131c46d0798846
+
+Merge pull request #562 from googlesamples/jabubake-patch-1
+
+Update README.md | 2019-02-28 23:09:03 | 724341ad6f2b45cbd4902b9e7b86a1fca877e6f0
+
+Make avatarUrl optional, fix testContributorClick | 2019-02-15 00:19:23 | 9acce5ead48dc94539d8f897fddc5a64f33f7eab
+
+Merge pull request #553 from dazza5000/patch-2
+
+Update TAG name in ProductListFragment | 2019-02-14 23:02:59 | 96c58ee2b09bbd012eda311673bba2587abf9364
+
+Bumps to AGP321 and fixes lint errors (#511) | 2018-12-05 16:15:07 | ad75814571fb9daa608a642e373d52d6f8697a7d
+
+Merge pull request #459 from dgngulcan/patch-3
+
+typo fix | 2018-11-22 15:26:45 | 3995cdf14b9cd4af7feebc759641dbdd3c8bf06d
+
+Merge pull request #479 from CrystalIFDE/Fix_crash_in_NavigationBasicSample
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-11-05 20:47:34 | b9e889859ad1611dafe984119d4468a4695ae385
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-10-16 09:45:33 | d54abbcf24ce7ad5ad4d6adfb274e148af47143e
+
+Migrate android-arch-components sample apps to the androidx namespace.
+
+Besides refactoring a lot of imports, this PR also makes the following changes:
+
+* Updated to targetSDK 28 and build tools 28.0.3 along with android
+  gradle plugin 3.2.0
+* Updated various compile and and androidTestCompile to their
+  implementation version.
+* Bumped Kotlin version and moved from the jre to the jdk version of
+  the stb libs.
+* Bumped Dagger to 2.16 which contains a fix for projects using the
+  androidx namespace.
+* Bumped Glide to 4.8.0 which also contains a fix for projects using
+  the androidx namespace.
+* Removed dexmaker in favor of mockito-android in some of the sample
+  projects that used it.
+* Added android.useAndroidX=true and android.enableJetifier=true to
+  various gradle.properties in projects that used data binding and/or
+  used libraries that expected the old namespace. | 2018-10-04 23:29:47 | d31d2bb632467051c2fddd3dc493cc480c44ada0
+
+typo fix | 2018-09-16 02:02:19 | 362084f0083cedfdb718e48be54fb4cfd075466d
+
+Update NetworkStateItemViewHolder.kt
+
+fix toVisbility -> toVisibility | 2018-06-11 03:00:26 | 1e70b1518b9793e04a014dfe7601c8aa4c4b4d45
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | ea59732402708c8e7bca3ecc24a7c9ca85736b55
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | 5873c442ebd0cef8f03d98c75b4c929aa31f1b99
+
+Adds admin message to root versions file and fixes gradle wrapper versions | 2018-03-01 16:49:56 | ce6cb4989e5af2e213330bcd0f7c023308f6178f
+
+Removing LifecycleRegistry reference from RepoFragment (#313)
+
+* Removing LifecycleRegistry reference from RepoFragment
+
+* fixing link to readme also
+
+* updating CI config
+
+* Updating circle CI | 2018-02-23 17:26:50 | 1880a208970751678a6f336a1ccfba5becbc03e1
+
+remove unnecessary comma (#263)
+
+* remove unnecessary comma
+
+* fix parameter name | 2018-01-16 13:10:44 | c66512848331a906354b4cd43b163322b6f4ecdd
+
+fix merge conflict
+
+Change-Id: I1a7bf761b2624c918d351c4f157e6745c3f9f540 | 2017-12-08 00:40:59 | 42c4c5a9bdb76cf67acc27d87de93535e9bcb1c7
+
+Merge pull request #212 from laurentyhuel/patch-1
+
+Delete ViewModelSubComponent.java | 2017-10-27 17:35:27 | bf2a123048e848bfc3a6bdfa7e46de2a9ea8cb14
+
+Use single version for all samples (#195)
+
+This CL adds a version file that can be applied to different gradle projects
+so that all can use the same versions and it is easy to test all of them
+after a version bump
+
+* Move basic rx java sample to shared versions
+
+* move to shared tools versions, fix build file
+
+* centralize maven repository urls
+
+* move basic rxjava kotlin sample to versions.gradle
+
+* move paging to the versions gradle file.
+
+Also added an ability to override the arch version in build.gradle file
+since paging does not work with latest version
+
+* remove unnecessary junit dependency
+
+* move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration
+
+* move migration test to versions
+
+I also had to update some migration scripts since new version of room
+enforces nullability
+
+* fix migrations, add docs to versions.gradle
+
+* move basic sample to the shared build file.
+
+The tests were also crashing on older devices so i modified them
+a bit. Not ideal tests but at least pass
+
+* fix target sdk version variable in build files | 2017-10-11 15:41:26 | acdfe580dfa09a368b0f0d26a3f321552be89ee4
+
+fix target sdk version variable in build files | 2017-10-09 20:56:36 | ccf68a8d5e61fdd2a76c5ba9e465fc339b3ec0ee
+
+Adds unit tests and fixes paths | 2017-10-09 17:10:37 | 2a7e583816e53c801b7d494fc076260f34ac27fb
+
+fix migrations, add docs to versions.gradle | 2017-10-09 16:41:12 | 9954b0227ea59eb8ffd7d053fcdbcc2a636f8b8e
+
+move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration | 2017-10-09 01:30:26 | b72f68dcf2105cb7c42945a2a7304fb6b954c6de
+
+move to shared tools versions, fix build file | 2017-10-08 21:18:50 | 07232ab017efc63a217350342ff07ff00284a834
+
+Merge pull request #126 from DougSig/master
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture(). | 2017-08-21 15:40:37 | 2444cddb9e6f7da800a757b2358b7f8cb22a23c2
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations. | 2017-08-14 18:26:51 | e8066003e1d6c4ad07391ea6d541f1a277814cbc
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations that we've been doing in other
+* kotlin samples.
+
+Change-Id: Ic0ec9f359009a0699183707ffe9a9a7e831429da | 2017-08-11 04:09:08 | bd53bba33285a34b9a3e6553502f803ab07cdb5e
+
+Kotlin Readme links fixed | 2017-08-09 14:43:56 | ee81fa1179e8836c2a86339d2e6ddaae1289469e
+
+#112 BasicRxJavaSample issues : data can not be refreshed!
+
+This issue has been fixed by keeping a reference of the last inserted object. | 2017-08-08 19:54:47 | 344b16e45f64ef3ca7db06cbae28b969f7e49d1b
+
+fix test and the code. #56 | 2017-07-10 05:47:07 | ed3fd72a9a61ccad742b08156d780ca1cd42638c
+
+Fixes DiffUtil typo bug
+
+Change-Id: I11b9336ef4b4e06366e57fb6c3bc4f29f0616183 | 2017-06-30 21:06:45 | e64d25eca8e1fa218344e769c4aedfa995002ffd
+
+also add a test w/ a dialog as show in the bug report | 2017-06-25 20:35:04 | 5516a30b6ea752e6ef24693c7e8d00076027fdda
+
+Merge pull request #72 from googlesamples/readme_fix
+
+Typo fix in the main README | 2017-06-23 12:29:36 | 9ba051470ec271f31dcba8cd46365fe310b7f49b
+
+typo fix | 2017-06-23 12:26:58 | 9b2ccf843b6cbc65fc18947b6c331a3f9cf02604
+
+Merge pull request #21 from shanuka/patch-1
+
+Update README.md | 2017-05-24 10:08:39 | 7dbab6e82a54ada26b832357b99183364f063bcc
+
+Merge "Changes to READMEs and small fixes" | 2017-05-16 20:36:52 | 76e947d8155ba7533653594ee24e62cb32f38b1c
+
+Changes to READMEs and small fixes
+
+Change-Id: Iabb76de4c1f977b8d307e51a8b48a69326542c84 | 2017-05-12 12:41:40 | edbde8e00c364bb3eaa5210330804cc79e7f4dd8
+
+Merge pull request #613 from googlesamples/jabubake-patch-1
+
+Add screenshot to README | 2019-04-29 22:34:06 | f7562c627a1655041059266a1c5034424c64211b
+
+Merge pull request #563 from googlesamples/jabubake-patch-1-1
+
+Create README.md | 2019-02-28 23:33:42 | 3cfe49dcf97a8f784f78c69385131c46d0798846
+
+Merge pull request #562 from googlesamples/jabubake-patch-1
+
+Update README.md | 2019-02-28 23:09:03 | 724341ad6f2b45cbd4902b9e7b86a1fca877e6f0
+
+Make avatarUrl optional, fix testContributorClick | 2019-02-15 00:19:23 | 9acce5ead48dc94539d8f897fddc5a64f33f7eab
+
+Merge pull request #553 from dazza5000/patch-2
+
+Update TAG name in ProductListFragment | 2019-02-14 23:02:59 | 96c58ee2b09bbd012eda311673bba2587abf9364
+
+Bumps to AGP321 and fixes lint errors (#511) | 2018-12-05 16:15:07 | ad75814571fb9daa608a642e373d52d6f8697a7d
+
+Merge pull request #459 from dgngulcan/patch-3
+
+typo fix | 2018-11-22 15:26:45 | 3995cdf14b9cd4af7feebc759641dbdd3c8bf06d
+
+Merge pull request #479 from CrystalIFDE/Fix_crash_in_NavigationBasicSample
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-11-05 20:47:34 | b9e889859ad1611dafe984119d4468a4695ae385
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-10-16 09:45:33 | d54abbcf24ce7ad5ad4d6adfb274e148af47143e
+
+Migrate android-arch-components sample apps to the androidx namespace.
+
+Besides refactoring a lot of imports, this PR also makes the following changes:
+
+* Updated to targetSDK 28 and build tools 28.0.3 along with android
+  gradle plugin 3.2.0
+* Updated various compile and and androidTestCompile to their
+  implementation version.
+* Bumped Kotlin version and moved from the jre to the jdk version of
+  the stb libs.
+* Bumped Dagger to 2.16 which contains a fix for projects using the
+  androidx namespace.
+* Bumped Glide to 4.8.0 which also contains a fix for projects using
+  the androidx namespace.
+* Removed dexmaker in favor of mockito-android in some of the sample
+  projects that used it.
+* Added android.useAndroidX=true and android.enableJetifier=true to
+  various gradle.properties in projects that used data binding and/or
+  used libraries that expected the old namespace. | 2018-10-04 23:29:47 | d31d2bb632467051c2fddd3dc493cc480c44ada0
+
+typo fix | 2018-09-16 02:02:19 | 362084f0083cedfdb718e48be54fb4cfd075466d
+
+Update NetworkStateItemViewHolder.kt
+
+fix toVisbility -> toVisibility | 2018-06-11 03:00:26 | 1e70b1518b9793e04a014dfe7601c8aa4c4b4d45
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | ea59732402708c8e7bca3ecc24a7c9ca85736b55
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | 5873c442ebd0cef8f03d98c75b4c929aa31f1b99
+
+Adds admin message to root versions file and fixes gradle wrapper versions | 2018-03-01 16:49:56 | ce6cb4989e5af2e213330bcd0f7c023308f6178f
+
+Removing LifecycleRegistry reference from RepoFragment (#313)
+
+* Removing LifecycleRegistry reference from RepoFragment
+
+* fixing link to readme also
+
+* updating CI config
+
+* Updating circle CI | 2018-02-23 17:26:50 | 1880a208970751678a6f336a1ccfba5becbc03e1
+
+remove unnecessary comma (#263)
+
+* remove unnecessary comma
+
+* fix parameter name | 2018-01-16 13:10:44 | c66512848331a906354b4cd43b163322b6f4ecdd
+
+fix merge conflict
+
+Change-Id: I1a7bf761b2624c918d351c4f157e6745c3f9f540 | 2017-12-08 00:40:59 | 42c4c5a9bdb76cf67acc27d87de93535e9bcb1c7
+
+Merge pull request #212 from laurentyhuel/patch-1
+
+Delete ViewModelSubComponent.java | 2017-10-27 17:35:27 | bf2a123048e848bfc3a6bdfa7e46de2a9ea8cb14
+
+Use single version for all samples (#195)
+
+This CL adds a version file that can be applied to different gradle projects
+so that all can use the same versions and it is easy to test all of them
+after a version bump
+
+* Move basic rx java sample to shared versions
+
+* move to shared tools versions, fix build file
+
+* centralize maven repository urls
+
+* move basic rxjava kotlin sample to versions.gradle
+
+* move paging to the versions gradle file.
+
+Also added an ability to override the arch version in build.gradle file
+since paging does not work with latest version
+
+* remove unnecessary junit dependency
+
+* move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration
+
+* move migration test to versions
+
+I also had to update some migration scripts since new version of room
+enforces nullability
+
+* fix migrations, add docs to versions.gradle
+
+* move basic sample to the shared build file.
+
+The tests were also crashing on older devices so i modified them
+a bit. Not ideal tests but at least pass
+
+* fix target sdk version variable in build files | 2017-10-11 15:41:26 | acdfe580dfa09a368b0f0d26a3f321552be89ee4
+
+fix target sdk version variable in build files | 2017-10-09 20:56:36 | ccf68a8d5e61fdd2a76c5ba9e465fc339b3ec0ee
+
+Adds unit tests and fixes paths | 2017-10-09 17:10:37 | 2a7e583816e53c801b7d494fc076260f34ac27fb
+
+fix migrations, add docs to versions.gradle | 2017-10-09 16:41:12 | 9954b0227ea59eb8ffd7d053fcdbcc2a636f8b8e
+
+move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration | 2017-10-09 01:30:26 | b72f68dcf2105cb7c42945a2a7304fb6b954c6de
+
+move to shared tools versions, fix build file | 2017-10-08 21:18:50 | 07232ab017efc63a217350342ff07ff00284a834
+
+Merge pull request #126 from DougSig/master
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture(). | 2017-08-21 15:40:37 | 2444cddb9e6f7da800a757b2358b7f8cb22a23c2
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations. | 2017-08-14 18:26:51 | e8066003e1d6c4ad07391ea6d541f1a277814cbc
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations that we've been doing in other
+* kotlin samples.
+
+Change-Id: Ic0ec9f359009a0699183707ffe9a9a7e831429da | 2017-08-11 04:09:08 | bd53bba33285a34b9a3e6553502f803ab07cdb5e
+
+Kotlin Readme links fixed | 2017-08-09 14:43:56 | ee81fa1179e8836c2a86339d2e6ddaae1289469e
+
+#112 BasicRxJavaSample issues : data can not be refreshed!
+
+This issue has been fixed by keeping a reference of the last inserted object. | 2017-08-08 19:54:47 | 344b16e45f64ef3ca7db06cbae28b969f7e49d1b
+
+fix test and the code. #56 | 2017-07-10 05:47:07 | ed3fd72a9a61ccad742b08156d780ca1cd42638c
+
+Fixes DiffUtil typo bug
+
+Change-Id: I11b9336ef4b4e06366e57fb6c3bc4f29f0616183 | 2017-06-30 21:06:45 | e64d25eca8e1fa218344e769c4aedfa995002ffd
+
+also add a test w/ a dialog as show in the bug report | 2017-06-25 20:35:04 | 5516a30b6ea752e6ef24693c7e8d00076027fdda
+
+Merge pull request #72 from googlesamples/readme_fix
+
+Typo fix in the main README | 2017-06-23 12:29:36 | 9ba051470ec271f31dcba8cd46365fe310b7f49b
+
+typo fix | 2017-06-23 12:26:58 | 9b2ccf843b6cbc65fc18947b6c331a3f9cf02604
+
+Merge pull request #21 from shanuka/patch-1
+
+Update README.md | 2017-05-24 10:08:39 | 7dbab6e82a54ada26b832357b99183364f063bcc
+
+Merge "Changes to READMEs and small fixes" | 2017-05-16 20:36:52 | 76e947d8155ba7533653594ee24e62cb32f38b1c
+
+Changes to READMEs and small fixes
+
+Change-Id: Iabb76de4c1f977b8d307e51a8b48a69326542c84 | 2017-05-12 12:41:40 | edbde8e00c364bb3eaa5210330804cc79e7f4dd8
+
+Merge pull request #21 from shanuka/patch-1
+
+Update README.md | 2017-05-24 10:08:39 | 7dbab6e82a54ada26b832357b99183364f063bcc
+
+Use circleci/android:api-29-ndk to fix Renderscript
+
+Test: ./run_all_tests.sh | 2020-02-10 06:54:10 | 22bcfb4ddcebfb38230d2acc881c52397e8c5d6c
+
+Fix compileDebugRenderscript on circleci
+
+> Task :lib:compileDebugRenderscript FAILED
+/opt/android/sdk/build-tools/29.0.3/llvm-rs-cc: error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory
+
+Test: ./run_all_tests.sh | 2020-02-10 06:16:47 | 185b1cde07cb728f7642bfd633f930543f548631
+
+Merge pull request #413 from camsteffen/patch-1
+
+Unnecessary try/catch? | 2020-01-27 06:26:25 | 3283b6bbc6c9d62a616f058cdf0225185a5a69d1
+
+Merge pull request #554 from dazza5000/patch-3
+
+Update UserActivity.java | 2020-01-09 00:42:19 | f833efcb363cfa280a9d89b874852a8eb1978786
+
+Merge pull request #679 from egek92/patch-2
+
+more efficient way of sorting repos | 2020-01-09 00:36:49 | 1ac3100b404ae0e3e3ee00dc363f668376e4991f
+
+Merge pull request #713 from hegazy/fix/unused_var
+
+Minor fix for unused variable in test | 2019-12-11 18:17:24 | 07dfe3e1c129ad5479f75bb07dec8ba7a7a475ec
+
+Merge pull request #751 from android/dlam/paging-fix-scroll
+
+Fix scroll offset in paging sample | 2019-11-07 17:25:17 | 58263b343a795a6061ec72fd84af83527347c0bd
+
+Merge pull request #742 from android/yaml-fix
+
+Fix yaml extension. | 2019-11-01 16:22:43 | b88adef417583371f3fe5a01e28983fe7170036d
+
+Merge pull request #741 from android/fix-live-data-test
+
+fix live data sample test | 2019-10-16 02:51:55 | 19e3329e9e6b83bdfcdf94800aa77174a4755c3e
+
+fix live data sample test
+
+The test was initializing the view model before the Dispatchers.setMain call is
+made which make it try to use real dispatcher rather than the fake one. | 2019-10-15 05:56:07 | fe4d6a696cb79ea25c4cdc395eab9f7d2580dcc3
+
+Merge pull request #733 from jbw0033/patch-2
+
+Call setCustomAnimations() before attach/detach | 2019-09-30 21:35:27 | 48b1c9b1a12fbb9e8acd0ed2525be744d8c76294
+
+Unused variable in test fix | 2019-09-05 09:11:12 | 610c56511aada8029ae445b1a251ea10a84f203c
+
+Adds LiveDataSample (#710)
+
+* LiveData sample
+
+* Removes internal script
+
+* Adds call to super.onActivityResult to fix broken build
+
+* Bumps testing versions and fixes NavBasicSample dependencies
+
+* Fixes testing versions | 2019-08-28 15:57:33 | 4a36ccba9b3fd471b5ca1167da5c0c3d61cdd2c9
+
+Merge pull request #667 from googlesamples/dlam/fix-tests
+
+Fix syntax errors + add androidx.test.core dependency for ApplicationProvider | 2019-07-01 20:12:52 | a857a49738488facd1b6e0ef5c25844512c76594
+
+Merge pull request #651 from jbw0033/patch-1
+
+Do not select same destination after deep link | 2019-06-06 18:22:31 | 919421324064e0dac3b763d2fe0f4b1868f38bb2
+
+Merge pull request #613 from googlesamples/jabubake-patch-1
+
+Add screenshot to README | 2019-04-29 22:34:06 | f7562c627a1655041059266a1c5034424c64211b
+
+Merge pull request #563 from googlesamples/jabubake-patch-1-1
+
+Create README.md | 2019-02-28 23:33:42 | 3cfe49dcf97a8f784f78c69385131c46d0798846
+
+Merge pull request #562 from googlesamples/jabubake-patch-1
+
+Update README.md | 2019-02-28 23:09:03 | 724341ad6f2b45cbd4902b9e7b86a1fca877e6f0
+
+Make avatarUrl optional, fix testContributorClick | 2019-02-15 00:19:23 | 9acce5ead48dc94539d8f897fddc5a64f33f7eab
+
+Merge pull request #553 from dazza5000/patch-2
+
+Update TAG name in ProductListFragment | 2019-02-14 23:02:59 | 96c58ee2b09bbd012eda311673bba2587abf9364
+
+Bumps to AGP321 and fixes lint errors (#511) | 2018-12-05 16:15:07 | ad75814571fb9daa608a642e373d52d6f8697a7d
+
+Merge pull request #459 from dgngulcan/patch-3
+
+typo fix | 2018-11-22 15:26:45 | 3995cdf14b9cd4af7feebc759641dbdd3c8bf06d
+
+Merge pull request #479 from CrystalIFDE/Fix_crash_in_NavigationBasicSample
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-11-05 20:47:34 | b9e889859ad1611dafe984119d4468a4695ae385
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-10-16 09:45:33 | d54abbcf24ce7ad5ad4d6adfb274e148af47143e
+
+Migrate android-arch-components sample apps to the androidx namespace.
+
+Besides refactoring a lot of imports, this PR also makes the following changes:
+
+* Updated to targetSDK 28 and build tools 28.0.3 along with android
+  gradle plugin 3.2.0
+* Updated various compile and and androidTestCompile to their
+  implementation version.
+* Bumped Kotlin version and moved from the jre to the jdk version of
+  the stb libs.
+* Bumped Dagger to 2.16 which contains a fix for projects using the
+  androidx namespace.
+* Bumped Glide to 4.8.0 which also contains a fix for projects using
+  the androidx namespace.
+* Removed dexmaker in favor of mockito-android in some of the sample
+  projects that used it.
+* Added android.useAndroidX=true and android.enableJetifier=true to
+  various gradle.properties in projects that used data binding and/or
+  used libraries that expected the old namespace. | 2018-10-04 23:29:47 | d31d2bb632467051c2fddd3dc493cc480c44ada0
+
+typo fix | 2018-09-16 02:02:19 | 362084f0083cedfdb718e48be54fb4cfd075466d
+
+Update NetworkStateItemViewHolder.kt
+
+fix toVisbility -> toVisibility | 2018-06-11 03:00:26 | 1e70b1518b9793e04a014dfe7601c8aa4c4b4d45
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | ea59732402708c8e7bca3ecc24a7c9ca85736b55
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | 5873c442ebd0cef8f03d98c75b4c929aa31f1b99
+
+Adds admin message to root versions file and fixes gradle wrapper versions | 2018-03-01 16:49:56 | ce6cb4989e5af2e213330bcd0f7c023308f6178f
+
+Removing LifecycleRegistry reference from RepoFragment (#313)
+
+* Removing LifecycleRegistry reference from RepoFragment
+
+* fixing link to readme also
+
+* updating CI config
+
+* Updating circle CI | 2018-02-23 17:26:50 | 1880a208970751678a6f336a1ccfba5becbc03e1
+
+remove unnecessary comma (#263)
+
+* remove unnecessary comma
+
+* fix parameter name | 2018-01-16 13:10:44 | c66512848331a906354b4cd43b163322b6f4ecdd
+
+fix merge conflict
+
+Change-Id: I1a7bf761b2624c918d351c4f157e6745c3f9f540 | 2017-12-08 00:40:59 | 42c4c5a9bdb76cf67acc27d87de93535e9bcb1c7
+
+Merge pull request #212 from laurentyhuel/patch-1
+
+Delete ViewModelSubComponent.java | 2017-10-27 17:35:27 | bf2a123048e848bfc3a6bdfa7e46de2a9ea8cb14
+
+Use single version for all samples (#195)
+
+This CL adds a version file that can be applied to different gradle projects
+so that all can use the same versions and it is easy to test all of them
+after a version bump
+
+* Move basic rx java sample to shared versions
+
+* move to shared tools versions, fix build file
+
+* centralize maven repository urls
+
+* move basic rxjava kotlin sample to versions.gradle
+
+* move paging to the versions gradle file.
+
+Also added an ability to override the arch version in build.gradle file
+since paging does not work with latest version
+
+* remove unnecessary junit dependency
+
+* move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration
+
+* move migration test to versions
+
+I also had to update some migration scripts since new version of room
+enforces nullability
+
+* fix migrations, add docs to versions.gradle
+
+* move basic sample to the shared build file.
+
+The tests were also crashing on older devices so i modified them
+a bit. Not ideal tests but at least pass
+
+* fix target sdk version variable in build files | 2017-10-11 15:41:26 | acdfe580dfa09a368b0f0d26a3f321552be89ee4
+
+fix target sdk version variable in build files | 2017-10-09 20:56:36 | ccf68a8d5e61fdd2a76c5ba9e465fc339b3ec0ee
+
+Adds unit tests and fixes paths | 2017-10-09 17:10:37 | 2a7e583816e53c801b7d494fc076260f34ac27fb
+
+fix migrations, add docs to versions.gradle | 2017-10-09 16:41:12 | 9954b0227ea59eb8ffd7d053fcdbcc2a636f8b8e
+
+move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration | 2017-10-09 01:30:26 | b72f68dcf2105cb7c42945a2a7304fb6b954c6de
+
+move to shared tools versions, fix build file | 2017-10-08 21:18:50 | 07232ab017efc63a217350342ff07ff00284a834
+
+Merge pull request #126 from DougSig/master
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture(). | 2017-08-21 15:40:37 | 2444cddb9e6f7da800a757b2358b7f8cb22a23c2
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations. | 2017-08-14 18:26:51 | e8066003e1d6c4ad07391ea6d541f1a277814cbc
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations that we've been doing in other
+* kotlin samples.
+
+Change-Id: Ic0ec9f359009a0699183707ffe9a9a7e831429da | 2017-08-11 04:09:08 | bd53bba33285a34b9a3e6553502f803ab07cdb5e
+
+Kotlin Readme links fixed | 2017-08-09 14:43:56 | ee81fa1179e8836c2a86339d2e6ddaae1289469e
+
+#112 BasicRxJavaSample issues : data can not be refreshed!
+
+This issue has been fixed by keeping a reference of the last inserted object. | 2017-08-08 19:54:47 | 344b16e45f64ef3ca7db06cbae28b969f7e49d1b
+
+fix test and the code. #56 | 2017-07-10 05:47:07 | ed3fd72a9a61ccad742b08156d780ca1cd42638c
+
+Fixes DiffUtil typo bug
+
+Change-Id: I11b9336ef4b4e06366e57fb6c3bc4f29f0616183 | 2017-06-30 21:06:45 | e64d25eca8e1fa218344e769c4aedfa995002ffd
+
+also add a test w/ a dialog as show in the bug report | 2017-06-25 20:35:04 | 5516a30b6ea752e6ef24693c7e8d00076027fdda
+
+Merge pull request #72 from googlesamples/readme_fix
+
+Typo fix in the main README | 2017-06-23 12:29:36 | 9ba051470ec271f31dcba8cd46365fe310b7f49b
+
+typo fix | 2017-06-23 12:26:58 | 9b2ccf843b6cbc65fc18947b6c331a3f9cf02604
+
+Merge pull request #21 from shanuka/patch-1
+
+Update README.md | 2017-05-24 10:08:39 | 7dbab6e82a54ada26b832357b99183364f063bcc
+
+Merge "Changes to READMEs and small fixes" | 2017-05-16 20:36:52 | 76e947d8155ba7533653594ee24e62cb32f38b1c
+
+Changes to READMEs and small fixes
+
+Change-Id: Iabb76de4c1f977b8d307e51a8b48a69326542c84 | 2017-05-12 12:41:40 | edbde8e00c364bb3eaa5210330804cc79e7f4dd8
+
+Move user to build live data (#611)
+
+* move user repository to the coroutine network bound resource
+
+* cleanup the test, clean UserRepo constructor
+
+* fix user dao test to call suspend function
+
+* Add test for unsubscription from db live data
+
+* Move user repository test to robolectric
+
+This allows us to avoid using mockito for DAOs (or write
+a bunch of fake code). We cannot yet use the shared
+architecture but this is a temporary step to cleanup
+these tests.
+
+I'm using a custom build of robolectric which does not
+allow shadowing arch libs. (pending internal CL).
+Public issue: https://github.com/robolectric/robolectric/pull/4897
+
+* test cleanup | 2019-05-14 22:39:20 | 0b079a1e2afbce46f53d10414df81147a495af27
+
+Move AppExecutors to dispatchers
+
+This is first step to enable usage of dispatchers in the codebase | 2019-03-30 02:43:02 | e34737ef5b0b057558cff8f649f0caf3cfbb70a0
+
+Merge pull request #563 from googlesamples/jabubake-patch-1-1
+
+Create README.md | 2019-02-28 23:33:42 | 3cfe49dcf97a8f784f78c69385131c46d0798846
+
+Merge pull request #562 from googlesamples/jabubake-patch-1
+
+Update README.md | 2019-02-28 23:09:03 | 724341ad6f2b45cbd4902b9e7b86a1fca877e6f0
+
+Make avatarUrl optional, fix testContributorClick | 2019-02-15 00:19:23 | 9acce5ead48dc94539d8f897fddc5a64f33f7eab
+
+Merge pull request #553 from dazza5000/patch-2
+
+Update TAG name in ProductListFragment | 2019-02-14 23:02:59 | 96c58ee2b09bbd012eda311673bba2587abf9364
+
+Bumps to AGP321 and fixes lint errors (#511) | 2018-12-05 16:15:07 | ad75814571fb9daa608a642e373d52d6f8697a7d
+
+Merge pull request #459 from dgngulcan/patch-3
+
+typo fix | 2018-11-22 15:26:45 | 3995cdf14b9cd4af7feebc759641dbdd3c8bf06d
+
+Merge pull request #479 from CrystalIFDE/Fix_crash_in_NavigationBasicSample
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-11-05 20:47:34 | b9e889859ad1611dafe984119d4468a4695ae385
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-10-16 09:45:33 | d54abbcf24ce7ad5ad4d6adfb274e148af47143e
+
+Migrate android-arch-components sample apps to the androidx namespace.
+
+Besides refactoring a lot of imports, this PR also makes the following changes:
+
+* Updated to targetSDK 28 and build tools 28.0.3 along with android
+  gradle plugin 3.2.0
+* Updated various compile and and androidTestCompile to their
+  implementation version.
+* Bumped Kotlin version and moved from the jre to the jdk version of
+  the stb libs.
+* Bumped Dagger to 2.16 which contains a fix for projects using the
+  androidx namespace.
+* Bumped Glide to 4.8.0 which also contains a fix for projects using
+  the androidx namespace.
+* Removed dexmaker in favor of mockito-android in some of the sample
+  projects that used it.
+* Added android.useAndroidX=true and android.enableJetifier=true to
+  various gradle.properties in projects that used data binding and/or
+  used libraries that expected the old namespace. | 2018-10-04 23:29:47 | d31d2bb632467051c2fddd3dc493cc480c44ada0
+
+typo fix | 2018-09-16 02:02:19 | 362084f0083cedfdb718e48be54fb4cfd075466d
+
+Update NetworkStateItemViewHolder.kt
+
+fix toVisbility -> toVisibility | 2018-06-11 03:00:26 | 1e70b1518b9793e04a014dfe7601c8aa4c4b4d45
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | ea59732402708c8e7bca3ecc24a7c9ca85736b55
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | 5873c442ebd0cef8f03d98c75b4c929aa31f1b99
+
+Adds admin message to root versions file and fixes gradle wrapper versions | 2018-03-01 16:49:56 | ce6cb4989e5af2e213330bcd0f7c023308f6178f
+
+Removing LifecycleRegistry reference from RepoFragment (#313)
+
+* Removing LifecycleRegistry reference from RepoFragment
+
+* fixing link to readme also
+
+* updating CI config
+
+* Updating circle CI | 2018-02-23 17:26:50 | 1880a208970751678a6f336a1ccfba5becbc03e1
+
+remove unnecessary comma (#263)
+
+* remove unnecessary comma
+
+* fix parameter name | 2018-01-16 13:10:44 | c66512848331a906354b4cd43b163322b6f4ecdd
+
+fix merge conflict
+
+Change-Id: I1a7bf761b2624c918d351c4f157e6745c3f9f540 | 2017-12-08 00:40:59 | 42c4c5a9bdb76cf67acc27d87de93535e9bcb1c7
+
+Merge pull request #212 from laurentyhuel/patch-1
+
+Delete ViewModelSubComponent.java | 2017-10-27 17:35:27 | bf2a123048e848bfc3a6bdfa7e46de2a9ea8cb14
+
+Use single version for all samples (#195)
+
+This CL adds a version file that can be applied to different gradle projects
+so that all can use the same versions and it is easy to test all of them
+after a version bump
+
+* Move basic rx java sample to shared versions
+
+* move to shared tools versions, fix build file
+
+* centralize maven repository urls
+
+* move basic rxjava kotlin sample to versions.gradle
+
+* move paging to the versions gradle file.
+
+Also added an ability to override the arch version in build.gradle file
+since paging does not work with latest version
+
+* remove unnecessary junit dependency
+
+* move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration
+
+* move migration test to versions
+
+I also had to update some migration scripts since new version of room
+enforces nullability
+
+* fix migrations, add docs to versions.gradle
+
+* move basic sample to the shared build file.
+
+The tests were also crashing on older devices so i modified them
+a bit. Not ideal tests but at least pass
+
+* fix target sdk version variable in build files | 2017-10-11 15:41:26 | acdfe580dfa09a368b0f0d26a3f321552be89ee4
+
+fix target sdk version variable in build files | 2017-10-09 20:56:36 | ccf68a8d5e61fdd2a76c5ba9e465fc339b3ec0ee
+
+Adds unit tests and fixes paths | 2017-10-09 17:10:37 | 2a7e583816e53c801b7d494fc076260f34ac27fb
+
+fix migrations, add docs to versions.gradle | 2017-10-09 16:41:12 | 9954b0227ea59eb8ffd7d053fcdbcc2a636f8b8e
+
+move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration | 2017-10-09 01:30:26 | b72f68dcf2105cb7c42945a2a7304fb6b954c6de
+
+move to shared tools versions, fix build file | 2017-10-08 21:18:50 | 07232ab017efc63a217350342ff07ff00284a834
+
+Merge pull request #126 from DougSig/master
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture(). | 2017-08-21 15:40:37 | 2444cddb9e6f7da800a757b2358b7f8cb22a23c2
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations. | 2017-08-14 18:26:51 | e8066003e1d6c4ad07391ea6d541f1a277814cbc
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations that we've been doing in other
+* kotlin samples.
+
+Change-Id: Ic0ec9f359009a0699183707ffe9a9a7e831429da | 2017-08-11 04:09:08 | bd53bba33285a34b9a3e6553502f803ab07cdb5e
+
+Kotlin Readme links fixed | 2017-08-09 14:43:56 | ee81fa1179e8836c2a86339d2e6ddaae1289469e
+
+#112 BasicRxJavaSample issues : data can not be refreshed!
+
+This issue has been fixed by keeping a reference of the last inserted object. | 2017-08-08 19:54:47 | 344b16e45f64ef3ca7db06cbae28b969f7e49d1b
+
+fix test and the code. #56 | 2017-07-10 05:47:07 | ed3fd72a9a61ccad742b08156d780ca1cd42638c
+
+Fixes DiffUtil typo bug
+
+Change-Id: I11b9336ef4b4e06366e57fb6c3bc4f29f0616183 | 2017-06-30 21:06:45 | e64d25eca8e1fa218344e769c4aedfa995002ffd
+
+also add a test w/ a dialog as show in the bug report | 2017-06-25 20:35:04 | 5516a30b6ea752e6ef24693c7e8d00076027fdda
+
+Merge pull request #72 from googlesamples/readme_fix
+
+Typo fix in the main README | 2017-06-23 12:29:36 | 9ba051470ec271f31dcba8cd46365fe310b7f49b
+
+typo fix | 2017-06-23 12:26:58 | 9b2ccf843b6cbc65fc18947b6c331a3f9cf02604
+
+Merge pull request #21 from shanuka/patch-1
+
+Update README.md | 2017-05-24 10:08:39 | 7dbab6e82a54ada26b832357b99183364f063bcc
+
+Merge "Changes to READMEs and small fixes" | 2017-05-16 20:36:52 | 76e947d8155ba7533653594ee24e62cb32f38b1c
+
+Changes to READMEs and small fixes
+
+Change-Id: Iabb76de4c1f977b8d307e51a8b48a69326542c84 | 2017-05-12 12:41:40 | edbde8e00c364bb3eaa5210330804cc79e7f4dd8
+
+Merge pull request #563 from googlesamples/jabubake-patch-1-1
+
+Create README.md | 2019-02-28 23:33:42 | 3cfe49dcf97a8f784f78c69385131c46d0798846
+
+Merge pull request #562 from googlesamples/jabubake-patch-1
+
+Update README.md | 2019-02-28 23:09:03 | 724341ad6f2b45cbd4902b9e7b86a1fca877e6f0
+
+Make avatarUrl optional, fix testContributorClick | 2019-02-15 00:19:23 | 9acce5ead48dc94539d8f897fddc5a64f33f7eab
+
+Merge pull request #553 from dazza5000/patch-2
+
+Update TAG name in ProductListFragment | 2019-02-14 23:02:59 | 96c58ee2b09bbd012eda311673bba2587abf9364
+
+Bumps to AGP321 and fixes lint errors (#511) | 2018-12-05 16:15:07 | ad75814571fb9daa608a642e373d52d6f8697a7d
+
+Merge pull request #459 from dgngulcan/patch-3
+
+typo fix | 2018-11-22 15:26:45 | 3995cdf14b9cd4af7feebc759641dbdd3c8bf06d
+
+Merge pull request #479 from CrystalIFDE/Fix_crash_in_NavigationBasicSample
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-11-05 20:47:34 | b9e889859ad1611dafe984119d4468a4695ae385
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-10-16 09:45:33 | d54abbcf24ce7ad5ad4d6adfb274e148af47143e
+
+Migrate android-arch-components sample apps to the androidx namespace.
+
+Besides refactoring a lot of imports, this PR also makes the following changes:
+
+* Updated to targetSDK 28 and build tools 28.0.3 along with android
+  gradle plugin 3.2.0
+* Updated various compile and and androidTestCompile to their
+  implementation version.
+* Bumped Kotlin version and moved from the jre to the jdk version of
+  the stb libs.
+* Bumped Dagger to 2.16 which contains a fix for projects using the
+  androidx namespace.
+* Bumped Glide to 4.8.0 which also contains a fix for projects using
+  the androidx namespace.
+* Removed dexmaker in favor of mockito-android in some of the sample
+  projects that used it.
+* Added android.useAndroidX=true and android.enableJetifier=true to
+  various gradle.properties in projects that used data binding and/or
+  used libraries that expected the old namespace. | 2018-10-04 23:29:47 | d31d2bb632467051c2fddd3dc493cc480c44ada0
+
+typo fix | 2018-09-16 02:02:19 | 362084f0083cedfdb718e48be54fb4cfd075466d
+
+Update NetworkStateItemViewHolder.kt
+
+fix toVisbility -> toVisibility | 2018-06-11 03:00:26 | 1e70b1518b9793e04a014dfe7601c8aa4c4b4d45
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | ea59732402708c8e7bca3ecc24a7c9ca85736b55
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | 5873c442ebd0cef8f03d98c75b4c929aa31f1b99
+
+Adds admin message to root versions file and fixes gradle wrapper versions | 2018-03-01 16:49:56 | ce6cb4989e5af2e213330bcd0f7c023308f6178f
+
+Removing LifecycleRegistry reference from RepoFragment (#313)
+
+* Removing LifecycleRegistry reference from RepoFragment
+
+* fixing link to readme also
+
+* updating CI config
+
+* Updating circle CI | 2018-02-23 17:26:50 | 1880a208970751678a6f336a1ccfba5becbc03e1
+
+remove unnecessary comma (#263)
+
+* remove unnecessary comma
+
+* fix parameter name | 2018-01-16 13:10:44 | c66512848331a906354b4cd43b163322b6f4ecdd
+
+fix merge conflict
+
+Change-Id: I1a7bf761b2624c918d351c4f157e6745c3f9f540 | 2017-12-08 00:40:59 | 42c4c5a9bdb76cf67acc27d87de93535e9bcb1c7
+
+Merge pull request #212 from laurentyhuel/patch-1
+
+Delete ViewModelSubComponent.java | 2017-10-27 17:35:27 | bf2a123048e848bfc3a6bdfa7e46de2a9ea8cb14
+
+Use single version for all samples (#195)
+
+This CL adds a version file that can be applied to different gradle projects
+so that all can use the same versions and it is easy to test all of them
+after a version bump
+
+* Move basic rx java sample to shared versions
+
+* move to shared tools versions, fix build file
+
+* centralize maven repository urls
+
+* move basic rxjava kotlin sample to versions.gradle
+
+* move paging to the versions gradle file.
+
+Also added an ability to override the arch version in build.gradle file
+since paging does not work with latest version
+
+* remove unnecessary junit dependency
+
+* move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration
+
+* move migration test to versions
+
+I also had to update some migration scripts since new version of room
+enforces nullability
+
+* fix migrations, add docs to versions.gradle
+
+* move basic sample to the shared build file.
+
+The tests were also crashing on older devices so i modified them
+a bit. Not ideal tests but at least pass
+
+* fix target sdk version variable in build files | 2017-10-11 15:41:26 | acdfe580dfa09a368b0f0d26a3f321552be89ee4
+
+fix target sdk version variable in build files | 2017-10-09 20:56:36 | ccf68a8d5e61fdd2a76c5ba9e465fc339b3ec0ee
+
+Adds unit tests and fixes paths | 2017-10-09 17:10:37 | 2a7e583816e53c801b7d494fc076260f34ac27fb
+
+fix migrations, add docs to versions.gradle | 2017-10-09 16:41:12 | 9954b0227ea59eb8ffd7d053fcdbcc2a636f8b8e
+
+move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration | 2017-10-09 01:30:26 | b72f68dcf2105cb7c42945a2a7304fb6b954c6de
+
+move to shared tools versions, fix build file | 2017-10-08 21:18:50 | 07232ab017efc63a217350342ff07ff00284a834
+
+Merge pull request #126 from DougSig/master
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture(). | 2017-08-21 15:40:37 | 2444cddb9e6f7da800a757b2358b7f8cb22a23c2
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations. | 2017-08-14 18:26:51 | e8066003e1d6c4ad07391ea6d541f1a277814cbc
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations that we've been doing in other
+* kotlin samples.
+
+Change-Id: Ic0ec9f359009a0699183707ffe9a9a7e831429da | 2017-08-11 04:09:08 | bd53bba33285a34b9a3e6553502f803ab07cdb5e
+
+Kotlin Readme links fixed | 2017-08-09 14:43:56 | ee81fa1179e8836c2a86339d2e6ddaae1289469e
+
+#112 BasicRxJavaSample issues : data can not be refreshed!
+
+This issue has been fixed by keeping a reference of the last inserted object. | 2017-08-08 19:54:47 | 344b16e45f64ef3ca7db06cbae28b969f7e49d1b
+
+fix test and the code. #56 | 2017-07-10 05:47:07 | ed3fd72a9a61ccad742b08156d780ca1cd42638c
+
+Fixes DiffUtil typo bug
+
+Change-Id: I11b9336ef4b4e06366e57fb6c3bc4f29f0616183 | 2017-06-30 21:06:45 | e64d25eca8e1fa218344e769c4aedfa995002ffd
+
+also add a test w/ a dialog as show in the bug report | 2017-06-25 20:35:04 | 5516a30b6ea752e6ef24693c7e8d00076027fdda
+
+Merge pull request #72 from googlesamples/readme_fix
+
+Typo fix in the main README | 2017-06-23 12:29:36 | 9ba051470ec271f31dcba8cd46365fe310b7f49b
+
+typo fix | 2017-06-23 12:26:58 | 9b2ccf843b6cbc65fc18947b6c331a3f9cf02604
+
+Merge pull request #21 from shanuka/patch-1
+
+Update README.md | 2017-05-24 10:08:39 | 7dbab6e82a54ada26b832357b99183364f063bcc
+
+Merge "Changes to READMEs and small fixes" | 2017-05-16 20:36:52 | 76e947d8155ba7533653594ee24e62cb32f38b1c
+
+Changes to READMEs and small fixes
+
+Change-Id: Iabb76de4c1f977b8d307e51a8b48a69326542c84 | 2017-05-12 12:41:40 | edbde8e00c364bb3eaa5210330804cc79e7f4dd8
+
+Use FragmentScenario for GithubBrowserSample UI tests
+
+Replaces usages of `ActivityTestRule` with `FragmentScenario`. In the process, modernize the `DataBindingIdlingResource` by having it rely on `FragmentScenario` and fix #655 and have it look at all views within the Fragment's view hierarchy.
+
+Also rewrote EspressoTestUtil from an object to an extension method on `Fragment`.
+
+Test: ./run_all_tests.sh | 2020-02-17 00:57:16 | 1d7a759f742e8bdaf1eb4531e38ea9270301c577
+
+Merge pull request #413 from camsteffen/patch-1
+
+Unnecessary try/catch? | 2020-01-27 06:26:25 | 3283b6bbc6c9d62a616f058cdf0225185a5a69d1
+
+Merge pull request #554 from dazza5000/patch-3
+
+Update UserActivity.java | 2020-01-09 00:42:19 | f833efcb363cfa280a9d89b874852a8eb1978786
+
+Merge pull request #679 from egek92/patch-2
+
+more efficient way of sorting repos | 2020-01-09 00:36:49 | 1ac3100b404ae0e3e3ee00dc363f668376e4991f
+
+Merge pull request #713 from hegazy/fix/unused_var
+
+Minor fix for unused variable in test | 2019-12-11 18:17:24 | 07dfe3e1c129ad5479f75bb07dec8ba7a7a475ec
+
+Merge pull request #751 from android/dlam/paging-fix-scroll
+
+Fix scroll offset in paging sample | 2019-11-07 17:25:17 | 58263b343a795a6061ec72fd84af83527347c0bd
+
+Merge pull request #742 from android/yaml-fix
+
+Fix yaml extension. | 2019-11-01 16:22:43 | b88adef417583371f3fe5a01e28983fe7170036d
+
+Merge pull request #741 from android/fix-live-data-test
+
+fix live data sample test | 2019-10-16 02:51:55 | 19e3329e9e6b83bdfcdf94800aa77174a4755c3e
+
+fix live data sample test
+
+The test was initializing the view model before the Dispatchers.setMain call is
+made which make it try to use real dispatcher rather than the fake one. | 2019-10-15 05:56:07 | fe4d6a696cb79ea25c4cdc395eab9f7d2580dcc3
+
+Merge pull request #733 from jbw0033/patch-2
+
+Call setCustomAnimations() before attach/detach | 2019-09-30 21:35:27 | 48b1c9b1a12fbb9e8acd0ed2525be744d8c76294
+
+Unused variable in test fix | 2019-09-05 09:11:12 | 610c56511aada8029ae445b1a251ea10a84f203c
+
+Adds LiveDataSample (#710)
+
+* LiveData sample
+
+* Removes internal script
+
+* Adds call to super.onActivityResult to fix broken build
+
+* Bumps testing versions and fixes NavBasicSample dependencies
+
+* Fixes testing versions | 2019-08-28 15:57:33 | 4a36ccba9b3fd471b5ca1167da5c0c3d61cdd2c9
+
+Merge pull request #667 from googlesamples/dlam/fix-tests
+
+Fix syntax errors + add androidx.test.core dependency for ApplicationProvider | 2019-07-01 20:12:52 | a857a49738488facd1b6e0ef5c25844512c76594
+
+Merge pull request #651 from jbw0033/patch-1
+
+Do not select same destination after deep link | 2019-06-06 18:22:31 | 919421324064e0dac3b763d2fe0f4b1868f38bb2
+
+Merge pull request #613 from googlesamples/jabubake-patch-1
+
+Add screenshot to README | 2019-04-29 22:34:06 | f7562c627a1655041059266a1c5034424c64211b
+
+Merge pull request #563 from googlesamples/jabubake-patch-1-1
+
+Create README.md | 2019-02-28 23:33:42 | 3cfe49dcf97a8f784f78c69385131c46d0798846
+
+Merge pull request #562 from googlesamples/jabubake-patch-1
+
+Update README.md | 2019-02-28 23:09:03 | 724341ad6f2b45cbd4902b9e7b86a1fca877e6f0
+
+Make avatarUrl optional, fix testContributorClick | 2019-02-15 00:19:23 | 9acce5ead48dc94539d8f897fddc5a64f33f7eab
+
+Merge pull request #553 from dazza5000/patch-2
+
+Update TAG name in ProductListFragment | 2019-02-14 23:02:59 | 96c58ee2b09bbd012eda311673bba2587abf9364
+
+Bumps to AGP321 and fixes lint errors (#511) | 2018-12-05 16:15:07 | ad75814571fb9daa608a642e373d52d6f8697a7d
+
+Merge pull request #459 from dgngulcan/patch-3
+
+typo fix | 2018-11-22 15:26:45 | 3995cdf14b9cd4af7feebc759641dbdd3c8bf06d
+
+Merge pull request #479 from CrystalIFDE/Fix_crash_in_NavigationBasicSample
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-11-05 20:47:34 | b9e889859ad1611dafe984119d4468a4695ae385
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-10-16 09:45:33 | d54abbcf24ce7ad5ad4d6adfb274e148af47143e
+
+Migrate android-arch-components sample apps to the androidx namespace.
+
+Besides refactoring a lot of imports, this PR also makes the following changes:
+
+* Updated to targetSDK 28 and build tools 28.0.3 along with android
+  gradle plugin 3.2.0
+* Updated various compile and and androidTestCompile to their
+  implementation version.
+* Bumped Kotlin version and moved from the jre to the jdk version of
+  the stb libs.
+* Bumped Dagger to 2.16 which contains a fix for projects using the
+  androidx namespace.
+* Bumped Glide to 4.8.0 which also contains a fix for projects using
+  the androidx namespace.
+* Removed dexmaker in favor of mockito-android in some of the sample
+  projects that used it.
+* Added android.useAndroidX=true and android.enableJetifier=true to
+  various gradle.properties in projects that used data binding and/or
+  used libraries that expected the old namespace. | 2018-10-04 23:29:47 | d31d2bb632467051c2fddd3dc493cc480c44ada0
+
+typo fix | 2018-09-16 02:02:19 | 362084f0083cedfdb718e48be54fb4cfd075466d
+
+Update NetworkStateItemViewHolder.kt
+
+fix toVisbility -> toVisibility | 2018-06-11 03:00:26 | 1e70b1518b9793e04a014dfe7601c8aa4c4b4d45
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | ea59732402708c8e7bca3ecc24a7c9ca85736b55
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | 5873c442ebd0cef8f03d98c75b4c929aa31f1b99
+
+Adds admin message to root versions file and fixes gradle wrapper versions | 2018-03-01 16:49:56 | ce6cb4989e5af2e213330bcd0f7c023308f6178f
+
+Removing LifecycleRegistry reference from RepoFragment (#313)
+
+* Removing LifecycleRegistry reference from RepoFragment
+
+* fixing link to readme also
+
+* updating CI config
+
+* Updating circle CI | 2018-02-23 17:26:50 | 1880a208970751678a6f336a1ccfba5becbc03e1
+
+remove unnecessary comma (#263)
+
+* remove unnecessary comma
+
+* fix parameter name | 2018-01-16 13:10:44 | c66512848331a906354b4cd43b163322b6f4ecdd
+
+fix merge conflict
+
+Change-Id: I1a7bf761b2624c918d351c4f157e6745c3f9f540 | 2017-12-08 00:40:59 | 42c4c5a9bdb76cf67acc27d87de93535e9bcb1c7
+
+Merge pull request #212 from laurentyhuel/patch-1
+
+Delete ViewModelSubComponent.java | 2017-10-27 17:35:27 | bf2a123048e848bfc3a6bdfa7e46de2a9ea8cb14
+
+Use single version for all samples (#195)
+
+This CL adds a version file that can be applied to different gradle projects
+so that all can use the same versions and it is easy to test all of them
+after a version bump
+
+* Move basic rx java sample to shared versions
+
+* move to shared tools versions, fix build file
+
+* centralize maven repository urls
+
+* move basic rxjava kotlin sample to versions.gradle
+
+* move paging to the versions gradle file.
+
+Also added an ability to override the arch version in build.gradle file
+since paging does not work with latest version
+
+* remove unnecessary junit dependency
+
+* move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration
+
+* move migration test to versions
+
+I also had to update some migration scripts since new version of room
+enforces nullability
+
+* fix migrations, add docs to versions.gradle
+
+* move basic sample to the shared build file.
+
+The tests were also crashing on older devices so i modified them
+a bit. Not ideal tests but at least pass
+
+* fix target sdk version variable in build files | 2017-10-11 15:41:26 | acdfe580dfa09a368b0f0d26a3f321552be89ee4
+
+fix target sdk version variable in build files | 2017-10-09 20:56:36 | ccf68a8d5e61fdd2a76c5ba9e465fc339b3ec0ee
+
+Adds unit tests and fixes paths | 2017-10-09 17:10:37 | 2a7e583816e53c801b7d494fc076260f34ac27fb
+
+fix migrations, add docs to versions.gradle | 2017-10-09 16:41:12 | 9954b0227ea59eb8ffd7d053fcdbcc2a636f8b8e
+
+move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration | 2017-10-09 01:30:26 | b72f68dcf2105cb7c42945a2a7304fb6b954c6de
+
+move to shared tools versions, fix build file | 2017-10-08 21:18:50 | 07232ab017efc63a217350342ff07ff00284a834
+
+Merge pull request #126 from DougSig/master
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture(). | 2017-08-21 15:40:37 | 2444cddb9e6f7da800a757b2358b7f8cb22a23c2
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations. | 2017-08-14 18:26:51 | e8066003e1d6c4ad07391ea6d541f1a277814cbc
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations that we've been doing in other
+* kotlin samples.
+
+Change-Id: Ic0ec9f359009a0699183707ffe9a9a7e831429da | 2017-08-11 04:09:08 | bd53bba33285a34b9a3e6553502f803ab07cdb5e
+
+Kotlin Readme links fixed | 2017-08-09 14:43:56 | ee81fa1179e8836c2a86339d2e6ddaae1289469e
+
+#112 BasicRxJavaSample issues : data can not be refreshed!
+
+This issue has been fixed by keeping a reference of the last inserted object. | 2017-08-08 19:54:47 | 344b16e45f64ef3ca7db06cbae28b969f7e49d1b
+
+fix test and the code. #56 | 2017-07-10 05:47:07 | ed3fd72a9a61ccad742b08156d780ca1cd42638c
+
+Fixes DiffUtil typo bug
+
+Change-Id: I11b9336ef4b4e06366e57fb6c3bc4f29f0616183 | 2017-06-30 21:06:45 | e64d25eca8e1fa218344e769c4aedfa995002ffd
+
+also add a test w/ a dialog as show in the bug report | 2017-06-25 20:35:04 | 5516a30b6ea752e6ef24693c7e8d00076027fdda
+
+Merge pull request #72 from googlesamples/readme_fix
+
+Typo fix in the main README | 2017-06-23 12:29:36 | 9ba051470ec271f31dcba8cd46365fe310b7f49b
+
+typo fix | 2017-06-23 12:26:58 | 9b2ccf843b6cbc65fc18947b6c331a3f9cf02604
+
+Merge pull request #21 from shanuka/patch-1
+
+Update README.md | 2017-05-24 10:08:39 | 7dbab6e82a54ada26b832357b99183364f063bcc
+
+Merge "Changes to READMEs and small fixes" | 2017-05-16 20:36:52 | 76e947d8155ba7533653594ee24e62cb32f38b1c
+
+Changes to READMEs and small fixes
+
+Change-Id: Iabb76de4c1f977b8d307e51a8b48a69326542c84 | 2017-05-12 12:41:40 | edbde8e00c364bb3eaa5210330804cc79e7f4dd8
+
+More coroutines in repo, fixed tests
+
+This CL needs to be divided, there is a lot of temporary code in it
+right now and some stuff is duplicating. Pushing into the branch to
+divide up later on | 2019-05-14 22:28:33 | eea5177464c3d9f70faa0b3c65fb4689d52e4b99
+
+Move user to build live data (#611)
+
+* move user repository to the coroutine network bound resource
+
+* cleanup the test, clean UserRepo constructor
+
+* fix user dao test to call suspend function
+
+* Add test for unsubscription from db live data
+
+* Move user repository test to robolectric
+
+This allows us to avoid using mockito for DAOs (or write
+a bunch of fake code). We cannot yet use the shared
+architecture but this is a temporary step to cleanup
+these tests.
+
+I'm using a custom build of robolectric which does not
+allow shadowing arch libs. (pending internal CL).
+Public issue: https://github.com/robolectric/robolectric/pull/4897
+
+* test cleanup | 2019-05-14 22:39:20 | 0b079a1e2afbce46f53d10414df81147a495af27
+
+Move AppExecutors to dispatchers
+
+This is first step to enable usage of dispatchers in the codebase | 2019-03-30 02:43:02 | e34737ef5b0b057558cff8f649f0caf3cfbb70a0
+
+Merge pull request #563 from googlesamples/jabubake-patch-1-1
+
+Create README.md | 2019-02-28 23:33:42 | 3cfe49dcf97a8f784f78c69385131c46d0798846
+
+Merge pull request #562 from googlesamples/jabubake-patch-1
+
+Update README.md | 2019-02-28 23:09:03 | 724341ad6f2b45cbd4902b9e7b86a1fca877e6f0
+
+Make avatarUrl optional, fix testContributorClick | 2019-02-15 00:19:23 | 9acce5ead48dc94539d8f897fddc5a64f33f7eab
+
+Merge pull request #553 from dazza5000/patch-2
+
+Update TAG name in ProductListFragment | 2019-02-14 23:02:59 | 96c58ee2b09bbd012eda311673bba2587abf9364
+
+Bumps to AGP321 and fixes lint errors (#511) | 2018-12-05 16:15:07 | ad75814571fb9daa608a642e373d52d6f8697a7d
+
+Merge pull request #459 from dgngulcan/patch-3
+
+typo fix | 2018-11-22 15:26:45 | 3995cdf14b9cd4af7feebc759641dbdd3c8bf06d
+
+Merge pull request #479 from CrystalIFDE/Fix_crash_in_NavigationBasicSample
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-11-05 20:47:34 | b9e889859ad1611dafe984119d4468a4695ae385
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-10-16 09:45:33 | d54abbcf24ce7ad5ad4d6adfb274e148af47143e
+
+Migrate android-arch-components sample apps to the androidx namespace.
+
+Besides refactoring a lot of imports, this PR also makes the following changes:
+
+* Updated to targetSDK 28 and build tools 28.0.3 along with android
+  gradle plugin 3.2.0
+* Updated various compile and and androidTestCompile to their
+  implementation version.
+* Bumped Kotlin version and moved from the jre to the jdk version of
+  the stb libs.
+* Bumped Dagger to 2.16 which contains a fix for projects using the
+  androidx namespace.
+* Bumped Glide to 4.8.0 which also contains a fix for projects using
+  the androidx namespace.
+* Removed dexmaker in favor of mockito-android in some of the sample
+  projects that used it.
+* Added android.useAndroidX=true and android.enableJetifier=true to
+  various gradle.properties in projects that used data binding and/or
+  used libraries that expected the old namespace. | 2018-10-04 23:29:47 | d31d2bb632467051c2fddd3dc493cc480c44ada0
+
+typo fix | 2018-09-16 02:02:19 | 362084f0083cedfdb718e48be54fb4cfd075466d
+
+Update NetworkStateItemViewHolder.kt
+
+fix toVisbility -> toVisibility | 2018-06-11 03:00:26 | 1e70b1518b9793e04a014dfe7601c8aa4c4b4d45
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | ea59732402708c8e7bca3ecc24a7c9ca85736b55
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | 5873c442ebd0cef8f03d98c75b4c929aa31f1b99
+
+Adds admin message to root versions file and fixes gradle wrapper versions | 2018-03-01 16:49:56 | ce6cb4989e5af2e213330bcd0f7c023308f6178f
+
+Removing LifecycleRegistry reference from RepoFragment (#313)
+
+* Removing LifecycleRegistry reference from RepoFragment
+
+* fixing link to readme also
+
+* updating CI config
+
+* Updating circle CI | 2018-02-23 17:26:50 | 1880a208970751678a6f336a1ccfba5becbc03e1
+
+remove unnecessary comma (#263)
+
+* remove unnecessary comma
+
+* fix parameter name | 2018-01-16 13:10:44 | c66512848331a906354b4cd43b163322b6f4ecdd
+
+fix merge conflict
+
+Change-Id: I1a7bf761b2624c918d351c4f157e6745c3f9f540 | 2017-12-08 00:40:59 | 42c4c5a9bdb76cf67acc27d87de93535e9bcb1c7
+
+Merge pull request #212 from laurentyhuel/patch-1
+
+Delete ViewModelSubComponent.java | 2017-10-27 17:35:27 | bf2a123048e848bfc3a6bdfa7e46de2a9ea8cb14
+
+Use single version for all samples (#195)
+
+This CL adds a version file that can be applied to different gradle projects
+so that all can use the same versions and it is easy to test all of them
+after a version bump
+
+* Move basic rx java sample to shared versions
+
+* move to shared tools versions, fix build file
+
+* centralize maven repository urls
+
+* move basic rxjava kotlin sample to versions.gradle
+
+* move paging to the versions gradle file.
+
+Also added an ability to override the arch version in build.gradle file
+since paging does not work with latest version
+
+* remove unnecessary junit dependency
+
+* move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration
+
+* move migration test to versions
+
+I also had to update some migration scripts since new version of room
+enforces nullability
+
+* fix migrations, add docs to versions.gradle
+
+* move basic sample to the shared build file.
+
+The tests were also crashing on older devices so i modified them
+a bit. Not ideal tests but at least pass
+
+* fix target sdk version variable in build files | 2017-10-11 15:41:26 | acdfe580dfa09a368b0f0d26a3f321552be89ee4
+
+fix target sdk version variable in build files | 2017-10-09 20:56:36 | ccf68a8d5e61fdd2a76c5ba9e465fc339b3ec0ee
+
+Adds unit tests and fixes paths | 2017-10-09 17:10:37 | 2a7e583816e53c801b7d494fc076260f34ac27fb
+
+fix migrations, add docs to versions.gradle | 2017-10-09 16:41:12 | 9954b0227ea59eb8ffd7d053fcdbcc2a636f8b8e
+
+move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration | 2017-10-09 01:30:26 | b72f68dcf2105cb7c42945a2a7304fb6b954c6de
+
+move to shared tools versions, fix build file | 2017-10-08 21:18:50 | 07232ab017efc63a217350342ff07ff00284a834
+
+Merge pull request #126 from DougSig/master
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture(). | 2017-08-21 15:40:37 | 2444cddb9e6f7da800a757b2358b7f8cb22a23c2
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations. | 2017-08-14 18:26:51 | e8066003e1d6c4ad07391ea6d541f1a277814cbc
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations that we've been doing in other
+* kotlin samples.
+
+Change-Id: Ic0ec9f359009a0699183707ffe9a9a7e831429da | 2017-08-11 04:09:08 | bd53bba33285a34b9a3e6553502f803ab07cdb5e
+
+Kotlin Readme links fixed | 2017-08-09 14:43:56 | ee81fa1179e8836c2a86339d2e6ddaae1289469e
+
+#112 BasicRxJavaSample issues : data can not be refreshed!
+
+This issue has been fixed by keeping a reference of the last inserted object. | 2017-08-08 19:54:47 | 344b16e45f64ef3ca7db06cbae28b969f7e49d1b
+
+fix test and the code. #56 | 2017-07-10 05:47:07 | ed3fd72a9a61ccad742b08156d780ca1cd42638c
+
+Fixes DiffUtil typo bug
+
+Change-Id: I11b9336ef4b4e06366e57fb6c3bc4f29f0616183 | 2017-06-30 21:06:45 | e64d25eca8e1fa218344e769c4aedfa995002ffd
+
+also add a test w/ a dialog as show in the bug report | 2017-06-25 20:35:04 | 5516a30b6ea752e6ef24693c7e8d00076027fdda
+
+Merge pull request #72 from googlesamples/readme_fix
+
+Typo fix in the main README | 2017-06-23 12:29:36 | 9ba051470ec271f31dcba8cd46365fe310b7f49b
+
+typo fix | 2017-06-23 12:26:58 | 9b2ccf843b6cbc65fc18947b6c331a3f9cf02604
+
+Merge pull request #21 from shanuka/patch-1
+
+Update README.md | 2017-05-24 10:08:39 | 7dbab6e82a54ada26b832357b99183364f063bcc
+
+Merge "Changes to READMEs and small fixes" | 2017-05-16 20:36:52 | 76e947d8155ba7533653594ee24e62cb32f38b1c
+
+Changes to READMEs and small fixes
+
+Change-Id: Iabb76de4c1f977b8d307e51a8b48a69326542c84 | 2017-05-12 12:41:40 | edbde8e00c364bb3eaa5210330804cc79e7f4dd8
+
+More coroutines in repo, fixed tests
+
+This CL needs to be divided, there is a lot of temporary code in it
+right now and some stuff is duplicating. Pushing into the branch to
+divide up later on | 2019-05-14 22:28:33 | adfcfbf291a8ce8827b82eafaf960c941810f965
+
+fix counting executor idle check | 2019-05-16 07:10:34 | 86319f1df7a4bb7c7f07e2305efbe0e47eaeeba3
+
+Cleanup test dispatcher and make idle tracking more robust | 2019-05-15 18:52:34 | 76e551e53a316e6f48988a8584696a25d9b2dde7
+
+Move user to build live data (#611)
+
+* move user repository to the coroutine network bound resource
+
+* cleanup the test, clean UserRepo constructor
+
+* fix user dao test to call suspend function
+
+* Add test for unsubscription from db live data
+
+* Move user repository test to robolectric
+
+This allows us to avoid using mockito for DAOs (or write
+a bunch of fake code). We cannot yet use the shared
+architecture but this is a temporary step to cleanup
+these tests.
+
+I'm using a custom build of robolectric which does not
+allow shadowing arch libs. (pending internal CL).
+Public issue: https://github.com/robolectric/robolectric/pull/4897
+
+* test cleanup | 2019-05-14 22:39:20 | 0b079a1e2afbce46f53d10414df81147a495af27
+
+Move AppExecutors to dispatchers
+
+This is first step to enable usage of dispatchers in the codebase | 2019-03-30 02:43:02 | e34737ef5b0b057558cff8f649f0caf3cfbb70a0
+
+Merge pull request #563 from googlesamples/jabubake-patch-1-1
+
+Create README.md | 2019-02-28 23:33:42 | 3cfe49dcf97a8f784f78c69385131c46d0798846
+
+Merge pull request #562 from googlesamples/jabubake-patch-1
+
+Update README.md | 2019-02-28 23:09:03 | 724341ad6f2b45cbd4902b9e7b86a1fca877e6f0
+
+Make avatarUrl optional, fix testContributorClick | 2019-02-15 00:19:23 | 9acce5ead48dc94539d8f897fddc5a64f33f7eab
+
+Merge pull request #553 from dazza5000/patch-2
+
+Update TAG name in ProductListFragment | 2019-02-14 23:02:59 | 96c58ee2b09bbd012eda311673bba2587abf9364
+
+Bumps to AGP321 and fixes lint errors (#511) | 2018-12-05 16:15:07 | ad75814571fb9daa608a642e373d52d6f8697a7d
+
+Merge pull request #459 from dgngulcan/patch-3
+
+typo fix | 2018-11-22 15:26:45 | 3995cdf14b9cd4af7feebc759641dbdd3c8bf06d
+
+Merge pull request #479 from CrystalIFDE/Fix_crash_in_NavigationBasicSample
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-11-05 20:47:34 | b9e889859ad1611dafe984119d4468a4695ae385
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-10-16 09:45:33 | d54abbcf24ce7ad5ad4d6adfb274e148af47143e
+
+Migrate android-arch-components sample apps to the androidx namespace.
+
+Besides refactoring a lot of imports, this PR also makes the following changes:
+
+* Updated to targetSDK 28 and build tools 28.0.3 along with android
+  gradle plugin 3.2.0
+* Updated various compile and and androidTestCompile to their
+  implementation version.
+* Bumped Kotlin version and moved from the jre to the jdk version of
+  the stb libs.
+* Bumped Dagger to 2.16 which contains a fix for projects using the
+  androidx namespace.
+* Bumped Glide to 4.8.0 which also contains a fix for projects using
+  the androidx namespace.
+* Removed dexmaker in favor of mockito-android in some of the sample
+  projects that used it.
+* Added android.useAndroidX=true and android.enableJetifier=true to
+  various gradle.properties in projects that used data binding and/or
+  used libraries that expected the old namespace. | 2018-10-04 23:29:47 | d31d2bb632467051c2fddd3dc493cc480c44ada0
+
+typo fix | 2018-09-16 02:02:19 | 362084f0083cedfdb718e48be54fb4cfd075466d
+
+Update NetworkStateItemViewHolder.kt
+
+fix toVisbility -> toVisibility | 2018-06-11 03:00:26 | 1e70b1518b9793e04a014dfe7601c8aa4c4b4d45
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | ea59732402708c8e7bca3ecc24a7c9ca85736b55
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | 5873c442ebd0cef8f03d98c75b4c929aa31f1b99
+
+Adds admin message to root versions file and fixes gradle wrapper versions | 2018-03-01 16:49:56 | ce6cb4989e5af2e213330bcd0f7c023308f6178f
+
+Removing LifecycleRegistry reference from RepoFragment (#313)
+
+* Removing LifecycleRegistry reference from RepoFragment
+
+* fixing link to readme also
+
+* updating CI config
+
+* Updating circle CI | 2018-02-23 17:26:50 | 1880a208970751678a6f336a1ccfba5becbc03e1
+
+remove unnecessary comma (#263)
+
+* remove unnecessary comma
+
+* fix parameter name | 2018-01-16 13:10:44 | c66512848331a906354b4cd43b163322b6f4ecdd
+
+fix merge conflict
+
+Change-Id: I1a7bf761b2624c918d351c4f157e6745c3f9f540 | 2017-12-08 00:40:59 | 42c4c5a9bdb76cf67acc27d87de93535e9bcb1c7
+
+Merge pull request #212 from laurentyhuel/patch-1
+
+Delete ViewModelSubComponent.java | 2017-10-27 17:35:27 | bf2a123048e848bfc3a6bdfa7e46de2a9ea8cb14
+
+Use single version for all samples (#195)
+
+This CL adds a version file that can be applied to different gradle projects
+so that all can use the same versions and it is easy to test all of them
+after a version bump
+
+* Move basic rx java sample to shared versions
+
+* move to shared tools versions, fix build file
+
+* centralize maven repository urls
+
+* move basic rxjava kotlin sample to versions.gradle
+
+* move paging to the versions gradle file.
+
+Also added an ability to override the arch version in build.gradle file
+since paging does not work with latest version
+
+* remove unnecessary junit dependency
+
+* move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration
+
+* move migration test to versions
+
+I also had to update some migration scripts since new version of room
+enforces nullability
+
+* fix migrations, add docs to versions.gradle
+
+* move basic sample to the shared build file.
+
+The tests were also crashing on older devices so i modified them
+a bit. Not ideal tests but at least pass
+
+* fix target sdk version variable in build files | 2017-10-11 15:41:26 | acdfe580dfa09a368b0f0d26a3f321552be89ee4
+
+fix target sdk version variable in build files | 2017-10-09 20:56:36 | ccf68a8d5e61fdd2a76c5ba9e465fc339b3ec0ee
+
+Adds unit tests and fixes paths | 2017-10-09 17:10:37 | 2a7e583816e53c801b7d494fc076260f34ac27fb
+
+fix migrations, add docs to versions.gradle | 2017-10-09 16:41:12 | 9954b0227ea59eb8ffd7d053fcdbcc2a636f8b8e
+
+move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration | 2017-10-09 01:30:26 | b72f68dcf2105cb7c42945a2a7304fb6b954c6de
+
+move to shared tools versions, fix build file | 2017-10-08 21:18:50 | 07232ab017efc63a217350342ff07ff00284a834
+
+Merge pull request #126 from DougSig/master
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture(). | 2017-08-21 15:40:37 | 2444cddb9e6f7da800a757b2358b7f8cb22a23c2
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations. | 2017-08-14 18:26:51 | e8066003e1d6c4ad07391ea6d541f1a277814cbc
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations that we've been doing in other
+* kotlin samples.
+
+Change-Id: Ic0ec9f359009a0699183707ffe9a9a7e831429da | 2017-08-11 04:09:08 | bd53bba33285a34b9a3e6553502f803ab07cdb5e
+
+Kotlin Readme links fixed | 2017-08-09 14:43:56 | ee81fa1179e8836c2a86339d2e6ddaae1289469e
+
+#112 BasicRxJavaSample issues : data can not be refreshed!
+
+This issue has been fixed by keeping a reference of the last inserted object. | 2017-08-08 19:54:47 | 344b16e45f64ef3ca7db06cbae28b969f7e49d1b
+
+fix test and the code. #56 | 2017-07-10 05:47:07 | ed3fd72a9a61ccad742b08156d780ca1cd42638c
+
+Fixes DiffUtil typo bug
+
+Change-Id: I11b9336ef4b4e06366e57fb6c3bc4f29f0616183 | 2017-06-30 21:06:45 | e64d25eca8e1fa218344e769c4aedfa995002ffd
+
+also add a test w/ a dialog as show in the bug report | 2017-06-25 20:35:04 | 5516a30b6ea752e6ef24693c7e8d00076027fdda
+
+Merge pull request #72 from googlesamples/readme_fix
+
+Typo fix in the main README | 2017-06-23 12:29:36 | 9ba051470ec271f31dcba8cd46365fe310b7f49b
+
+typo fix | 2017-06-23 12:26:58 | 9b2ccf843b6cbc65fc18947b6c331a3f9cf02604
+
+Merge pull request #21 from shanuka/patch-1
+
+Update README.md | 2017-05-24 10:08:39 | 7dbab6e82a54ada26b832357b99183364f063bcc
+
+Merge "Changes to READMEs and small fixes" | 2017-05-16 20:36:52 | 76e947d8155ba7533653594ee24e62cb32f38b1c
+
+Changes to READMEs and small fixes
+
+Change-Id: Iabb76de4c1f977b8d307e51a8b48a69326542c84 | 2017-05-12 12:41:40 | edbde8e00c364bb3eaa5210330804cc79e7f4dd8
+
+fix user dao test to call suspend function | 2019-04-04 23:05:50 | 608869dfbbf5040d7ef8792333cfb9a6905cf793
+
+Move AppExecutors to dispatchers
+
+This is first step to enable usage of dispatchers in the codebase | 2019-03-30 02:43:02 | 5ce661383db492f583e9bf3d26d7708d24b494d2
+
+Merge pull request #563 from googlesamples/jabubake-patch-1-1
+
+Create README.md | 2019-02-28 23:33:42 | 3cfe49dcf97a8f784f78c69385131c46d0798846
+
+Merge pull request #562 from googlesamples/jabubake-patch-1
+
+Update README.md | 2019-02-28 23:09:03 | 724341ad6f2b45cbd4902b9e7b86a1fca877e6f0
+
+Make avatarUrl optional, fix testContributorClick | 2019-02-15 00:19:23 | 9acce5ead48dc94539d8f897fddc5a64f33f7eab
+
+Merge pull request #553 from dazza5000/patch-2
+
+Update TAG name in ProductListFragment | 2019-02-14 23:02:59 | 96c58ee2b09bbd012eda311673bba2587abf9364
+
+Bumps to AGP321 and fixes lint errors (#511) | 2018-12-05 16:15:07 | ad75814571fb9daa608a642e373d52d6f8697a7d
+
+Merge pull request #459 from dgngulcan/patch-3
+
+typo fix | 2018-11-22 15:26:45 | 3995cdf14b9cd4af7feebc759641dbdd3c8bf06d
+
+Merge pull request #479 from CrystalIFDE/Fix_crash_in_NavigationBasicSample
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-11-05 20:47:34 | b9e889859ad1611dafe984119d4468a4695ae385
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-10-16 09:45:33 | d54abbcf24ce7ad5ad4d6adfb274e148af47143e
+
+Migrate android-arch-components sample apps to the androidx namespace.
+
+Besides refactoring a lot of imports, this PR also makes the following changes:
+
+* Updated to targetSDK 28 and build tools 28.0.3 along with android
+  gradle plugin 3.2.0
+* Updated various compile and and androidTestCompile to their
+  implementation version.
+* Bumped Kotlin version and moved from the jre to the jdk version of
+  the stb libs.
+* Bumped Dagger to 2.16 which contains a fix for projects using the
+  androidx namespace.
+* Bumped Glide to 4.8.0 which also contains a fix for projects using
+  the androidx namespace.
+* Removed dexmaker in favor of mockito-android in some of the sample
+  projects that used it.
+* Added android.useAndroidX=true and android.enableJetifier=true to
+  various gradle.properties in projects that used data binding and/or
+  used libraries that expected the old namespace. | 2018-10-04 23:29:47 | d31d2bb632467051c2fddd3dc493cc480c44ada0
+
+typo fix | 2018-09-16 02:02:19 | 362084f0083cedfdb718e48be54fb4cfd075466d
+
+Update NetworkStateItemViewHolder.kt
+
+fix toVisbility -> toVisibility | 2018-06-11 03:00:26 | 1e70b1518b9793e04a014dfe7601c8aa4c4b4d45
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | ea59732402708c8e7bca3ecc24a7c9ca85736b55
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | 5873c442ebd0cef8f03d98c75b4c929aa31f1b99
+
+Adds admin message to root versions file and fixes gradle wrapper versions | 2018-03-01 16:49:56 | ce6cb4989e5af2e213330bcd0f7c023308f6178f
+
+Removing LifecycleRegistry reference from RepoFragment (#313)
+
+* Removing LifecycleRegistry reference from RepoFragment
+
+* fixing link to readme also
+
+* updating CI config
+
+* Updating circle CI | 2018-02-23 17:26:50 | 1880a208970751678a6f336a1ccfba5becbc03e1
+
+remove unnecessary comma (#263)
+
+* remove unnecessary comma
+
+* fix parameter name | 2018-01-16 13:10:44 | c66512848331a906354b4cd43b163322b6f4ecdd
+
+fix merge conflict
+
+Change-Id: I1a7bf761b2624c918d351c4f157e6745c3f9f540 | 2017-12-08 00:40:59 | 42c4c5a9bdb76cf67acc27d87de93535e9bcb1c7
+
+Merge pull request #212 from laurentyhuel/patch-1
+
+Delete ViewModelSubComponent.java | 2017-10-27 17:35:27 | bf2a123048e848bfc3a6bdfa7e46de2a9ea8cb14
+
+Use single version for all samples (#195)
+
+This CL adds a version file that can be applied to different gradle projects
+so that all can use the same versions and it is easy to test all of them
+after a version bump
+
+* Move basic rx java sample to shared versions
+
+* move to shared tools versions, fix build file
+
+* centralize maven repository urls
+
+* move basic rxjava kotlin sample to versions.gradle
+
+* move paging to the versions gradle file.
+
+Also added an ability to override the arch version in build.gradle file
+since paging does not work with latest version
+
+* remove unnecessary junit dependency
+
+* move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration
+
+* move migration test to versions
+
+I also had to update some migration scripts since new version of room
+enforces nullability
+
+* fix migrations, add docs to versions.gradle
+
+* move basic sample to the shared build file.
+
+The tests were also crashing on older devices so i modified them
+a bit. Not ideal tests but at least pass
+
+* fix target sdk version variable in build files | 2017-10-11 15:41:26 | acdfe580dfa09a368b0f0d26a3f321552be89ee4
+
+fix target sdk version variable in build files | 2017-10-09 20:56:36 | ccf68a8d5e61fdd2a76c5ba9e465fc339b3ec0ee
+
+Adds unit tests and fixes paths | 2017-10-09 17:10:37 | 2a7e583816e53c801b7d494fc076260f34ac27fb
+
+fix migrations, add docs to versions.gradle | 2017-10-09 16:41:12 | 9954b0227ea59eb8ffd7d053fcdbcc2a636f8b8e
+
+move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration | 2017-10-09 01:30:26 | b72f68dcf2105cb7c42945a2a7304fb6b954c6de
+
+move to shared tools versions, fix build file | 2017-10-08 21:18:50 | 07232ab017efc63a217350342ff07ff00284a834
+
+Merge pull request #126 from DougSig/master
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture(). | 2017-08-21 15:40:37 | 2444cddb9e6f7da800a757b2358b7f8cb22a23c2
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations. | 2017-08-14 18:26:51 | e8066003e1d6c4ad07391ea6d541f1a277814cbc
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations that we've been doing in other
+* kotlin samples.
+
+Change-Id: Ic0ec9f359009a0699183707ffe9a9a7e831429da | 2017-08-11 04:09:08 | bd53bba33285a34b9a3e6553502f803ab07cdb5e
+
+Kotlin Readme links fixed | 2017-08-09 14:43:56 | ee81fa1179e8836c2a86339d2e6ddaae1289469e
+
+#112 BasicRxJavaSample issues : data can not be refreshed!
+
+This issue has been fixed by keeping a reference of the last inserted object. | 2017-08-08 19:54:47 | 344b16e45f64ef3ca7db06cbae28b969f7e49d1b
+
+fix test and the code. #56 | 2017-07-10 05:47:07 | ed3fd72a9a61ccad742b08156d780ca1cd42638c
+
+Fixes DiffUtil typo bug
+
+Change-Id: I11b9336ef4b4e06366e57fb6c3bc4f29f0616183 | 2017-06-30 21:06:45 | e64d25eca8e1fa218344e769c4aedfa995002ffd
+
+also add a test w/ a dialog as show in the bug report | 2017-06-25 20:35:04 | 5516a30b6ea752e6ef24693c7e8d00076027fdda
+
+Merge pull request #72 from googlesamples/readme_fix
+
+Typo fix in the main README | 2017-06-23 12:29:36 | 9ba051470ec271f31dcba8cd46365fe310b7f49b
+
+typo fix | 2017-06-23 12:26:58 | 9b2ccf843b6cbc65fc18947b6c331a3f9cf02604
+
+Merge pull request #21 from shanuka/patch-1
+
+Update README.md | 2017-05-24 10:08:39 | 7dbab6e82a54ada26b832357b99183364f063bcc
+
+Merge "Changes to READMEs and small fixes" | 2017-05-16 20:36:52 | 76e947d8155ba7533653594ee24e62cb32f38b1c
+
+Changes to READMEs and small fixes
+
+Change-Id: Iabb76de4c1f977b8d307e51a8b48a69326542c84 | 2017-05-12 12:41:40 | edbde8e00c364bb3eaa5210330804cc79e7f4dd8
+
+Review fixes
+
+Renamed triggerAllActions to advanceUntilIdle
+Moved idle check to snapshot
+Got rid of activeCount in CountingExecutor | 2019-05-28 15:18:40 | 82587f8ef19b81cbabe8a18e01af3ab804fc69a0
+
+fix counting executor idle check | 2019-05-16 07:10:34 | 86319f1df7a4bb7c7f07e2305efbe0e47eaeeba3
+
+Cleanup test dispatcher and make idle tracking more robust | 2019-05-15 18:52:34 | 76e551e53a316e6f48988a8584696a25d9b2dde7
+
+Move user to build live data (#611)
+
+* move user repository to the coroutine network bound resource
+
+* cleanup the test, clean UserRepo constructor
+
+* fix user dao test to call suspend function
+
+* Add test for unsubscription from db live data
+
+* Move user repository test to robolectric
+
+This allows us to avoid using mockito for DAOs (or write
+a bunch of fake code). We cannot yet use the shared
+architecture but this is a temporary step to cleanup
+these tests.
+
+I'm using a custom build of robolectric which does not
+allow shadowing arch libs. (pending internal CL).
+Public issue: https://github.com/robolectric/robolectric/pull/4897
+
+* test cleanup | 2019-05-14 22:39:20 | 0b079a1e2afbce46f53d10414df81147a495af27
+
+Move AppExecutors to dispatchers
+
+This is first step to enable usage of dispatchers in the codebase | 2019-03-30 02:43:02 | e34737ef5b0b057558cff8f649f0caf3cfbb70a0
+
+Merge pull request #563 from googlesamples/jabubake-patch-1-1
+
+Create README.md | 2019-02-28 23:33:42 | 3cfe49dcf97a8f784f78c69385131c46d0798846
+
+Merge pull request #562 from googlesamples/jabubake-patch-1
+
+Update README.md | 2019-02-28 23:09:03 | 724341ad6f2b45cbd4902b9e7b86a1fca877e6f0
+
+Make avatarUrl optional, fix testContributorClick | 2019-02-15 00:19:23 | 9acce5ead48dc94539d8f897fddc5a64f33f7eab
+
+Merge pull request #553 from dazza5000/patch-2
+
+Update TAG name in ProductListFragment | 2019-02-14 23:02:59 | 96c58ee2b09bbd012eda311673bba2587abf9364
+
+Bumps to AGP321 and fixes lint errors (#511) | 2018-12-05 16:15:07 | ad75814571fb9daa608a642e373d52d6f8697a7d
+
+Merge pull request #459 from dgngulcan/patch-3
+
+typo fix | 2018-11-22 15:26:45 | 3995cdf14b9cd4af7feebc759641dbdd3c8bf06d
+
+Merge pull request #479 from CrystalIFDE/Fix_crash_in_NavigationBasicSample
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-11-05 20:47:34 | b9e889859ad1611dafe984119d4468a4695ae385
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-10-16 09:45:33 | d54abbcf24ce7ad5ad4d6adfb274e148af47143e
+
+Migrate android-arch-components sample apps to the androidx namespace.
+
+Besides refactoring a lot of imports, this PR also makes the following changes:
+
+* Updated to targetSDK 28 and build tools 28.0.3 along with android
+  gradle plugin 3.2.0
+* Updated various compile and and androidTestCompile to their
+  implementation version.
+* Bumped Kotlin version and moved from the jre to the jdk version of
+  the stb libs.
+* Bumped Dagger to 2.16 which contains a fix for projects using the
+  androidx namespace.
+* Bumped Glide to 4.8.0 which also contains a fix for projects using
+  the androidx namespace.
+* Removed dexmaker in favor of mockito-android in some of the sample
+  projects that used it.
+* Added android.useAndroidX=true and android.enableJetifier=true to
+  various gradle.properties in projects that used data binding and/or
+  used libraries that expected the old namespace. | 2018-10-04 23:29:47 | d31d2bb632467051c2fddd3dc493cc480c44ada0
+
+typo fix | 2018-09-16 02:02:19 | 362084f0083cedfdb718e48be54fb4cfd075466d
+
+Update NetworkStateItemViewHolder.kt
+
+fix toVisbility -> toVisibility | 2018-06-11 03:00:26 | 1e70b1518b9793e04a014dfe7601c8aa4c4b4d45
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | ea59732402708c8e7bca3ecc24a7c9ca85736b55
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | 5873c442ebd0cef8f03d98c75b4c929aa31f1b99
+
+Adds admin message to root versions file and fixes gradle wrapper versions | 2018-03-01 16:49:56 | ce6cb4989e5af2e213330bcd0f7c023308f6178f
+
+Removing LifecycleRegistry reference from RepoFragment (#313)
+
+* Removing LifecycleRegistry reference from RepoFragment
+
+* fixing link to readme also
+
+* updating CI config
+
+* Updating circle CI | 2018-02-23 17:26:50 | 1880a208970751678a6f336a1ccfba5becbc03e1
+
+remove unnecessary comma (#263)
+
+* remove unnecessary comma
+
+* fix parameter name | 2018-01-16 13:10:44 | c66512848331a906354b4cd43b163322b6f4ecdd
+
+fix merge conflict
+
+Change-Id: I1a7bf761b2624c918d351c4f157e6745c3f9f540 | 2017-12-08 00:40:59 | 42c4c5a9bdb76cf67acc27d87de93535e9bcb1c7
+
+Merge pull request #212 from laurentyhuel/patch-1
+
+Delete ViewModelSubComponent.java | 2017-10-27 17:35:27 | bf2a123048e848bfc3a6bdfa7e46de2a9ea8cb14
+
+Use single version for all samples (#195)
+
+This CL adds a version file that can be applied to different gradle projects
+so that all can use the same versions and it is easy to test all of them
+after a version bump
+
+* Move basic rx java sample to shared versions
+
+* move to shared tools versions, fix build file
+
+* centralize maven repository urls
+
+* move basic rxjava kotlin sample to versions.gradle
+
+* move paging to the versions gradle file.
+
+Also added an ability to override the arch version in build.gradle file
+since paging does not work with latest version
+
+* remove unnecessary junit dependency
+
+* move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration
+
+* move migration test to versions
+
+I also had to update some migration scripts since new version of room
+enforces nullability
+
+* fix migrations, add docs to versions.gradle
+
+* move basic sample to the shared build file.
+
+The tests were also crashing on older devices so i modified them
+a bit. Not ideal tests but at least pass
+
+* fix target sdk version variable in build files | 2017-10-11 15:41:26 | acdfe580dfa09a368b0f0d26a3f321552be89ee4
+
+fix target sdk version variable in build files | 2017-10-09 20:56:36 | ccf68a8d5e61fdd2a76c5ba9e465fc339b3ec0ee
+
+Adds unit tests and fixes paths | 2017-10-09 17:10:37 | 2a7e583816e53c801b7d494fc076260f34ac27fb
+
+fix migrations, add docs to versions.gradle | 2017-10-09 16:41:12 | 9954b0227ea59eb8ffd7d053fcdbcc2a636f8b8e
+
+move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration | 2017-10-09 01:30:26 | b72f68dcf2105cb7c42945a2a7304fb6b954c6de
+
+move to shared tools versions, fix build file | 2017-10-08 21:18:50 | 07232ab017efc63a217350342ff07ff00284a834
+
+Merge pull request #126 from DougSig/master
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture(). | 2017-08-21 15:40:37 | 2444cddb9e6f7da800a757b2358b7f8cb22a23c2
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations. | 2017-08-14 18:26:51 | e8066003e1d6c4ad07391ea6d541f1a277814cbc
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations that we've been doing in other
+* kotlin samples.
+
+Change-Id: Ic0ec9f359009a0699183707ffe9a9a7e831429da | 2017-08-11 04:09:08 | bd53bba33285a34b9a3e6553502f803ab07cdb5e
+
+Kotlin Readme links fixed | 2017-08-09 14:43:56 | ee81fa1179e8836c2a86339d2e6ddaae1289469e
+
+#112 BasicRxJavaSample issues : data can not be refreshed!
+
+This issue has been fixed by keeping a reference of the last inserted object. | 2017-08-08 19:54:47 | 344b16e45f64ef3ca7db06cbae28b969f7e49d1b
+
+fix test and the code. #56 | 2017-07-10 05:47:07 | ed3fd72a9a61ccad742b08156d780ca1cd42638c
+
+Fixes DiffUtil typo bug
+
+Change-Id: I11b9336ef4b4e06366e57fb6c3bc4f29f0616183 | 2017-06-30 21:06:45 | e64d25eca8e1fa218344e769c4aedfa995002ffd
+
+also add a test w/ a dialog as show in the bug report | 2017-06-25 20:35:04 | 5516a30b6ea752e6ef24693c7e8d00076027fdda
+
+Merge pull request #72 from googlesamples/readme_fix
+
+Typo fix in the main README | 2017-06-23 12:29:36 | 9ba051470ec271f31dcba8cd46365fe310b7f49b
+
+typo fix | 2017-06-23 12:26:58 | 9b2ccf843b6cbc65fc18947b6c331a3f9cf02604
+
+Merge pull request #21 from shanuka/patch-1
+
+Update README.md | 2017-05-24 10:08:39 | 7dbab6e82a54ada26b832357b99183364f063bcc
+
+Merge "Changes to READMEs and small fixes" | 2017-05-16 20:36:52 | 76e947d8155ba7533653594ee24e62cb32f38b1c
+
+Changes to READMEs and small fixes
+
+Change-Id: Iabb76de4c1f977b8d307e51a8b48a69326542c84 | 2017-05-12 12:41:40 | edbde8e00c364bb3eaa5210330804cc79e7f4dd8
+
+Use FragmentScenario for GithubBrowserSample UI tests
+
+Replaces usages of `ActivityTestRule` with `FragmentScenario`. In the process, modernize the `DataBindingIdlingResource` by having it rely on `FragmentScenario` and fix #655 and have it look at all views within the Fragment's view hierarchy.
+
+Also rewrote EspressoTestUtil from an object to an extension method on `Fragment`.
+
+Test: ./run_all_tests.sh | 2020-02-17 00:57:16 | 1d7a759f742e8bdaf1eb4531e38ea9270301c577
+
+Merge pull request #413 from camsteffen/patch-1
+
+Unnecessary try/catch? | 2020-01-27 06:26:25 | 3283b6bbc6c9d62a616f058cdf0225185a5a69d1
+
+Merge pull request #554 from dazza5000/patch-3
+
+Update UserActivity.java | 2020-01-09 00:42:19 | f833efcb363cfa280a9d89b874852a8eb1978786
+
+Merge pull request #679 from egek92/patch-2
+
+more efficient way of sorting repos | 2020-01-09 00:36:49 | 1ac3100b404ae0e3e3ee00dc363f668376e4991f
+
+Merge pull request #713 from hegazy/fix/unused_var
+
+Minor fix for unused variable in test | 2019-12-11 18:17:24 | 07dfe3e1c129ad5479f75bb07dec8ba7a7a475ec
+
+Merge pull request #751 from android/dlam/paging-fix-scroll
+
+Fix scroll offset in paging sample | 2019-11-07 17:25:17 | 58263b343a795a6061ec72fd84af83527347c0bd
+
+Merge pull request #742 from android/yaml-fix
+
+Fix yaml extension. | 2019-11-01 16:22:43 | b88adef417583371f3fe5a01e28983fe7170036d
+
+Merge pull request #741 from android/fix-live-data-test
+
+fix live data sample test | 2019-10-16 02:51:55 | 19e3329e9e6b83bdfcdf94800aa77174a4755c3e
+
+fix live data sample test
+
+The test was initializing the view model before the Dispatchers.setMain call is
+made which make it try to use real dispatcher rather than the fake one. | 2019-10-15 05:56:07 | fe4d6a696cb79ea25c4cdc395eab9f7d2580dcc3
+
+Merge pull request #733 from jbw0033/patch-2
+
+Call setCustomAnimations() before attach/detach | 2019-09-30 21:35:27 | 48b1c9b1a12fbb9e8acd0ed2525be744d8c76294
+
+Unused variable in test fix | 2019-09-05 09:11:12 | 610c56511aada8029ae445b1a251ea10a84f203c
+
+Adds LiveDataSample (#710)
+
+* LiveData sample
+
+* Removes internal script
+
+* Adds call to super.onActivityResult to fix broken build
+
+* Bumps testing versions and fixes NavBasicSample dependencies
+
+* Fixes testing versions | 2019-08-28 15:57:33 | 4a36ccba9b3fd471b5ca1167da5c0c3d61cdd2c9
+
+Merge pull request #667 from googlesamples/dlam/fix-tests
+
+Fix syntax errors + add androidx.test.core dependency for ApplicationProvider | 2019-07-01 20:12:52 | a857a49738488facd1b6e0ef5c25844512c76594
+
+Merge pull request #651 from jbw0033/patch-1
+
+Do not select same destination after deep link | 2019-06-06 18:22:31 | 919421324064e0dac3b763d2fe0f4b1868f38bb2
+
+Merge pull request #613 from googlesamples/jabubake-patch-1
+
+Add screenshot to README | 2019-04-29 22:34:06 | f7562c627a1655041059266a1c5034424c64211b
+
+Merge pull request #563 from googlesamples/jabubake-patch-1-1
+
+Create README.md | 2019-02-28 23:33:42 | 3cfe49dcf97a8f784f78c69385131c46d0798846
+
+Merge pull request #562 from googlesamples/jabubake-patch-1
+
+Update README.md | 2019-02-28 23:09:03 | 724341ad6f2b45cbd4902b9e7b86a1fca877e6f0
+
+Make avatarUrl optional, fix testContributorClick | 2019-02-15 00:19:23 | 9acce5ead48dc94539d8f897fddc5a64f33f7eab
+
+Merge pull request #553 from dazza5000/patch-2
+
+Update TAG name in ProductListFragment | 2019-02-14 23:02:59 | 96c58ee2b09bbd012eda311673bba2587abf9364
+
+Bumps to AGP321 and fixes lint errors (#511) | 2018-12-05 16:15:07 | ad75814571fb9daa608a642e373d52d6f8697a7d
+
+Merge pull request #459 from dgngulcan/patch-3
+
+typo fix | 2018-11-22 15:26:45 | 3995cdf14b9cd4af7feebc759641dbdd3c8bf06d
+
+Merge pull request #479 from CrystalIFDE/Fix_crash_in_NavigationBasicSample
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-11-05 20:47:34 | b9e889859ad1611dafe984119d4468a4695ae385
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-10-16 09:45:33 | d54abbcf24ce7ad5ad4d6adfb274e148af47143e
+
+Migrate android-arch-components sample apps to the androidx namespace.
+
+Besides refactoring a lot of imports, this PR also makes the following changes:
+
+* Updated to targetSDK 28 and build tools 28.0.3 along with android
+  gradle plugin 3.2.0
+* Updated various compile and and androidTestCompile to their
+  implementation version.
+* Bumped Kotlin version and moved from the jre to the jdk version of
+  the stb libs.
+* Bumped Dagger to 2.16 which contains a fix for projects using the
+  androidx namespace.
+* Bumped Glide to 4.8.0 which also contains a fix for projects using
+  the androidx namespace.
+* Removed dexmaker in favor of mockito-android in some of the sample
+  projects that used it.
+* Added android.useAndroidX=true and android.enableJetifier=true to
+  various gradle.properties in projects that used data binding and/or
+  used libraries that expected the old namespace. | 2018-10-04 23:29:47 | d31d2bb632467051c2fddd3dc493cc480c44ada0
+
+typo fix | 2018-09-16 02:02:19 | 362084f0083cedfdb718e48be54fb4cfd075466d
+
+Update NetworkStateItemViewHolder.kt
+
+fix toVisbility -> toVisibility | 2018-06-11 03:00:26 | 1e70b1518b9793e04a014dfe7601c8aa4c4b4d45
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | ea59732402708c8e7bca3ecc24a7c9ca85736b55
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | 5873c442ebd0cef8f03d98c75b4c929aa31f1b99
+
+Adds admin message to root versions file and fixes gradle wrapper versions | 2018-03-01 16:49:56 | ce6cb4989e5af2e213330bcd0f7c023308f6178f
+
+Removing LifecycleRegistry reference from RepoFragment (#313)
+
+* Removing LifecycleRegistry reference from RepoFragment
+
+* fixing link to readme also
+
+* updating CI config
+
+* Updating circle CI | 2018-02-23 17:26:50 | 1880a208970751678a6f336a1ccfba5becbc03e1
+
+remove unnecessary comma (#263)
+
+* remove unnecessary comma
+
+* fix parameter name | 2018-01-16 13:10:44 | c66512848331a906354b4cd43b163322b6f4ecdd
+
+fix merge conflict
+
+Change-Id: I1a7bf761b2624c918d351c4f157e6745c3f9f540 | 2017-12-08 00:40:59 | 42c4c5a9bdb76cf67acc27d87de93535e9bcb1c7
+
+Merge pull request #212 from laurentyhuel/patch-1
+
+Delete ViewModelSubComponent.java | 2017-10-27 17:35:27 | bf2a123048e848bfc3a6bdfa7e46de2a9ea8cb14
+
+Use single version for all samples (#195)
+
+This CL adds a version file that can be applied to different gradle projects
+so that all can use the same versions and it is easy to test all of them
+after a version bump
+
+* Move basic rx java sample to shared versions
+
+* move to shared tools versions, fix build file
+
+* centralize maven repository urls
+
+* move basic rxjava kotlin sample to versions.gradle
+
+* move paging to the versions gradle file.
+
+Also added an ability to override the arch version in build.gradle file
+since paging does not work with latest version
+
+* remove unnecessary junit dependency
+
+* move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration
+
+* move migration test to versions
+
+I also had to update some migration scripts since new version of room
+enforces nullability
+
+* fix migrations, add docs to versions.gradle
+
+* move basic sample to the shared build file.
+
+The tests were also crashing on older devices so i modified them
+a bit. Not ideal tests but at least pass
+
+* fix target sdk version variable in build files | 2017-10-11 15:41:26 | acdfe580dfa09a368b0f0d26a3f321552be89ee4
+
+fix target sdk version variable in build files | 2017-10-09 20:56:36 | ccf68a8d5e61fdd2a76c5ba9e465fc339b3ec0ee
+
+Adds unit tests and fixes paths | 2017-10-09 17:10:37 | 2a7e583816e53c801b7d494fc076260f34ac27fb
+
+fix migrations, add docs to versions.gradle | 2017-10-09 16:41:12 | 9954b0227ea59eb8ffd7d053fcdbcc2a636f8b8e
+
+move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration | 2017-10-09 01:30:26 | b72f68dcf2105cb7c42945a2a7304fb6b954c6de
+
+move to shared tools versions, fix build file | 2017-10-08 21:18:50 | 07232ab017efc63a217350342ff07ff00284a834
+
+Merge pull request #126 from DougSig/master
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture(). | 2017-08-21 15:40:37 | 2444cddb9e6f7da800a757b2358b7f8cb22a23c2
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations. | 2017-08-14 18:26:51 | e8066003e1d6c4ad07391ea6d541f1a277814cbc
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations that we've been doing in other
+* kotlin samples.
+
+Change-Id: Ic0ec9f359009a0699183707ffe9a9a7e831429da | 2017-08-11 04:09:08 | bd53bba33285a34b9a3e6553502f803ab07cdb5e
+
+Kotlin Readme links fixed | 2017-08-09 14:43:56 | ee81fa1179e8836c2a86339d2e6ddaae1289469e
+
+#112 BasicRxJavaSample issues : data can not be refreshed!
+
+This issue has been fixed by keeping a reference of the last inserted object. | 2017-08-08 19:54:47 | 344b16e45f64ef3ca7db06cbae28b969f7e49d1b
+
+fix test and the code. #56 | 2017-07-10 05:47:07 | ed3fd72a9a61ccad742b08156d780ca1cd42638c
+
+Fixes DiffUtil typo bug
+
+Change-Id: I11b9336ef4b4e06366e57fb6c3bc4f29f0616183 | 2017-06-30 21:06:45 | e64d25eca8e1fa218344e769c4aedfa995002ffd
+
+also add a test w/ a dialog as show in the bug report | 2017-06-25 20:35:04 | 5516a30b6ea752e6ef24693c7e8d00076027fdda
+
+Merge pull request #72 from googlesamples/readme_fix
+
+Typo fix in the main README | 2017-06-23 12:29:36 | 9ba051470ec271f31dcba8cd46365fe310b7f49b
+
+typo fix | 2017-06-23 12:26:58 | 9b2ccf843b6cbc65fc18947b6c331a3f9cf02604
+
+Merge pull request #21 from shanuka/patch-1
+
+Update README.md | 2017-05-24 10:08:39 | 7dbab6e82a54ada26b832357b99183364f063bcc
+
+Merge "Changes to READMEs and small fixes" | 2017-05-16 20:36:52 | 76e947d8155ba7533653594ee24e62cb32f38b1c
+
+Changes to READMEs and small fixes
+
+Change-Id: Iabb76de4c1f977b8d307e51a8b48a69326542c84 | 2017-05-12 12:41:40 | edbde8e00c364bb3eaa5210330804cc79e7f4dd8
+
+Merge pull request #563 from googlesamples/jabubake-patch-1-1
+
+Create README.md | 2019-02-28 23:33:42 | 3cfe49dcf97a8f784f78c69385131c46d0798846
+
+Merge pull request #562 from googlesamples/jabubake-patch-1
+
+Update README.md | 2019-02-28 23:09:03 | 724341ad6f2b45cbd4902b9e7b86a1fca877e6f0
+
+Make avatarUrl optional, fix testContributorClick | 2019-02-15 00:19:23 | 9acce5ead48dc94539d8f897fddc5a64f33f7eab
+
+Merge pull request #553 from dazza5000/patch-2
+
+Update TAG name in ProductListFragment | 2019-02-14 23:02:59 | 96c58ee2b09bbd012eda311673bba2587abf9364
+
+Bumps to AGP321 and fixes lint errors (#511) | 2018-12-05 16:15:07 | ad75814571fb9daa608a642e373d52d6f8697a7d
+
+Merge pull request #459 from dgngulcan/patch-3
+
+typo fix | 2018-11-22 15:26:45 | 3995cdf14b9cd4af7feebc759641dbdd3c8bf06d
+
+Merge pull request #479 from CrystalIFDE/Fix_crash_in_NavigationBasicSample
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-11-05 20:47:34 | b9e889859ad1611dafe984119d4468a4695ae385
+
+fix_crash_while_navigationing_to_Leaderboard | 2018-10-16 09:45:33 | d54abbcf24ce7ad5ad4d6adfb274e148af47143e
+
+Migrate android-arch-components sample apps to the androidx namespace.
+
+Besides refactoring a lot of imports, this PR also makes the following changes:
+
+* Updated to targetSDK 28 and build tools 28.0.3 along with android
+  gradle plugin 3.2.0
+* Updated various compile and and androidTestCompile to their
+  implementation version.
+* Bumped Kotlin version and moved from the jre to the jdk version of
+  the stb libs.
+* Bumped Dagger to 2.16 which contains a fix for projects using the
+  androidx namespace.
+* Bumped Glide to 4.8.0 which also contains a fix for projects using
+  the androidx namespace.
+* Removed dexmaker in favor of mockito-android in some of the sample
+  projects that used it.
+* Added android.useAndroidX=true and android.enableJetifier=true to
+  various gradle.properties in projects that used data binding and/or
+  used libraries that expected the old namespace. | 2018-10-04 23:29:47 | d31d2bb632467051c2fddd3dc493cc480c44ada0
+
+typo fix | 2018-09-16 02:02:19 | 362084f0083cedfdb718e48be54fb4cfd075466d
+
+Update NetworkStateItemViewHolder.kt
+
+fix toVisbility -> toVisibility | 2018-06-11 03:00:26 | 1e70b1518b9793e04a014dfe7601c8aa4c4b4d45
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | ea59732402708c8e7bca3ecc24a7c9ca85736b55
+
+update paging to beta1, room to 1.1 beta2
+
+Also fixed a flaking paging test | 2018-04-05 19:33:23 | 5873c442ebd0cef8f03d98c75b4c929aa31f1b99
+
+Adds admin message to root versions file and fixes gradle wrapper versions | 2018-03-01 16:49:56 | ce6cb4989e5af2e213330bcd0f7c023308f6178f
+
+Removing LifecycleRegistry reference from RepoFragment (#313)
+
+* Removing LifecycleRegistry reference from RepoFragment
+
+* fixing link to readme also
+
+* updating CI config
+
+* Updating circle CI | 2018-02-23 17:26:50 | 1880a208970751678a6f336a1ccfba5becbc03e1
+
+remove unnecessary comma (#263)
+
+* remove unnecessary comma
+
+* fix parameter name | 2018-01-16 13:10:44 | c66512848331a906354b4cd43b163322b6f4ecdd
+
+fix merge conflict
+
+Change-Id: I1a7bf761b2624c918d351c4f157e6745c3f9f540 | 2017-12-08 00:40:59 | 42c4c5a9bdb76cf67acc27d87de93535e9bcb1c7
+
+Merge pull request #212 from laurentyhuel/patch-1
+
+Delete ViewModelSubComponent.java | 2017-10-27 17:35:27 | bf2a123048e848bfc3a6bdfa7e46de2a9ea8cb14
+
+Use single version for all samples (#195)
+
+This CL adds a version file that can be applied to different gradle projects
+so that all can use the same versions and it is easy to test all of them
+after a version bump
+
+* Move basic rx java sample to shared versions
+
+* move to shared tools versions, fix build file
+
+* centralize maven repository urls
+
+* move basic rxjava kotlin sample to versions.gradle
+
+* move paging to the versions gradle file.
+
+Also added an ability to override the arch version in build.gradle file
+since paging does not work with latest version
+
+* remove unnecessary junit dependency
+
+* move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration
+
+* move migration test to versions
+
+I also had to update some migration scripts since new version of room
+enforces nullability
+
+* fix migrations, add docs to versions.gradle
+
+* move basic sample to the shared build file.
+
+The tests were also crashing on older devices so i modified them
+a bit. Not ideal tests but at least pass
+
+* fix target sdk version variable in build files | 2017-10-11 15:41:26 | acdfe580dfa09a368b0f0d26a3f321552be89ee4
+
+fix target sdk version variable in build files | 2017-10-09 20:56:36 | ccf68a8d5e61fdd2a76c5ba9e465fc339b3ec0ee
+
+Adds unit tests and fixes paths | 2017-10-09 17:10:37 | 2a7e583816e53c801b7d494fc076260f34ac27fb
+
+fix migrations, add docs to versions.gradle | 2017-10-09 16:41:12 | 9954b0227ea59eb8ffd7d053fcdbcc2a636f8b8e
+
+move content provider sample to shared versions file
+
+This CL also updated the schema but since this is a sample about
+content providers, we don't really care about fixing the migration | 2017-10-09 01:30:26 | b72f68dcf2105cb7c42945a2a7304fb6b954c6de
+
+move to shared tools versions, fix build file | 2017-10-08 21:18:50 | 07232ab017efc63a217350342ff07ff00284a834
+
+Merge pull request #126 from DougSig/master
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture(). | 2017-08-21 15:40:37 | 2444cddb9e6f7da800a757b2358b7f8cb22a23c2
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations. | 2017-08-14 18:26:51 | e8066003e1d6c4ad07391ea6d541f1a277814cbc
+
+BasicRxJavaSampleKotlin: alternative fix to ArgumentCaptor.capture().
+
+* Uses a wrapper function for ArgumentCaptor.capture() that avoids an
+* IllegalStateException.
+
+* Also, nit style change to annotations that we've been doing in other
+* kotlin samples.
+
+Change-Id: Ic0ec9f359009a0699183707ffe9a9a7e831429da | 2017-08-11 04:09:08 | bd53bba33285a34b9a3e6553502f803ab07cdb5e
+
+Kotlin Readme links fixed | 2017-08-09 14:43:56 | ee81fa1179e8836c2a86339d2e6ddaae1289469e
+
+#112 BasicRxJavaSample issues : data can not be refreshed!
+
+This issue has been fixed by keeping a reference of the last inserted object. | 2017-08-08 19:54:47 | 344b16e45f64ef3ca7db06cbae28b969f7e49d1b
+
+fix test and the code. #56 | 2017-07-10 05:47:07 | ed3fd72a9a61ccad742b08156d780ca1cd42638c
+
+Fixes DiffUtil typo bug
+
+Change-Id: I11b9336ef4b4e06366e57fb6c3bc4f29f0616183 | 2017-06-30 21:06:45 | e64d25eca8e1fa218344e769c4aedfa995002ffd
+
+also add a test w/ a dialog as show in the bug report | 2017-06-25 20:35:04 | 5516a30b6ea752e6ef24693c7e8d00076027fdda
+
+Merge pull request #72 from googlesamples/readme_fix
+
+Typo fix in the main README | 2017-06-23 12:29:36 | 9ba051470ec271f31dcba8cd46365fe310b7f49b
+
+typo fix | 2017-06-23 12:26:58 | 9b2ccf843b6cbc65fc18947b6c331a3f9cf02604
+
+Merge pull request #21 from shanuka/patch-1
+
+Update README.md | 2017-05-24 10:08:39 | 7dbab6e82a54ada26b832357b99183364f063bcc
+
+Merge "Changes to READMEs and small fixes" | 2017-05-16 20:36:52 | 76e947d8155ba7533653594ee24e62cb32f38b1c
+
+Changes to READMEs and small fixes
+
+Change-Id: Iabb76de4c1f977b8d307e51a8b48a69326542c84 | 2017-05-12 12:41:40 | edbde8e00c364bb3eaa5210330804cc79e7f4dd8
+

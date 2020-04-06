@@ -1,0 +1,1027 @@
+Merge pull request #288 from trustedtomato/master
+
+update dependencies & fix typo | 2019-12-11 11:18:11 | 6f8eb96a91ade18dc092a519dadc6c6c23b29db6
+
+update dependencies & fix typo | 2019-06-02 10:16:29 | e8072bffa5868b09bd60aab167372076f43cc021
+
+Merge branch 'AlAskalany-fix-running-mediasourcetest'
+
+Change-Id: Iffd273caf4280638d1127727baca9571075aacb6 | 2019-05-20 19:07:42 | 976bdd0d5f393f332bce9f014e74efccf295b173
+
+Minor fixes before publish.
+
+- Fix typo of 'albumArt'
+- Update to ExoPlayer 2.10.0 release (from alpha)
+
+Change-Id: Ia7792aabbfc97ee90e8ec13eab2de799b6a578c9 | 2019-05-07 17:13:48 | f60b902643407ba234a316abe91410da7c08a4af
+
+Fix playback in Automotive.
+
+This change switches to using the new `registerCustomCommandReceiver` in
+ExoPlayer 2.10 to handle login and logout, fixing the challenge of
+having to override the PlaybackPreparer and not interrupting the
+MediaSession extension from working properly.
+
+Bug: 130889729
+Change-Id: I82b3f07bc99dd568330d1ae11f34f8c521786f02 | 2019-04-23 18:21:51 | 628fa6035fcfd80642742f538f3484e4e694d4c5
+
+Merge branch 'YuriPopiv-fix-remove-notification'
+
+GitHub PR #273
+
+Change-Id: Ifd5c1639e43d0a8842ad306a95d34c3441c2b4af | 2019-03-29 21:44:03 | 0a0682c364afcbb632ebad7f403e1aef829e88d3
+
+Merge PR #273
+
+Merge branch 'fix-remove-notification' of
+https://github.com/YuriPopiv/android-UniversalMusicPlayer
+into YuriPopiv-fix-remove-notification
+
+Change-Id: I504941efe37c349f7739aaae4eb6a4e523a474aa | 2019-03-29 21:40:31 | f45db433c45f3bbe3f28f3906af2353623ea60b0
+
+Remove debugging code.
+
+Change-Id: Ib4ca81bd0d5fbb41931267a4dc2307e16ec42956 | 2019-03-19 22:02:20 | 3adb189efad4affee54d1f1f52a5619c69d5ef28
+
+Updates for PackageValidator.
+
+- Simplify checks to make each opportunity for an app to connect be more
+clear.
+- Add ability to whitelist apps that hold certain permissions (such as
+MEDIA_CONTENT_CONTROL.
+- Add missing license & fix minor typo.
+
+Change-Id: I6153175c5b8854e290c63f670b713df63c0814f3 | 2018-08-28 23:29:23 | 5222b0517bb15aca400ecc65e2631aa5ddbfe11d
+
+Minor version updates.
+
+- Mostly minor version updates to ExoPlayer, Gradle, and Kotlin runtime.
+- Minor updates to fix issues working with a locally built ExoPlayer.
+
+Change-Id: I17ff7672acb6d1d97fef52f0934b7c0d6d789fab | 2018-08-21 21:51:26 | 7e4820893ff26c15f4d11cf90e2a168e06f1e60f
+
+Fix for #231
+
+This is a temporary fix for an issue where the metadata of the
+currently playing item isn't updated when the player is stopped.
+This change just makes sure that, if the player isn't "prepared"
+(buffering, playing, or paused), it will send `playFromMediaId()`
+rather than `play()` when selecting an item.
+
+Change-Id: I35d1ea625c286f67eedad95062980b834443cf4e | 2018-07-11 22:43:08 | f8258f85af09bd6de3e9bca743b4525c2e19ffa8
+
+Use RecyclerView payloads.
+
+- Fix a bug where the code for `DiffUtil.ItemCallback<MediaItemData>`
+  was incorrectly flagging items that were the same as being
+  different, causing the UI to flash each time an item in the
+  list of media items was interacted with.
+- Add code for `getChangePayload` to further improve the UI response
+  by notifying when the only change is the playback resource changing
+  (from pause<->play, or either of those to null (0)).
+- Add comment explaining the reasoning for why `getChangePayload`
+  uses the algorithm it does.
+
+Change-Id: I38146507786a4033676d7a77e3ad815765b68ffa | 2018-07-03 23:09:44 | 9fe7368361f2c3df77a019953d2bdbb660b73d2b
+
+Ensure metadata is propagated.
+
+This change works around a peculiarity in the ExoPlayer media session
+extension and how metadata is propagated.
+
+By including a download status, MediaMetadataCompat will create an
+"extras" bundle, which will then be included when retreiving
+its MediaDescriptionCompat (with `.getDescription()`)
+
+This in turn allows the placing of *all* of the metadata from
+the MediaMetadataCompat into the MediaDescriptionCompat that
+`.getDescription()` returns, which is then passed along to the
+media session as one would expect.
+
+This should fix the issue of album art not appearing on the
+lockscreen: GitHub issue
+[#227](https://github.com/googlesamples/android-UniversalMusicPlayer/issues/227).
+
+Change-Id: I924dfd8caf0166e60b9d405e769d8cfa7f2351dc | 2018-07-02 23:06:37 | 32696d59a8255cb85b0f38acaf107ec886dd8d02
+
+Minor fixes.
+
+- Fixes an incorrect import in MediaItemAdapter
+- Fix copyright year on two new drawables to 2018
+- Better document list padding
+
+Change-Id: Ic78b8a9295d204da0a562f0be8238bcb21abf391 | 2018-01-09 17:20:35 | 2066d5085d617fbd6eefa879860b852922aa2ca1
+
+Update library versions.
+
+Support library 25.3.x did not properly account for API level 26, which
+was released in Android "O" DP3. Updating to 25.4.0 fixes a crash when
+browsing.
+
+Other library versions are updated to the latest version available.
+
+Bug: 62586349
+
+Change-Id: I7daae4325be793cfd0dc067ed8d5c8cef16a3f4b | 2017-06-13 22:05:48 | ad6481e29fa13f7912a09b632229960dd00dfe7f
+
+Merge "Fix playback behavior bugs." | 2016-07-15 21:35:55 | 19c444ebcad798f72d5fb90ac7a87f970ab24e05
+
+Fix playback behavior bugs.
+
+First, get rid of repetitive call to handlePlayRequest() in QueueManager
+since it is already triggered by callbacks in MediaSessionCallback.
+Second, clicking queue item in TvPlaybackFragment only skips to that
+item (plays that item) if it is the current media item  AND paused, or if
+it is a new media item.
+
+Change-Id: Iecdd153a137e64526a4f3380fd0d08e94a7bc833 | 2016-07-08 23:38:20 | 0da8744ab9a0bd1a56028fbeea3bd2ba1c5a6d16
+
+Implemented Android TV components for uamp
+
+Fixed a couple of bugs in Now Playing and ATV detection plus review comments
+Fixed re-entry from Now Playing into app; enabled media control fading
+Removed unneeded images
+Addressed review comments and code refactoring
+Removed BACK button stack
+Add a default art drawable when there's no art bitmap
+
+Change-Id: I07b469d1fd45be4e9b2d02adf06d6aeec99ccde7 | 2015-04-24 17:09:12 | 971f2d856d8269f162c4fc385388d83a206c9d5e
+
+Update dep versions and fixed fragment bug
+
+Update gradle build tools version
+Update support libraries versions
+Address a few Lint issues
+Change icon names to avoid collision with CCL icons
+
+Bug: 21639213
+Bug: 21639021
+
+Change-Id: Id4579fe80b5a2b8d57f679de7ef7e3cc892f3c7d | 2015-06-04 21:11:59 | eaf59e2c6ba0f731ed69d9922a79fa4eaf8bfb41
+
+Merge pull request #14 from googlesamples/tjohns-patch-1
+
+Sample metadata: Fix typo in packaging.yaml | 2015-04-06 22:47:46 | 56a24b3ce9c3d3c29ba04a77a525b798863c783c
+
+Add new debug certificate.
+
+Bug: 19621186
+Change-Id: I0610b56e02afdd098c24ed3cbac3cd2aa62d1a9f | 2015-03-05 19:27:02 | 171046bd8b73c8e7cd4e073477ff6ec11673d397
+
+Address lint:bugs equals of different types.
+
+Bug: 19354960
+Change-Id: I981aac3c5a36660b2f51f9429316eca366533ac7 | 2015-02-18 18:38:58 | da11b3d159399971b26df0c585f0cdb482572053
+
+Remove redundant status on MusicService
+
+- Removed redundant status on MusicService
+- Fixed playback switching when paused
+- Added null check on playback callback calls
+- Added notifyListeners param to Playback.stop()
+- Added loadMedia to cast playback pause() when media is not loaded
+- Removed unused method Playback.togglePlayback
+- nit: Changed audio focus enum to int consts (better memory footprint)
+- nit: fixed a few lines over 100 chars
+
+Bug: 19092630
+Change-Id: I391005c2b2176c64392456a3ed7ab62e9e708ab5 | 2015-01-22 00:38:20 | 8181a62720376c271ddad62ae3362077385ace1f
+
+Use default MediaDialogFactory instead of the CCL one.
+
+Also remove dispatchKeyEvent since volume events are handled by
+mediaController set on the activity. They are then routed to the appropriate
+MediaSession and thus the MediaRouter by the system.
+
+Bug: 19005450
+Change-Id: Ib5d9b1f88cffab728e2c253f5ca5be98ed5061db | 2015-01-23 00:28:10 | f1064f20053978cfa978c559d72f3dab521cca03
+
+Fix handling of back button in fragment/activity
+
+The issue was that a fragment was being restored by the framework on
+orientation changes. Such a fragment would show nothing since its onStart()
+returns if the mediabrowser is not connected. This was compounded by the
+fact that onConnected() in the activity was adding a new fragment on each call.
+
+This fix does the following:
+1. Moves the code that should be run when a MediaBrowser is connected into
+a method named onConnected()
+2. Changes the Activity to start with a fragment if savedInstanceState is null.
+3. Changes the connectionCallback of the activity to call the fragment.onConnected()
+4. Finally it handles the case where a new fragment is added when the browser is already
+connected => onStart() called onConnected()
+
+Bug:18791818
+Change-Id: I6cb2d5403d95349443e296598cf1bcf09a15e076 | 2014-12-18 22:12:16 | 5c92829a17b58f1ff4d4d1caf08f36e8be6ecf5e
+
+Integrate Cast Playback into uAmp.
+
+1. Introduce an interface for Playback that is used for playing on both
+   local as well as remote devices.
+2. Refactor local media playback and move it into LocalPlayback
+3. Add a Playback implementation for Cast that supports sequential playback using CCL.
+4. Also add the CCL aar updated with the following fixes:
+   a. Use executeOnExecutor for reconnection logic
+   b. Use CopyOnWriteArraySet for listeners to address the concurrent modification exception
+      caused by adding a listener inside a listener method such as onApplicationConnected(..)
+
+Change-Id: I57473cba17ebef74e6d69428a2b02b876b5dd52b | 2014-12-13 00:07:47 | 2e0235ed4a6ec54f0dd310c8afe121d82821d921
+
+Get the initial underpinnings for cast integration
+
+1. Add CCL
+2. Add cast button + first time UX as mandated by cast checklist.
+3. Also upgrade to using Android Studio 1.0 + gradle-2.2.1
+(fixes needed for build.gradle to enable this.)
+4. Removed values-21 since our app requires L.
+
+Change-Id: Iadacf04a92a75fddc57f50063e8bff509ceba313 | 2014-12-08 21:47:09 | 02e26ecbda7b3200e3c3d6c007d5deee496a370c
+
+Merge pull request #288 from trustedtomato/master
+
+update dependencies & fix typo | 2019-12-11 11:18:11 | 6f8eb96a91ade18dc092a519dadc6c6c23b29db6
+
+update dependencies & fix typo | 2019-06-02 10:16:29 | e8072bffa5868b09bd60aab167372076f43cc021
+
+Merge branch 'AlAskalany-fix-running-mediasourcetest'
+
+Change-Id: Iffd273caf4280638d1127727baca9571075aacb6 | 2019-05-20 19:07:42 | 976bdd0d5f393f332bce9f014e74efccf295b173
+
+Minor fixes before publish.
+
+- Fix typo of 'albumArt'
+- Update to ExoPlayer 2.10.0 release (from alpha)
+
+Change-Id: Ia7792aabbfc97ee90e8ec13eab2de799b6a578c9 | 2019-05-07 17:13:48 | f60b902643407ba234a316abe91410da7c08a4af
+
+Fix playback in Automotive.
+
+This change switches to using the new `registerCustomCommandReceiver` in
+ExoPlayer 2.10 to handle login and logout, fixing the challenge of
+having to override the PlaybackPreparer and not interrupting the
+MediaSession extension from working properly.
+
+Bug: 130889729
+Change-Id: I82b3f07bc99dd568330d1ae11f34f8c521786f02 | 2019-04-23 18:21:51 | 628fa6035fcfd80642742f538f3484e4e694d4c5
+
+Merge branch 'YuriPopiv-fix-remove-notification'
+
+GitHub PR #273
+
+Change-Id: Ifd5c1639e43d0a8842ad306a95d34c3441c2b4af | 2019-03-29 21:44:03 | 0a0682c364afcbb632ebad7f403e1aef829e88d3
+
+Merge PR #273
+
+Merge branch 'fix-remove-notification' of
+https://github.com/YuriPopiv/android-UniversalMusicPlayer
+into YuriPopiv-fix-remove-notification
+
+Change-Id: I504941efe37c349f7739aaae4eb6a4e523a474aa | 2019-03-29 21:40:31 | f45db433c45f3bbe3f28f3906af2353623ea60b0
+
+Remove debugging code.
+
+Change-Id: Ib4ca81bd0d5fbb41931267a4dc2307e16ec42956 | 2019-03-19 22:02:20 | 3adb189efad4affee54d1f1f52a5619c69d5ef28
+
+Updates for PackageValidator.
+
+- Simplify checks to make each opportunity for an app to connect be more
+clear.
+- Add ability to whitelist apps that hold certain permissions (such as
+MEDIA_CONTENT_CONTROL.
+- Add missing license & fix minor typo.
+
+Change-Id: I6153175c5b8854e290c63f670b713df63c0814f3 | 2018-08-28 23:29:23 | 5222b0517bb15aca400ecc65e2631aa5ddbfe11d
+
+Minor version updates.
+
+- Mostly minor version updates to ExoPlayer, Gradle, and Kotlin runtime.
+- Minor updates to fix issues working with a locally built ExoPlayer.
+
+Change-Id: I17ff7672acb6d1d97fef52f0934b7c0d6d789fab | 2018-08-21 21:51:26 | 7e4820893ff26c15f4d11cf90e2a168e06f1e60f
+
+Fix for #231
+
+This is a temporary fix for an issue where the metadata of the
+currently playing item isn't updated when the player is stopped.
+This change just makes sure that, if the player isn't "prepared"
+(buffering, playing, or paused), it will send `playFromMediaId()`
+rather than `play()` when selecting an item.
+
+Change-Id: I35d1ea625c286f67eedad95062980b834443cf4e | 2018-07-11 22:43:08 | f8258f85af09bd6de3e9bca743b4525c2e19ffa8
+
+Use RecyclerView payloads.
+
+- Fix a bug where the code for `DiffUtil.ItemCallback<MediaItemData>`
+  was incorrectly flagging items that were the same as being
+  different, causing the UI to flash each time an item in the
+  list of media items was interacted with.
+- Add code for `getChangePayload` to further improve the UI response
+  by notifying when the only change is the playback resource changing
+  (from pause<->play, or either of those to null (0)).
+- Add comment explaining the reasoning for why `getChangePayload`
+  uses the algorithm it does.
+
+Change-Id: I38146507786a4033676d7a77e3ad815765b68ffa | 2018-07-03 23:09:44 | 9fe7368361f2c3df77a019953d2bdbb660b73d2b
+
+Ensure metadata is propagated.
+
+This change works around a peculiarity in the ExoPlayer media session
+extension and how metadata is propagated.
+
+By including a download status, MediaMetadataCompat will create an
+"extras" bundle, which will then be included when retreiving
+its MediaDescriptionCompat (with `.getDescription()`)
+
+This in turn allows the placing of *all* of the metadata from
+the MediaMetadataCompat into the MediaDescriptionCompat that
+`.getDescription()` returns, which is then passed along to the
+media session as one would expect.
+
+This should fix the issue of album art not appearing on the
+lockscreen: GitHub issue
+[#227](https://github.com/googlesamples/android-UniversalMusicPlayer/issues/227).
+
+Change-Id: I924dfd8caf0166e60b9d405e769d8cfa7f2351dc | 2018-07-02 23:06:37 | 32696d59a8255cb85b0f38acaf107ec886dd8d02
+
+Minor fixes.
+
+- Fixes an incorrect import in MediaItemAdapter
+- Fix copyright year on two new drawables to 2018
+- Better document list padding
+
+Change-Id: Ic78b8a9295d204da0a562f0be8238bcb21abf391 | 2018-01-09 17:20:35 | 2066d5085d617fbd6eefa879860b852922aa2ca1
+
+Update library versions.
+
+Support library 25.3.x did not properly account for API level 26, which
+was released in Android "O" DP3. Updating to 25.4.0 fixes a crash when
+browsing.
+
+Other library versions are updated to the latest version available.
+
+Bug: 62586349
+
+Change-Id: I7daae4325be793cfd0dc067ed8d5c8cef16a3f4b | 2017-06-13 22:05:48 | ad6481e29fa13f7912a09b632229960dd00dfe7f
+
+Merge "Fix playback behavior bugs." | 2016-07-15 21:35:55 | 19c444ebcad798f72d5fb90ac7a87f970ab24e05
+
+Fix playback behavior bugs.
+
+First, get rid of repetitive call to handlePlayRequest() in QueueManager
+since it is already triggered by callbacks in MediaSessionCallback.
+Second, clicking queue item in TvPlaybackFragment only skips to that
+item (plays that item) if it is the current media item  AND paused, or if
+it is a new media item.
+
+Change-Id: Iecdd153a137e64526a4f3380fd0d08e94a7bc833 | 2016-07-08 23:38:20 | 0da8744ab9a0bd1a56028fbeea3bd2ba1c5a6d16
+
+Implemented Android TV components for uamp
+
+Fixed a couple of bugs in Now Playing and ATV detection plus review comments
+Fixed re-entry from Now Playing into app; enabled media control fading
+Removed unneeded images
+Addressed review comments and code refactoring
+Removed BACK button stack
+Add a default art drawable when there's no art bitmap
+
+Change-Id: I07b469d1fd45be4e9b2d02adf06d6aeec99ccde7 | 2015-04-24 17:09:12 | 971f2d856d8269f162c4fc385388d83a206c9d5e
+
+Update dep versions and fixed fragment bug
+
+Update gradle build tools version
+Update support libraries versions
+Address a few Lint issues
+Change icon names to avoid collision with CCL icons
+
+Bug: 21639213
+Bug: 21639021
+
+Change-Id: Id4579fe80b5a2b8d57f679de7ef7e3cc892f3c7d | 2015-06-04 21:11:59 | eaf59e2c6ba0f731ed69d9922a79fa4eaf8bfb41
+
+Merge pull request #14 from googlesamples/tjohns-patch-1
+
+Sample metadata: Fix typo in packaging.yaml | 2015-04-06 22:47:46 | 56a24b3ce9c3d3c29ba04a77a525b798863c783c
+
+Add new debug certificate.
+
+Bug: 19621186
+Change-Id: I0610b56e02afdd098c24ed3cbac3cd2aa62d1a9f | 2015-03-05 19:27:02 | 171046bd8b73c8e7cd4e073477ff6ec11673d397
+
+Address lint:bugs equals of different types.
+
+Bug: 19354960
+Change-Id: I981aac3c5a36660b2f51f9429316eca366533ac7 | 2015-02-18 18:38:58 | da11b3d159399971b26df0c585f0cdb482572053
+
+Remove redundant status on MusicService
+
+- Removed redundant status on MusicService
+- Fixed playback switching when paused
+- Added null check on playback callback calls
+- Added notifyListeners param to Playback.stop()
+- Added loadMedia to cast playback pause() when media is not loaded
+- Removed unused method Playback.togglePlayback
+- nit: Changed audio focus enum to int consts (better memory footprint)
+- nit: fixed a few lines over 100 chars
+
+Bug: 19092630
+Change-Id: I391005c2b2176c64392456a3ed7ab62e9e708ab5 | 2015-01-22 00:38:20 | 8181a62720376c271ddad62ae3362077385ace1f
+
+Use default MediaDialogFactory instead of the CCL one.
+
+Also remove dispatchKeyEvent since volume events are handled by
+mediaController set on the activity. They are then routed to the appropriate
+MediaSession and thus the MediaRouter by the system.
+
+Bug: 19005450
+Change-Id: Ib5d9b1f88cffab728e2c253f5ca5be98ed5061db | 2015-01-23 00:28:10 | f1064f20053978cfa978c559d72f3dab521cca03
+
+Fix handling of back button in fragment/activity
+
+The issue was that a fragment was being restored by the framework on
+orientation changes. Such a fragment would show nothing since its onStart()
+returns if the mediabrowser is not connected. This was compounded by the
+fact that onConnected() in the activity was adding a new fragment on each call.
+
+This fix does the following:
+1. Moves the code that should be run when a MediaBrowser is connected into
+a method named onConnected()
+2. Changes the Activity to start with a fragment if savedInstanceState is null.
+3. Changes the connectionCallback of the activity to call the fragment.onConnected()
+4. Finally it handles the case where a new fragment is added when the browser is already
+connected => onStart() called onConnected()
+
+Bug:18791818
+Change-Id: I6cb2d5403d95349443e296598cf1bcf09a15e076 | 2014-12-18 22:12:16 | 5c92829a17b58f1ff4d4d1caf08f36e8be6ecf5e
+
+Integrate Cast Playback into uAmp.
+
+1. Introduce an interface for Playback that is used for playing on both
+   local as well as remote devices.
+2. Refactor local media playback and move it into LocalPlayback
+3. Add a Playback implementation for Cast that supports sequential playback using CCL.
+4. Also add the CCL aar updated with the following fixes:
+   a. Use executeOnExecutor for reconnection logic
+   b. Use CopyOnWriteArraySet for listeners to address the concurrent modification exception
+      caused by adding a listener inside a listener method such as onApplicationConnected(..)
+
+Change-Id: I57473cba17ebef74e6d69428a2b02b876b5dd52b | 2014-12-13 00:07:47 | 2e0235ed4a6ec54f0dd310c8afe121d82821d921
+
+Get the initial underpinnings for cast integration
+
+1. Add CCL
+2. Add cast button + first time UX as mandated by cast checklist.
+3. Also upgrade to using Android Studio 1.0 + gradle-2.2.1
+(fixes needed for build.gradle to enable this.)
+4. Removed values-21 since our app requires L.
+
+Change-Id: Iadacf04a92a75fddc57f50063e8bff509ceba313 | 2014-12-08 21:47:09 | 02e26ecbda7b3200e3c3d6c007d5deee496a370c
+
+Merge pull request #292 from wkmcyz/master
+
+ fixed some build errors | 2020-01-21 16:21:50 | e22fe635c2aeef75c1a696b9976e96c664b030a1
+
+Merge pull request #288 from trustedtomato/master
+
+update dependencies & fix typo | 2019-12-11 11:18:11 | 6f8eb96a91ade18dc092a519dadc6c6c23b29db6
+
+fix a lint error : Missing intent-filter for action android.media.action.MEDIA_PLAY_FROM_SEARCH. | 2019-07-02 04:17:14 | 1e6e3dedd76953ff305a654964add1841ac915a1
+
+fix a bug that caused build error. | 2019-07-02 04:15:08 | 9a21e64c5319d79d2ed33657f49ecbdfb2ea1b0f
+
+update dependencies & fix typo | 2019-06-02 10:16:29 | e8072bffa5868b09bd60aab167372076f43cc021
+
+Merge branch 'AlAskalany-fix-running-mediasourcetest'
+
+Change-Id: Iffd273caf4280638d1127727baca9571075aacb6 | 2019-05-20 19:07:42 | 976bdd0d5f393f332bce9f014e74efccf295b173
+
+Minor fixes before publish.
+
+- Fix typo of 'albumArt'
+- Update to ExoPlayer 2.10.0 release (from alpha)
+
+Change-Id: Ia7792aabbfc97ee90e8ec13eab2de799b6a578c9 | 2019-05-07 17:13:48 | f60b902643407ba234a316abe91410da7c08a4af
+
+Fix playback in Automotive.
+
+This change switches to using the new `registerCustomCommandReceiver` in
+ExoPlayer 2.10 to handle login and logout, fixing the challenge of
+having to override the PlaybackPreparer and not interrupting the
+MediaSession extension from working properly.
+
+Bug: 130889729
+Change-Id: I82b3f07bc99dd568330d1ae11f34f8c521786f02 | 2019-04-23 18:21:51 | 628fa6035fcfd80642742f538f3484e4e694d4c5
+
+Merge branch 'YuriPopiv-fix-remove-notification'
+
+GitHub PR #273
+
+Change-Id: Ifd5c1639e43d0a8842ad306a95d34c3441c2b4af | 2019-03-29 21:44:03 | 0a0682c364afcbb632ebad7f403e1aef829e88d3
+
+Merge PR #273
+
+Merge branch 'fix-remove-notification' of
+https://github.com/YuriPopiv/android-UniversalMusicPlayer
+into YuriPopiv-fix-remove-notification
+
+Change-Id: I504941efe37c349f7739aaae4eb6a4e523a474aa | 2019-03-29 21:40:31 | f45db433c45f3bbe3f28f3906af2353623ea60b0
+
+Remove debugging code.
+
+Change-Id: Ib4ca81bd0d5fbb41931267a4dc2307e16ec42956 | 2019-03-19 22:02:20 | 3adb189efad4affee54d1f1f52a5619c69d5ef28
+
+Updates for PackageValidator.
+
+- Simplify checks to make each opportunity for an app to connect be more
+clear.
+- Add ability to whitelist apps that hold certain permissions (such as
+MEDIA_CONTENT_CONTROL.
+- Add missing license & fix minor typo.
+
+Change-Id: I6153175c5b8854e290c63f670b713df63c0814f3 | 2018-08-28 23:29:23 | 5222b0517bb15aca400ecc65e2631aa5ddbfe11d
+
+Minor version updates.
+
+- Mostly minor version updates to ExoPlayer, Gradle, and Kotlin runtime.
+- Minor updates to fix issues working with a locally built ExoPlayer.
+
+Change-Id: I17ff7672acb6d1d97fef52f0934b7c0d6d789fab | 2018-08-21 21:51:26 | 7e4820893ff26c15f4d11cf90e2a168e06f1e60f
+
+Fix for #231
+
+This is a temporary fix for an issue where the metadata of the
+currently playing item isn't updated when the player is stopped.
+This change just makes sure that, if the player isn't "prepared"
+(buffering, playing, or paused), it will send `playFromMediaId()`
+rather than `play()` when selecting an item.
+
+Change-Id: I35d1ea625c286f67eedad95062980b834443cf4e | 2018-07-11 22:43:08 | f8258f85af09bd6de3e9bca743b4525c2e19ffa8
+
+Use RecyclerView payloads.
+
+- Fix a bug where the code for `DiffUtil.ItemCallback<MediaItemData>`
+  was incorrectly flagging items that were the same as being
+  different, causing the UI to flash each time an item in the
+  list of media items was interacted with.
+- Add code for `getChangePayload` to further improve the UI response
+  by notifying when the only change is the playback resource changing
+  (from pause<->play, or either of those to null (0)).
+- Add comment explaining the reasoning for why `getChangePayload`
+  uses the algorithm it does.
+
+Change-Id: I38146507786a4033676d7a77e3ad815765b68ffa | 2018-07-03 23:09:44 | 9fe7368361f2c3df77a019953d2bdbb660b73d2b
+
+Ensure metadata is propagated.
+
+This change works around a peculiarity in the ExoPlayer media session
+extension and how metadata is propagated.
+
+By including a download status, MediaMetadataCompat will create an
+"extras" bundle, which will then be included when retreiving
+its MediaDescriptionCompat (with `.getDescription()`)
+
+This in turn allows the placing of *all* of the metadata from
+the MediaMetadataCompat into the MediaDescriptionCompat that
+`.getDescription()` returns, which is then passed along to the
+media session as one would expect.
+
+This should fix the issue of album art not appearing on the
+lockscreen: GitHub issue
+[#227](https://github.com/googlesamples/android-UniversalMusicPlayer/issues/227).
+
+Change-Id: I924dfd8caf0166e60b9d405e769d8cfa7f2351dc | 2018-07-02 23:06:37 | 32696d59a8255cb85b0f38acaf107ec886dd8d02
+
+Minor fixes.
+
+- Fixes an incorrect import in MediaItemAdapter
+- Fix copyright year on two new drawables to 2018
+- Better document list padding
+
+Change-Id: Ic78b8a9295d204da0a562f0be8238bcb21abf391 | 2018-01-09 17:20:35 | 2066d5085d617fbd6eefa879860b852922aa2ca1
+
+Update library versions.
+
+Support library 25.3.x did not properly account for API level 26, which
+was released in Android "O" DP3. Updating to 25.4.0 fixes a crash when
+browsing.
+
+Other library versions are updated to the latest version available.
+
+Bug: 62586349
+
+Change-Id: I7daae4325be793cfd0dc067ed8d5c8cef16a3f4b | 2017-06-13 22:05:48 | ad6481e29fa13f7912a09b632229960dd00dfe7f
+
+Merge "Fix playback behavior bugs." | 2016-07-15 21:35:55 | 19c444ebcad798f72d5fb90ac7a87f970ab24e05
+
+Fix playback behavior bugs.
+
+First, get rid of repetitive call to handlePlayRequest() in QueueManager
+since it is already triggered by callbacks in MediaSessionCallback.
+Second, clicking queue item in TvPlaybackFragment only skips to that
+item (plays that item) if it is the current media item  AND paused, or if
+it is a new media item.
+
+Change-Id: Iecdd153a137e64526a4f3380fd0d08e94a7bc833 | 2016-07-08 23:38:20 | 0da8744ab9a0bd1a56028fbeea3bd2ba1c5a6d16
+
+Implemented Android TV components for uamp
+
+Fixed a couple of bugs in Now Playing and ATV detection plus review comments
+Fixed re-entry from Now Playing into app; enabled media control fading
+Removed unneeded images
+Addressed review comments and code refactoring
+Removed BACK button stack
+Add a default art drawable when there's no art bitmap
+
+Change-Id: I07b469d1fd45be4e9b2d02adf06d6aeec99ccde7 | 2015-04-24 17:09:12 | 971f2d856d8269f162c4fc385388d83a206c9d5e
+
+Update dep versions and fixed fragment bug
+
+Update gradle build tools version
+Update support libraries versions
+Address a few Lint issues
+Change icon names to avoid collision with CCL icons
+
+Bug: 21639213
+Bug: 21639021
+
+Change-Id: Id4579fe80b5a2b8d57f679de7ef7e3cc892f3c7d | 2015-06-04 21:11:59 | eaf59e2c6ba0f731ed69d9922a79fa4eaf8bfb41
+
+Merge pull request #14 from googlesamples/tjohns-patch-1
+
+Sample metadata: Fix typo in packaging.yaml | 2015-04-06 22:47:46 | 56a24b3ce9c3d3c29ba04a77a525b798863c783c
+
+Add new debug certificate.
+
+Bug: 19621186
+Change-Id: I0610b56e02afdd098c24ed3cbac3cd2aa62d1a9f | 2015-03-05 19:27:02 | 171046bd8b73c8e7cd4e073477ff6ec11673d397
+
+Address lint:bugs equals of different types.
+
+Bug: 19354960
+Change-Id: I981aac3c5a36660b2f51f9429316eca366533ac7 | 2015-02-18 18:38:58 | da11b3d159399971b26df0c585f0cdb482572053
+
+Remove redundant status on MusicService
+
+- Removed redundant status on MusicService
+- Fixed playback switching when paused
+- Added null check on playback callback calls
+- Added notifyListeners param to Playback.stop()
+- Added loadMedia to cast playback pause() when media is not loaded
+- Removed unused method Playback.togglePlayback
+- nit: Changed audio focus enum to int consts (better memory footprint)
+- nit: fixed a few lines over 100 chars
+
+Bug: 19092630
+Change-Id: I391005c2b2176c64392456a3ed7ab62e9e708ab5 | 2015-01-22 00:38:20 | 8181a62720376c271ddad62ae3362077385ace1f
+
+Use default MediaDialogFactory instead of the CCL one.
+
+Also remove dispatchKeyEvent since volume events are handled by
+mediaController set on the activity. They are then routed to the appropriate
+MediaSession and thus the MediaRouter by the system.
+
+Bug: 19005450
+Change-Id: Ib5d9b1f88cffab728e2c253f5ca5be98ed5061db | 2015-01-23 00:28:10 | f1064f20053978cfa978c559d72f3dab521cca03
+
+Fix handling of back button in fragment/activity
+
+The issue was that a fragment was being restored by the framework on
+orientation changes. Such a fragment would show nothing since its onStart()
+returns if the mediabrowser is not connected. This was compounded by the
+fact that onConnected() in the activity was adding a new fragment on each call.
+
+This fix does the following:
+1. Moves the code that should be run when a MediaBrowser is connected into
+a method named onConnected()
+2. Changes the Activity to start with a fragment if savedInstanceState is null.
+3. Changes the connectionCallback of the activity to call the fragment.onConnected()
+4. Finally it handles the case where a new fragment is added when the browser is already
+connected => onStart() called onConnected()
+
+Bug:18791818
+Change-Id: I6cb2d5403d95349443e296598cf1bcf09a15e076 | 2014-12-18 22:12:16 | 5c92829a17b58f1ff4d4d1caf08f36e8be6ecf5e
+
+Integrate Cast Playback into uAmp.
+
+1. Introduce an interface for Playback that is used for playing on both
+   local as well as remote devices.
+2. Refactor local media playback and move it into LocalPlayback
+3. Add a Playback implementation for Cast that supports sequential playback using CCL.
+4. Also add the CCL aar updated with the following fixes:
+   a. Use executeOnExecutor for reconnection logic
+   b. Use CopyOnWriteArraySet for listeners to address the concurrent modification exception
+      caused by adding a listener inside a listener method such as onApplicationConnected(..)
+
+Change-Id: I57473cba17ebef74e6d69428a2b02b876b5dd52b | 2014-12-13 00:07:47 | 2e0235ed4a6ec54f0dd310c8afe121d82821d921
+
+Get the initial underpinnings for cast integration
+
+1. Add CCL
+2. Add cast button + first time UX as mandated by cast checklist.
+3. Also upgrade to using Android Studio 1.0 + gradle-2.2.1
+(fixes needed for build.gradle to enable this.)
+4. Removed values-21 since our app requires L.
+
+Change-Id: Iadacf04a92a75fddc57f50063e8bff509ceba313 | 2014-12-08 21:47:09 | 02e26ecbda7b3200e3c3d6c007d5deee496a370c
+
+Fix for #231
+
+This is a temporary fix for an issue where the metadata of the
+currently playing item isn't updated when the player is stopped.
+This change just makes sure that, if the player isn't "prepared"
+(buffering, playing, or paused), it will send `playFromMediaId()`
+rather than `play()` when selecting an item.
+
+Change-Id: I35d1ea625c286f67eedad95062980b834443cf4e | 2018-07-11 22:43:08 | f8258f85af09bd6de3e9bca743b4525c2e19ffa8
+
+Use RecyclerView payloads.
+
+- Fix a bug where the code for `DiffUtil.ItemCallback<MediaItemData>`
+  was incorrectly flagging items that were the same as being
+  different, causing the UI to flash each time an item in the
+  list of media items was interacted with.
+- Add code for `getChangePayload` to further improve the UI response
+  by notifying when the only change is the playback resource changing
+  (from pause<->play, or either of those to null (0)).
+- Add comment explaining the reasoning for why `getChangePayload`
+  uses the algorithm it does.
+
+Change-Id: I38146507786a4033676d7a77e3ad815765b68ffa | 2018-07-03 23:09:44 | 9fe7368361f2c3df77a019953d2bdbb660b73d2b
+
+Ensure metadata is propagated.
+
+This change works around a peculiarity in the ExoPlayer media session
+extension and how metadata is propagated.
+
+By including a download status, MediaMetadataCompat will create an
+"extras" bundle, which will then be included when retreiving
+its MediaDescriptionCompat (with `.getDescription()`)
+
+This in turn allows the placing of *all* of the metadata from
+the MediaMetadataCompat into the MediaDescriptionCompat that
+`.getDescription()` returns, which is then passed along to the
+media session as one would expect.
+
+This should fix the issue of album art not appearing on the
+lockscreen: GitHub issue
+[#227](https://github.com/googlesamples/android-UniversalMusicPlayer/issues/227).
+
+Change-Id: I924dfd8caf0166e60b9d405e769d8cfa7f2351dc | 2018-07-02 23:06:37 | 32696d59a8255cb85b0f38acaf107ec886dd8d02
+
+Minor fixes.
+
+- Fixes an incorrect import in MediaItemAdapter
+- Fix copyright year on two new drawables to 2018
+- Better document list padding
+
+Change-Id: Ic78b8a9295d204da0a562f0be8238bcb21abf391 | 2018-01-09 17:20:35 | 2066d5085d617fbd6eefa879860b852922aa2ca1
+
+Update library versions.
+
+Support library 25.3.x did not properly account for API level 26, which
+was released in Android "O" DP3. Updating to 25.4.0 fixes a crash when
+browsing.
+
+Other library versions are updated to the latest version available.
+
+Bug: 62586349
+
+Change-Id: I7daae4325be793cfd0dc067ed8d5c8cef16a3f4b | 2017-06-13 22:05:48 | ad6481e29fa13f7912a09b632229960dd00dfe7f
+
+Merge "Fix playback behavior bugs." | 2016-07-15 21:35:55 | 19c444ebcad798f72d5fb90ac7a87f970ab24e05
+
+Fix playback behavior bugs.
+
+First, get rid of repetitive call to handlePlayRequest() in QueueManager
+since it is already triggered by callbacks in MediaSessionCallback.
+Second, clicking queue item in TvPlaybackFragment only skips to that
+item (plays that item) if it is the current media item  AND paused, or if
+it is a new media item.
+
+Change-Id: Iecdd153a137e64526a4f3380fd0d08e94a7bc833 | 2016-07-08 23:38:20 | 0da8744ab9a0bd1a56028fbeea3bd2ba1c5a6d16
+
+Implemented Android TV components for uamp
+
+Fixed a couple of bugs in Now Playing and ATV detection plus review comments
+Fixed re-entry from Now Playing into app; enabled media control fading
+Removed unneeded images
+Addressed review comments and code refactoring
+Removed BACK button stack
+Add a default art drawable when there's no art bitmap
+
+Change-Id: I07b469d1fd45be4e9b2d02adf06d6aeec99ccde7 | 2015-04-24 17:09:12 | 971f2d856d8269f162c4fc385388d83a206c9d5e
+
+Update dep versions and fixed fragment bug
+
+Update gradle build tools version
+Update support libraries versions
+Address a few Lint issues
+Change icon names to avoid collision with CCL icons
+
+Bug: 21639213
+Bug: 21639021
+
+Change-Id: Id4579fe80b5a2b8d57f679de7ef7e3cc892f3c7d | 2015-06-04 21:11:59 | eaf59e2c6ba0f731ed69d9922a79fa4eaf8bfb41
+
+Merge pull request #14 from googlesamples/tjohns-patch-1
+
+Sample metadata: Fix typo in packaging.yaml | 2015-04-06 22:47:46 | 56a24b3ce9c3d3c29ba04a77a525b798863c783c
+
+Add new debug certificate.
+
+Bug: 19621186
+Change-Id: I0610b56e02afdd098c24ed3cbac3cd2aa62d1a9f | 2015-03-05 19:27:02 | 171046bd8b73c8e7cd4e073477ff6ec11673d397
+
+Address lint:bugs equals of different types.
+
+Bug: 19354960
+Change-Id: I981aac3c5a36660b2f51f9429316eca366533ac7 | 2015-02-18 18:38:58 | da11b3d159399971b26df0c585f0cdb482572053
+
+Remove redundant status on MusicService
+
+- Removed redundant status on MusicService
+- Fixed playback switching when paused
+- Added null check on playback callback calls
+- Added notifyListeners param to Playback.stop()
+- Added loadMedia to cast playback pause() when media is not loaded
+- Removed unused method Playback.togglePlayback
+- nit: Changed audio focus enum to int consts (better memory footprint)
+- nit: fixed a few lines over 100 chars
+
+Bug: 19092630
+Change-Id: I391005c2b2176c64392456a3ed7ab62e9e708ab5 | 2015-01-22 00:38:20 | 8181a62720376c271ddad62ae3362077385ace1f
+
+Use default MediaDialogFactory instead of the CCL one.
+
+Also remove dispatchKeyEvent since volume events are handled by
+mediaController set on the activity. They are then routed to the appropriate
+MediaSession and thus the MediaRouter by the system.
+
+Bug: 19005450
+Change-Id: Ib5d9b1f88cffab728e2c253f5ca5be98ed5061db | 2015-01-23 00:28:10 | f1064f20053978cfa978c559d72f3dab521cca03
+
+Fix handling of back button in fragment/activity
+
+The issue was that a fragment was being restored by the framework on
+orientation changes. Such a fragment would show nothing since its onStart()
+returns if the mediabrowser is not connected. This was compounded by the
+fact that onConnected() in the activity was adding a new fragment on each call.
+
+This fix does the following:
+1. Moves the code that should be run when a MediaBrowser is connected into
+a method named onConnected()
+2. Changes the Activity to start with a fragment if savedInstanceState is null.
+3. Changes the connectionCallback of the activity to call the fragment.onConnected()
+4. Finally it handles the case where a new fragment is added when the browser is already
+connected => onStart() called onConnected()
+
+Bug:18791818
+Change-Id: I6cb2d5403d95349443e296598cf1bcf09a15e076 | 2014-12-18 22:12:16 | 5c92829a17b58f1ff4d4d1caf08f36e8be6ecf5e
+
+Integrate Cast Playback into uAmp.
+
+1. Introduce an interface for Playback that is used for playing on both
+   local as well as remote devices.
+2. Refactor local media playback and move it into LocalPlayback
+3. Add a Playback implementation for Cast that supports sequential playback using CCL.
+4. Also add the CCL aar updated with the following fixes:
+   a. Use executeOnExecutor for reconnection logic
+   b. Use CopyOnWriteArraySet for listeners to address the concurrent modification exception
+      caused by adding a listener inside a listener method such as onApplicationConnected(..)
+
+Change-Id: I57473cba17ebef74e6d69428a2b02b876b5dd52b | 2014-12-13 00:07:47 | 2e0235ed4a6ec54f0dd310c8afe121d82821d921
+
+Get the initial underpinnings for cast integration
+
+1. Add CCL
+2. Add cast button + first time UX as mandated by cast checklist.
+3. Also upgrade to using Android Studio 1.0 + gradle-2.2.1
+(fixes needed for build.gradle to enable this.)
+4. Removed values-21 since our app requires L.
+
+Change-Id: Iadacf04a92a75fddc57f50063e8bff509ceba313 | 2014-12-08 21:47:09 | 02e26ecbda7b3200e3c3d6c007d5deee496a370c
+
+Update library versions.
+
+Support library 25.3.x did not properly account for API level 26, which
+was released in Android "O" DP3. Updating to 25.4.0 fixes a crash when
+browsing.
+
+Other library versions are updated to the latest version available.
+
+Bug: 62586349
+
+Change-Id: I7daae4325be793cfd0dc067ed8d5c8cef16a3f4b | 2017-06-13 22:05:48 | ad6481e29fa13f7912a09b632229960dd00dfe7f
+
+Merge "Fix playback behavior bugs." | 2016-07-15 21:35:55 | 19c444ebcad798f72d5fb90ac7a87f970ab24e05
+
+Fix playback behavior bugs.
+
+First, get rid of repetitive call to handlePlayRequest() in QueueManager
+since it is already triggered by callbacks in MediaSessionCallback.
+Second, clicking queue item in TvPlaybackFragment only skips to that
+item (plays that item) if it is the current media item  AND paused, or if
+it is a new media item.
+
+Change-Id: Iecdd153a137e64526a4f3380fd0d08e94a7bc833 | 2016-07-08 23:38:20 | 0da8744ab9a0bd1a56028fbeea3bd2ba1c5a6d16
+
+Implemented Android TV components for uamp
+
+Fixed a couple of bugs in Now Playing and ATV detection plus review comments
+Fixed re-entry from Now Playing into app; enabled media control fading
+Removed unneeded images
+Addressed review comments and code refactoring
+Removed BACK button stack
+Add a default art drawable when there's no art bitmap
+
+Change-Id: I07b469d1fd45be4e9b2d02adf06d6aeec99ccde7 | 2015-04-24 17:09:12 | 971f2d856d8269f162c4fc385388d83a206c9d5e
+
+Update dep versions and fixed fragment bug
+
+Update gradle build tools version
+Update support libraries versions
+Address a few Lint issues
+Change icon names to avoid collision with CCL icons
+
+Bug: 21639213
+Bug: 21639021
+
+Change-Id: Id4579fe80b5a2b8d57f679de7ef7e3cc892f3c7d | 2015-06-04 21:11:59 | eaf59e2c6ba0f731ed69d9922a79fa4eaf8bfb41
+
+Merge pull request #14 from googlesamples/tjohns-patch-1
+
+Sample metadata: Fix typo in packaging.yaml | 2015-04-06 22:47:46 | 56a24b3ce9c3d3c29ba04a77a525b798863c783c
+
+Add new debug certificate.
+
+Bug: 19621186
+Change-Id: I0610b56e02afdd098c24ed3cbac3cd2aa62d1a9f | 2015-03-05 19:27:02 | 171046bd8b73c8e7cd4e073477ff6ec11673d397
+
+Address lint:bugs equals of different types.
+
+Bug: 19354960
+Change-Id: I981aac3c5a36660b2f51f9429316eca366533ac7 | 2015-02-18 18:38:58 | da11b3d159399971b26df0c585f0cdb482572053
+
+Remove redundant status on MusicService
+
+- Removed redundant status on MusicService
+- Fixed playback switching when paused
+- Added null check on playback callback calls
+- Added notifyListeners param to Playback.stop()
+- Added loadMedia to cast playback pause() when media is not loaded
+- Removed unused method Playback.togglePlayback
+- nit: Changed audio focus enum to int consts (better memory footprint)
+- nit: fixed a few lines over 100 chars
+
+Bug: 19092630
+Change-Id: I391005c2b2176c64392456a3ed7ab62e9e708ab5 | 2015-01-22 00:38:20 | 8181a62720376c271ddad62ae3362077385ace1f
+
+Use default MediaDialogFactory instead of the CCL one.
+
+Also remove dispatchKeyEvent since volume events are handled by
+mediaController set on the activity. They are then routed to the appropriate
+MediaSession and thus the MediaRouter by the system.
+
+Bug: 19005450
+Change-Id: Ib5d9b1f88cffab728e2c253f5ca5be98ed5061db | 2015-01-23 00:28:10 | f1064f20053978cfa978c559d72f3dab521cca03
+
+Fix handling of back button in fragment/activity
+
+The issue was that a fragment was being restored by the framework on
+orientation changes. Such a fragment would show nothing since its onStart()
+returns if the mediabrowser is not connected. This was compounded by the
+fact that onConnected() in the activity was adding a new fragment on each call.
+
+This fix does the following:
+1. Moves the code that should be run when a MediaBrowser is connected into
+a method named onConnected()
+2. Changes the Activity to start with a fragment if savedInstanceState is null.
+3. Changes the connectionCallback of the activity to call the fragment.onConnected()
+4. Finally it handles the case where a new fragment is added when the browser is already
+connected => onStart() called onConnected()
+
+Bug:18791818
+Change-Id: I6cb2d5403d95349443e296598cf1bcf09a15e076 | 2014-12-18 22:12:16 | 5c92829a17b58f1ff4d4d1caf08f36e8be6ecf5e
+
+Integrate Cast Playback into uAmp.
+
+1. Introduce an interface for Playback that is used for playing on both
+   local as well as remote devices.
+2. Refactor local media playback and move it into LocalPlayback
+3. Add a Playback implementation for Cast that supports sequential playback using CCL.
+4. Also add the CCL aar updated with the following fixes:
+   a. Use executeOnExecutor for reconnection logic
+   b. Use CopyOnWriteArraySet for listeners to address the concurrent modification exception
+      caused by adding a listener inside a listener method such as onApplicationConnected(..)
+
+Change-Id: I57473cba17ebef74e6d69428a2b02b876b5dd52b | 2014-12-13 00:07:47 | 2e0235ed4a6ec54f0dd310c8afe121d82821d921
+
+Get the initial underpinnings for cast integration
+
+1. Add CCL
+2. Add cast button + first time UX as mandated by cast checklist.
+3. Also upgrade to using Android Studio 1.0 + gradle-2.2.1
+(fixes needed for build.gradle to enable this.)
+4. Removed values-21 since our app requires L.
+
+Change-Id: Iadacf04a92a75fddc57f50063e8bff509ceba313 | 2014-12-08 21:47:09 | 02e26ecbda7b3200e3c3d6c007d5deee496a370c
+

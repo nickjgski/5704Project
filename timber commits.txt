@@ -1,0 +1,433 @@
+Merge pull request #315 from drewhamilton/test-fix
+
+Fix ignored test by using INFO log instead of DEBUG log | 2018-04-16 19:29:35 | 8e5d5a92030102d7e293dc4b8362cf1cda5a737f
+
+Add Kotlin support for the 'Remove redundant argument' check.
+
+In Java, only evaluate UCallExpression when looking for `getMessage` calls.
+This fixes a lint crash when a selector other than `UCallExpression` is present. | 2018-03-28 15:12:57 | e4a44f0ce314c880821faec9b81a36a14e375253
+
+Merge pull request #280 from jrodbx/fix-non-final-fields
+
+Don't check non-constant fields as arguments for null | 2017-12-30 00:48:59 | 42891a8468ca92d3f40d1b2f3c6df429c98f7dd6
+
+Merge pull request #279 from jrodbx/fix-nested-string-format-check
+
+Fix nested String.format check | 2017-12-29 04:42:29 | 91dbae0f3cccae58e52d0f4d47d085ce42b6661f
+
+Merge pull request #268 from Jawnnypoo/patch-1
+
+Update CHANGELOG.md | 2017-10-30 21:57:25 | b566f41af65de253aee54ff0da16092ffe972ab7
+
+Merge pull request #257 from jrodbx/fix-lint-npe
+
+Fix lint NPE | 2017-10-18 16:18:29 | a69776572a184016190127ce6e165f5bebf97287
+
+Bump AGP to 3.0.0-rc1
+
+Also, update comment in LintActivity now that
+https://issuetracker.google.com/issues/65941946 is fixed. | 2017-10-15 06:50:03 | 42b87083e07cedf7cd124e6aa9fb9e7804fc5a87
+
+Merge pull request #250 from jrodbx/quick-fix
+
+Supply quickfixes for lint checks | 2017-09-21 22:13:52 | db1b3e4dde956d98b1af05b292a89530b7034e20
+
+Supply quickfixes for lint checks
+
+Closes #228 | 2017-09-21 21:36:15 | 7f35bc793cdfa3c87f838c302bd4303a7e3651cf
+
+Merge pull request #244 from jrodbx/fix-custom-lint
+
+Fix custom lint checks | 2017-09-13 00:44:08 | 030a7fac543c4590224df762e08a686c854ffa08
+
+Merge pull request #237 from jrodbx/fix-lint
+
+Fix lint | 2017-07-30 04:22:26 | 3816ab4750482400c6e18b18f64e3cc7358b0462
+
+Add Timber lint failure examples
+
+Lint failures should display in the IDE again once the fix discussed here
+is released: https://issuetracker.google.com/issues/62914381#comment10
+
+This commit showcases the current suite of checks with some failure
+examples. | 2017-07-30 01:51:05 | 236791d21ec7976fa940a5020307df150667375d
+
+Check fully-qualified method names properly
+
+Prior to 3.0, this happened to work by accident due to the underlying
+PSI implementation. For a method call, getQualifiedName() returns the
+qualified name found in the source instead of the resolved type, e.g.,
+
+Timber.tag("Foo")
+-> qualified name: "Timber.tag"
+
+timber.log.Timber.tag("Foo")
+-> qualified name: "timber.log.Timber.tag"
+
+This fix uses the fully-qualified name of the method call after
+resolving types.
+
+See: https://issuetracker.google.com/issues/62914381#comment10 | 2017-07-30 01:23:26 | 0fc26f9e32b6c22f8a164b61c96a7a4c4b6308dd
+
+Merge pull request #211 from piotr-j/fix-boolean-lint
+
+Handle wrapped boolean in lint | 2017-02-14 16:03:36 | ebac543c0455df41d614780bfa0afcf90ce60bc9
+
+Merge pull request #201 from reisub/patch-1
+
+Fix typo in changelog | 2016-12-31 16:08:22 | bcb41b8fdf8149ca9ebb106259d350f1a8d89419
+
+Make sure timber node has arguments before getting to fix unexpected lint failure. | 2016-12-03 04:37:32 | 59273a4e62f95a14c3fc2fb3214e8b42987a042c
+
+Merge pull request #183 from kymjs/patch-2
+
+Simple implementation | 2016-11-16 20:32:32 | eb8cbe8cfdfdbd6094eae7112c1d5aab1c83f972
+
+Merge pull request #181 from clonetwin26/rs_fix_timber_lint
+
+Fix class cast exception due to too eager typing. | 2016-11-10 16:57:22 | fa7f6576279ee7c017eb76b14da4533ed999f47b
+
+Merge pull request #179 from walles/patch-1
+
+Fix linter crash | 2016-10-23 02:47:05 | c99e5b62a0d702b4ade86c77cf23af019717a184
+
+Merge pull request #164 from Kiskae/Kiskae-patch-1
+
+exceptionFromSpawnedThread - Actually test on a spawned thread. | 2016-09-13 16:01:36 | 750bd85760cca481708cb3fe6121768c665064ef
+
+Merge pull request #141 from shiraji/140_fix_StringFormatInTimber_being_shown_incorrectly
+
+Add more strict pattern match for StringFormatInTimber | 2016-05-23 21:45:50 | 3a1b762addc3eb99c4af05290853046a6c0af1d1
+
+Merge pull request #128 from shiraji/125_fix_lint_warns_for_tag_call
+
+Fix lint warning for tag call | 2016-03-30 15:19:03 | 31242742ce449380994368eeb131894d54fe39fa
+
+Merge pull request #79 from JakeWharton/jw/fix-lint
+
+Correct lintOptions specification, also log to stdout. | 2015-10-07 15:40:59 | 361be6957d6fb0645942c3d3f6bfe4d0a5169341
+
+Merge pull request #41 from JakeWharton/jw/log-callback
+
+Provide a callback for logging a message on a DebugTree. | 2015-02-18 00:55:43 | 0c1ecdc023eeaa5c2b5ec7daac4fa9b775c244c6
+
+Provide a callback for logging a message on a DebugTree.
+
+This allows planting the tree for the tag behavior but redirecting the logs elsewhere. This also forbids extending the actual logging methods on this tree. | 2015-02-18 00:51:32 | 77e99f8f41762359bc397e3af6f0d8b5f692c3db
+
+Win the lottery! Or, fix Maven classpath hell on the first guess. | 2015-01-20 06:48:10 | a202c3a3b183d6c6e9c7c2ac75a1345c9db7f7d9
+
+Merge pull request #31 from JakeWharton/jw/fix-travis
+
+Update to Android worker. | 2014-08-26 07:46:47 | 04d2426e61e1918eaf1a1d43595fee09960e2b97
+
+Merge pull request #17 from luciofm/master
+
+Use stringFormat on DebugTree.d(String message, Object... args) too | 2014-02-12 17:45:12 | 893334c9eee9361ca890fca847d633863c6a28ff
+
+Use stringFormat on DebugTree.d(String message, Object... args) too | 2014-02-12 17:28:05 | 7a758bd5861dfce6691348a22f72288045ae0ca6
+
+Merge pull request #16 from PeterAttardo/master
+
+If no varargs are supplied in DebugTree, treat it as a request to log th... | 2014-02-12 00:13:29 | 4b692cf85926a7ca5aef739c70a1715fec2bb874
+
+If no varargs are supplied in DebugTree, treat it as a request to log the string without formatting | 2014-02-11 22:03:57 | fabd9c1be8000ea61a1ed9cf1462684e927528e2
+
+Merge pull request #4 from imminent/patch-3
+
+Uses Log.* for *(...) where *'s are equal | 2013-07-22 18:47:21 | 61d425108ea8dd52552c2449fc3b6e32077e9a20
+
+Merge pull request #1 from johnjohndoe/fix/line-endings
+
+Convert line endings from CRLF to LF. | 2013-07-18 16:56:04 | 541cc614cc631f67333abded499ef0728ed89011
+
+Merge pull request #315 from drewhamilton/test-fix
+
+Fix ignored test by using INFO log instead of DEBUG log | 2018-04-16 19:29:35 | 8e5d5a92030102d7e293dc4b8362cf1cda5a737f
+
+Add Kotlin support for the 'Remove redundant argument' check.
+
+In Java, only evaluate UCallExpression when looking for `getMessage` calls.
+This fixes a lint crash when a selector other than `UCallExpression` is present. | 2018-03-28 15:12:57 | e4a44f0ce314c880821faec9b81a36a14e375253
+
+Merge pull request #280 from jrodbx/fix-non-final-fields
+
+Don't check non-constant fields as arguments for null | 2017-12-30 00:48:59 | 42891a8468ca92d3f40d1b2f3c6df429c98f7dd6
+
+Merge pull request #279 from jrodbx/fix-nested-string-format-check
+
+Fix nested String.format check | 2017-12-29 04:42:29 | 91dbae0f3cccae58e52d0f4d47d085ce42b6661f
+
+Merge pull request #268 from Jawnnypoo/patch-1
+
+Update CHANGELOG.md | 2017-10-30 21:57:25 | b566f41af65de253aee54ff0da16092ffe972ab7
+
+Merge pull request #257 from jrodbx/fix-lint-npe
+
+Fix lint NPE | 2017-10-18 16:18:29 | a69776572a184016190127ce6e165f5bebf97287
+
+Bump AGP to 3.0.0-rc1
+
+Also, update comment in LintActivity now that
+https://issuetracker.google.com/issues/65941946 is fixed. | 2017-10-15 06:50:03 | 42b87083e07cedf7cd124e6aa9fb9e7804fc5a87
+
+Merge pull request #250 from jrodbx/quick-fix
+
+Supply quickfixes for lint checks | 2017-09-21 22:13:52 | db1b3e4dde956d98b1af05b292a89530b7034e20
+
+Supply quickfixes for lint checks
+
+Closes #228 | 2017-09-21 21:36:15 | 7f35bc793cdfa3c87f838c302bd4303a7e3651cf
+
+Merge pull request #244 from jrodbx/fix-custom-lint
+
+Fix custom lint checks | 2017-09-13 00:44:08 | 030a7fac543c4590224df762e08a686c854ffa08
+
+Merge pull request #237 from jrodbx/fix-lint
+
+Fix lint | 2017-07-30 04:22:26 | 3816ab4750482400c6e18b18f64e3cc7358b0462
+
+Add Timber lint failure examples
+
+Lint failures should display in the IDE again once the fix discussed here
+is released: https://issuetracker.google.com/issues/62914381#comment10
+
+This commit showcases the current suite of checks with some failure
+examples. | 2017-07-30 01:51:05 | 236791d21ec7976fa940a5020307df150667375d
+
+Check fully-qualified method names properly
+
+Prior to 3.0, this happened to work by accident due to the underlying
+PSI implementation. For a method call, getQualifiedName() returns the
+qualified name found in the source instead of the resolved type, e.g.,
+
+Timber.tag("Foo")
+-> qualified name: "Timber.tag"
+
+timber.log.Timber.tag("Foo")
+-> qualified name: "timber.log.Timber.tag"
+
+This fix uses the fully-qualified name of the method call after
+resolving types.
+
+See: https://issuetracker.google.com/issues/62914381#comment10 | 2017-07-30 01:23:26 | 0fc26f9e32b6c22f8a164b61c96a7a4c4b6308dd
+
+Merge pull request #211 from piotr-j/fix-boolean-lint
+
+Handle wrapped boolean in lint | 2017-02-14 16:03:36 | ebac543c0455df41d614780bfa0afcf90ce60bc9
+
+Merge pull request #201 from reisub/patch-1
+
+Fix typo in changelog | 2016-12-31 16:08:22 | bcb41b8fdf8149ca9ebb106259d350f1a8d89419
+
+Make sure timber node has arguments before getting to fix unexpected lint failure. | 2016-12-03 04:37:32 | 59273a4e62f95a14c3fc2fb3214e8b42987a042c
+
+Merge pull request #183 from kymjs/patch-2
+
+Simple implementation | 2016-11-16 20:32:32 | eb8cbe8cfdfdbd6094eae7112c1d5aab1c83f972
+
+Merge pull request #181 from clonetwin26/rs_fix_timber_lint
+
+Fix class cast exception due to too eager typing. | 2016-11-10 16:57:22 | fa7f6576279ee7c017eb76b14da4533ed999f47b
+
+Merge pull request #179 from walles/patch-1
+
+Fix linter crash | 2016-10-23 02:47:05 | c99e5b62a0d702b4ade86c77cf23af019717a184
+
+Merge pull request #164 from Kiskae/Kiskae-patch-1
+
+exceptionFromSpawnedThread - Actually test on a spawned thread. | 2016-09-13 16:01:36 | 750bd85760cca481708cb3fe6121768c665064ef
+
+Merge pull request #141 from shiraji/140_fix_StringFormatInTimber_being_shown_incorrectly
+
+Add more strict pattern match for StringFormatInTimber | 2016-05-23 21:45:50 | 3a1b762addc3eb99c4af05290853046a6c0af1d1
+
+Merge pull request #128 from shiraji/125_fix_lint_warns_for_tag_call
+
+Fix lint warning for tag call | 2016-03-30 15:19:03 | 31242742ce449380994368eeb131894d54fe39fa
+
+Merge pull request #79 from JakeWharton/jw/fix-lint
+
+Correct lintOptions specification, also log to stdout. | 2015-10-07 15:40:59 | 361be6957d6fb0645942c3d3f6bfe4d0a5169341
+
+Merge pull request #41 from JakeWharton/jw/log-callback
+
+Provide a callback for logging a message on a DebugTree. | 2015-02-18 00:55:43 | 0c1ecdc023eeaa5c2b5ec7daac4fa9b775c244c6
+
+Provide a callback for logging a message on a DebugTree.
+
+This allows planting the tree for the tag behavior but redirecting the logs elsewhere. This also forbids extending the actual logging methods on this tree. | 2015-02-18 00:51:32 | 77e99f8f41762359bc397e3af6f0d8b5f692c3db
+
+Win the lottery! Or, fix Maven classpath hell on the first guess. | 2015-01-20 06:48:10 | a202c3a3b183d6c6e9c7c2ac75a1345c9db7f7d9
+
+Merge pull request #31 from JakeWharton/jw/fix-travis
+
+Update to Android worker. | 2014-08-26 07:46:47 | 04d2426e61e1918eaf1a1d43595fee09960e2b97
+
+Merge pull request #17 from luciofm/master
+
+Use stringFormat on DebugTree.d(String message, Object... args) too | 2014-02-12 17:45:12 | 893334c9eee9361ca890fca847d633863c6a28ff
+
+Use stringFormat on DebugTree.d(String message, Object... args) too | 2014-02-12 17:28:05 | 7a758bd5861dfce6691348a22f72288045ae0ca6
+
+Merge pull request #16 from PeterAttardo/master
+
+If no varargs are supplied in DebugTree, treat it as a request to log th... | 2014-02-12 00:13:29 | 4b692cf85926a7ca5aef739c70a1715fec2bb874
+
+If no varargs are supplied in DebugTree, treat it as a request to log the string without formatting | 2014-02-11 22:03:57 | fabd9c1be8000ea61a1ed9cf1462684e927528e2
+
+Merge pull request #4 from imminent/patch-3
+
+Uses Log.* for *(...) where *'s are equal | 2013-07-22 18:47:21 | 61d425108ea8dd52552c2449fc3b6e32077e9a20
+
+Merge pull request #1 from johnjohndoe/fix/line-endings
+
+Convert line endings from CRLF to LF. | 2013-07-18 16:56:04 | 541cc614cc631f67333abded499ef0728ed89011
+
+Merge pull request #369 from erikhuizinga/patch-1
+
+Fix Tree.log doc | 2019-08-20 13:21:47 | f6d1b98d6280ec567d4e8b60a011f662fdce445b
+
+Merge pull request #315 from drewhamilton/test-fix
+
+Fix ignored test by using INFO log instead of DEBUG log | 2018-04-16 19:29:35 | 8e5d5a92030102d7e293dc4b8362cf1cda5a737f
+
+Add Kotlin support for the 'Remove redundant argument' check.
+
+In Java, only evaluate UCallExpression when looking for `getMessage` calls.
+This fixes a lint crash when a selector other than `UCallExpression` is present. | 2018-03-28 15:12:57 | e4a44f0ce314c880821faec9b81a36a14e375253
+
+Merge pull request #280 from jrodbx/fix-non-final-fields
+
+Don't check non-constant fields as arguments for null | 2017-12-30 00:48:59 | 42891a8468ca92d3f40d1b2f3c6df429c98f7dd6
+
+Merge pull request #279 from jrodbx/fix-nested-string-format-check
+
+Fix nested String.format check | 2017-12-29 04:42:29 | 91dbae0f3cccae58e52d0f4d47d085ce42b6661f
+
+Merge pull request #268 from Jawnnypoo/patch-1
+
+Update CHANGELOG.md | 2017-10-30 21:57:25 | b566f41af65de253aee54ff0da16092ffe972ab7
+
+Merge pull request #257 from jrodbx/fix-lint-npe
+
+Fix lint NPE | 2017-10-18 16:18:29 | a69776572a184016190127ce6e165f5bebf97287
+
+Bump AGP to 3.0.0-rc1
+
+Also, update comment in LintActivity now that
+https://issuetracker.google.com/issues/65941946 is fixed. | 2017-10-15 06:50:03 | 42b87083e07cedf7cd124e6aa9fb9e7804fc5a87
+
+Merge pull request #250 from jrodbx/quick-fix
+
+Supply quickfixes for lint checks | 2017-09-21 22:13:52 | db1b3e4dde956d98b1af05b292a89530b7034e20
+
+Supply quickfixes for lint checks
+
+Closes #228 | 2017-09-21 21:36:15 | 7f35bc793cdfa3c87f838c302bd4303a7e3651cf
+
+Merge pull request #244 from jrodbx/fix-custom-lint
+
+Fix custom lint checks | 2017-09-13 00:44:08 | 030a7fac543c4590224df762e08a686c854ffa08
+
+Merge pull request #237 from jrodbx/fix-lint
+
+Fix lint | 2017-07-30 04:22:26 | 3816ab4750482400c6e18b18f64e3cc7358b0462
+
+Add Timber lint failure examples
+
+Lint failures should display in the IDE again once the fix discussed here
+is released: https://issuetracker.google.com/issues/62914381#comment10
+
+This commit showcases the current suite of checks with some failure
+examples. | 2017-07-30 01:51:05 | 236791d21ec7976fa940a5020307df150667375d
+
+Check fully-qualified method names properly
+
+Prior to 3.0, this happened to work by accident due to the underlying
+PSI implementation. For a method call, getQualifiedName() returns the
+qualified name found in the source instead of the resolved type, e.g.,
+
+Timber.tag("Foo")
+-> qualified name: "Timber.tag"
+
+timber.log.Timber.tag("Foo")
+-> qualified name: "timber.log.Timber.tag"
+
+This fix uses the fully-qualified name of the method call after
+resolving types.
+
+See: https://issuetracker.google.com/issues/62914381#comment10 | 2017-07-30 01:23:26 | 0fc26f9e32b6c22f8a164b61c96a7a4c4b6308dd
+
+Merge pull request #211 from piotr-j/fix-boolean-lint
+
+Handle wrapped boolean in lint | 2017-02-14 16:03:36 | ebac543c0455df41d614780bfa0afcf90ce60bc9
+
+Merge pull request #201 from reisub/patch-1
+
+Fix typo in changelog | 2016-12-31 16:08:22 | bcb41b8fdf8149ca9ebb106259d350f1a8d89419
+
+Make sure timber node has arguments before getting to fix unexpected lint failure. | 2016-12-03 04:37:32 | 59273a4e62f95a14c3fc2fb3214e8b42987a042c
+
+Merge pull request #183 from kymjs/patch-2
+
+Simple implementation | 2016-11-16 20:32:32 | eb8cbe8cfdfdbd6094eae7112c1d5aab1c83f972
+
+Merge pull request #181 from clonetwin26/rs_fix_timber_lint
+
+Fix class cast exception due to too eager typing. | 2016-11-10 16:57:22 | fa7f6576279ee7c017eb76b14da4533ed999f47b
+
+Merge pull request #179 from walles/patch-1
+
+Fix linter crash | 2016-10-23 02:47:05 | c99e5b62a0d702b4ade86c77cf23af019717a184
+
+Merge pull request #164 from Kiskae/Kiskae-patch-1
+
+exceptionFromSpawnedThread - Actually test on a spawned thread. | 2016-09-13 16:01:36 | 750bd85760cca481708cb3fe6121768c665064ef
+
+Merge pull request #141 from shiraji/140_fix_StringFormatInTimber_being_shown_incorrectly
+
+Add more strict pattern match for StringFormatInTimber | 2016-05-23 21:45:50 | 3a1b762addc3eb99c4af05290853046a6c0af1d1
+
+Merge pull request #128 from shiraji/125_fix_lint_warns_for_tag_call
+
+Fix lint warning for tag call | 2016-03-30 15:19:03 | 31242742ce449380994368eeb131894d54fe39fa
+
+Merge pull request #79 from JakeWharton/jw/fix-lint
+
+Correct lintOptions specification, also log to stdout. | 2015-10-07 15:40:59 | 361be6957d6fb0645942c3d3f6bfe4d0a5169341
+
+Merge pull request #41 from JakeWharton/jw/log-callback
+
+Provide a callback for logging a message on a DebugTree. | 2015-02-18 00:55:43 | 0c1ecdc023eeaa5c2b5ec7daac4fa9b775c244c6
+
+Provide a callback for logging a message on a DebugTree.
+
+This allows planting the tree for the tag behavior but redirecting the logs elsewhere. This also forbids extending the actual logging methods on this tree. | 2015-02-18 00:51:32 | 77e99f8f41762359bc397e3af6f0d8b5f692c3db
+
+Win the lottery! Or, fix Maven classpath hell on the first guess. | 2015-01-20 06:48:10 | a202c3a3b183d6c6e9c7c2ac75a1345c9db7f7d9
+
+Merge pull request #31 from JakeWharton/jw/fix-travis
+
+Update to Android worker. | 2014-08-26 07:46:47 | 04d2426e61e1918eaf1a1d43595fee09960e2b97
+
+Merge pull request #17 from luciofm/master
+
+Use stringFormat on DebugTree.d(String message, Object... args) too | 2014-02-12 17:45:12 | 893334c9eee9361ca890fca847d633863c6a28ff
+
+Use stringFormat on DebugTree.d(String message, Object... args) too | 2014-02-12 17:28:05 | 7a758bd5861dfce6691348a22f72288045ae0ca6
+
+Merge pull request #16 from PeterAttardo/master
+
+If no varargs are supplied in DebugTree, treat it as a request to log th... | 2014-02-12 00:13:29 | 4b692cf85926a7ca5aef739c70a1715fec2bb874
+
+If no varargs are supplied in DebugTree, treat it as a request to log the string without formatting | 2014-02-11 22:03:57 | fabd9c1be8000ea61a1ed9cf1462684e927528e2
+
+Merge pull request #4 from imminent/patch-3
+
+Uses Log.* for *(...) where *'s are equal | 2013-07-22 18:47:21 | 61d425108ea8dd52552c2449fc3b6e32077e9a20
+
+Merge pull request #1 from johnjohndoe/fix/line-endings
+
+Convert line endings from CRLF to LF. | 2013-07-18 16:56:04 | 541cc614cc631f67333abded499ef0728ed89011
+

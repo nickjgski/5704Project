@@ -1,0 +1,353 @@
+1. add rule LockShouldWithTryFinallyRule
+2. fix some issue | 2019-12-06 03:48:21 | 2ac5d2c2dfe6a3624ac74120e8ab79c0e0a9a20b
+
+Merge pull request #613 from LQZYC/fix
+
+同步改动 | 2019-12-05 11:30:49 | 545c0089ade87905fd3d7588983ac2749e626adb
+
+Merge branch 'master' into fix | 2019-12-05 11:30:27 | d7120ded368093ccfebf32e1b9e482eea8bdc936
+
+Merge pull request #614 from fw8899/master
+
+fix https://github.com/alibaba/p3c/issues/209 | 2019-12-05 07:09:58 | f0bfaa47c61756f2a08188a7db8b957cfdafdef9
+
+fix https://github.com/alibaba/p3c/issues/209 | 2019-12-05 02:28:43 | 670c4f4ac0ae2ddba4a58cf89fdd906676300a97
+
+Merge pull request #486 from livoras/master
+
+fix typo | 2019-04-02 06:36:32 | 8c25cddcda0fc587f941ac3f836631ffc4334480
+
+Handle [string literal].equals() correctly in EqualsAvoidNullRule
+
+This fixes https://github.com/alibaba/p3c/issues/471
+
+Previously, the following code can't pass EqualsAvoidNullRule:
+
+public class Test {
+  private static final String VERSION = System.getProperty("v");
+  public boolean isJava6(){
+    return "1.6".equals(VERSION);
+  }
+}
+
+This PR fixes this issue by checking if the caller is a literal. | 2019-03-14 21:56:12 | 1dc88f5b49f9a82eef0ba2d4181d3e63b2aed9e6
+
+fix typo | 2019-03-29 01:54:59 | f4659f94cb140c0ad0e5c528b48757fa84b7acbe
+
+Merge pull request #477 from alibaba/xuantan-patch-1
+
+Update README.md | 2019-03-19 08:43:40 | 3cf25942922fb5c44624d0db9011190a5b0efeff
+
+Merge pull request #474 from slievrly/patch-1
+
+Update README.md | 2019-03-19 06:57:15 | 465aa6d5b64517d13c216b98c6e96abb89df2240
+
+Merge pull request #362 from wilsonjuxta/master
+
+fix typo in example code | 2018-11-06 06:33:00 | 08a207fb5b0f562047924fcbb57a04d404affdbc
+
+fix typo in example code | 2018-07-20 10:17:49 | 15e43a77179affed0cb0a449cb4f272226b3c0de
+
+Merge pull request #328 from SeanCai/master
+
+add some rules and bug fix | 2018-06-13 03:52:50 | b0930cd8df8bc8e9f046d1237d26da1caed3f2e0
+
+add rules
+ [Recommended] The total number of lines for a method should not be more than 80
+ [Recommended] Avoid using the negation operator '!'
+ [Mandatory] When doing date formatting, "y" should be written in lowercase for "year" in a pattern statement
+
+ and some bug fix | 2018-06-12 07:45:15 | b948c7e62b36c2630b113366a5d44a916504e37d
+
+fix: #312 | 2018-06-12 07:00:44 | 4da2bb19f8c602763516b73899abb78f39d63afa
+
+fix https://github.com/alibaba/p3c/issues/264 | 2018-06-12 06:45:05 | 80d4708ab9b54fe7ac45cd535124ea62b2fc273a
+
+fix the link of Chinese version of PDF | 2018-06-06 07:17:04 | eabfd5e868ccb5f25d08a3e60ac1fe10b41b1e28
+
+Merge pull request #283 from fw8899/master
+
+bugfix: default中包含return, throw时漏报 | 2018-03-20 07:12:32 | 2d699c9ad7a660b4df853c671299fa562f1ba8cb
+
+bugfix: default中包含return, throw时漏报 | 2018-03-15 12:23:36 | 42ce06fd3cb56e3b1dfad6fa7bd9f9cc244b2565
+
+Merge pull request #255 from SeanCai/master
+
+pr for bug fix and new version | 2018-03-15 07:04:28 | 3e32532e5e66afa74d8a0b55a70e132e06458067
+
+Merge pull request #251 from fw8899/master
+
+fix https://github.com/alibaba/p3c/issues/222 | 2018-02-01 03:45:38 | cb27677314425575ef91420dc6ba990a00dccc05
+
+fix https://github.com/alibaba/p3c/issues/222 | 2018-02-01 03:38:18 | 10f38486880f0d89fdda2adc2ec241193af3ee5e
+
+Merge pull request #220 from SeanCai/master
+
+fix some issues | 2017-12-27 10:05:15 | 6cc59402fb64d4131b3ebd020b14011fa57a53ae
+
+fix https://github.com/alibaba/p3c/issues/217 | 2017-12-27 09:32:03 | 0d2dc579097e5872de1a05072e29193df93ba331
+
+fix https://github.com/alibaba/p3c/issues/195 https://github.com/alibaba/p3c/issues/208 | 2017-12-27 09:31:43 | 57888c9798c2ab22e1e5d7e23229cd866e518cc7
+
+fix https://github.com/alibaba/p3c/issues/208 | 2017-12-27 08:34:38 | 16d65a982079fabdf46633b800cfecff92069193
+
+fix https://github.com/alibaba/p3c/issues/210 | 2017-12-27 08:12:53 | fd1d0021d690cb84fd1437ed579a4c6ae022019a
+
+Merge pull request #201 from SeanCai/master
+
+some bug fix | 2017-12-12 08:07:44 | 049796110d04657ea5b7b89d40fc31002fb2cbc8
+
+fix https://github.com/alibaba/p3c/issues/187 | 2017-12-12 07:58:18 | 3b6e251a76711897835f2e57974d4eb2ec840b65
+
+Merge pull request #198 from JustinTsui/master
+
+docs: fix README.md referenced to a modified file | 2017-12-12 07:56:37 | 5f89478a9922d45c3f7387cfe41290215a8b8dc1
+
+fix https://github.com/alibaba/p3c/issues/191 | 2017-12-12 07:51:54 | 8215bc045eecc303ad56dff0815311d4015cb640
+
+docs: fix README.md referenced to a modified file | 2017-12-08 06:43:07 | 529bf4f98bf5b96534a5eced6a8cf9a4b6307be1
+
+Merge pull request #193 from SeanCai/master
+
+ transactional check pattern for rollbackFor or rollbakOn and fix #185 | 2017-11-29 08:34:22 | dd05eab6d0bd93445bc942f1d414795943e4173c
+
+fix https://github.com/alibaba/p3c/issues/185 | 2017-11-28 09:30:53 | 35410bea7ca62c811501808ba25dafa6b490e26f
+
+Merge pull request #178 from SeanCai/master
+
+fix https://github.com/alibaba/p3c/issues/157 https://github.com/alibaba/p3c/issues/102 https://github.com/alibaba/p3c/issues/77 performance issue | 2017-11-23 03:02:57 | 59eb16b38288107e1ab32a292586b43da8fcf5c1
+
+fix https://github.com/alibaba/p3c/issues/157 https://github.com/alibaba/p3c/issues/102 https://github.com/alibaba/p3c/issues/77
+treeview keep expand state while update result data | 2017-11-10 11:15:45 | 30445436abe44867d7a304287df567f7ab106d63
+
+Merge pull request #158 from SeanCai/master
+
+fix #149 #60 #58 | 2017-11-01 12:25:01 | 78e2a87a6691c039d015a014ab3bde37bd6cea83
+
+fix https://github.com/alibaba/p3c/issues/60
+Use english as initial language if default language is neither zh nor en. | 2017-11-01 12:17:19 | 863fd771e6f9ca1b8d856eb9f197ceb75b8b43b4
+
+fix https://github.com/alibaba/p3c/issues/58
+do not check array and class starts with java. or javax. | 2017-11-01 12:04:22 | 0cc98d1099cd67f55a40a2936ad70e90e6dd3f43
+
+fix https://github.com/alibaba/p3c/issues/60
+use Locale.default() for the initial language | 2017-11-01 10:19:41 | bce928dc04cf4f067aa0ad5766d8a3641c52804f
+
+fix https://github.com/alibaba/p3c/issues/149
+IDEA插件 函数定义中参数的命名可以检测到非驼峰并高亮，但不能快捷修改。 | 2017-11-01 07:38:46 | b993cd5f67b12c623320eba15e67299ca27ee907
+
+Merge pull request #153 from LQZYC/master
+
+fix issue #68
+support package name like ali88.ps.service | 2017-11-01 01:42:52 | db90432a259c68db1df2232b2176462edb0940fe
+
+fix issue #68 | 2017-11-01 01:36:49 | 8a2cd82a73f02e0c75111ecc59b68806dc4983c5
+
+Merge pull request #151 from kerie/master
+
+清理不再使用的代码段——跳过带<pre>标签的注释, fixes #150 | 2017-10-31 09:51:08 | 40bcf5441aaab178558a5ef9102ce295d3684309
+
+清理不再使用的代码段——跳过带<pre>标签的注释, fixes #150 | 2017-10-31 09:35:28 | 6fada8e380a59aaac2ce5ae56aafad8c74f088ac
+
+Merge pull request #129 from SeanCai/master
+
+bug fix for comment rule mark position | 2017-10-23 07:52:54 | 1ade912a4ed5971692d733c332d5755399c0ed0d
+
+fix
+https://github.com/alibaba/p3c/issues/127
+https://github.com/alibaba/p3c/issues/112 | 2017-10-23 07:34:15 | b5f07950481857db8db0c7106248b1f0df5bc343
+
+bug fix https://github.com/alibaba/p3c/issues/23 | 2017-10-18 08:21:38 | 94d52ffb9c493ad5078db6e5b367e87a98c97968
+
+Merge pull request #87 from asgs/patch-1
+
+Update README.MD for minor fixes. | 2017-10-18 06:28:10 | e7e6fcc850f5b33b7e0007c1a9ab41c5d1988c91
+
+Merge pull request #99 from lowzj/fix-typo
+
+typo: 显示->显式 | 2017-10-18 06:01:21 | 985bbbb23a50dc89b5ec2d01add0775e36d5ab6a
+
+Update README.MD for minor fixes.
+
+1. Grammatical fixes. 2. Markdown changes. | 2017-10-17 13:33:58 | 7acc965779474737ef8e26bfcc798638f871ae16
+
+Merge pull request #63 from SeanCai/master
+
+fix build fail issue | 2017-10-16 09:07:11 | dca5cd64d84592163bd93e0e30214e7d6dce756f
+
+fix build fail issue | 2017-10-16 09:06:26 | 9a2224a23b26f4a9a2f1ffd722eaa0504386e74a
+
+Merge pull request #45 from jokermonn/master
+
+update README
+fix Chinese mess | 2017-10-16 06:09:39 | 4f1f570381dcaa692aa1df130caaaff0c2f84845
+
+Merge pull request #486 from livoras/master
+
+fix typo | 2019-04-02 06:36:32 | 8c25cddcda0fc587f941ac3f836631ffc4334480
+
+Handle [string literal].equals() correctly in EqualsAvoidNullRule
+
+This fixes https://github.com/alibaba/p3c/issues/471
+
+Previously, the following code can't pass EqualsAvoidNullRule:
+
+public class Test {
+  private static final String VERSION = System.getProperty("v");
+  public boolean isJava6(){
+    return "1.6".equals(VERSION);
+  }
+}
+
+This PR fixes this issue by checking if the caller is a literal. | 2019-03-14 21:56:12 | 1dc88f5b49f9a82eef0ba2d4181d3e63b2aed9e6
+
+fix typo | 2019-03-29 01:54:59 | f4659f94cb140c0ad0e5c528b48757fa84b7acbe
+
+Merge pull request #477 from alibaba/xuantan-patch-1
+
+Update README.md | 2019-03-19 08:43:40 | 3cf25942922fb5c44624d0db9011190a5b0efeff
+
+Merge pull request #474 from slievrly/patch-1
+
+Update README.md | 2019-03-19 06:57:15 | 465aa6d5b64517d13c216b98c6e96abb89df2240
+
+Merge pull request #362 from wilsonjuxta/master
+
+fix typo in example code | 2018-11-06 06:33:00 | 08a207fb5b0f562047924fcbb57a04d404affdbc
+
+fix typo in example code | 2018-07-20 10:17:49 | 15e43a77179affed0cb0a449cb4f272226b3c0de
+
+Merge pull request #328 from SeanCai/master
+
+add some rules and bug fix | 2018-06-13 03:52:50 | b0930cd8df8bc8e9f046d1237d26da1caed3f2e0
+
+add rules
+ [Recommended] The total number of lines for a method should not be more than 80
+ [Recommended] Avoid using the negation operator '!'
+ [Mandatory] When doing date formatting, "y" should be written in lowercase for "year" in a pattern statement
+
+ and some bug fix | 2018-06-12 07:45:15 | b948c7e62b36c2630b113366a5d44a916504e37d
+
+fix: #312 | 2018-06-12 07:00:44 | 4da2bb19f8c602763516b73899abb78f39d63afa
+
+fix https://github.com/alibaba/p3c/issues/264 | 2018-06-12 06:45:05 | 80d4708ab9b54fe7ac45cd535124ea62b2fc273a
+
+fix the link of Chinese version of PDF | 2018-06-06 07:17:04 | eabfd5e868ccb5f25d08a3e60ac1fe10b41b1e28
+
+Merge pull request #283 from fw8899/master
+
+bugfix: default中包含return, throw时漏报 | 2018-03-20 07:12:32 | 2d699c9ad7a660b4df853c671299fa562f1ba8cb
+
+bugfix: default中包含return, throw时漏报 | 2018-03-15 12:23:36 | 42ce06fd3cb56e3b1dfad6fa7bd9f9cc244b2565
+
+Merge pull request #255 from SeanCai/master
+
+pr for bug fix and new version | 2018-03-15 07:04:28 | 3e32532e5e66afa74d8a0b55a70e132e06458067
+
+Merge pull request #251 from fw8899/master
+
+fix https://github.com/alibaba/p3c/issues/222 | 2018-02-01 03:45:38 | cb27677314425575ef91420dc6ba990a00dccc05
+
+fix https://github.com/alibaba/p3c/issues/222 | 2018-02-01 03:38:18 | 10f38486880f0d89fdda2adc2ec241193af3ee5e
+
+Merge pull request #220 from SeanCai/master
+
+fix some issues | 2017-12-27 10:05:15 | 6cc59402fb64d4131b3ebd020b14011fa57a53ae
+
+fix https://github.com/alibaba/p3c/issues/217 | 2017-12-27 09:32:03 | 0d2dc579097e5872de1a05072e29193df93ba331
+
+fix https://github.com/alibaba/p3c/issues/195 https://github.com/alibaba/p3c/issues/208 | 2017-12-27 09:31:43 | 57888c9798c2ab22e1e5d7e23229cd866e518cc7
+
+fix https://github.com/alibaba/p3c/issues/208 | 2017-12-27 08:34:38 | 16d65a982079fabdf46633b800cfecff92069193
+
+fix https://github.com/alibaba/p3c/issues/210 | 2017-12-27 08:12:53 | fd1d0021d690cb84fd1437ed579a4c6ae022019a
+
+Merge pull request #201 from SeanCai/master
+
+some bug fix | 2017-12-12 08:07:44 | 049796110d04657ea5b7b89d40fc31002fb2cbc8
+
+fix https://github.com/alibaba/p3c/issues/187 | 2017-12-12 07:58:18 | 3b6e251a76711897835f2e57974d4eb2ec840b65
+
+Merge pull request #198 from JustinTsui/master
+
+docs: fix README.md referenced to a modified file | 2017-12-12 07:56:37 | 5f89478a9922d45c3f7387cfe41290215a8b8dc1
+
+fix https://github.com/alibaba/p3c/issues/191 | 2017-12-12 07:51:54 | 8215bc045eecc303ad56dff0815311d4015cb640
+
+docs: fix README.md referenced to a modified file | 2017-12-08 06:43:07 | 529bf4f98bf5b96534a5eced6a8cf9a4b6307be1
+
+Merge pull request #193 from SeanCai/master
+
+ transactional check pattern for rollbackFor or rollbakOn and fix #185 | 2017-11-29 08:34:22 | dd05eab6d0bd93445bc942f1d414795943e4173c
+
+fix https://github.com/alibaba/p3c/issues/185 | 2017-11-28 09:30:53 | 35410bea7ca62c811501808ba25dafa6b490e26f
+
+Merge pull request #178 from SeanCai/master
+
+fix https://github.com/alibaba/p3c/issues/157 https://github.com/alibaba/p3c/issues/102 https://github.com/alibaba/p3c/issues/77 performance issue | 2017-11-23 03:02:57 | 59eb16b38288107e1ab32a292586b43da8fcf5c1
+
+fix https://github.com/alibaba/p3c/issues/157 https://github.com/alibaba/p3c/issues/102 https://github.com/alibaba/p3c/issues/77
+treeview keep expand state while update result data | 2017-11-10 11:15:45 | 30445436abe44867d7a304287df567f7ab106d63
+
+Merge pull request #158 from SeanCai/master
+
+fix #149 #60 #58 | 2017-11-01 12:25:01 | 78e2a87a6691c039d015a014ab3bde37bd6cea83
+
+fix https://github.com/alibaba/p3c/issues/60
+Use english as initial language if default language is neither zh nor en. | 2017-11-01 12:17:19 | 863fd771e6f9ca1b8d856eb9f197ceb75b8b43b4
+
+fix https://github.com/alibaba/p3c/issues/58
+do not check array and class starts with java. or javax. | 2017-11-01 12:04:22 | 0cc98d1099cd67f55a40a2936ad70e90e6dd3f43
+
+fix https://github.com/alibaba/p3c/issues/60
+use Locale.default() for the initial language | 2017-11-01 10:19:41 | bce928dc04cf4f067aa0ad5766d8a3641c52804f
+
+fix https://github.com/alibaba/p3c/issues/149
+IDEA插件 函数定义中参数的命名可以检测到非驼峰并高亮，但不能快捷修改。 | 2017-11-01 07:38:46 | b993cd5f67b12c623320eba15e67299ca27ee907
+
+Merge pull request #153 from LQZYC/master
+
+fix issue #68
+support package name like ali88.ps.service | 2017-11-01 01:42:52 | db90432a259c68db1df2232b2176462edb0940fe
+
+fix issue #68 | 2017-11-01 01:36:49 | 8a2cd82a73f02e0c75111ecc59b68806dc4983c5
+
+Merge pull request #151 from kerie/master
+
+清理不再使用的代码段——跳过带<pre>标签的注释, fixes #150 | 2017-10-31 09:51:08 | 40bcf5441aaab178558a5ef9102ce295d3684309
+
+清理不再使用的代码段——跳过带<pre>标签的注释, fixes #150 | 2017-10-31 09:35:28 | 6fada8e380a59aaac2ce5ae56aafad8c74f088ac
+
+Merge pull request #129 from SeanCai/master
+
+bug fix for comment rule mark position | 2017-10-23 07:52:54 | 1ade912a4ed5971692d733c332d5755399c0ed0d
+
+fix
+https://github.com/alibaba/p3c/issues/127
+https://github.com/alibaba/p3c/issues/112 | 2017-10-23 07:34:15 | b5f07950481857db8db0c7106248b1f0df5bc343
+
+bug fix https://github.com/alibaba/p3c/issues/23 | 2017-10-18 08:21:38 | 94d52ffb9c493ad5078db6e5b367e87a98c97968
+
+Merge pull request #87 from asgs/patch-1
+
+Update README.MD for minor fixes. | 2017-10-18 06:28:10 | e7e6fcc850f5b33b7e0007c1a9ab41c5d1988c91
+
+Merge pull request #99 from lowzj/fix-typo
+
+typo: 显示->显式 | 2017-10-18 06:01:21 | 985bbbb23a50dc89b5ec2d01add0775e36d5ab6a
+
+Update README.MD for minor fixes.
+
+1. Grammatical fixes. 2. Markdown changes. | 2017-10-17 13:33:58 | 7acc965779474737ef8e26bfcc798638f871ae16
+
+Merge pull request #63 from SeanCai/master
+
+fix build fail issue | 2017-10-16 09:07:11 | dca5cd64d84592163bd93e0e30214e7d6dce756f
+
+fix build fail issue | 2017-10-16 09:06:26 | 9a2224a23b26f4a9a2f1ffd722eaa0504386e74a
+
+Merge pull request #45 from jokermonn/master
+
+update README
+fix Chinese mess | 2017-10-16 06:09:39 | 4f1f570381dcaa692aa1df130caaaff0c2f84845
+

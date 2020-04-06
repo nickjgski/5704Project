@@ -1,0 +1,3057 @@
+fix ktlint install instructions
+- mv ktlint to /usr/local/bin/
+- add homebrew option for linux/mac users | 2018-10-23 20:53:58 | eed34e8df1960418848409ef9f1500f6979ad649
+
+Re-fix #54 after changing to single-activity pattern (#80)
+
+* Fix tht bug #54
+
+* Add UI-Tests for this bugfix
+
+* Fix UI-Tests
+
+* Use class variable drawerLayout
+
+* Code optimize
+
+- Add a mini extension on DrawerLayout to checkout whether it is opened
+  on left or not.
+- Format if check with braces.
+
+* Reset to use isDrawerOpen instead extension, setLifecycleOwner for binding
+
+- The data-binding should have lifecycle-owner, becuase it is now class
+member variable, this is different from those which have data-binding and would
+*only* be passed as function args.
+
+* Re-fix #54
+
+* Use DrawerLayout as cls member, omitting with in onBackPressed
+
+* Reset some lines that should be unchanged
+
+* Also reset some lines shouldn't be blank
+
+* Fix tests | 2018-07-04 05:17:11 | b1572f9ef65b5643901e6db2a01e1cb3c2c09581
+
+Apply ktlint fixes using ./gradlew sA | 2018-07-02 22:48:15 | 2c6e062fe0b28f7b9275fb9956912fb9c007fa98
+
+Fix bug #54: The navigation drawer should close first (if open) onBackPressed (#59)
+
+* Fix tht bug #54
+
+* Add UI-Tests for this bugfix
+
+* Fix UI-Tests
+
+* Use class variable drawerLayout
+
+* Code optimize
+
+- Add a mini extension on DrawerLayout to checkout whether it is opened
+  on left or not.
+- Format if check with braces.
+
+* Reset to use isDrawerOpen instead extension, setLifecycleOwner for binding
+
+- The data-binding should have lifecycle-owner, becuase it is now class
+member variable, this is different from those which have data-binding and would
+*only* be passed as function args. | 2018-06-26 05:01:41 | f5efdb8aa448f5d8a153372694e50d86669a8966
+
+Dont ClipToPadding
+
+to fix overscroll being cut off | 2018-06-16 04:12:04 | b77d561250157095004c531ae8fc017ac99465ec
+
+Merge pull request #37 from XinyueZ/bugfix/filter-menu-state
+
+Try to fix bug #31 | 2018-06-08 22:58:51 | a6c1f897412d0b98254d00f3b106624ffa7d233f
+
+[Sunflower] Update Readme
+
+Add link to Releases page; minor spacing fix.
+
+Change-Id: I4233886907fa5e3e670b474cd97c11fa41fab7a2 | 2018-05-29 21:04:39 | 6bef6cd2c86850d731e6a8e16a23df7ccae793c0
+
+Android Sunflower: minor cleanups
+
+- Remove app: prefix for binding adapters (not needed)
+- Consolidate margin dimens.
+
+Test: ran unit and instrumented tests:
+      ./gradlew app:test app:connectedAndroidTest
+
+Change-Id: Ie26951f0dd9d9de2bd944d6e336f8a75674c5fc6 | 2018-04-26 03:54:29 | 46301a99fe6ce29eefbe0b535f677f985c520dc7
+
+Android Sunflower: add tests
+
+Code reviewers: this commit adds testing around the two Activities
+in the app.  This is step 5 in the project tracker, and is prep
+for converting the project to MVVM and adding Room (step 6 and 7).
+
+Changes also include:
+- removing build tools version (no longer needed in API 27)
+- updating Gradle libs
+- custom matcher for CollapsingToolbarLayout
+- fixed bug (via TDD) where toolbar title didn't persist on
+  rotation
+- minor improvements (@nonnull annotation, tools:text)
+
+Tracker: go/android-sunflower-tracker
+PRD: go/android-sunflower-prd
+
+Bug: 65952046
+Test: ran unit and instrumented tests
+Change-Id: I87d3f5b319179d2e1917a3ace619ae9fe4bc0630 | 2017-11-07 19:24:05 | b63261f439e74b69800a2ecab083a17992f89e46
+
+added rule to enforce max-lines-length and fixed all the length issues in the project (#517)
+
+added rule to enforce max-lines-length and fixed all the length issues in the project
+
+fix wrong indentation
+
+fix kotlin style issues (#518)
+
+fix kotlin style issues
+
+remove with | 2019-10-03 21:36:29 | 1ec7a01d9b73dfe3aa6cf21b9ef0d2dabd3be190
+
+fix kotlin style issues (#518)
+
+fix kotlin style issues
+
+remove with | 2019-10-03 00:16:45 | 76d16baaf87c2fbd0e87a012852c51ffd067689e
+
+added missing and fixed translations (#509) | 2019-09-05 18:14:08 | ce82cffeed8150cf97789065898f08f29a2a1c9b
+
+This query will never dispatch null, it will return empty list | 2019-08-23 03:34:01 | c0731292aff71962846154c48eefb296d4261d0c
+
+Merge in Material Sprint feature branch to master (#472)
+
+* Update Material version to 1.1.0-alpha07 (#431)
+
+* Add button to navigate to Plant List
+
+When the user's garden is empty, add a button prompting them to navigate to the Plant List.
+
+This also adds a new string and some placeholder string translations.
+
+Updated styling will be implemented in a future commit.
+
+* Change Plant List Page to use GridLayout (#433)
+
+* Changed Plant List page to grid Layout with 2 columns
+
+* Changed garden fragment to gridlayoutmanager with 2 columns
+
+* changed appSpan count to use an integer dimension
+
+* Turning Plant List Grid into Material Themed Cards (#437)
+
+* Initial commit to turn plant list grid into cards
+
+* added dimension variable for card corner radius
+
+* Style changes for CI
+
+* Changed to staggered gridlayout
+
+* Code review Changes
+
+* Convert from drawer layout to tab layout (#438)
+
+* WIP commit - converting to ViewPager
+
+* Update logic when tapping the "Add Plant" button
+
+Also removes action from the navigation graph and adds descriptive constants for the ViewPager page index.
+
+* run spotless
+
+* Use childFragmentManager to preserve fragments when returning to ViewPager
+
+* Update navigation direction for navigating from garden to plan details.
+
+Also removes unused fragment and action entries in the nav graph.
+
+* Clean up unused code and imports
+
+* Add imports back
+
+* Remove unused resources
+
+* Add comment for getCount()
+
+* Created Material-themed cards for My Garden Page (#440)
+
+* Initial commit. still work to be done with strings.xml files
+
+* Translation placeholders and cleaned code
+
+* replaced translations
+
+* cleaned strings and switched to variables
+
+* code review changes
+
+* Add collapsing title to ViewPager (#439)
+
+* Add title to ViewPager
+
+Also add a large font dimension for use in new and old code
+
+* Collapse toolbar
+
+Also some formatting fixes
+
+* Maintain toolbar scroll/collapse state when navigating back to ViewPager
+
+This requires an ID for both CoordinatorLayout and the AppBarLayout - added a comment to clarify.
+
+* Add CollapsingToolbarLayout
+
+Toolbar now collapses on both the My Garden and Plant List pages.
+
+Also added fitsSystemWindows to the app bar so that the text isn't drawn under the system bar.
+
+* Theme (#441)
+
+* initial commit
+
+* formatting changes
+
+* circleCI
+
+* formatting
+
+* Add app bar to plant detail page
+
+Also moves FAB anchor to app bar and increase header image height
+
+* grid with to integers file
+
+* changed shape of fab
+
+* changed shape and color of add button (#455)
+
+* changed colors to use ?attr
+
+* consolidate texts and colors to use material style guide
+
+* Added available plants header and padding to My Garden Page (#457)
+
+* added available plants header
+
+* moved available plants strings
+
+* changed available plants title to be scrollable
+
+* Comments and cleaned code
+
+* spotlessApply
+
+* fixed padding in plant list page (#464)
+
+* fixed padding in plant list page
+
+* margin end added
+
+* Update tests for the new UI interface
+
+Ignoring share button test for now, while the button is being redesigned.
+
+* Add icons to the tab layout (#468)
+
+* Add icons to the tab layout
+
+The icons are programmatically set based on the selected tab.
+
+* Use color resources instead of hard coding color values
+
+* Added Dark Theme (#467)
+
+* dark theme
+
+* spotless
+
+* cleaned code and changed icon color
+
+* Update dark mode yellow
+
+* watering needs changes
+
+* Fix bug where FAB does not hide when clicked
+
+* Detail Collapsing Toolbar (#470)
+
+* initial commit for detail menu items
+
+* spotlessApply
+
+* spotlessApply
+
+* removed unused methods
+
+* removed unused imports
+
+* navbar code review
+
+* fixed overlap
+
+* Theming Changes (#471)
+
+* initial commit for detail menu items
+
+* spotlessApply
+
+* spotlessApply
+
+* removed unused methods
+
+* removed unused imports
+
+* final theming changes
+
+* styling changes to tab icons
+
+* theme code review
+
+* changed to requireContext
+
+* Changed Theme and Shape Format
+
+* Code Readability Changes (#478)
+
+* readability initial changes
+
+* readability changes
+
+* removed unused imports
+
+* Removed use of .tag and Renamed ViewPager (#482)
+
+* updated viewpager name and removed tag
+
+* removed passing of context
+
+* switched to HashMap
+
+* cached fragments instead of loading everytime
+
+* declaritive hashmap
+
+* removed null check
+
+* Show Toolbar Animation using StateListAnimator (#479)
+
+* using animator
+
+* comment formatting
+
+* Code Style and Efficiency Changes (#481)
+
+* efficiency and theming changes
+
+* clean
+
+* Use StateListDrawable for Tabs (#480)
+
+* added StateListDrawable for tabs
+
+* updated to homeviewpager
+
+* changed to homeviewpager for merge conflict
+
+* fixed toolbar text color
+
+* Convert ViewPager to ViewPager2 (#456)
+
+* Convert ViewPager to ViewPager2
+
+Require TabLayoutMediator to set up ViewPager2 and TabLayout; this file is taken from the ViewPager2 sample https://github.com/googlesamples/android-viewpager2.
+
+* Programmatically set menu visibility
+
+This is a temporary workaround; see https://issuetracker.google.com/issues/124183800 for more details.
+
+* Use TabLayoutMediator provided by Material 1.1.0-alpha07
+
+* Update to ViewPager version 1.0.0-alpha06
+
+This update also fixes a bug (https://issuetracker.google.com/issues/124183800 ) and removes the need for the temporary workaround.
+
+* Update callback to use ViewPager2's callback when a tab is selected
+
+* Remove temporary workaround for menu visibility
+
+Also add comment for tab text
+
+* Return String instead of CharSequence
+
+* Add TODO for data binding
+
+* Update ViewPager2 version to 1.0.0-beta02
+
+* Address PR comments + refactor
+
+* Address PR comments
+
+- Create new Fragment instead of fetching existing Fragment
+- Bump VP2 version to 1.0.0-beta03
+
+* Update Turkish string resources
+
+Also removed duplicate app_name in Italian string resources
+
+* Remove canvas nullability and related usage
+
+* Update comment
+
+* Address PR comments
+
+- update Material Version to 1.1.0-alpha09
+- add newlines to layout
+- remove explicit clickable/focusable - not needed since onClick is set
+- use ?attr where appropriate
+- use app:backgroundTint for backwards compatibility
+
+* Address PR comments
+
+- Rename CustomCardView to MaskedCardView
+
+* Update Gradle version
+
+* Address PR comments
+
+- extract tab icon logic to its own method
+- set plant name on the plant detail page in the layout
+- only set appbar and toolbar attributes when crossing a scrolling threshold
+
+* Merge layer-list for back icon into a single <vector>
+
+* Update ktlint and spotless versions
+
+* Update colors and themes
+
+- Change colors to use descriptive names
+- Add alternative style for dark theme
+
+* Merge layer-list for share icon into a single <vector>
+
+Also update the back icon's circle path data and whitespace formatting
+
+* Remove unused PopupOverlay styles
+
+* Add Traditional and Simplified string translations | 2019-08-28 16:41:40 | 6291ad39d43c6c2dd4a12c29cc9797ceb347f050
+
+Update dependencies (#404)
+
+Also fix spacing issue in plant description data by adding two <br>s. | 2019-05-11 05:08:44 | d4b94611c28c299aabdd8dd1a9ebc85f7df634e4
+
+Add WorkManager test for SeedDatabaseWorker (#398)
+
+* Remove deprecated coroutineContext override.
+
+WorkManager v2.1 has deprecated coroutineContext. If you need to have
+your CoroutineWorker run on a different Dispatcher, you can go to the
+desired coroutineContext yourself in the body of the suspending
+function.
+
+* Add SeedDatabaseWorker Test case.
+
+* Simplyfy test using the reified builder for the TestListenableWorker.
+
+* Run Spotless. | 2019-04-26 22:45:11 | 2c424d9fee8993d30b363dfaac5ed005b3d704b2
+
+Remove deprecated coroutineContext override.
+
+WorkManager v2.1 has deprecated coroutineContext. If you need to have
+your CoroutineWorker run on a different Dispatcher, you can go to the
+desired coroutineContext yourself in the body of the suspending
+function. | 2019-04-26 11:48:34 | 54ec64afe674e41e390c9f7cb902aa84537ef359
+
+Remove deprecated coroutineContext override.
+
+WorkManager v2.1 has deprecated coroutineContext. If you need to have
+your CoroutineWorker run on a different Dispatcher, you can go to the
+desired coroutineContext yourself in the body of the suspending
+function. | 2019-04-26 11:48:34 | 17d527d188afcf5f3910b0c3109488cb5eb2d909
+
+Remove spare % character to fix crashes on GardenActivity (#344) | 2019-02-21 19:57:43 | f0c2df7eead4c56acc31cb1a3e72763e9d3b73a1
+
+Fix #132: the PlantAndGardenPlantingsViewModel decoupled from context and string-resource (#135)
+
+* Update gradle to 3.2.0-beta03
+
+* Fix critical bug that ViewModel contains R.string | 2019-02-21 17:59:47 | 7cd14961ed28db5fc2aa0eb5b31c919f3b7c9a1a
+
+Minor formatting fix.
+
+Change-Id: I3bbf7b01bbeceef6758fe79f5d8b8dd7960f8477 | 2019-01-24 21:45:43 | 849c6de403ffd27814e778c46b486c60737e2a21
+
+Slight fix on Chinese translation(added_plant_to_garden) | 2018-12-15 23:17:40 | b055b5d28573d5b12a95f0aeaed33693cba56ac1
+
+fix ktlint install instructions
+- mv ktlint to /usr/local/bin/
+- add homebrew option for linux/mac users | 2018-10-23 20:53:58 | eed34e8df1960418848409ef9f1500f6979ad649
+
+Re-fix #54 after changing to single-activity pattern (#80)
+
+* Fix tht bug #54
+
+* Add UI-Tests for this bugfix
+
+* Fix UI-Tests
+
+* Use class variable drawerLayout
+
+* Code optimize
+
+- Add a mini extension on DrawerLayout to checkout whether it is opened
+  on left or not.
+- Format if check with braces.
+
+* Reset to use isDrawerOpen instead extension, setLifecycleOwner for binding
+
+- The data-binding should have lifecycle-owner, becuase it is now class
+member variable, this is different from those which have data-binding and would
+*only* be passed as function args.
+
+* Re-fix #54
+
+* Use DrawerLayout as cls member, omitting with in onBackPressed
+
+* Reset some lines that should be unchanged
+
+* Also reset some lines shouldn't be blank
+
+* Fix tests | 2018-07-04 05:17:11 | b1572f9ef65b5643901e6db2a01e1cb3c2c09581
+
+Apply ktlint fixes using ./gradlew sA | 2018-07-02 22:48:15 | 2c6e062fe0b28f7b9275fb9956912fb9c007fa98
+
+Fix bug #54: The navigation drawer should close first (if open) onBackPressed (#59)
+
+* Fix tht bug #54
+
+* Add UI-Tests for this bugfix
+
+* Fix UI-Tests
+
+* Use class variable drawerLayout
+
+* Code optimize
+
+- Add a mini extension on DrawerLayout to checkout whether it is opened
+  on left or not.
+- Format if check with braces.
+
+* Reset to use isDrawerOpen instead extension, setLifecycleOwner for binding
+
+- The data-binding should have lifecycle-owner, becuase it is now class
+member variable, this is different from those which have data-binding and would
+*only* be passed as function args. | 2018-06-26 05:01:41 | f5efdb8aa448f5d8a153372694e50d86669a8966
+
+Dont ClipToPadding
+
+to fix overscroll being cut off | 2018-06-16 04:12:04 | b77d561250157095004c531ae8fc017ac99465ec
+
+Merge pull request #37 from XinyueZ/bugfix/filter-menu-state
+
+Try to fix bug #31 | 2018-06-08 22:58:51 | a6c1f897412d0b98254d00f3b106624ffa7d233f
+
+[Sunflower] Update Readme
+
+Add link to Releases page; minor spacing fix.
+
+Change-Id: I4233886907fa5e3e670b474cd97c11fa41fab7a2 | 2018-05-29 21:04:39 | 6bef6cd2c86850d731e6a8e16a23df7ccae793c0
+
+Android Sunflower: minor cleanups
+
+- Remove app: prefix for binding adapters (not needed)
+- Consolidate margin dimens.
+
+Test: ran unit and instrumented tests:
+      ./gradlew app:test app:connectedAndroidTest
+
+Change-Id: Ie26951f0dd9d9de2bd944d6e336f8a75674c5fc6 | 2018-04-26 03:54:29 | 46301a99fe6ce29eefbe0b535f677f985c520dc7
+
+Android Sunflower: add tests
+
+Code reviewers: this commit adds testing around the two Activities
+in the app.  This is step 5 in the project tracker, and is prep
+for converting the project to MVVM and adding Room (step 6 and 7).
+
+Changes also include:
+- removing build tools version (no longer needed in API 27)
+- updating Gradle libs
+- custom matcher for CollapsingToolbarLayout
+- fixed bug (via TDD) where toolbar title didn't persist on
+  rotation
+- minor improvements (@nonnull annotation, tools:text)
+
+Tracker: go/android-sunflower-tracker
+PRD: go/android-sunflower-prd
+
+Bug: 65952046
+Test: ran unit and instrumented tests
+Change-Id: I87d3f5b319179d2e1917a3ace619ae9fe4bc0630 | 2017-11-07 19:24:05 | b63261f439e74b69800a2ecab083a17992f89e46
+
+Bump recyclerViewVersion.
+
+Version 1.1.0-alpha04 has the fix for selecting items.
+
+Change-Id: I1c4ee83e1515b85f1f1b4d5500ea99264161449e | 2019-04-25 21:04:52 | c57e9b09d76e41720e2c2235394d35f4e9388005
+
+Add basic support for RecyclerView-selection (#356)
+
+* Add basic support for RecyclerView-selection
+
+Styling needs to be fixed up, and code added to enable/disable
+ActionMode.
+
+Change-Id: I55034ce9869453ca4e8f38d95f47381bff292662
+
+* Revisions from PR feedback.
+
+- Slight formatting changes
+- Added GardenSelectionObserver to both observe the SelectionTracker and
+handle back button interactions.
+- Switch to using 'selected' rather than 'actived'.
+
+Change-Id: Ic2cac0d0300c75efba3a5da9bb52079d1fe15593
+
+* Add comment to strings.xml
+
+Explain why the string is "plural" even though the only term in it is
+the same for "one" and "other" in English.
+
+Change-Id: Ie6ad83f30c5429225a90cd1f984110d7dc1c9dff | 2019-03-12 19:13:21 | cafc0c86e25615e0999e1f8d9895691a59e89667
+
+Remove spare % character to fix crashes on GardenActivity (#344) | 2019-02-21 19:57:43 | f0c2df7eead4c56acc31cb1a3e72763e9d3b73a1
+
+Fix #132: the PlantAndGardenPlantingsViewModel decoupled from context and string-resource (#135)
+
+* Update gradle to 3.2.0-beta03
+
+* Fix critical bug that ViewModel contains R.string | 2019-02-21 17:59:47 | 7cd14961ed28db5fc2aa0eb5b31c919f3b7c9a1a
+
+Minor formatting fix.
+
+Change-Id: I3bbf7b01bbeceef6758fe79f5d8b8dd7960f8477 | 2019-01-24 21:45:43 | 849c6de403ffd27814e778c46b486c60737e2a21
+
+Slight fix on Chinese translation(added_plant_to_garden) | 2018-12-15 23:17:40 | b055b5d28573d5b12a95f0aeaed33693cba56ac1
+
+fix ktlint install instructions
+- mv ktlint to /usr/local/bin/
+- add homebrew option for linux/mac users | 2018-10-23 20:53:58 | eed34e8df1960418848409ef9f1500f6979ad649
+
+Re-fix #54 after changing to single-activity pattern (#80)
+
+* Fix tht bug #54
+
+* Add UI-Tests for this bugfix
+
+* Fix UI-Tests
+
+* Use class variable drawerLayout
+
+* Code optimize
+
+- Add a mini extension on DrawerLayout to checkout whether it is opened
+  on left or not.
+- Format if check with braces.
+
+* Reset to use isDrawerOpen instead extension, setLifecycleOwner for binding
+
+- The data-binding should have lifecycle-owner, becuase it is now class
+member variable, this is different from those which have data-binding and would
+*only* be passed as function args.
+
+* Re-fix #54
+
+* Use DrawerLayout as cls member, omitting with in onBackPressed
+
+* Reset some lines that should be unchanged
+
+* Also reset some lines shouldn't be blank
+
+* Fix tests | 2018-07-04 05:17:11 | b1572f9ef65b5643901e6db2a01e1cb3c2c09581
+
+Apply ktlint fixes using ./gradlew sA | 2018-07-02 22:48:15 | 2c6e062fe0b28f7b9275fb9956912fb9c007fa98
+
+Fix bug #54: The navigation drawer should close first (if open) onBackPressed (#59)
+
+* Fix tht bug #54
+
+* Add UI-Tests for this bugfix
+
+* Fix UI-Tests
+
+* Use class variable drawerLayout
+
+* Code optimize
+
+- Add a mini extension on DrawerLayout to checkout whether it is opened
+  on left or not.
+- Format if check with braces.
+
+* Reset to use isDrawerOpen instead extension, setLifecycleOwner for binding
+
+- The data-binding should have lifecycle-owner, becuase it is now class
+member variable, this is different from those which have data-binding and would
+*only* be passed as function args. | 2018-06-26 05:01:41 | f5efdb8aa448f5d8a153372694e50d86669a8966
+
+Dont ClipToPadding
+
+to fix overscroll being cut off | 2018-06-16 04:12:04 | b77d561250157095004c531ae8fc017ac99465ec
+
+Merge pull request #37 from XinyueZ/bugfix/filter-menu-state
+
+Try to fix bug #31 | 2018-06-08 22:58:51 | a6c1f897412d0b98254d00f3b106624ffa7d233f
+
+[Sunflower] Update Readme
+
+Add link to Releases page; minor spacing fix.
+
+Change-Id: I4233886907fa5e3e670b474cd97c11fa41fab7a2 | 2018-05-29 21:04:39 | 6bef6cd2c86850d731e6a8e16a23df7ccae793c0
+
+Android Sunflower: minor cleanups
+
+- Remove app: prefix for binding adapters (not needed)
+- Consolidate margin dimens.
+
+Test: ran unit and instrumented tests:
+      ./gradlew app:test app:connectedAndroidTest
+
+Change-Id: Ie26951f0dd9d9de2bd944d6e336f8a75674c5fc6 | 2018-04-26 03:54:29 | 46301a99fe6ce29eefbe0b535f677f985c520dc7
+
+Android Sunflower: add tests
+
+Code reviewers: this commit adds testing around the two Activities
+in the app.  This is step 5 in the project tracker, and is prep
+for converting the project to MVVM and adding Room (step 6 and 7).
+
+Changes also include:
+- removing build tools version (no longer needed in API 27)
+- updating Gradle libs
+- custom matcher for CollapsingToolbarLayout
+- fixed bug (via TDD) where toolbar title didn't persist on
+  rotation
+- minor improvements (@nonnull annotation, tools:text)
+
+Tracker: go/android-sunflower-tracker
+PRD: go/android-sunflower-prd
+
+Bug: 65952046
+Test: ran unit and instrumented tests
+Change-Id: I87d3f5b319179d2e1917a3ace619ae9fe4bc0630 | 2017-11-07 19:24:05 | b63261f439e74b69800a2ecab083a17992f89e46
+
+Add basic support for RecyclerView-selection (#356)
+
+* Add basic support for RecyclerView-selection
+
+Styling needs to be fixed up, and code added to enable/disable
+ActionMode.
+
+Change-Id: I55034ce9869453ca4e8f38d95f47381bff292662
+
+* Revisions from PR feedback.
+
+- Slight formatting changes
+- Added GardenSelectionObserver to both observe the SelectionTracker and
+handle back button interactions.
+- Switch to using 'selected' rather than 'actived'.
+
+Change-Id: Ic2cac0d0300c75efba3a5da9bb52079d1fe15593
+
+* Add comment to strings.xml
+
+Explain why the string is "plural" even though the only term in it is
+the same for "one" and "other" in English.
+
+Change-Id: Ie6ad83f30c5429225a90cd1f984110d7dc1c9dff | 2019-03-12 19:13:21 | cafc0c86e25615e0999e1f8d9895691a59e89667
+
+Add basic support for RecyclerView-selection (#356)
+
+* Add basic support for RecyclerView-selection
+
+Styling needs to be fixed up, and code added to enable/disable
+ActionMode.
+
+Change-Id: I55034ce9869453ca4e8f38d95f47381bff292662
+
+* Revisions from PR feedback.
+
+- Slight formatting changes
+- Added GardenSelectionObserver to both observe the SelectionTracker and
+handle back button interactions.
+- Switch to using 'selected' rather than 'actived'.
+
+Change-Id: Ic2cac0d0300c75efba3a5da9bb52079d1fe15593
+
+* Add comment to strings.xml
+
+Explain why the string is "plural" even though the only term in it is
+the same for "one" and "other" in English.
+
+Change-Id: Ie6ad83f30c5429225a90cd1f984110d7dc1c9dff | 2019-03-12 19:13:21 | 12891b770a1db90f4409812a6ec0283b7df2af0e
+
+Remove spare % character to fix crashes on GardenActivity (#344) | 2019-02-21 19:57:43 | f0c2df7eead4c56acc31cb1a3e72763e9d3b73a1
+
+Fix #132: the PlantAndGardenPlantingsViewModel decoupled from context and string-resource (#135)
+
+* Update gradle to 3.2.0-beta03
+
+* Fix critical bug that ViewModel contains R.string | 2019-02-21 17:59:47 | 7cd14961ed28db5fc2aa0eb5b31c919f3b7c9a1a
+
+Minor formatting fix.
+
+Change-Id: I3bbf7b01bbeceef6758fe79f5d8b8dd7960f8477 | 2019-01-24 21:45:43 | 849c6de403ffd27814e778c46b486c60737e2a21
+
+Slight fix on Chinese translation(added_plant_to_garden) | 2018-12-15 23:17:40 | b055b5d28573d5b12a95f0aeaed33693cba56ac1
+
+fix ktlint install instructions
+- mv ktlint to /usr/local/bin/
+- add homebrew option for linux/mac users | 2018-10-23 20:53:58 | eed34e8df1960418848409ef9f1500f6979ad649
+
+Re-fix #54 after changing to single-activity pattern (#80)
+
+* Fix tht bug #54
+
+* Add UI-Tests for this bugfix
+
+* Fix UI-Tests
+
+* Use class variable drawerLayout
+
+* Code optimize
+
+- Add a mini extension on DrawerLayout to checkout whether it is opened
+  on left or not.
+- Format if check with braces.
+
+* Reset to use isDrawerOpen instead extension, setLifecycleOwner for binding
+
+- The data-binding should have lifecycle-owner, becuase it is now class
+member variable, this is different from those which have data-binding and would
+*only* be passed as function args.
+
+* Re-fix #54
+
+* Use DrawerLayout as cls member, omitting with in onBackPressed
+
+* Reset some lines that should be unchanged
+
+* Also reset some lines shouldn't be blank
+
+* Fix tests | 2018-07-04 05:17:11 | b1572f9ef65b5643901e6db2a01e1cb3c2c09581
+
+Apply ktlint fixes using ./gradlew sA | 2018-07-02 22:48:15 | 2c6e062fe0b28f7b9275fb9956912fb9c007fa98
+
+Fix bug #54: The navigation drawer should close first (if open) onBackPressed (#59)
+
+* Fix tht bug #54
+
+* Add UI-Tests for this bugfix
+
+* Fix UI-Tests
+
+* Use class variable drawerLayout
+
+* Code optimize
+
+- Add a mini extension on DrawerLayout to checkout whether it is opened
+  on left or not.
+- Format if check with braces.
+
+* Reset to use isDrawerOpen instead extension, setLifecycleOwner for binding
+
+- The data-binding should have lifecycle-owner, becuase it is now class
+member variable, this is different from those which have data-binding and would
+*only* be passed as function args. | 2018-06-26 05:01:41 | f5efdb8aa448f5d8a153372694e50d86669a8966
+
+Dont ClipToPadding
+
+to fix overscroll being cut off | 2018-06-16 04:12:04 | b77d561250157095004c531ae8fc017ac99465ec
+
+Merge pull request #37 from XinyueZ/bugfix/filter-menu-state
+
+Try to fix bug #31 | 2018-06-08 22:58:51 | a6c1f897412d0b98254d00f3b106624ffa7d233f
+
+[Sunflower] Update Readme
+
+Add link to Releases page; minor spacing fix.
+
+Change-Id: I4233886907fa5e3e670b474cd97c11fa41fab7a2 | 2018-05-29 21:04:39 | 6bef6cd2c86850d731e6a8e16a23df7ccae793c0
+
+Android Sunflower: minor cleanups
+
+- Remove app: prefix for binding adapters (not needed)
+- Consolidate margin dimens.
+
+Test: ran unit and instrumented tests:
+      ./gradlew app:test app:connectedAndroidTest
+
+Change-Id: Ie26951f0dd9d9de2bd944d6e336f8a75674c5fc6 | 2018-04-26 03:54:29 | 46301a99fe6ce29eefbe0b535f677f985c520dc7
+
+Android Sunflower: add tests
+
+Code reviewers: this commit adds testing around the two Activities
+in the app.  This is step 5 in the project tracker, and is prep
+for converting the project to MVVM and adding Room (step 6 and 7).
+
+Changes also include:
+- removing build tools version (no longer needed in API 27)
+- updating Gradle libs
+- custom matcher for CollapsingToolbarLayout
+- fixed bug (via TDD) where toolbar title didn't persist on
+  rotation
+- minor improvements (@nonnull annotation, tools:text)
+
+Tracker: go/android-sunflower-tracker
+PRD: go/android-sunflower-prd
+
+Bug: 65952046
+Test: ran unit and instrumented tests
+Change-Id: I87d3f5b319179d2e1917a3ace619ae9fe4bc0630 | 2017-11-07 19:24:05 | b63261f439e74b69800a2ecab083a17992f89e46
+
+Convert ViewPager to ViewPager2 (#456)
+
+* Convert ViewPager to ViewPager2
+
+Require TabLayoutMediator to set up ViewPager2 and TabLayout; this file is taken from the ViewPager2 sample https://github.com/googlesamples/android-viewpager2.
+
+* Programmatically set menu visibility
+
+This is a temporary workaround; see https://issuetracker.google.com/issues/124183800 for more details.
+
+* Use TabLayoutMediator provided by Material 1.1.0-alpha07
+
+* Update to ViewPager version 1.0.0-alpha06
+
+This update also fixes a bug (https://issuetracker.google.com/issues/124183800 ) and removes the need for the temporary workaround.
+
+* Update callback to use ViewPager2's callback when a tab is selected
+
+* Remove temporary workaround for menu visibility
+
+Also add comment for tab text
+
+* Return String instead of CharSequence
+
+* Add TODO for data binding
+
+* Update ViewPager2 version to 1.0.0-beta02
+
+* Address PR comments + refactor
+
+* Address PR comments
+
+- Create new Fragment instead of fetching existing Fragment
+- Bump VP2 version to 1.0.0-beta03 | 2019-08-07 19:37:00 | b9738291fc6fb136cae0b18743e2f730ce693318
+
+fixed toolbar text color | 2019-08-05 17:07:43 | b7e0dba85f9ecbdfb8e5ad0c80aed2be9d5084f8
+
+Detail Collapsing Toolbar (#470)
+
+* initial commit for detail menu items
+
+* spotlessApply
+
+* spotlessApply
+
+* removed unused methods
+
+* removed unused imports
+
+* navbar code review
+
+* fixed overlap | 2019-07-02 18:45:57 | b580dbcbd76f1ef0f49d074b1f416505151b2574
+
+Fix bug where FAB does not hide when clicked | 2019-07-01 17:44:28 | 646d53aca01c158d2b7bc55989a8bc785ad9c66f
+
+fixed padding in plant list page (#464)
+
+* fixed padding in plant list page
+
+* margin end added | 2019-06-26 21:33:03 | c0e4116c757281400c2d8dcd5208c817b6620a57
+
+Add collapsing title to ViewPager (#439)
+
+* Add title to ViewPager
+
+Also add a large font dimension for use in new and old code
+
+* Collapse toolbar
+
+Also some formatting fixes
+
+* Maintain toolbar scroll/collapse state when navigating back to ViewPager
+
+This requires an ID for both CoordinatorLayout and the AppBarLayout - added a comment to clarify.
+
+* Add CollapsingToolbarLayout
+
+Toolbar now collapses on both the My Garden and Plant List pages.
+
+Also added fitsSystemWindows to the app bar so that the text isn't drawn under the system bar. | 2019-06-20 18:22:56 | f3d49ab28ac30104dbd2909816e4dd547f566903
+
+Update dependencies (#404)
+
+Also fix spacing issue in plant description data by adding two <br>s. | 2019-05-11 05:08:44 | d4b94611c28c299aabdd8dd1a9ebc85f7df634e4
+
+Add WorkManager test for SeedDatabaseWorker (#398)
+
+* Remove deprecated coroutineContext override.
+
+WorkManager v2.1 has deprecated coroutineContext. If you need to have
+your CoroutineWorker run on a different Dispatcher, you can go to the
+desired coroutineContext yourself in the body of the suspending
+function.
+
+* Add SeedDatabaseWorker Test case.
+
+* Simplyfy test using the reified builder for the TestListenableWorker.
+
+* Run Spotless. | 2019-04-26 22:45:11 | 2c424d9fee8993d30b363dfaac5ed005b3d704b2
+
+Remove deprecated coroutineContext override.
+
+WorkManager v2.1 has deprecated coroutineContext. If you need to have
+your CoroutineWorker run on a different Dispatcher, you can go to the
+desired coroutineContext yourself in the body of the suspending
+function. | 2019-04-26 11:48:34 | 54ec64afe674e41e390c9f7cb902aa84537ef359
+
+Remove deprecated coroutineContext override.
+
+WorkManager v2.1 has deprecated coroutineContext. If you need to have
+your CoroutineWorker run on a different Dispatcher, you can go to the
+desired coroutineContext yourself in the body of the suspending
+function. | 2019-04-26 11:48:34 | 17d527d188afcf5f3910b0c3109488cb5eb2d909
+
+Remove spare % character to fix crashes on GardenActivity (#344) | 2019-02-21 19:57:43 | f0c2df7eead4c56acc31cb1a3e72763e9d3b73a1
+
+Fix #132: the PlantAndGardenPlantingsViewModel decoupled from context and string-resource (#135)
+
+* Update gradle to 3.2.0-beta03
+
+* Fix critical bug that ViewModel contains R.string | 2019-02-21 17:59:47 | 7cd14961ed28db5fc2aa0eb5b31c919f3b7c9a1a
+
+Minor formatting fix.
+
+Change-Id: I3bbf7b01bbeceef6758fe79f5d8b8dd7960f8477 | 2019-01-24 21:45:43 | 849c6de403ffd27814e778c46b486c60737e2a21
+
+Slight fix on Chinese translation(added_plant_to_garden) | 2018-12-15 23:17:40 | b055b5d28573d5b12a95f0aeaed33693cba56ac1
+
+fix ktlint install instructions
+- mv ktlint to /usr/local/bin/
+- add homebrew option for linux/mac users | 2018-10-23 20:53:58 | eed34e8df1960418848409ef9f1500f6979ad649
+
+Re-fix #54 after changing to single-activity pattern (#80)
+
+* Fix tht bug #54
+
+* Add UI-Tests for this bugfix
+
+* Fix UI-Tests
+
+* Use class variable drawerLayout
+
+* Code optimize
+
+- Add a mini extension on DrawerLayout to checkout whether it is opened
+  on left or not.
+- Format if check with braces.
+
+* Reset to use isDrawerOpen instead extension, setLifecycleOwner for binding
+
+- The data-binding should have lifecycle-owner, becuase it is now class
+member variable, this is different from those which have data-binding and would
+*only* be passed as function args.
+
+* Re-fix #54
+
+* Use DrawerLayout as cls member, omitting with in onBackPressed
+
+* Reset some lines that should be unchanged
+
+* Also reset some lines shouldn't be blank
+
+* Fix tests | 2018-07-04 05:17:11 | b1572f9ef65b5643901e6db2a01e1cb3c2c09581
+
+Apply ktlint fixes using ./gradlew sA | 2018-07-02 22:48:15 | 2c6e062fe0b28f7b9275fb9956912fb9c007fa98
+
+Fix bug #54: The navigation drawer should close first (if open) onBackPressed (#59)
+
+* Fix tht bug #54
+
+* Add UI-Tests for this bugfix
+
+* Fix UI-Tests
+
+* Use class variable drawerLayout
+
+* Code optimize
+
+- Add a mini extension on DrawerLayout to checkout whether it is opened
+  on left or not.
+- Format if check with braces.
+
+* Reset to use isDrawerOpen instead extension, setLifecycleOwner for binding
+
+- The data-binding should have lifecycle-owner, becuase it is now class
+member variable, this is different from those which have data-binding and would
+*only* be passed as function args. | 2018-06-26 05:01:41 | f5efdb8aa448f5d8a153372694e50d86669a8966
+
+Dont ClipToPadding
+
+to fix overscroll being cut off | 2018-06-16 04:12:04 | b77d561250157095004c531ae8fc017ac99465ec
+
+Merge pull request #37 from XinyueZ/bugfix/filter-menu-state
+
+Try to fix bug #31 | 2018-06-08 22:58:51 | a6c1f897412d0b98254d00f3b106624ffa7d233f
+
+[Sunflower] Update Readme
+
+Add link to Releases page; minor spacing fix.
+
+Change-Id: I4233886907fa5e3e670b474cd97c11fa41fab7a2 | 2018-05-29 21:04:39 | 6bef6cd2c86850d731e6a8e16a23df7ccae793c0
+
+Android Sunflower: minor cleanups
+
+- Remove app: prefix for binding adapters (not needed)
+- Consolidate margin dimens.
+
+Test: ran unit and instrumented tests:
+      ./gradlew app:test app:connectedAndroidTest
+
+Change-Id: Ie26951f0dd9d9de2bd944d6e336f8a75674c5fc6 | 2018-04-26 03:54:29 | 46301a99fe6ce29eefbe0b535f677f985c520dc7
+
+Android Sunflower: add tests
+
+Code reviewers: this commit adds testing around the two Activities
+in the app.  This is step 5 in the project tracker, and is prep
+for converting the project to MVVM and adding Room (step 6 and 7).
+
+Changes also include:
+- removing build tools version (no longer needed in API 27)
+- updating Gradle libs
+- custom matcher for CollapsingToolbarLayout
+- fixed bug (via TDD) where toolbar title didn't persist on
+  rotation
+- minor improvements (@nonnull annotation, tools:text)
+
+Tracker: go/android-sunflower-tracker
+PRD: go/android-sunflower-prd
+
+Bug: 65952046
+Test: ran unit and instrumented tests
+Change-Id: I87d3f5b319179d2e1917a3ace619ae9fe4bc0630 | 2017-11-07 19:24:05 | b63261f439e74b69800a2ecab083a17992f89e46
+
+This query will never dispatch null, it will return empty list | 2019-08-23 03:34:01 | c0731292aff71962846154c48eefb296d4261d0c
+
+Merge in Material Sprint feature branch to master (#472)
+
+* Update Material version to 1.1.0-alpha07 (#431)
+
+* Add button to navigate to Plant List
+
+When the user's garden is empty, add a button prompting them to navigate to the Plant List.
+
+This also adds a new string and some placeholder string translations.
+
+Updated styling will be implemented in a future commit.
+
+* Change Plant List Page to use GridLayout (#433)
+
+* Changed Plant List page to grid Layout with 2 columns
+
+* Changed garden fragment to gridlayoutmanager with 2 columns
+
+* changed appSpan count to use an integer dimension
+
+* Turning Plant List Grid into Material Themed Cards (#437)
+
+* Initial commit to turn plant list grid into cards
+
+* added dimension variable for card corner radius
+
+* Style changes for CI
+
+* Changed to staggered gridlayout
+
+* Code review Changes
+
+* Convert from drawer layout to tab layout (#438)
+
+* WIP commit - converting to ViewPager
+
+* Update logic when tapping the "Add Plant" button
+
+Also removes action from the navigation graph and adds descriptive constants for the ViewPager page index.
+
+* run spotless
+
+* Use childFragmentManager to preserve fragments when returning to ViewPager
+
+* Update navigation direction for navigating from garden to plan details.
+
+Also removes unused fragment and action entries in the nav graph.
+
+* Clean up unused code and imports
+
+* Add imports back
+
+* Remove unused resources
+
+* Add comment for getCount()
+
+* Created Material-themed cards for My Garden Page (#440)
+
+* Initial commit. still work to be done with strings.xml files
+
+* Translation placeholders and cleaned code
+
+* replaced translations
+
+* cleaned strings and switched to variables
+
+* code review changes
+
+* Add collapsing title to ViewPager (#439)
+
+* Add title to ViewPager
+
+Also add a large font dimension for use in new and old code
+
+* Collapse toolbar
+
+Also some formatting fixes
+
+* Maintain toolbar scroll/collapse state when navigating back to ViewPager
+
+This requires an ID for both CoordinatorLayout and the AppBarLayout - added a comment to clarify.
+
+* Add CollapsingToolbarLayout
+
+Toolbar now collapses on both the My Garden and Plant List pages.
+
+Also added fitsSystemWindows to the app bar so that the text isn't drawn under the system bar.
+
+* Theme (#441)
+
+* initial commit
+
+* formatting changes
+
+* circleCI
+
+* formatting
+
+* Add app bar to plant detail page
+
+Also moves FAB anchor to app bar and increase header image height
+
+* grid with to integers file
+
+* changed shape of fab
+
+* changed shape and color of add button (#455)
+
+* changed colors to use ?attr
+
+* consolidate texts and colors to use material style guide
+
+* Added available plants header and padding to My Garden Page (#457)
+
+* added available plants header
+
+* moved available plants strings
+
+* changed available plants title to be scrollable
+
+* Comments and cleaned code
+
+* spotlessApply
+
+* fixed padding in plant list page (#464)
+
+* fixed padding in plant list page
+
+* margin end added
+
+* Update tests for the new UI interface
+
+Ignoring share button test for now, while the button is being redesigned.
+
+* Add icons to the tab layout (#468)
+
+* Add icons to the tab layout
+
+The icons are programmatically set based on the selected tab.
+
+* Use color resources instead of hard coding color values
+
+* Added Dark Theme (#467)
+
+* dark theme
+
+* spotless
+
+* cleaned code and changed icon color
+
+* Update dark mode yellow
+
+* watering needs changes
+
+* Fix bug where FAB does not hide when clicked
+
+* Detail Collapsing Toolbar (#470)
+
+* initial commit for detail menu items
+
+* spotlessApply
+
+* spotlessApply
+
+* removed unused methods
+
+* removed unused imports
+
+* navbar code review
+
+* fixed overlap
+
+* Theming Changes (#471)
+
+* initial commit for detail menu items
+
+* spotlessApply
+
+* spotlessApply
+
+* removed unused methods
+
+* removed unused imports
+
+* final theming changes
+
+* styling changes to tab icons
+
+* theme code review
+
+* changed to requireContext
+
+* Changed Theme and Shape Format
+
+* Code Readability Changes (#478)
+
+* readability initial changes
+
+* readability changes
+
+* removed unused imports
+
+* Removed use of .tag and Renamed ViewPager (#482)
+
+* updated viewpager name and removed tag
+
+* removed passing of context
+
+* switched to HashMap
+
+* cached fragments instead of loading everytime
+
+* declaritive hashmap
+
+* removed null check
+
+* Show Toolbar Animation using StateListAnimator (#479)
+
+* using animator
+
+* comment formatting
+
+* Code Style and Efficiency Changes (#481)
+
+* efficiency and theming changes
+
+* clean
+
+* Use StateListDrawable for Tabs (#480)
+
+* added StateListDrawable for tabs
+
+* updated to homeviewpager
+
+* changed to homeviewpager for merge conflict
+
+* fixed toolbar text color
+
+* Convert ViewPager to ViewPager2 (#456)
+
+* Convert ViewPager to ViewPager2
+
+Require TabLayoutMediator to set up ViewPager2 and TabLayout; this file is taken from the ViewPager2 sample https://github.com/googlesamples/android-viewpager2.
+
+* Programmatically set menu visibility
+
+This is a temporary workaround; see https://issuetracker.google.com/issues/124183800 for more details.
+
+* Use TabLayoutMediator provided by Material 1.1.0-alpha07
+
+* Update to ViewPager version 1.0.0-alpha06
+
+This update also fixes a bug (https://issuetracker.google.com/issues/124183800 ) and removes the need for the temporary workaround.
+
+* Update callback to use ViewPager2's callback when a tab is selected
+
+* Remove temporary workaround for menu visibility
+
+Also add comment for tab text
+
+* Return String instead of CharSequence
+
+* Add TODO for data binding
+
+* Update ViewPager2 version to 1.0.0-beta02
+
+* Address PR comments + refactor
+
+* Address PR comments
+
+- Create new Fragment instead of fetching existing Fragment
+- Bump VP2 version to 1.0.0-beta03
+
+* Update Turkish string resources
+
+Also removed duplicate app_name in Italian string resources
+
+* Remove canvas nullability and related usage
+
+* Update comment
+
+* Address PR comments
+
+- update Material Version to 1.1.0-alpha09
+- add newlines to layout
+- remove explicit clickable/focusable - not needed since onClick is set
+- use ?attr where appropriate
+- use app:backgroundTint for backwards compatibility
+
+* Address PR comments
+
+- Rename CustomCardView to MaskedCardView
+
+* Update Gradle version
+
+* Address PR comments
+
+- extract tab icon logic to its own method
+- set plant name on the plant detail page in the layout
+- only set appbar and toolbar attributes when crossing a scrolling threshold
+
+* Merge layer-list for back icon into a single <vector>
+
+* Update ktlint and spotless versions
+
+* Update colors and themes
+
+- Change colors to use descriptive names
+- Add alternative style for dark theme
+
+* Merge layer-list for share icon into a single <vector>
+
+Also update the back icon's circle path data and whitespace formatting
+
+* Remove unused PopupOverlay styles
+
+* Add Traditional and Simplified string translations | 2019-08-28 16:41:40 | 6291ad39d43c6c2dd4a12c29cc9797ceb347f050
+
+Update dependencies (#404)
+
+Also fix spacing issue in plant description data by adding two <br>s. | 2019-05-11 05:08:44 | d4b94611c28c299aabdd8dd1a9ebc85f7df634e4
+
+Add WorkManager test for SeedDatabaseWorker (#398)
+
+* Remove deprecated coroutineContext override.
+
+WorkManager v2.1 has deprecated coroutineContext. If you need to have
+your CoroutineWorker run on a different Dispatcher, you can go to the
+desired coroutineContext yourself in the body of the suspending
+function.
+
+* Add SeedDatabaseWorker Test case.
+
+* Simplyfy test using the reified builder for the TestListenableWorker.
+
+* Run Spotless. | 2019-04-26 22:45:11 | 2c424d9fee8993d30b363dfaac5ed005b3d704b2
+
+Remove deprecated coroutineContext override.
+
+WorkManager v2.1 has deprecated coroutineContext. If you need to have
+your CoroutineWorker run on a different Dispatcher, you can go to the
+desired coroutineContext yourself in the body of the suspending
+function. | 2019-04-26 11:48:34 | 54ec64afe674e41e390c9f7cb902aa84537ef359
+
+Remove deprecated coroutineContext override.
+
+WorkManager v2.1 has deprecated coroutineContext. If you need to have
+your CoroutineWorker run on a different Dispatcher, you can go to the
+desired coroutineContext yourself in the body of the suspending
+function. | 2019-04-26 11:48:34 | 17d527d188afcf5f3910b0c3109488cb5eb2d909
+
+Remove spare % character to fix crashes on GardenActivity (#344) | 2019-02-21 19:57:43 | f0c2df7eead4c56acc31cb1a3e72763e9d3b73a1
+
+Fix #132: the PlantAndGardenPlantingsViewModel decoupled from context and string-resource (#135)
+
+* Update gradle to 3.2.0-beta03
+
+* Fix critical bug that ViewModel contains R.string | 2019-02-21 17:59:47 | 7cd14961ed28db5fc2aa0eb5b31c919f3b7c9a1a
+
+Minor formatting fix.
+
+Change-Id: I3bbf7b01bbeceef6758fe79f5d8b8dd7960f8477 | 2019-01-24 21:45:43 | 849c6de403ffd27814e778c46b486c60737e2a21
+
+Slight fix on Chinese translation(added_plant_to_garden) | 2018-12-15 23:17:40 | b055b5d28573d5b12a95f0aeaed33693cba56ac1
+
+fix ktlint install instructions
+- mv ktlint to /usr/local/bin/
+- add homebrew option for linux/mac users | 2018-10-23 20:53:58 | eed34e8df1960418848409ef9f1500f6979ad649
+
+Re-fix #54 after changing to single-activity pattern (#80)
+
+* Fix tht bug #54
+
+* Add UI-Tests for this bugfix
+
+* Fix UI-Tests
+
+* Use class variable drawerLayout
+
+* Code optimize
+
+- Add a mini extension on DrawerLayout to checkout whether it is opened
+  on left or not.
+- Format if check with braces.
+
+* Reset to use isDrawerOpen instead extension, setLifecycleOwner for binding
+
+- The data-binding should have lifecycle-owner, becuase it is now class
+member variable, this is different from those which have data-binding and would
+*only* be passed as function args.
+
+* Re-fix #54
+
+* Use DrawerLayout as cls member, omitting with in onBackPressed
+
+* Reset some lines that should be unchanged
+
+* Also reset some lines shouldn't be blank
+
+* Fix tests | 2018-07-04 05:17:11 | b1572f9ef65b5643901e6db2a01e1cb3c2c09581
+
+Apply ktlint fixes using ./gradlew sA | 2018-07-02 22:48:15 | 2c6e062fe0b28f7b9275fb9956912fb9c007fa98
+
+Fix bug #54: The navigation drawer should close first (if open) onBackPressed (#59)
+
+* Fix tht bug #54
+
+* Add UI-Tests for this bugfix
+
+* Fix UI-Tests
+
+* Use class variable drawerLayout
+
+* Code optimize
+
+- Add a mini extension on DrawerLayout to checkout whether it is opened
+  on left or not.
+- Format if check with braces.
+
+* Reset to use isDrawerOpen instead extension, setLifecycleOwner for binding
+
+- The data-binding should have lifecycle-owner, becuase it is now class
+member variable, this is different from those which have data-binding and would
+*only* be passed as function args. | 2018-06-26 05:01:41 | f5efdb8aa448f5d8a153372694e50d86669a8966
+
+Dont ClipToPadding
+
+to fix overscroll being cut off | 2018-06-16 04:12:04 | b77d561250157095004c531ae8fc017ac99465ec
+
+Merge pull request #37 from XinyueZ/bugfix/filter-menu-state
+
+Try to fix bug #31 | 2018-06-08 22:58:51 | a6c1f897412d0b98254d00f3b106624ffa7d233f
+
+[Sunflower] Update Readme
+
+Add link to Releases page; minor spacing fix.
+
+Change-Id: I4233886907fa5e3e670b474cd97c11fa41fab7a2 | 2018-05-29 21:04:39 | 6bef6cd2c86850d731e6a8e16a23df7ccae793c0
+
+Android Sunflower: minor cleanups
+
+- Remove app: prefix for binding adapters (not needed)
+- Consolidate margin dimens.
+
+Test: ran unit and instrumented tests:
+      ./gradlew app:test app:connectedAndroidTest
+
+Change-Id: Ie26951f0dd9d9de2bd944d6e336f8a75674c5fc6 | 2018-04-26 03:54:29 | 46301a99fe6ce29eefbe0b535f677f985c520dc7
+
+Android Sunflower: add tests
+
+Code reviewers: this commit adds testing around the two Activities
+in the app.  This is step 5 in the project tracker, and is prep
+for converting the project to MVVM and adding Room (step 6 and 7).
+
+Changes also include:
+- removing build tools version (no longer needed in API 27)
+- updating Gradle libs
+- custom matcher for CollapsingToolbarLayout
+- fixed bug (via TDD) where toolbar title didn't persist on
+  rotation
+- minor improvements (@nonnull annotation, tools:text)
+
+Tracker: go/android-sunflower-tracker
+PRD: go/android-sunflower-prd
+
+Bug: 65952046
+Test: ran unit and instrumented tests
+Change-Id: I87d3f5b319179d2e1917a3ace619ae9fe4bc0630 | 2017-11-07 19:24:05 | b63261f439e74b69800a2ecab083a17992f89e46
+
+added rule to enforce max-lines-length and fixed all the length issues in the project (#517)
+
+added rule to enforce max-lines-length and fixed all the length issues in the project
+
+fix wrong indentation
+
+fix kotlin style issues (#518)
+
+fix kotlin style issues
+
+remove with | 2019-10-03 21:36:29 | 1ec7a01d9b73dfe3aa6cf21b9ef0d2dabd3be190
+
+fix kotlin style issues (#518)
+
+fix kotlin style issues
+
+remove with | 2019-10-03 00:16:45 | 76d16baaf87c2fbd0e87a012852c51ffd067689e
+
+added missing and fixed translations (#509) | 2019-09-05 18:14:08 | ce82cffeed8150cf97789065898f08f29a2a1c9b
+
+This query will never dispatch null, it will return empty list | 2019-08-23 03:34:01 | c0731292aff71962846154c48eefb296d4261d0c
+
+Merge in Material Sprint feature branch to master (#472)
+
+* Update Material version to 1.1.0-alpha07 (#431)
+
+* Add button to navigate to Plant List
+
+When the user's garden is empty, add a button prompting them to navigate to the Plant List.
+
+This also adds a new string and some placeholder string translations.
+
+Updated styling will be implemented in a future commit.
+
+* Change Plant List Page to use GridLayout (#433)
+
+* Changed Plant List page to grid Layout with 2 columns
+
+* Changed garden fragment to gridlayoutmanager with 2 columns
+
+* changed appSpan count to use an integer dimension
+
+* Turning Plant List Grid into Material Themed Cards (#437)
+
+* Initial commit to turn plant list grid into cards
+
+* added dimension variable for card corner radius
+
+* Style changes for CI
+
+* Changed to staggered gridlayout
+
+* Code review Changes
+
+* Convert from drawer layout to tab layout (#438)
+
+* WIP commit - converting to ViewPager
+
+* Update logic when tapping the "Add Plant" button
+
+Also removes action from the navigation graph and adds descriptive constants for the ViewPager page index.
+
+* run spotless
+
+* Use childFragmentManager to preserve fragments when returning to ViewPager
+
+* Update navigation direction for navigating from garden to plan details.
+
+Also removes unused fragment and action entries in the nav graph.
+
+* Clean up unused code and imports
+
+* Add imports back
+
+* Remove unused resources
+
+* Add comment for getCount()
+
+* Created Material-themed cards for My Garden Page (#440)
+
+* Initial commit. still work to be done with strings.xml files
+
+* Translation placeholders and cleaned code
+
+* replaced translations
+
+* cleaned strings and switched to variables
+
+* code review changes
+
+* Add collapsing title to ViewPager (#439)
+
+* Add title to ViewPager
+
+Also add a large font dimension for use in new and old code
+
+* Collapse toolbar
+
+Also some formatting fixes
+
+* Maintain toolbar scroll/collapse state when navigating back to ViewPager
+
+This requires an ID for both CoordinatorLayout and the AppBarLayout - added a comment to clarify.
+
+* Add CollapsingToolbarLayout
+
+Toolbar now collapses on both the My Garden and Plant List pages.
+
+Also added fitsSystemWindows to the app bar so that the text isn't drawn under the system bar.
+
+* Theme (#441)
+
+* initial commit
+
+* formatting changes
+
+* circleCI
+
+* formatting
+
+* Add app bar to plant detail page
+
+Also moves FAB anchor to app bar and increase header image height
+
+* grid with to integers file
+
+* changed shape of fab
+
+* changed shape and color of add button (#455)
+
+* changed colors to use ?attr
+
+* consolidate texts and colors to use material style guide
+
+* Added available plants header and padding to My Garden Page (#457)
+
+* added available plants header
+
+* moved available plants strings
+
+* changed available plants title to be scrollable
+
+* Comments and cleaned code
+
+* spotlessApply
+
+* fixed padding in plant list page (#464)
+
+* fixed padding in plant list page
+
+* margin end added
+
+* Update tests for the new UI interface
+
+Ignoring share button test for now, while the button is being redesigned.
+
+* Add icons to the tab layout (#468)
+
+* Add icons to the tab layout
+
+The icons are programmatically set based on the selected tab.
+
+* Use color resources instead of hard coding color values
+
+* Added Dark Theme (#467)
+
+* dark theme
+
+* spotless
+
+* cleaned code and changed icon color
+
+* Update dark mode yellow
+
+* watering needs changes
+
+* Fix bug where FAB does not hide when clicked
+
+* Detail Collapsing Toolbar (#470)
+
+* initial commit for detail menu items
+
+* spotlessApply
+
+* spotlessApply
+
+* removed unused methods
+
+* removed unused imports
+
+* navbar code review
+
+* fixed overlap
+
+* Theming Changes (#471)
+
+* initial commit for detail menu items
+
+* spotlessApply
+
+* spotlessApply
+
+* removed unused methods
+
+* removed unused imports
+
+* final theming changes
+
+* styling changes to tab icons
+
+* theme code review
+
+* changed to requireContext
+
+* Changed Theme and Shape Format
+
+* Code Readability Changes (#478)
+
+* readability initial changes
+
+* readability changes
+
+* removed unused imports
+
+* Removed use of .tag and Renamed ViewPager (#482)
+
+* updated viewpager name and removed tag
+
+* removed passing of context
+
+* switched to HashMap
+
+* cached fragments instead of loading everytime
+
+* declaritive hashmap
+
+* removed null check
+
+* Show Toolbar Animation using StateListAnimator (#479)
+
+* using animator
+
+* comment formatting
+
+* Code Style and Efficiency Changes (#481)
+
+* efficiency and theming changes
+
+* clean
+
+* Use StateListDrawable for Tabs (#480)
+
+* added StateListDrawable for tabs
+
+* updated to homeviewpager
+
+* changed to homeviewpager for merge conflict
+
+* fixed toolbar text color
+
+* Convert ViewPager to ViewPager2 (#456)
+
+* Convert ViewPager to ViewPager2
+
+Require TabLayoutMediator to set up ViewPager2 and TabLayout; this file is taken from the ViewPager2 sample https://github.com/googlesamples/android-viewpager2.
+
+* Programmatically set menu visibility
+
+This is a temporary workaround; see https://issuetracker.google.com/issues/124183800 for more details.
+
+* Use TabLayoutMediator provided by Material 1.1.0-alpha07
+
+* Update to ViewPager version 1.0.0-alpha06
+
+This update also fixes a bug (https://issuetracker.google.com/issues/124183800 ) and removes the need for the temporary workaround.
+
+* Update callback to use ViewPager2's callback when a tab is selected
+
+* Remove temporary workaround for menu visibility
+
+Also add comment for tab text
+
+* Return String instead of CharSequence
+
+* Add TODO for data binding
+
+* Update ViewPager2 version to 1.0.0-beta02
+
+* Address PR comments + refactor
+
+* Address PR comments
+
+- Create new Fragment instead of fetching existing Fragment
+- Bump VP2 version to 1.0.0-beta03
+
+* Update Turkish string resources
+
+Also removed duplicate app_name in Italian string resources
+
+* Remove canvas nullability and related usage
+
+* Update comment
+
+* Address PR comments
+
+- update Material Version to 1.1.0-alpha09
+- add newlines to layout
+- remove explicit clickable/focusable - not needed since onClick is set
+- use ?attr where appropriate
+- use app:backgroundTint for backwards compatibility
+
+* Address PR comments
+
+- Rename CustomCardView to MaskedCardView
+
+* Update Gradle version
+
+* Address PR comments
+
+- extract tab icon logic to its own method
+- set plant name on the plant detail page in the layout
+- only set appbar and toolbar attributes when crossing a scrolling threshold
+
+* Merge layer-list for back icon into a single <vector>
+
+* Update ktlint and spotless versions
+
+* Update colors and themes
+
+- Change colors to use descriptive names
+- Add alternative style for dark theme
+
+* Merge layer-list for share icon into a single <vector>
+
+Also update the back icon's circle path data and whitespace formatting
+
+* Remove unused PopupOverlay styles
+
+* Add Traditional and Simplified string translations | 2019-08-28 16:41:40 | 6291ad39d43c6c2dd4a12c29cc9797ceb347f050
+
+Update dependencies (#404)
+
+Also fix spacing issue in plant description data by adding two <br>s. | 2019-05-11 05:08:44 | d4b94611c28c299aabdd8dd1a9ebc85f7df634e4
+
+Add WorkManager test for SeedDatabaseWorker (#398)
+
+* Remove deprecated coroutineContext override.
+
+WorkManager v2.1 has deprecated coroutineContext. If you need to have
+your CoroutineWorker run on a different Dispatcher, you can go to the
+desired coroutineContext yourself in the body of the suspending
+function.
+
+* Add SeedDatabaseWorker Test case.
+
+* Simplyfy test using the reified builder for the TestListenableWorker.
+
+* Run Spotless. | 2019-04-26 22:45:11 | 2c424d9fee8993d30b363dfaac5ed005b3d704b2
+
+Remove deprecated coroutineContext override.
+
+WorkManager v2.1 has deprecated coroutineContext. If you need to have
+your CoroutineWorker run on a different Dispatcher, you can go to the
+desired coroutineContext yourself in the body of the suspending
+function. | 2019-04-26 11:48:34 | 54ec64afe674e41e390c9f7cb902aa84537ef359
+
+Remove deprecated coroutineContext override.
+
+WorkManager v2.1 has deprecated coroutineContext. If you need to have
+your CoroutineWorker run on a different Dispatcher, you can go to the
+desired coroutineContext yourself in the body of the suspending
+function. | 2019-04-26 11:48:34 | 17d527d188afcf5f3910b0c3109488cb5eb2d909
+
+Remove spare % character to fix crashes on GardenActivity (#344) | 2019-02-21 19:57:43 | f0c2df7eead4c56acc31cb1a3e72763e9d3b73a1
+
+Fix #132: the PlantAndGardenPlantingsViewModel decoupled from context and string-resource (#135)
+
+* Update gradle to 3.2.0-beta03
+
+* Fix critical bug that ViewModel contains R.string | 2019-02-21 17:59:47 | 7cd14961ed28db5fc2aa0eb5b31c919f3b7c9a1a
+
+Minor formatting fix.
+
+Change-Id: I3bbf7b01bbeceef6758fe79f5d8b8dd7960f8477 | 2019-01-24 21:45:43 | 849c6de403ffd27814e778c46b486c60737e2a21
+
+Slight fix on Chinese translation(added_plant_to_garden) | 2018-12-15 23:17:40 | b055b5d28573d5b12a95f0aeaed33693cba56ac1
+
+fix ktlint install instructions
+- mv ktlint to /usr/local/bin/
+- add homebrew option for linux/mac users | 2018-10-23 20:53:58 | eed34e8df1960418848409ef9f1500f6979ad649
+
+Re-fix #54 after changing to single-activity pattern (#80)
+
+* Fix tht bug #54
+
+* Add UI-Tests for this bugfix
+
+* Fix UI-Tests
+
+* Use class variable drawerLayout
+
+* Code optimize
+
+- Add a mini extension on DrawerLayout to checkout whether it is opened
+  on left or not.
+- Format if check with braces.
+
+* Reset to use isDrawerOpen instead extension, setLifecycleOwner for binding
+
+- The data-binding should have lifecycle-owner, becuase it is now class
+member variable, this is different from those which have data-binding and would
+*only* be passed as function args.
+
+* Re-fix #54
+
+* Use DrawerLayout as cls member, omitting with in onBackPressed
+
+* Reset some lines that should be unchanged
+
+* Also reset some lines shouldn't be blank
+
+* Fix tests | 2018-07-04 05:17:11 | b1572f9ef65b5643901e6db2a01e1cb3c2c09581
+
+Apply ktlint fixes using ./gradlew sA | 2018-07-02 22:48:15 | 2c6e062fe0b28f7b9275fb9956912fb9c007fa98
+
+Fix bug #54: The navigation drawer should close first (if open) onBackPressed (#59)
+
+* Fix tht bug #54
+
+* Add UI-Tests for this bugfix
+
+* Fix UI-Tests
+
+* Use class variable drawerLayout
+
+* Code optimize
+
+- Add a mini extension on DrawerLayout to checkout whether it is opened
+  on left or not.
+- Format if check with braces.
+
+* Reset to use isDrawerOpen instead extension, setLifecycleOwner for binding
+
+- The data-binding should have lifecycle-owner, becuase it is now class
+member variable, this is different from those which have data-binding and would
+*only* be passed as function args. | 2018-06-26 05:01:41 | f5efdb8aa448f5d8a153372694e50d86669a8966
+
+Dont ClipToPadding
+
+to fix overscroll being cut off | 2018-06-16 04:12:04 | b77d561250157095004c531ae8fc017ac99465ec
+
+Merge pull request #37 from XinyueZ/bugfix/filter-menu-state
+
+Try to fix bug #31 | 2018-06-08 22:58:51 | a6c1f897412d0b98254d00f3b106624ffa7d233f
+
+[Sunflower] Update Readme
+
+Add link to Releases page; minor spacing fix.
+
+Change-Id: I4233886907fa5e3e670b474cd97c11fa41fab7a2 | 2018-05-29 21:04:39 | 6bef6cd2c86850d731e6a8e16a23df7ccae793c0
+
+Android Sunflower: minor cleanups
+
+- Remove app: prefix for binding adapters (not needed)
+- Consolidate margin dimens.
+
+Test: ran unit and instrumented tests:
+      ./gradlew app:test app:connectedAndroidTest
+
+Change-Id: Ie26951f0dd9d9de2bd944d6e336f8a75674c5fc6 | 2018-04-26 03:54:29 | 46301a99fe6ce29eefbe0b535f677f985c520dc7
+
+Android Sunflower: add tests
+
+Code reviewers: this commit adds testing around the two Activities
+in the app.  This is step 5 in the project tracker, and is prep
+for converting the project to MVVM and adding Room (step 6 and 7).
+
+Changes also include:
+- removing build tools version (no longer needed in API 27)
+- updating Gradle libs
+- custom matcher for CollapsingToolbarLayout
+- fixed bug (via TDD) where toolbar title didn't persist on
+  rotation
+- minor improvements (@nonnull annotation, tools:text)
+
+Tracker: go/android-sunflower-tracker
+PRD: go/android-sunflower-prd
+
+Bug: 65952046
+Test: ran unit and instrumented tests
+Change-Id: I87d3f5b319179d2e1917a3ace619ae9fe4bc0630 | 2017-11-07 19:24:05 | b63261f439e74b69800a2ecab083a17992f89e46
+
+This query will never dispatch null, it will return empty list | 2019-08-23 03:34:01 | c0731292aff71962846154c48eefb296d4261d0c
+
+Merge in Material Sprint feature branch to master (#472)
+
+* Update Material version to 1.1.0-alpha07 (#431)
+
+* Add button to navigate to Plant List
+
+When the user's garden is empty, add a button prompting them to navigate to the Plant List.
+
+This also adds a new string and some placeholder string translations.
+
+Updated styling will be implemented in a future commit.
+
+* Change Plant List Page to use GridLayout (#433)
+
+* Changed Plant List page to grid Layout with 2 columns
+
+* Changed garden fragment to gridlayoutmanager with 2 columns
+
+* changed appSpan count to use an integer dimension
+
+* Turning Plant List Grid into Material Themed Cards (#437)
+
+* Initial commit to turn plant list grid into cards
+
+* added dimension variable for card corner radius
+
+* Style changes for CI
+
+* Changed to staggered gridlayout
+
+* Code review Changes
+
+* Convert from drawer layout to tab layout (#438)
+
+* WIP commit - converting to ViewPager
+
+* Update logic when tapping the "Add Plant" button
+
+Also removes action from the navigation graph and adds descriptive constants for the ViewPager page index.
+
+* run spotless
+
+* Use childFragmentManager to preserve fragments when returning to ViewPager
+
+* Update navigation direction for navigating from garden to plan details.
+
+Also removes unused fragment and action entries in the nav graph.
+
+* Clean up unused code and imports
+
+* Add imports back
+
+* Remove unused resources
+
+* Add comment for getCount()
+
+* Created Material-themed cards for My Garden Page (#440)
+
+* Initial commit. still work to be done with strings.xml files
+
+* Translation placeholders and cleaned code
+
+* replaced translations
+
+* cleaned strings and switched to variables
+
+* code review changes
+
+* Add collapsing title to ViewPager (#439)
+
+* Add title to ViewPager
+
+Also add a large font dimension for use in new and old code
+
+* Collapse toolbar
+
+Also some formatting fixes
+
+* Maintain toolbar scroll/collapse state when navigating back to ViewPager
+
+This requires an ID for both CoordinatorLayout and the AppBarLayout - added a comment to clarify.
+
+* Add CollapsingToolbarLayout
+
+Toolbar now collapses on both the My Garden and Plant List pages.
+
+Also added fitsSystemWindows to the app bar so that the text isn't drawn under the system bar.
+
+* Theme (#441)
+
+* initial commit
+
+* formatting changes
+
+* circleCI
+
+* formatting
+
+* Add app bar to plant detail page
+
+Also moves FAB anchor to app bar and increase header image height
+
+* grid with to integers file
+
+* changed shape of fab
+
+* changed shape and color of add button (#455)
+
+* changed colors to use ?attr
+
+* consolidate texts and colors to use material style guide
+
+* Added available plants header and padding to My Garden Page (#457)
+
+* added available plants header
+
+* moved available plants strings
+
+* changed available plants title to be scrollable
+
+* Comments and cleaned code
+
+* spotlessApply
+
+* fixed padding in plant list page (#464)
+
+* fixed padding in plant list page
+
+* margin end added
+
+* Update tests for the new UI interface
+
+Ignoring share button test for now, while the button is being redesigned.
+
+* Add icons to the tab layout (#468)
+
+* Add icons to the tab layout
+
+The icons are programmatically set based on the selected tab.
+
+* Use color resources instead of hard coding color values
+
+* Added Dark Theme (#467)
+
+* dark theme
+
+* spotless
+
+* cleaned code and changed icon color
+
+* Update dark mode yellow
+
+* watering needs changes
+
+* Fix bug where FAB does not hide when clicked
+
+* Detail Collapsing Toolbar (#470)
+
+* initial commit for detail menu items
+
+* spotlessApply
+
+* spotlessApply
+
+* removed unused methods
+
+* removed unused imports
+
+* navbar code review
+
+* fixed overlap
+
+* Theming Changes (#471)
+
+* initial commit for detail menu items
+
+* spotlessApply
+
+* spotlessApply
+
+* removed unused methods
+
+* removed unused imports
+
+* final theming changes
+
+* styling changes to tab icons
+
+* theme code review
+
+* changed to requireContext
+
+* Changed Theme and Shape Format
+
+* Code Readability Changes (#478)
+
+* readability initial changes
+
+* readability changes
+
+* removed unused imports
+
+* Removed use of .tag and Renamed ViewPager (#482)
+
+* updated viewpager name and removed tag
+
+* removed passing of context
+
+* switched to HashMap
+
+* cached fragments instead of loading everytime
+
+* declaritive hashmap
+
+* removed null check
+
+* Show Toolbar Animation using StateListAnimator (#479)
+
+* using animator
+
+* comment formatting
+
+* Code Style and Efficiency Changes (#481)
+
+* efficiency and theming changes
+
+* clean
+
+* Use StateListDrawable for Tabs (#480)
+
+* added StateListDrawable for tabs
+
+* updated to homeviewpager
+
+* changed to homeviewpager for merge conflict
+
+* fixed toolbar text color
+
+* Convert ViewPager to ViewPager2 (#456)
+
+* Convert ViewPager to ViewPager2
+
+Require TabLayoutMediator to set up ViewPager2 and TabLayout; this file is taken from the ViewPager2 sample https://github.com/googlesamples/android-viewpager2.
+
+* Programmatically set menu visibility
+
+This is a temporary workaround; see https://issuetracker.google.com/issues/124183800 for more details.
+
+* Use TabLayoutMediator provided by Material 1.1.0-alpha07
+
+* Update to ViewPager version 1.0.0-alpha06
+
+This update also fixes a bug (https://issuetracker.google.com/issues/124183800 ) and removes the need for the temporary workaround.
+
+* Update callback to use ViewPager2's callback when a tab is selected
+
+* Remove temporary workaround for menu visibility
+
+Also add comment for tab text
+
+* Return String instead of CharSequence
+
+* Add TODO for data binding
+
+* Update ViewPager2 version to 1.0.0-beta02
+
+* Address PR comments + refactor
+
+* Address PR comments
+
+- Create new Fragment instead of fetching existing Fragment
+- Bump VP2 version to 1.0.0-beta03
+
+* Update Turkish string resources
+
+Also removed duplicate app_name in Italian string resources
+
+* Remove canvas nullability and related usage
+
+* Update comment
+
+* Address PR comments
+
+- update Material Version to 1.1.0-alpha09
+- add newlines to layout
+- remove explicit clickable/focusable - not needed since onClick is set
+- use ?attr where appropriate
+- use app:backgroundTint for backwards compatibility
+
+* Address PR comments
+
+- Rename CustomCardView to MaskedCardView
+
+* Update Gradle version
+
+* Address PR comments
+
+- extract tab icon logic to its own method
+- set plant name on the plant detail page in the layout
+- only set appbar and toolbar attributes when crossing a scrolling threshold
+
+* Merge layer-list for back icon into a single <vector>
+
+* Update ktlint and spotless versions
+
+* Update colors and themes
+
+- Change colors to use descriptive names
+- Add alternative style for dark theme
+
+* Merge layer-list for share icon into a single <vector>
+
+Also update the back icon's circle path data and whitespace formatting
+
+* Remove unused PopupOverlay styles
+
+* Add Traditional and Simplified string translations | 2019-08-28 16:41:40 | 6291ad39d43c6c2dd4a12c29cc9797ceb347f050
+
+Update dependencies (#404)
+
+Also fix spacing issue in plant description data by adding two <br>s. | 2019-05-11 05:08:44 | d4b94611c28c299aabdd8dd1a9ebc85f7df634e4
+
+Add WorkManager test for SeedDatabaseWorker (#398)
+
+* Remove deprecated coroutineContext override.
+
+WorkManager v2.1 has deprecated coroutineContext. If you need to have
+your CoroutineWorker run on a different Dispatcher, you can go to the
+desired coroutineContext yourself in the body of the suspending
+function.
+
+* Add SeedDatabaseWorker Test case.
+
+* Simplyfy test using the reified builder for the TestListenableWorker.
+
+* Run Spotless. | 2019-04-26 22:45:11 | 2c424d9fee8993d30b363dfaac5ed005b3d704b2
+
+Remove deprecated coroutineContext override.
+
+WorkManager v2.1 has deprecated coroutineContext. If you need to have
+your CoroutineWorker run on a different Dispatcher, you can go to the
+desired coroutineContext yourself in the body of the suspending
+function. | 2019-04-26 11:48:34 | 54ec64afe674e41e390c9f7cb902aa84537ef359
+
+Remove deprecated coroutineContext override.
+
+WorkManager v2.1 has deprecated coroutineContext. If you need to have
+your CoroutineWorker run on a different Dispatcher, you can go to the
+desired coroutineContext yourself in the body of the suspending
+function. | 2019-04-26 11:48:34 | 17d527d188afcf5f3910b0c3109488cb5eb2d909
+
+Remove spare % character to fix crashes on GardenActivity (#344) | 2019-02-21 19:57:43 | f0c2df7eead4c56acc31cb1a3e72763e9d3b73a1
+
+Fix #132: the PlantAndGardenPlantingsViewModel decoupled from context and string-resource (#135)
+
+* Update gradle to 3.2.0-beta03
+
+* Fix critical bug that ViewModel contains R.string | 2019-02-21 17:59:47 | 7cd14961ed28db5fc2aa0eb5b31c919f3b7c9a1a
+
+Minor formatting fix.
+
+Change-Id: I3bbf7b01bbeceef6758fe79f5d8b8dd7960f8477 | 2019-01-24 21:45:43 | 849c6de403ffd27814e778c46b486c60737e2a21
+
+Slight fix on Chinese translation(added_plant_to_garden) | 2018-12-15 23:17:40 | b055b5d28573d5b12a95f0aeaed33693cba56ac1
+
+fix ktlint install instructions
+- mv ktlint to /usr/local/bin/
+- add homebrew option for linux/mac users | 2018-10-23 20:53:58 | eed34e8df1960418848409ef9f1500f6979ad649
+
+Re-fix #54 after changing to single-activity pattern (#80)
+
+* Fix tht bug #54
+
+* Add UI-Tests for this bugfix
+
+* Fix UI-Tests
+
+* Use class variable drawerLayout
+
+* Code optimize
+
+- Add a mini extension on DrawerLayout to checkout whether it is opened
+  on left or not.
+- Format if check with braces.
+
+* Reset to use isDrawerOpen instead extension, setLifecycleOwner for binding
+
+- The data-binding should have lifecycle-owner, becuase it is now class
+member variable, this is different from those which have data-binding and would
+*only* be passed as function args.
+
+* Re-fix #54
+
+* Use DrawerLayout as cls member, omitting with in onBackPressed
+
+* Reset some lines that should be unchanged
+
+* Also reset some lines shouldn't be blank
+
+* Fix tests | 2018-07-04 05:17:11 | b1572f9ef65b5643901e6db2a01e1cb3c2c09581
+
+Apply ktlint fixes using ./gradlew sA | 2018-07-02 22:48:15 | 2c6e062fe0b28f7b9275fb9956912fb9c007fa98
+
+Fix bug #54: The navigation drawer should close first (if open) onBackPressed (#59)
+
+* Fix tht bug #54
+
+* Add UI-Tests for this bugfix
+
+* Fix UI-Tests
+
+* Use class variable drawerLayout
+
+* Code optimize
+
+- Add a mini extension on DrawerLayout to checkout whether it is opened
+  on left or not.
+- Format if check with braces.
+
+* Reset to use isDrawerOpen instead extension, setLifecycleOwner for binding
+
+- The data-binding should have lifecycle-owner, becuase it is now class
+member variable, this is different from those which have data-binding and would
+*only* be passed as function args. | 2018-06-26 05:01:41 | f5efdb8aa448f5d8a153372694e50d86669a8966
+
+Dont ClipToPadding
+
+to fix overscroll being cut off | 2018-06-16 04:12:04 | b77d561250157095004c531ae8fc017ac99465ec
+
+Merge pull request #37 from XinyueZ/bugfix/filter-menu-state
+
+Try to fix bug #31 | 2018-06-08 22:58:51 | a6c1f897412d0b98254d00f3b106624ffa7d233f
+
+[Sunflower] Update Readme
+
+Add link to Releases page; minor spacing fix.
+
+Change-Id: I4233886907fa5e3e670b474cd97c11fa41fab7a2 | 2018-05-29 21:04:39 | 6bef6cd2c86850d731e6a8e16a23df7ccae793c0
+
+Android Sunflower: minor cleanups
+
+- Remove app: prefix for binding adapters (not needed)
+- Consolidate margin dimens.
+
+Test: ran unit and instrumented tests:
+      ./gradlew app:test app:connectedAndroidTest
+
+Change-Id: Ie26951f0dd9d9de2bd944d6e336f8a75674c5fc6 | 2018-04-26 03:54:29 | 46301a99fe6ce29eefbe0b535f677f985c520dc7
+
+Android Sunflower: add tests
+
+Code reviewers: this commit adds testing around the two Activities
+in the app.  This is step 5 in the project tracker, and is prep
+for converting the project to MVVM and adding Room (step 6 and 7).
+
+Changes also include:
+- removing build tools version (no longer needed in API 27)
+- updating Gradle libs
+- custom matcher for CollapsingToolbarLayout
+- fixed bug (via TDD) where toolbar title didn't persist on
+  rotation
+- minor improvements (@nonnull annotation, tools:text)
+
+Tracker: go/android-sunflower-tracker
+PRD: go/android-sunflower-prd
+
+Bug: 65952046
+Test: ran unit and instrumented tests
+Change-Id: I87d3f5b319179d2e1917a3ace619ae9fe4bc0630 | 2017-11-07 19:24:05 | b63261f439e74b69800a2ecab083a17992f89e46
+
+This query will never dispatch null, it will return empty list | 2019-08-23 03:34:01 | c0731292aff71962846154c48eefb296d4261d0c
+
+Merge in Material Sprint feature branch to master (#472)
+
+* Update Material version to 1.1.0-alpha07 (#431)
+
+* Add button to navigate to Plant List
+
+When the user's garden is empty, add a button prompting them to navigate to the Plant List.
+
+This also adds a new string and some placeholder string translations.
+
+Updated styling will be implemented in a future commit.
+
+* Change Plant List Page to use GridLayout (#433)
+
+* Changed Plant List page to grid Layout with 2 columns
+
+* Changed garden fragment to gridlayoutmanager with 2 columns
+
+* changed appSpan count to use an integer dimension
+
+* Turning Plant List Grid into Material Themed Cards (#437)
+
+* Initial commit to turn plant list grid into cards
+
+* added dimension variable for card corner radius
+
+* Style changes for CI
+
+* Changed to staggered gridlayout
+
+* Code review Changes
+
+* Convert from drawer layout to tab layout (#438)
+
+* WIP commit - converting to ViewPager
+
+* Update logic when tapping the "Add Plant" button
+
+Also removes action from the navigation graph and adds descriptive constants for the ViewPager page index.
+
+* run spotless
+
+* Use childFragmentManager to preserve fragments when returning to ViewPager
+
+* Update navigation direction for navigating from garden to plan details.
+
+Also removes unused fragment and action entries in the nav graph.
+
+* Clean up unused code and imports
+
+* Add imports back
+
+* Remove unused resources
+
+* Add comment for getCount()
+
+* Created Material-themed cards for My Garden Page (#440)
+
+* Initial commit. still work to be done with strings.xml files
+
+* Translation placeholders and cleaned code
+
+* replaced translations
+
+* cleaned strings and switched to variables
+
+* code review changes
+
+* Add collapsing title to ViewPager (#439)
+
+* Add title to ViewPager
+
+Also add a large font dimension for use in new and old code
+
+* Collapse toolbar
+
+Also some formatting fixes
+
+* Maintain toolbar scroll/collapse state when navigating back to ViewPager
+
+This requires an ID for both CoordinatorLayout and the AppBarLayout - added a comment to clarify.
+
+* Add CollapsingToolbarLayout
+
+Toolbar now collapses on both the My Garden and Plant List pages.
+
+Also added fitsSystemWindows to the app bar so that the text isn't drawn under the system bar.
+
+* Theme (#441)
+
+* initial commit
+
+* formatting changes
+
+* circleCI
+
+* formatting
+
+* Add app bar to plant detail page
+
+Also moves FAB anchor to app bar and increase header image height
+
+* grid with to integers file
+
+* changed shape of fab
+
+* changed shape and color of add button (#455)
+
+* changed colors to use ?attr
+
+* consolidate texts and colors to use material style guide
+
+* Added available plants header and padding to My Garden Page (#457)
+
+* added available plants header
+
+* moved available plants strings
+
+* changed available plants title to be scrollable
+
+* Comments and cleaned code
+
+* spotlessApply
+
+* fixed padding in plant list page (#464)
+
+* fixed padding in plant list page
+
+* margin end added
+
+* Update tests for the new UI interface
+
+Ignoring share button test for now, while the button is being redesigned.
+
+* Add icons to the tab layout (#468)
+
+* Add icons to the tab layout
+
+The icons are programmatically set based on the selected tab.
+
+* Use color resources instead of hard coding color values
+
+* Added Dark Theme (#467)
+
+* dark theme
+
+* spotless
+
+* cleaned code and changed icon color
+
+* Update dark mode yellow
+
+* watering needs changes
+
+* Fix bug where FAB does not hide when clicked
+
+* Detail Collapsing Toolbar (#470)
+
+* initial commit for detail menu items
+
+* spotlessApply
+
+* spotlessApply
+
+* removed unused methods
+
+* removed unused imports
+
+* navbar code review
+
+* fixed overlap
+
+* Theming Changes (#471)
+
+* initial commit for detail menu items
+
+* spotlessApply
+
+* spotlessApply
+
+* removed unused methods
+
+* removed unused imports
+
+* final theming changes
+
+* styling changes to tab icons
+
+* theme code review
+
+* changed to requireContext
+
+* Changed Theme and Shape Format
+
+* Code Readability Changes (#478)
+
+* readability initial changes
+
+* readability changes
+
+* removed unused imports
+
+* Removed use of .tag and Renamed ViewPager (#482)
+
+* updated viewpager name and removed tag
+
+* removed passing of context
+
+* switched to HashMap
+
+* cached fragments instead of loading everytime
+
+* declaritive hashmap
+
+* removed null check
+
+* Show Toolbar Animation using StateListAnimator (#479)
+
+* using animator
+
+* comment formatting
+
+* Code Style and Efficiency Changes (#481)
+
+* efficiency and theming changes
+
+* clean
+
+* Use StateListDrawable for Tabs (#480)
+
+* added StateListDrawable for tabs
+
+* updated to homeviewpager
+
+* changed to homeviewpager for merge conflict
+
+* fixed toolbar text color
+
+* Convert ViewPager to ViewPager2 (#456)
+
+* Convert ViewPager to ViewPager2
+
+Require TabLayoutMediator to set up ViewPager2 and TabLayout; this file is taken from the ViewPager2 sample https://github.com/googlesamples/android-viewpager2.
+
+* Programmatically set menu visibility
+
+This is a temporary workaround; see https://issuetracker.google.com/issues/124183800 for more details.
+
+* Use TabLayoutMediator provided by Material 1.1.0-alpha07
+
+* Update to ViewPager version 1.0.0-alpha06
+
+This update also fixes a bug (https://issuetracker.google.com/issues/124183800 ) and removes the need for the temporary workaround.
+
+* Update callback to use ViewPager2's callback when a tab is selected
+
+* Remove temporary workaround for menu visibility
+
+Also add comment for tab text
+
+* Return String instead of CharSequence
+
+* Add TODO for data binding
+
+* Update ViewPager2 version to 1.0.0-beta02
+
+* Address PR comments + refactor
+
+* Address PR comments
+
+- Create new Fragment instead of fetching existing Fragment
+- Bump VP2 version to 1.0.0-beta03
+
+* Update Turkish string resources
+
+Also removed duplicate app_name in Italian string resources
+
+* Remove canvas nullability and related usage
+
+* Update comment
+
+* Address PR comments
+
+- update Material Version to 1.1.0-alpha09
+- add newlines to layout
+- remove explicit clickable/focusable - not needed since onClick is set
+- use ?attr where appropriate
+- use app:backgroundTint for backwards compatibility
+
+* Address PR comments
+
+- Rename CustomCardView to MaskedCardView
+
+* Update Gradle version
+
+* Address PR comments
+
+- extract tab icon logic to its own method
+- set plant name on the plant detail page in the layout
+- only set appbar and toolbar attributes when crossing a scrolling threshold
+
+* Merge layer-list for back icon into a single <vector>
+
+* Update ktlint and spotless versions
+
+* Update colors and themes
+
+- Change colors to use descriptive names
+- Add alternative style for dark theme
+
+* Merge layer-list for share icon into a single <vector>
+
+Also update the back icon's circle path data and whitespace formatting
+
+* Remove unused PopupOverlay styles
+
+* Add Traditional and Simplified string translations | 2019-08-28 16:41:40 | 6291ad39d43c6c2dd4a12c29cc9797ceb347f050
+
+Update dependencies (#404)
+
+Also fix spacing issue in plant description data by adding two <br>s. | 2019-05-11 05:08:44 | d4b94611c28c299aabdd8dd1a9ebc85f7df634e4
+
+Add WorkManager test for SeedDatabaseWorker (#398)
+
+* Remove deprecated coroutineContext override.
+
+WorkManager v2.1 has deprecated coroutineContext. If you need to have
+your CoroutineWorker run on a different Dispatcher, you can go to the
+desired coroutineContext yourself in the body of the suspending
+function.
+
+* Add SeedDatabaseWorker Test case.
+
+* Simplyfy test using the reified builder for the TestListenableWorker.
+
+* Run Spotless. | 2019-04-26 22:45:11 | 2c424d9fee8993d30b363dfaac5ed005b3d704b2
+
+Remove deprecated coroutineContext override.
+
+WorkManager v2.1 has deprecated coroutineContext. If you need to have
+your CoroutineWorker run on a different Dispatcher, you can go to the
+desired coroutineContext yourself in the body of the suspending
+function. | 2019-04-26 11:48:34 | 54ec64afe674e41e390c9f7cb902aa84537ef359
+
+Remove deprecated coroutineContext override.
+
+WorkManager v2.1 has deprecated coroutineContext. If you need to have
+your CoroutineWorker run on a different Dispatcher, you can go to the
+desired coroutineContext yourself in the body of the suspending
+function. | 2019-04-26 11:48:34 | 17d527d188afcf5f3910b0c3109488cb5eb2d909
+
+Remove spare % character to fix crashes on GardenActivity (#344) | 2019-02-21 19:57:43 | f0c2df7eead4c56acc31cb1a3e72763e9d3b73a1
+
+Fix #132: the PlantAndGardenPlantingsViewModel decoupled from context and string-resource (#135)
+
+* Update gradle to 3.2.0-beta03
+
+* Fix critical bug that ViewModel contains R.string | 2019-02-21 17:59:47 | 7cd14961ed28db5fc2aa0eb5b31c919f3b7c9a1a
+
+Minor formatting fix.
+
+Change-Id: I3bbf7b01bbeceef6758fe79f5d8b8dd7960f8477 | 2019-01-24 21:45:43 | 849c6de403ffd27814e778c46b486c60737e2a21
+
+Slight fix on Chinese translation(added_plant_to_garden) | 2018-12-15 23:17:40 | b055b5d28573d5b12a95f0aeaed33693cba56ac1
+
+fix ktlint install instructions
+- mv ktlint to /usr/local/bin/
+- add homebrew option for linux/mac users | 2018-10-23 20:53:58 | eed34e8df1960418848409ef9f1500f6979ad649
+
+Re-fix #54 after changing to single-activity pattern (#80)
+
+* Fix tht bug #54
+
+* Add UI-Tests for this bugfix
+
+* Fix UI-Tests
+
+* Use class variable drawerLayout
+
+* Code optimize
+
+- Add a mini extension on DrawerLayout to checkout whether it is opened
+  on left or not.
+- Format if check with braces.
+
+* Reset to use isDrawerOpen instead extension, setLifecycleOwner for binding
+
+- The data-binding should have lifecycle-owner, becuase it is now class
+member variable, this is different from those which have data-binding and would
+*only* be passed as function args.
+
+* Re-fix #54
+
+* Use DrawerLayout as cls member, omitting with in onBackPressed
+
+* Reset some lines that should be unchanged
+
+* Also reset some lines shouldn't be blank
+
+* Fix tests | 2018-07-04 05:17:11 | b1572f9ef65b5643901e6db2a01e1cb3c2c09581
+
+Apply ktlint fixes using ./gradlew sA | 2018-07-02 22:48:15 | 2c6e062fe0b28f7b9275fb9956912fb9c007fa98
+
+Fix bug #54: The navigation drawer should close first (if open) onBackPressed (#59)
+
+* Fix tht bug #54
+
+* Add UI-Tests for this bugfix
+
+* Fix UI-Tests
+
+* Use class variable drawerLayout
+
+* Code optimize
+
+- Add a mini extension on DrawerLayout to checkout whether it is opened
+  on left or not.
+- Format if check with braces.
+
+* Reset to use isDrawerOpen instead extension, setLifecycleOwner for binding
+
+- The data-binding should have lifecycle-owner, becuase it is now class
+member variable, this is different from those which have data-binding and would
+*only* be passed as function args. | 2018-06-26 05:01:41 | f5efdb8aa448f5d8a153372694e50d86669a8966
+
+Dont ClipToPadding
+
+to fix overscroll being cut off | 2018-06-16 04:12:04 | b77d561250157095004c531ae8fc017ac99465ec
+
+Merge pull request #37 from XinyueZ/bugfix/filter-menu-state
+
+Try to fix bug #31 | 2018-06-08 22:58:51 | a6c1f897412d0b98254d00f3b106624ffa7d233f
+
+[Sunflower] Update Readme
+
+Add link to Releases page; minor spacing fix.
+
+Change-Id: I4233886907fa5e3e670b474cd97c11fa41fab7a2 | 2018-05-29 21:04:39 | 6bef6cd2c86850d731e6a8e16a23df7ccae793c0
+
+Android Sunflower: minor cleanups
+
+- Remove app: prefix for binding adapters (not needed)
+- Consolidate margin dimens.
+
+Test: ran unit and instrumented tests:
+      ./gradlew app:test app:connectedAndroidTest
+
+Change-Id: Ie26951f0dd9d9de2bd944d6e336f8a75674c5fc6 | 2018-04-26 03:54:29 | 46301a99fe6ce29eefbe0b535f677f985c520dc7
+
+Android Sunflower: add tests
+
+Code reviewers: this commit adds testing around the two Activities
+in the app.  This is step 5 in the project tracker, and is prep
+for converting the project to MVVM and adding Room (step 6 and 7).
+
+Changes also include:
+- removing build tools version (no longer needed in API 27)
+- updating Gradle libs
+- custom matcher for CollapsingToolbarLayout
+- fixed bug (via TDD) where toolbar title didn't persist on
+  rotation
+- minor improvements (@nonnull annotation, tools:text)
+
+Tracker: go/android-sunflower-tracker
+PRD: go/android-sunflower-prd
+
+Bug: 65952046
+Test: ran unit and instrumented tests
+Change-Id: I87d3f5b319179d2e1917a3ace619ae9fe4bc0630 | 2017-11-07 19:24:05 | b63261f439e74b69800a2ecab083a17992f89e46
+

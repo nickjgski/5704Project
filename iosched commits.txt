@@ -1,0 +1,4834 @@
+Disables scroll-to-present feature for bugfix release
+
+Bug: 143146581
+Change-Id: Ibcb520549b4db583f8ca38e1d4ca9df13cd2811a | 2019-10-22 19:50:15 | ff00797d255e41977ba795f2f770def2572c73ed
+
+Version bump and small info fixes
+
+Change-Id: I151f778f52bcb8ed83d9d8095779eb742159d507 | 2019-10-19 08:00:39 | 76e6cd2f54ddeb863d535318af02db0d6f9fcc1a
+
+Re-land transparent status/nav bars
+
+This mostly reverts I09958bc62f9e8b4fea3b425e4e5ab6b1d58c2cd3.
+The original issue was caused StatusBarBehavior not receiving
+any insets or elevation changes sometimes. Still need to dig
+into why, but removed the class for now.
+
+The new way we achieve the same thing is with a new custom view
+call StatusBarScrim. This class handles measuring itself so it
+is the exact same size as the status bar. To aid drawing, it
+also wraps any background drawables in MaterialShapeDrawable,
+similar to the MDC widgets.
+
+Also fixed schedule's app bar scrolling off correctly in
+landscape.
+
+Test: manually on API 21, 22, 24, 25, 27, 29
+Change-Id: I3ecd1bafeacbc42693b88d0cea915617021e8117 | 2019-10-03 07:45:32 | d167ff0134fc15b1c18ebd5107f36992c5c9981e
+
+Fix basic fragment transitions
+
+All actions now have the default navigation animations
+(mainly a cross-fade). We still need to fix shared element
+transitions, but this is good enough for now.
+
+Change-Id: I1bc8b046722034f9c4e1df0eb4ce8df8c3e8d26f | 2019-09-26 01:38:50 | dbe8528990e4732bc5bd678b5507aefa85fea320
+
+Replaces coroutine Dispatchers in instrumentation tests
+
+Change-Id: Ie4b07f735b96f9794b87bcf4cbc4806cf2f93475 | 2019-09-17 09:28:00 | eb00dc10311d0b4e6763f73e323ab22a68f9bd5e
+
+Styling fixes for Dark Mode
+
+It's not perfect yet, but this CL makes it a whole lot more usable.
+
+Bug: 140107505
+Change-Id: Ifd4c3f20ac3f36a4d345ecaf09e41d612e205271 | 2019-02-11 00:42:34 | ccd39fa974b95cf0ddc6b02b6ecf028569aa5381
+
+Update codestyle
+
+Android Studio's codestyle format has changed slightly.
+
+This also fixes an issue where reformatting android XMLs rearranged
+elements rather than just rearranging attributes.
+
+Change-Id: Ieb416b330a5e9c13f8dab2b7180f9dbf20065576 | 2019-09-03 21:45:32 | 63548dbccc09b91ed893599d818057b44fda7235
+
+Adds Navigation Component
+
+TODO: Shared element transition for speakers
+TODO: Bug when going back to schedule using the back button, fixed with
+FlowUseCase CL?
+TODO: Replace BottomNavigationView with material version
+
+Bug:138777024
+
+Change-Id: Ib94a43949cd9c8685f55f36e9031ff9b8b90d1c1 | 2019-08-14 14:10:12 | 3504dcb36161a1a05fa4b1be3902687b2b8c0a35
+
+Enable Spotless + Ktlint code linting
+
+The build will now break if the code style is
+not to standard. ./gradlew spotlessApply will fix
+it automatically 95% of the time.
+
+Change-Id: Ia61b5a2b9aacfb750b738c1f01d330bac8f14bb4 | 2019-08-21 01:50:07 | af37afce35d403fe570d7af7322ab9be264970d0
+
+Merge "Fixes bug with stars when coming back from speaker screen" into adssched | 2018-11-01 18:04:41 | efdb0223375148dd0a0fa2f9a26b9f59716e5500
+
+Fixes bug with stars when coming back from speaker screen
+
+Change-Id: I1e4aa59dc6f7c1e97e7718d5ec6c76883e69db99 | 2018-11-01 17:56:05 | 039df21a6b759b163a3fdb2f76e756a1b09603c0
+
+Fixes a bug where the detail screen showed old info when started from the speakers screen
+
+Change-Id: I3cc77c7e3a2b052b33eafcb194f1e0f023c6c7e3 | 2018-10-30 18:10:47 | afd5b860851c2c79a33391ec7fc8fb0ff1a4df3b
+
+Merge "Fixes sign in/out bugs" into adssched | 2018-10-17 13:19:10 | dd6f781d03678af2f27153896ae5cf3f0e6cde5c
+
+Fixes sign in/out bugs
+
+Change-Id: I8caad7cc4418488218b5460a86997769bba02850 | 2018-10-17 10:24:38 | 20333e1d90e47e4d81c66b0087580daf2a46f149
+
+Merge "Strictmode fixes." into adssched | 2018-10-16 14:02:31 | 6d43e871c0ae91acad9ba313f94ac61a5273acba
+
+Strictmode fixes.
+
+JSON loading in main thread when not signed in + Firebase workarounds.
+Still one not fixed related to Remote Config when opening the Info tab.
+
+Change-Id: I37d180c33644ea528470281a63f10b1155bc5bf5 | 2018-10-15 14:39:22 | ff4bd62236295ed7909ffd92273bcdd450f3bb63
+
+Misc tag-related UI fixes
+
+- Update "starred and reserved" to just "starred"
+- Remove level indicator from Session Detail screen
+
+Bug: 117653778
+Bug: 117654852
+Change-Id: I8fdc362ffaee8818eab39b30d3e741032633f2e0 | 2018-10-12 17:37:48 | 5ec3a09b114caf28d3e31572b18609ae1497cfc5
+
+Schedule item fixes & tweaks
+
+Bug: 117098177
+Change-Id: Idc43c074cf6e040b1bf57bc91ebf0dc236e0e99e | 2018-10-01 19:22:16 | c2fe9b09de0103729ba1595e6e8df46b45829cc0
+
+Adds AIA checks, WifiManager fix, version++
+
+Change-Id: I545769dce5f62465bb294729ea078071854df378 | 2018-09-27 12:32:51 | 3db20a2df986e17c2596a356cc7a2bd047d9d270
+
+Removes check for signed in user to fix details screen bug
+
+Bug:116079103
+Change-Id: Ifc950e378bd739ebfa2c7e7911df88ea99c61c28 | 2018-09-19 15:18:53 | 789ad1629f3075369110e307c1d6c1dd73f94af0
+
+Removes sandbox flag to fix app crash on signin
+
+Bug:116079742
+Change-Id: I0131350cce7b7ae2fccc1ee89c4c9b7a1e009168 | 2018-09-19 09:44:24 | 3e0bc13d36bfb823570e24a75d75b487628f22fa
+
+Fixes SDK location definition in build script to fix evasive proguard error
+
+Change-Id: If947936280d669d13417cfbfc01a6b0c511207d3 | 2018-09-06 11:32:57 | e3ece9293a1d5fe253e4e31f1829f81ac77760c9
+
+[ATV] Fix details UI from being hidden
+
+Fix bug where details are not shown because photoUrl is null and the fragment transition cannot take place.
+Fix timezones to use conference timezone. Will use settings/preference to drive timezone in later commit.
+Remove background manager changing the background since there are no images to set as the background.
+
+Bug: 72441786
+Change-Id: I483e04edbdf15e8723f436aee0636feead13eac9 | 2018-07-24 21:52:35 | fee32f80f812befd097c112ef8c768d32852d5f8
+
+Migrate to androidx
+
+Additional changes required for this refactor:
+- Updated gradle plugin version
+- Updated databinding compiler version
+- Updated versions for other non-androidx dependencies
+- Borderless colored buttons broke, so updated our styles by using
+  Widget.MaterialComponents.Button.TextButton
+- Suppressed InvalidPackage lint warning
+- Fixed usage of Timber
+- Wear module needs additional cardview dependency due to a bug with
+  databinding library.
+- Increased gradle jvm heap space
+
+Bug: 80092217
+Change-Id: Icc4b8bdd49e486cab4f879c9468bf82566afbcde | 2018-05-18 23:32:25 | 4451898bbf96834e0732d66747a6e58af7b943cb
+
+Fix snackbars on Info > Events.
+
+Also fix the wifi password layout/background.
+
+Bug: 79322566
+Bug: 79113924
+Change-Id: I39335557edb03b5de7ab97951505cff6b1cfe09e | 2018-05-07 02:30:47 | 576fa1ce49b2c202295fc3c8fd688d5dc7c9396c
+
+Fix opening Map screen from session detail
+
+This implementation opens a shell activity containing just the Map.
+This is easier to keep consistent back navigation, at the cost of not
+allowing the user to go straight to other top-level navigation
+destinations.
+
+Also fixes centering on map markers when the user clicks on one.
+
+Bug: 77801061
+Bug: 78533287
+Change-Id: I0b0b301a66217329c14b9d0b2ca9b2dfb38a42b0 | 2018-04-10 20:18:55 | 866592070ba79c4902ba117ce47ecc91702f3ec5
+
+Merge "Disable Crashlytics on debug." | 2018-04-19 19:26:37 | 45653cd538f8f937876e0f5725e7afafd4899e98
+
+Disable Crashlytics on debug.
+
+Bug: 78259510
+
+Change-Id: If46c2689374956351edf608e23e3a7dff6d839e5 | 2018-04-19 14:20:35 | 5089ba3df6f97c0823a410accd67810e26bfcdb7
+
+Delay session filtering until filter animation has run.
+
+Also fix the content description.
+
+Bug: 78253558
+Change-Id: I9a28dbf526eb124393dd40823e77783d326889f1 | 2018-04-19 13:42:40 | a9106a56b9157d216f556ce53d81f1ee90bd45c2
+
+Merge "Animate tag filters & fix tinting on API 21." | 2018-04-17 13:22:59 | 0124dda248fe04c313dcff947688d907432488cf
+
+Animate tag filters & fix tinting on API 21.
+
+Bug: 75406190
+Bug: 77877707
+Change-Id: I13eec50143fe266b89042995874ec58994707a55 | 2018-04-16 17:13:36 | 59bc74f2519c95ae0b8fc229f8985dda0c7142fe
+
+Temporarily hide map icon on session detail screen.
+
+Will resurface once b/78025651 is fixed.
+
+Also remove outdated todo comment and suppress warning.
+
+Bug: 78025651
+Test: kokoro
+Change-Id: I8f8c7e342c92e89c17658d8131e53ac4220c5688 | 2018-04-13 23:02:24 | 0cb000561b01544fb1a7a23ab0e07f4d464c3f2d
+
+Maps API key for debug
+
+Change-Id: I78cb7b6c03538523b247d7c1ce70395e72cd0729 | 2018-04-12 15:37:42 | 1751d677c1106013975ca2a46ab1248f131b60a0
+
+Fix session room/time position bug.
+
+Change-Id: Icf2c25feb6fcb360ecf6f7b01850c71bb77e8c93 | 2018-04-11 21:56:50 | 1fc2241972edd357aeeae35de18def5c9a10873f
+
+Minor strings fixes
+
+- Replace Github with GitHub
+- Remove unneeded "?" from the sentence in the swap dialog
+
+Change-Id: I80522e0916b6253f998c7d085987ae89695f749f | 2018-04-11 04:29:40 | 0c8ec89868144cdd353944fe3d972c6811ffaec0
+
+Revert "Remove reservation from ScheduleViewModel."
+
+This reverts commit 2bbf9ecfffc23321353cb3eb14887521c3e7ea6f.
+
+Reason for revert:
+I noticed the tests invoked from the command line started to fail.
+Not sure why this didn't happen in Kokoro, but reverting this for now.
+
+> Task :mobile:testDebugUnitTest FAILED
+
+com.google.samples.apps.iosched.util.SetIntervalLiveDataTest > whenNotActive_mapDoesNotRunOnInterval FAILED
+    junit.framework.AssertionFailedError at SetIntervalLiveDataTest.kt:140
+
+com.google.samples.apps.iosched.util.SetIntervalLiveDataTest > whenSourceHasEmittedSeveral_thenMapFnIsCalledWithLastData FAILED
+    junit.framework.AssertionFailedError at SetIntervalLiveDataTest.kt:101
+
+com.google.samples.apps.iosched.util.SetIntervalLiveDataTest > whenNoIntervalsTriggered_thenMapFn_isOnlyCalledOnce FAILED
+    junit.framework.AssertionFailedError at SetIntervalLiveDataTest.kt:62
+
+com.google.samples.apps.iosched.util.SetIntervalLiveDataTest > whenNoIntervalsTriggered_thenMapFn_isCalledWhenNewValue FAILED
+    junit.framework.AssertionFailedError at SetIntervalLiveDataTest.kt:80
+
+Change-Id: I5088563fe63f9109fdb0a1330b2531b68240b6f6 | 2018-04-09 03:57:36 | 691c8cfb16ea12a96b3b492b8893b501016291e0
+
+Creates singleton Snackbar manager to fix duplicates between screens
+
+Bug: 77246840
+
+Change-Id: I3d443e7c1f225e1dd29d3db2449a79e54fb05248 | 2018-04-02 15:49:48 | e08468ba280986c507c7ff1025025da8f727f7fa
+
+Add swap reservations from the schedule and the session detail
+
+Also fixes the issue the message isn't shown after the reservation is
+canceled.
+
+Bug: 75984407
+Bug: 77159562
+
+Change-Id: I7b9ae133f7563628d0fb0a45c7b843d24eb4b2e6 | 2018-03-28 06:27:31 | 5af9a63e4e9c0b6112b4bb48652abf1414c9472a
+
+Add centerCrop scale type to Session Detail header image
+
+Addresses 2 bugs:
+- Gray background bars appear around Session Detail header image if
+  session has video
+- Update design of header image on Session Detail page for landscape
+  view
+
+This might not be the final design but at least it avoids showing gray
+bars for the header image.
+
+Bug: 76223349
+Bug: 76181958
+
+Test: Manual + Kokoro
+Change-Id: I04adaebd5b685a84237ae4e86a0360b3656cf121 | 2018-03-27 22:50:26 | 3b89d60feaf3b2acb1a544bbc67cabcc7a8ff3b5
+
+Fixes bug in the previous fix that prevented showing event messages
+
+Change-Id: I126e18ea02e004c29cd797d5c0a23ff291d08ecf | 2018-03-27 20:11:52 | 925a0676e5862f6cda1caf8dab89aebbe78a9a24
+
+Merge "Fixes bugs: too many firestore listeners + clash messages" | 2018-03-27 20:01:36 | f34e30ac66ee4f997fddfdd3f7ab19cd899963c7
+
+Fixes bugs: too many firestore listeners + clash messages
+
+Bug: 76428231,76428174
+Change-Id: I25e991ebf02dde1ddafd89d0415cddcedeacacc8 | 2018-03-26 20:30:33 | c64fb6ae1475f9886c6d065b2fa5a4e405f9e911
+
+Fix bug in order of determining reservation status.
+
+Change-Id: If2ade3a8214e7e8d7fac076142fdc863c2e653b3 | 2018-03-26 18:57:11 | 8cb0714fa788c28d698c8dfeade2d93d6552b29d
+
+Move schedule filters to bottom sheet
+
+This includes a port of BottomSheetBehavior from the material library.
+This is necessary at least temporarily to address the following bugs
+with that behavior (which are fixed here):
+
+- Calling setHideable(false) on a sheet which is currently HIDDEN makes
+  it jump abruptly to expanded state. (b/76204716)
+  This change makes it animate smoothly to the COLLAPSED state.
+
+- Setting the peek height to PEEK_HEIGHT_AUTO on a sheet which is
+  currently HIDDEN does not update the peek height. (b/76203821)
+  This change updates the peek height correctly.
+
+- Setting android:nestedScrollingEnabled="false" on a child of the sheet
+  (or on the sheet itself) to prevent nested scrolling events from
+  propagating to the parent CoordinatorLayout causes the scrolling view
+  not to work in one direction. (b/75977086)
+  This change fixes this issue.
+
+Bug: 74237649
+Change-Id: I80752e2d97d9e0987a2ec72ca76254c4dea21d0f | 2018-03-23 18:14:30 | c68846c02ef96da12064eb3462d9d6e122fb2307
+
+[ATV/Wear] Add source sets for debugrelease to wear and tv.
+
+Bug: 76171679
+Change-Id: Id07fd01a30a0050b416148a1df501d4e2ada20e9 | 2018-03-22 23:40:04 | d014982540c19ec4793af50d3d636680a3da3e0a
+
+Work around BottomAppBar shadow issue b/72034805.
+
+The BottomAppBar componenet currently cannot draw an appropriate
+elevation shadow for the cradle shape as it cannot draw beyond it's
+bounds nor can the platform elevation system draw a concave shaped
+shadow.
+
+This workaround introduces a parallel view the same size as the
+BottomAppBar with a 9-patch background, faking the shadow.
+
+Change-Id: I6b8436d5f164f097db33d1ec7d85edb86e31bb07 | 2018-03-22 12:49:17 | ec8556365fe391d3ff39a84a98a46faee25c414a
+
+Fixes firestore parsing crash.
+
+It's already fixed in the firestore reservations CL
+
+Change-Id: I1d16b8c6877a4a9c54724f4c8954acdb5399be97 | 2018-03-17 13:47:19 | 6e96dfccc8dc032d851fc317a9ceccab717fbbfe
+
+Merge "Remove the underscores from the prefix and the suffix for the id for the keynote." | 2018-03-16 10:49:49 | 1d2da20ee62498df1685a73c55806ede989ec4a1
+
+Remove the underscores from the prefix and the suffix for the id for the
+keynote.
+
+It turned out Firestore doesn't accept a document with id that starts
+and ends with "_".
+As a result, the document that represents UserEvent for the keynote wasn't stored in Firestore
+including its starred state.
+
+Confirmed that the document in Firestore and the star state in the emulator worked
+After I manually replaced the "__keynote__" with "keynote".
+
+The copy of the JSON seems to be placed at according to the comment in ConferenceDataDownloader
+"https://firebasestorage.googleapis.com/v0/b/iosched-playground.appspot.com/o/" +
+        "conference_data.json?alt=media&token=0c0a7ce8-f582-4ab2-a66e-29f335680399"
+It needs to be also replaced.
+
+Bug: 75013503
+Change-Id: I04a582b42fec0dfddeb91a558d2688ef29d268b6 | 2018-03-16 07:23:08 | 5ed9460914e227a60ead40caada85534b513c1c0
+
+Merge "Fix reloading bug on session details page" | 2018-03-15 20:19:59 | b1c49aee5fa7dc50c64902f5913e0e5fca9c90b7
+
+Fix reloading bug on session details page
+
+Bug: 73963235
+Test: Manual + Kokoro
+Change-Id: Iae1ac66afceb383401ea07f8c05ef1c0a75f274d | 2018-03-06 17:45:08 | b9dfac55e1c9a26d5d6aeefd3ff41e1d87e6373d
+
+Merge "Fixes sync bug in conference data repository" | 2018-03-13 13:31:43 | 9276471e1dcb454c933ba697e17982d804260320
+
+Fixes sync bug in conference data repository
+
+Change-Id: I5953b04cf839667fa68fe678a5722697002d0ec1 | 2018-03-12 17:49:18 | 7c8c5dc4fe5af7fb93c708c078fcc3e2c747dfa7
+
+Clean up shared module
+
+- Use one conference data json file instead of 3
+- Remove fake data sources now that we have conference json
+- Make debug variant use json instead of hardcoded fake data
+- Consolidate test data as much as possible
+
+Change-Id: I7da7e96a4ca15169d14c8ef9460ee0305e1ceef6 | 2018-03-07 16:35:09 | 91ea2be4b2c86dc8c04a90e5f585b121dc46045e
+
+Merge "Gradle debug option for CI" into 2018-development | 2018-03-04 04:24:38 | 5faa439e65bce9e789c1e51c8ac14c0ec02f93fc
+
+Gradle debug option for CI
+
+Allows a GRADLE_DEBUG environment variable to be set for continuous
+builds. If set to any value other than empty string, Gradle invocations
+are run with the --debug --stacktrace flags.
+
+Note that environment variables can only be passed to kokoro jobs via
+stubby.
+
+Change-Id: Ifdccbe3614f79a303c115abf70a12b9ba02554e3 | 2018-02-28 08:07:33 | 68d072aec50868e20bb762457e40e634859296b1
+
+Race condition fix. Replaced callbacks with LiveData + AS 3.1
+
+Change-Id: I6ba9a72a07166cb61481995a82312b00932d1b81 | 2018-01-23 19:19:02 | c1d57cf42914dc6b426b7dd0278d5f035fb8de3d
+
+Adds use cases framework, fixes threetenbp, adds Timber
+
+Change-Id: I6d2d48d5c58671393d72c5fa5bed9a019e064a31 | 2018-01-18 10:41:21 | 843c76502396de4fa187fcc6e388df70b8417b46
+
+Push sessions and reservations to vendor
+
+- Update function to push sessions to vendor
+- Update function to push reservations to vendor
+- Add room name when loading sessions. Room name
+  is required by vendor.
+- Schedule push reservations function to be called
+  once per hour, via a cron job.
+
+bug: 36813187
+Change-Id: I5322c3d56d5e057c4b90e213ad40349356ccd840 | 2017-05-09 21:17:28 | 222e6ca35dca1587dca84e931e99be5d4dfcc36b
+
+Merge "Fix filter bar bug on re-selection." | 2017-05-12 19:34:39 | 45d24aa338be1222de898cfdccb94dcf2e01d080
+
+Fix filter bar bug on re-selection.
+
+Bug: 38260613
+Change-Id: I26f3ef8e3b2c904c8ec20294f132a6039d36f14d | 2017-05-12 16:39:31 | 15766b376f35b7c3d3f0bd452aca983d0754c7bf
+
+Fix roatation bug in MDC BottomNav.
+
+Bug: 38256713
+Change-Id: I29e6c3ad5a690e2058f6baa579079aebd35c26bf | 2017-05-12 13:42:44 | 98b58266d784a031bdd2320a66f9abc3049ddfa7
+
+Ensure isRegistered RTDB write completes
+
+- Use a TaskCompletionSource to wait till registration status
+  is written to RTDB before returning status to the client.
+
+bug: 38153701
+Change-Id: I30f02c803e213189947fa318eb5a0a08a40c67b4 | 2017-05-10 00:01:57 | 1600de459639c0c3485da3c90df2f72cbb410b4b
+
+Send FCM pings on Feed updates.
+
+bug: 37851185
+Change-Id: Ia2d95f646d8cb32c18b39524b5e67185074a83ad | 2017-05-06 02:04:50 | 4e1ad8b6fc12653f63debca7190b96a9803bfee8
+
+Update bootstrap file.
+
+bug: 37906662
+Change-Id: I3ef0e16a5ebf6dd98e1d188f9761e2858e4fb839 | 2017-05-05 15:18:21 | 81504f9e6338bfec8f202a6d0cd15568e7a8df66
+
+Merge "Fix filters rotation bugs" | 2017-05-05 01:43:52 | 6bb07016429f1d020d5f560441625167db69ae96
+
+Fix filters rotation bugs
+
+- Fix "clear all" button disappearing
+- Fix event type filters losing checkmark
+
+Bug: 37958327
+Change-Id: Ic4143d01bda23e3ac0465fb411122626fc1369d4 | 2017-05-03 23:01:04 | a7c535ba8a8cce580f81578762a31256727d995e
+
+Merge "Hook up Info screen "View Map" links. Also fixed activity stack for "View Sessions"." | 2017-05-04 01:11:19 | 77d38e476325729c325cba9819c4893fdc0d5425
+
+Hook up Info screen "View Map" links. Also fixed activity stack for "View Sessions".
+
+Change-Id: I5e5edceef22149d7eb7440f62e0742b78be9c3ca | 2017-05-03 00:54:03 | 2427a30d2ad1dc03281557f71e1f39520860d682
+
+Removing animation from session detail fab.
+
+This is likely temporary. More details in the bug.
+
+BUG: 37810998
+Change-Id: Ife1a1a0bb2068a5d79bbc1dab2206038a1b16fc7 | 2017-04-29 22:30:04 | 6f6ce3c789df49060723f402396e8ebf62579ca2
+
+Add check to prevent NPE when unregistering FCM token.
+
+Devcie ID/FCM token must be non null in order to unregister.
+
+bug: 37808077
+Change-Id: I5e2048c598565bda4fdfef465e7b16f786d1872c | 2017-04-29 18:19:23 | 7d57829ef69aff97731d4c075e72684f995600fc
+
+Merge "Only allow reserving for sessions that are SESSION_TYPE_SESSION. Ignore accidental formatting fixes for unrelated stuff." | 2017-04-29 01:55:26 | b58fc3a370bcae8f666be61fc0290ba1ea26d126
+
+Use Endpoints to register FCM token and send self ping
+
+bug: 37720270
+Change-Id: Id483c512984052b3b477628ac682efe11527cc78 | 2017-04-28 23:57:51 | 6e3a71a4a440be3650640d5476c739110f3a8b1d
+
+Only allow reserving for sessions that are SESSION_TYPE_SESSION.
+Ignore accidental formatting fixes for unrelated stuff.
+
+Change-Id: I78717608167fdd1f587babd732a6cbfaeffa3c86 | 2017-04-29 00:54:40 | 5214115f7bf3706db7d1e33f1f79012cf681e4a2
+
+Handle errors during reservation.
+
+If there is an error during the processing of a reservation
+we should remove the queue item since that would prevent the
+user from making subsequent requests.
+
+bug: 36528831
+Change-Id: Iae1edd008960ea622549cf455cd722d5a7b8af50 | 2017-04-29 00:32:32 | b2068ff3336d134fef682542a70068c334a5b4c4
+
+Merge "Hyperlinks in HTML text now work but they're now underlined (mocks have links not underlined). To remove the underline, the text needs to be converted to a SpannableString which breaks ellipsize. Hacks exist to fix the problem (like re-implementing ellipsize as I previously tried to do in this file) but this CL is just to (at least) temporarily fix the links." | 2017-04-27 22:41:05 | a22914370ef37069f4a9001c358be6de25470a7b
+
+Hyperlinks in HTML text now work but they're now underlined
+(mocks have links not underlined). To remove the underline,
+the text needs to be converted to a SpannableString which
+breaks ellipsize. Hacks exist to fix the problem (like
+re-implementing ellipsize as I previously tried to do in
+this file) but this CL is just to (at least) temporarily
+fix the links.
+
+Change-Id: I3e42a45e473b1796189a46bd4906b2d078bdc43b | 2017-04-27 18:02:33 | a15ef6ce5c89a135a949d8b853e5f804208a7215
+
+Use Endpoints for CMS update
+
+This fixes the XSRF vulnerability that the Servlets had.
+
+bug: 37288207
+Change-Id: Ifb30e8f014560b6ef1c7c72a61a6e956cc675440 | 2017-04-26 22:34:49 | 1667c112a4b47ac5c1b97ccb886d5c27fd2dcce0
+
+Add endpoint for clients to submit session feedback.
+
+- This CL only adds the endpoint, this will unblock clients.
+- A follow up CL will implement the sending of the feedback
+  data to Event Point.
+
+bug: 37687229
+Change-Id: Iec808726f07ad7f3b1e521b525a3b96070cc6e59 | 2017-04-26 00:43:56 | 470ef3f09ff5b095a6694748a5699760f0cf202f
+
+Replace send message servlet with Endpoint.
+
+bug: 37288207
+Change-Id: I68fac572fe121d3702f4a5a821a3f40540996d0f | 2017-04-24 17:24:33 | 4749e7aac5716b3953880f36375babfba1747d6d
+
+Replace FCM register servlets with Endpoints
+
+- These Endpoints require same client IDs defined for DefJam
+  Registration Endpoint.
+
+bug: 37288207
+Change-Id: I232b5109555d650600dde56601cc3310293890fb | 2017-04-20 23:47:11 | 5adf26139262536f132f4914e273ca73d52523a4
+
+Replace serving url servlet with endpoint.
+
+Replacing servlet with Cloud Endpoint so that hardcoded keys can
+be avoided.
+
+bug: 37288207
+Change-Id: If507d4e7aef08047bfe78d6208f985301a7b34a9 | 2017-04-25 00:34:19 | 81f45ee0c262e6c5168ec1f09ccdaadc5bb82658
+
+Remove AdminServlet, no longer used.
+
+bug: 37288207
+Change-Id: Ib3f964028d4292f93f3d04dfd32875da0c5dee9c | 2017-04-25 01:10:12 | 04507be923f895472b4bab627e531353b3c6a66e
+
+Update conference dates on server side.
+
+- Fix bug preventing live sessions from being shown.
+
+Change-Id: I55fab2d6f9a55a9d0294656d6235458ff8302143 | 2017-04-22 14:03:35 | de7f566592a7b24fa502a41c3d30f394e878de1f
+
+Process GeoJson correctly after loading.
+
+Move the GeoJson processing from the MarkerLoadingTask into the
+MapFragment. This fixes the configuration change issues on the map.
+
+Bug: 37555803
+Change-Id: Ifc3c155f67c615e130996ebc3bfb3a1271b6c6f2 | 2017-04-21 06:25:12 | 9c55836a5ba3be444da7a8c57fad3e195583f268
+
+Use user ID to map against FCM token
+
+- Fix bug where sync is not initiated when userdata is updated.
+- Ensure that FCM token is mapped against user ID and not
+  random UUID.
+- Remove FCM Key getters and setters.
+- AccountUtils already has enough methods to do the job
+  of mapping FCM tokens to a user ID if available.
+
+Change-Id: I08b6dcab221ef19b246fe9c8d72cd1f5ff790a32 | 2017-04-22 00:52:58 | 0ab2b0b5266701042cc6b0baab7e608f901b9c26
+
+Send ping to user's devices when user's reservation data is updated
+
+- Send sync_user FCM ping when user's reservation data is saved.
+- Remove delay while idle setting since it is now ignored by FCM.
+- Use SNAPSHOT gcm-server library so we can set content_available
+  field. This allows iOS devices to receive silent notifications.
+bug: 37321781
+Change-Id: I614548a90e23008708222e1e81f5cec4b08e85df | 2017-04-19 16:01:09 | 6932df19bd333f2296da1ab287b2b5542eb5fe0d
+
+Merge "Move debug to Info screen and do some cleanup" | 2017-04-18 23:14:23 | 09d88cd686de6396a018cfbeeabb6386a0db2a71
+
+Move debug to Info screen and do some cleanup
+
+Change-Id: I61fd95cb67ce8a38da25a48b6e4e065551c57c2d | 2017-04-17 19:54:59 | a80dcf66a51a06961c9ac6c512e35171fe2ebf48
+
+Merge "Temporary fix to feed crash related to empty link" | 2017-04-18 14:07:03 | bc78605c2d5e791504b41f5333e586c673002fee
+
+Temporary fix to feed crash related to empty link
+
+Change-Id: Idbdda31c311db6169cbd4389c5ea2fe00223afa1 | 2017-04-18 12:29:32 | 61938f74def889737e8271c9ea9decaedabbc1cf
+
+Load sessions for reservations
+
+- Load new sessions into RTDB from GCS so they can be reserved.
+- Update sessions in RTDB with values from GCS if they differ.
+  - If session has more reservations than seats, excess is moved
+    to waitlist.
+  - If session has waitlist and reservable seats, promote waitlist
+    reservations till no more seats or no more waitlist.
+- Only Admins can run this servlet.
+
+bug: 37180623
+Change-Id: I6a044622f0d0bf89e86c0b190be6275d469060f8 | 2017-04-17 16:16:07 | 6d9ea83f5edc0629e9b798d5ec1002bff2e6c458
+
+Using separate google-services.json for debug and release.
+
+Change-Id: I067c1ab9b7861bace07cbc492185fbd5b323eb61 | 2017-04-14 20:20:36 | bb908222ef2acfba6ed9406d88d23a74bff29714
+
+Write to ContentProvider when reservation/
+return request succeeds.
+
+Also fixed some reservation bugs.
+
+Bug: 37017189
+Change-Id: I2d59c413b3104918db6b26a9e0f72e8771983af5 | 2017-04-12 05:00:42 | d0ea75d3f141bbaedb6ba1194754a7dfa60d23b3
+
+Push reservation changes to App Server
+
+Reservation status changes are pushed to
+App Server using UserData client library
+loaded from discovery doc.
+
+bug: 36813613
+Change-Id: Ia7e9cfa283fbaf34039f89495119ab1d40ca96bd | 2017-04-08 15:32:04 | e57c87e76b3e5b057b892bfafd9760cc7de0f28a
+
+Merge "Fix reserve button bug on Lollipop." | 2017-04-12 21:52:56 | 2ce34d2e206dc2728fc5faae3e7f99fa1a56e22e
+
+Fix reserve button bug on Lollipop.
+
+Bug: 37264752
+Change-Id: Id8441da5e69309f2535f14e47b6d9ca451b25dbb | 2017-04-12 10:49:39 | a330ef5a79de1bcbb1c1296bca9b8957f83183ca
+
+Tweaks to filter headers.
+
+- Use same height for Filter header & Topics.
+- Elevation shadow on fixed header when filter list is scrolled.
+
+Change-Id: I553f8770d94a7edf8c737d216f81523212a821b6 | 2017-04-10 10:11:23 | b763b78053be09ca944114a0f5b2ef445251cac7
+
+Handle reservation requests with ID
+
+- Write request results agains request ID
+- Update functions to handle request ID
+- Change writing results of requests to
+  be done one property at a time:
+  status > last change > result
+
+bug: 36974469
+Change-Id: I6105082d1b9e8978e150b0467af843101a0d30b1 | 2017-04-05 18:11:30 | a3c6240cbb136ddbd77eec052cb2e36599a32ea0
+
+Merge "Fixed reservation status UI update bug." | 2017-04-06 02:09:14 | d56b1957fc8843d001c1ca527e4f4c6010a78b2e
+
+Fixed reservation status UI update bug.
+
+Change-Id: I4a2ca5c626df24ce66c26d8234c0a2329735267a | 2017-04-05 20:26:28 | 26971b55bbac9e09f637d96f8c9124a0f37a64e0
+
+Disable broken tests
+
+This should be reverted and fixed properly, but for the moment
+it's blocking development.
+
+Change-Id: I2942f4a1a2bb814134c5a2b28caa485f7b884405 | 2017-04-03 18:50:56 | f800fd3ddb302cfc66507066c326c82b2dedd3a1
+
+Fixed bug for onboarding sign in fragment not clearing.
+
+BUG: 36854306
+Change-Id: I21ea9249b0bf43ee0bb23fb4ef44d006c87911af | 2017-04-03 16:23:40 | 86bf8f8d9a51e86067e5edc07a9d32b2c4a2eb62
+
+Merge "Fixed bug with onboarding sign in" | 2017-04-01 22:53:04 | bb5b77cd69ba5d313857419c1233e323fee50c51
+
+Fixed bug with onboarding sign in
+
+Change-Id: I158fe1c6fbf2c0a76b73d5b982f268c692902b5d | 2017-04-01 22:52:17 | fe38d8cf411c42b63345e313caefe1bebdc024ad
+
+BottomNavView has a max number of 5 buttons so to make room for Info:
+-Moved debug nav button from bottomnavview to a FAB on My Schedule.
+-Removed some dead nav code for settings, about, sign in, and video lib.
+
+Bug: 36738054
+Change-Id: I3253721d098fe518cc7ff4e9195406fe70792595 | 2017-03-29 22:56:38 | 0ada1c75fbb4a7cd102975c07efc0ce3ada24d5e
+
+Firebase and support changes:
+
+-Upgraded GCM -> FCM and enabled Firebase Messaging.
+-Updated android_support_lib_version 25.1.1 -> 25.3.1.
+-Added debug Firebase project to app. TODO: add release project.
+-Removed Firebase v2 dependency.
+
+Bug: 36700561
+Change-Id: Ib2bb13ff7443cfb305333ec6268d55032f5a0711 | 2017-03-24 22:17:50 | 227467bfccc2796f1b60ffa78e77e54090e527ce
+
+Change requests to have an intension.
+
+Requests now need to include an action (reserve or return).
+- queue
+    - uid
+        - session: <sid>
+        - action: <reserve/return>
+
+Results of requests are written as an object.
+- sessions
+    - reservations
+        - uid
+            - result: <last request result>
+            - status: <current reservation status>
+
+bug: 36527346
+Change-Id: I09ffbbd3d907b18af7468cc65b24caf92d5cdb55 | 2017-03-25 04:27:15 | 3366f419a2b7db8fb2c9b21196e7facfa0a39792
+
+Add Firebase Functions to handle session reservations.
+
+- Setup Cloud Functions for Firebase
+- Add listener to process reservations requests
+
+bug: 36526447
+Change-Id: I6d0c0c85144a011ad7e32026b80d3fa59cd5cabb | 2017-03-19 22:38:03 | c1a8ec403a36ccc1ff1abd80a847d4b587244ea8
+
+Fix certain sessions not being synced
+
+This is because for debug builds we are currently
+pointing to a 2016 dev data bucket which no longer
+exists. Fixed by pointing to the public feed for now.
+
+Also tidied up some of the conference data
+handling, since I was debugging it.
+
+BUG: 35710851
+
+Change-Id: I6cbac9bf30177adfa23674d3ab0f7517e5c28c81 | 2017-03-15 14:02:21 | d6f8e1a89c9ec3d9543036229f6489474846e2f0
+
+Fix RecyclerView not re-binding views
+
+Happens because we now use stable ids, but the
+ids we provide are not stable. This CL fixes
+it by generating IDs from more data points.
+
+BUG: 35789131
+Change-Id: I237be66b883ed96cda3f4c1a02032962ec7051ab | 2017-02-27 10:37:42 | 038642e5585daa90266560a20320c3e176741a34
+
+Merge "Added debug to bottom nav." | 2017-02-24 23:32:54 | 454b41800d63e092865a9f5e0e27ef23e190062a
+
+Added debug to bottom nav.
+
+Removed Explore.
+
+Change-Id: I65e2ec67fd63649fb707b178a70e2e7a767800da | 2017-02-23 06:53:11 | 0e02fa99af900bc3147b8891d34b186c262d914e
+
+More quick lint fixes
+
+- Add targetApi markings
+- Fix or suppress DefaultLocale
+- Suppress RtlHardcoded when using Gravity constants
+- Fix or suppress InconsistentLayout
+- Suppress InlinedApi
+- Suppress NewApi
+
+Change-Id: I7402212cfdc0488fdfe7eb3c783a8a989c03bca2 | 2017-02-02 20:24:52 | 985e659d79552d29d2c460f9b779b171b2d33f6e
+
+Re-apply primary color change
+
+Must have been wiped out in the recent
+lint fixes.
+
+Change-Id: I3b627c89192f01b577431ee244b115a378806f9c | 2017-02-07 12:52:48 | 4336bed81c24405c0ce8b331b48d76f3791f1c3c
+
+Fixup some string resources
+
+- Ignore placeholder strings
+- Formatting args cleanup. Note that one Russian plural case needs to
+  be fixed.
+
+Change-Id: I16019f727e4d9c30703d6a5f5739cf942818ac5b | 2017-02-02 18:57:45 | def3a959803f7cfe081cb1d22989cb65767016c0
+
+Merge "Remove guava, don't multidex debug builds" | 2017-02-01 16:51:12 | d4976dc1f7c721ea2e2105c213609077ff3a6a02
+
+Remove guava, don't multidex debug builds
+
+Guava has a large footprint and was being sparsely used, so let's
+remove it. Summary of how usages were substituted:
+- Charsets.UTF_8 -> Replaced with constant in IOUtils
+- Strings.isNullOrEmpty() -> Replaced with TextUtils.isEmpty()
+- @VisibleForTesting -> Replaced with @VisibleForTesting in
+  android.support.annotation, since the support annotations were
+  already included in our dependencies
+- Preconditions.checkNotNull() and Preconditions.checkState() -> Copied
+  into new PreconditionUtils class
+
+With Guava removed, we are well within the dex limit even without
+proguard minification, and incremental debug builds are faster.
+
+Change-Id: I5e067315b8bee1b8fd6b22802af2ddb5a6e8c3ab | 2016-10-17 21:08:47 | a9c26403fe165271c5e7c9db9bc5b34f8a3c6b97
+
+Move to support fragments + loaders
+
+Not sure why we were using the platform impl
+but the support version is always preferred
+but to bug-fixes, etc.
+
+Test: unit + android tests pass
+
+Change-Id: Iee7b2b2398abf3ad7009fc70cb1b3e5d7419770d | 2017-01-27 10:25:26 | d030a4dad6b981471debb5ace50906c72624589f
+
+Fixing test build.
+
+Many of the tests marked suppressed failed when run
+in an instrumentation with all tests. Those tests
+succeed when run only as part of the test package.
+I've disabled them anyway because the test build need
+to pass with all tests run together.
+
+The test library updates are required to pickup some bug fixes
+that were causing some of the test issues.
+
+Bug: 28369715
+Change-Id: Ic1abd17dc5ae2102ad8e487cbca4db2029ea65e2 | 2016-07-15 22:40:35 | b380864f137ab58c1c5ec923c6c5211750cef792
+
+Protect against NPEs that showed up in Play store.
+
+There is a different bug that addresses fixing the fact that the
+adapter is recreated when it doesn't have to be.
+
+Bug: 28828007
+Change-Id: Ia6ee5988e9af3945ebfa29765a21d33ea2ae61f1 | 2016-07-14 22:18:12 | 8877c6492e463c16ca0797609a13fec8ec470410
+
+Removing 2015 art files.
+
+2016 Art files will be re-added. Leaving the bug
+open until that happens.
+
+Bug: 28338238
+Change-Id: I840e56666736066ff3101c70845e5df2efe20575 | 2016-07-14 00:13:13 | 281c701d8e74b9235e42cfa162c7939bb16d3a4d
+
+Merge "Added video play test, fixed both video tests for when youTube app is installed" | 2016-07-06 19:01:51 | 11b738f6884f38be41e858ea61d282af4ff7797d
+
+Merge "Some fixes for Japanese strings. " | 2016-05-26 03:27:55 | 0077cc59c29f2c0eef4eb40673b0d32993b8e1c5
+
+Some fixes for Japanese strings. 
+
+Change-Id: I2f99869b99f3c42ccc7e910626a5085f8843748f | 2016-05-20 21:39:41 | 280d43cc596f00ebe098961f370384109bad7c75
+
+Added video play test, fixed both video tests for when youTube app is installed
+
+Bug: #28310731
+Change-Id: I4807f828c4bdc49ffaa4ea5ef4cd2b939678ca3e | 2016-05-12 11:14:27 | b6f1b5739f7fe79e9368011b202903482172345a
+
+Merge "Fix bug with provider package conflict." | 2016-05-06 17:52:50 | b01224ea1a647872b10c7cfa2f7e57c3bbc5fccb
+
+Merge "Explore Sessions tool+status bar fixes." | 2016-05-06 00:50:41 | dd6a931495e7cd95581826376d94a4cff2509b22
+
+Fix bug with provider package conflict.
+
+Bug: 28588823
+Change-Id: I7dc2bcae336467177e818bf5bf827ea295aa209c | 2016-05-04 20:00:17 | 8e8386c3d6b82275f58e8d06944ad1ce3283d753
+
+Explore Sessions tool+status bar fixes.
+
+– Also applied to Video library filtered.
+– Corrected layout naming convention.
+
+Bug: 28611823
+Bug: 28611873
+Bug: 28426109
+Change-Id: Id6b3e10e1d8585fd2c52a6a005b4cf7bd6e2d1d0 | 2016-05-05 15:44:02 | 5ff60376d1a0cab6127c8dc06eef80f4913882fe
+
+Clean up tick <-> plus animation.
+
+– Consolodated multiple anims into sets.
+– Use path morph on API 23+.
+– Work around bug in NDP2.
+
+Bug: 28609561
+Change-Id: Ib576fe72ce89ab96140430fd3b87436d426dad59 | 2016-05-05 12:23:26 | fa41a34540119cefac81a944f8fb35bf681910a5
+
+Minimize logging when not debuggable.
+
+Bug: 28388512
+Change-Id: Iec62a2c582f0b5d55a5f68be54d25afcd4449410 | 2016-04-26 04:56:42 | 59adf119f173ddaf0ddc80f7cf7c0e8370bc7d58
+
+Merge "Couple more 15 -> 16 fixes." | 2016-04-25 23:19:56 | 72ce86b7e9675d2404fc5da63ab6e0f74f6e7f55
+
+Couple more 15 -> 16 fixes.
+
+Change-Id: Ib2e20bf004bcd8c1cebe536630abbd6a91071adb | 2016-04-25 23:10:59 | 18a4bbc0f23613764103e024e42e5e3d58583e5a
+
+Merge "Fix for bug in showing "watch" live text" | 2016-04-25 20:43:41 | ecb98299c79b944be4e23835c2de8aa4eff6b8ea
+
+Fixed bug for viewed videos not updating properly
+
+Bug: #28373596
+Bug: #28361418
+Change-Id: I298712c966411b780f679272c85dcd5aa5992647 | 2016-04-25 18:00:03 | 763facdec98eaa74236026d3ad2092aa3818c214
+
+Merge "Fixed bug for Explore IO not updating itself after changing logged in user" | 2016-04-25 16:54:09 | 0cdab6eba9716c2cb46dd3abe45f3de14711ddc0
+
+Fixed bug for Explore IO not updating itself after changing logged in user
+
+Bug: #28361418
+Change-Id: I95dcc1c30201dcc5dd5574b3eba3945e0214ff1e | 2016-04-25 13:11:30 | 1fc0a868a159e3b543f671d9d26f63ed432abf5a
+
+Fix for bug in showing "watch" live text
+
+Bug: #28208316
+Change-Id: I7c5be95c01c08b5ddb3355dea3ba018995f7e93f | 2016-04-25 10:15:57 | 43c219eb84e847ca4c0c0f9639d35b1feca3c485
+
+Simplify floor plan SVG file.
+
+This fixes rendering issues with the overlay tiles on some devices.
+
+Bug: 28332763
+Change-Id: I7dc60615e6f288b19196d391066b939fe24e1884 | 2016-04-22 08:21:51 | 090af65e52c620fee258dfa2fad5e7d4cdfd5276
+
+Merge "Fixed UI title/image bugs in Explore sessions screen" | 2016-04-20 16:00:21 | cff5e5097f1a56bcb1f8ca8415b7449707a4e792
+
+Fixed UI title/image bugs in Explore sessions screen
+
+Bug: #28283527
+Change-Id: I14ed68ecd2b87bb91efd4dd74b820b65caa3ee0c | 2016-04-20 10:53:45 | 4b09a6b9438e9ff4b0326588fa0e1d43088bc66b
+
+Merge "Fixed bug when tapping display WelcomeActivity in debug screen" | 2016-04-20 15:31:05 | 097ae8c34661d0e4af397851c4230e7d192239de
+
+Fixed bug when tapping display WelcomeActivity in debug screen
+
+Bug: #27995560
+Change-Id: Icbd1a6ced9a1c8b92d8131b85a1433fc95581b73 | 2016-04-20 08:56:59 | 19e75035d953cb509583a6877fdeaa919255e423
+
+Merge "Fixing bug with resident Snackbar." | 2016-04-20 00:32:03 | 863c2b56a5bf174ad5964abcb505b3ca4d7aa641
+
+Fixing bug with resident Snackbar.
+
+Needed to dismiss the Snackbar when resuming
+the AccountSelection screen in case the user
+accepted the permissions.
+
+Change-Id: Icfd198f7a4e157619314887f9cad980bcf38cf23 | 2016-04-19 23:28:52 | bbeaea1582dac0266bbdb8c43358a5cf1f34a404
+
+Updating targetSdk to target 23.
+
+Implemented runtime permissions:
+-Storage and Accounts are required for the
+app so they are enforced with the Welcome screen flow.
+This ensures they are re-inforced any time the app is
+opened.
+-Calendar is only needed when Calendar sync is enabled.
+So the permission check for that was done dynamically in
+settings.
+-Created product flavor so that the debug variant could
+be tested without having to remember to grant permissions
+ahead of time.
+
+Bug: 28192652
+Change-Id: I1efdb4a951f3ccdabd403d64329c0d417f55f64d | 2016-04-15 04:43:35 | c0e4d449ba1931a9085b31b7823d245d0c2844f1
+
+Fixing bug with unconfigured tags.
+
+Bug: 28243233
+Change-Id: Ie390a8a8023843a4a157a94d08dfcd0fade4d0df | 2016-04-18 22:13:29 | 5be5636ae25be7b50232f2b49d186d29b15b5228
+
+Merge "Added 3rd day to MySchedule tab layout, fixed issues when rotating screen on my schedule screen on tablet" | 2016-04-18 17:36:38 | f2526ff9b4b4395a0140ff514c220ac194a082f4
+
+Added 3rd day to MySchedule tab layout, fixed issues when rotating screen on my schedule screen on tablet
+
+Bug: #28238650
+Bug: #26705643
+Bug: #28238531
+Bug: #28238534
+
+Change-Id: I0d6db7b1c499b8c9fe1c8d96e2a09472b71f2507 | 2016-04-18 13:38:42 | 1beb08cade6c8eb6577c327dde18aa7bb28e3d1f
+
+Merge "Fixed video tint bug on API<21 devices." | 2016-04-14 15:56:06 | 400dcc77c86111b9c07aaba497b6c092639fbd4b
+
+Merge "Fix bug when calculating day in explore sessions screen" | 2016-04-14 15:34:07 | da84d377f2cd5183f98e70240fce8c1d37df843f
+
+Fix bug when calculating day in explore sessions screen
+
+Bug: #28185957
+Change-Id: I88505de4282443af21ed2eb01575e6cd90871e56 | 2016-04-14 13:16:28 | 82c066ee04b6772ab653b72de261151aadca60ab
+
+Fixed video tint bug on API<21 devices.
+
+Also a race condition in the empty state message.
+
+Bug: 28184552
+Bug: 28184094
+Change-Id: I784b14743153f8a88ff19ee57c4b78217869aa41 | 2016-04-14 10:43:26 | 295c208d7266860c27563c4c76bd8913c4e51f45
+
+Merge "Fixed jank in search animation due to bug in calculating radius." into vnext_design | 2016-04-12 15:16:54 | b9a139172a73981feef7e8741aa7f31de6aa40cd
+
+Fixed jank in search animation due to bug in calculating radius.
+
+Bug: 28130940
+Change-Id: Ic63e12bd72d455064cc1c618e106d69cb3ba6fcc | 2016-04-12 11:55:02 | d09993b06324ee46987319ec04eba7d81e9a8365
+
+Include test data required by tests
+
+Change-Id: I120e54f0d8a5a1bf738a0b33d64e4eb0e855a4c2
+bug: 27987564 | 2016-04-05 16:46:39 | 26fa95132f7ae069e447a355549263baef5e0cbc
+
+Fixed failing unit tests, fixed corner case in minutes calculation in session detail model
+
+Bug: #27987953
+Bug: #27989428
+Change-Id: Ia9719c3cb2eb8a30f16986e9a107e57f66023606 | 2016-04-04 12:47:29 | 16ac64642d7fd75c4808be1f18faeaee07c3c051
+
+Disable SessionDetailModelTest for prodrelease
+
+This test is broken. Temporarily disabling it so we can get a beta
+build.
+
+This change will be reverted once this build has been dispatched to
+the CI server.
+
+Change-Id: Ic8dd1fdcd20d14c2bf32bb5e2829ad9f8489d4cd | 2016-04-04 06:15:49 | 98a6b74290899d139e31070a49123723bad022c6
+
+Add Proguard rules to fix build
+
+Fixed warnings caused by references to missing methods via dependencies:
+-dontwarn org.w3c.dom.bootstrap.DOMImplementationRegistry
+-dontwarn com.larvalabs.svgandroid.**
+
+Fixed warnings caused by use of reflection by Jackson:
+-keepattributes InnerClasses,EnclosingMethod
+
+Change-Id: I40b126561688ce1528b6e0b414831cc265d33250 | 2016-04-03 08:39:04 | 9d98fe3553053cff3b0527ebca6c8c46025eb85e
+
+RecyclerView enhancements for Explore & Videos.
+
+Figured out how to re-introduce a shared view pool. Marked RVs as fixed sized and made item
+click handling more defensive.
+
+Change-Id: Ic09fc66ef00be8ff9081d88642b492a958e0dadc | 2016-04-02 13:14:00 | 86a7dc2ad3d3b25f2a3b1493fc7a861fb4f89333
+
+Re-adding debug.keystore.
+
+Change-Id: Iafafa5cd35039601ec5a2a252ea647ac708f0957 | 2016-03-14 23:49:52 | 16d099edc810e966bfb4d60142b6f2cb4fd51b47
+
+RFR - fix for bug in Header view refactoring
+
+Change-Id: I58ac8bc1771abce6bde768922a2e61523df0e17c | 2016-03-04 16:46:07 | fa11679f8939a9640e6c5db6da32c0e7f05e3788
+
+Added UI tests for actions firing intents in session details activity
+
+- Implemented tests previously marked as ignored
+- Moved starting activity from model to fragment
+- Changed start activity to always use getActivity().startActivity in Fragment
+instead of directly startActivity, due to bug in Intento in M
+- Rewrote unit tests to use mock callback object
+
+Change-Id: I673d2429c747e0a2bb60d4e083a46223edb7188a | 2016-02-18 13:12:36 | 26f90d3ba4f1c058b22574fb29a92b70ba24c290
+
+Merge "Renamed UI tests that have use case in test name, fixed typos" into vnext_arch | 2016-02-18 11:18:19 | 38393911b900e57abac4b521bb5c2f8645fc4632
+
+Renamed UI tests that have use case in test name, fixed typos
+
+Change-Id: Ife112aaf52245283fa5e1b580f8f290c2d7f78a5 | 2016-02-17 16:19:01 | f6811c3c532e12ff5dbc981c7ead78a51cf0041d
+
+Refactored MySchedule for readability
+
+1. Added a fragment for wide layout
+2. Renamed fragment/views/adapter
+3. Added javadoc to explain how the fragments/views are used
+4. Refactored ViewPagerAdapter out of Activity
+5. Light refactoring in activity (renaming methods etc)
+6. Added javadoc to activity
+7. Moved methods to set/get current time from UIUtils to TimeUtils
+8. Added method to TimeUtils to easily set current time to x ms
+   before/after start/end/start of second day of conference
+9. Added UI tests
+10. Fixed bug of tab not changing highlight when swiping horizontally
+
+Change-Id: I3a5991eec0bc7835254928dd0370855e9e61078d | 2016-01-19 11:48:35 | c3df4a2e246f299b0374c8aa01611dd64d3f354e
+
+Merge pull request #78 from alsutton/fix_feedback_sync_can_incorrectly_number_questions
+
+Use an empty ArrayList for each session being sychronsied | 2015-01-07 14:51:26 | b8b238fbec47b329833cbdb2a5fc01b253d3ca15
+
+Merge pull request #107 from romannurik/github-master
+
+Import some local fixes | 2015-01-06 17:08:56 | cf1f30b4c752f275518384a9b71404ee501fc473
+
+Import some local fixes
+
+Change-Id: I408707a9b5474aa40755fd041169ac8503df9817 | 2015-01-06 17:07:24 | ba58a9886b4541beb8fc8ac1c031646d5a2073e6
+
+Formatting fix | 2014-11-03 10:54:48 | 32cafb4d7d31e784bf0fa897ce79e5b130fccb0f
+
+Merge pull request #71 from romannurik/master
+
+Update to v21 SwipeRefreshLayout. Also fix nav drawer BACK button bug. | 2014-10-22 04:04:13 | f2e87424ea7cc0c3f8022f984966091ea746a23e
+
+Update to v21 SwipeRefreshLayout. Also fix nav drawer BACK button bug.
+
+Change-Id: I13a0880240c4d49b2fdca5948594567332ca8aaf | 2014-10-22 03:57:02 | 1d8ff282225275a06977489ed12d93ac925bca8e
+
+Merge pull request #65 from VipSaran/master
+
+Fix for 20.0.0 build tools bug | 2014-10-20 13:28:52 | 2bbaedd62fb9f6f2dcdc1b53edc73f2fb3e6f1b3
+
+Fix for 20.0.0 build tools bug
+
+reference: https://code.google.com/p/android/issues/detail?id=77629 | 2014-10-20 13:04:13 | ed15d4c160f610260d5d59aaa61aa984e333548b
+
+Merge pull request #53 from ogwiz2/patch-1
+
+Added periods to comments for better consistency | 2014-10-18 12:39:13 | 302d5b17501e2b7b7ca916cc19bd589a6287d191
+
+Merge pull request #56 from ardock/fixtravis
+
+Fix .travis.yml, typo in android-19 component name | 2014-10-18 12:31:06 | 988642815aa4b710c129dd5d2a204de8f588a322
+
+Pull in final L-related code changes and other fixes. | 2014-10-18 12:19:46 | 8c798c58e592b8a25111610e216c7f3ee74c3a42
+
+Merge pull request #32 from ph0b/patch-1
+
+fix french localization of "speaker" | 2014-08-12 23:04:58 | aa437dd4ec4534dc57e7a81e0138f8a9f75d463e
+
+Add debug keystore
+
+A keystore needs to be present in order to enable continuous integration
+builds. This is standard Android debug keystore with a 100 year
+validity. | 2014-08-12 21:24:55 | 0f7e56ff2588b816476fbad253554f49003e869d
+
+fix french localization of "speaker"
+
+In french, a "haut-parleur" is an amplifier, not a person.
+I propose to change this current translation to "orateur". | 2014-08-07 07:34:19 | 3f26dde80b6f09b5ab68545796d270bbf9907e2e
+
+Merge pull request #24 from seewes/patch-1
+
+Replace .commit() with .apply() in PrefUtils.java | 2014-08-04 14:47:53 | b9631146b1acdea4f6bb510eae5a3ce3438c2357
+
+Disables scroll-to-present feature for bugfix release
+
+Bug: 143146581
+Change-Id: Ibcb520549b4db583f8ca38e1d4ca9df13cd2811a | 2019-10-22 19:50:15 | ff00797d255e41977ba795f2f770def2572c73ed
+
+Version bump and small info fixes
+
+Change-Id: I151f778f52bcb8ed83d9d8095779eb742159d507 | 2019-10-19 08:00:39 | 76e6cd2f54ddeb863d535318af02db0d6f9fcc1a
+
+Re-land transparent status/nav bars
+
+This mostly reverts I09958bc62f9e8b4fea3b425e4e5ab6b1d58c2cd3.
+The original issue was caused StatusBarBehavior not receiving
+any insets or elevation changes sometimes. Still need to dig
+into why, but removed the class for now.
+
+The new way we achieve the same thing is with a new custom view
+call StatusBarScrim. This class handles measuring itself so it
+is the exact same size as the status bar. To aid drawing, it
+also wraps any background drawables in MaterialShapeDrawable,
+similar to the MDC widgets.
+
+Also fixed schedule's app bar scrolling off correctly in
+landscape.
+
+Test: manually on API 21, 22, 24, 25, 27, 29
+Change-Id: I3ecd1bafeacbc42693b88d0cea915617021e8117 | 2019-10-03 07:45:32 | d167ff0134fc15b1c18ebd5107f36992c5c9981e
+
+Fix basic fragment transitions
+
+All actions now have the default navigation animations
+(mainly a cross-fade). We still need to fix shared element
+transitions, but this is good enough for now.
+
+Change-Id: I1bc8b046722034f9c4e1df0eb4ce8df8c3e8d26f | 2019-09-26 01:38:50 | dbe8528990e4732bc5bd678b5507aefa85fea320
+
+Replaces coroutine Dispatchers in instrumentation tests
+
+Change-Id: Ie4b07f735b96f9794b87bcf4cbc4806cf2f93475 | 2019-09-17 09:28:00 | eb00dc10311d0b4e6763f73e323ab22a68f9bd5e
+
+Styling fixes for Dark Mode
+
+It's not perfect yet, but this CL makes it a whole lot more usable.
+
+Bug: 140107505
+Change-Id: Ifd4c3f20ac3f36a4d345ecaf09e41d612e205271 | 2019-02-11 00:42:34 | ccd39fa974b95cf0ddc6b02b6ecf028569aa5381
+
+Update codestyle
+
+Android Studio's codestyle format has changed slightly.
+
+This also fixes an issue where reformatting android XMLs rearranged
+elements rather than just rearranging attributes.
+
+Change-Id: Ieb416b330a5e9c13f8dab2b7180f9dbf20065576 | 2019-09-03 21:45:32 | 63548dbccc09b91ed893599d818057b44fda7235
+
+Adds Navigation Component
+
+TODO: Shared element transition for speakers
+TODO: Bug when going back to schedule using the back button, fixed with
+FlowUseCase CL?
+TODO: Replace BottomNavigationView with material version
+
+Bug:138777024
+
+Change-Id: Ib94a43949cd9c8685f55f36e9031ff9b8b90d1c1 | 2019-08-14 14:10:12 | 3504dcb36161a1a05fa4b1be3902687b2b8c0a35
+
+Enable Spotless + Ktlint code linting
+
+The build will now break if the code style is
+not to standard. ./gradlew spotlessApply will fix
+it automatically 95% of the time.
+
+Change-Id: Ia61b5a2b9aacfb750b738c1f01d330bac8f14bb4 | 2019-08-21 01:50:07 | af37afce35d403fe570d7af7322ab9be264970d0
+
+Merge "Fixes bug with stars when coming back from speaker screen" into adssched | 2018-11-01 18:04:41 | efdb0223375148dd0a0fa2f9a26b9f59716e5500
+
+Fixes bug with stars when coming back from speaker screen
+
+Change-Id: I1e4aa59dc6f7c1e97e7718d5ec6c76883e69db99 | 2018-11-01 17:56:05 | 039df21a6b759b163a3fdb2f76e756a1b09603c0
+
+Fixes a bug where the detail screen showed old info when started from the speakers screen
+
+Change-Id: I3cc77c7e3a2b052b33eafcb194f1e0f023c6c7e3 | 2018-10-30 18:10:47 | afd5b860851c2c79a33391ec7fc8fb0ff1a4df3b
+
+Merge "Fixes sign in/out bugs" into adssched | 2018-10-17 13:19:10 | dd6f781d03678af2f27153896ae5cf3f0e6cde5c
+
+Fixes sign in/out bugs
+
+Change-Id: I8caad7cc4418488218b5460a86997769bba02850 | 2018-10-17 10:24:38 | 20333e1d90e47e4d81c66b0087580daf2a46f149
+
+Merge "Strictmode fixes." into adssched | 2018-10-16 14:02:31 | 6d43e871c0ae91acad9ba313f94ac61a5273acba
+
+Strictmode fixes.
+
+JSON loading in main thread when not signed in + Firebase workarounds.
+Still one not fixed related to Remote Config when opening the Info tab.
+
+Change-Id: I37d180c33644ea528470281a63f10b1155bc5bf5 | 2018-10-15 14:39:22 | ff4bd62236295ed7909ffd92273bcdd450f3bb63
+
+Misc tag-related UI fixes
+
+- Update "starred and reserved" to just "starred"
+- Remove level indicator from Session Detail screen
+
+Bug: 117653778
+Bug: 117654852
+Change-Id: I8fdc362ffaee8818eab39b30d3e741032633f2e0 | 2018-10-12 17:37:48 | 5ec3a09b114caf28d3e31572b18609ae1497cfc5
+
+Schedule item fixes & tweaks
+
+Bug: 117098177
+Change-Id: Idc43c074cf6e040b1bf57bc91ebf0dc236e0e99e | 2018-10-01 19:22:16 | c2fe9b09de0103729ba1595e6e8df46b45829cc0
+
+Adds AIA checks, WifiManager fix, version++
+
+Change-Id: I545769dce5f62465bb294729ea078071854df378 | 2018-09-27 12:32:51 | 3db20a2df986e17c2596a356cc7a2bd047d9d270
+
+Removes check for signed in user to fix details screen bug
+
+Bug:116079103
+Change-Id: Ifc950e378bd739ebfa2c7e7911df88ea99c61c28 | 2018-09-19 15:18:53 | 789ad1629f3075369110e307c1d6c1dd73f94af0
+
+Removes sandbox flag to fix app crash on signin
+
+Bug:116079742
+Change-Id: I0131350cce7b7ae2fccc1ee89c4c9b7a1e009168 | 2018-09-19 09:44:24 | 3e0bc13d36bfb823570e24a75d75b487628f22fa
+
+Fixes SDK location definition in build script to fix evasive proguard error
+
+Change-Id: If947936280d669d13417cfbfc01a6b0c511207d3 | 2018-09-06 11:32:57 | e3ece9293a1d5fe253e4e31f1829f81ac77760c9
+
+[ATV] Fix details UI from being hidden
+
+Fix bug where details are not shown because photoUrl is null and the fragment transition cannot take place.
+Fix timezones to use conference timezone. Will use settings/preference to drive timezone in later commit.
+Remove background manager changing the background since there are no images to set as the background.
+
+Bug: 72441786
+Change-Id: I483e04edbdf15e8723f436aee0636feead13eac9 | 2018-07-24 21:52:35 | fee32f80f812befd097c112ef8c768d32852d5f8
+
+Migrate to androidx
+
+Additional changes required for this refactor:
+- Updated gradle plugin version
+- Updated databinding compiler version
+- Updated versions for other non-androidx dependencies
+- Borderless colored buttons broke, so updated our styles by using
+  Widget.MaterialComponents.Button.TextButton
+- Suppressed InvalidPackage lint warning
+- Fixed usage of Timber
+- Wear module needs additional cardview dependency due to a bug with
+  databinding library.
+- Increased gradle jvm heap space
+
+Bug: 80092217
+Change-Id: Icc4b8bdd49e486cab4f879c9468bf82566afbcde | 2018-05-18 23:32:25 | 4451898bbf96834e0732d66747a6e58af7b943cb
+
+Fix snackbars on Info > Events.
+
+Also fix the wifi password layout/background.
+
+Bug: 79322566
+Bug: 79113924
+Change-Id: I39335557edb03b5de7ab97951505cff6b1cfe09e | 2018-05-07 02:30:47 | 576fa1ce49b2c202295fc3c8fd688d5dc7c9396c
+
+Fix opening Map screen from session detail
+
+This implementation opens a shell activity containing just the Map.
+This is easier to keep consistent back navigation, at the cost of not
+allowing the user to go straight to other top-level navigation
+destinations.
+
+Also fixes centering on map markers when the user clicks on one.
+
+Bug: 77801061
+Bug: 78533287
+Change-Id: I0b0b301a66217329c14b9d0b2ca9b2dfb38a42b0 | 2018-04-10 20:18:55 | 866592070ba79c4902ba117ce47ecc91702f3ec5
+
+Merge "Disable Crashlytics on debug." | 2018-04-19 19:26:37 | 45653cd538f8f937876e0f5725e7afafd4899e98
+
+Disable Crashlytics on debug.
+
+Bug: 78259510
+
+Change-Id: If46c2689374956351edf608e23e3a7dff6d839e5 | 2018-04-19 14:20:35 | 5089ba3df6f97c0823a410accd67810e26bfcdb7
+
+Delay session filtering until filter animation has run.
+
+Also fix the content description.
+
+Bug: 78253558
+Change-Id: I9a28dbf526eb124393dd40823e77783d326889f1 | 2018-04-19 13:42:40 | a9106a56b9157d216f556ce53d81f1ee90bd45c2
+
+Merge "Animate tag filters & fix tinting on API 21." | 2018-04-17 13:22:59 | 0124dda248fe04c313dcff947688d907432488cf
+
+Animate tag filters & fix tinting on API 21.
+
+Bug: 75406190
+Bug: 77877707
+Change-Id: I13eec50143fe266b89042995874ec58994707a55 | 2018-04-16 17:13:36 | 59bc74f2519c95ae0b8fc229f8985dda0c7142fe
+
+Temporarily hide map icon on session detail screen.
+
+Will resurface once b/78025651 is fixed.
+
+Also remove outdated todo comment and suppress warning.
+
+Bug: 78025651
+Test: kokoro
+Change-Id: I8f8c7e342c92e89c17658d8131e53ac4220c5688 | 2018-04-13 23:02:24 | 0cb000561b01544fb1a7a23ab0e07f4d464c3f2d
+
+Maps API key for debug
+
+Change-Id: I78cb7b6c03538523b247d7c1ce70395e72cd0729 | 2018-04-12 15:37:42 | 1751d677c1106013975ca2a46ab1248f131b60a0
+
+Fix session room/time position bug.
+
+Change-Id: Icf2c25feb6fcb360ecf6f7b01850c71bb77e8c93 | 2018-04-11 21:56:50 | 1fc2241972edd357aeeae35de18def5c9a10873f
+
+Minor strings fixes
+
+- Replace Github with GitHub
+- Remove unneeded "?" from the sentence in the swap dialog
+
+Change-Id: I80522e0916b6253f998c7d085987ae89695f749f | 2018-04-11 04:29:40 | 0c8ec89868144cdd353944fe3d972c6811ffaec0
+
+Revert "Remove reservation from ScheduleViewModel."
+
+This reverts commit 2bbf9ecfffc23321353cb3eb14887521c3e7ea6f.
+
+Reason for revert:
+I noticed the tests invoked from the command line started to fail.
+Not sure why this didn't happen in Kokoro, but reverting this for now.
+
+> Task :mobile:testDebugUnitTest FAILED
+
+com.google.samples.apps.iosched.util.SetIntervalLiveDataTest > whenNotActive_mapDoesNotRunOnInterval FAILED
+    junit.framework.AssertionFailedError at SetIntervalLiveDataTest.kt:140
+
+com.google.samples.apps.iosched.util.SetIntervalLiveDataTest > whenSourceHasEmittedSeveral_thenMapFnIsCalledWithLastData FAILED
+    junit.framework.AssertionFailedError at SetIntervalLiveDataTest.kt:101
+
+com.google.samples.apps.iosched.util.SetIntervalLiveDataTest > whenNoIntervalsTriggered_thenMapFn_isOnlyCalledOnce FAILED
+    junit.framework.AssertionFailedError at SetIntervalLiveDataTest.kt:62
+
+com.google.samples.apps.iosched.util.SetIntervalLiveDataTest > whenNoIntervalsTriggered_thenMapFn_isCalledWhenNewValue FAILED
+    junit.framework.AssertionFailedError at SetIntervalLiveDataTest.kt:80
+
+Change-Id: I5088563fe63f9109fdb0a1330b2531b68240b6f6 | 2018-04-09 03:57:36 | 691c8cfb16ea12a96b3b492b8893b501016291e0
+
+Creates singleton Snackbar manager to fix duplicates between screens
+
+Bug: 77246840
+
+Change-Id: I3d443e7c1f225e1dd29d3db2449a79e54fb05248 | 2018-04-02 15:49:48 | e08468ba280986c507c7ff1025025da8f727f7fa
+
+Add swap reservations from the schedule and the session detail
+
+Also fixes the issue the message isn't shown after the reservation is
+canceled.
+
+Bug: 75984407
+Bug: 77159562
+
+Change-Id: I7b9ae133f7563628d0fb0a45c7b843d24eb4b2e6 | 2018-03-28 06:27:31 | 5af9a63e4e9c0b6112b4bb48652abf1414c9472a
+
+Add centerCrop scale type to Session Detail header image
+
+Addresses 2 bugs:
+- Gray background bars appear around Session Detail header image if
+  session has video
+- Update design of header image on Session Detail page for landscape
+  view
+
+This might not be the final design but at least it avoids showing gray
+bars for the header image.
+
+Bug: 76223349
+Bug: 76181958
+
+Test: Manual + Kokoro
+Change-Id: I04adaebd5b685a84237ae4e86a0360b3656cf121 | 2018-03-27 22:50:26 | 3b89d60feaf3b2acb1a544bbc67cabcc7a8ff3b5
+
+Fixes bug in the previous fix that prevented showing event messages
+
+Change-Id: I126e18ea02e004c29cd797d5c0a23ff291d08ecf | 2018-03-27 20:11:52 | 925a0676e5862f6cda1caf8dab89aebbe78a9a24
+
+Merge "Fixes bugs: too many firestore listeners + clash messages" | 2018-03-27 20:01:36 | f34e30ac66ee4f997fddfdd3f7ab19cd899963c7
+
+Fixes bugs: too many firestore listeners + clash messages
+
+Bug: 76428231,76428174
+Change-Id: I25e991ebf02dde1ddafd89d0415cddcedeacacc8 | 2018-03-26 20:30:33 | c64fb6ae1475f9886c6d065b2fa5a4e405f9e911
+
+Fix bug in order of determining reservation status.
+
+Change-Id: If2ade3a8214e7e8d7fac076142fdc863c2e653b3 | 2018-03-26 18:57:11 | 8cb0714fa788c28d698c8dfeade2d93d6552b29d
+
+Move schedule filters to bottom sheet
+
+This includes a port of BottomSheetBehavior from the material library.
+This is necessary at least temporarily to address the following bugs
+with that behavior (which are fixed here):
+
+- Calling setHideable(false) on a sheet which is currently HIDDEN makes
+  it jump abruptly to expanded state. (b/76204716)
+  This change makes it animate smoothly to the COLLAPSED state.
+
+- Setting the peek height to PEEK_HEIGHT_AUTO on a sheet which is
+  currently HIDDEN does not update the peek height. (b/76203821)
+  This change updates the peek height correctly.
+
+- Setting android:nestedScrollingEnabled="false" on a child of the sheet
+  (or on the sheet itself) to prevent nested scrolling events from
+  propagating to the parent CoordinatorLayout causes the scrolling view
+  not to work in one direction. (b/75977086)
+  This change fixes this issue.
+
+Bug: 74237649
+Change-Id: I80752e2d97d9e0987a2ec72ca76254c4dea21d0f | 2018-03-23 18:14:30 | c68846c02ef96da12064eb3462d9d6e122fb2307
+
+[ATV/Wear] Add source sets for debugrelease to wear and tv.
+
+Bug: 76171679
+Change-Id: Id07fd01a30a0050b416148a1df501d4e2ada20e9 | 2018-03-22 23:40:04 | d014982540c19ec4793af50d3d636680a3da3e0a
+
+Work around BottomAppBar shadow issue b/72034805.
+
+The BottomAppBar componenet currently cannot draw an appropriate
+elevation shadow for the cradle shape as it cannot draw beyond it's
+bounds nor can the platform elevation system draw a concave shaped
+shadow.
+
+This workaround introduces a parallel view the same size as the
+BottomAppBar with a 9-patch background, faking the shadow.
+
+Change-Id: I6b8436d5f164f097db33d1ec7d85edb86e31bb07 | 2018-03-22 12:49:17 | ec8556365fe391d3ff39a84a98a46faee25c414a
+
+Fixes firestore parsing crash.
+
+It's already fixed in the firestore reservations CL
+
+Change-Id: I1d16b8c6877a4a9c54724f4c8954acdb5399be97 | 2018-03-17 13:47:19 | 6e96dfccc8dc032d851fc317a9ceccab717fbbfe
+
+Merge "Remove the underscores from the prefix and the suffix for the id for the keynote." | 2018-03-16 10:49:49 | 1d2da20ee62498df1685a73c55806ede989ec4a1
+
+Remove the underscores from the prefix and the suffix for the id for the
+keynote.
+
+It turned out Firestore doesn't accept a document with id that starts
+and ends with "_".
+As a result, the document that represents UserEvent for the keynote wasn't stored in Firestore
+including its starred state.
+
+Confirmed that the document in Firestore and the star state in the emulator worked
+After I manually replaced the "__keynote__" with "keynote".
+
+The copy of the JSON seems to be placed at according to the comment in ConferenceDataDownloader
+"https://firebasestorage.googleapis.com/v0/b/iosched-playground.appspot.com/o/" +
+        "conference_data.json?alt=media&token=0c0a7ce8-f582-4ab2-a66e-29f335680399"
+It needs to be also replaced.
+
+Bug: 75013503
+Change-Id: I04a582b42fec0dfddeb91a558d2688ef29d268b6 | 2018-03-16 07:23:08 | 5ed9460914e227a60ead40caada85534b513c1c0
+
+Merge "Fix reloading bug on session details page" | 2018-03-15 20:19:59 | b1c49aee5fa7dc50c64902f5913e0e5fca9c90b7
+
+Fix reloading bug on session details page
+
+Bug: 73963235
+Test: Manual + Kokoro
+Change-Id: Iae1ac66afceb383401ea07f8c05ef1c0a75f274d | 2018-03-06 17:45:08 | b9dfac55e1c9a26d5d6aeefd3ff41e1d87e6373d
+
+Merge "Fixes sync bug in conference data repository" | 2018-03-13 13:31:43 | 9276471e1dcb454c933ba697e17982d804260320
+
+Fixes sync bug in conference data repository
+
+Change-Id: I5953b04cf839667fa68fe678a5722697002d0ec1 | 2018-03-12 17:49:18 | 7c8c5dc4fe5af7fb93c708c078fcc3e2c747dfa7
+
+Clean up shared module
+
+- Use one conference data json file instead of 3
+- Remove fake data sources now that we have conference json
+- Make debug variant use json instead of hardcoded fake data
+- Consolidate test data as much as possible
+
+Change-Id: I7da7e96a4ca15169d14c8ef9460ee0305e1ceef6 | 2018-03-07 16:35:09 | 91ea2be4b2c86dc8c04a90e5f585b121dc46045e
+
+Merge "Gradle debug option for CI" into 2018-development | 2018-03-04 04:24:38 | 5faa439e65bce9e789c1e51c8ac14c0ec02f93fc
+
+Gradle debug option for CI
+
+Allows a GRADLE_DEBUG environment variable to be set for continuous
+builds. If set to any value other than empty string, Gradle invocations
+are run with the --debug --stacktrace flags.
+
+Note that environment variables can only be passed to kokoro jobs via
+stubby.
+
+Change-Id: Ifdccbe3614f79a303c115abf70a12b9ba02554e3 | 2018-02-28 08:07:33 | 68d072aec50868e20bb762457e40e634859296b1
+
+Race condition fix. Replaced callbacks with LiveData + AS 3.1
+
+Change-Id: I6ba9a72a07166cb61481995a82312b00932d1b81 | 2018-01-23 19:19:02 | c1d57cf42914dc6b426b7dd0278d5f035fb8de3d
+
+Adds use cases framework, fixes threetenbp, adds Timber
+
+Change-Id: I6d2d48d5c58671393d72c5fa5bed9a019e064a31 | 2018-01-18 10:41:21 | 843c76502396de4fa187fcc6e388df70b8417b46
+
+Push sessions and reservations to vendor
+
+- Update function to push sessions to vendor
+- Update function to push reservations to vendor
+- Add room name when loading sessions. Room name
+  is required by vendor.
+- Schedule push reservations function to be called
+  once per hour, via a cron job.
+
+bug: 36813187
+Change-Id: I5322c3d56d5e057c4b90e213ad40349356ccd840 | 2017-05-09 21:17:28 | 222e6ca35dca1587dca84e931e99be5d4dfcc36b
+
+Merge "Fix filter bar bug on re-selection." | 2017-05-12 19:34:39 | 45d24aa338be1222de898cfdccb94dcf2e01d080
+
+Fix filter bar bug on re-selection.
+
+Bug: 38260613
+Change-Id: I26f3ef8e3b2c904c8ec20294f132a6039d36f14d | 2017-05-12 16:39:31 | 15766b376f35b7c3d3f0bd452aca983d0754c7bf
+
+Fix roatation bug in MDC BottomNav.
+
+Bug: 38256713
+Change-Id: I29e6c3ad5a690e2058f6baa579079aebd35c26bf | 2017-05-12 13:42:44 | 98b58266d784a031bdd2320a66f9abc3049ddfa7
+
+Ensure isRegistered RTDB write completes
+
+- Use a TaskCompletionSource to wait till registration status
+  is written to RTDB before returning status to the client.
+
+bug: 38153701
+Change-Id: I30f02c803e213189947fa318eb5a0a08a40c67b4 | 2017-05-10 00:01:57 | 1600de459639c0c3485da3c90df2f72cbb410b4b
+
+Send FCM pings on Feed updates.
+
+bug: 37851185
+Change-Id: Ia2d95f646d8cb32c18b39524b5e67185074a83ad | 2017-05-06 02:04:50 | 4e1ad8b6fc12653f63debca7190b96a9803bfee8
+
+Update bootstrap file.
+
+bug: 37906662
+Change-Id: I3ef0e16a5ebf6dd98e1d188f9761e2858e4fb839 | 2017-05-05 15:18:21 | 81504f9e6338bfec8f202a6d0cd15568e7a8df66
+
+Merge "Fix filters rotation bugs" | 2017-05-05 01:43:52 | 6bb07016429f1d020d5f560441625167db69ae96
+
+Fix filters rotation bugs
+
+- Fix "clear all" button disappearing
+- Fix event type filters losing checkmark
+
+Bug: 37958327
+Change-Id: Ic4143d01bda23e3ac0465fb411122626fc1369d4 | 2017-05-03 23:01:04 | a7c535ba8a8cce580f81578762a31256727d995e
+
+Merge "Hook up Info screen "View Map" links. Also fixed activity stack for "View Sessions"." | 2017-05-04 01:11:19 | 77d38e476325729c325cba9819c4893fdc0d5425
+
+Hook up Info screen "View Map" links. Also fixed activity stack for "View Sessions".
+
+Change-Id: I5e5edceef22149d7eb7440f62e0742b78be9c3ca | 2017-05-03 00:54:03 | 2427a30d2ad1dc03281557f71e1f39520860d682
+
+Removing animation from session detail fab.
+
+This is likely temporary. More details in the bug.
+
+BUG: 37810998
+Change-Id: Ife1a1a0bb2068a5d79bbc1dab2206038a1b16fc7 | 2017-04-29 22:30:04 | 6f6ce3c789df49060723f402396e8ebf62579ca2
+
+Add check to prevent NPE when unregistering FCM token.
+
+Devcie ID/FCM token must be non null in order to unregister.
+
+bug: 37808077
+Change-Id: I5e2048c598565bda4fdfef465e7b16f786d1872c | 2017-04-29 18:19:23 | 7d57829ef69aff97731d4c075e72684f995600fc
+
+Merge "Only allow reserving for sessions that are SESSION_TYPE_SESSION. Ignore accidental formatting fixes for unrelated stuff." | 2017-04-29 01:55:26 | b58fc3a370bcae8f666be61fc0290ba1ea26d126
+
+Use Endpoints to register FCM token and send self ping
+
+bug: 37720270
+Change-Id: Id483c512984052b3b477628ac682efe11527cc78 | 2017-04-28 23:57:51 | 6e3a71a4a440be3650640d5476c739110f3a8b1d
+
+Only allow reserving for sessions that are SESSION_TYPE_SESSION.
+Ignore accidental formatting fixes for unrelated stuff.
+
+Change-Id: I78717608167fdd1f587babd732a6cbfaeffa3c86 | 2017-04-29 00:54:40 | 5214115f7bf3706db7d1e33f1f79012cf681e4a2
+
+Handle errors during reservation.
+
+If there is an error during the processing of a reservation
+we should remove the queue item since that would prevent the
+user from making subsequent requests.
+
+bug: 36528831
+Change-Id: Iae1edd008960ea622549cf455cd722d5a7b8af50 | 2017-04-29 00:32:32 | b2068ff3336d134fef682542a70068c334a5b4c4
+
+Merge "Hyperlinks in HTML text now work but they're now underlined (mocks have links not underlined). To remove the underline, the text needs to be converted to a SpannableString which breaks ellipsize. Hacks exist to fix the problem (like re-implementing ellipsize as I previously tried to do in this file) but this CL is just to (at least) temporarily fix the links." | 2017-04-27 22:41:05 | a22914370ef37069f4a9001c358be6de25470a7b
+
+Hyperlinks in HTML text now work but they're now underlined
+(mocks have links not underlined). To remove the underline,
+the text needs to be converted to a SpannableString which
+breaks ellipsize. Hacks exist to fix the problem (like
+re-implementing ellipsize as I previously tried to do in
+this file) but this CL is just to (at least) temporarily
+fix the links.
+
+Change-Id: I3e42a45e473b1796189a46bd4906b2d078bdc43b | 2017-04-27 18:02:33 | a15ef6ce5c89a135a949d8b853e5f804208a7215
+
+Use Endpoints for CMS update
+
+This fixes the XSRF vulnerability that the Servlets had.
+
+bug: 37288207
+Change-Id: Ifb30e8f014560b6ef1c7c72a61a6e956cc675440 | 2017-04-26 22:34:49 | 1667c112a4b47ac5c1b97ccb886d5c27fd2dcce0
+
+Add endpoint for clients to submit session feedback.
+
+- This CL only adds the endpoint, this will unblock clients.
+- A follow up CL will implement the sending of the feedback
+  data to Event Point.
+
+bug: 37687229
+Change-Id: Iec808726f07ad7f3b1e521b525a3b96070cc6e59 | 2017-04-26 00:43:56 | 470ef3f09ff5b095a6694748a5699760f0cf202f
+
+Replace send message servlet with Endpoint.
+
+bug: 37288207
+Change-Id: I68fac572fe121d3702f4a5a821a3f40540996d0f | 2017-04-24 17:24:33 | 4749e7aac5716b3953880f36375babfba1747d6d
+
+Replace FCM register servlets with Endpoints
+
+- These Endpoints require same client IDs defined for DefJam
+  Registration Endpoint.
+
+bug: 37288207
+Change-Id: I232b5109555d650600dde56601cc3310293890fb | 2017-04-20 23:47:11 | 5adf26139262536f132f4914e273ca73d52523a4
+
+Replace serving url servlet with endpoint.
+
+Replacing servlet with Cloud Endpoint so that hardcoded keys can
+be avoided.
+
+bug: 37288207
+Change-Id: If507d4e7aef08047bfe78d6208f985301a7b34a9 | 2017-04-25 00:34:19 | 81f45ee0c262e6c5168ec1f09ccdaadc5bb82658
+
+Remove AdminServlet, no longer used.
+
+bug: 37288207
+Change-Id: Ib3f964028d4292f93f3d04dfd32875da0c5dee9c | 2017-04-25 01:10:12 | 04507be923f895472b4bab627e531353b3c6a66e
+
+Update conference dates on server side.
+
+- Fix bug preventing live sessions from being shown.
+
+Change-Id: I55fab2d6f9a55a9d0294656d6235458ff8302143 | 2017-04-22 14:03:35 | de7f566592a7b24fa502a41c3d30f394e878de1f
+
+Process GeoJson correctly after loading.
+
+Move the GeoJson processing from the MarkerLoadingTask into the
+MapFragment. This fixes the configuration change issues on the map.
+
+Bug: 37555803
+Change-Id: Ifc3c155f67c615e130996ebc3bfb3a1271b6c6f2 | 2017-04-21 06:25:12 | 9c55836a5ba3be444da7a8c57fad3e195583f268
+
+Use user ID to map against FCM token
+
+- Fix bug where sync is not initiated when userdata is updated.
+- Ensure that FCM token is mapped against user ID and not
+  random UUID.
+- Remove FCM Key getters and setters.
+- AccountUtils already has enough methods to do the job
+  of mapping FCM tokens to a user ID if available.
+
+Change-Id: I08b6dcab221ef19b246fe9c8d72cd1f5ff790a32 | 2017-04-22 00:52:58 | 0ab2b0b5266701042cc6b0baab7e608f901b9c26
+
+Send ping to user's devices when user's reservation data is updated
+
+- Send sync_user FCM ping when user's reservation data is saved.
+- Remove delay while idle setting since it is now ignored by FCM.
+- Use SNAPSHOT gcm-server library so we can set content_available
+  field. This allows iOS devices to receive silent notifications.
+bug: 37321781
+Change-Id: I614548a90e23008708222e1e81f5cec4b08e85df | 2017-04-19 16:01:09 | 6932df19bd333f2296da1ab287b2b5542eb5fe0d
+
+Merge "Move debug to Info screen and do some cleanup" | 2017-04-18 23:14:23 | 09d88cd686de6396a018cfbeeabb6386a0db2a71
+
+Move debug to Info screen and do some cleanup
+
+Change-Id: I61fd95cb67ce8a38da25a48b6e4e065551c57c2d | 2017-04-17 19:54:59 | a80dcf66a51a06961c9ac6c512e35171fe2ebf48
+
+Merge "Temporary fix to feed crash related to empty link" | 2017-04-18 14:07:03 | bc78605c2d5e791504b41f5333e586c673002fee
+
+Temporary fix to feed crash related to empty link
+
+Change-Id: Idbdda31c311db6169cbd4389c5ea2fe00223afa1 | 2017-04-18 12:29:32 | 61938f74def889737e8271c9ea9decaedabbc1cf
+
+Load sessions for reservations
+
+- Load new sessions into RTDB from GCS so they can be reserved.
+- Update sessions in RTDB with values from GCS if they differ.
+  - If session has more reservations than seats, excess is moved
+    to waitlist.
+  - If session has waitlist and reservable seats, promote waitlist
+    reservations till no more seats or no more waitlist.
+- Only Admins can run this servlet.
+
+bug: 37180623
+Change-Id: I6a044622f0d0bf89e86c0b190be6275d469060f8 | 2017-04-17 16:16:07 | 6d9ea83f5edc0629e9b798d5ec1002bff2e6c458
+
+Using separate google-services.json for debug and release.
+
+Change-Id: I067c1ab9b7861bace07cbc492185fbd5b323eb61 | 2017-04-14 20:20:36 | bb908222ef2acfba6ed9406d88d23a74bff29714
+
+Write to ContentProvider when reservation/
+return request succeeds.
+
+Also fixed some reservation bugs.
+
+Bug: 37017189
+Change-Id: I2d59c413b3104918db6b26a9e0f72e8771983af5 | 2017-04-12 05:00:42 | d0ea75d3f141bbaedb6ba1194754a7dfa60d23b3
+
+Push reservation changes to App Server
+
+Reservation status changes are pushed to
+App Server using UserData client library
+loaded from discovery doc.
+
+bug: 36813613
+Change-Id: Ia7e9cfa283fbaf34039f89495119ab1d40ca96bd | 2017-04-08 15:32:04 | e57c87e76b3e5b057b892bfafd9760cc7de0f28a
+
+Merge "Fix reserve button bug on Lollipop." | 2017-04-12 21:52:56 | 2ce34d2e206dc2728fc5faae3e7f99fa1a56e22e
+
+Fix reserve button bug on Lollipop.
+
+Bug: 37264752
+Change-Id: Id8441da5e69309f2535f14e47b6d9ca451b25dbb | 2017-04-12 10:49:39 | a330ef5a79de1bcbb1c1296bca9b8957f83183ca
+
+Tweaks to filter headers.
+
+- Use same height for Filter header & Topics.
+- Elevation shadow on fixed header when filter list is scrolled.
+
+Change-Id: I553f8770d94a7edf8c737d216f81523212a821b6 | 2017-04-10 10:11:23 | b763b78053be09ca944114a0f5b2ef445251cac7
+
+Handle reservation requests with ID
+
+- Write request results agains request ID
+- Update functions to handle request ID
+- Change writing results of requests to
+  be done one property at a time:
+  status > last change > result
+
+bug: 36974469
+Change-Id: I6105082d1b9e8978e150b0467af843101a0d30b1 | 2017-04-05 18:11:30 | a3c6240cbb136ddbd77eec052cb2e36599a32ea0
+
+Merge "Fixed reservation status UI update bug." | 2017-04-06 02:09:14 | d56b1957fc8843d001c1ca527e4f4c6010a78b2e
+
+Fixed reservation status UI update bug.
+
+Change-Id: I4a2ca5c626df24ce66c26d8234c0a2329735267a | 2017-04-05 20:26:28 | 26971b55bbac9e09f637d96f8c9124a0f37a64e0
+
+Disable broken tests
+
+This should be reverted and fixed properly, but for the moment
+it's blocking development.
+
+Change-Id: I2942f4a1a2bb814134c5a2b28caa485f7b884405 | 2017-04-03 18:50:56 | f800fd3ddb302cfc66507066c326c82b2dedd3a1
+
+Fixed bug for onboarding sign in fragment not clearing.
+
+BUG: 36854306
+Change-Id: I21ea9249b0bf43ee0bb23fb4ef44d006c87911af | 2017-04-03 16:23:40 | 86bf8f8d9a51e86067e5edc07a9d32b2c4a2eb62
+
+Merge "Fixed bug with onboarding sign in" | 2017-04-01 22:53:04 | bb5b77cd69ba5d313857419c1233e323fee50c51
+
+Fixed bug with onboarding sign in
+
+Change-Id: I158fe1c6fbf2c0a76b73d5b982f268c692902b5d | 2017-04-01 22:52:17 | fe38d8cf411c42b63345e313caefe1bebdc024ad
+
+BottomNavView has a max number of 5 buttons so to make room for Info:
+-Moved debug nav button from bottomnavview to a FAB on My Schedule.
+-Removed some dead nav code for settings, about, sign in, and video lib.
+
+Bug: 36738054
+Change-Id: I3253721d098fe518cc7ff4e9195406fe70792595 | 2017-03-29 22:56:38 | 0ada1c75fbb4a7cd102975c07efc0ce3ada24d5e
+
+Firebase and support changes:
+
+-Upgraded GCM -> FCM and enabled Firebase Messaging.
+-Updated android_support_lib_version 25.1.1 -> 25.3.1.
+-Added debug Firebase project to app. TODO: add release project.
+-Removed Firebase v2 dependency.
+
+Bug: 36700561
+Change-Id: Ib2bb13ff7443cfb305333ec6268d55032f5a0711 | 2017-03-24 22:17:50 | 227467bfccc2796f1b60ffa78e77e54090e527ce
+
+Change requests to have an intension.
+
+Requests now need to include an action (reserve or return).
+- queue
+    - uid
+        - session: <sid>
+        - action: <reserve/return>
+
+Results of requests are written as an object.
+- sessions
+    - reservations
+        - uid
+            - result: <last request result>
+            - status: <current reservation status>
+
+bug: 36527346
+Change-Id: I09ffbbd3d907b18af7468cc65b24caf92d5cdb55 | 2017-03-25 04:27:15 | 3366f419a2b7db8fb2c9b21196e7facfa0a39792
+
+Add Firebase Functions to handle session reservations.
+
+- Setup Cloud Functions for Firebase
+- Add listener to process reservations requests
+
+bug: 36526447
+Change-Id: I6d0c0c85144a011ad7e32026b80d3fa59cd5cabb | 2017-03-19 22:38:03 | c1a8ec403a36ccc1ff1abd80a847d4b587244ea8
+
+Fix certain sessions not being synced
+
+This is because for debug builds we are currently
+pointing to a 2016 dev data bucket which no longer
+exists. Fixed by pointing to the public feed for now.
+
+Also tidied up some of the conference data
+handling, since I was debugging it.
+
+BUG: 35710851
+
+Change-Id: I6cbac9bf30177adfa23674d3ab0f7517e5c28c81 | 2017-03-15 14:02:21 | d6f8e1a89c9ec3d9543036229f6489474846e2f0
+
+Fix RecyclerView not re-binding views
+
+Happens because we now use stable ids, but the
+ids we provide are not stable. This CL fixes
+it by generating IDs from more data points.
+
+BUG: 35789131
+Change-Id: I237be66b883ed96cda3f4c1a02032962ec7051ab | 2017-02-27 10:37:42 | 038642e5585daa90266560a20320c3e176741a34
+
+Merge "Added debug to bottom nav." | 2017-02-24 23:32:54 | 454b41800d63e092865a9f5e0e27ef23e190062a
+
+Added debug to bottom nav.
+
+Removed Explore.
+
+Change-Id: I65e2ec67fd63649fb707b178a70e2e7a767800da | 2017-02-23 06:53:11 | 0e02fa99af900bc3147b8891d34b186c262d914e
+
+More quick lint fixes
+
+- Add targetApi markings
+- Fix or suppress DefaultLocale
+- Suppress RtlHardcoded when using Gravity constants
+- Fix or suppress InconsistentLayout
+- Suppress InlinedApi
+- Suppress NewApi
+
+Change-Id: I7402212cfdc0488fdfe7eb3c783a8a989c03bca2 | 2017-02-02 20:24:52 | 985e659d79552d29d2c460f9b779b171b2d33f6e
+
+Re-apply primary color change
+
+Must have been wiped out in the recent
+lint fixes.
+
+Change-Id: I3b627c89192f01b577431ee244b115a378806f9c | 2017-02-07 12:52:48 | 4336bed81c24405c0ce8b331b48d76f3791f1c3c
+
+Fixup some string resources
+
+- Ignore placeholder strings
+- Formatting args cleanup. Note that one Russian plural case needs to
+  be fixed.
+
+Change-Id: I16019f727e4d9c30703d6a5f5739cf942818ac5b | 2017-02-02 18:57:45 | def3a959803f7cfe081cb1d22989cb65767016c0
+
+Merge "Remove guava, don't multidex debug builds" | 2017-02-01 16:51:12 | d4976dc1f7c721ea2e2105c213609077ff3a6a02
+
+Remove guava, don't multidex debug builds
+
+Guava has a large footprint and was being sparsely used, so let's
+remove it. Summary of how usages were substituted:
+- Charsets.UTF_8 -> Replaced with constant in IOUtils
+- Strings.isNullOrEmpty() -> Replaced with TextUtils.isEmpty()
+- @VisibleForTesting -> Replaced with @VisibleForTesting in
+  android.support.annotation, since the support annotations were
+  already included in our dependencies
+- Preconditions.checkNotNull() and Preconditions.checkState() -> Copied
+  into new PreconditionUtils class
+
+With Guava removed, we are well within the dex limit even without
+proguard minification, and incremental debug builds are faster.
+
+Change-Id: I5e067315b8bee1b8fd6b22802af2ddb5a6e8c3ab | 2016-10-17 21:08:47 | a9c26403fe165271c5e7c9db9bc5b34f8a3c6b97
+
+Move to support fragments + loaders
+
+Not sure why we were using the platform impl
+but the support version is always preferred
+but to bug-fixes, etc.
+
+Test: unit + android tests pass
+
+Change-Id: Iee7b2b2398abf3ad7009fc70cb1b3e5d7419770d | 2017-01-27 10:25:26 | d030a4dad6b981471debb5ace50906c72624589f
+
+Fixing test build.
+
+Many of the tests marked suppressed failed when run
+in an instrumentation with all tests. Those tests
+succeed when run only as part of the test package.
+I've disabled them anyway because the test build need
+to pass with all tests run together.
+
+The test library updates are required to pickup some bug fixes
+that were causing some of the test issues.
+
+Bug: 28369715
+Change-Id: Ic1abd17dc5ae2102ad8e487cbca4db2029ea65e2 | 2016-07-15 22:40:35 | b380864f137ab58c1c5ec923c6c5211750cef792
+
+Protect against NPEs that showed up in Play store.
+
+There is a different bug that addresses fixing the fact that the
+adapter is recreated when it doesn't have to be.
+
+Bug: 28828007
+Change-Id: Ia6ee5988e9af3945ebfa29765a21d33ea2ae61f1 | 2016-07-14 22:18:12 | 8877c6492e463c16ca0797609a13fec8ec470410
+
+Removing 2015 art files.
+
+2016 Art files will be re-added. Leaving the bug
+open until that happens.
+
+Bug: 28338238
+Change-Id: I840e56666736066ff3101c70845e5df2efe20575 | 2016-07-14 00:13:13 | 281c701d8e74b9235e42cfa162c7939bb16d3a4d
+
+Merge "Added video play test, fixed both video tests for when youTube app is installed" | 2016-07-06 19:01:51 | 11b738f6884f38be41e858ea61d282af4ff7797d
+
+Merge "Some fixes for Japanese strings. " | 2016-05-26 03:27:55 | 0077cc59c29f2c0eef4eb40673b0d32993b8e1c5
+
+Some fixes for Japanese strings. 
+
+Change-Id: I2f99869b99f3c42ccc7e910626a5085f8843748f | 2016-05-20 21:39:41 | 280d43cc596f00ebe098961f370384109bad7c75
+
+Added video play test, fixed both video tests for when youTube app is installed
+
+Bug: #28310731
+Change-Id: I4807f828c4bdc49ffaa4ea5ef4cd2b939678ca3e | 2016-05-12 11:14:27 | b6f1b5739f7fe79e9368011b202903482172345a
+
+Merge "Fix bug with provider package conflict." | 2016-05-06 17:52:50 | b01224ea1a647872b10c7cfa2f7e57c3bbc5fccb
+
+Merge "Explore Sessions tool+status bar fixes." | 2016-05-06 00:50:41 | dd6a931495e7cd95581826376d94a4cff2509b22
+
+Fix bug with provider package conflict.
+
+Bug: 28588823
+Change-Id: I7dc2bcae336467177e818bf5bf827ea295aa209c | 2016-05-04 20:00:17 | 8e8386c3d6b82275f58e8d06944ad1ce3283d753
+
+Explore Sessions tool+status bar fixes.
+
+– Also applied to Video library filtered.
+– Corrected layout naming convention.
+
+Bug: 28611823
+Bug: 28611873
+Bug: 28426109
+Change-Id: Id6b3e10e1d8585fd2c52a6a005b4cf7bd6e2d1d0 | 2016-05-05 15:44:02 | 5ff60376d1a0cab6127c8dc06eef80f4913882fe
+
+Clean up tick <-> plus animation.
+
+– Consolodated multiple anims into sets.
+– Use path morph on API 23+.
+– Work around bug in NDP2.
+
+Bug: 28609561
+Change-Id: Ib576fe72ce89ab96140430fd3b87436d426dad59 | 2016-05-05 12:23:26 | fa41a34540119cefac81a944f8fb35bf681910a5
+
+Minimize logging when not debuggable.
+
+Bug: 28388512
+Change-Id: Iec62a2c582f0b5d55a5f68be54d25afcd4449410 | 2016-04-26 04:56:42 | 59adf119f173ddaf0ddc80f7cf7c0e8370bc7d58
+
+Merge "Couple more 15 -> 16 fixes." | 2016-04-25 23:19:56 | 72ce86b7e9675d2404fc5da63ab6e0f74f6e7f55
+
+Couple more 15 -> 16 fixes.
+
+Change-Id: Ib2e20bf004bcd8c1cebe536630abbd6a91071adb | 2016-04-25 23:10:59 | 18a4bbc0f23613764103e024e42e5e3d58583e5a
+
+Merge "Fix for bug in showing "watch" live text" | 2016-04-25 20:43:41 | ecb98299c79b944be4e23835c2de8aa4eff6b8ea
+
+Fixed bug for viewed videos not updating properly
+
+Bug: #28373596
+Bug: #28361418
+Change-Id: I298712c966411b780f679272c85dcd5aa5992647 | 2016-04-25 18:00:03 | 763facdec98eaa74236026d3ad2092aa3818c214
+
+Merge "Fixed bug for Explore IO not updating itself after changing logged in user" | 2016-04-25 16:54:09 | 0cdab6eba9716c2cb46dd3abe45f3de14711ddc0
+
+Fixed bug for Explore IO not updating itself after changing logged in user
+
+Bug: #28361418
+Change-Id: I95dcc1c30201dcc5dd5574b3eba3945e0214ff1e | 2016-04-25 13:11:30 | 1fc0a868a159e3b543f671d9d26f63ed432abf5a
+
+Fix for bug in showing "watch" live text
+
+Bug: #28208316
+Change-Id: I7c5be95c01c08b5ddb3355dea3ba018995f7e93f | 2016-04-25 10:15:57 | 43c219eb84e847ca4c0c0f9639d35b1feca3c485
+
+Simplify floor plan SVG file.
+
+This fixes rendering issues with the overlay tiles on some devices.
+
+Bug: 28332763
+Change-Id: I7dc60615e6f288b19196d391066b939fe24e1884 | 2016-04-22 08:21:51 | 090af65e52c620fee258dfa2fad5e7d4cdfd5276
+
+Merge "Fixed UI title/image bugs in Explore sessions screen" | 2016-04-20 16:00:21 | cff5e5097f1a56bcb1f8ca8415b7449707a4e792
+
+Fixed UI title/image bugs in Explore sessions screen
+
+Bug: #28283527
+Change-Id: I14ed68ecd2b87bb91efd4dd74b820b65caa3ee0c | 2016-04-20 10:53:45 | 4b09a6b9438e9ff4b0326588fa0e1d43088bc66b
+
+Merge "Fixed bug when tapping display WelcomeActivity in debug screen" | 2016-04-20 15:31:05 | 097ae8c34661d0e4af397851c4230e7d192239de
+
+Fixed bug when tapping display WelcomeActivity in debug screen
+
+Bug: #27995560
+Change-Id: Icbd1a6ced9a1c8b92d8131b85a1433fc95581b73 | 2016-04-20 08:56:59 | 19e75035d953cb509583a6877fdeaa919255e423
+
+Merge "Fixing bug with resident Snackbar." | 2016-04-20 00:32:03 | 863c2b56a5bf174ad5964abcb505b3ca4d7aa641
+
+Fixing bug with resident Snackbar.
+
+Needed to dismiss the Snackbar when resuming
+the AccountSelection screen in case the user
+accepted the permissions.
+
+Change-Id: Icfd198f7a4e157619314887f9cad980bcf38cf23 | 2016-04-19 23:28:52 | bbeaea1582dac0266bbdb8c43358a5cf1f34a404
+
+Updating targetSdk to target 23.
+
+Implemented runtime permissions:
+-Storage and Accounts are required for the
+app so they are enforced with the Welcome screen flow.
+This ensures they are re-inforced any time the app is
+opened.
+-Calendar is only needed when Calendar sync is enabled.
+So the permission check for that was done dynamically in
+settings.
+-Created product flavor so that the debug variant could
+be tested without having to remember to grant permissions
+ahead of time.
+
+Bug: 28192652
+Change-Id: I1efdb4a951f3ccdabd403d64329c0d417f55f64d | 2016-04-15 04:43:35 | c0e4d449ba1931a9085b31b7823d245d0c2844f1
+
+Fixing bug with unconfigured tags.
+
+Bug: 28243233
+Change-Id: Ie390a8a8023843a4a157a94d08dfcd0fade4d0df | 2016-04-18 22:13:29 | 5be5636ae25be7b50232f2b49d186d29b15b5228
+
+Merge "Added 3rd day to MySchedule tab layout, fixed issues when rotating screen on my schedule screen on tablet" | 2016-04-18 17:36:38 | f2526ff9b4b4395a0140ff514c220ac194a082f4
+
+Added 3rd day to MySchedule tab layout, fixed issues when rotating screen on my schedule screen on tablet
+
+Bug: #28238650
+Bug: #26705643
+Bug: #28238531
+Bug: #28238534
+
+Change-Id: I0d6db7b1c499b8c9fe1c8d96e2a09472b71f2507 | 2016-04-18 13:38:42 | 1beb08cade6c8eb6577c327dde18aa7bb28e3d1f
+
+Merge "Fixed video tint bug on API<21 devices." | 2016-04-14 15:56:06 | 400dcc77c86111b9c07aaba497b6c092639fbd4b
+
+Merge "Fix bug when calculating day in explore sessions screen" | 2016-04-14 15:34:07 | da84d377f2cd5183f98e70240fce8c1d37df843f
+
+Fix bug when calculating day in explore sessions screen
+
+Bug: #28185957
+Change-Id: I88505de4282443af21ed2eb01575e6cd90871e56 | 2016-04-14 13:16:28 | 82c066ee04b6772ab653b72de261151aadca60ab
+
+Fixed video tint bug on API<21 devices.
+
+Also a race condition in the empty state message.
+
+Bug: 28184552
+Bug: 28184094
+Change-Id: I784b14743153f8a88ff19ee57c4b78217869aa41 | 2016-04-14 10:43:26 | 295c208d7266860c27563c4c76bd8913c4e51f45
+
+Merge "Fixed jank in search animation due to bug in calculating radius." into vnext_design | 2016-04-12 15:16:54 | b9a139172a73981feef7e8741aa7f31de6aa40cd
+
+Fixed jank in search animation due to bug in calculating radius.
+
+Bug: 28130940
+Change-Id: Ic63e12bd72d455064cc1c618e106d69cb3ba6fcc | 2016-04-12 11:55:02 | d09993b06324ee46987319ec04eba7d81e9a8365
+
+Include test data required by tests
+
+Change-Id: I120e54f0d8a5a1bf738a0b33d64e4eb0e855a4c2
+bug: 27987564 | 2016-04-05 16:46:39 | 26fa95132f7ae069e447a355549263baef5e0cbc
+
+Fixed failing unit tests, fixed corner case in minutes calculation in session detail model
+
+Bug: #27987953
+Bug: #27989428
+Change-Id: Ia9719c3cb2eb8a30f16986e9a107e57f66023606 | 2016-04-04 12:47:29 | 16ac64642d7fd75c4808be1f18faeaee07c3c051
+
+Disable SessionDetailModelTest for prodrelease
+
+This test is broken. Temporarily disabling it so we can get a beta
+build.
+
+This change will be reverted once this build has been dispatched to
+the CI server.
+
+Change-Id: Ic8dd1fdcd20d14c2bf32bb5e2829ad9f8489d4cd | 2016-04-04 06:15:49 | 98a6b74290899d139e31070a49123723bad022c6
+
+Add Proguard rules to fix build
+
+Fixed warnings caused by references to missing methods via dependencies:
+-dontwarn org.w3c.dom.bootstrap.DOMImplementationRegistry
+-dontwarn com.larvalabs.svgandroid.**
+
+Fixed warnings caused by use of reflection by Jackson:
+-keepattributes InnerClasses,EnclosingMethod
+
+Change-Id: I40b126561688ce1528b6e0b414831cc265d33250 | 2016-04-03 08:39:04 | 9d98fe3553053cff3b0527ebca6c8c46025eb85e
+
+RecyclerView enhancements for Explore & Videos.
+
+Figured out how to re-introduce a shared view pool. Marked RVs as fixed sized and made item
+click handling more defensive.
+
+Change-Id: Ic09fc66ef00be8ff9081d88642b492a958e0dadc | 2016-04-02 13:14:00 | 86a7dc2ad3d3b25f2a3b1493fc7a861fb4f89333
+
+Re-adding debug.keystore.
+
+Change-Id: Iafafa5cd35039601ec5a2a252ea647ac708f0957 | 2016-03-14 23:49:52 | 16d099edc810e966bfb4d60142b6f2cb4fd51b47
+
+RFR - fix for bug in Header view refactoring
+
+Change-Id: I58ac8bc1771abce6bde768922a2e61523df0e17c | 2016-03-04 16:46:07 | fa11679f8939a9640e6c5db6da32c0e7f05e3788
+
+Added UI tests for actions firing intents in session details activity
+
+- Implemented tests previously marked as ignored
+- Moved starting activity from model to fragment
+- Changed start activity to always use getActivity().startActivity in Fragment
+instead of directly startActivity, due to bug in Intento in M
+- Rewrote unit tests to use mock callback object
+
+Change-Id: I673d2429c747e0a2bb60d4e083a46223edb7188a | 2016-02-18 13:12:36 | 26f90d3ba4f1c058b22574fb29a92b70ba24c290
+
+Merge "Renamed UI tests that have use case in test name, fixed typos" into vnext_arch | 2016-02-18 11:18:19 | 38393911b900e57abac4b521bb5c2f8645fc4632
+
+Renamed UI tests that have use case in test name, fixed typos
+
+Change-Id: Ife112aaf52245283fa5e1b580f8f290c2d7f78a5 | 2016-02-17 16:19:01 | f6811c3c532e12ff5dbc981c7ead78a51cf0041d
+
+Refactored MySchedule for readability
+
+1. Added a fragment for wide layout
+2. Renamed fragment/views/adapter
+3. Added javadoc to explain how the fragments/views are used
+4. Refactored ViewPagerAdapter out of Activity
+5. Light refactoring in activity (renaming methods etc)
+6. Added javadoc to activity
+7. Moved methods to set/get current time from UIUtils to TimeUtils
+8. Added method to TimeUtils to easily set current time to x ms
+   before/after start/end/start of second day of conference
+9. Added UI tests
+10. Fixed bug of tab not changing highlight when swiping horizontally
+
+Change-Id: I3a5991eec0bc7835254928dd0370855e9e61078d | 2016-01-19 11:48:35 | c3df4a2e246f299b0374c8aa01611dd64d3f354e
+
+Merge pull request #78 from alsutton/fix_feedback_sync_can_incorrectly_number_questions
+
+Use an empty ArrayList for each session being sychronsied | 2015-01-07 14:51:26 | b8b238fbec47b329833cbdb2a5fc01b253d3ca15
+
+Merge pull request #107 from romannurik/github-master
+
+Import some local fixes | 2015-01-06 17:08:56 | cf1f30b4c752f275518384a9b71404ee501fc473
+
+Import some local fixes
+
+Change-Id: I408707a9b5474aa40755fd041169ac8503df9817 | 2015-01-06 17:07:24 | ba58a9886b4541beb8fc8ac1c031646d5a2073e6
+
+Formatting fix | 2014-11-03 10:54:48 | 32cafb4d7d31e784bf0fa897ce79e5b130fccb0f
+
+Merge pull request #71 from romannurik/master
+
+Update to v21 SwipeRefreshLayout. Also fix nav drawer BACK button bug. | 2014-10-22 04:04:13 | f2e87424ea7cc0c3f8022f984966091ea746a23e
+
+Update to v21 SwipeRefreshLayout. Also fix nav drawer BACK button bug.
+
+Change-Id: I13a0880240c4d49b2fdca5948594567332ca8aaf | 2014-10-22 03:57:02 | 1d8ff282225275a06977489ed12d93ac925bca8e
+
+Merge pull request #65 from VipSaran/master
+
+Fix for 20.0.0 build tools bug | 2014-10-20 13:28:52 | 2bbaedd62fb9f6f2dcdc1b53edc73f2fb3e6f1b3
+
+Fix for 20.0.0 build tools bug
+
+reference: https://code.google.com/p/android/issues/detail?id=77629 | 2014-10-20 13:04:13 | ed15d4c160f610260d5d59aaa61aa984e333548b
+
+Merge pull request #53 from ogwiz2/patch-1
+
+Added periods to comments for better consistency | 2014-10-18 12:39:13 | 302d5b17501e2b7b7ca916cc19bd589a6287d191
+
+Merge pull request #56 from ardock/fixtravis
+
+Fix .travis.yml, typo in android-19 component name | 2014-10-18 12:31:06 | 988642815aa4b710c129dd5d2a204de8f588a322
+
+Pull in final L-related code changes and other fixes. | 2014-10-18 12:19:46 | 8c798c58e592b8a25111610e216c7f3ee74c3a42
+
+Merge pull request #32 from ph0b/patch-1
+
+fix french localization of "speaker" | 2014-08-12 23:04:58 | aa437dd4ec4534dc57e7a81e0138f8a9f75d463e
+
+Add debug keystore
+
+A keystore needs to be present in order to enable continuous integration
+builds. This is standard Android debug keystore with a 100 year
+validity. | 2014-08-12 21:24:55 | 0f7e56ff2588b816476fbad253554f49003e869d
+
+fix french localization of "speaker"
+
+In french, a "haut-parleur" is an amplifier, not a person.
+I propose to change this current translation to "orateur". | 2014-08-07 07:34:19 | 3f26dde80b6f09b5ab68545796d270bbf9907e2e
+
+Merge pull request #24 from seewes/patch-1
+
+Replace .commit() with .apply() in PrefUtils.java | 2014-08-04 14:47:53 | b9631146b1acdea4f6bb510eae5a3ce3438c2357
+
+Merge pull request #322 from google/thagikura-patch-1
+
+Update the README about adssched | 2019-08-19 14:16:40 | ed42346298aedfa0a8bade4feb4a5620f0229a54
+
+Merge pull request #319 from google/fix_travis
+
+Fix travis CI | 2019-08-14 15:55:10 | 5275cd953641e21746b98776a66872e1d01fdf2a
+
+Add versionNameSuffix to build configs
+
+Adds a versionNameSuffix so that it's easy to tell which build variant
+is running by checking in Settings. Release builds have no suffix.
+
+Change-Id: I9290a95dba5b11434ae8aca6e217c0ec75f1b972 | 2019-04-29 21:40:05 | 9d93dce1cbcb69b19ed5892658153c4e7495856b
+
+Fix the height of "1" in countdown
+
+Also fix the countdown flickering
+
+Bug: 130888011
+Change-Id: I562a69138ba7f61d31ff47b487e0838e44f1a775 | 2019-04-22 05:52:08 | 7c06b99cd81f2f6ef815defbd946f11dc837067e
+
+Search improvements
+
+- Show keyboard when search is opened
+  (The code for opening keyboard wasn't working)
+- Update the search result as the user type
+- Sort the results by SessionType. Keynotes come first, followed by
+  sessions, app reviews, game reviews...
+- Fix the subtext of a search result to correctly show the SessionType
+
+Also fixes
+- Keynotes are parsed as SessionType.UNKNOWN
+
+Generating the search result is happening in a worker thread, so this
+won't freeze the UI even with a low spec device.
+
+Bug: 130197327
+Bug: 130935002
+Change-Id: Ib091537260a325689fcd20b990ed85409039bf44 | 2019-04-20 11:17:46 | a18a5a230ac9d90bb9a266925c1776bd90a1945b
+
+Mitigate the filter inset issue
+
+This does not fix the issue but makes it less noticeable by adjusting its position afterwards.
+
+Bug: 130523711
+Change-Id: I3da541e4d4e2806f1b2103bf085d91144284d719 | 2019-04-19 07:50:56 | 4738b46a0f238b29548180f1f90641da15896e67
+
+Fix back handling when using gesture nav
+
+Two issues fixed in this CL:
+- Back when the drawer is open does not actually
+  invoke super.onBackPressed().
+- Disable drawer gesture exclusion logic for locked
+  drawers. This enables back to work correctly on the
+  detail screens.
+
+Change-Id: Ic598239458806ffdd63a73495cbc373a751a4be4 | 2019-04-18 04:10:19 | 834f194f01179975dc75921c27717eec8e4c75c2
+
+Make the FAQ tab in Info screen visible.
+
+The performance issue hasn't been fixed, but tracking in a different
+issue
+
+Bug: 129981789
+Change-Id: Id19258aae89e7928219642c1b3ca8b7467773ded | 2019-04-12 12:05:20 | dff47b4f07b1bf6b72b36dd25d9e74f9e31c3e81
+
+Color fixes for Lollipop
+
+Bug: 130384512
+Change-Id: I94bd8a309e522c92d47bb6186f7d4b179c6bf29f | 2019-04-12 03:10:33 | 1b5d19465f59d7eb4ab39fcbbbae56f7685dd51a
+
+Replace padding(Horizontal|Vertical)
+
+Because it's introduced in API level 26
+Also fixes the text for Assistnat app to I/O 19
+
+Bug: 130271181
+Change-Id: I6c5b14b59fbf024462a250c5e287f092eb254497 | 2019-04-11 07:54:44 | c2ab3663c1b264befdf199458101f02344ba274d
+
+Update travel tag in Info screen
+
+Also fixed CollapsibleCard to allow HTML can be parsed in the
+description
+
+Bug: 129981686
+Bug: 130326314
+Change-Id: Ib3ef4b36762e4e2d38b67f91c43f265a390fdab6 | 2019-04-11 06:15:28 | 4e586c74774e56a8be690b005af369ab25f08d19
+
+RTL fixes for Map
+
+Bug: 130316965
+Change-Id: I0be479820101c34b950b2f72cb4eeb4960877d47 | 2019-04-11 01:06:33 | 69e873491c6f9acde89b6515f5cb19286ecb6f79
+
+RTL fixes for Info
+
+Bug: 130310104
+Change-Id: I8b849fa3bb18da0034e4dcd746a989066c46d14b | 2019-04-10 22:51:23 | 21cae616c15cd406de14d379c605795ccb99da62
+
+RTL fixes for Settings
+
+Bug: 130308969
+Change-Id: I9db704261cf620724ef708fd8395a19cd65b3d73 | 2019-04-10 21:58:24 | 835a0932b4a6aaba9ce1c412dd1ecbea24a0b496
+
+RTL fixes for Speakers
+
+Bug: 130307696
+Change-Id: I36303fdd0f48fdb06b70faaa7f984ae19391a60d | 2019-04-10 21:45:08 | a95204f478b00cd82ff3ad4ecb95f14c1b61c4c0
+
+RTL fixes for Schedule
+
+Bug: 130306434
+Change-Id: I57b3b6c94d7e3aebd8854b64326e6a16e0c81904 | 2019-04-10 19:18:32 | 15cca77db07592f4c495d10094d6a9fedb832330
+
+RTL fixes for Codelabs
+
+Bug: 130306676
+Change-Id: I10a53aef6ec3d9aac4270a73e42351cbc9a786b4 | 2019-04-10 21:20:46 | cea1e4b6b1b74cca1cc374595e06572003ce7ac7
+
+RTL fixes for Agenda
+
+Bug: 130295189
+Change-Id: I9e3e33df829122a7cc7961a24ea7e4fc9054a97d | 2019-04-10 18:20:22 | 16caf0fe5082cb7c2ef94b2bb29f4b48ab1505ba
+
+Tidy up inset and gesture handling for Android Q
+
+Make the Drawer work with system gestures on Q.
+Eventually we'll be able to depend on an updated
+version of DrawerLayout in AndroidX, but today is
+not that day.
+
+Also removed all references to tappable element insets
+which are the wrong insets for us to use. System window
+insets should be used normally, with system gesture
+insets needed for views which scroll (such as bottom
+sheets).
+
+Also fixed the logic for closing the drawer from 'back'
+gesture. We now disable that action when gesture navigation
+is enabled.
+
+BUG: 128876715
+
+Change-Id: I41b341c3f23dbfad201c7857738a364c5d10ed9a | 2019-04-01 02:57:43 | bca689f6cdf683368e46cbf0cf28ab37e3a2093c
+
+Removes LeakCanary and an extra call to firestore
+
+Cherry pick from adssched. legit/95285
+
+Let's file a separate bug if we can enable LeakCanary again
+
+Bug: 124096834
+Change-Id: I6cf51da8b5c2721f3d4f22b7465ae7f59a44850f | 2019-03-19 08:39:25 | 7844de72b1f95c8b64d1852717a3a60ea0daddca
+
+Add prefix for Firestore data for 2019
+
+Bug: 124807886
+Change-Id: Ic56cd320009c036d77c791844f4a29d7ce86d514 | 2019-02-20 06:20:23 | b06952d209deadabc90909e1481129545c004424
+
+Make app go edge-to-edge
+
+This CL makes the majority of the app draw from top
+to bottom, behind the status and navigation bars.
+
+I haven't touch session or speaker details yet,
+that will come in a later CL.
+
+The custom build of MDC is because it includes
+an upcoming bug fix in AppBarLayout which will
+be available in v1.1.0-alpha05.
+
+Change-Id: I61ecf1ea6e17e1868388d18fbdd29f34f1559e8a | 2019-03-08 05:32:00 | 84ef129ef20cd87119edbb26ccaf1ab5aa58418b
+
+Fix the bug toolbar doesn't open in Feed
+
+OnViewCreated in the MainNavigationFragment wasn't called.
+
+Bug: 128241436
+Change-Id: I1e6aedb318c05f1b00d633735d710a2c183e75b2 | 2019-03-13 05:52:38 | fb356fb44ac6cdd39ebece7b5036b38d297833cf
+
+Added Feed screen [patched from legit/80111]
+Refactored all the support lib occurences with androidx and some other stuff
+Added FeatureFlag for Feed screen
+
+Screenshot: https://screenshot.googleplex.com/p48yTOcXP23.png
+Bug: 125512328
+Change-Id: Ie9552dd893cc81af71734979079c0e42928520c6 | 2019-03-07 05:42:47 | 0ab3141e4db069ec28847683b22b526461da447b
+
+More toolbar fixes
+
+Bug: 127419772
+Change-Id: Id839e301f553e6b439c89b3ffc6180f8a055b833 | 2019-03-05 00:02:54 | 2c760f1fb6b7d82b76f907a8217abec39a62a562
+
+Use AGP 3.3.1 and fix lifecycle owners
+
+Use Fragment.getViewLifecycleOwner() for Data Binding.
+
+Bug: 125356139
+Change-Id: I21b6ff6ea408943cced7c168166be174a303b413 | 2019-03-01 04:49:09 | 5bb439b7e12158785dc07f76d4c3a4151d693972
+
+Strictmode fixes.
+
+JSON loading in main thread when not signed in + Firebase workarounds.
+Still one not fixed related to Remote Config when opening the Info tab.
+
+Bug: 124097859
+
+Change-Id: I37d180c33644ea528470281a63f10b1155bc5bf5 | 2018-10-15 14:39:22 | 835a35c9d98ffcbc8ab9a35996583b5c8a147e86
+
+Enfore 100-char line limit via ktlint
+
+Manually fixed some code violations
+
+Change-Id: I87d68462b3b194da59015edd62ff45228f9b0820 | 2019-02-20 22:16:01 | 02640871fe324cde70158eca11e4fea696729592
+
+Removes check for signed in user to fix details screen bug
+
+This is a cherry pick of 95105 from ADSsched.
+
+Bug: 124097859
+Change-Id: Ib02b099ab4d67f3b0167b7172e4225dca66740d5 | 2019-02-13 21:35:05 | ed80085c0c90e189509bde2452d020f82193f027
+
+Fixes sign in/out bugs
+
+This is a cherry pick of 98865 from ADSsched.
+
+Bug: 124097859
+Change-Id: Ie91939712a740e351d3603a48e671fdfcdc18530 | 2019-02-13 21:27:17 | eb92b7117b79ecf1a313ffb4df5aa8996ddaa43c
+
+Fixes bug with stars when coming back from speaker screen
+
+This is a cherry pick of 100424 from ADSsched.
+
+Bug: 124097859
+Change-Id: I631e99daee22227c8391e7d6715c31896a247d78 | 2019-02-13 21:12:04 | 6421f5922118e81ac94f2333894ccc0fa7a05d99
+
+Fix job override deadline
+
+This is a cherry pick of 96044 from ADSsched, which addresses a bug reported on GitHub (https://github.com/google/iosched/issues/294)
+
+Bug: 124097859
+Change-Id: I701b94361fdb05498bae595ff93fb51cbbed1d38 | 2019-02-11 19:19:57 | aecbb990be6c985908a01036c64c5995064cb35b
+
+Styling fixes for Dark Mode
+
+It's not perfect yet, but this CL makes it a whole lot
+more usable.
+
+Change-Id: I431ea21da4d2fbafcea2b894983fcdffc7f31c1c | 2019-02-11 00:42:34 | 317e0f98020ce10507cb3c6594c2133e139c4277
+
+Fixes SDK location definition in build script to fix evasive proguard error
+
+Change-Id: If947936280d669d13417cfbfc01a6b0c511207d3
+(cherry picked from commit e3ece9293a1d5fe253e4e31f1829f81ac77760c9) | 2018-09-06 11:32:57 | a662118a9eae20b0e4e5c0ebb676d2c29fdaa6c0
+
+Attempt to fix the ProGuard error
+
+Change-Id: I8f622972dd155a7a686f2cd704c6e62d32d12dc7 | 2019-02-04 08:36:27 | 6240047230c858c5471b6b8802cb16d27a7e27b9
+
+[ATV] Fix details UI from being hidden
+
+Fix bug where details are not shown because photoUrl is null and the fragment transition cannot take place.
+Fix timezones to use conference timezone. Will use settings/preference to drive timezone in later commit.
+Remove background manager changing the background since there are no images to set as the background.
+
+Bug: 72441786
+Change-Id: I483e04edbdf15e8723f436aee0636feead13eac9 | 2018-07-24 21:52:35 | fee32f80f812befd097c112ef8c768d32852d5f8
+
+Migrate to androidx
+
+Additional changes required for this refactor:
+- Updated gradle plugin version
+- Updated databinding compiler version
+- Updated versions for other non-androidx dependencies
+- Borderless colored buttons broke, so updated our styles by using
+  Widget.MaterialComponents.Button.TextButton
+- Suppressed InvalidPackage lint warning
+- Fixed usage of Timber
+- Wear module needs additional cardview dependency due to a bug with
+  databinding library.
+- Increased gradle jvm heap space
+
+Bug: 80092217
+Change-Id: Icc4b8bdd49e486cab4f879c9468bf82566afbcde | 2018-05-18 23:32:25 | 4451898bbf96834e0732d66747a6e58af7b943cb
+
+Fix snackbars on Info > Events.
+
+Also fix the wifi password layout/background.
+
+Bug: 79322566
+Bug: 79113924
+Change-Id: I39335557edb03b5de7ab97951505cff6b1cfe09e | 2018-05-07 02:30:47 | 576fa1ce49b2c202295fc3c8fd688d5dc7c9396c
+
+Fix opening Map screen from session detail
+
+This implementation opens a shell activity containing just the Map.
+This is easier to keep consistent back navigation, at the cost of not
+allowing the user to go straight to other top-level navigation
+destinations.
+
+Also fixes centering on map markers when the user clicks on one.
+
+Bug: 77801061
+Bug: 78533287
+Change-Id: I0b0b301a66217329c14b9d0b2ca9b2dfb38a42b0 | 2018-04-10 20:18:55 | 866592070ba79c4902ba117ce47ecc91702f3ec5
+
+Merge "Disable Crashlytics on debug." | 2018-04-19 19:26:37 | 45653cd538f8f937876e0f5725e7afafd4899e98
+
+Disable Crashlytics on debug.
+
+Bug: 78259510
+
+Change-Id: If46c2689374956351edf608e23e3a7dff6d839e5 | 2018-04-19 14:20:35 | 5089ba3df6f97c0823a410accd67810e26bfcdb7
+
+Delay session filtering until filter animation has run.
+
+Also fix the content description.
+
+Bug: 78253558
+Change-Id: I9a28dbf526eb124393dd40823e77783d326889f1 | 2018-04-19 13:42:40 | a9106a56b9157d216f556ce53d81f1ee90bd45c2
+
+Merge "Animate tag filters & fix tinting on API 21." | 2018-04-17 13:22:59 | 0124dda248fe04c313dcff947688d907432488cf
+
+Animate tag filters & fix tinting on API 21.
+
+Bug: 75406190
+Bug: 77877707
+Change-Id: I13eec50143fe266b89042995874ec58994707a55 | 2018-04-16 17:13:36 | 59bc74f2519c95ae0b8fc229f8985dda0c7142fe
+
+Temporarily hide map icon on session detail screen.
+
+Will resurface once b/78025651 is fixed.
+
+Also remove outdated todo comment and suppress warning.
+
+Bug: 78025651
+Test: kokoro
+Change-Id: I8f8c7e342c92e89c17658d8131e53ac4220c5688 | 2018-04-13 23:02:24 | 0cb000561b01544fb1a7a23ab0e07f4d464c3f2d
+
+Maps API key for debug
+
+Change-Id: I78cb7b6c03538523b247d7c1ce70395e72cd0729 | 2018-04-12 15:37:42 | 1751d677c1106013975ca2a46ab1248f131b60a0
+
+Fix session room/time position bug.
+
+Change-Id: Icf2c25feb6fcb360ecf6f7b01850c71bb77e8c93 | 2018-04-11 21:56:50 | 1fc2241972edd357aeeae35de18def5c9a10873f
+
+Minor strings fixes
+
+- Replace Github with GitHub
+- Remove unneeded "?" from the sentence in the swap dialog
+
+Change-Id: I80522e0916b6253f998c7d085987ae89695f749f | 2018-04-11 04:29:40 | 0c8ec89868144cdd353944fe3d972c6811ffaec0
+
+Revert "Remove reservation from ScheduleViewModel."
+
+This reverts commit 2bbf9ecfffc23321353cb3eb14887521c3e7ea6f.
+
+Reason for revert:
+I noticed the tests invoked from the command line started to fail.
+Not sure why this didn't happen in Kokoro, but reverting this for now.
+
+> Task :mobile:testDebugUnitTest FAILED
+
+com.google.samples.apps.iosched.util.SetIntervalLiveDataTest > whenNotActive_mapDoesNotRunOnInterval FAILED
+    junit.framework.AssertionFailedError at SetIntervalLiveDataTest.kt:140
+
+com.google.samples.apps.iosched.util.SetIntervalLiveDataTest > whenSourceHasEmittedSeveral_thenMapFnIsCalledWithLastData FAILED
+    junit.framework.AssertionFailedError at SetIntervalLiveDataTest.kt:101
+
+com.google.samples.apps.iosched.util.SetIntervalLiveDataTest > whenNoIntervalsTriggered_thenMapFn_isOnlyCalledOnce FAILED
+    junit.framework.AssertionFailedError at SetIntervalLiveDataTest.kt:62
+
+com.google.samples.apps.iosched.util.SetIntervalLiveDataTest > whenNoIntervalsTriggered_thenMapFn_isCalledWhenNewValue FAILED
+    junit.framework.AssertionFailedError at SetIntervalLiveDataTest.kt:80
+
+Change-Id: I5088563fe63f9109fdb0a1330b2531b68240b6f6 | 2018-04-09 03:57:36 | 691c8cfb16ea12a96b3b492b8893b501016291e0
+
+Creates singleton Snackbar manager to fix duplicates between screens
+
+Bug: 77246840
+
+Change-Id: I3d443e7c1f225e1dd29d3db2449a79e54fb05248 | 2018-04-02 15:49:48 | e08468ba280986c507c7ff1025025da8f727f7fa
+
+Add swap reservations from the schedule and the session detail
+
+Also fixes the issue the message isn't shown after the reservation is
+canceled.
+
+Bug: 75984407
+Bug: 77159562
+
+Change-Id: I7b9ae133f7563628d0fb0a45c7b843d24eb4b2e6 | 2018-03-28 06:27:31 | 5af9a63e4e9c0b6112b4bb48652abf1414c9472a
+
+Add centerCrop scale type to Session Detail header image
+
+Addresses 2 bugs:
+- Gray background bars appear around Session Detail header image if
+  session has video
+- Update design of header image on Session Detail page for landscape
+  view
+
+This might not be the final design but at least it avoids showing gray
+bars for the header image.
+
+Bug: 76223349
+Bug: 76181958
+
+Test: Manual + Kokoro
+Change-Id: I04adaebd5b685a84237ae4e86a0360b3656cf121 | 2018-03-27 22:50:26 | 3b89d60feaf3b2acb1a544bbc67cabcc7a8ff3b5
+
+Fixes bug in the previous fix that prevented showing event messages
+
+Change-Id: I126e18ea02e004c29cd797d5c0a23ff291d08ecf | 2018-03-27 20:11:52 | 925a0676e5862f6cda1caf8dab89aebbe78a9a24
+
+Merge "Fixes bugs: too many firestore listeners + clash messages" | 2018-03-27 20:01:36 | f34e30ac66ee4f997fddfdd3f7ab19cd899963c7
+
+Fixes bugs: too many firestore listeners + clash messages
+
+Bug: 76428231,76428174
+Change-Id: I25e991ebf02dde1ddafd89d0415cddcedeacacc8 | 2018-03-26 20:30:33 | c64fb6ae1475f9886c6d065b2fa5a4e405f9e911
+
+Fix bug in order of determining reservation status.
+
+Change-Id: If2ade3a8214e7e8d7fac076142fdc863c2e653b3 | 2018-03-26 18:57:11 | 8cb0714fa788c28d698c8dfeade2d93d6552b29d
+
+Move schedule filters to bottom sheet
+
+This includes a port of BottomSheetBehavior from the material library.
+This is necessary at least temporarily to address the following bugs
+with that behavior (which are fixed here):
+
+- Calling setHideable(false) on a sheet which is currently HIDDEN makes
+  it jump abruptly to expanded state. (b/76204716)
+  This change makes it animate smoothly to the COLLAPSED state.
+
+- Setting the peek height to PEEK_HEIGHT_AUTO on a sheet which is
+  currently HIDDEN does not update the peek height. (b/76203821)
+  This change updates the peek height correctly.
+
+- Setting android:nestedScrollingEnabled="false" on a child of the sheet
+  (or on the sheet itself) to prevent nested scrolling events from
+  propagating to the parent CoordinatorLayout causes the scrolling view
+  not to work in one direction. (b/75977086)
+  This change fixes this issue.
+
+Bug: 74237649
+Change-Id: I80752e2d97d9e0987a2ec72ca76254c4dea21d0f | 2018-03-23 18:14:30 | c68846c02ef96da12064eb3462d9d6e122fb2307
+
+[ATV/Wear] Add source sets for debugrelease to wear and tv.
+
+Bug: 76171679
+Change-Id: Id07fd01a30a0050b416148a1df501d4e2ada20e9 | 2018-03-22 23:40:04 | d014982540c19ec4793af50d3d636680a3da3e0a
+
+Work around BottomAppBar shadow issue b/72034805.
+
+The BottomAppBar componenet currently cannot draw an appropriate
+elevation shadow for the cradle shape as it cannot draw beyond it's
+bounds nor can the platform elevation system draw a concave shaped
+shadow.
+
+This workaround introduces a parallel view the same size as the
+BottomAppBar with a 9-patch background, faking the shadow.
+
+Change-Id: I6b8436d5f164f097db33d1ec7d85edb86e31bb07 | 2018-03-22 12:49:17 | ec8556365fe391d3ff39a84a98a46faee25c414a
+
+Fixes firestore parsing crash.
+
+It's already fixed in the firestore reservations CL
+
+Change-Id: I1d16b8c6877a4a9c54724f4c8954acdb5399be97 | 2018-03-17 13:47:19 | 6e96dfccc8dc032d851fc317a9ceccab717fbbfe
+
+Merge "Remove the underscores from the prefix and the suffix for the id for the keynote." | 2018-03-16 10:49:49 | 1d2da20ee62498df1685a73c55806ede989ec4a1
+
+Remove the underscores from the prefix and the suffix for the id for the
+keynote.
+
+It turned out Firestore doesn't accept a document with id that starts
+and ends with "_".
+As a result, the document that represents UserEvent for the keynote wasn't stored in Firestore
+including its starred state.
+
+Confirmed that the document in Firestore and the star state in the emulator worked
+After I manually replaced the "__keynote__" with "keynote".
+
+The copy of the JSON seems to be placed at according to the comment in ConferenceDataDownloader
+"https://firebasestorage.googleapis.com/v0/b/iosched-playground.appspot.com/o/" +
+        "conference_data.json?alt=media&token=0c0a7ce8-f582-4ab2-a66e-29f335680399"
+It needs to be also replaced.
+
+Bug: 75013503
+Change-Id: I04a582b42fec0dfddeb91a558d2688ef29d268b6 | 2018-03-16 07:23:08 | 5ed9460914e227a60ead40caada85534b513c1c0
+
+Merge "Fix reloading bug on session details page" | 2018-03-15 20:19:59 | b1c49aee5fa7dc50c64902f5913e0e5fca9c90b7
+
+Fix reloading bug on session details page
+
+Bug: 73963235
+Test: Manual + Kokoro
+Change-Id: Iae1ac66afceb383401ea07f8c05ef1c0a75f274d | 2018-03-06 17:45:08 | b9dfac55e1c9a26d5d6aeefd3ff41e1d87e6373d
+
+Merge "Fixes sync bug in conference data repository" | 2018-03-13 13:31:43 | 9276471e1dcb454c933ba697e17982d804260320
+
+Fixes sync bug in conference data repository
+
+Change-Id: I5953b04cf839667fa68fe678a5722697002d0ec1 | 2018-03-12 17:49:18 | 7c8c5dc4fe5af7fb93c708c078fcc3e2c747dfa7
+
+Clean up shared module
+
+- Use one conference data json file instead of 3
+- Remove fake data sources now that we have conference json
+- Make debug variant use json instead of hardcoded fake data
+- Consolidate test data as much as possible
+
+Change-Id: I7da7e96a4ca15169d14c8ef9460ee0305e1ceef6 | 2018-03-07 16:35:09 | 91ea2be4b2c86dc8c04a90e5f585b121dc46045e
+
+Merge "Gradle debug option for CI" into 2018-development | 2018-03-04 04:24:38 | 5faa439e65bce9e789c1e51c8ac14c0ec02f93fc
+
+Gradle debug option for CI
+
+Allows a GRADLE_DEBUG environment variable to be set for continuous
+builds. If set to any value other than empty string, Gradle invocations
+are run with the --debug --stacktrace flags.
+
+Note that environment variables can only be passed to kokoro jobs via
+stubby.
+
+Change-Id: Ifdccbe3614f79a303c115abf70a12b9ba02554e3 | 2018-02-28 08:07:33 | 68d072aec50868e20bb762457e40e634859296b1
+
+Race condition fix. Replaced callbacks with LiveData + AS 3.1
+
+Change-Id: I6ba9a72a07166cb61481995a82312b00932d1b81 | 2018-01-23 19:19:02 | c1d57cf42914dc6b426b7dd0278d5f035fb8de3d
+
+Adds use cases framework, fixes threetenbp, adds Timber
+
+Change-Id: I6d2d48d5c58671393d72c5fa5bed9a019e064a31 | 2018-01-18 10:41:21 | 843c76502396de4fa187fcc6e388df70b8417b46
+
+Merge pull request #233 from amardeshbd/iosched/fixed/markdown_link_in_readme
+
+Fixed/markdown link in readme | 2017-07-18 19:43:44 | 78c1b196bb8b29be19699e948e6f7742ee1fd5d3
+
+Push sessions and reservations to vendor
+
+- Update function to push sessions to vendor
+- Update function to push reservations to vendor
+- Add room name when loading sessions. Room name
+  is required by vendor.
+- Schedule push reservations function to be called
+  once per hour, via a cron job.
+
+bug: 36813187
+Change-Id: I5322c3d56d5e057c4b90e213ad40349356ccd840 | 2017-05-09 21:17:28 | 222e6ca35dca1587dca84e931e99be5d4dfcc36b
+
+Merge "Fix filter bar bug on re-selection." | 2017-05-12 19:34:39 | 45d24aa338be1222de898cfdccb94dcf2e01d080
+
+Fix filter bar bug on re-selection.
+
+Bug: 38260613
+Change-Id: I26f3ef8e3b2c904c8ec20294f132a6039d36f14d | 2017-05-12 16:39:31 | 15766b376f35b7c3d3f0bd452aca983d0754c7bf
+
+Fix roatation bug in MDC BottomNav.
+
+Bug: 38256713
+Change-Id: I29e6c3ad5a690e2058f6baa579079aebd35c26bf | 2017-05-12 13:42:44 | 98b58266d784a031bdd2320a66f9abc3049ddfa7
+
+Ensure isRegistered RTDB write completes
+
+- Use a TaskCompletionSource to wait till registration status
+  is written to RTDB before returning status to the client.
+
+bug: 38153701
+Change-Id: I30f02c803e213189947fa318eb5a0a08a40c67b4 | 2017-05-10 00:01:57 | 1600de459639c0c3485da3c90df2f72cbb410b4b
+
+Send FCM pings on Feed updates.
+
+bug: 37851185
+Change-Id: Ia2d95f646d8cb32c18b39524b5e67185074a83ad | 2017-05-06 02:04:50 | 4e1ad8b6fc12653f63debca7190b96a9803bfee8
+
+Update bootstrap file.
+
+bug: 37906662
+Change-Id: I3ef0e16a5ebf6dd98e1d188f9761e2858e4fb839 | 2017-05-05 15:18:21 | 81504f9e6338bfec8f202a6d0cd15568e7a8df66
+
+Merge "Fix filters rotation bugs" | 2017-05-05 01:43:52 | 6bb07016429f1d020d5f560441625167db69ae96
+
+Fix filters rotation bugs
+
+- Fix "clear all" button disappearing
+- Fix event type filters losing checkmark
+
+Bug: 37958327
+Change-Id: Ic4143d01bda23e3ac0465fb411122626fc1369d4 | 2017-05-03 23:01:04 | a7c535ba8a8cce580f81578762a31256727d995e
+
+Merge "Hook up Info screen "View Map" links. Also fixed activity stack for "View Sessions"." | 2017-05-04 01:11:19 | 77d38e476325729c325cba9819c4893fdc0d5425
+
+Hook up Info screen "View Map" links. Also fixed activity stack for "View Sessions".
+
+Change-Id: I5e5edceef22149d7eb7440f62e0742b78be9c3ca | 2017-05-03 00:54:03 | 2427a30d2ad1dc03281557f71e1f39520860d682
+
+Merge pull request #229 from amilcar-andrade/get-activity-fix
+
+Use getActivity() for devices running L and below | 2017-05-01 18:10:20 | 5b09d514d7eda4e13771d1de5d1d9942e7656e85
+
+Removing animation from session detail fab.
+
+This is likely temporary. More details in the bug.
+
+BUG: 37810998
+Change-Id: Ife1a1a0bb2068a5d79bbc1dab2206038a1b16fc7 | 2017-04-29 22:30:04 | 6f6ce3c789df49060723f402396e8ebf62579ca2
+
+Add check to prevent NPE when unregistering FCM token.
+
+Devcie ID/FCM token must be non null in order to unregister.
+
+bug: 37808077
+Change-Id: I5e2048c598565bda4fdfef465e7b16f786d1872c | 2017-04-29 18:19:23 | 7d57829ef69aff97731d4c075e72684f995600fc
+
+Merge "Only allow reserving for sessions that are SESSION_TYPE_SESSION. Ignore accidental formatting fixes for unrelated stuff." | 2017-04-29 01:55:26 | b58fc3a370bcae8f666be61fc0290ba1ea26d126
+
+Use Endpoints to register FCM token and send self ping
+
+bug: 37720270
+Change-Id: Id483c512984052b3b477628ac682efe11527cc78 | 2017-04-28 23:57:51 | 6e3a71a4a440be3650640d5476c739110f3a8b1d
+
+Only allow reserving for sessions that are SESSION_TYPE_SESSION.
+Ignore accidental formatting fixes for unrelated stuff.
+
+Change-Id: I78717608167fdd1f587babd732a6cbfaeffa3c86 | 2017-04-29 00:54:40 | 5214115f7bf3706db7d1e33f1f79012cf681e4a2
+
+Handle errors during reservation.
+
+If there is an error during the processing of a reservation
+we should remove the queue item since that would prevent the
+user from making subsequent requests.
+
+bug: 36528831
+Change-Id: Iae1edd008960ea622549cf455cd722d5a7b8af50 | 2017-04-29 00:32:32 | b2068ff3336d134fef682542a70068c334a5b4c4
+
+Merge "Hyperlinks in HTML text now work but they're now underlined (mocks have links not underlined). To remove the underline, the text needs to be converted to a SpannableString which breaks ellipsize. Hacks exist to fix the problem (like re-implementing ellipsize as I previously tried to do in this file) but this CL is just to (at least) temporarily fix the links." | 2017-04-27 22:41:05 | a22914370ef37069f4a9001c358be6de25470a7b
+
+Hyperlinks in HTML text now work but they're now underlined
+(mocks have links not underlined). To remove the underline,
+the text needs to be converted to a SpannableString which
+breaks ellipsize. Hacks exist to fix the problem (like
+re-implementing ellipsize as I previously tried to do in
+this file) but this CL is just to (at least) temporarily
+fix the links.
+
+Change-Id: I3e42a45e473b1796189a46bd4906b2d078bdc43b | 2017-04-27 18:02:33 | a15ef6ce5c89a135a949d8b853e5f804208a7215
+
+Use Endpoints for CMS update
+
+This fixes the XSRF vulnerability that the Servlets had.
+
+bug: 37288207
+Change-Id: Ifb30e8f014560b6ef1c7c72a61a6e956cc675440 | 2017-04-26 22:34:49 | 1667c112a4b47ac5c1b97ccb886d5c27fd2dcce0
+
+Add endpoint for clients to submit session feedback.
+
+- This CL only adds the endpoint, this will unblock clients.
+- A follow up CL will implement the sending of the feedback
+  data to Event Point.
+
+bug: 37687229
+Change-Id: Iec808726f07ad7f3b1e521b525a3b96070cc6e59 | 2017-04-26 00:43:56 | 470ef3f09ff5b095a6694748a5699760f0cf202f
+
+Replace send message servlet with Endpoint.
+
+bug: 37288207
+Change-Id: I68fac572fe121d3702f4a5a821a3f40540996d0f | 2017-04-24 17:24:33 | 4749e7aac5716b3953880f36375babfba1747d6d
+
+Replace FCM register servlets with Endpoints
+
+- These Endpoints require same client IDs defined for DefJam
+  Registration Endpoint.
+
+bug: 37288207
+Change-Id: I232b5109555d650600dde56601cc3310293890fb | 2017-04-20 23:47:11 | 5adf26139262536f132f4914e273ca73d52523a4
+
+Replace serving url servlet with endpoint.
+
+Replacing servlet with Cloud Endpoint so that hardcoded keys can
+be avoided.
+
+bug: 37288207
+Change-Id: If507d4e7aef08047bfe78d6208f985301a7b34a9 | 2017-04-25 00:34:19 | 81f45ee0c262e6c5168ec1f09ccdaadc5bb82658
+
+Remove AdminServlet, no longer used.
+
+bug: 37288207
+Change-Id: Ib3f964028d4292f93f3d04dfd32875da0c5dee9c | 2017-04-25 01:10:12 | 04507be923f895472b4bab627e531353b3c6a66e
+
+Update conference dates on server side.
+
+- Fix bug preventing live sessions from being shown.
+
+Change-Id: I55fab2d6f9a55a9d0294656d6235458ff8302143 | 2017-04-22 14:03:35 | de7f566592a7b24fa502a41c3d30f394e878de1f
+
+Process GeoJson correctly after loading.
+
+Move the GeoJson processing from the MarkerLoadingTask into the
+MapFragment. This fixes the configuration change issues on the map.
+
+Bug: 37555803
+Change-Id: Ifc3c155f67c615e130996ebc3bfb3a1271b6c6f2 | 2017-04-21 06:25:12 | 9c55836a5ba3be444da7a8c57fad3e195583f268
+
+Use user ID to map against FCM token
+
+- Fix bug where sync is not initiated when userdata is updated.
+- Ensure that FCM token is mapped against user ID and not
+  random UUID.
+- Remove FCM Key getters and setters.
+- AccountUtils already has enough methods to do the job
+  of mapping FCM tokens to a user ID if available.
+
+Change-Id: I08b6dcab221ef19b246fe9c8d72cd1f5ff790a32 | 2017-04-22 00:52:58 | 0ab2b0b5266701042cc6b0baab7e608f901b9c26
+
+Send ping to user's devices when user's reservation data is updated
+
+- Send sync_user FCM ping when user's reservation data is saved.
+- Remove delay while idle setting since it is now ignored by FCM.
+- Use SNAPSHOT gcm-server library so we can set content_available
+  field. This allows iOS devices to receive silent notifications.
+bug: 37321781
+Change-Id: I614548a90e23008708222e1e81f5cec4b08e85df | 2017-04-19 16:01:09 | 6932df19bd333f2296da1ab287b2b5542eb5fe0d
+
+Merge "Move debug to Info screen and do some cleanup" | 2017-04-18 23:14:23 | 09d88cd686de6396a018cfbeeabb6386a0db2a71
+
+Move debug to Info screen and do some cleanup
+
+Change-Id: I61fd95cb67ce8a38da25a48b6e4e065551c57c2d | 2017-04-17 19:54:59 | a80dcf66a51a06961c9ac6c512e35171fe2ebf48
+
+Merge "Temporary fix to feed crash related to empty link" | 2017-04-18 14:07:03 | bc78605c2d5e791504b41f5333e586c673002fee
+
+Temporary fix to feed crash related to empty link
+
+Change-Id: Idbdda31c311db6169cbd4389c5ea2fe00223afa1 | 2017-04-18 12:29:32 | 61938f74def889737e8271c9ea9decaedabbc1cf
+
+Load sessions for reservations
+
+- Load new sessions into RTDB from GCS so they can be reserved.
+- Update sessions in RTDB with values from GCS if they differ.
+  - If session has more reservations than seats, excess is moved
+    to waitlist.
+  - If session has waitlist and reservable seats, promote waitlist
+    reservations till no more seats or no more waitlist.
+- Only Admins can run this servlet.
+
+bug: 37180623
+Change-Id: I6a044622f0d0bf89e86c0b190be6275d469060f8 | 2017-04-17 16:16:07 | 6d9ea83f5edc0629e9b798d5ec1002bff2e6c458
+
+Using separate google-services.json for debug and release.
+
+Change-Id: I067c1ab9b7861bace07cbc492185fbd5b323eb61 | 2017-04-14 20:20:36 | bb908222ef2acfba6ed9406d88d23a74bff29714
+
+Write to ContentProvider when reservation/
+return request succeeds.
+
+Also fixed some reservation bugs.
+
+Bug: 37017189
+Change-Id: I2d59c413b3104918db6b26a9e0f72e8771983af5 | 2017-04-12 05:00:42 | d0ea75d3f141bbaedb6ba1194754a7dfa60d23b3
+
+Push reservation changes to App Server
+
+Reservation status changes are pushed to
+App Server using UserData client library
+loaded from discovery doc.
+
+bug: 36813613
+Change-Id: Ia7e9cfa283fbaf34039f89495119ab1d40ca96bd | 2017-04-08 15:32:04 | e57c87e76b3e5b057b892bfafd9760cc7de0f28a
+
+Merge "Fix reserve button bug on Lollipop." | 2017-04-12 21:52:56 | 2ce34d2e206dc2728fc5faae3e7f99fa1a56e22e
+
+Fix reserve button bug on Lollipop.
+
+Bug: 37264752
+Change-Id: Id8441da5e69309f2535f14e47b6d9ca451b25dbb | 2017-04-12 10:49:39 | a330ef5a79de1bcbb1c1296bca9b8957f83183ca
+
+Tweaks to filter headers.
+
+- Use same height for Filter header & Topics.
+- Elevation shadow on fixed header when filter list is scrolled.
+
+Change-Id: I553f8770d94a7edf8c737d216f81523212a821b6 | 2017-04-10 10:11:23 | b763b78053be09ca944114a0f5b2ef445251cac7
+
+Handle reservation requests with ID
+
+- Write request results agains request ID
+- Update functions to handle request ID
+- Change writing results of requests to
+  be done one property at a time:
+  status > last change > result
+
+bug: 36974469
+Change-Id: I6105082d1b9e8978e150b0467af843101a0d30b1 | 2017-04-05 18:11:30 | a3c6240cbb136ddbd77eec052cb2e36599a32ea0
+
+Merge "Fixed reservation status UI update bug." | 2017-04-06 02:09:14 | d56b1957fc8843d001c1ca527e4f4c6010a78b2e
+
+Fixed reservation status UI update bug.
+
+Change-Id: I4a2ca5c626df24ce66c26d8234c0a2329735267a | 2017-04-05 20:26:28 | 26971b55bbac9e09f637d96f8c9124a0f37a64e0
+
+Disable broken tests
+
+This should be reverted and fixed properly, but for the moment
+it's blocking development.
+
+Change-Id: I2942f4a1a2bb814134c5a2b28caa485f7b884405 | 2017-04-03 18:50:56 | f800fd3ddb302cfc66507066c326c82b2dedd3a1
+
+Fixed bug for onboarding sign in fragment not clearing.
+
+BUG: 36854306
+Change-Id: I21ea9249b0bf43ee0bb23fb4ef44d006c87911af | 2017-04-03 16:23:40 | 86bf8f8d9a51e86067e5edc07a9d32b2c4a2eb62
+
+Merge "Fixed bug with onboarding sign in" | 2017-04-01 22:53:04 | bb5b77cd69ba5d313857419c1233e323fee50c51
+
+Fixed bug with onboarding sign in
+
+Change-Id: I158fe1c6fbf2c0a76b73d5b982f268c692902b5d | 2017-04-01 22:52:17 | fe38d8cf411c42b63345e313caefe1bebdc024ad
+
+BottomNavView has a max number of 5 buttons so to make room for Info:
+-Moved debug nav button from bottomnavview to a FAB on My Schedule.
+-Removed some dead nav code for settings, about, sign in, and video lib.
+
+Bug: 36738054
+Change-Id: I3253721d098fe518cc7ff4e9195406fe70792595 | 2017-03-29 22:56:38 | 0ada1c75fbb4a7cd102975c07efc0ce3ada24d5e
+
+Firebase and support changes:
+
+-Upgraded GCM -> FCM and enabled Firebase Messaging.
+-Updated android_support_lib_version 25.1.1 -> 25.3.1.
+-Added debug Firebase project to app. TODO: add release project.
+-Removed Firebase v2 dependency.
+
+Bug: 36700561
+Change-Id: Ib2bb13ff7443cfb305333ec6268d55032f5a0711 | 2017-03-24 22:17:50 | 227467bfccc2796f1b60ffa78e77e54090e527ce
+
+Change requests to have an intension.
+
+Requests now need to include an action (reserve or return).
+- queue
+    - uid
+        - session: <sid>
+        - action: <reserve/return>
+
+Results of requests are written as an object.
+- sessions
+    - reservations
+        - uid
+            - result: <last request result>
+            - status: <current reservation status>
+
+bug: 36527346
+Change-Id: I09ffbbd3d907b18af7468cc65b24caf92d5cdb55 | 2017-03-25 04:27:15 | 3366f419a2b7db8fb2c9b21196e7facfa0a39792
+
+Add Firebase Functions to handle session reservations.
+
+- Setup Cloud Functions for Firebase
+- Add listener to process reservations requests
+
+bug: 36526447
+Change-Id: I6d0c0c85144a011ad7e32026b80d3fa59cd5cabb | 2017-03-19 22:38:03 | c1a8ec403a36ccc1ff1abd80a847d4b587244ea8
+
+Fix certain sessions not being synced
+
+This is because for debug builds we are currently
+pointing to a 2016 dev data bucket which no longer
+exists. Fixed by pointing to the public feed for now.
+
+Also tidied up some of the conference data
+handling, since I was debugging it.
+
+BUG: 35710851
+
+Change-Id: I6cbac9bf30177adfa23674d3ab0f7517e5c28c81 | 2017-03-15 14:02:21 | d6f8e1a89c9ec3d9543036229f6489474846e2f0
+
+Fix RecyclerView not re-binding views
+
+Happens because we now use stable ids, but the
+ids we provide are not stable. This CL fixes
+it by generating IDs from more data points.
+
+BUG: 35789131
+Change-Id: I237be66b883ed96cda3f4c1a02032962ec7051ab | 2017-02-27 10:37:42 | 038642e5585daa90266560a20320c3e176741a34
+
+Merge "Added debug to bottom nav." | 2017-02-24 23:32:54 | 454b41800d63e092865a9f5e0e27ef23e190062a
+
+Added debug to bottom nav.
+
+Removed Explore.
+
+Change-Id: I65e2ec67fd63649fb707b178a70e2e7a767800da | 2017-02-23 06:53:11 | 0e02fa99af900bc3147b8891d34b186c262d914e
+
+More quick lint fixes
+
+- Add targetApi markings
+- Fix or suppress DefaultLocale
+- Suppress RtlHardcoded when using Gravity constants
+- Fix or suppress InconsistentLayout
+- Suppress InlinedApi
+- Suppress NewApi
+
+Change-Id: I7402212cfdc0488fdfe7eb3c783a8a989c03bca2 | 2017-02-02 20:24:52 | 985e659d79552d29d2c460f9b779b171b2d33f6e
+
+Re-apply primary color change
+
+Must have been wiped out in the recent
+lint fixes.
+
+Change-Id: I3b627c89192f01b577431ee244b115a378806f9c | 2017-02-07 12:52:48 | 4336bed81c24405c0ce8b331b48d76f3791f1c3c
+
+Fixup some string resources
+
+- Ignore placeholder strings
+- Formatting args cleanup. Note that one Russian plural case needs to
+  be fixed.
+
+Change-Id: I16019f727e4d9c30703d6a5f5739cf942818ac5b | 2017-02-02 18:57:45 | def3a959803f7cfe081cb1d22989cb65767016c0
+
+Merge "Remove guava, don't multidex debug builds" | 2017-02-01 16:51:12 | d4976dc1f7c721ea2e2105c213609077ff3a6a02
+
+Remove guava, don't multidex debug builds
+
+Guava has a large footprint and was being sparsely used, so let's
+remove it. Summary of how usages were substituted:
+- Charsets.UTF_8 -> Replaced with constant in IOUtils
+- Strings.isNullOrEmpty() -> Replaced with TextUtils.isEmpty()
+- @VisibleForTesting -> Replaced with @VisibleForTesting in
+  android.support.annotation, since the support annotations were
+  already included in our dependencies
+- Preconditions.checkNotNull() and Preconditions.checkState() -> Copied
+  into new PreconditionUtils class
+
+With Guava removed, we are well within the dex limit even without
+proguard minification, and incremental debug builds are faster.
+
+Change-Id: I5e067315b8bee1b8fd6b22802af2ddb5a6e8c3ab | 2016-10-17 21:08:47 | a9c26403fe165271c5e7c9db9bc5b34f8a3c6b97
+
+Move to support fragments + loaders
+
+Not sure why we were using the platform impl
+but the support version is always preferred
+but to bug-fixes, etc.
+
+Test: unit + android tests pass
+
+Change-Id: Iee7b2b2398abf3ad7009fc70cb1b3e5d7419770d | 2017-01-27 10:25:26 | d030a4dad6b981471debb5ace50906c72624589f
+
+Fixing test build.
+
+Many of the tests marked suppressed failed when run
+in an instrumentation with all tests. Those tests
+succeed when run only as part of the test package.
+I've disabled them anyway because the test build need
+to pass with all tests run together.
+
+The test library updates are required to pickup some bug fixes
+that were causing some of the test issues.
+
+Bug: 28369715
+Change-Id: Ic1abd17dc5ae2102ad8e487cbca4db2029ea65e2 | 2016-07-15 22:40:35 | b380864f137ab58c1c5ec923c6c5211750cef792
+
+Protect against NPEs that showed up in Play store.
+
+There is a different bug that addresses fixing the fact that the
+adapter is recreated when it doesn't have to be.
+
+Bug: 28828007
+Change-Id: Ia6ee5988e9af3945ebfa29765a21d33ea2ae61f1 | 2016-07-14 22:18:12 | 8877c6492e463c16ca0797609a13fec8ec470410
+
+Removing 2015 art files.
+
+2016 Art files will be re-added. Leaving the bug
+open until that happens.
+
+Bug: 28338238
+Change-Id: I840e56666736066ff3101c70845e5df2efe20575 | 2016-07-14 00:13:13 | 281c701d8e74b9235e42cfa162c7939bb16d3a4d
+
+Merge "Added video play test, fixed both video tests for when youTube app is installed" | 2016-07-06 19:01:51 | 11b738f6884f38be41e858ea61d282af4ff7797d
+
+Merge "Some fixes for Japanese strings. " | 2016-05-26 03:27:55 | 0077cc59c29f2c0eef4eb40673b0d32993b8e1c5
+
+Some fixes for Japanese strings. 
+
+Change-Id: I2f99869b99f3c42ccc7e910626a5085f8843748f | 2016-05-20 21:39:41 | 280d43cc596f00ebe098961f370384109bad7c75
+
+Added video play test, fixed both video tests for when youTube app is installed
+
+Bug: #28310731
+Change-Id: I4807f828c4bdc49ffaa4ea5ef4cd2b939678ca3e | 2016-05-12 11:14:27 | b6f1b5739f7fe79e9368011b202903482172345a
+
+Merge "Fix bug with provider package conflict." | 2016-05-06 17:52:50 | b01224ea1a647872b10c7cfa2f7e57c3bbc5fccb
+
+Merge "Explore Sessions tool+status bar fixes." | 2016-05-06 00:50:41 | dd6a931495e7cd95581826376d94a4cff2509b22
+
+Fix bug with provider package conflict.
+
+Bug: 28588823
+Change-Id: I7dc2bcae336467177e818bf5bf827ea295aa209c | 2016-05-04 20:00:17 | 8e8386c3d6b82275f58e8d06944ad1ce3283d753
+
+Explore Sessions tool+status bar fixes.
+
+– Also applied to Video library filtered.
+– Corrected layout naming convention.
+
+Bug: 28611823
+Bug: 28611873
+Bug: 28426109
+Change-Id: Id6b3e10e1d8585fd2c52a6a005b4cf7bd6e2d1d0 | 2016-05-05 15:44:02 | 5ff60376d1a0cab6127c8dc06eef80f4913882fe
+
+Clean up tick <-> plus animation.
+
+– Consolodated multiple anims into sets.
+– Use path morph on API 23+.
+– Work around bug in NDP2.
+
+Bug: 28609561
+Change-Id: Ib576fe72ce89ab96140430fd3b87436d426dad59 | 2016-05-05 12:23:26 | fa41a34540119cefac81a944f8fb35bf681910a5
+
+Minimize logging when not debuggable.
+
+Bug: 28388512
+Change-Id: Iec62a2c582f0b5d55a5f68be54d25afcd4449410 | 2016-04-26 04:56:42 | 59adf119f173ddaf0ddc80f7cf7c0e8370bc7d58
+
+Merge "Couple more 15 -> 16 fixes." | 2016-04-25 23:19:56 | 72ce86b7e9675d2404fc5da63ab6e0f74f6e7f55
+
+Couple more 15 -> 16 fixes.
+
+Change-Id: Ib2e20bf004bcd8c1cebe536630abbd6a91071adb | 2016-04-25 23:10:59 | 18a4bbc0f23613764103e024e42e5e3d58583e5a
+
+Merge "Fix for bug in showing "watch" live text" | 2016-04-25 20:43:41 | ecb98299c79b944be4e23835c2de8aa4eff6b8ea
+
+Fixed bug for viewed videos not updating properly
+
+Bug: #28373596
+Bug: #28361418
+Change-Id: I298712c966411b780f679272c85dcd5aa5992647 | 2016-04-25 18:00:03 | 763facdec98eaa74236026d3ad2092aa3818c214
+
+Merge "Fixed bug for Explore IO not updating itself after changing logged in user" | 2016-04-25 16:54:09 | 0cdab6eba9716c2cb46dd3abe45f3de14711ddc0
+
+Fixed bug for Explore IO not updating itself after changing logged in user
+
+Bug: #28361418
+Change-Id: I95dcc1c30201dcc5dd5574b3eba3945e0214ff1e | 2016-04-25 13:11:30 | 1fc0a868a159e3b543f671d9d26f63ed432abf5a
+
+Fix for bug in showing "watch" live text
+
+Bug: #28208316
+Change-Id: I7c5be95c01c08b5ddb3355dea3ba018995f7e93f | 2016-04-25 10:15:57 | 43c219eb84e847ca4c0c0f9639d35b1feca3c485
+
+Simplify floor plan SVG file.
+
+This fixes rendering issues with the overlay tiles on some devices.
+
+Bug: 28332763
+Change-Id: I7dc60615e6f288b19196d391066b939fe24e1884 | 2016-04-22 08:21:51 | 090af65e52c620fee258dfa2fad5e7d4cdfd5276
+
+Merge "Fixed UI title/image bugs in Explore sessions screen" | 2016-04-20 16:00:21 | cff5e5097f1a56bcb1f8ca8415b7449707a4e792
+
+Fixed UI title/image bugs in Explore sessions screen
+
+Bug: #28283527
+Change-Id: I14ed68ecd2b87bb91efd4dd74b820b65caa3ee0c | 2016-04-20 10:53:45 | 4b09a6b9438e9ff4b0326588fa0e1d43088bc66b
+
+Merge "Fixed bug when tapping display WelcomeActivity in debug screen" | 2016-04-20 15:31:05 | 097ae8c34661d0e4af397851c4230e7d192239de
+
+Fixed bug when tapping display WelcomeActivity in debug screen
+
+Bug: #27995560
+Change-Id: Icbd1a6ced9a1c8b92d8131b85a1433fc95581b73 | 2016-04-20 08:56:59 | 19e75035d953cb509583a6877fdeaa919255e423
+
+Merge "Fixing bug with resident Snackbar." | 2016-04-20 00:32:03 | 863c2b56a5bf174ad5964abcb505b3ca4d7aa641
+
+Fixing bug with resident Snackbar.
+
+Needed to dismiss the Snackbar when resuming
+the AccountSelection screen in case the user
+accepted the permissions.
+
+Change-Id: Icfd198f7a4e157619314887f9cad980bcf38cf23 | 2016-04-19 23:28:52 | bbeaea1582dac0266bbdb8c43358a5cf1f34a404
+
+Updating targetSdk to target 23.
+
+Implemented runtime permissions:
+-Storage and Accounts are required for the
+app so they are enforced with the Welcome screen flow.
+This ensures they are re-inforced any time the app is
+opened.
+-Calendar is only needed when Calendar sync is enabled.
+So the permission check for that was done dynamically in
+settings.
+-Created product flavor so that the debug variant could
+be tested without having to remember to grant permissions
+ahead of time.
+
+Bug: 28192652
+Change-Id: I1efdb4a951f3ccdabd403d64329c0d417f55f64d | 2016-04-15 04:43:35 | c0e4d449ba1931a9085b31b7823d245d0c2844f1
+
+Fixing bug with unconfigured tags.
+
+Bug: 28243233
+Change-Id: Ie390a8a8023843a4a157a94d08dfcd0fade4d0df | 2016-04-18 22:13:29 | 5be5636ae25be7b50232f2b49d186d29b15b5228
+
+Merge "Added 3rd day to MySchedule tab layout, fixed issues when rotating screen on my schedule screen on tablet" | 2016-04-18 17:36:38 | f2526ff9b4b4395a0140ff514c220ac194a082f4
+
+Added 3rd day to MySchedule tab layout, fixed issues when rotating screen on my schedule screen on tablet
+
+Bug: #28238650
+Bug: #26705643
+Bug: #28238531
+Bug: #28238534
+
+Change-Id: I0d6db7b1c499b8c9fe1c8d96e2a09472b71f2507 | 2016-04-18 13:38:42 | 1beb08cade6c8eb6577c327dde18aa7bb28e3d1f
+
+Merge "Fixed video tint bug on API<21 devices." | 2016-04-14 15:56:06 | 400dcc77c86111b9c07aaba497b6c092639fbd4b
+
+Merge "Fix bug when calculating day in explore sessions screen" | 2016-04-14 15:34:07 | da84d377f2cd5183f98e70240fce8c1d37df843f
+
+Fix bug when calculating day in explore sessions screen
+
+Bug: #28185957
+Change-Id: I88505de4282443af21ed2eb01575e6cd90871e56 | 2016-04-14 13:16:28 | 82c066ee04b6772ab653b72de261151aadca60ab
+
+Fixed video tint bug on API<21 devices.
+
+Also a race condition in the empty state message.
+
+Bug: 28184552
+Bug: 28184094
+Change-Id: I784b14743153f8a88ff19ee57c4b78217869aa41 | 2016-04-14 10:43:26 | 295c208d7266860c27563c4c76bd8913c4e51f45
+
+Merge "Fixed jank in search animation due to bug in calculating radius." into vnext_design | 2016-04-12 15:16:54 | b9a139172a73981feef7e8741aa7f31de6aa40cd
+
+Fixed jank in search animation due to bug in calculating radius.
+
+Bug: 28130940
+Change-Id: Ic63e12bd72d455064cc1c618e106d69cb3ba6fcc | 2016-04-12 11:55:02 | d09993b06324ee46987319ec04eba7d81e9a8365
+
+Include test data required by tests
+
+Change-Id: I120e54f0d8a5a1bf738a0b33d64e4eb0e855a4c2
+bug: 27987564 | 2016-04-05 16:46:39 | 26fa95132f7ae069e447a355549263baef5e0cbc
+
+Fixed failing unit tests, fixed corner case in minutes calculation in session detail model
+
+Bug: #27987953
+Bug: #27989428
+Change-Id: Ia9719c3cb2eb8a30f16986e9a107e57f66023606 | 2016-04-04 12:47:29 | 16ac64642d7fd75c4808be1f18faeaee07c3c051
+
+Disable SessionDetailModelTest for prodrelease
+
+This test is broken. Temporarily disabling it so we can get a beta
+build.
+
+This change will be reverted once this build has been dispatched to
+the CI server.
+
+Change-Id: Ic8dd1fdcd20d14c2bf32bb5e2829ad9f8489d4cd | 2016-04-04 06:15:49 | 98a6b74290899d139e31070a49123723bad022c6
+
+Add Proguard rules to fix build
+
+Fixed warnings caused by references to missing methods via dependencies:
+-dontwarn org.w3c.dom.bootstrap.DOMImplementationRegistry
+-dontwarn com.larvalabs.svgandroid.**
+
+Fixed warnings caused by use of reflection by Jackson:
+-keepattributes InnerClasses,EnclosingMethod
+
+Change-Id: I40b126561688ce1528b6e0b414831cc265d33250 | 2016-04-03 08:39:04 | 9d98fe3553053cff3b0527ebca6c8c46025eb85e
+
+RecyclerView enhancements for Explore & Videos.
+
+Figured out how to re-introduce a shared view pool. Marked RVs as fixed sized and made item
+click handling more defensive.
+
+Change-Id: Ic09fc66ef00be8ff9081d88642b492a958e0dadc | 2016-04-02 13:14:00 | 86a7dc2ad3d3b25f2a3b1493fc7a861fb4f89333
+
+Re-adding debug.keystore.
+
+Change-Id: Iafafa5cd35039601ec5a2a252ea647ac708f0957 | 2016-03-14 23:49:52 | 16d099edc810e966bfb4d60142b6f2cb4fd51b47
+
+RFR - fix for bug in Header view refactoring
+
+Change-Id: I58ac8bc1771abce6bde768922a2e61523df0e17c | 2016-03-04 16:46:07 | fa11679f8939a9640e6c5db6da32c0e7f05e3788
+
+Added UI tests for actions firing intents in session details activity
+
+- Implemented tests previously marked as ignored
+- Moved starting activity from model to fragment
+- Changed start activity to always use getActivity().startActivity in Fragment
+instead of directly startActivity, due to bug in Intento in M
+- Rewrote unit tests to use mock callback object
+
+Change-Id: I673d2429c747e0a2bb60d4e083a46223edb7188a | 2016-02-18 13:12:36 | 26f90d3ba4f1c058b22574fb29a92b70ba24c290
+
+Merge "Renamed UI tests that have use case in test name, fixed typos" into vnext_arch | 2016-02-18 11:18:19 | 38393911b900e57abac4b521bb5c2f8645fc4632
+
+Renamed UI tests that have use case in test name, fixed typos
+
+Change-Id: Ife112aaf52245283fa5e1b580f8f290c2d7f78a5 | 2016-02-17 16:19:01 | f6811c3c532e12ff5dbc981c7ead78a51cf0041d
+
+Refactored MySchedule for readability
+
+1. Added a fragment for wide layout
+2. Renamed fragment/views/adapter
+3. Added javadoc to explain how the fragments/views are used
+4. Refactored ViewPagerAdapter out of Activity
+5. Light refactoring in activity (renaming methods etc)
+6. Added javadoc to activity
+7. Moved methods to set/get current time from UIUtils to TimeUtils
+8. Added method to TimeUtils to easily set current time to x ms
+   before/after start/end/start of second day of conference
+9. Added UI tests
+10. Fixed bug of tab not changing highlight when swiping horizontally
+
+Change-Id: I3a5991eec0bc7835254928dd0370855e9e61078d | 2016-01-19 11:48:35 | c3df4a2e246f299b0374c8aa01611dd64d3f354e
+
+Merge pull request #78 from alsutton/fix_feedback_sync_can_incorrectly_number_questions
+
+Use an empty ArrayList for each session being sychronsied | 2015-01-07 14:51:26 | b8b238fbec47b329833cbdb2a5fc01b253d3ca15
+
+Merge pull request #107 from romannurik/github-master
+
+Import some local fixes | 2015-01-06 17:08:56 | cf1f30b4c752f275518384a9b71404ee501fc473
+
+Import some local fixes
+
+Change-Id: I408707a9b5474aa40755fd041169ac8503df9817 | 2015-01-06 17:07:24 | ba58a9886b4541beb8fc8ac1c031646d5a2073e6
+
+Formatting fix | 2014-11-03 10:54:48 | 32cafb4d7d31e784bf0fa897ce79e5b130fccb0f
+
+Merge pull request #71 from romannurik/master
+
+Update to v21 SwipeRefreshLayout. Also fix nav drawer BACK button bug. | 2014-10-22 04:04:13 | f2e87424ea7cc0c3f8022f984966091ea746a23e
+
+Update to v21 SwipeRefreshLayout. Also fix nav drawer BACK button bug.
+
+Change-Id: I13a0880240c4d49b2fdca5948594567332ca8aaf | 2014-10-22 03:57:02 | 1d8ff282225275a06977489ed12d93ac925bca8e
+
+Merge pull request #65 from VipSaran/master
+
+Fix for 20.0.0 build tools bug | 2014-10-20 13:28:52 | 2bbaedd62fb9f6f2dcdc1b53edc73f2fb3e6f1b3
+
+Fix for 20.0.0 build tools bug
+
+reference: https://code.google.com/p/android/issues/detail?id=77629 | 2014-10-20 13:04:13 | ed15d4c160f610260d5d59aaa61aa984e333548b
+
+Merge pull request #53 from ogwiz2/patch-1
+
+Added periods to comments for better consistency | 2014-10-18 12:39:13 | 302d5b17501e2b7b7ca916cc19bd589a6287d191
+
+Merge pull request #56 from ardock/fixtravis
+
+Fix .travis.yml, typo in android-19 component name | 2014-10-18 12:31:06 | 988642815aa4b710c129dd5d2a204de8f588a322
+
+Pull in final L-related code changes and other fixes. | 2014-10-18 12:19:46 | 8c798c58e592b8a25111610e216c7f3ee74c3a42
+
+Merge pull request #32 from ph0b/patch-1
+
+fix french localization of "speaker" | 2014-08-12 23:04:58 | aa437dd4ec4534dc57e7a81e0138f8a9f75d463e
+
+Add debug keystore
+
+A keystore needs to be present in order to enable continuous integration
+builds. This is standard Android debug keystore with a 100 year
+validity. | 2014-08-12 21:24:55 | 0f7e56ff2588b816476fbad253554f49003e869d
+
+fix french localization of "speaker"
+
+In french, a "haut-parleur" is an amplifier, not a person.
+I propose to change this current translation to "orateur". | 2014-08-07 07:34:19 | 3f26dde80b6f09b5ab68545796d270bbf9907e2e
+
+Merge pull request #24 from seewes/patch-1
+
+Replace .commit() with .apply() in PrefUtils.java | 2014-08-04 14:47:53 | b9631146b1acdea4f6bb510eae5a3ce3438c2357
+
+Merge pull request #319 from google/fix_travis
+
+Fix travis CI | 2019-08-14 15:55:10 | 5275cd953641e21746b98776a66872e1d01fdf2a
+
+Add versionNameSuffix to build configs
+
+Adds a versionNameSuffix so that it's easy to tell which build variant
+is running by checking in Settings. Release builds have no suffix.
+
+Change-Id: I9290a95dba5b11434ae8aca6e217c0ec75f1b972 | 2019-04-29 21:40:05 | 9d93dce1cbcb69b19ed5892658153c4e7495856b
+
+Fix the height of "1" in countdown
+
+Also fix the countdown flickering
+
+Bug: 130888011
+Change-Id: I562a69138ba7f61d31ff47b487e0838e44f1a775 | 2019-04-22 05:52:08 | 7c06b99cd81f2f6ef815defbd946f11dc837067e
+
+Search improvements
+
+- Show keyboard when search is opened
+  (The code for opening keyboard wasn't working)
+- Update the search result as the user type
+- Sort the results by SessionType. Keynotes come first, followed by
+  sessions, app reviews, game reviews...
+- Fix the subtext of a search result to correctly show the SessionType
+
+Also fixes
+- Keynotes are parsed as SessionType.UNKNOWN
+
+Generating the search result is happening in a worker thread, so this
+won't freeze the UI even with a low spec device.
+
+Bug: 130197327
+Bug: 130935002
+Change-Id: Ib091537260a325689fcd20b990ed85409039bf44 | 2019-04-20 11:17:46 | a18a5a230ac9d90bb9a266925c1776bd90a1945b
+
+Mitigate the filter inset issue
+
+This does not fix the issue but makes it less noticeable by adjusting its position afterwards.
+
+Bug: 130523711
+Change-Id: I3da541e4d4e2806f1b2103bf085d91144284d719 | 2019-04-19 07:50:56 | 4738b46a0f238b29548180f1f90641da15896e67
+
+Fix back handling when using gesture nav
+
+Two issues fixed in this CL:
+- Back when the drawer is open does not actually
+  invoke super.onBackPressed().
+- Disable drawer gesture exclusion logic for locked
+  drawers. This enables back to work correctly on the
+  detail screens.
+
+Change-Id: Ic598239458806ffdd63a73495cbc373a751a4be4 | 2019-04-18 04:10:19 | 834f194f01179975dc75921c27717eec8e4c75c2
+
+Make the FAQ tab in Info screen visible.
+
+The performance issue hasn't been fixed, but tracking in a different
+issue
+
+Bug: 129981789
+Change-Id: Id19258aae89e7928219642c1b3ca8b7467773ded | 2019-04-12 12:05:20 | dff47b4f07b1bf6b72b36dd25d9e74f9e31c3e81
+
+Color fixes for Lollipop
+
+Bug: 130384512
+Change-Id: I94bd8a309e522c92d47bb6186f7d4b179c6bf29f | 2019-04-12 03:10:33 | 1b5d19465f59d7eb4ab39fcbbbae56f7685dd51a
+
+Replace padding(Horizontal|Vertical)
+
+Because it's introduced in API level 26
+Also fixes the text for Assistnat app to I/O 19
+
+Bug: 130271181
+Change-Id: I6c5b14b59fbf024462a250c5e287f092eb254497 | 2019-04-11 07:54:44 | c2ab3663c1b264befdf199458101f02344ba274d
+
+Update travel tag in Info screen
+
+Also fixed CollapsibleCard to allow HTML can be parsed in the
+description
+
+Bug: 129981686
+Bug: 130326314
+Change-Id: Ib3ef4b36762e4e2d38b67f91c43f265a390fdab6 | 2019-04-11 06:15:28 | 4e586c74774e56a8be690b005af369ab25f08d19
+
+RTL fixes for Map
+
+Bug: 130316965
+Change-Id: I0be479820101c34b950b2f72cb4eeb4960877d47 | 2019-04-11 01:06:33 | 69e873491c6f9acde89b6515f5cb19286ecb6f79
+
+RTL fixes for Info
+
+Bug: 130310104
+Change-Id: I8b849fa3bb18da0034e4dcd746a989066c46d14b | 2019-04-10 22:51:23 | 21cae616c15cd406de14d379c605795ccb99da62
+
+RTL fixes for Settings
+
+Bug: 130308969
+Change-Id: I9db704261cf620724ef708fd8395a19cd65b3d73 | 2019-04-10 21:58:24 | 835a0932b4a6aaba9ce1c412dd1ecbea24a0b496
+
+RTL fixes for Speakers
+
+Bug: 130307696
+Change-Id: I36303fdd0f48fdb06b70faaa7f984ae19391a60d | 2019-04-10 21:45:08 | a95204f478b00cd82ff3ad4ecb95f14c1b61c4c0
+
+RTL fixes for Schedule
+
+Bug: 130306434
+Change-Id: I57b3b6c94d7e3aebd8854b64326e6a16e0c81904 | 2019-04-10 19:18:32 | 15cca77db07592f4c495d10094d6a9fedb832330
+
+RTL fixes for Codelabs
+
+Bug: 130306676
+Change-Id: I10a53aef6ec3d9aac4270a73e42351cbc9a786b4 | 2019-04-10 21:20:46 | cea1e4b6b1b74cca1cc374595e06572003ce7ac7
+
+RTL fixes for Agenda
+
+Bug: 130295189
+Change-Id: I9e3e33df829122a7cc7961a24ea7e4fc9054a97d | 2019-04-10 18:20:22 | 16caf0fe5082cb7c2ef94b2bb29f4b48ab1505ba
+
+Tidy up inset and gesture handling for Android Q
+
+Make the Drawer work with system gestures on Q.
+Eventually we'll be able to depend on an updated
+version of DrawerLayout in AndroidX, but today is
+not that day.
+
+Also removed all references to tappable element insets
+which are the wrong insets for us to use. System window
+insets should be used normally, with system gesture
+insets needed for views which scroll (such as bottom
+sheets).
+
+Also fixed the logic for closing the drawer from 'back'
+gesture. We now disable that action when gesture navigation
+is enabled.
+
+BUG: 128876715
+
+Change-Id: I41b341c3f23dbfad201c7857738a364c5d10ed9a | 2019-04-01 02:57:43 | bca689f6cdf683368e46cbf0cf28ab37e3a2093c
+
+Removes LeakCanary and an extra call to firestore
+
+Cherry pick from adssched. legit/95285
+
+Let's file a separate bug if we can enable LeakCanary again
+
+Bug: 124096834
+Change-Id: I6cf51da8b5c2721f3d4f22b7465ae7f59a44850f | 2019-03-19 08:39:25 | 7844de72b1f95c8b64d1852717a3a60ea0daddca
+
+Add prefix for Firestore data for 2019
+
+Bug: 124807886
+Change-Id: Ic56cd320009c036d77c791844f4a29d7ce86d514 | 2019-02-20 06:20:23 | b06952d209deadabc90909e1481129545c004424
+
+Make app go edge-to-edge
+
+This CL makes the majority of the app draw from top
+to bottom, behind the status and navigation bars.
+
+I haven't touch session or speaker details yet,
+that will come in a later CL.
+
+The custom build of MDC is because it includes
+an upcoming bug fix in AppBarLayout which will
+be available in v1.1.0-alpha05.
+
+Change-Id: I61ecf1ea6e17e1868388d18fbdd29f34f1559e8a | 2019-03-08 05:32:00 | 84ef129ef20cd87119edbb26ccaf1ab5aa58418b
+
+Fix the bug toolbar doesn't open in Feed
+
+OnViewCreated in the MainNavigationFragment wasn't called.
+
+Bug: 128241436
+Change-Id: I1e6aedb318c05f1b00d633735d710a2c183e75b2 | 2019-03-13 05:52:38 | fb356fb44ac6cdd39ebece7b5036b38d297833cf
+
+Added Feed screen [patched from legit/80111]
+Refactored all the support lib occurences with androidx and some other stuff
+Added FeatureFlag for Feed screen
+
+Screenshot: https://screenshot.googleplex.com/p48yTOcXP23.png
+Bug: 125512328
+Change-Id: Ie9552dd893cc81af71734979079c0e42928520c6 | 2019-03-07 05:42:47 | 0ab3141e4db069ec28847683b22b526461da447b
+
+More toolbar fixes
+
+Bug: 127419772
+Change-Id: Id839e301f553e6b439c89b3ffc6180f8a055b833 | 2019-03-05 00:02:54 | 2c760f1fb6b7d82b76f907a8217abec39a62a562
+
+Use AGP 3.3.1 and fix lifecycle owners
+
+Use Fragment.getViewLifecycleOwner() for Data Binding.
+
+Bug: 125356139
+Change-Id: I21b6ff6ea408943cced7c168166be174a303b413 | 2019-03-01 04:49:09 | 5bb439b7e12158785dc07f76d4c3a4151d693972
+
+Strictmode fixes.
+
+JSON loading in main thread when not signed in + Firebase workarounds.
+Still one not fixed related to Remote Config when opening the Info tab.
+
+Bug: 124097859
+
+Change-Id: I37d180c33644ea528470281a63f10b1155bc5bf5 | 2018-10-15 14:39:22 | 835a35c9d98ffcbc8ab9a35996583b5c8a147e86
+
+Enfore 100-char line limit via ktlint
+
+Manually fixed some code violations
+
+Change-Id: I87d68462b3b194da59015edd62ff45228f9b0820 | 2019-02-20 22:16:01 | 02640871fe324cde70158eca11e4fea696729592
+
+Removes check for signed in user to fix details screen bug
+
+This is a cherry pick of 95105 from ADSsched.
+
+Bug: 124097859
+Change-Id: Ib02b099ab4d67f3b0167b7172e4225dca66740d5 | 2019-02-13 21:35:05 | ed80085c0c90e189509bde2452d020f82193f027
+
+Fixes sign in/out bugs
+
+This is a cherry pick of 98865 from ADSsched.
+
+Bug: 124097859
+Change-Id: Ie91939712a740e351d3603a48e671fdfcdc18530 | 2019-02-13 21:27:17 | eb92b7117b79ecf1a313ffb4df5aa8996ddaa43c
+
+Fixes bug with stars when coming back from speaker screen
+
+This is a cherry pick of 100424 from ADSsched.
+
+Bug: 124097859
+Change-Id: I631e99daee22227c8391e7d6715c31896a247d78 | 2019-02-13 21:12:04 | 6421f5922118e81ac94f2333894ccc0fa7a05d99
+
+Fix job override deadline
+
+This is a cherry pick of 96044 from ADSsched, which addresses a bug reported on GitHub (https://github.com/google/iosched/issues/294)
+
+Bug: 124097859
+Change-Id: I701b94361fdb05498bae595ff93fb51cbbed1d38 | 2019-02-11 19:19:57 | aecbb990be6c985908a01036c64c5995064cb35b
+
+Styling fixes for Dark Mode
+
+It's not perfect yet, but this CL makes it a whole lot
+more usable.
+
+Change-Id: I431ea21da4d2fbafcea2b894983fcdffc7f31c1c | 2019-02-11 00:42:34 | 317e0f98020ce10507cb3c6594c2133e139c4277
+
+Fixes SDK location definition in build script to fix evasive proguard error
+
+Change-Id: If947936280d669d13417cfbfc01a6b0c511207d3
+(cherry picked from commit e3ece9293a1d5fe253e4e31f1829f81ac77760c9) | 2018-09-06 11:32:57 | a662118a9eae20b0e4e5c0ebb676d2c29fdaa6c0
+
+Attempt to fix the ProGuard error
+
+Change-Id: I8f622972dd155a7a686f2cd704c6e62d32d12dc7 | 2019-02-04 08:36:27 | 6240047230c858c5471b6b8802cb16d27a7e27b9
+
+[ATV] Fix details UI from being hidden
+
+Fix bug where details are not shown because photoUrl is null and the fragment transition cannot take place.
+Fix timezones to use conference timezone. Will use settings/preference to drive timezone in later commit.
+Remove background manager changing the background since there are no images to set as the background.
+
+Bug: 72441786
+Change-Id: I483e04edbdf15e8723f436aee0636feead13eac9 | 2018-07-24 21:52:35 | fee32f80f812befd097c112ef8c768d32852d5f8
+
+Migrate to androidx
+
+Additional changes required for this refactor:
+- Updated gradle plugin version
+- Updated databinding compiler version
+- Updated versions for other non-androidx dependencies
+- Borderless colored buttons broke, so updated our styles by using
+  Widget.MaterialComponents.Button.TextButton
+- Suppressed InvalidPackage lint warning
+- Fixed usage of Timber
+- Wear module needs additional cardview dependency due to a bug with
+  databinding library.
+- Increased gradle jvm heap space
+
+Bug: 80092217
+Change-Id: Icc4b8bdd49e486cab4f879c9468bf82566afbcde | 2018-05-18 23:32:25 | 4451898bbf96834e0732d66747a6e58af7b943cb
+
+Fix snackbars on Info > Events.
+
+Also fix the wifi password layout/background.
+
+Bug: 79322566
+Bug: 79113924
+Change-Id: I39335557edb03b5de7ab97951505cff6b1cfe09e | 2018-05-07 02:30:47 | 576fa1ce49b2c202295fc3c8fd688d5dc7c9396c
+
+Fix opening Map screen from session detail
+
+This implementation opens a shell activity containing just the Map.
+This is easier to keep consistent back navigation, at the cost of not
+allowing the user to go straight to other top-level navigation
+destinations.
+
+Also fixes centering on map markers when the user clicks on one.
+
+Bug: 77801061
+Bug: 78533287
+Change-Id: I0b0b301a66217329c14b9d0b2ca9b2dfb38a42b0 | 2018-04-10 20:18:55 | 866592070ba79c4902ba117ce47ecc91702f3ec5
+
+Merge "Disable Crashlytics on debug." | 2018-04-19 19:26:37 | 45653cd538f8f937876e0f5725e7afafd4899e98
+
+Disable Crashlytics on debug.
+
+Bug: 78259510
+
+Change-Id: If46c2689374956351edf608e23e3a7dff6d839e5 | 2018-04-19 14:20:35 | 5089ba3df6f97c0823a410accd67810e26bfcdb7
+
+Delay session filtering until filter animation has run.
+
+Also fix the content description.
+
+Bug: 78253558
+Change-Id: I9a28dbf526eb124393dd40823e77783d326889f1 | 2018-04-19 13:42:40 | a9106a56b9157d216f556ce53d81f1ee90bd45c2
+
+Merge "Animate tag filters & fix tinting on API 21." | 2018-04-17 13:22:59 | 0124dda248fe04c313dcff947688d907432488cf
+
+Animate tag filters & fix tinting on API 21.
+
+Bug: 75406190
+Bug: 77877707
+Change-Id: I13eec50143fe266b89042995874ec58994707a55 | 2018-04-16 17:13:36 | 59bc74f2519c95ae0b8fc229f8985dda0c7142fe
+
+Temporarily hide map icon on session detail screen.
+
+Will resurface once b/78025651 is fixed.
+
+Also remove outdated todo comment and suppress warning.
+
+Bug: 78025651
+Test: kokoro
+Change-Id: I8f8c7e342c92e89c17658d8131e53ac4220c5688 | 2018-04-13 23:02:24 | 0cb000561b01544fb1a7a23ab0e07f4d464c3f2d
+
+Maps API key for debug
+
+Change-Id: I78cb7b6c03538523b247d7c1ce70395e72cd0729 | 2018-04-12 15:37:42 | 1751d677c1106013975ca2a46ab1248f131b60a0
+
+Fix session room/time position bug.
+
+Change-Id: Icf2c25feb6fcb360ecf6f7b01850c71bb77e8c93 | 2018-04-11 21:56:50 | 1fc2241972edd357aeeae35de18def5c9a10873f
+
+Minor strings fixes
+
+- Replace Github with GitHub
+- Remove unneeded "?" from the sentence in the swap dialog
+
+Change-Id: I80522e0916b6253f998c7d085987ae89695f749f | 2018-04-11 04:29:40 | 0c8ec89868144cdd353944fe3d972c6811ffaec0
+
+Revert "Remove reservation from ScheduleViewModel."
+
+This reverts commit 2bbf9ecfffc23321353cb3eb14887521c3e7ea6f.
+
+Reason for revert:
+I noticed the tests invoked from the command line started to fail.
+Not sure why this didn't happen in Kokoro, but reverting this for now.
+
+> Task :mobile:testDebugUnitTest FAILED
+
+com.google.samples.apps.iosched.util.SetIntervalLiveDataTest > whenNotActive_mapDoesNotRunOnInterval FAILED
+    junit.framework.AssertionFailedError at SetIntervalLiveDataTest.kt:140
+
+com.google.samples.apps.iosched.util.SetIntervalLiveDataTest > whenSourceHasEmittedSeveral_thenMapFnIsCalledWithLastData FAILED
+    junit.framework.AssertionFailedError at SetIntervalLiveDataTest.kt:101
+
+com.google.samples.apps.iosched.util.SetIntervalLiveDataTest > whenNoIntervalsTriggered_thenMapFn_isOnlyCalledOnce FAILED
+    junit.framework.AssertionFailedError at SetIntervalLiveDataTest.kt:62
+
+com.google.samples.apps.iosched.util.SetIntervalLiveDataTest > whenNoIntervalsTriggered_thenMapFn_isCalledWhenNewValue FAILED
+    junit.framework.AssertionFailedError at SetIntervalLiveDataTest.kt:80
+
+Change-Id: I5088563fe63f9109fdb0a1330b2531b68240b6f6 | 2018-04-09 03:57:36 | 691c8cfb16ea12a96b3b492b8893b501016291e0
+
+Creates singleton Snackbar manager to fix duplicates between screens
+
+Bug: 77246840
+
+Change-Id: I3d443e7c1f225e1dd29d3db2449a79e54fb05248 | 2018-04-02 15:49:48 | e08468ba280986c507c7ff1025025da8f727f7fa
+
+Add swap reservations from the schedule and the session detail
+
+Also fixes the issue the message isn't shown after the reservation is
+canceled.
+
+Bug: 75984407
+Bug: 77159562
+
+Change-Id: I7b9ae133f7563628d0fb0a45c7b843d24eb4b2e6 | 2018-03-28 06:27:31 | 5af9a63e4e9c0b6112b4bb48652abf1414c9472a
+
+Add centerCrop scale type to Session Detail header image
+
+Addresses 2 bugs:
+- Gray background bars appear around Session Detail header image if
+  session has video
+- Update design of header image on Session Detail page for landscape
+  view
+
+This might not be the final design but at least it avoids showing gray
+bars for the header image.
+
+Bug: 76223349
+Bug: 76181958
+
+Test: Manual + Kokoro
+Change-Id: I04adaebd5b685a84237ae4e86a0360b3656cf121 | 2018-03-27 22:50:26 | 3b89d60feaf3b2acb1a544bbc67cabcc7a8ff3b5
+
+Fixes bug in the previous fix that prevented showing event messages
+
+Change-Id: I126e18ea02e004c29cd797d5c0a23ff291d08ecf | 2018-03-27 20:11:52 | 925a0676e5862f6cda1caf8dab89aebbe78a9a24
+
+Merge "Fixes bugs: too many firestore listeners + clash messages" | 2018-03-27 20:01:36 | f34e30ac66ee4f997fddfdd3f7ab19cd899963c7
+
+Fixes bugs: too many firestore listeners + clash messages
+
+Bug: 76428231,76428174
+Change-Id: I25e991ebf02dde1ddafd89d0415cddcedeacacc8 | 2018-03-26 20:30:33 | c64fb6ae1475f9886c6d065b2fa5a4e405f9e911
+
+Fix bug in order of determining reservation status.
+
+Change-Id: If2ade3a8214e7e8d7fac076142fdc863c2e653b3 | 2018-03-26 18:57:11 | 8cb0714fa788c28d698c8dfeade2d93d6552b29d
+
+Move schedule filters to bottom sheet
+
+This includes a port of BottomSheetBehavior from the material library.
+This is necessary at least temporarily to address the following bugs
+with that behavior (which are fixed here):
+
+- Calling setHideable(false) on a sheet which is currently HIDDEN makes
+  it jump abruptly to expanded state. (b/76204716)
+  This change makes it animate smoothly to the COLLAPSED state.
+
+- Setting the peek height to PEEK_HEIGHT_AUTO on a sheet which is
+  currently HIDDEN does not update the peek height. (b/76203821)
+  This change updates the peek height correctly.
+
+- Setting android:nestedScrollingEnabled="false" on a child of the sheet
+  (or on the sheet itself) to prevent nested scrolling events from
+  propagating to the parent CoordinatorLayout causes the scrolling view
+  not to work in one direction. (b/75977086)
+  This change fixes this issue.
+
+Bug: 74237649
+Change-Id: I80752e2d97d9e0987a2ec72ca76254c4dea21d0f | 2018-03-23 18:14:30 | c68846c02ef96da12064eb3462d9d6e122fb2307
+
+[ATV/Wear] Add source sets for debugrelease to wear and tv.
+
+Bug: 76171679
+Change-Id: Id07fd01a30a0050b416148a1df501d4e2ada20e9 | 2018-03-22 23:40:04 | d014982540c19ec4793af50d3d636680a3da3e0a
+
+Work around BottomAppBar shadow issue b/72034805.
+
+The BottomAppBar componenet currently cannot draw an appropriate
+elevation shadow for the cradle shape as it cannot draw beyond it's
+bounds nor can the platform elevation system draw a concave shaped
+shadow.
+
+This workaround introduces a parallel view the same size as the
+BottomAppBar with a 9-patch background, faking the shadow.
+
+Change-Id: I6b8436d5f164f097db33d1ec7d85edb86e31bb07 | 2018-03-22 12:49:17 | ec8556365fe391d3ff39a84a98a46faee25c414a
+
+Fixes firestore parsing crash.
+
+It's already fixed in the firestore reservations CL
+
+Change-Id: I1d16b8c6877a4a9c54724f4c8954acdb5399be97 | 2018-03-17 13:47:19 | 6e96dfccc8dc032d851fc317a9ceccab717fbbfe
+
+Merge "Remove the underscores from the prefix and the suffix for the id for the keynote." | 2018-03-16 10:49:49 | 1d2da20ee62498df1685a73c55806ede989ec4a1
+
+Remove the underscores from the prefix and the suffix for the id for the
+keynote.
+
+It turned out Firestore doesn't accept a document with id that starts
+and ends with "_".
+As a result, the document that represents UserEvent for the keynote wasn't stored in Firestore
+including its starred state.
+
+Confirmed that the document in Firestore and the star state in the emulator worked
+After I manually replaced the "__keynote__" with "keynote".
+
+The copy of the JSON seems to be placed at according to the comment in ConferenceDataDownloader
+"https://firebasestorage.googleapis.com/v0/b/iosched-playground.appspot.com/o/" +
+        "conference_data.json?alt=media&token=0c0a7ce8-f582-4ab2-a66e-29f335680399"
+It needs to be also replaced.
+
+Bug: 75013503
+Change-Id: I04a582b42fec0dfddeb91a558d2688ef29d268b6 | 2018-03-16 07:23:08 | 5ed9460914e227a60ead40caada85534b513c1c0
+
+Merge "Fix reloading bug on session details page" | 2018-03-15 20:19:59 | b1c49aee5fa7dc50c64902f5913e0e5fca9c90b7
+
+Fix reloading bug on session details page
+
+Bug: 73963235
+Test: Manual + Kokoro
+Change-Id: Iae1ac66afceb383401ea07f8c05ef1c0a75f274d | 2018-03-06 17:45:08 | b9dfac55e1c9a26d5d6aeefd3ff41e1d87e6373d
+
+Merge "Fixes sync bug in conference data repository" | 2018-03-13 13:31:43 | 9276471e1dcb454c933ba697e17982d804260320
+
+Fixes sync bug in conference data repository
+
+Change-Id: I5953b04cf839667fa68fe678a5722697002d0ec1 | 2018-03-12 17:49:18 | 7c8c5dc4fe5af7fb93c708c078fcc3e2c747dfa7
+
+Clean up shared module
+
+- Use one conference data json file instead of 3
+- Remove fake data sources now that we have conference json
+- Make debug variant use json instead of hardcoded fake data
+- Consolidate test data as much as possible
+
+Change-Id: I7da7e96a4ca15169d14c8ef9460ee0305e1ceef6 | 2018-03-07 16:35:09 | 91ea2be4b2c86dc8c04a90e5f585b121dc46045e
+
+Merge "Gradle debug option for CI" into 2018-development | 2018-03-04 04:24:38 | 5faa439e65bce9e789c1e51c8ac14c0ec02f93fc
+
+Gradle debug option for CI
+
+Allows a GRADLE_DEBUG environment variable to be set for continuous
+builds. If set to any value other than empty string, Gradle invocations
+are run with the --debug --stacktrace flags.
+
+Note that environment variables can only be passed to kokoro jobs via
+stubby.
+
+Change-Id: Ifdccbe3614f79a303c115abf70a12b9ba02554e3 | 2018-02-28 08:07:33 | 68d072aec50868e20bb762457e40e634859296b1
+
+Race condition fix. Replaced callbacks with LiveData + AS 3.1
+
+Change-Id: I6ba9a72a07166cb61481995a82312b00932d1b81 | 2018-01-23 19:19:02 | c1d57cf42914dc6b426b7dd0278d5f035fb8de3d
+
+Adds use cases framework, fixes threetenbp, adds Timber
+
+Change-Id: I6d2d48d5c58671393d72c5fa5bed9a019e064a31 | 2018-01-18 10:41:21 | 843c76502396de4fa187fcc6e388df70b8417b46
+
+Merge pull request #233 from amardeshbd/iosched/fixed/markdown_link_in_readme
+
+Fixed/markdown link in readme | 2017-07-18 19:43:44 | 78c1b196bb8b29be19699e948e6f7742ee1fd5d3
+
+Push sessions and reservations to vendor
+
+- Update function to push sessions to vendor
+- Update function to push reservations to vendor
+- Add room name when loading sessions. Room name
+  is required by vendor.
+- Schedule push reservations function to be called
+  once per hour, via a cron job.
+
+bug: 36813187
+Change-Id: I5322c3d56d5e057c4b90e213ad40349356ccd840 | 2017-05-09 21:17:28 | 222e6ca35dca1587dca84e931e99be5d4dfcc36b
+
+Merge "Fix filter bar bug on re-selection." | 2017-05-12 19:34:39 | 45d24aa338be1222de898cfdccb94dcf2e01d080
+
+Fix filter bar bug on re-selection.
+
+Bug: 38260613
+Change-Id: I26f3ef8e3b2c904c8ec20294f132a6039d36f14d | 2017-05-12 16:39:31 | 15766b376f35b7c3d3f0bd452aca983d0754c7bf
+
+Fix roatation bug in MDC BottomNav.
+
+Bug: 38256713
+Change-Id: I29e6c3ad5a690e2058f6baa579079aebd35c26bf | 2017-05-12 13:42:44 | 98b58266d784a031bdd2320a66f9abc3049ddfa7
+
+Ensure isRegistered RTDB write completes
+
+- Use a TaskCompletionSource to wait till registration status
+  is written to RTDB before returning status to the client.
+
+bug: 38153701
+Change-Id: I30f02c803e213189947fa318eb5a0a08a40c67b4 | 2017-05-10 00:01:57 | 1600de459639c0c3485da3c90df2f72cbb410b4b
+
+Send FCM pings on Feed updates.
+
+bug: 37851185
+Change-Id: Ia2d95f646d8cb32c18b39524b5e67185074a83ad | 2017-05-06 02:04:50 | 4e1ad8b6fc12653f63debca7190b96a9803bfee8
+
+Update bootstrap file.
+
+bug: 37906662
+Change-Id: I3ef0e16a5ebf6dd98e1d188f9761e2858e4fb839 | 2017-05-05 15:18:21 | 81504f9e6338bfec8f202a6d0cd15568e7a8df66
+
+Merge "Fix filters rotation bugs" | 2017-05-05 01:43:52 | 6bb07016429f1d020d5f560441625167db69ae96
+
+Fix filters rotation bugs
+
+- Fix "clear all" button disappearing
+- Fix event type filters losing checkmark
+
+Bug: 37958327
+Change-Id: Ic4143d01bda23e3ac0465fb411122626fc1369d4 | 2017-05-03 23:01:04 | a7c535ba8a8cce580f81578762a31256727d995e
+
+Merge "Hook up Info screen "View Map" links. Also fixed activity stack for "View Sessions"." | 2017-05-04 01:11:19 | 77d38e476325729c325cba9819c4893fdc0d5425
+
+Hook up Info screen "View Map" links. Also fixed activity stack for "View Sessions".
+
+Change-Id: I5e5edceef22149d7eb7440f62e0742b78be9c3ca | 2017-05-03 00:54:03 | 2427a30d2ad1dc03281557f71e1f39520860d682
+
+Merge pull request #229 from amilcar-andrade/get-activity-fix
+
+Use getActivity() for devices running L and below | 2017-05-01 18:10:20 | 5b09d514d7eda4e13771d1de5d1d9942e7656e85
+
+Removing animation from session detail fab.
+
+This is likely temporary. More details in the bug.
+
+BUG: 37810998
+Change-Id: Ife1a1a0bb2068a5d79bbc1dab2206038a1b16fc7 | 2017-04-29 22:30:04 | 6f6ce3c789df49060723f402396e8ebf62579ca2
+
+Add check to prevent NPE when unregistering FCM token.
+
+Devcie ID/FCM token must be non null in order to unregister.
+
+bug: 37808077
+Change-Id: I5e2048c598565bda4fdfef465e7b16f786d1872c | 2017-04-29 18:19:23 | 7d57829ef69aff97731d4c075e72684f995600fc
+
+Merge "Only allow reserving for sessions that are SESSION_TYPE_SESSION. Ignore accidental formatting fixes for unrelated stuff." | 2017-04-29 01:55:26 | b58fc3a370bcae8f666be61fc0290ba1ea26d126
+
+Use Endpoints to register FCM token and send self ping
+
+bug: 37720270
+Change-Id: Id483c512984052b3b477628ac682efe11527cc78 | 2017-04-28 23:57:51 | 6e3a71a4a440be3650640d5476c739110f3a8b1d
+
+Only allow reserving for sessions that are SESSION_TYPE_SESSION.
+Ignore accidental formatting fixes for unrelated stuff.
+
+Change-Id: I78717608167fdd1f587babd732a6cbfaeffa3c86 | 2017-04-29 00:54:40 | 5214115f7bf3706db7d1e33f1f79012cf681e4a2
+
+Handle errors during reservation.
+
+If there is an error during the processing of a reservation
+we should remove the queue item since that would prevent the
+user from making subsequent requests.
+
+bug: 36528831
+Change-Id: Iae1edd008960ea622549cf455cd722d5a7b8af50 | 2017-04-29 00:32:32 | b2068ff3336d134fef682542a70068c334a5b4c4
+
+Merge "Hyperlinks in HTML text now work but they're now underlined (mocks have links not underlined). To remove the underline, the text needs to be converted to a SpannableString which breaks ellipsize. Hacks exist to fix the problem (like re-implementing ellipsize as I previously tried to do in this file) but this CL is just to (at least) temporarily fix the links." | 2017-04-27 22:41:05 | a22914370ef37069f4a9001c358be6de25470a7b
+
+Hyperlinks in HTML text now work but they're now underlined
+(mocks have links not underlined). To remove the underline,
+the text needs to be converted to a SpannableString which
+breaks ellipsize. Hacks exist to fix the problem (like
+re-implementing ellipsize as I previously tried to do in
+this file) but this CL is just to (at least) temporarily
+fix the links.
+
+Change-Id: I3e42a45e473b1796189a46bd4906b2d078bdc43b | 2017-04-27 18:02:33 | a15ef6ce5c89a135a949d8b853e5f804208a7215
+
+Use Endpoints for CMS update
+
+This fixes the XSRF vulnerability that the Servlets had.
+
+bug: 37288207
+Change-Id: Ifb30e8f014560b6ef1c7c72a61a6e956cc675440 | 2017-04-26 22:34:49 | 1667c112a4b47ac5c1b97ccb886d5c27fd2dcce0
+
+Add endpoint for clients to submit session feedback.
+
+- This CL only adds the endpoint, this will unblock clients.
+- A follow up CL will implement the sending of the feedback
+  data to Event Point.
+
+bug: 37687229
+Change-Id: Iec808726f07ad7f3b1e521b525a3b96070cc6e59 | 2017-04-26 00:43:56 | 470ef3f09ff5b095a6694748a5699760f0cf202f
+
+Replace send message servlet with Endpoint.
+
+bug: 37288207
+Change-Id: I68fac572fe121d3702f4a5a821a3f40540996d0f | 2017-04-24 17:24:33 | 4749e7aac5716b3953880f36375babfba1747d6d
+
+Replace FCM register servlets with Endpoints
+
+- These Endpoints require same client IDs defined for DefJam
+  Registration Endpoint.
+
+bug: 37288207
+Change-Id: I232b5109555d650600dde56601cc3310293890fb | 2017-04-20 23:47:11 | 5adf26139262536f132f4914e273ca73d52523a4
+
+Replace serving url servlet with endpoint.
+
+Replacing servlet with Cloud Endpoint so that hardcoded keys can
+be avoided.
+
+bug: 37288207
+Change-Id: If507d4e7aef08047bfe78d6208f985301a7b34a9 | 2017-04-25 00:34:19 | 81f45ee0c262e6c5168ec1f09ccdaadc5bb82658
+
+Remove AdminServlet, no longer used.
+
+bug: 37288207
+Change-Id: Ib3f964028d4292f93f3d04dfd32875da0c5dee9c | 2017-04-25 01:10:12 | 04507be923f895472b4bab627e531353b3c6a66e
+
+Update conference dates on server side.
+
+- Fix bug preventing live sessions from being shown.
+
+Change-Id: I55fab2d6f9a55a9d0294656d6235458ff8302143 | 2017-04-22 14:03:35 | de7f566592a7b24fa502a41c3d30f394e878de1f
+
+Process GeoJson correctly after loading.
+
+Move the GeoJson processing from the MarkerLoadingTask into the
+MapFragment. This fixes the configuration change issues on the map.
+
+Bug: 37555803
+Change-Id: Ifc3c155f67c615e130996ebc3bfb3a1271b6c6f2 | 2017-04-21 06:25:12 | 9c55836a5ba3be444da7a8c57fad3e195583f268
+
+Use user ID to map against FCM token
+
+- Fix bug where sync is not initiated when userdata is updated.
+- Ensure that FCM token is mapped against user ID and not
+  random UUID.
+- Remove FCM Key getters and setters.
+- AccountUtils already has enough methods to do the job
+  of mapping FCM tokens to a user ID if available.
+
+Change-Id: I08b6dcab221ef19b246fe9c8d72cd1f5ff790a32 | 2017-04-22 00:52:58 | 0ab2b0b5266701042cc6b0baab7e608f901b9c26
+
+Send ping to user's devices when user's reservation data is updated
+
+- Send sync_user FCM ping when user's reservation data is saved.
+- Remove delay while idle setting since it is now ignored by FCM.
+- Use SNAPSHOT gcm-server library so we can set content_available
+  field. This allows iOS devices to receive silent notifications.
+bug: 37321781
+Change-Id: I614548a90e23008708222e1e81f5cec4b08e85df | 2017-04-19 16:01:09 | 6932df19bd333f2296da1ab287b2b5542eb5fe0d
+
+Merge "Move debug to Info screen and do some cleanup" | 2017-04-18 23:14:23 | 09d88cd686de6396a018cfbeeabb6386a0db2a71
+
+Move debug to Info screen and do some cleanup
+
+Change-Id: I61fd95cb67ce8a38da25a48b6e4e065551c57c2d | 2017-04-17 19:54:59 | a80dcf66a51a06961c9ac6c512e35171fe2ebf48
+
+Merge "Temporary fix to feed crash related to empty link" | 2017-04-18 14:07:03 | bc78605c2d5e791504b41f5333e586c673002fee
+
+Temporary fix to feed crash related to empty link
+
+Change-Id: Idbdda31c311db6169cbd4389c5ea2fe00223afa1 | 2017-04-18 12:29:32 | 61938f74def889737e8271c9ea9decaedabbc1cf
+
+Load sessions for reservations
+
+- Load new sessions into RTDB from GCS so they can be reserved.
+- Update sessions in RTDB with values from GCS if they differ.
+  - If session has more reservations than seats, excess is moved
+    to waitlist.
+  - If session has waitlist and reservable seats, promote waitlist
+    reservations till no more seats or no more waitlist.
+- Only Admins can run this servlet.
+
+bug: 37180623
+Change-Id: I6a044622f0d0bf89e86c0b190be6275d469060f8 | 2017-04-17 16:16:07 | 6d9ea83f5edc0629e9b798d5ec1002bff2e6c458
+
+Using separate google-services.json for debug and release.
+
+Change-Id: I067c1ab9b7861bace07cbc492185fbd5b323eb61 | 2017-04-14 20:20:36 | bb908222ef2acfba6ed9406d88d23a74bff29714
+
+Write to ContentProvider when reservation/
+return request succeeds.
+
+Also fixed some reservation bugs.
+
+Bug: 37017189
+Change-Id: I2d59c413b3104918db6b26a9e0f72e8771983af5 | 2017-04-12 05:00:42 | d0ea75d3f141bbaedb6ba1194754a7dfa60d23b3
+
+Push reservation changes to App Server
+
+Reservation status changes are pushed to
+App Server using UserData client library
+loaded from discovery doc.
+
+bug: 36813613
+Change-Id: Ia7e9cfa283fbaf34039f89495119ab1d40ca96bd | 2017-04-08 15:32:04 | e57c87e76b3e5b057b892bfafd9760cc7de0f28a
+
+Merge "Fix reserve button bug on Lollipop." | 2017-04-12 21:52:56 | 2ce34d2e206dc2728fc5faae3e7f99fa1a56e22e
+
+Fix reserve button bug on Lollipop.
+
+Bug: 37264752
+Change-Id: Id8441da5e69309f2535f14e47b6d9ca451b25dbb | 2017-04-12 10:49:39 | a330ef5a79de1bcbb1c1296bca9b8957f83183ca
+
+Tweaks to filter headers.
+
+- Use same height for Filter header & Topics.
+- Elevation shadow on fixed header when filter list is scrolled.
+
+Change-Id: I553f8770d94a7edf8c737d216f81523212a821b6 | 2017-04-10 10:11:23 | b763b78053be09ca944114a0f5b2ef445251cac7
+
+Handle reservation requests with ID
+
+- Write request results agains request ID
+- Update functions to handle request ID
+- Change writing results of requests to
+  be done one property at a time:
+  status > last change > result
+
+bug: 36974469
+Change-Id: I6105082d1b9e8978e150b0467af843101a0d30b1 | 2017-04-05 18:11:30 | a3c6240cbb136ddbd77eec052cb2e36599a32ea0
+
+Merge "Fixed reservation status UI update bug." | 2017-04-06 02:09:14 | d56b1957fc8843d001c1ca527e4f4c6010a78b2e
+
+Fixed reservation status UI update bug.
+
+Change-Id: I4a2ca5c626df24ce66c26d8234c0a2329735267a | 2017-04-05 20:26:28 | 26971b55bbac9e09f637d96f8c9124a0f37a64e0
+
+Disable broken tests
+
+This should be reverted and fixed properly, but for the moment
+it's blocking development.
+
+Change-Id: I2942f4a1a2bb814134c5a2b28caa485f7b884405 | 2017-04-03 18:50:56 | f800fd3ddb302cfc66507066c326c82b2dedd3a1
+
+Fixed bug for onboarding sign in fragment not clearing.
+
+BUG: 36854306
+Change-Id: I21ea9249b0bf43ee0bb23fb4ef44d006c87911af | 2017-04-03 16:23:40 | 86bf8f8d9a51e86067e5edc07a9d32b2c4a2eb62
+
+Merge "Fixed bug with onboarding sign in" | 2017-04-01 22:53:04 | bb5b77cd69ba5d313857419c1233e323fee50c51
+
+Fixed bug with onboarding sign in
+
+Change-Id: I158fe1c6fbf2c0a76b73d5b982f268c692902b5d | 2017-04-01 22:52:17 | fe38d8cf411c42b63345e313caefe1bebdc024ad
+
+BottomNavView has a max number of 5 buttons so to make room for Info:
+-Moved debug nav button from bottomnavview to a FAB on My Schedule.
+-Removed some dead nav code for settings, about, sign in, and video lib.
+
+Bug: 36738054
+Change-Id: I3253721d098fe518cc7ff4e9195406fe70792595 | 2017-03-29 22:56:38 | 0ada1c75fbb4a7cd102975c07efc0ce3ada24d5e
+
+Firebase and support changes:
+
+-Upgraded GCM -> FCM and enabled Firebase Messaging.
+-Updated android_support_lib_version 25.1.1 -> 25.3.1.
+-Added debug Firebase project to app. TODO: add release project.
+-Removed Firebase v2 dependency.
+
+Bug: 36700561
+Change-Id: Ib2bb13ff7443cfb305333ec6268d55032f5a0711 | 2017-03-24 22:17:50 | 227467bfccc2796f1b60ffa78e77e54090e527ce
+
+Change requests to have an intension.
+
+Requests now need to include an action (reserve or return).
+- queue
+    - uid
+        - session: <sid>
+        - action: <reserve/return>
+
+Results of requests are written as an object.
+- sessions
+    - reservations
+        - uid
+            - result: <last request result>
+            - status: <current reservation status>
+
+bug: 36527346
+Change-Id: I09ffbbd3d907b18af7468cc65b24caf92d5cdb55 | 2017-03-25 04:27:15 | 3366f419a2b7db8fb2c9b21196e7facfa0a39792
+
+Add Firebase Functions to handle session reservations.
+
+- Setup Cloud Functions for Firebase
+- Add listener to process reservations requests
+
+bug: 36526447
+Change-Id: I6d0c0c85144a011ad7e32026b80d3fa59cd5cabb | 2017-03-19 22:38:03 | c1a8ec403a36ccc1ff1abd80a847d4b587244ea8
+
+Fix certain sessions not being synced
+
+This is because for debug builds we are currently
+pointing to a 2016 dev data bucket which no longer
+exists. Fixed by pointing to the public feed for now.
+
+Also tidied up some of the conference data
+handling, since I was debugging it.
+
+BUG: 35710851
+
+Change-Id: I6cbac9bf30177adfa23674d3ab0f7517e5c28c81 | 2017-03-15 14:02:21 | d6f8e1a89c9ec3d9543036229f6489474846e2f0
+
+Fix RecyclerView not re-binding views
+
+Happens because we now use stable ids, but the
+ids we provide are not stable. This CL fixes
+it by generating IDs from more data points.
+
+BUG: 35789131
+Change-Id: I237be66b883ed96cda3f4c1a02032962ec7051ab | 2017-02-27 10:37:42 | 038642e5585daa90266560a20320c3e176741a34
+
+Merge "Added debug to bottom nav." | 2017-02-24 23:32:54 | 454b41800d63e092865a9f5e0e27ef23e190062a
+
+Added debug to bottom nav.
+
+Removed Explore.
+
+Change-Id: I65e2ec67fd63649fb707b178a70e2e7a767800da | 2017-02-23 06:53:11 | 0e02fa99af900bc3147b8891d34b186c262d914e
+
+More quick lint fixes
+
+- Add targetApi markings
+- Fix or suppress DefaultLocale
+- Suppress RtlHardcoded when using Gravity constants
+- Fix or suppress InconsistentLayout
+- Suppress InlinedApi
+- Suppress NewApi
+
+Change-Id: I7402212cfdc0488fdfe7eb3c783a8a989c03bca2 | 2017-02-02 20:24:52 | 985e659d79552d29d2c460f9b779b171b2d33f6e
+
+Re-apply primary color change
+
+Must have been wiped out in the recent
+lint fixes.
+
+Change-Id: I3b627c89192f01b577431ee244b115a378806f9c | 2017-02-07 12:52:48 | 4336bed81c24405c0ce8b331b48d76f3791f1c3c
+
+Fixup some string resources
+
+- Ignore placeholder strings
+- Formatting args cleanup. Note that one Russian plural case needs to
+  be fixed.
+
+Change-Id: I16019f727e4d9c30703d6a5f5739cf942818ac5b | 2017-02-02 18:57:45 | def3a959803f7cfe081cb1d22989cb65767016c0
+
+Merge "Remove guava, don't multidex debug builds" | 2017-02-01 16:51:12 | d4976dc1f7c721ea2e2105c213609077ff3a6a02
+
+Remove guava, don't multidex debug builds
+
+Guava has a large footprint and was being sparsely used, so let's
+remove it. Summary of how usages were substituted:
+- Charsets.UTF_8 -> Replaced with constant in IOUtils
+- Strings.isNullOrEmpty() -> Replaced with TextUtils.isEmpty()
+- @VisibleForTesting -> Replaced with @VisibleForTesting in
+  android.support.annotation, since the support annotations were
+  already included in our dependencies
+- Preconditions.checkNotNull() and Preconditions.checkState() -> Copied
+  into new PreconditionUtils class
+
+With Guava removed, we are well within the dex limit even without
+proguard minification, and incremental debug builds are faster.
+
+Change-Id: I5e067315b8bee1b8fd6b22802af2ddb5a6e8c3ab | 2016-10-17 21:08:47 | a9c26403fe165271c5e7c9db9bc5b34f8a3c6b97
+
+Move to support fragments + loaders
+
+Not sure why we were using the platform impl
+but the support version is always preferred
+but to bug-fixes, etc.
+
+Test: unit + android tests pass
+
+Change-Id: Iee7b2b2398abf3ad7009fc70cb1b3e5d7419770d | 2017-01-27 10:25:26 | d030a4dad6b981471debb5ace50906c72624589f
+
+Fixing test build.
+
+Many of the tests marked suppressed failed when run
+in an instrumentation with all tests. Those tests
+succeed when run only as part of the test package.
+I've disabled them anyway because the test build need
+to pass with all tests run together.
+
+The test library updates are required to pickup some bug fixes
+that were causing some of the test issues.
+
+Bug: 28369715
+Change-Id: Ic1abd17dc5ae2102ad8e487cbca4db2029ea65e2 | 2016-07-15 22:40:35 | b380864f137ab58c1c5ec923c6c5211750cef792
+
+Protect against NPEs that showed up in Play store.
+
+There is a different bug that addresses fixing the fact that the
+adapter is recreated when it doesn't have to be.
+
+Bug: 28828007
+Change-Id: Ia6ee5988e9af3945ebfa29765a21d33ea2ae61f1 | 2016-07-14 22:18:12 | 8877c6492e463c16ca0797609a13fec8ec470410
+
+Removing 2015 art files.
+
+2016 Art files will be re-added. Leaving the bug
+open until that happens.
+
+Bug: 28338238
+Change-Id: I840e56666736066ff3101c70845e5df2efe20575 | 2016-07-14 00:13:13 | 281c701d8e74b9235e42cfa162c7939bb16d3a4d
+
+Merge "Added video play test, fixed both video tests for when youTube app is installed" | 2016-07-06 19:01:51 | 11b738f6884f38be41e858ea61d282af4ff7797d
+
+Merge "Some fixes for Japanese strings. " | 2016-05-26 03:27:55 | 0077cc59c29f2c0eef4eb40673b0d32993b8e1c5
+
+Some fixes for Japanese strings. 
+
+Change-Id: I2f99869b99f3c42ccc7e910626a5085f8843748f | 2016-05-20 21:39:41 | 280d43cc596f00ebe098961f370384109bad7c75
+
+Added video play test, fixed both video tests for when youTube app is installed
+
+Bug: #28310731
+Change-Id: I4807f828c4bdc49ffaa4ea5ef4cd2b939678ca3e | 2016-05-12 11:14:27 | b6f1b5739f7fe79e9368011b202903482172345a
+
+Merge "Fix bug with provider package conflict." | 2016-05-06 17:52:50 | b01224ea1a647872b10c7cfa2f7e57c3bbc5fccb
+
+Merge "Explore Sessions tool+status bar fixes." | 2016-05-06 00:50:41 | dd6a931495e7cd95581826376d94a4cff2509b22
+
+Fix bug with provider package conflict.
+
+Bug: 28588823
+Change-Id: I7dc2bcae336467177e818bf5bf827ea295aa209c | 2016-05-04 20:00:17 | 8e8386c3d6b82275f58e8d06944ad1ce3283d753
+
+Explore Sessions tool+status bar fixes.
+
+– Also applied to Video library filtered.
+– Corrected layout naming convention.
+
+Bug: 28611823
+Bug: 28611873
+Bug: 28426109
+Change-Id: Id6b3e10e1d8585fd2c52a6a005b4cf7bd6e2d1d0 | 2016-05-05 15:44:02 | 5ff60376d1a0cab6127c8dc06eef80f4913882fe
+
+Clean up tick <-> plus animation.
+
+– Consolodated multiple anims into sets.
+– Use path morph on API 23+.
+– Work around bug in NDP2.
+
+Bug: 28609561
+Change-Id: Ib576fe72ce89ab96140430fd3b87436d426dad59 | 2016-05-05 12:23:26 | fa41a34540119cefac81a944f8fb35bf681910a5
+
+Minimize logging when not debuggable.
+
+Bug: 28388512
+Change-Id: Iec62a2c582f0b5d55a5f68be54d25afcd4449410 | 2016-04-26 04:56:42 | 59adf119f173ddaf0ddc80f7cf7c0e8370bc7d58
+
+Merge "Couple more 15 -> 16 fixes." | 2016-04-25 23:19:56 | 72ce86b7e9675d2404fc5da63ab6e0f74f6e7f55
+
+Couple more 15 -> 16 fixes.
+
+Change-Id: Ib2e20bf004bcd8c1cebe536630abbd6a91071adb | 2016-04-25 23:10:59 | 18a4bbc0f23613764103e024e42e5e3d58583e5a
+
+Merge "Fix for bug in showing "watch" live text" | 2016-04-25 20:43:41 | ecb98299c79b944be4e23835c2de8aa4eff6b8ea
+
+Fixed bug for viewed videos not updating properly
+
+Bug: #28373596
+Bug: #28361418
+Change-Id: I298712c966411b780f679272c85dcd5aa5992647 | 2016-04-25 18:00:03 | 763facdec98eaa74236026d3ad2092aa3818c214
+
+Merge "Fixed bug for Explore IO not updating itself after changing logged in user" | 2016-04-25 16:54:09 | 0cdab6eba9716c2cb46dd3abe45f3de14711ddc0
+
+Fixed bug for Explore IO not updating itself after changing logged in user
+
+Bug: #28361418
+Change-Id: I95dcc1c30201dcc5dd5574b3eba3945e0214ff1e | 2016-04-25 13:11:30 | 1fc0a868a159e3b543f671d9d26f63ed432abf5a
+
+Fix for bug in showing "watch" live text
+
+Bug: #28208316
+Change-Id: I7c5be95c01c08b5ddb3355dea3ba018995f7e93f | 2016-04-25 10:15:57 | 43c219eb84e847ca4c0c0f9639d35b1feca3c485
+
+Simplify floor plan SVG file.
+
+This fixes rendering issues with the overlay tiles on some devices.
+
+Bug: 28332763
+Change-Id: I7dc60615e6f288b19196d391066b939fe24e1884 | 2016-04-22 08:21:51 | 090af65e52c620fee258dfa2fad5e7d4cdfd5276
+
+Merge "Fixed UI title/image bugs in Explore sessions screen" | 2016-04-20 16:00:21 | cff5e5097f1a56bcb1f8ca8415b7449707a4e792
+
+Fixed UI title/image bugs in Explore sessions screen
+
+Bug: #28283527
+Change-Id: I14ed68ecd2b87bb91efd4dd74b820b65caa3ee0c | 2016-04-20 10:53:45 | 4b09a6b9438e9ff4b0326588fa0e1d43088bc66b
+
+Merge "Fixed bug when tapping display WelcomeActivity in debug screen" | 2016-04-20 15:31:05 | 097ae8c34661d0e4af397851c4230e7d192239de
+
+Fixed bug when tapping display WelcomeActivity in debug screen
+
+Bug: #27995560
+Change-Id: Icbd1a6ced9a1c8b92d8131b85a1433fc95581b73 | 2016-04-20 08:56:59 | 19e75035d953cb509583a6877fdeaa919255e423
+
+Merge "Fixing bug with resident Snackbar." | 2016-04-20 00:32:03 | 863c2b56a5bf174ad5964abcb505b3ca4d7aa641
+
+Fixing bug with resident Snackbar.
+
+Needed to dismiss the Snackbar when resuming
+the AccountSelection screen in case the user
+accepted the permissions.
+
+Change-Id: Icfd198f7a4e157619314887f9cad980bcf38cf23 | 2016-04-19 23:28:52 | bbeaea1582dac0266bbdb8c43358a5cf1f34a404
+
+Updating targetSdk to target 23.
+
+Implemented runtime permissions:
+-Storage and Accounts are required for the
+app so they are enforced with the Welcome screen flow.
+This ensures they are re-inforced any time the app is
+opened.
+-Calendar is only needed when Calendar sync is enabled.
+So the permission check for that was done dynamically in
+settings.
+-Created product flavor so that the debug variant could
+be tested without having to remember to grant permissions
+ahead of time.
+
+Bug: 28192652
+Change-Id: I1efdb4a951f3ccdabd403d64329c0d417f55f64d | 2016-04-15 04:43:35 | c0e4d449ba1931a9085b31b7823d245d0c2844f1
+
+Fixing bug with unconfigured tags.
+
+Bug: 28243233
+Change-Id: Ie390a8a8023843a4a157a94d08dfcd0fade4d0df | 2016-04-18 22:13:29 | 5be5636ae25be7b50232f2b49d186d29b15b5228
+
+Merge "Added 3rd day to MySchedule tab layout, fixed issues when rotating screen on my schedule screen on tablet" | 2016-04-18 17:36:38 | f2526ff9b4b4395a0140ff514c220ac194a082f4
+
+Added 3rd day to MySchedule tab layout, fixed issues when rotating screen on my schedule screen on tablet
+
+Bug: #28238650
+Bug: #26705643
+Bug: #28238531
+Bug: #28238534
+
+Change-Id: I0d6db7b1c499b8c9fe1c8d96e2a09472b71f2507 | 2016-04-18 13:38:42 | 1beb08cade6c8eb6577c327dde18aa7bb28e3d1f
+
+Merge "Fixed video tint bug on API<21 devices." | 2016-04-14 15:56:06 | 400dcc77c86111b9c07aaba497b6c092639fbd4b
+
+Merge "Fix bug when calculating day in explore sessions screen" | 2016-04-14 15:34:07 | da84d377f2cd5183f98e70240fce8c1d37df843f
+
+Fix bug when calculating day in explore sessions screen
+
+Bug: #28185957
+Change-Id: I88505de4282443af21ed2eb01575e6cd90871e56 | 2016-04-14 13:16:28 | 82c066ee04b6772ab653b72de261151aadca60ab
+
+Fixed video tint bug on API<21 devices.
+
+Also a race condition in the empty state message.
+
+Bug: 28184552
+Bug: 28184094
+Change-Id: I784b14743153f8a88ff19ee57c4b78217869aa41 | 2016-04-14 10:43:26 | 295c208d7266860c27563c4c76bd8913c4e51f45
+
+Merge "Fixed jank in search animation due to bug in calculating radius." into vnext_design | 2016-04-12 15:16:54 | b9a139172a73981feef7e8741aa7f31de6aa40cd
+
+Fixed jank in search animation due to bug in calculating radius.
+
+Bug: 28130940
+Change-Id: Ic63e12bd72d455064cc1c618e106d69cb3ba6fcc | 2016-04-12 11:55:02 | d09993b06324ee46987319ec04eba7d81e9a8365
+
+Include test data required by tests
+
+Change-Id: I120e54f0d8a5a1bf738a0b33d64e4eb0e855a4c2
+bug: 27987564 | 2016-04-05 16:46:39 | 26fa95132f7ae069e447a355549263baef5e0cbc
+
+Fixed failing unit tests, fixed corner case in minutes calculation in session detail model
+
+Bug: #27987953
+Bug: #27989428
+Change-Id: Ia9719c3cb2eb8a30f16986e9a107e57f66023606 | 2016-04-04 12:47:29 | 16ac64642d7fd75c4808be1f18faeaee07c3c051
+
+Disable SessionDetailModelTest for prodrelease
+
+This test is broken. Temporarily disabling it so we can get a beta
+build.
+
+This change will be reverted once this build has been dispatched to
+the CI server.
+
+Change-Id: Ic8dd1fdcd20d14c2bf32bb5e2829ad9f8489d4cd | 2016-04-04 06:15:49 | 98a6b74290899d139e31070a49123723bad022c6
+
+Add Proguard rules to fix build
+
+Fixed warnings caused by references to missing methods via dependencies:
+-dontwarn org.w3c.dom.bootstrap.DOMImplementationRegistry
+-dontwarn com.larvalabs.svgandroid.**
+
+Fixed warnings caused by use of reflection by Jackson:
+-keepattributes InnerClasses,EnclosingMethod
+
+Change-Id: I40b126561688ce1528b6e0b414831cc265d33250 | 2016-04-03 08:39:04 | 9d98fe3553053cff3b0527ebca6c8c46025eb85e
+
+RecyclerView enhancements for Explore & Videos.
+
+Figured out how to re-introduce a shared view pool. Marked RVs as fixed sized and made item
+click handling more defensive.
+
+Change-Id: Ic09fc66ef00be8ff9081d88642b492a958e0dadc | 2016-04-02 13:14:00 | 86a7dc2ad3d3b25f2a3b1493fc7a861fb4f89333
+
+Re-adding debug.keystore.
+
+Change-Id: Iafafa5cd35039601ec5a2a252ea647ac708f0957 | 2016-03-14 23:49:52 | 16d099edc810e966bfb4d60142b6f2cb4fd51b47
+
+RFR - fix for bug in Header view refactoring
+
+Change-Id: I58ac8bc1771abce6bde768922a2e61523df0e17c | 2016-03-04 16:46:07 | fa11679f8939a9640e6c5db6da32c0e7f05e3788
+
+Added UI tests for actions firing intents in session details activity
+
+- Implemented tests previously marked as ignored
+- Moved starting activity from model to fragment
+- Changed start activity to always use getActivity().startActivity in Fragment
+instead of directly startActivity, due to bug in Intento in M
+- Rewrote unit tests to use mock callback object
+
+Change-Id: I673d2429c747e0a2bb60d4e083a46223edb7188a | 2016-02-18 13:12:36 | 26f90d3ba4f1c058b22574fb29a92b70ba24c290
+
+Merge "Renamed UI tests that have use case in test name, fixed typos" into vnext_arch | 2016-02-18 11:18:19 | 38393911b900e57abac4b521bb5c2f8645fc4632
+
+Renamed UI tests that have use case in test name, fixed typos
+
+Change-Id: Ife112aaf52245283fa5e1b580f8f290c2d7f78a5 | 2016-02-17 16:19:01 | f6811c3c532e12ff5dbc981c7ead78a51cf0041d
+
+Refactored MySchedule for readability
+
+1. Added a fragment for wide layout
+2. Renamed fragment/views/adapter
+3. Added javadoc to explain how the fragments/views are used
+4. Refactored ViewPagerAdapter out of Activity
+5. Light refactoring in activity (renaming methods etc)
+6. Added javadoc to activity
+7. Moved methods to set/get current time from UIUtils to TimeUtils
+8. Added method to TimeUtils to easily set current time to x ms
+   before/after start/end/start of second day of conference
+9. Added UI tests
+10. Fixed bug of tab not changing highlight when swiping horizontally
+
+Change-Id: I3a5991eec0bc7835254928dd0370855e9e61078d | 2016-01-19 11:48:35 | c3df4a2e246f299b0374c8aa01611dd64d3f354e
+
+Merge pull request #78 from alsutton/fix_feedback_sync_can_incorrectly_number_questions
+
+Use an empty ArrayList for each session being sychronsied | 2015-01-07 14:51:26 | b8b238fbec47b329833cbdb2a5fc01b253d3ca15
+
+Merge pull request #107 from romannurik/github-master
+
+Import some local fixes | 2015-01-06 17:08:56 | cf1f30b4c752f275518384a9b71404ee501fc473
+
+Import some local fixes
+
+Change-Id: I408707a9b5474aa40755fd041169ac8503df9817 | 2015-01-06 17:07:24 | ba58a9886b4541beb8fc8ac1c031646d5a2073e6
+
+Formatting fix | 2014-11-03 10:54:48 | 32cafb4d7d31e784bf0fa897ce79e5b130fccb0f
+
+Merge pull request #71 from romannurik/master
+
+Update to v21 SwipeRefreshLayout. Also fix nav drawer BACK button bug. | 2014-10-22 04:04:13 | f2e87424ea7cc0c3f8022f984966091ea746a23e
+
+Update to v21 SwipeRefreshLayout. Also fix nav drawer BACK button bug.
+
+Change-Id: I13a0880240c4d49b2fdca5948594567332ca8aaf | 2014-10-22 03:57:02 | 1d8ff282225275a06977489ed12d93ac925bca8e
+
+Merge pull request #65 from VipSaran/master
+
+Fix for 20.0.0 build tools bug | 2014-10-20 13:28:52 | 2bbaedd62fb9f6f2dcdc1b53edc73f2fb3e6f1b3
+
+Fix for 20.0.0 build tools bug
+
+reference: https://code.google.com/p/android/issues/detail?id=77629 | 2014-10-20 13:04:13 | ed15d4c160f610260d5d59aaa61aa984e333548b
+
+Merge pull request #53 from ogwiz2/patch-1
+
+Added periods to comments for better consistency | 2014-10-18 12:39:13 | 302d5b17501e2b7b7ca916cc19bd589a6287d191
+
+Merge pull request #56 from ardock/fixtravis
+
+Fix .travis.yml, typo in android-19 component name | 2014-10-18 12:31:06 | 988642815aa4b710c129dd5d2a204de8f588a322
+
+Pull in final L-related code changes and other fixes. | 2014-10-18 12:19:46 | 8c798c58e592b8a25111610e216c7f3ee74c3a42
+
+Merge pull request #32 from ph0b/patch-1
+
+fix french localization of "speaker" | 2014-08-12 23:04:58 | aa437dd4ec4534dc57e7a81e0138f8a9f75d463e
+
+Add debug keystore
+
+A keystore needs to be present in order to enable continuous integration
+builds. This is standard Android debug keystore with a 100 year
+validity. | 2014-08-12 21:24:55 | 0f7e56ff2588b816476fbad253554f49003e869d
+
+fix french localization of "speaker"
+
+In french, a "haut-parleur" is an amplifier, not a person.
+I propose to change this current translation to "orateur". | 2014-08-07 07:34:19 | 3f26dde80b6f09b5ab68545796d270bbf9907e2e
+
+Merge pull request #24 from seewes/patch-1
+
+Replace .commit() with .apply() in PrefUtils.java | 2014-08-04 14:47:53 | b9631146b1acdea4f6bb510eae5a3ce3438c2357
+

@@ -1,0 +1,778 @@
+Bump up some library versions. (#383)
+
+Also fixes:
+
+- Some Kotlin errors in the demo app.
+- Replace the deprecated compile dependency syntax to api or implementation in the build.gradle files. | 2017-11-30 08:59:14 | 1865c6a085780d239d3b4e3ba50468cebeadef79
+
+Fix the view index used for stretching views. (#322)
+
+Basically, it apply the same fix as another PR
+https://github.com/google/flexbox-layout/pull/304
+to the method that stretches views. | 2017-06-28 04:17:41 | f51d920388272e5fa29af02f07b8389cf7599e59
+
+Remove Pixel from the device list. (#307)
+
+This is a workaround to fix the continuous ci failures. | 2017-06-15 09:58:22 | 57619794766a09e78310c329ef81e1919a647241
+
+Fixes the issue that only single line was displayed with nested RecyclerViews
+
+Fixes the issue that only single line was displayed with nested RecyclerViews
+where the inner RecycerView's adapter is FlexboxLayoutManager with FlexWrap is
+set to wrap.
+
+This was caused because height 0 was passed from the parent RecyclerView
+if the layout_height is specified as wrap_content, thus
+FlexboxLayoutManager didn't calculate the entire items.
+
+This fixes #290 | 2017-06-15 07:02:29 | 18b49c3d2e0f896c86f4995d717f0bd1ff1f8303
+
+Fix the margin value along the cross size for a flex item (#281)
+
+Fix item's crosssize calculate bug | 2017-05-10 06:47:07 | ef3716301374a5a90e4a443bfcaac36188decd45
+
+Fixes the wrap_content behavior with nested RecyclerViews. (#235)
+
+This PR fixes the height (or width if flexDirection == COLUMN) of nested
+RecyclerViews.
+Before this PR, the height (or width if flexDirection == COLUMN) of the
+RecyclerView was set to 0 where RecyclerView is wrapped with another
+scrollable container (another RecyclerView or ScrollView) on the condition
+layout_height="wrap_content" and flexDirection="row".
+In such a case, the height of the inner RecyclerView
+(attached RecyclerView for this LayoutManager) is set to 0.
+
+Fixes #208. | 2017-03-28 02:28:22 | b426f9ae93e2024a5ccb8a252a2afee64ecae6b7
+
+Fix the disappearing first line. (#234)
+
+This PR fixes #228.
+The first line disappeared on the condition the second line has more
+items than the first line.
+This happended because the anchor position of the item is incorrectly
+calculated. | 2017-03-23 08:56:30 | 98dd353eed096146da58ea2bbf202a7cecc21f32
+
+Fix the scrollToPosition #206 (#231)
+
+This PR fixes the issue #206.
+The issue happend because after scrollToPosition is called, the item
+specified as the argument is always placed at the first line.
+To fix the issue, the gap toward both directions (start and end) needs
+to be filled like LinearLayoutManager does. | 2017-03-22 05:09:16 | fc97835c8b31a45a7277875b1ac4be8f0668d804
+
+Discard the calculated flex lines when configration changes are handled manually. (#201)
+
+When configration changes are handled manually, onSaveInstanceState
+wasn't called in the FlexboxLayoutManager. Thus flex lines previously
+calculated with the prior configuration including width of the screen
+were not discarded.
+
+This PR introduces the fields of the width/height of the previous
+measurement. If the width (or height depending of the flex direction) is
+different from the previous value discard the prior flex lines.
+
+This PR also fixes the cases where width is getting changed in the multi
+window mode. | 2017-02-21 06:05:37 | 1e0b613708461d5922671a19d05bbb6260237036
+
+Fix the issue if the anchor view is picked from the middle of the flex line. (#180)
+
+The anchor view should be the view, which has the
+- minimum start position for the start anchor
+- maximum end position for the end anchor
+
+but if the view in the middle of the first visible flex line (or last visible
+flex line for the end anchor) had the minimum start position, the anchor
+position wasn't picked correctly.
+
+This PR fixes the issue. | 2017-01-17 09:56:54 | a683b991a568d9c42bede810ad7d160fdc78f294
+
+Fix the offset position. (#172)
+
+When scrolling to top, the anchor position of the first visible position was
+wrong when flex direction is set to row_reverse.
+This PR fixes that issue. | 2016-12-27 06:16:28 | 3d824c535e36e642aa9d7a732b62c6779dea6a4b
+
+Improvement in the demo app and several fixes. (#171)
+
+- Preserve the flex items state across a configuration change in the demo app
+- Throw an Exception when order or alignContent which aren't supported by
+  FlexboxLayoutManager are changed (setXXXX is invoked)
+- Clear the existing flex lines and views if an incompatible, in which prior views
+  states or flex lines states can't be shared, attribute change happens
+  (e.g. flex direction is changd from row to column) | 2016-12-27 02:06:19 | 8d4abb440edb0fb692807b73df6dd8f0990447f0
+
+Fix the view alignment along the cross axis. (#167)
+
+This PR fixes the view alignment along the cross axis when RV scrolls toward
+the start position and view's sizes along the cross axis in a same line are
+not the same. | 2016-12-21 06:03:54 | 27b4e0b5f132a7ed3ec81a4716d17dbf3d1dccd7
+
+Fix the case child needs to be measured twice in the initial calculation (measureHorizontal/measureVertical) (#252)
+
+This PR fixes the corner case where where the cross size of the
+child is affected by a flex line in which the child being processed is the
+first item.
+E.g. when the child's layout_width is set to match_parent, the width
+of that child needs to be determined taking the total cross size used
+so far into account. In that case, the width of the child needs to be
+measured again. Note that we don't need to judge if the wrapping occurs
+because it doesn't change the size along the main axis. | 2017-04-12 04:34:02 | 20d8f97314c73fa85ecce2f40e031b810966f88d
+
+Fix the alignContent behavior. (#251)
+
+* Fix the alignContent behavior.
+
+Fix the alignContent behavior in the following conditions.
+- alignContent is set to flex_end
+- The size of the content is larger than the flex container
+- flexWrap is set to wrap_reverse
+
+When these conditions are met, the last of the flex item should be
+aligned to the top of the flex container, but the first item was aligned
+to the bottom of the container instead.
+
+Also fixes other values for alignContent
+(center, space_around, space_between) to be Flexbox specification
+compliant.
+
+Fixes #250.
+
+* Fix the license header | 2017-04-12 01:57:04 | 7fe51310d148fa132386cfa3b5e256c786d1d276
+
+typos fixed in RecyclerView docs (#205) | 2017-02-22 08:46:02 | 723784cd75f9ed52fecda04fc0f91b3cf0af6cfc
+
+Fix the incorrect denominator in the folllowing case (#163)
+
+This PR fixes the incorrect alignment where:
+- justifyContent is set to either or space_between or space_around
+- Views whose visibitilies are gone are included in a flex line
+
+Also use the number of item count, which the number of gone items are filtered
+where appropriate.
+
+Fixes #162 | 2016-12-19 07:06:59 | 4db51fa088d489d8b138adf9ad42b7da5e73300f
+
+Fix the issue that child margins do not expand flexbox container with wrap_content (#155)
+
+This PR fixes the case where:
+  - layout_width is set to wrap_content for the FlexboxLayout
+  - End (or start) margin is set to a child
+  - The child which the has the end (start) margin has the largest width in the
+    same flex line (or only a single child exists)
+  - The child has a positive layout_flexGrow (or layout_flexShrink) attribute set
+
+If these conditions were met, the width of the FlexboxLayout didn't take the bottom
+margin on the child into account.
+
+Fixes #154 | 2016-12-07 07:09:02 | 1a9fbc3b5c472b3e2daa4cca9c767ed85536e392
+
+Merge pull request #111 from hotchemi/patch
+
+Fix to specify list initial capacity to avoid unexpected expansion. | 2016-08-31 02:14:42 | d5848dbadf3d739c3dd5bd4c9bf50c5632a9bfc0
+
+Merge pull request #89 from google/fix_empty_flex_line
+
+Prevent an empty flex line is added | 2016-06-15 02:54:27 | 52db87395e53e575ce2b6d15691e1aee99921038
+
+fixes typo | 2016-06-15 02:18:03 | 620c9fe3210e1ce8263a6d4a37f9192666661701
+
+Merge pull request #75 from google/fix_align_items_flex_end
+
+Take the parent padding into account when determining the cross size. | 2016-06-07 06:03:52 | 9a2d3f88ad545a1076121b451db07c820c43d29a
+
+Merge pull request #74 from google/fix_62_parent_padding
+
+Take parent paddings and child margins into account for judging if a line wrapping required. Fixes #62. | 2016-06-06 17:51:43 | 575eee8ebe257d493ce0a334a0a787311263a372
+
+Merge pull request #73 from google/revert-70-fix_edge_case_children_wrap_content_with_parent_padding
+
+Revert "Fixes the issue #62" | 2016-06-06 13:21:43 | 0920adb51862625f5a8ebae2c7565410f02ef4cc
+
+Merge pull request #70 from google/fix_edge_case_children_wrap_content_with_parent_padding
+
+Fixes the issue #62 | 2016-06-06 07:40:07 | b143adfe8e1605f6f74874d2b398ccb2efb03055
+
+Fixes the issue #62
+
+This fixes the edge case where the child's width is WRAP_CONTENT and some
+of the contents along the main axis would be truncated if parent's padding
+is added (if this is the case, remeasure the child with accumulated width
+taken into account to avoid some of the contents to be truncated).
+Because accumulated width is not taken into account in the first
+measurement of each child (because FlexboxLayout has the concept of wrapping,
+at the first measurement of each child, we want the child to be big as it
+wants even if there is not enough left over space)
+
+Change-Id: I949fe6b549b5f7c10255ad5fcf6d05fb9a58eeec | 2016-06-06 07:05:55 | 7b1f3a501099ad5a88926b9c6095d4f39f0f7e95
+
+Merge pull request #64 from google/fix_npe
+
+Fixes NPE when FlexboxLayout doesn't have any children. | 2016-06-03 13:44:08 | 7f5785883073fd94dea08027d991edf0256cc3dd
+
+Merge pull request #41 from google/fix_parent_padding_incorporated_36
+
+Fixes the horizontal padding values when parent's padding is set | 2016-05-18 00:46:50 | 82f29e16dbdc016f0f1a24785257f980c815c754
+
+Merge pull request #26 from KrishMunot/patch-1
+
+adding links to root dir | 2016-05-12 01:15:39 | fd0c1c5a5eeba11b390f674f4a0ec55a6c010b91
+
+Merge pull request #19 from google/fix_18_view_gone
+
+Fixes #18. | 2016-05-10 07:44:35 | 789b7defdf5cdaee2af08a0e5b792ae1ed5dd83f
+
+Merge pull request #17 from sradvan/fix-readme-issues
+
+add minor layout/wording fixes | 2016-05-07 11:05:52 | 1c3cc1532ac1d7c3041635248a4afafa25bf4b0d
+
+add minor layout/wording fixes | 2016-05-07 10:50:48 | f31af93fe97504c75f6ac10df1c18c1019991957
+
+Merge pull request #15 from EddieRingle/er/fix-readme-typo
+
+README.md: Grammar and typo fixes | 2016-05-06 16:27:21 | 2db2c851447638d1c94a67a3b5d91a89bc08991f
+
+README.md: Grammar and typo fixes
+
+Signed-off-by: Eddie Ringle <eddie@ringle.io> | 2016-05-06 16:14:24 | 1660bf1a0c42fc72d7d0dde04b3ac7732ddba81c
+
+Merge pull request #9 from google/fix_cross_size_determination
+
+Fix the issue paddings are not taken into account along the cross axis. | 2016-05-06 06:50:51 | d528f3380ba71cfdc5f0da711138b3932bc953ab
+
+Merge pull request #8 from google/fix_spacing_with_padding
+
+Fix the issue the layout is broken when justify_content is set to either of  space_between or space_around. | 2016-05-06 06:23:07 | d595a0711b0cd93da823f44ddee77acd071972d6
+
+Merge pull request #4 from google/fix_lint_error
+
+Fixes the lint errors. | 2016-05-05 18:45:43 | 11bbc6bf27f52c8a8359d8717fb027a826bfa273
+
+Code cleanup.
+- Add some missing Javadoc.
+- Reorder methods to make it more readable (straightforward to the actual code
+  flow)
+- minor logic fixes
+- minor typos fixes
+
+Change-Id: I5f7fccfcdd2ede9ed4ef95339dd569bc25c9739d | 2016-04-21 07:42:44 | 30e4d1879fcb3ee085a5bcae04fa8fa384d08652
+
+Minor README fix | 2018-10-17 04:57:35 | e40fc9a0e38aeba721cb04fc8444264106b52db7
+
+Bump up some library versions. (#383)
+
+Also fixes:
+
+- Some Kotlin errors in the demo app.
+- Replace the deprecated compile dependency syntax to api or implementation in the build.gradle files. | 2017-11-30 08:59:14 | 1865c6a085780d239d3b4e3ba50468cebeadef79
+
+Fix the view index used for stretching views. (#322)
+
+Basically, it apply the same fix as another PR
+https://github.com/google/flexbox-layout/pull/304
+to the method that stretches views. | 2017-06-28 04:17:41 | f51d920388272e5fa29af02f07b8389cf7599e59
+
+Remove Pixel from the device list. (#307)
+
+This is a workaround to fix the continuous ci failures. | 2017-06-15 09:58:22 | 57619794766a09e78310c329ef81e1919a647241
+
+Fixes the issue that only single line was displayed with nested RecyclerViews
+
+Fixes the issue that only single line was displayed with nested RecyclerViews
+where the inner RecycerView's adapter is FlexboxLayoutManager with FlexWrap is
+set to wrap.
+
+This was caused because height 0 was passed from the parent RecyclerView
+if the layout_height is specified as wrap_content, thus
+FlexboxLayoutManager didn't calculate the entire items.
+
+This fixes #290 | 2017-06-15 07:02:29 | 18b49c3d2e0f896c86f4995d717f0bd1ff1f8303
+
+Fix the margin value along the cross size for a flex item (#281)
+
+Fix item's crosssize calculate bug | 2017-05-10 06:47:07 | ef3716301374a5a90e4a443bfcaac36188decd45
+
+Fixes the wrap_content behavior with nested RecyclerViews. (#235)
+
+This PR fixes the height (or width if flexDirection == COLUMN) of nested
+RecyclerViews.
+Before this PR, the height (or width if flexDirection == COLUMN) of the
+RecyclerView was set to 0 where RecyclerView is wrapped with another
+scrollable container (another RecyclerView or ScrollView) on the condition
+layout_height="wrap_content" and flexDirection="row".
+In such a case, the height of the inner RecyclerView
+(attached RecyclerView for this LayoutManager) is set to 0.
+
+Fixes #208. | 2017-03-28 02:28:22 | b426f9ae93e2024a5ccb8a252a2afee64ecae6b7
+
+Fix the disappearing first line. (#234)
+
+This PR fixes #228.
+The first line disappeared on the condition the second line has more
+items than the first line.
+This happended because the anchor position of the item is incorrectly
+calculated. | 2017-03-23 08:56:30 | 98dd353eed096146da58ea2bbf202a7cecc21f32
+
+Fix the scrollToPosition #206 (#231)
+
+This PR fixes the issue #206.
+The issue happend because after scrollToPosition is called, the item
+specified as the argument is always placed at the first line.
+To fix the issue, the gap toward both directions (start and end) needs
+to be filled like LinearLayoutManager does. | 2017-03-22 05:09:16 | fc97835c8b31a45a7277875b1ac4be8f0668d804
+
+Discard the calculated flex lines when configration changes are handled manually. (#201)
+
+When configration changes are handled manually, onSaveInstanceState
+wasn't called in the FlexboxLayoutManager. Thus flex lines previously
+calculated with the prior configuration including width of the screen
+were not discarded.
+
+This PR introduces the fields of the width/height of the previous
+measurement. If the width (or height depending of the flex direction) is
+different from the previous value discard the prior flex lines.
+
+This PR also fixes the cases where width is getting changed in the multi
+window mode. | 2017-02-21 06:05:37 | 1e0b613708461d5922671a19d05bbb6260237036
+
+Fix the issue if the anchor view is picked from the middle of the flex line. (#180)
+
+The anchor view should be the view, which has the
+- minimum start position for the start anchor
+- maximum end position for the end anchor
+
+but if the view in the middle of the first visible flex line (or last visible
+flex line for the end anchor) had the minimum start position, the anchor
+position wasn't picked correctly.
+
+This PR fixes the issue. | 2017-01-17 09:56:54 | a683b991a568d9c42bede810ad7d160fdc78f294
+
+Fix the offset position. (#172)
+
+When scrolling to top, the anchor position of the first visible position was
+wrong when flex direction is set to row_reverse.
+This PR fixes that issue. | 2016-12-27 06:16:28 | 3d824c535e36e642aa9d7a732b62c6779dea6a4b
+
+Improvement in the demo app and several fixes. (#171)
+
+- Preserve the flex items state across a configuration change in the demo app
+- Throw an Exception when order or alignContent which aren't supported by
+  FlexboxLayoutManager are changed (setXXXX is invoked)
+- Clear the existing flex lines and views if an incompatible, in which prior views
+  states or flex lines states can't be shared, attribute change happens
+  (e.g. flex direction is changd from row to column) | 2016-12-27 02:06:19 | 8d4abb440edb0fb692807b73df6dd8f0990447f0
+
+Fix the view alignment along the cross axis. (#167)
+
+This PR fixes the view alignment along the cross axis when RV scrolls toward
+the start position and view's sizes along the cross axis in a same line are
+not the same. | 2016-12-21 06:03:54 | 27b4e0b5f132a7ed3ec81a4716d17dbf3d1dccd7
+
+Fix the case child needs to be measured twice in the initial calculation (measureHorizontal/measureVertical) (#252)
+
+This PR fixes the corner case where where the cross size of the
+child is affected by a flex line in which the child being processed is the
+first item.
+E.g. when the child's layout_width is set to match_parent, the width
+of that child needs to be determined taking the total cross size used
+so far into account. In that case, the width of the child needs to be
+measured again. Note that we don't need to judge if the wrapping occurs
+because it doesn't change the size along the main axis. | 2017-04-12 04:34:02 | 20d8f97314c73fa85ecce2f40e031b810966f88d
+
+Fix the alignContent behavior. (#251)
+
+* Fix the alignContent behavior.
+
+Fix the alignContent behavior in the following conditions.
+- alignContent is set to flex_end
+- The size of the content is larger than the flex container
+- flexWrap is set to wrap_reverse
+
+When these conditions are met, the last of the flex item should be
+aligned to the top of the flex container, but the first item was aligned
+to the bottom of the container instead.
+
+Also fixes other values for alignContent
+(center, space_around, space_between) to be Flexbox specification
+compliant.
+
+Fixes #250.
+
+* Fix the license header | 2017-04-12 01:57:04 | 7fe51310d148fa132386cfa3b5e256c786d1d276
+
+typos fixed in RecyclerView docs (#205) | 2017-02-22 08:46:02 | 723784cd75f9ed52fecda04fc0f91b3cf0af6cfc
+
+Fix the incorrect denominator in the folllowing case (#163)
+
+This PR fixes the incorrect alignment where:
+- justifyContent is set to either or space_between or space_around
+- Views whose visibitilies are gone are included in a flex line
+
+Also use the number of item count, which the number of gone items are filtered
+where appropriate.
+
+Fixes #162 | 2016-12-19 07:06:59 | 4db51fa088d489d8b138adf9ad42b7da5e73300f
+
+Fix the issue that child margins do not expand flexbox container with wrap_content (#155)
+
+This PR fixes the case where:
+  - layout_width is set to wrap_content for the FlexboxLayout
+  - End (or start) margin is set to a child
+  - The child which the has the end (start) margin has the largest width in the
+    same flex line (or only a single child exists)
+  - The child has a positive layout_flexGrow (or layout_flexShrink) attribute set
+
+If these conditions were met, the width of the FlexboxLayout didn't take the bottom
+margin on the child into account.
+
+Fixes #154 | 2016-12-07 07:09:02 | 1a9fbc3b5c472b3e2daa4cca9c767ed85536e392
+
+Merge pull request #111 from hotchemi/patch
+
+Fix to specify list initial capacity to avoid unexpected expansion. | 2016-08-31 02:14:42 | d5848dbadf3d739c3dd5bd4c9bf50c5632a9bfc0
+
+Merge pull request #89 from google/fix_empty_flex_line
+
+Prevent an empty flex line is added | 2016-06-15 02:54:27 | 52db87395e53e575ce2b6d15691e1aee99921038
+
+fixes typo | 2016-06-15 02:18:03 | 620c9fe3210e1ce8263a6d4a37f9192666661701
+
+Merge pull request #75 from google/fix_align_items_flex_end
+
+Take the parent padding into account when determining the cross size. | 2016-06-07 06:03:52 | 9a2d3f88ad545a1076121b451db07c820c43d29a
+
+Merge pull request #74 from google/fix_62_parent_padding
+
+Take parent paddings and child margins into account for judging if a line wrapping required. Fixes #62. | 2016-06-06 17:51:43 | 575eee8ebe257d493ce0a334a0a787311263a372
+
+Merge pull request #73 from google/revert-70-fix_edge_case_children_wrap_content_with_parent_padding
+
+Revert "Fixes the issue #62" | 2016-06-06 13:21:43 | 0920adb51862625f5a8ebae2c7565410f02ef4cc
+
+Merge pull request #70 from google/fix_edge_case_children_wrap_content_with_parent_padding
+
+Fixes the issue #62 | 2016-06-06 07:40:07 | b143adfe8e1605f6f74874d2b398ccb2efb03055
+
+Fixes the issue #62
+
+This fixes the edge case where the child's width is WRAP_CONTENT and some
+of the contents along the main axis would be truncated if parent's padding
+is added (if this is the case, remeasure the child with accumulated width
+taken into account to avoid some of the contents to be truncated).
+Because accumulated width is not taken into account in the first
+measurement of each child (because FlexboxLayout has the concept of wrapping,
+at the first measurement of each child, we want the child to be big as it
+wants even if there is not enough left over space)
+
+Change-Id: I949fe6b549b5f7c10255ad5fcf6d05fb9a58eeec | 2016-06-06 07:05:55 | 7b1f3a501099ad5a88926b9c6095d4f39f0f7e95
+
+Merge pull request #64 from google/fix_npe
+
+Fixes NPE when FlexboxLayout doesn't have any children. | 2016-06-03 13:44:08 | 7f5785883073fd94dea08027d991edf0256cc3dd
+
+Merge pull request #41 from google/fix_parent_padding_incorporated_36
+
+Fixes the horizontal padding values when parent's padding is set | 2016-05-18 00:46:50 | 82f29e16dbdc016f0f1a24785257f980c815c754
+
+Merge pull request #26 from KrishMunot/patch-1
+
+adding links to root dir | 2016-05-12 01:15:39 | fd0c1c5a5eeba11b390f674f4a0ec55a6c010b91
+
+Merge pull request #19 from google/fix_18_view_gone
+
+Fixes #18. | 2016-05-10 07:44:35 | 789b7defdf5cdaee2af08a0e5b792ae1ed5dd83f
+
+Merge pull request #17 from sradvan/fix-readme-issues
+
+add minor layout/wording fixes | 2016-05-07 11:05:52 | 1c3cc1532ac1d7c3041635248a4afafa25bf4b0d
+
+add minor layout/wording fixes | 2016-05-07 10:50:48 | f31af93fe97504c75f6ac10df1c18c1019991957
+
+Merge pull request #15 from EddieRingle/er/fix-readme-typo
+
+README.md: Grammar and typo fixes | 2016-05-06 16:27:21 | 2db2c851447638d1c94a67a3b5d91a89bc08991f
+
+README.md: Grammar and typo fixes
+
+Signed-off-by: Eddie Ringle <eddie@ringle.io> | 2016-05-06 16:14:24 | 1660bf1a0c42fc72d7d0dde04b3ac7732ddba81c
+
+Merge pull request #9 from google/fix_cross_size_determination
+
+Fix the issue paddings are not taken into account along the cross axis. | 2016-05-06 06:50:51 | d528f3380ba71cfdc5f0da711138b3932bc953ab
+
+Merge pull request #8 from google/fix_spacing_with_padding
+
+Fix the issue the layout is broken when justify_content is set to either of  space_between or space_around. | 2016-05-06 06:23:07 | d595a0711b0cd93da823f44ddee77acd071972d6
+
+Merge pull request #4 from google/fix_lint_error
+
+Fixes the lint errors. | 2016-05-05 18:45:43 | 11bbc6bf27f52c8a8359d8717fb027a826bfa273
+
+Code cleanup.
+- Add some missing Javadoc.
+- Reorder methods to make it more readable (straightforward to the actual code
+  flow)
+- minor logic fixes
+- minor typos fixes
+
+Change-Id: I5f7fccfcdd2ede9ed4ef95339dd569bc25c9739d | 2016-04-21 07:42:44 | 30e4d1879fcb3ee085a5bcae04fa8fa384d08652
+
+Minor README fix | 2018-10-17 04:57:35 | e40fc9a0e38aeba721cb04fc8444264106b52db7
+
+Bump up some library versions. (#383)
+
+Also fixes:
+
+- Some Kotlin errors in the demo app.
+- Replace the deprecated compile dependency syntax to api or implementation in the build.gradle files. | 2017-11-30 08:59:14 | 1865c6a085780d239d3b4e3ba50468cebeadef79
+
+Fix the view index used for stretching views. (#322)
+
+Basically, it apply the same fix as another PR
+https://github.com/google/flexbox-layout/pull/304
+to the method that stretches views. | 2017-06-28 04:17:41 | f51d920388272e5fa29af02f07b8389cf7599e59
+
+Remove Pixel from the device list. (#307)
+
+This is a workaround to fix the continuous ci failures. | 2017-06-15 09:58:22 | 57619794766a09e78310c329ef81e1919a647241
+
+Fixes the issue that only single line was displayed with nested RecyclerViews
+
+Fixes the issue that only single line was displayed with nested RecyclerViews
+where the inner RecycerView's adapter is FlexboxLayoutManager with FlexWrap is
+set to wrap.
+
+This was caused because height 0 was passed from the parent RecyclerView
+if the layout_height is specified as wrap_content, thus
+FlexboxLayoutManager didn't calculate the entire items.
+
+This fixes #290 | 2017-06-15 07:02:29 | 18b49c3d2e0f896c86f4995d717f0bd1ff1f8303
+
+Fix the margin value along the cross size for a flex item (#281)
+
+Fix item's crosssize calculate bug | 2017-05-10 06:47:07 | ef3716301374a5a90e4a443bfcaac36188decd45
+
+Fixes the wrap_content behavior with nested RecyclerViews. (#235)
+
+This PR fixes the height (or width if flexDirection == COLUMN) of nested
+RecyclerViews.
+Before this PR, the height (or width if flexDirection == COLUMN) of the
+RecyclerView was set to 0 where RecyclerView is wrapped with another
+scrollable container (another RecyclerView or ScrollView) on the condition
+layout_height="wrap_content" and flexDirection="row".
+In such a case, the height of the inner RecyclerView
+(attached RecyclerView for this LayoutManager) is set to 0.
+
+Fixes #208. | 2017-03-28 02:28:22 | b426f9ae93e2024a5ccb8a252a2afee64ecae6b7
+
+Fix the disappearing first line. (#234)
+
+This PR fixes #228.
+The first line disappeared on the condition the second line has more
+items than the first line.
+This happended because the anchor position of the item is incorrectly
+calculated. | 2017-03-23 08:56:30 | 98dd353eed096146da58ea2bbf202a7cecc21f32
+
+Fix the scrollToPosition #206 (#231)
+
+This PR fixes the issue #206.
+The issue happend because after scrollToPosition is called, the item
+specified as the argument is always placed at the first line.
+To fix the issue, the gap toward both directions (start and end) needs
+to be filled like LinearLayoutManager does. | 2017-03-22 05:09:16 | fc97835c8b31a45a7277875b1ac4be8f0668d804
+
+Discard the calculated flex lines when configration changes are handled manually. (#201)
+
+When configration changes are handled manually, onSaveInstanceState
+wasn't called in the FlexboxLayoutManager. Thus flex lines previously
+calculated with the prior configuration including width of the screen
+were not discarded.
+
+This PR introduces the fields of the width/height of the previous
+measurement. If the width (or height depending of the flex direction) is
+different from the previous value discard the prior flex lines.
+
+This PR also fixes the cases where width is getting changed in the multi
+window mode. | 2017-02-21 06:05:37 | 1e0b613708461d5922671a19d05bbb6260237036
+
+Fix the issue if the anchor view is picked from the middle of the flex line. (#180)
+
+The anchor view should be the view, which has the
+- minimum start position for the start anchor
+- maximum end position for the end anchor
+
+but if the view in the middle of the first visible flex line (or last visible
+flex line for the end anchor) had the minimum start position, the anchor
+position wasn't picked correctly.
+
+This PR fixes the issue. | 2017-01-17 09:56:54 | a683b991a568d9c42bede810ad7d160fdc78f294
+
+Fix the offset position. (#172)
+
+When scrolling to top, the anchor position of the first visible position was
+wrong when flex direction is set to row_reverse.
+This PR fixes that issue. | 2016-12-27 06:16:28 | 3d824c535e36e642aa9d7a732b62c6779dea6a4b
+
+Improvement in the demo app and several fixes. (#171)
+
+- Preserve the flex items state across a configuration change in the demo app
+- Throw an Exception when order or alignContent which aren't supported by
+  FlexboxLayoutManager are changed (setXXXX is invoked)
+- Clear the existing flex lines and views if an incompatible, in which prior views
+  states or flex lines states can't be shared, attribute change happens
+  (e.g. flex direction is changd from row to column) | 2016-12-27 02:06:19 | 8d4abb440edb0fb692807b73df6dd8f0990447f0
+
+Fix the view alignment along the cross axis. (#167)
+
+This PR fixes the view alignment along the cross axis when RV scrolls toward
+the start position and view's sizes along the cross axis in a same line are
+not the same. | 2016-12-21 06:03:54 | 27b4e0b5f132a7ed3ec81a4716d17dbf3d1dccd7
+
+Fix the case child needs to be measured twice in the initial calculation (measureHorizontal/measureVertical) (#252)
+
+This PR fixes the corner case where where the cross size of the
+child is affected by a flex line in which the child being processed is the
+first item.
+E.g. when the child's layout_width is set to match_parent, the width
+of that child needs to be determined taking the total cross size used
+so far into account. In that case, the width of the child needs to be
+measured again. Note that we don't need to judge if the wrapping occurs
+because it doesn't change the size along the main axis. | 2017-04-12 04:34:02 | 20d8f97314c73fa85ecce2f40e031b810966f88d
+
+Fix the alignContent behavior. (#251)
+
+* Fix the alignContent behavior.
+
+Fix the alignContent behavior in the following conditions.
+- alignContent is set to flex_end
+- The size of the content is larger than the flex container
+- flexWrap is set to wrap_reverse
+
+When these conditions are met, the last of the flex item should be
+aligned to the top of the flex container, but the first item was aligned
+to the bottom of the container instead.
+
+Also fixes other values for alignContent
+(center, space_around, space_between) to be Flexbox specification
+compliant.
+
+Fixes #250.
+
+* Fix the license header | 2017-04-12 01:57:04 | 7fe51310d148fa132386cfa3b5e256c786d1d276
+
+typos fixed in RecyclerView docs (#205) | 2017-02-22 08:46:02 | 723784cd75f9ed52fecda04fc0f91b3cf0af6cfc
+
+Fix the incorrect denominator in the folllowing case (#163)
+
+This PR fixes the incorrect alignment where:
+- justifyContent is set to either or space_between or space_around
+- Views whose visibitilies are gone are included in a flex line
+
+Also use the number of item count, which the number of gone items are filtered
+where appropriate.
+
+Fixes #162 | 2016-12-19 07:06:59 | 4db51fa088d489d8b138adf9ad42b7da5e73300f
+
+Fix the issue that child margins do not expand flexbox container with wrap_content (#155)
+
+This PR fixes the case where:
+  - layout_width is set to wrap_content for the FlexboxLayout
+  - End (or start) margin is set to a child
+  - The child which the has the end (start) margin has the largest width in the
+    same flex line (or only a single child exists)
+  - The child has a positive layout_flexGrow (or layout_flexShrink) attribute set
+
+If these conditions were met, the width of the FlexboxLayout didn't take the bottom
+margin on the child into account.
+
+Fixes #154 | 2016-12-07 07:09:02 | 1a9fbc3b5c472b3e2daa4cca9c767ed85536e392
+
+Merge pull request #111 from hotchemi/patch
+
+Fix to specify list initial capacity to avoid unexpected expansion. | 2016-08-31 02:14:42 | d5848dbadf3d739c3dd5bd4c9bf50c5632a9bfc0
+
+Merge pull request #89 from google/fix_empty_flex_line
+
+Prevent an empty flex line is added | 2016-06-15 02:54:27 | 52db87395e53e575ce2b6d15691e1aee99921038
+
+fixes typo | 2016-06-15 02:18:03 | 620c9fe3210e1ce8263a6d4a37f9192666661701
+
+Merge pull request #75 from google/fix_align_items_flex_end
+
+Take the parent padding into account when determining the cross size. | 2016-06-07 06:03:52 | 9a2d3f88ad545a1076121b451db07c820c43d29a
+
+Merge pull request #74 from google/fix_62_parent_padding
+
+Take parent paddings and child margins into account for judging if a line wrapping required. Fixes #62. | 2016-06-06 17:51:43 | 575eee8ebe257d493ce0a334a0a787311263a372
+
+Merge pull request #73 from google/revert-70-fix_edge_case_children_wrap_content_with_parent_padding
+
+Revert "Fixes the issue #62" | 2016-06-06 13:21:43 | 0920adb51862625f5a8ebae2c7565410f02ef4cc
+
+Merge pull request #70 from google/fix_edge_case_children_wrap_content_with_parent_padding
+
+Fixes the issue #62 | 2016-06-06 07:40:07 | b143adfe8e1605f6f74874d2b398ccb2efb03055
+
+Fixes the issue #62
+
+This fixes the edge case where the child's width is WRAP_CONTENT and some
+of the contents along the main axis would be truncated if parent's padding
+is added (if this is the case, remeasure the child with accumulated width
+taken into account to avoid some of the contents to be truncated).
+Because accumulated width is not taken into account in the first
+measurement of each child (because FlexboxLayout has the concept of wrapping,
+at the first measurement of each child, we want the child to be big as it
+wants even if there is not enough left over space)
+
+Change-Id: I949fe6b549b5f7c10255ad5fcf6d05fb9a58eeec | 2016-06-06 07:05:55 | 7b1f3a501099ad5a88926b9c6095d4f39f0f7e95
+
+Merge pull request #64 from google/fix_npe
+
+Fixes NPE when FlexboxLayout doesn't have any children. | 2016-06-03 13:44:08 | 7f5785883073fd94dea08027d991edf0256cc3dd
+
+Merge pull request #41 from google/fix_parent_padding_incorporated_36
+
+Fixes the horizontal padding values when parent's padding is set | 2016-05-18 00:46:50 | 82f29e16dbdc016f0f1a24785257f980c815c754
+
+Merge pull request #26 from KrishMunot/patch-1
+
+adding links to root dir | 2016-05-12 01:15:39 | fd0c1c5a5eeba11b390f674f4a0ec55a6c010b91
+
+Merge pull request #19 from google/fix_18_view_gone
+
+Fixes #18. | 2016-05-10 07:44:35 | 789b7defdf5cdaee2af08a0e5b792ae1ed5dd83f
+
+Merge pull request #17 from sradvan/fix-readme-issues
+
+add minor layout/wording fixes | 2016-05-07 11:05:52 | 1c3cc1532ac1d7c3041635248a4afafa25bf4b0d
+
+add minor layout/wording fixes | 2016-05-07 10:50:48 | f31af93fe97504c75f6ac10df1c18c1019991957
+
+Merge pull request #15 from EddieRingle/er/fix-readme-typo
+
+README.md: Grammar and typo fixes | 2016-05-06 16:27:21 | 2db2c851447638d1c94a67a3b5d91a89bc08991f
+
+README.md: Grammar and typo fixes
+
+Signed-off-by: Eddie Ringle <eddie@ringle.io> | 2016-05-06 16:14:24 | 1660bf1a0c42fc72d7d0dde04b3ac7732ddba81c
+
+Merge pull request #9 from google/fix_cross_size_determination
+
+Fix the issue paddings are not taken into account along the cross axis. | 2016-05-06 06:50:51 | d528f3380ba71cfdc5f0da711138b3932bc953ab
+
+Merge pull request #8 from google/fix_spacing_with_padding
+
+Fix the issue the layout is broken when justify_content is set to either of  space_between or space_around. | 2016-05-06 06:23:07 | d595a0711b0cd93da823f44ddee77acd071972d6
+
+Merge pull request #4 from google/fix_lint_error
+
+Fixes the lint errors. | 2016-05-05 18:45:43 | 11bbc6bf27f52c8a8359d8717fb027a826bfa273
+
+Code cleanup.
+- Add some missing Javadoc.
+- Reorder methods to make it more readable (straightforward to the actual code
+  flow)
+- minor logic fixes
+- minor typos fixes
+
+Change-Id: I5f7fccfcdd2ede9ed4ef95339dd569bc25c9739d | 2016-04-21 07:42:44 | 30e4d1879fcb3ee085a5bcae04fa8fa384d08652
+
