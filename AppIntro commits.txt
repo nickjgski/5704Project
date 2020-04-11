@@ -110,49 +110,6 @@ Merge pull request #182 from championswimmer/patch-1
 
 allow users to set color of the arrow button | 2016-03-12 18:04:50 | e60a9fd3c9fee95bf74d5dedb1ee1171d78d7bdf
 
-Closes #159 and fixes broken Google Play Badge | 2016-01-24 19:39:02 | e35e642d2ece9d7ca791f9d0b799e4530fde2354
-
-fixed missing ResourceCompat error by replacing with ContextCompat. | 2016-01-02 22:48:29 | 6909597a96ab034e2ff48a8a2f7690062b9dd69d
-
-Call onRequestPermissionsResult() of super class in AppIntro and AppIntro2
- - This fixes an issue where requestPermissions() called from a fragment will not deliver the correct result to the fragment.
- - More information here:
-   http://stackoverflow.com/a/33995827/2663152
-   http://stackoverflow.com/questions/10564474/wrong-requestcode-in-onactivityresult#comment13675437_10564488 (Works similarly for this) | 2015-12-19 18:01:34 | 65029dbff90bdb5f1742dfa13f61a895b3617086
-
-[WIP] added semi-support for Android 6.0 permissions that is talked about in #84. Currently very buggy and not ready for production.
-
-Testing has only been done with AppIntro and not AppIntro2.
-
-Two new methods: slideSelected() and askForPermissions().
-
-slideSelected() gets the current slide and returns it as an int.
-
-askForPermission() takes a String array (String[]) and then goes on to request permission. See example app for how to actually request permissions for each slide. The process is tricky because the Android code doesn't have support for single permissions. That means you must pass a String[] rather than just a String if you're using one permission. The array only has one item at position 0 which would deem it worthless, however, the Android team didn't provide support for passing strings to their methods.
-
-Bugs:
-1. The request dialog pops up as the Next button is pressed rather than after. Desired result: slide talks about permission, the user presses next, and then a permission is show WITHOUT going to the next slide. After the user chooses allow or deny, he's taken to the next slide regardless of his previous answer.
-
-2. Currently, only onNextPressed works. I tried doing an onPageScrolled but that caused a permission request to pop up for every inch (or whatever measurement scrolling is) that the page was scrolled. This obviously is not desired.
-
-More time and testing will go into this, but I wanted to get the basic concept out there so people get a sense of progress. | 2015-11-24 09:15:36 | 441620a8e14088738a0cb8f35231033b857512c4
-
-Merge pull request #77 from Fleker/master
-
-Support for DPAD, based on reported bug for Nexus Player remote | 2015-08-29 08:16:49 | 6a90ec8834de51b386b9e556511bd7bc40ba5f25
-
-Support for DPAD, based on reported bug for Nexus Player remote | 2015-08-24 04:44:08 | 23a839bb122e36fa01fedf5357aa861d960d4b8c
-
-Merge pull request #53 from porokoro/fix-lint-errors
-
-Fix lint errors in the example app | 2015-07-19 20:19:37 | 76c9f65606176487e84256abb8ced3aac11eb59c
-
-Merge pull request #14 from sleepingAnt/patch-1
-
-Update AndroidManifest.xml | 2015-06-10 09:45:15 | 647017098f06d7c1bd9eff1eb3e4ff89bce864dc
-
-String fix | 2015-06-04 23:08:58 | e02a1d90268d59b04d8b29762c68877a7852a397
-
 Merge and fix conflicts | 2020-01-29 17:19:29 | 140a09b1b1cd751b93773b22fbd09a337879ad4e
 
 Merge pull request #742 from AppIntro/fix-741-orientation-change-crash
@@ -287,49 +244,6 @@ Merge pull request #182 from championswimmer/patch-1
 
 allow users to set color of the arrow button | 2016-03-12 18:04:50 | e60a9fd3c9fee95bf74d5dedb1ee1171d78d7bdf
 
-Closes #159 and fixes broken Google Play Badge | 2016-01-24 19:39:02 | e35e642d2ece9d7ca791f9d0b799e4530fde2354
-
-fixed missing ResourceCompat error by replacing with ContextCompat. | 2016-01-02 22:48:29 | 6909597a96ab034e2ff48a8a2f7690062b9dd69d
-
-Call onRequestPermissionsResult() of super class in AppIntro and AppIntro2
- - This fixes an issue where requestPermissions() called from a fragment will not deliver the correct result to the fragment.
- - More information here:
-   http://stackoverflow.com/a/33995827/2663152
-   http://stackoverflow.com/questions/10564474/wrong-requestcode-in-onactivityresult#comment13675437_10564488 (Works similarly for this) | 2015-12-19 18:01:34 | 65029dbff90bdb5f1742dfa13f61a895b3617086
-
-[WIP] added semi-support for Android 6.0 permissions that is talked about in #84. Currently very buggy and not ready for production.
-
-Testing has only been done with AppIntro and not AppIntro2.
-
-Two new methods: slideSelected() and askForPermissions().
-
-slideSelected() gets the current slide and returns it as an int.
-
-askForPermission() takes a String array (String[]) and then goes on to request permission. See example app for how to actually request permissions for each slide. The process is tricky because the Android code doesn't have support for single permissions. That means you must pass a String[] rather than just a String if you're using one permission. The array only has one item at position 0 which would deem it worthless, however, the Android team didn't provide support for passing strings to their methods.
-
-Bugs:
-1. The request dialog pops up as the Next button is pressed rather than after. Desired result: slide talks about permission, the user presses next, and then a permission is show WITHOUT going to the next slide. After the user chooses allow or deny, he's taken to the next slide regardless of his previous answer.
-
-2. Currently, only onNextPressed works. I tried doing an onPageScrolled but that caused a permission request to pop up for every inch (or whatever measurement scrolling is) that the page was scrolled. This obviously is not desired.
-
-More time and testing will go into this, but I wanted to get the basic concept out there so people get a sense of progress. | 2015-11-24 09:15:36 | 441620a8e14088738a0cb8f35231033b857512c4
-
-Merge pull request #77 from Fleker/master
-
-Support for DPAD, based on reported bug for Nexus Player remote | 2015-08-29 08:16:49 | 6a90ec8834de51b386b9e556511bd7bc40ba5f25
-
-Support for DPAD, based on reported bug for Nexus Player remote | 2015-08-24 04:44:08 | 23a839bb122e36fa01fedf5357aa861d960d4b8c
-
-Merge pull request #53 from porokoro/fix-lint-errors
-
-Fix lint errors in the example app | 2015-07-19 20:19:37 | 76c9f65606176487e84256abb8ced3aac11eb59c
-
-Merge pull request #14 from sleepingAnt/patch-1
-
-Update AndroidManifest.xml | 2015-06-10 09:45:15 | 647017098f06d7c1bd9eff1eb3e4ff89bce864dc
-
-String fix | 2015-06-04 23:08:58 | e02a1d90268d59b04d8b29762c68877a7852a397
-
 Merge pull request #730 from AppIntro/fix-686-new-approach-to-permission
 
 New Approach to Permission & Cleanup | 2020-01-23 22:18:35 | 229df228c8ccc4e32b217297d62557482712a1cf
@@ -453,49 +367,6 @@ Update README.md | 2016-03-12 18:07:26 | 04fa2891b1acd76019c742674beffe4c8bdeadb
 Merge pull request #182 from championswimmer/patch-1
 
 allow users to set color of the arrow button | 2016-03-12 18:04:50 | e60a9fd3c9fee95bf74d5dedb1ee1171d78d7bdf
-
-Closes #159 and fixes broken Google Play Badge | 2016-01-24 19:39:02 | e35e642d2ece9d7ca791f9d0b799e4530fde2354
-
-fixed missing ResourceCompat error by replacing with ContextCompat. | 2016-01-02 22:48:29 | 6909597a96ab034e2ff48a8a2f7690062b9dd69d
-
-Call onRequestPermissionsResult() of super class in AppIntro and AppIntro2
- - This fixes an issue where requestPermissions() called from a fragment will not deliver the correct result to the fragment.
- - More information here:
-   http://stackoverflow.com/a/33995827/2663152
-   http://stackoverflow.com/questions/10564474/wrong-requestcode-in-onactivityresult#comment13675437_10564488 (Works similarly for this) | 2015-12-19 18:01:34 | 65029dbff90bdb5f1742dfa13f61a895b3617086
-
-[WIP] added semi-support for Android 6.0 permissions that is talked about in #84. Currently very buggy and not ready for production.
-
-Testing has only been done with AppIntro and not AppIntro2.
-
-Two new methods: slideSelected() and askForPermissions().
-
-slideSelected() gets the current slide and returns it as an int.
-
-askForPermission() takes a String array (String[]) and then goes on to request permission. See example app for how to actually request permissions for each slide. The process is tricky because the Android code doesn't have support for single permissions. That means you must pass a String[] rather than just a String if you're using one permission. The array only has one item at position 0 which would deem it worthless, however, the Android team didn't provide support for passing strings to their methods.
-
-Bugs:
-1. The request dialog pops up as the Next button is pressed rather than after. Desired result: slide talks about permission, the user presses next, and then a permission is show WITHOUT going to the next slide. After the user chooses allow or deny, he's taken to the next slide regardless of his previous answer.
-
-2. Currently, only onNextPressed works. I tried doing an onPageScrolled but that caused a permission request to pop up for every inch (or whatever measurement scrolling is) that the page was scrolled. This obviously is not desired.
-
-More time and testing will go into this, but I wanted to get the basic concept out there so people get a sense of progress. | 2015-11-24 09:15:36 | 441620a8e14088738a0cb8f35231033b857512c4
-
-Merge pull request #77 from Fleker/master
-
-Support for DPAD, based on reported bug for Nexus Player remote | 2015-08-29 08:16:49 | 6a90ec8834de51b386b9e556511bd7bc40ba5f25
-
-Support for DPAD, based on reported bug for Nexus Player remote | 2015-08-24 04:44:08 | 23a839bb122e36fa01fedf5357aa861d960d4b8c
-
-Merge pull request #53 from porokoro/fix-lint-errors
-
-Fix lint errors in the example app | 2015-07-19 20:19:37 | 76c9f65606176487e84256abb8ced3aac11eb59c
-
-Merge pull request #14 from sleepingAnt/patch-1
-
-Update AndroidManifest.xml | 2015-06-10 09:45:15 | 647017098f06d7c1bd9eff1eb3e4ff89bce864dc
-
-String fix | 2015-06-04 23:08:58 | e02a1d90268d59b04d8b29762c68877a7852a397
 
 Merge and fix conflicts | 2020-01-29 17:19:29 | 140a09b1b1cd751b93773b22fbd09a337879ad4e
 
@@ -630,47 +501,4 @@ Update README.md | 2016-03-12 18:07:26 | 04fa2891b1acd76019c742674beffe4c8bdeadb
 Merge pull request #182 from championswimmer/patch-1
 
 allow users to set color of the arrow button | 2016-03-12 18:04:50 | e60a9fd3c9fee95bf74d5dedb1ee1171d78d7bdf
-
-Closes #159 and fixes broken Google Play Badge | 2016-01-24 19:39:02 | e35e642d2ece9d7ca791f9d0b799e4530fde2354
-
-fixed missing ResourceCompat error by replacing with ContextCompat. | 2016-01-02 22:48:29 | 6909597a96ab034e2ff48a8a2f7690062b9dd69d
-
-Call onRequestPermissionsResult() of super class in AppIntro and AppIntro2
- - This fixes an issue where requestPermissions() called from a fragment will not deliver the correct result to the fragment.
- - More information here:
-   http://stackoverflow.com/a/33995827/2663152
-   http://stackoverflow.com/questions/10564474/wrong-requestcode-in-onactivityresult#comment13675437_10564488 (Works similarly for this) | 2015-12-19 18:01:34 | 65029dbff90bdb5f1742dfa13f61a895b3617086
-
-[WIP] added semi-support for Android 6.0 permissions that is talked about in #84. Currently very buggy and not ready for production.
-
-Testing has only been done with AppIntro and not AppIntro2.
-
-Two new methods: slideSelected() and askForPermissions().
-
-slideSelected() gets the current slide and returns it as an int.
-
-askForPermission() takes a String array (String[]) and then goes on to request permission. See example app for how to actually request permissions for each slide. The process is tricky because the Android code doesn't have support for single permissions. That means you must pass a String[] rather than just a String if you're using one permission. The array only has one item at position 0 which would deem it worthless, however, the Android team didn't provide support for passing strings to their methods.
-
-Bugs:
-1. The request dialog pops up as the Next button is pressed rather than after. Desired result: slide talks about permission, the user presses next, and then a permission is show WITHOUT going to the next slide. After the user chooses allow or deny, he's taken to the next slide regardless of his previous answer.
-
-2. Currently, only onNextPressed works. I tried doing an onPageScrolled but that caused a permission request to pop up for every inch (or whatever measurement scrolling is) that the page was scrolled. This obviously is not desired.
-
-More time and testing will go into this, but I wanted to get the basic concept out there so people get a sense of progress. | 2015-11-24 09:15:36 | 441620a8e14088738a0cb8f35231033b857512c4
-
-Merge pull request #77 from Fleker/master
-
-Support for DPAD, based on reported bug for Nexus Player remote | 2015-08-29 08:16:49 | 6a90ec8834de51b386b9e556511bd7bc40ba5f25
-
-Support for DPAD, based on reported bug for Nexus Player remote | 2015-08-24 04:44:08 | 23a839bb122e36fa01fedf5357aa861d960d4b8c
-
-Merge pull request #53 from porokoro/fix-lint-errors
-
-Fix lint errors in the example app | 2015-07-19 20:19:37 | 76c9f65606176487e84256abb8ced3aac11eb59c
-
-Merge pull request #14 from sleepingAnt/patch-1
-
-Update AndroidManifest.xml | 2015-06-10 09:45:15 | 647017098f06d7c1bd9eff1eb3e4ff89bce864dc
-
-String fix | 2015-06-04 23:08:58 | e02a1d90268d59b04d8b29762c68877a7852a397
 

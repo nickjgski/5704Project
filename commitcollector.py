@@ -34,7 +34,7 @@ def main():
     g = Github("a7aec9f2a06c11bc9d9e3acb36292b886ea5e4d9")
     repos = g.search_repositories("language:kotlin")
 
-    begin_date = datetime(1990, 1, 1, 0, 0, 0, 0)
+    begin_date = datetime(2016, 2, 1, 0, 0, 0, 0)
     end_date = datetime(2020, 3, 21, 0, 0, 0, 0)
     count = 0
     commit_count = 0
@@ -42,7 +42,7 @@ def main():
     for repo in repos:
         search_limit(g)
         name = repo.name
-        if name == 'leakcanary':
+        if name != 'kotlin' and name != 'architecture-samples':
             print(name)
             if not os.path.exists(os.getcwd()):
                 os.mkdir(os.getcwd())
@@ -73,7 +73,7 @@ def main():
             f.close()
             count += 1
             print(commit_count)
-            if count == 2:
+            if count == 19:
                 break
 
 

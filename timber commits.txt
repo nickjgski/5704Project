@@ -103,44 +103,6 @@ Merge pull request #128 from shiraji/125_fix_lint_warns_for_tag_call
 
 Fix lint warning for tag call | 2016-03-30 15:19:03 | 31242742ce449380994368eeb131894d54fe39fa
 
-Merge pull request #79 from JakeWharton/jw/fix-lint
-
-Correct lintOptions specification, also log to stdout. | 2015-10-07 15:40:59 | 361be6957d6fb0645942c3d3f6bfe4d0a5169341
-
-Merge pull request #41 from JakeWharton/jw/log-callback
-
-Provide a callback for logging a message on a DebugTree. | 2015-02-18 00:55:43 | 0c1ecdc023eeaa5c2b5ec7daac4fa9b775c244c6
-
-Provide a callback for logging a message on a DebugTree.
-
-This allows planting the tree for the tag behavior but redirecting the logs elsewhere. This also forbids extending the actual logging methods on this tree. | 2015-02-18 00:51:32 | 77e99f8f41762359bc397e3af6f0d8b5f692c3db
-
-Win the lottery! Or, fix Maven classpath hell on the first guess. | 2015-01-20 06:48:10 | a202c3a3b183d6c6e9c7c2ac75a1345c9db7f7d9
-
-Merge pull request #31 from JakeWharton/jw/fix-travis
-
-Update to Android worker. | 2014-08-26 07:46:47 | 04d2426e61e1918eaf1a1d43595fee09960e2b97
-
-Merge pull request #17 from luciofm/master
-
-Use stringFormat on DebugTree.d(String message, Object... args) too | 2014-02-12 17:45:12 | 893334c9eee9361ca890fca847d633863c6a28ff
-
-Use stringFormat on DebugTree.d(String message, Object... args) too | 2014-02-12 17:28:05 | 7a758bd5861dfce6691348a22f72288045ae0ca6
-
-Merge pull request #16 from PeterAttardo/master
-
-If no varargs are supplied in DebugTree, treat it as a request to log th... | 2014-02-12 00:13:29 | 4b692cf85926a7ca5aef739c70a1715fec2bb874
-
-If no varargs are supplied in DebugTree, treat it as a request to log the string without formatting | 2014-02-11 22:03:57 | fabd9c1be8000ea61a1ed9cf1462684e927528e2
-
-Merge pull request #4 from imminent/patch-3
-
-Uses Log.* for *(...) where *'s are equal | 2013-07-22 18:47:21 | 61d425108ea8dd52552c2449fc3b6e32077e9a20
-
-Merge pull request #1 from johnjohndoe/fix/line-endings
-
-Convert line endings from CRLF to LF. | 2013-07-18 16:56:04 | 541cc614cc631f67333abded499ef0728ed89011
-
 Merge pull request #315 from drewhamilton/test-fix
 
 Fix ignored test by using INFO log instead of DEBUG log | 2018-04-16 19:29:35 | 8e5d5a92030102d7e293dc4b8362cf1cda5a737f
@@ -245,44 +207,6 @@ Add more strict pattern match for StringFormatInTimber | 2016-05-23 21:45:50 | 3
 Merge pull request #128 from shiraji/125_fix_lint_warns_for_tag_call
 
 Fix lint warning for tag call | 2016-03-30 15:19:03 | 31242742ce449380994368eeb131894d54fe39fa
-
-Merge pull request #79 from JakeWharton/jw/fix-lint
-
-Correct lintOptions specification, also log to stdout. | 2015-10-07 15:40:59 | 361be6957d6fb0645942c3d3f6bfe4d0a5169341
-
-Merge pull request #41 from JakeWharton/jw/log-callback
-
-Provide a callback for logging a message on a DebugTree. | 2015-02-18 00:55:43 | 0c1ecdc023eeaa5c2b5ec7daac4fa9b775c244c6
-
-Provide a callback for logging a message on a DebugTree.
-
-This allows planting the tree for the tag behavior but redirecting the logs elsewhere. This also forbids extending the actual logging methods on this tree. | 2015-02-18 00:51:32 | 77e99f8f41762359bc397e3af6f0d8b5f692c3db
-
-Win the lottery! Or, fix Maven classpath hell on the first guess. | 2015-01-20 06:48:10 | a202c3a3b183d6c6e9c7c2ac75a1345c9db7f7d9
-
-Merge pull request #31 from JakeWharton/jw/fix-travis
-
-Update to Android worker. | 2014-08-26 07:46:47 | 04d2426e61e1918eaf1a1d43595fee09960e2b97
-
-Merge pull request #17 from luciofm/master
-
-Use stringFormat on DebugTree.d(String message, Object... args) too | 2014-02-12 17:45:12 | 893334c9eee9361ca890fca847d633863c6a28ff
-
-Use stringFormat on DebugTree.d(String message, Object... args) too | 2014-02-12 17:28:05 | 7a758bd5861dfce6691348a22f72288045ae0ca6
-
-Merge pull request #16 from PeterAttardo/master
-
-If no varargs are supplied in DebugTree, treat it as a request to log th... | 2014-02-12 00:13:29 | 4b692cf85926a7ca5aef739c70a1715fec2bb874
-
-If no varargs are supplied in DebugTree, treat it as a request to log the string without formatting | 2014-02-11 22:03:57 | fabd9c1be8000ea61a1ed9cf1462684e927528e2
-
-Merge pull request #4 from imminent/patch-3
-
-Uses Log.* for *(...) where *'s are equal | 2013-07-22 18:47:21 | 61d425108ea8dd52552c2449fc3b6e32077e9a20
-
-Merge pull request #1 from johnjohndoe/fix/line-endings
-
-Convert line endings from CRLF to LF. | 2013-07-18 16:56:04 | 541cc614cc631f67333abded499ef0728ed89011
 
 Merge pull request #369 from erikhuizinga/patch-1
 
@@ -392,42 +316,4 @@ Add more strict pattern match for StringFormatInTimber | 2016-05-23 21:45:50 | 3
 Merge pull request #128 from shiraji/125_fix_lint_warns_for_tag_call
 
 Fix lint warning for tag call | 2016-03-30 15:19:03 | 31242742ce449380994368eeb131894d54fe39fa
-
-Merge pull request #79 from JakeWharton/jw/fix-lint
-
-Correct lintOptions specification, also log to stdout. | 2015-10-07 15:40:59 | 361be6957d6fb0645942c3d3f6bfe4d0a5169341
-
-Merge pull request #41 from JakeWharton/jw/log-callback
-
-Provide a callback for logging a message on a DebugTree. | 2015-02-18 00:55:43 | 0c1ecdc023eeaa5c2b5ec7daac4fa9b775c244c6
-
-Provide a callback for logging a message on a DebugTree.
-
-This allows planting the tree for the tag behavior but redirecting the logs elsewhere. This also forbids extending the actual logging methods on this tree. | 2015-02-18 00:51:32 | 77e99f8f41762359bc397e3af6f0d8b5f692c3db
-
-Win the lottery! Or, fix Maven classpath hell on the first guess. | 2015-01-20 06:48:10 | a202c3a3b183d6c6e9c7c2ac75a1345c9db7f7d9
-
-Merge pull request #31 from JakeWharton/jw/fix-travis
-
-Update to Android worker. | 2014-08-26 07:46:47 | 04d2426e61e1918eaf1a1d43595fee09960e2b97
-
-Merge pull request #17 from luciofm/master
-
-Use stringFormat on DebugTree.d(String message, Object... args) too | 2014-02-12 17:45:12 | 893334c9eee9361ca890fca847d633863c6a28ff
-
-Use stringFormat on DebugTree.d(String message, Object... args) too | 2014-02-12 17:28:05 | 7a758bd5861dfce6691348a22f72288045ae0ca6
-
-Merge pull request #16 from PeterAttardo/master
-
-If no varargs are supplied in DebugTree, treat it as a request to log th... | 2014-02-12 00:13:29 | 4b692cf85926a7ca5aef739c70a1715fec2bb874
-
-If no varargs are supplied in DebugTree, treat it as a request to log the string without formatting | 2014-02-11 22:03:57 | fabd9c1be8000ea61a1ed9cf1462684e927528e2
-
-Merge pull request #4 from imminent/patch-3
-
-Uses Log.* for *(...) where *'s are equal | 2013-07-22 18:47:21 | 61d425108ea8dd52552c2449fc3b6e32077e9a20
-
-Merge pull request #1 from johnjohndoe/fix/line-endings
-
-Convert line endings from CRLF to LF. | 2013-07-18 16:56:04 | 541cc614cc631f67333abded499ef0728ed89011
 

@@ -213,207 +213,230 @@ fix wrong changelog date for Version 1.7.0 | 2016-04-11 05:19:36 | 33cb196bb5182
 
 fix wrong date for Version 1.7.0 | 2016-04-11 05:15:07 | 52dd9f5665f840dd4b6b4be93ac09f6c8252a791
 
-Merge pull request #174 from serj-lotutovici/sl/fix_some_javadocs
+Merge pull request #695 from square/jwilson.0128.bugcrowd
+
+Migrate bug bounty URL to bugcrowd | 2020-01-28 20:31:51 | 33db3f1414089a8ab693a54f5f10d96ce00d9cf1
+
+Migrate bug bounty URL to bugcrowd | 2020-01-28 18:26:31 | e0609669b213ae90171aa68a5d6a5e3b49f3aac9
+
+Merge pull request #655 from emanonwzy/fix_readme
+
+Fix socks url in README | 2019-09-10 10:59:15 | 273357a2b70d815e30a8a4bde520f6bb8204e1cc
+
+Enable Gradle metadata publishing (#604)
+
+* Enable Gradle metadata publishing
+
+* Update Node plugin
+
+* Add workaround for Node plugin bug
+
+* Correct version of the workaround | 2019-05-01 15:33:28 | a54054aaaa264a7bcf190f625bbe0b98e0312ace
+
+Merge pull request #603 from square/egorand/190430/fix-snapshot-publishing
+
+Fix snapshot publishing command | 2019-04-30 17:03:19 | bdb1e33d249e578a5752dde3be1a6fa0ad389bc3
 
-Fix some lexical errors in Sink/Source javadocs. | 2015-10-28 00:39:25 | 8ab97da4901f423dd474df0f8e991e4599bbab5f
+Merge pull request #602 from jaredsburrows/patch-1
 
-Actually ignore expected AssertionError.
+Update README.md - fix broken proguard link | 2019-04-30 12:57:24 | cb440ffb53a2a4527675f738789aa75b298a1321
 
-I blundered the formatting fixing pguilbot's code. This fixes that. | 2015-08-13 19:55:21 | 10b644c910148c9f31fba141dcc0ca5851c976e3
+Update README.md - fix broken proguard link | 2019-04-30 04:10:46 | 90295b16aabea3ea560ac71fbeaef7bc86eba551
 
-Move a cast in Buffer.indexOf().
+Peek the minimum number of bytes to return a result
 
-This has the happy side-effect of preventing the Lenovo S939 from
-behaving incorrectly when executing this method.
+The contract for read() is to return at least 1 byte, but we were
+attempting to read the full request. That caused us to prematurely
+do a blocking read on the upstream source.
 
-The following test exercises the previous code; it fails after
-a few iterations on that device:
-https://gist.github.com/swankjesse/4396e276e43dbb0e71cc
+This fixes that code to defer the blocking read.
 
-Unfortunately there's no good way to regression test that we
-haven't hit a bug in a specific lousy device. | 2015-07-31 06:48:21 | e0429cf2c81a7341d150f1f4e9fe815304b03e1a
+Closes: https://github.com/square/okio/issues/594 | 2019-04-28 21:50:51 | 86e479564373d6872941bfc031c7169d9cb91417
 
-Merge pull request #157 from amincheloh/patch-1
+Update japicmp plugin
 
-Update README.md for 1.5.0. | 2015-06-30 15:01:14 | c5d3891a5e7fc9a456df2da2bcdea7da355e2e4f
+This bumps japicmp to 0.13.1 which still doesn't contain the effectively-final fix, but at least provides compatibility with newer japicmp versions so that we can upgrade once that change is released. | 2019-04-05 13:57:48 | 031ea7a5118b8077904a6cdc12e273dab4e50b13
 
-Merge pull request #149 from ChristianBecker/patch-1
+Kotlin Gradle MPP 1.3 (#544)
 
-Removed duplicated 'would' | 2015-05-17 13:15:52 | 4023ed0d4a6a09a485963a1d608030bdeeea8135
+* Basic setup
+
+* Ignore failing test
+
+* Gradle 5.0
+
+* Better native config
+
+* Fix jvm tests
+
+* JS testing setup
+
+* Native config
+
+* Use EAP dependencies
+
+* Japicmp setup
+
+* Correct path to japicmp report
+
+* Basic JVM + AnimalSniffer setup
+
+* Enable samples module
+
+* Use jvmWithJava for running Java tests
+
+* Include more Native platforms to force test task generation
+
+* Use internal UTF-8 decoder for Kotlin/Native
+
+* Kotlin 1.3.20
+
+* Gradle 5.1
+
+* Move JMH setup into a separate module
+
+* Properly configure jmhJar task
+
+* Remove old jvm build.gradle
+
+* Replace publishing plugin with SQLDelight's custom script
+
+* Use default artifactId for JVM target
+
+* Revert JVM build.gradle rename, use new DSL for defining targets
+
+* Remove old module definitions in settings
+
+* Feedback fixes | 2019-01-30 12:50:19 | 0078fca7b325a8d9454715ada316e0a3d6e99115
 
-Merge pull request #147 from alokmenghrajani/alok/bugbounty
+Merge pull request #542 from NightlyNexus/patch-1
 
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:58:21 | 3d7752f2802ee0a1c713f2566c0724465e4e2e7b
+Fix some indices in Buffer.UnsafeCursor docs. | 2019-01-16 03:02:01 | 7dd5bde7b0eb160ecdcb2a32477b8e9f313a0b8b
 
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:43:48 | aa4d51d5a3c0eda703a393750df59ba5c929d7cc
+Merge pull request #504 from square/egorand/0830/ktlint-fixes
 
-Merge pull request #127 from square/jw/fix-build
+Fix ktlint issues in platform modules | 2018-09-01 03:43:34 | ea0dd569ef0cbe3cc6288264c36bc6fde02074af
 
-Update SegmentPool references to the latest. | 2015-03-12 05:20:40 | d07412cc7cb917f852442d3d8ea056e374bad402
+Hide Base64, ByteStringKt, Platform, and Util code from Java
 
-Make tests pass on Android and other platforms
+These are 'internal' in Kotlin but 'public' to Java callers. Changing
+class names to prefix with '-' prevents Java from calling through. | 2018-08-26 13:45:15 | b518b5b2cf40147105a30bd37cf91c810ff59450
 
-Previously failing with:
-  okio.SocketTimeoutTest#writeWithTimeout
-    junit.framework.AssertionFailedError
-    	at junit.framework.Assert.fail(Assert.java:56)
-    	at okio.SocketTimeoutTest.writeWithTimeout(SocketTimeoutTest.java:75)
+Make Buffer exceptions consistent with RealBufferedSource
 
-The problem: the 1MB of data can be written to the
-client socket even though the server socket is not reading.
-This is because sockets on Android are buffered by default
-by more that the amount of data in the test. This prevents
-the write timeout occurring.
+This is inspired by ksperling's work on improving exception-consistency
+between Buffer and RealBufferedSource. I wasn't willing to make an
+exception-signature change for a 1.x release, but the 2.x release is a
+good opportunity to fix this longstanding problem. | 2018-07-24 20:55:10 | 487a1f2392d8a9f017dceaca15656a82ab4ed46d
 
-Socket defaults measured on a Nexus 4 running AOSP:
-send: 524288 bytes, receive: 1048576 bytes.
-IIRC, it varies by device.
+Retain interrupted state when throwing InterruptedIOException (Okio 2.x)
 
-Only some of the buffers need to be set to fix this, but
-setting all of them seems reasonable to make it explicit.
-The buffers are set to 1/4 of the data being
-transferred to ensure that the data will
-flood the send and receive buffers with some to spare.
-Too small and the "withoutTimeout" tests will timeout
-due to inefficiency.
+This fixes Okio 2.x. A separate fix is required for Okio 1.x. | 2018-07-06 02:35:23 | 264829dae36198c2e5454a6c2ae1d4aa208c5815
 
-The tests were also failing on a Linux desktop, probably
-for similar reasons. | 2014-11-26 10:52:39 | e3325331cc0929271df8ce81c55082b83b200b2c
+Merge pull request #463 from GianfrancoMS/patch-1
 
-Merge pull request #72 from square/jwilson_0809_request_require
+Update README.md | 2018-06-04 20:06:26 | fffc9d42244254899bb934ca400c8a88a65ea224
 
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 04:05:17 | b2af925f325eead20fc7ecaa58e78a3b3414e91c
+Merge pull request #462 from hendrawd/patch-1
 
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 01:02:32 | 21967427c2285ff9de5e95396ac3874f2e9aa34b
+Update README.md | 2018-05-29 17:14:54 | 105c2411448a726fe2d2a90c2e13d7e30ff79f43
 
-Merge pull request #61 from matasaru/patch-1
+Merge pull request #449 from yinyinnie/patch-1
 
-bump java version to 1.7 | 2014-06-17 17:06:22 | c71c72f3fe01abe6f404539ad8aec975d68f0027
+Update README.md | 2018-05-13 15:11:04 | 4b567e1f0dfeeb6c506f5b2497444d8de8ecbc47
 
-Merge pull request #53 from jgilfelt/patch-1
+Merge pull request #424 from square/jwilson.0430.no_performance_bug
 
-Javadoc fix | 2014-04-28 15:19:05 | e462d43a605a140a5ba6054646850ead80a5042e
+Add a test for the off-by-one bug in Buffer.seek(). | 2018-05-02 13:03:23 | bf4ae6cc0b967204ebdc629b62773fa8202962fc
 
-Javadoc fix | 2014-04-28 11:11:23 | 74e3ead9b2896cff3030e89b70b12cdbb8139cdd
+Add a test for the off-by-one bug in Buffer.seek().
 
-Merge pull request #34 from square/jwilson_0417_input_stream_exhausted
+There was a performance bug here, where it would return one segment too early. | 2018-05-01 03:53:32 | c2b251cc189f128071d6357e30ccba6a091adadf
 
-Fix a bug on input stream exhaustion. | 2014-04-17 18:00:45 | 0cf1bfa4d31339d98a4c105dbd29f74ca68e7543
+Merge pull request #312 from square/jwilson.0522.actually_split
 
-Fix a bug on input stream exhaustion.
+Fix a performance bug in AsyncTimeout.sink().write(). | 2017-05-22 14:42:26 | 20e259c08af6c96508387540a5ea53f89b1d01f5
 
-Previously we were throwing because readByte() requires a byte. Instead
-just return -1. | 2014-04-17 17:56:36 | 46007a3a62b98f19f0be0ba042dbe31f35c0a3c9
+Fix a performance bug in AsyncTimeout.sink().write().
 
-Flatten serialization.
+Previously the behavior was correct but the intended behavior was less
+efficient than intended. In particular there were two problems:
 
-Fix a bug that occurs if InputStream.read() returns before reading the
-requested number of bytes. | 2014-04-15 15:49:13 | a6ace31af61c54db329881e324b8bb67eef0c7b3
+ * The loop to find a segment boundary may have made more iterations
+   than necessary if the first segment was very small
+ * The sink write may not have been on a segment boundary, causing more
+   data than necessary to be copied.
 
-Merge pull request #28 from roman-mazur/patch-1
+Closes: https://github.com/square/okio/issues/311 | 2017-05-22 12:14:32 | 80f3aa2e7bb9ac9691e62ec619e6b53259d78958
 
-Remove duplicates in docs :) | 2014-04-13 00:37:06 | cc23ae57865da921fab74db3e81fa146ac89a93f
+Import jsr305 and use it to mark @Nullable stuff.
 
-Merge remote-tracking branch 'okhttp/master'
+The result is that IntelliJ + Kotlin correctly infers the right nullability
+for Okio's APIs. I used IntelliJ's "Specify types explicitly" quick fix on
+the 'a' and 'b' variables below and it did the right thing.
 
-* okhttp/master: (541 commits)
-  Don't explode if removing an absent file fails.
-  Fix build removing obsolete okhttp-protocols dependency
-  Push Socket into HttpConnection/SpdyConnection.
-  Only use one thread for MockSpdyPeer.
-  More 1.5 changes.
-  Sample: Crawler.
-  Fix a crash on conditional cache hits for new API.
-  Don't double pool on a conditional cache hit.
-  Empty line.
-  Changelog updates.
-  Doc: OkHttpClient should be treated as immutable once shared
-  Doc: OkHttpClient need not /always/ be a singleton
-  Document that OkHttpClient is thread-safe
-  Fix problems with connection recycling and recovery.
-  Fix problems with DeflaterSink.
-  fix #627: Merge SPDY settings when clear flag set. Revert Settings.DEFAULT_INITIAL_WINDOW_SIZE.
-  Use the peer's settings for outgoing window updates.
-  API tweaks to Okio.
-  Fix 1.5 doc and download link.
-  Update website to not use jar-with-dependencies classifier.
-  ...
+    fun specifyTypeExplicitly(source: BufferedSource) {
+      val a: String? = source.readUtf8Line()
+      val b: String = source.readUtf8LineStrict()
+    } | 2017-05-02 02:39:52 | 2320c7f6ad9d05c1b65fb1e8cc43e257965792b4
 
-Conflicts:
-	.gitignore | 2014-03-17 02:09:57 | e0961bdb68cff845e30230c5336f91f671ff298b
+Merge pull request #274 from larsgrefer/patch-1
 
-Don't require OkBuffer callers to cast.
+endsWith -> suffix | 2016-12-07 22:57:38 | d412a4a2f9034a9bc59a8637e477822bd54d4504
 
-The casting masks bugs. Instead accept a long and do a range check in
-OkBuffer. | 2014-03-01 14:34:26 | a06fb5e3d4fc3846a0bcc8da8382e16a5ad8c3db
+endsWith -> suffix | 2016-12-07 22:54:57 | 032ad9948d5df69ee49367c90ad30f8823fc200b
 
-Give Base64 lots of love.
+Merge pull request #259 from square/jwilson.0829.substring
 
-Fix some bugs, such as decoding of input that contains lots
-of padding or whitespace. See
-https://code.google.com/p/android/issues/detail?id=66078
+Fix a major bug where writeString() didn't always respect offsets. | 2016-08-29 12:54:40 | 927902b565479277178bdb7b0c986ce8beca07a3
 
-Improve performance by correctly guessing the output array
-size whenever the input doesn't contain whitespace.
+Fix a major bug where writeString() didn't always respect offsets.
 
-Build Base64 into ByteString, and expose it through there
-only.
+Closes: https://github.com/square/okio/issues/258 | 2016-08-29 12:16:03 | 8f5ae7376486990db25696304367f8e8b16f5534
 
-Use more reasonable names in the implementation. | 2014-02-17 18:41:11 | 81a09a88857deccea956197b86fb55527aced5e2
+Merge pull request #253 from square/jwilson.0814.fix_gzip_sink
 
-Merge pull request #517 from square/jwilson_0208_buffer_fixes
+Fix GzipSink for symmetry. | 2016-08-14 16:17:04 | 838a215b2bdbd77550ee876bc8870a61ad7219df
 
-Fix some OkBuffer bugs. | 2014-02-08 15:20:34 | dde8e538af95f6a1868c509d7b8a1bccef03da07
+Merge pull request #252 from square/jwilson.0813.gzip_fix
 
-Fix some OkBuffer bugs.
+Fix GzipSource to handle large files on AOSP. | 2016-08-14 04:32:14 | 4934879155da13b82be1775ac9840dbbd6b5c0cf
 
-GzipSource exceptions used six hex digits instead of
-8 to print ints.
+Merge pull request #247 from cketti/base64_encode_buffer_size_fix
 
-readUtf8 always did an extra copy of the bytes being
-read.
+Don't overallocate when base64-encoding. | 2016-08-07 00:11:57 | 834a35c2c8ff533f9e6d476714e7410c53cfd971
 
-Moving bytes between buffers crashed when the destination
-was empty and the source was a prefix.
+Import org.junit.Assert.fail instead of junit.framework.TestCase.fail
 
-InputStream reading returned values in -128..127 instead
-of in 0..255. | 2014-02-08 13:22:22 | fdb1c5991994632ac2296496a36d7286f15efecb
+Use the JUnit 4 version in the couple of places were JUnit 3 imports
+still existed; this makes the imports more consistent and also fixes
+compilation if the JUnit 3 version is not available. | 2016-07-28 12:32:38 | 2f6e7783503aeb68d58fd7d50c47b7985d80203d
 
-Rename byteAt to getByte.
+Merge pull request #227 from square/jwilson.0618.hashfail
 
-Should we later support random access for other primitives
-or random bulk access, I'd like the prefix to stay constant
-(getByte, getInt, getLong, getBytes) vs. the suffix (byteAt,
-intAt, longAt). Prefixing may work better for autocomplete
-in IDEs, particularly since we already use a prefix for our
-consuming reads (readByte, readInt, readLong). | 2014-02-08 12:44:47 | b102c6d76c60861e96267f79096f6747bb575957
+Fix a major bug where HashingSource is incorrect for large writes. | 2016-06-19 01:58:13 | 2244048477890e33893613affc8f1fc82230c178
 
-Merge pull request #512 from square/adriancole_02_05_findbugs
+Fix a major bug where HashingSource is incorrect for large writes.
 
-FindBugs sweep. | 2014-02-05 17:49:22 | 949e6874790d8979d8f9a1ff31a175b439b6eda6
+There was a bug where it wasn't traversing through the segments of
+the buffer being hashed. This means that HashingSource was returning
+incorrect answers for any writes that spanned multiple segment
+boundaries.
 
-Merge pull request #488 from jgilfelt/patch-1
+The problem wasn't detected by our test cases because although
+we have tests for non-uniform segments, and for buffers that
+span multiple segments, we don't have tests for non-uniform
+buffers that span multiple segments. This has been fixed too. | 2016-06-18 22:04:20 | 657278fff2ebb521659a330d0f7fc2b66d99cfbd
 
-Fix mockwebserver jar download 404 | 2014-01-27 14:27:45 | 54aa769fd216793f2c71b3cec69c50cc2257ac54
+Merge pull request #210 from aried3r/patch-1
 
-OkBuffer API sketch.
+Fix typo in changelog | 2016-04-11 16:45:29 | 2c92d8261bc932473f4580bc62f22818a76acb47
 
-I'm unhappy with java.io:
- * No timeouts.
- * Every layer needs to copy bytes around. Always copying bytes.
- * Features like mark/reset and available() are clumsy.
- * Its awkard in mixed text/binary protocols like HTTP because
-   character decoding is separate and takes over the stream.
+Merge pull request #209 from chrisdoc/master
 
-Unfortunately java.nio isn't better, just different:
- * It's complex.
- * Buffers are fixed size.
- * No built-in buffer pooling.
- * Features like mark/reset/position are clumsy.
+fix wrong changelog date for Version 1.7.0 | 2016-04-11 05:19:36 | 33cb196bb5182ebcad50303660f9e44635071696
 
-This is an obnoxious attempt at a 3rd I/O interface, mostly
-inspired by InputStream and OutputStream, but using growable
-buffers instead of byte arrays as the core data container. | 2014-01-26 16:31:23 | 2d3cdc9e5dfb593f8eb7da38459163b902a95d7f
+fix wrong date for Version 1.7.0 | 2016-04-11 05:15:07 | 52dd9f5665f840dd4b6b4be93ac09f6c8252a791
 
 Merge pull request #695 from square/jwilson.0128.bugcrowd
 
@@ -640,217 +663,220 @@ fix wrong changelog date for Version 1.7.0 | 2016-04-11 05:19:36 | 33cb196bb5182
 
 fix wrong date for Version 1.7.0 | 2016-04-11 05:15:07 | 52dd9f5665f840dd4b6b4be93ac09f6c8252a791
 
-Merge pull request #174 from serj-lotutovici/sl/fix_some_javadocs
+Enable Gradle metadata publishing (#604)
+
+* Enable Gradle metadata publishing
+
+* Update Node plugin
+
+* Add workaround for Node plugin bug
+
+* Correct version of the workaround | 2019-05-01 15:33:28 | a54054aaaa264a7bcf190f625bbe0b98e0312ace
+
+Merge pull request #603 from square/egorand/190430/fix-snapshot-publishing
+
+Fix snapshot publishing command | 2019-04-30 17:03:19 | bdb1e33d249e578a5752dde3be1a6fa0ad389bc3
+
+Merge pull request #602 from jaredsburrows/patch-1
+
+Update README.md - fix broken proguard link | 2019-04-30 12:57:24 | cb440ffb53a2a4527675f738789aa75b298a1321
+
+Update README.md - fix broken proguard link | 2019-04-30 04:10:46 | 90295b16aabea3ea560ac71fbeaef7bc86eba551
+
+Peek the minimum number of bytes to return a result
+
+The contract for read() is to return at least 1 byte, but we were
+attempting to read the full request. That caused us to prematurely
+do a blocking read on the upstream source.
 
-Fix some lexical errors in Sink/Source javadocs. | 2015-10-28 00:39:25 | 8ab97da4901f423dd474df0f8e991e4599bbab5f
+This fixes that code to defer the blocking read.
 
-Actually ignore expected AssertionError.
+Closes: https://github.com/square/okio/issues/594 | 2019-04-28 21:50:51 | 86e479564373d6872941bfc031c7169d9cb91417
 
-I blundered the formatting fixing pguilbot's code. This fixes that. | 2015-08-13 19:55:21 | 10b644c910148c9f31fba141dcc0ca5851c976e3
+Update japicmp plugin
 
-Move a cast in Buffer.indexOf().
+This bumps japicmp to 0.13.1 which still doesn't contain the effectively-final fix, but at least provides compatibility with newer japicmp versions so that we can upgrade once that change is released. | 2019-04-05 13:57:48 | 031ea7a5118b8077904a6cdc12e273dab4e50b13
 
-This has the happy side-effect of preventing the Lenovo S939 from
-behaving incorrectly when executing this method.
+Kotlin Gradle MPP 1.3 (#544)
 
-The following test exercises the previous code; it fails after
-a few iterations on that device:
-https://gist.github.com/swankjesse/4396e276e43dbb0e71cc
+* Basic setup
+
+* Ignore failing test
+
+* Gradle 5.0
+
+* Better native config
+
+* Fix jvm tests
+
+* JS testing setup
+
+* Native config
+
+* Use EAP dependencies
+
+* Japicmp setup
+
+* Correct path to japicmp report
+
+* Basic JVM + AnimalSniffer setup
+
+* Enable samples module
+
+* Use jvmWithJava for running Java tests
+
+* Include more Native platforms to force test task generation
+
+* Use internal UTF-8 decoder for Kotlin/Native
+
+* Kotlin 1.3.20
+
+* Gradle 5.1
+
+* Move JMH setup into a separate module
+
+* Properly configure jmhJar task
+
+* Remove old jvm build.gradle
+
+* Replace publishing plugin with SQLDelight's custom script
+
+* Use default artifactId for JVM target
+
+* Revert JVM build.gradle rename, use new DSL for defining targets
+
+* Remove old module definitions in settings
+
+* Feedback fixes | 2019-01-30 12:50:19 | 0078fca7b325a8d9454715ada316e0a3d6e99115
 
-Unfortunately there's no good way to regression test that we
-haven't hit a bug in a specific lousy device. | 2015-07-31 06:48:21 | e0429cf2c81a7341d150f1f4e9fe815304b03e1a
+Merge pull request #542 from NightlyNexus/patch-1
 
-Merge pull request #157 from amincheloh/patch-1
+Fix some indices in Buffer.UnsafeCursor docs. | 2019-01-16 03:02:01 | 7dd5bde7b0eb160ecdcb2a32477b8e9f313a0b8b
 
-Update README.md for 1.5.0. | 2015-06-30 15:01:14 | c5d3891a5e7fc9a456df2da2bcdea7da355e2e4f
+Merge pull request #504 from square/egorand/0830/ktlint-fixes
 
-Merge pull request #149 from ChristianBecker/patch-1
+Fix ktlint issues in platform modules | 2018-09-01 03:43:34 | ea0dd569ef0cbe3cc6288264c36bc6fde02074af
 
-Removed duplicated 'would' | 2015-05-17 13:15:52 | 4023ed0d4a6a09a485963a1d608030bdeeea8135
+Hide Base64, ByteStringKt, Platform, and Util code from Java
 
-Merge pull request #147 from alokmenghrajani/alok/bugbounty
+These are 'internal' in Kotlin but 'public' to Java callers. Changing
+class names to prefix with '-' prevents Java from calling through. | 2018-08-26 13:45:15 | b518b5b2cf40147105a30bd37cf91c810ff59450
 
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:58:21 | 3d7752f2802ee0a1c713f2566c0724465e4e2e7b
+Make Buffer exceptions consistent with RealBufferedSource
 
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:43:48 | aa4d51d5a3c0eda703a393750df59ba5c929d7cc
+This is inspired by ksperling's work on improving exception-consistency
+between Buffer and RealBufferedSource. I wasn't willing to make an
+exception-signature change for a 1.x release, but the 2.x release is a
+good opportunity to fix this longstanding problem. | 2018-07-24 20:55:10 | 487a1f2392d8a9f017dceaca15656a82ab4ed46d
 
-Merge pull request #127 from square/jw/fix-build
+Retain interrupted state when throwing InterruptedIOException (Okio 2.x)
 
-Update SegmentPool references to the latest. | 2015-03-12 05:20:40 | d07412cc7cb917f852442d3d8ea056e374bad402
+This fixes Okio 2.x. A separate fix is required for Okio 1.x. | 2018-07-06 02:35:23 | 264829dae36198c2e5454a6c2ae1d4aa208c5815
 
-Make tests pass on Android and other platforms
+Merge pull request #463 from GianfrancoMS/patch-1
 
-Previously failing with:
-  okio.SocketTimeoutTest#writeWithTimeout
-    junit.framework.AssertionFailedError
-    	at junit.framework.Assert.fail(Assert.java:56)
-    	at okio.SocketTimeoutTest.writeWithTimeout(SocketTimeoutTest.java:75)
+Update README.md | 2018-06-04 20:06:26 | fffc9d42244254899bb934ca400c8a88a65ea224
 
-The problem: the 1MB of data can be written to the
-client socket even though the server socket is not reading.
-This is because sockets on Android are buffered by default
-by more that the amount of data in the test. This prevents
-the write timeout occurring.
+Merge pull request #462 from hendrawd/patch-1
 
-Socket defaults measured on a Nexus 4 running AOSP:
-send: 524288 bytes, receive: 1048576 bytes.
-IIRC, it varies by device.
+Update README.md | 2018-05-29 17:14:54 | 105c2411448a726fe2d2a90c2e13d7e30ff79f43
 
-Only some of the buffers need to be set to fix this, but
-setting all of them seems reasonable to make it explicit.
-The buffers are set to 1/4 of the data being
-transferred to ensure that the data will
-flood the send and receive buffers with some to spare.
-Too small and the "withoutTimeout" tests will timeout
-due to inefficiency.
+Merge pull request #449 from yinyinnie/patch-1
 
-The tests were also failing on a Linux desktop, probably
-for similar reasons. | 2014-11-26 10:52:39 | e3325331cc0929271df8ce81c55082b83b200b2c
+Update README.md | 2018-05-13 15:11:04 | 4b567e1f0dfeeb6c506f5b2497444d8de8ecbc47
 
-Merge pull request #72 from square/jwilson_0809_request_require
+Merge pull request #424 from square/jwilson.0430.no_performance_bug
 
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 04:05:17 | b2af925f325eead20fc7ecaa58e78a3b3414e91c
+Add a test for the off-by-one bug in Buffer.seek(). | 2018-05-02 13:03:23 | bf4ae6cc0b967204ebdc629b62773fa8202962fc
 
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 01:02:32 | 21967427c2285ff9de5e95396ac3874f2e9aa34b
+Add a test for the off-by-one bug in Buffer.seek().
 
-Merge pull request #61 from matasaru/patch-1
+There was a performance bug here, where it would return one segment too early. | 2018-05-01 03:53:32 | c2b251cc189f128071d6357e30ccba6a091adadf
 
-bump java version to 1.7 | 2014-06-17 17:06:22 | c71c72f3fe01abe6f404539ad8aec975d68f0027
+Merge pull request #312 from square/jwilson.0522.actually_split
 
-Merge pull request #53 from jgilfelt/patch-1
+Fix a performance bug in AsyncTimeout.sink().write(). | 2017-05-22 14:42:26 | 20e259c08af6c96508387540a5ea53f89b1d01f5
 
-Javadoc fix | 2014-04-28 15:19:05 | e462d43a605a140a5ba6054646850ead80a5042e
+Fix a performance bug in AsyncTimeout.sink().write().
 
-Javadoc fix | 2014-04-28 11:11:23 | 74e3ead9b2896cff3030e89b70b12cdbb8139cdd
+Previously the behavior was correct but the intended behavior was less
+efficient than intended. In particular there were two problems:
 
-Merge pull request #34 from square/jwilson_0417_input_stream_exhausted
+ * The loop to find a segment boundary may have made more iterations
+   than necessary if the first segment was very small
+ * The sink write may not have been on a segment boundary, causing more
+   data than necessary to be copied.
 
-Fix a bug on input stream exhaustion. | 2014-04-17 18:00:45 | 0cf1bfa4d31339d98a4c105dbd29f74ca68e7543
+Closes: https://github.com/square/okio/issues/311 | 2017-05-22 12:14:32 | 80f3aa2e7bb9ac9691e62ec619e6b53259d78958
 
-Fix a bug on input stream exhaustion.
+Import jsr305 and use it to mark @Nullable stuff.
 
-Previously we were throwing because readByte() requires a byte. Instead
-just return -1. | 2014-04-17 17:56:36 | 46007a3a62b98f19f0be0ba042dbe31f35c0a3c9
+The result is that IntelliJ + Kotlin correctly infers the right nullability
+for Okio's APIs. I used IntelliJ's "Specify types explicitly" quick fix on
+the 'a' and 'b' variables below and it did the right thing.
 
-Flatten serialization.
+    fun specifyTypeExplicitly(source: BufferedSource) {
+      val a: String? = source.readUtf8Line()
+      val b: String = source.readUtf8LineStrict()
+    } | 2017-05-02 02:39:52 | 2320c7f6ad9d05c1b65fb1e8cc43e257965792b4
 
-Fix a bug that occurs if InputStream.read() returns before reading the
-requested number of bytes. | 2014-04-15 15:49:13 | a6ace31af61c54db329881e324b8bb67eef0c7b3
+Merge pull request #274 from larsgrefer/patch-1
 
-Merge pull request #28 from roman-mazur/patch-1
+endsWith -> suffix | 2016-12-07 22:57:38 | d412a4a2f9034a9bc59a8637e477822bd54d4504
 
-Remove duplicates in docs :) | 2014-04-13 00:37:06 | cc23ae57865da921fab74db3e81fa146ac89a93f
+endsWith -> suffix | 2016-12-07 22:54:57 | 032ad9948d5df69ee49367c90ad30f8823fc200b
 
-Merge remote-tracking branch 'okhttp/master'
+Merge pull request #259 from square/jwilson.0829.substring
 
-* okhttp/master: (541 commits)
-  Don't explode if removing an absent file fails.
-  Fix build removing obsolete okhttp-protocols dependency
-  Push Socket into HttpConnection/SpdyConnection.
-  Only use one thread for MockSpdyPeer.
-  More 1.5 changes.
-  Sample: Crawler.
-  Fix a crash on conditional cache hits for new API.
-  Don't double pool on a conditional cache hit.
-  Empty line.
-  Changelog updates.
-  Doc: OkHttpClient should be treated as immutable once shared
-  Doc: OkHttpClient need not /always/ be a singleton
-  Document that OkHttpClient is thread-safe
-  Fix problems with connection recycling and recovery.
-  Fix problems with DeflaterSink.
-  fix #627: Merge SPDY settings when clear flag set. Revert Settings.DEFAULT_INITIAL_WINDOW_SIZE.
-  Use the peer's settings for outgoing window updates.
-  API tweaks to Okio.
-  Fix 1.5 doc and download link.
-  Update website to not use jar-with-dependencies classifier.
-  ...
+Fix a major bug where writeString() didn't always respect offsets. | 2016-08-29 12:54:40 | 927902b565479277178bdb7b0c986ce8beca07a3
 
-Conflicts:
-	.gitignore | 2014-03-17 02:09:57 | e0961bdb68cff845e30230c5336f91f671ff298b
+Fix a major bug where writeString() didn't always respect offsets.
 
-Don't require OkBuffer callers to cast.
+Closes: https://github.com/square/okio/issues/258 | 2016-08-29 12:16:03 | 8f5ae7376486990db25696304367f8e8b16f5534
 
-The casting masks bugs. Instead accept a long and do a range check in
-OkBuffer. | 2014-03-01 14:34:26 | a06fb5e3d4fc3846a0bcc8da8382e16a5ad8c3db
+Merge pull request #253 from square/jwilson.0814.fix_gzip_sink
 
-Give Base64 lots of love.
+Fix GzipSink for symmetry. | 2016-08-14 16:17:04 | 838a215b2bdbd77550ee876bc8870a61ad7219df
 
-Fix some bugs, such as decoding of input that contains lots
-of padding or whitespace. See
-https://code.google.com/p/android/issues/detail?id=66078
+Merge pull request #252 from square/jwilson.0813.gzip_fix
 
-Improve performance by correctly guessing the output array
-size whenever the input doesn't contain whitespace.
+Fix GzipSource to handle large files on AOSP. | 2016-08-14 04:32:14 | 4934879155da13b82be1775ac9840dbbd6b5c0cf
 
-Build Base64 into ByteString, and expose it through there
-only.
+Merge pull request #247 from cketti/base64_encode_buffer_size_fix
 
-Use more reasonable names in the implementation. | 2014-02-17 18:41:11 | 81a09a88857deccea956197b86fb55527aced5e2
+Don't overallocate when base64-encoding. | 2016-08-07 00:11:57 | 834a35c2c8ff533f9e6d476714e7410c53cfd971
 
-Merge pull request #517 from square/jwilson_0208_buffer_fixes
+Import org.junit.Assert.fail instead of junit.framework.TestCase.fail
 
-Fix some OkBuffer bugs. | 2014-02-08 15:20:34 | dde8e538af95f6a1868c509d7b8a1bccef03da07
+Use the JUnit 4 version in the couple of places were JUnit 3 imports
+still existed; this makes the imports more consistent and also fixes
+compilation if the JUnit 3 version is not available. | 2016-07-28 12:32:38 | 2f6e7783503aeb68d58fd7d50c47b7985d80203d
 
-Fix some OkBuffer bugs.
+Merge pull request #227 from square/jwilson.0618.hashfail
 
-GzipSource exceptions used six hex digits instead of
-8 to print ints.
+Fix a major bug where HashingSource is incorrect for large writes. | 2016-06-19 01:58:13 | 2244048477890e33893613affc8f1fc82230c178
 
-readUtf8 always did an extra copy of the bytes being
-read.
+Fix a major bug where HashingSource is incorrect for large writes.
 
-Moving bytes between buffers crashed when the destination
-was empty and the source was a prefix.
+There was a bug where it wasn't traversing through the segments of
+the buffer being hashed. This means that HashingSource was returning
+incorrect answers for any writes that spanned multiple segment
+boundaries.
 
-InputStream reading returned values in -128..127 instead
-of in 0..255. | 2014-02-08 13:22:22 | fdb1c5991994632ac2296496a36d7286f15efecb
+The problem wasn't detected by our test cases because although
+we have tests for non-uniform segments, and for buffers that
+span multiple segments, we don't have tests for non-uniform
+buffers that span multiple segments. This has been fixed too. | 2016-06-18 22:04:20 | 657278fff2ebb521659a330d0f7fc2b66d99cfbd
 
-Rename byteAt to getByte.
+Merge pull request #210 from aried3r/patch-1
 
-Should we later support random access for other primitives
-or random bulk access, I'd like the prefix to stay constant
-(getByte, getInt, getLong, getBytes) vs. the suffix (byteAt,
-intAt, longAt). Prefixing may work better for autocomplete
-in IDEs, particularly since we already use a prefix for our
-consuming reads (readByte, readInt, readLong). | 2014-02-08 12:44:47 | b102c6d76c60861e96267f79096f6747bb575957
+Fix typo in changelog | 2016-04-11 16:45:29 | 2c92d8261bc932473f4580bc62f22818a76acb47
 
-Merge pull request #512 from square/adriancole_02_05_findbugs
+Merge pull request #209 from chrisdoc/master
 
-FindBugs sweep. | 2014-02-05 17:49:22 | 949e6874790d8979d8f9a1ff31a175b439b6eda6
+fix wrong changelog date for Version 1.7.0 | 2016-04-11 05:19:36 | 33cb196bb5182ebcad50303660f9e44635071696
 
-Merge pull request #488 from jgilfelt/patch-1
-
-Fix mockwebserver jar download 404 | 2014-01-27 14:27:45 | 54aa769fd216793f2c71b3cec69c50cc2257ac54
-
-OkBuffer API sketch.
-
-I'm unhappy with java.io:
- * No timeouts.
- * Every layer needs to copy bytes around. Always copying bytes.
- * Features like mark/reset and available() are clumsy.
- * Its awkard in mixed text/binary protocols like HTTP because
-   character decoding is separate and takes over the stream.
-
-Unfortunately java.nio isn't better, just different:
- * It's complex.
- * Buffers are fixed size.
- * No built-in buffer pooling.
- * Features like mark/reset/position are clumsy.
-
-This is an obnoxious attempt at a 3rd I/O interface, mostly
-inspired by InputStream and OutputStream, but using growable
-buffers instead of byte arrays as the core data container. | 2014-01-26 16:31:23 | 2d3cdc9e5dfb593f8eb7da38459163b902a95d7f
-
-Merge pull request #695 from square/jwilson.0128.bugcrowd
-
-Migrate bug bounty URL to bugcrowd | 2020-01-28 20:31:51 | 33db3f1414089a8ab693a54f5f10d96ce00d9cf1
-
-Migrate bug bounty URL to bugcrowd | 2020-01-28 18:26:31 | e0609669b213ae90171aa68a5d6a5e3b49f3aac9
-
-Merge pull request #655 from emanonwzy/fix_readme
-
-Fix socks url in README | 2019-09-10 10:59:15 | 273357a2b70d815e30a8a4bde520f6bb8204e1cc
+fix wrong date for Version 1.7.0 | 2016-04-11 05:15:07 | 52dd9f5665f840dd4b6b4be93ac09f6c8252a791
 
 Enable Gradle metadata publishing (#604)
 
@@ -1067,207 +1093,186 @@ fix wrong changelog date for Version 1.7.0 | 2016-04-11 05:19:36 | 33cb196bb5182
 
 fix wrong date for Version 1.7.0 | 2016-04-11 05:15:07 | 52dd9f5665f840dd4b6b4be93ac09f6c8252a791
 
-Merge pull request #174 from serj-lotutovici/sl/fix_some_javadocs
+Kotlin Gradle MPP 1.3 (#544)
+
+* Basic setup
+
+* Ignore failing test
+
+* Gradle 5.0
+
+* Better native config
+
+* Fix jvm tests
+
+* JS testing setup
+
+* Native config
+
+* Use EAP dependencies
+
+* Japicmp setup
+
+* Correct path to japicmp report
+
+* Basic JVM + AnimalSniffer setup
+
+* Enable samples module
+
+* Use jvmWithJava for running Java tests
+
+* Include more Native platforms to force test task generation
+
+* Use internal UTF-8 decoder for Kotlin/Native
+
+* Kotlin 1.3.20
+
+* Gradle 5.1
+
+* Move JMH setup into a separate module
+
+* Properly configure jmhJar task
+
+* Remove old jvm build.gradle
+
+* Replace publishing plugin with SQLDelight's custom script
+
+* Use default artifactId for JVM target
+
+* Revert JVM build.gradle rename, use new DSL for defining targets
+
+* Remove old module definitions in settings
+
+* Feedback fixes | 2019-01-30 12:50:19 | 0078fca7b325a8d9454715ada316e0a3d6e99115
 
-Fix some lexical errors in Sink/Source javadocs. | 2015-10-28 00:39:25 | 8ab97da4901f423dd474df0f8e991e4599bbab5f
+Merge pull request #542 from NightlyNexus/patch-1
 
-Actually ignore expected AssertionError.
+Fix some indices in Buffer.UnsafeCursor docs. | 2019-01-16 03:02:01 | 7dd5bde7b0eb160ecdcb2a32477b8e9f313a0b8b
 
-I blundered the formatting fixing pguilbot's code. This fixes that. | 2015-08-13 19:55:21 | 10b644c910148c9f31fba141dcc0ca5851c976e3
+Merge pull request #504 from square/egorand/0830/ktlint-fixes
 
-Move a cast in Buffer.indexOf().
+Fix ktlint issues in platform modules | 2018-09-01 03:43:34 | ea0dd569ef0cbe3cc6288264c36bc6fde02074af
 
-This has the happy side-effect of preventing the Lenovo S939 from
-behaving incorrectly when executing this method.
+Hide Base64, ByteStringKt, Platform, and Util code from Java
 
-The following test exercises the previous code; it fails after
-a few iterations on that device:
-https://gist.github.com/swankjesse/4396e276e43dbb0e71cc
+These are 'internal' in Kotlin but 'public' to Java callers. Changing
+class names to prefix with '-' prevents Java from calling through. | 2018-08-26 13:45:15 | b518b5b2cf40147105a30bd37cf91c810ff59450
 
-Unfortunately there's no good way to regression test that we
-haven't hit a bug in a specific lousy device. | 2015-07-31 06:48:21 | e0429cf2c81a7341d150f1f4e9fe815304b03e1a
+Make Buffer exceptions consistent with RealBufferedSource
 
-Merge pull request #157 from amincheloh/patch-1
+This is inspired by ksperling's work on improving exception-consistency
+between Buffer and RealBufferedSource. I wasn't willing to make an
+exception-signature change for a 1.x release, but the 2.x release is a
+good opportunity to fix this longstanding problem. | 2018-07-24 20:55:10 | 487a1f2392d8a9f017dceaca15656a82ab4ed46d
 
-Update README.md for 1.5.0. | 2015-06-30 15:01:14 | c5d3891a5e7fc9a456df2da2bcdea7da355e2e4f
+Retain interrupted state when throwing InterruptedIOException (Okio 2.x)
 
-Merge pull request #149 from ChristianBecker/patch-1
+This fixes Okio 2.x. A separate fix is required for Okio 1.x. | 2018-07-06 02:35:23 | 264829dae36198c2e5454a6c2ae1d4aa208c5815
 
-Removed duplicated 'would' | 2015-05-17 13:15:52 | 4023ed0d4a6a09a485963a1d608030bdeeea8135
+Merge pull request #463 from GianfrancoMS/patch-1
 
-Merge pull request #147 from alokmenghrajani/alok/bugbounty
+Update README.md | 2018-06-04 20:06:26 | fffc9d42244254899bb934ca400c8a88a65ea224
 
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:58:21 | 3d7752f2802ee0a1c713f2566c0724465e4e2e7b
+Merge pull request #462 from hendrawd/patch-1
 
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:43:48 | aa4d51d5a3c0eda703a393750df59ba5c929d7cc
+Update README.md | 2018-05-29 17:14:54 | 105c2411448a726fe2d2a90c2e13d7e30ff79f43
 
-Merge pull request #127 from square/jw/fix-build
+Merge pull request #449 from yinyinnie/patch-1
 
-Update SegmentPool references to the latest. | 2015-03-12 05:20:40 | d07412cc7cb917f852442d3d8ea056e374bad402
+Update README.md | 2018-05-13 15:11:04 | 4b567e1f0dfeeb6c506f5b2497444d8de8ecbc47
 
-Make tests pass on Android and other platforms
+Merge pull request #424 from square/jwilson.0430.no_performance_bug
 
-Previously failing with:
-  okio.SocketTimeoutTest#writeWithTimeout
-    junit.framework.AssertionFailedError
-    	at junit.framework.Assert.fail(Assert.java:56)
-    	at okio.SocketTimeoutTest.writeWithTimeout(SocketTimeoutTest.java:75)
+Add a test for the off-by-one bug in Buffer.seek(). | 2018-05-02 13:03:23 | bf4ae6cc0b967204ebdc629b62773fa8202962fc
 
-The problem: the 1MB of data can be written to the
-client socket even though the server socket is not reading.
-This is because sockets on Android are buffered by default
-by more that the amount of data in the test. This prevents
-the write timeout occurring.
+Add a test for the off-by-one bug in Buffer.seek().
 
-Socket defaults measured on a Nexus 4 running AOSP:
-send: 524288 bytes, receive: 1048576 bytes.
-IIRC, it varies by device.
+There was a performance bug here, where it would return one segment too early. | 2018-05-01 03:53:32 | c2b251cc189f128071d6357e30ccba6a091adadf
 
-Only some of the buffers need to be set to fix this, but
-setting all of them seems reasonable to make it explicit.
-The buffers are set to 1/4 of the data being
-transferred to ensure that the data will
-flood the send and receive buffers with some to spare.
-Too small and the "withoutTimeout" tests will timeout
-due to inefficiency.
+Merge pull request #312 from square/jwilson.0522.actually_split
 
-The tests were also failing on a Linux desktop, probably
-for similar reasons. | 2014-11-26 10:52:39 | e3325331cc0929271df8ce81c55082b83b200b2c
+Fix a performance bug in AsyncTimeout.sink().write(). | 2017-05-22 14:42:26 | 20e259c08af6c96508387540a5ea53f89b1d01f5
 
-Merge pull request #72 from square/jwilson_0809_request_require
+Fix a performance bug in AsyncTimeout.sink().write().
 
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 04:05:17 | b2af925f325eead20fc7ecaa58e78a3b3414e91c
+Previously the behavior was correct but the intended behavior was less
+efficient than intended. In particular there were two problems:
 
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 01:02:32 | 21967427c2285ff9de5e95396ac3874f2e9aa34b
+ * The loop to find a segment boundary may have made more iterations
+   than necessary if the first segment was very small
+ * The sink write may not have been on a segment boundary, causing more
+   data than necessary to be copied.
 
-Merge pull request #61 from matasaru/patch-1
+Closes: https://github.com/square/okio/issues/311 | 2017-05-22 12:14:32 | 80f3aa2e7bb9ac9691e62ec619e6b53259d78958
 
-bump java version to 1.7 | 2014-06-17 17:06:22 | c71c72f3fe01abe6f404539ad8aec975d68f0027
+Import jsr305 and use it to mark @Nullable stuff.
 
-Merge pull request #53 from jgilfelt/patch-1
+The result is that IntelliJ + Kotlin correctly infers the right nullability
+for Okio's APIs. I used IntelliJ's "Specify types explicitly" quick fix on
+the 'a' and 'b' variables below and it did the right thing.
 
-Javadoc fix | 2014-04-28 15:19:05 | e462d43a605a140a5ba6054646850ead80a5042e
+    fun specifyTypeExplicitly(source: BufferedSource) {
+      val a: String? = source.readUtf8Line()
+      val b: String = source.readUtf8LineStrict()
+    } | 2017-05-02 02:39:52 | 2320c7f6ad9d05c1b65fb1e8cc43e257965792b4
 
-Javadoc fix | 2014-04-28 11:11:23 | 74e3ead9b2896cff3030e89b70b12cdbb8139cdd
+Merge pull request #274 from larsgrefer/patch-1
 
-Merge pull request #34 from square/jwilson_0417_input_stream_exhausted
+endsWith -> suffix | 2016-12-07 22:57:38 | d412a4a2f9034a9bc59a8637e477822bd54d4504
 
-Fix a bug on input stream exhaustion. | 2014-04-17 18:00:45 | 0cf1bfa4d31339d98a4c105dbd29f74ca68e7543
+endsWith -> suffix | 2016-12-07 22:54:57 | 032ad9948d5df69ee49367c90ad30f8823fc200b
 
-Fix a bug on input stream exhaustion.
+Merge pull request #259 from square/jwilson.0829.substring
 
-Previously we were throwing because readByte() requires a byte. Instead
-just return -1. | 2014-04-17 17:56:36 | 46007a3a62b98f19f0be0ba042dbe31f35c0a3c9
+Fix a major bug where writeString() didn't always respect offsets. | 2016-08-29 12:54:40 | 927902b565479277178bdb7b0c986ce8beca07a3
 
-Flatten serialization.
+Fix a major bug where writeString() didn't always respect offsets.
 
-Fix a bug that occurs if InputStream.read() returns before reading the
-requested number of bytes. | 2014-04-15 15:49:13 | a6ace31af61c54db329881e324b8bb67eef0c7b3
+Closes: https://github.com/square/okio/issues/258 | 2016-08-29 12:16:03 | 8f5ae7376486990db25696304367f8e8b16f5534
 
-Merge pull request #28 from roman-mazur/patch-1
+Merge pull request #253 from square/jwilson.0814.fix_gzip_sink
 
-Remove duplicates in docs :) | 2014-04-13 00:37:06 | cc23ae57865da921fab74db3e81fa146ac89a93f
+Fix GzipSink for symmetry. | 2016-08-14 16:17:04 | 838a215b2bdbd77550ee876bc8870a61ad7219df
 
-Merge remote-tracking branch 'okhttp/master'
+Merge pull request #252 from square/jwilson.0813.gzip_fix
 
-* okhttp/master: (541 commits)
-  Don't explode if removing an absent file fails.
-  Fix build removing obsolete okhttp-protocols dependency
-  Push Socket into HttpConnection/SpdyConnection.
-  Only use one thread for MockSpdyPeer.
-  More 1.5 changes.
-  Sample: Crawler.
-  Fix a crash on conditional cache hits for new API.
-  Don't double pool on a conditional cache hit.
-  Empty line.
-  Changelog updates.
-  Doc: OkHttpClient should be treated as immutable once shared
-  Doc: OkHttpClient need not /always/ be a singleton
-  Document that OkHttpClient is thread-safe
-  Fix problems with connection recycling and recovery.
-  Fix problems with DeflaterSink.
-  fix #627: Merge SPDY settings when clear flag set. Revert Settings.DEFAULT_INITIAL_WINDOW_SIZE.
-  Use the peer's settings for outgoing window updates.
-  API tweaks to Okio.
-  Fix 1.5 doc and download link.
-  Update website to not use jar-with-dependencies classifier.
-  ...
+Fix GzipSource to handle large files on AOSP. | 2016-08-14 04:32:14 | 4934879155da13b82be1775ac9840dbbd6b5c0cf
 
-Conflicts:
-	.gitignore | 2014-03-17 02:09:57 | e0961bdb68cff845e30230c5336f91f671ff298b
+Merge pull request #247 from cketti/base64_encode_buffer_size_fix
 
-Don't require OkBuffer callers to cast.
+Don't overallocate when base64-encoding. | 2016-08-07 00:11:57 | 834a35c2c8ff533f9e6d476714e7410c53cfd971
 
-The casting masks bugs. Instead accept a long and do a range check in
-OkBuffer. | 2014-03-01 14:34:26 | a06fb5e3d4fc3846a0bcc8da8382e16a5ad8c3db
+Import org.junit.Assert.fail instead of junit.framework.TestCase.fail
 
-Give Base64 lots of love.
+Use the JUnit 4 version in the couple of places were JUnit 3 imports
+still existed; this makes the imports more consistent and also fixes
+compilation if the JUnit 3 version is not available. | 2016-07-28 12:32:38 | 2f6e7783503aeb68d58fd7d50c47b7985d80203d
 
-Fix some bugs, such as decoding of input that contains lots
-of padding or whitespace. See
-https://code.google.com/p/android/issues/detail?id=66078
+Merge pull request #227 from square/jwilson.0618.hashfail
 
-Improve performance by correctly guessing the output array
-size whenever the input doesn't contain whitespace.
+Fix a major bug where HashingSource is incorrect for large writes. | 2016-06-19 01:58:13 | 2244048477890e33893613affc8f1fc82230c178
 
-Build Base64 into ByteString, and expose it through there
-only.
+Fix a major bug where HashingSource is incorrect for large writes.
 
-Use more reasonable names in the implementation. | 2014-02-17 18:41:11 | 81a09a88857deccea956197b86fb55527aced5e2
+There was a bug where it wasn't traversing through the segments of
+the buffer being hashed. This means that HashingSource was returning
+incorrect answers for any writes that spanned multiple segment
+boundaries.
 
-Merge pull request #517 from square/jwilson_0208_buffer_fixes
+The problem wasn't detected by our test cases because although
+we have tests for non-uniform segments, and for buffers that
+span multiple segments, we don't have tests for non-uniform
+buffers that span multiple segments. This has been fixed too. | 2016-06-18 22:04:20 | 657278fff2ebb521659a330d0f7fc2b66d99cfbd
 
-Fix some OkBuffer bugs. | 2014-02-08 15:20:34 | dde8e538af95f6a1868c509d7b8a1bccef03da07
+Merge pull request #210 from aried3r/patch-1
 
-Fix some OkBuffer bugs.
+Fix typo in changelog | 2016-04-11 16:45:29 | 2c92d8261bc932473f4580bc62f22818a76acb47
 
-GzipSource exceptions used six hex digits instead of
-8 to print ints.
+Merge pull request #209 from chrisdoc/master
 
-readUtf8 always did an extra copy of the bytes being
-read.
+fix wrong changelog date for Version 1.7.0 | 2016-04-11 05:19:36 | 33cb196bb5182ebcad50303660f9e44635071696
 
-Moving bytes between buffers crashed when the destination
-was empty and the source was a prefix.
-
-InputStream reading returned values in -128..127 instead
-of in 0..255. | 2014-02-08 13:22:22 | fdb1c5991994632ac2296496a36d7286f15efecb
-
-Rename byteAt to getByte.
-
-Should we later support random access for other primitives
-or random bulk access, I'd like the prefix to stay constant
-(getByte, getInt, getLong, getBytes) vs. the suffix (byteAt,
-intAt, longAt). Prefixing may work better for autocomplete
-in IDEs, particularly since we already use a prefix for our
-consuming reads (readByte, readInt, readLong). | 2014-02-08 12:44:47 | b102c6d76c60861e96267f79096f6747bb575957
-
-Merge pull request #512 from square/adriancole_02_05_findbugs
-
-FindBugs sweep. | 2014-02-05 17:49:22 | 949e6874790d8979d8f9a1ff31a175b439b6eda6
-
-Merge pull request #488 from jgilfelt/patch-1
-
-Fix mockwebserver jar download 404 | 2014-01-27 14:27:45 | 54aa769fd216793f2c71b3cec69c50cc2257ac54
-
-OkBuffer API sketch.
-
-I'm unhappy with java.io:
- * No timeouts.
- * Every layer needs to copy bytes around. Always copying bytes.
- * Features like mark/reset and available() are clumsy.
- * Its awkard in mixed text/binary protocols like HTTP because
-   character decoding is separate and takes over the stream.
-
-Unfortunately java.nio isn't better, just different:
- * It's complex.
- * Buffers are fixed size.
- * No built-in buffer pooling.
- * Features like mark/reset/position are clumsy.
-
-This is an obnoxious attempt at a 3rd I/O interface, mostly
-inspired by InputStream and OutputStream, but using growable
-buffers instead of byte arrays as the core data container. | 2014-01-26 16:31:23 | 2d3cdc9e5dfb593f8eb7da38459163b902a95d7f
+fix wrong date for Version 1.7.0 | 2016-04-11 05:15:07 | 52dd9f5665f840dd4b6b4be93ac09f6c8252a791
 
 Enable Gradle metadata publishing (#604)
 
@@ -1484,208 +1489,6 @@ fix wrong changelog date for Version 1.7.0 | 2016-04-11 05:19:36 | 33cb196bb5182
 
 fix wrong date for Version 1.7.0 | 2016-04-11 05:15:07 | 52dd9f5665f840dd4b6b4be93ac09f6c8252a791
 
-Merge pull request #174 from serj-lotutovici/sl/fix_some_javadocs
-
-Fix some lexical errors in Sink/Source javadocs. | 2015-10-28 00:39:25 | 8ab97da4901f423dd474df0f8e991e4599bbab5f
-
-Actually ignore expected AssertionError.
-
-I blundered the formatting fixing pguilbot's code. This fixes that. | 2015-08-13 19:55:21 | 10b644c910148c9f31fba141dcc0ca5851c976e3
-
-Move a cast in Buffer.indexOf().
-
-This has the happy side-effect of preventing the Lenovo S939 from
-behaving incorrectly when executing this method.
-
-The following test exercises the previous code; it fails after
-a few iterations on that device:
-https://gist.github.com/swankjesse/4396e276e43dbb0e71cc
-
-Unfortunately there's no good way to regression test that we
-haven't hit a bug in a specific lousy device. | 2015-07-31 06:48:21 | e0429cf2c81a7341d150f1f4e9fe815304b03e1a
-
-Merge pull request #157 from amincheloh/patch-1
-
-Update README.md for 1.5.0. | 2015-06-30 15:01:14 | c5d3891a5e7fc9a456df2da2bcdea7da355e2e4f
-
-Merge pull request #149 from ChristianBecker/patch-1
-
-Removed duplicated 'would' | 2015-05-17 13:15:52 | 4023ed0d4a6a09a485963a1d608030bdeeea8135
-
-Merge pull request #147 from alokmenghrajani/alok/bugbounty
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:58:21 | 3d7752f2802ee0a1c713f2566c0724465e4e2e7b
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:43:48 | aa4d51d5a3c0eda703a393750df59ba5c929d7cc
-
-Merge pull request #127 from square/jw/fix-build
-
-Update SegmentPool references to the latest. | 2015-03-12 05:20:40 | d07412cc7cb917f852442d3d8ea056e374bad402
-
-Make tests pass on Android and other platforms
-
-Previously failing with:
-  okio.SocketTimeoutTest#writeWithTimeout
-    junit.framework.AssertionFailedError
-    	at junit.framework.Assert.fail(Assert.java:56)
-    	at okio.SocketTimeoutTest.writeWithTimeout(SocketTimeoutTest.java:75)
-
-The problem: the 1MB of data can be written to the
-client socket even though the server socket is not reading.
-This is because sockets on Android are buffered by default
-by more that the amount of data in the test. This prevents
-the write timeout occurring.
-
-Socket defaults measured on a Nexus 4 running AOSP:
-send: 524288 bytes, receive: 1048576 bytes.
-IIRC, it varies by device.
-
-Only some of the buffers need to be set to fix this, but
-setting all of them seems reasonable to make it explicit.
-The buffers are set to 1/4 of the data being
-transferred to ensure that the data will
-flood the send and receive buffers with some to spare.
-Too small and the "withoutTimeout" tests will timeout
-due to inefficiency.
-
-The tests were also failing on a Linux desktop, probably
-for similar reasons. | 2014-11-26 10:52:39 | e3325331cc0929271df8ce81c55082b83b200b2c
-
-Merge pull request #72 from square/jwilson_0809_request_require
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 04:05:17 | b2af925f325eead20fc7ecaa58e78a3b3414e91c
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 01:02:32 | 21967427c2285ff9de5e95396ac3874f2e9aa34b
-
-Merge pull request #61 from matasaru/patch-1
-
-bump java version to 1.7 | 2014-06-17 17:06:22 | c71c72f3fe01abe6f404539ad8aec975d68f0027
-
-Merge pull request #53 from jgilfelt/patch-1
-
-Javadoc fix | 2014-04-28 15:19:05 | e462d43a605a140a5ba6054646850ead80a5042e
-
-Javadoc fix | 2014-04-28 11:11:23 | 74e3ead9b2896cff3030e89b70b12cdbb8139cdd
-
-Merge pull request #34 from square/jwilson_0417_input_stream_exhausted
-
-Fix a bug on input stream exhaustion. | 2014-04-17 18:00:45 | 0cf1bfa4d31339d98a4c105dbd29f74ca68e7543
-
-Fix a bug on input stream exhaustion.
-
-Previously we were throwing because readByte() requires a byte. Instead
-just return -1. | 2014-04-17 17:56:36 | 46007a3a62b98f19f0be0ba042dbe31f35c0a3c9
-
-Flatten serialization.
-
-Fix a bug that occurs if InputStream.read() returns before reading the
-requested number of bytes. | 2014-04-15 15:49:13 | a6ace31af61c54db329881e324b8bb67eef0c7b3
-
-Merge pull request #28 from roman-mazur/patch-1
-
-Remove duplicates in docs :) | 2014-04-13 00:37:06 | cc23ae57865da921fab74db3e81fa146ac89a93f
-
-Merge remote-tracking branch 'okhttp/master'
-
-* okhttp/master: (541 commits)
-  Don't explode if removing an absent file fails.
-  Fix build removing obsolete okhttp-protocols dependency
-  Push Socket into HttpConnection/SpdyConnection.
-  Only use one thread for MockSpdyPeer.
-  More 1.5 changes.
-  Sample: Crawler.
-  Fix a crash on conditional cache hits for new API.
-  Don't double pool on a conditional cache hit.
-  Empty line.
-  Changelog updates.
-  Doc: OkHttpClient should be treated as immutable once shared
-  Doc: OkHttpClient need not /always/ be a singleton
-  Document that OkHttpClient is thread-safe
-  Fix problems with connection recycling and recovery.
-  Fix problems with DeflaterSink.
-  fix #627: Merge SPDY settings when clear flag set. Revert Settings.DEFAULT_INITIAL_WINDOW_SIZE.
-  Use the peer's settings for outgoing window updates.
-  API tweaks to Okio.
-  Fix 1.5 doc and download link.
-  Update website to not use jar-with-dependencies classifier.
-  ...
-
-Conflicts:
-	.gitignore | 2014-03-17 02:09:57 | e0961bdb68cff845e30230c5336f91f671ff298b
-
-Don't require OkBuffer callers to cast.
-
-The casting masks bugs. Instead accept a long and do a range check in
-OkBuffer. | 2014-03-01 14:34:26 | a06fb5e3d4fc3846a0bcc8da8382e16a5ad8c3db
-
-Give Base64 lots of love.
-
-Fix some bugs, such as decoding of input that contains lots
-of padding or whitespace. See
-https://code.google.com/p/android/issues/detail?id=66078
-
-Improve performance by correctly guessing the output array
-size whenever the input doesn't contain whitespace.
-
-Build Base64 into ByteString, and expose it through there
-only.
-
-Use more reasonable names in the implementation. | 2014-02-17 18:41:11 | 81a09a88857deccea956197b86fb55527aced5e2
-
-Merge pull request #517 from square/jwilson_0208_buffer_fixes
-
-Fix some OkBuffer bugs. | 2014-02-08 15:20:34 | dde8e538af95f6a1868c509d7b8a1bccef03da07
-
-Fix some OkBuffer bugs.
-
-GzipSource exceptions used six hex digits instead of
-8 to print ints.
-
-readUtf8 always did an extra copy of the bytes being
-read.
-
-Moving bytes between buffers crashed when the destination
-was empty and the source was a prefix.
-
-InputStream reading returned values in -128..127 instead
-of in 0..255. | 2014-02-08 13:22:22 | fdb1c5991994632ac2296496a36d7286f15efecb
-
-Rename byteAt to getByte.
-
-Should we later support random access for other primitives
-or random bulk access, I'd like the prefix to stay constant
-(getByte, getInt, getLong, getBytes) vs. the suffix (byteAt,
-intAt, longAt). Prefixing may work better for autocomplete
-in IDEs, particularly since we already use a prefix for our
-consuming reads (readByte, readInt, readLong). | 2014-02-08 12:44:47 | b102c6d76c60861e96267f79096f6747bb575957
-
-Merge pull request #512 from square/adriancole_02_05_findbugs
-
-FindBugs sweep. | 2014-02-05 17:49:22 | 949e6874790d8979d8f9a1ff31a175b439b6eda6
-
-Merge pull request #488 from jgilfelt/patch-1
-
-Fix mockwebserver jar download 404 | 2014-01-27 14:27:45 | 54aa769fd216793f2c71b3cec69c50cc2257ac54
-
-OkBuffer API sketch.
-
-I'm unhappy with java.io:
- * No timeouts.
- * Every layer needs to copy bytes around. Always copying bytes.
- * Features like mark/reset and available() are clumsy.
- * Its awkard in mixed text/binary protocols like HTTP because
-   character decoding is separate and takes over the stream.
-
-Unfortunately java.nio isn't better, just different:
- * It's complex.
- * Buffers are fixed size.
- * No built-in buffer pooling.
- * Features like mark/reset/position are clumsy.
-
-This is an obnoxious attempt at a 3rd I/O interface, mostly
-inspired by InputStream and OutputStream, but using growable
-buffers instead of byte arrays as the core data container. | 2014-01-26 16:31:23 | 2d3cdc9e5dfb593f8eb7da38459163b902a95d7f
-
 Enable Gradle metadata publishing (#604)
 
 * Enable Gradle metadata publishing
@@ -1901,591 +1704,6 @@ fix wrong changelog date for Version 1.7.0 | 2016-04-11 05:19:36 | 33cb196bb5182
 
 fix wrong date for Version 1.7.0 | 2016-04-11 05:15:07 | 52dd9f5665f840dd4b6b4be93ac09f6c8252a791
 
-Merge pull request #174 from serj-lotutovici/sl/fix_some_javadocs
-
-Fix some lexical errors in Sink/Source javadocs. | 2015-10-28 00:39:25 | 8ab97da4901f423dd474df0f8e991e4599bbab5f
-
-Actually ignore expected AssertionError.
-
-I blundered the formatting fixing pguilbot's code. This fixes that. | 2015-08-13 19:55:21 | 10b644c910148c9f31fba141dcc0ca5851c976e3
-
-Move a cast in Buffer.indexOf().
-
-This has the happy side-effect of preventing the Lenovo S939 from
-behaving incorrectly when executing this method.
-
-The following test exercises the previous code; it fails after
-a few iterations on that device:
-https://gist.github.com/swankjesse/4396e276e43dbb0e71cc
-
-Unfortunately there's no good way to regression test that we
-haven't hit a bug in a specific lousy device. | 2015-07-31 06:48:21 | e0429cf2c81a7341d150f1f4e9fe815304b03e1a
-
-Merge pull request #157 from amincheloh/patch-1
-
-Update README.md for 1.5.0. | 2015-06-30 15:01:14 | c5d3891a5e7fc9a456df2da2bcdea7da355e2e4f
-
-Merge pull request #149 from ChristianBecker/patch-1
-
-Removed duplicated 'would' | 2015-05-17 13:15:52 | 4023ed0d4a6a09a485963a1d608030bdeeea8135
-
-Merge pull request #147 from alokmenghrajani/alok/bugbounty
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:58:21 | 3d7752f2802ee0a1c713f2566c0724465e4e2e7b
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:43:48 | aa4d51d5a3c0eda703a393750df59ba5c929d7cc
-
-Merge pull request #127 from square/jw/fix-build
-
-Update SegmentPool references to the latest. | 2015-03-12 05:20:40 | d07412cc7cb917f852442d3d8ea056e374bad402
-
-Make tests pass on Android and other platforms
-
-Previously failing with:
-  okio.SocketTimeoutTest#writeWithTimeout
-    junit.framework.AssertionFailedError
-    	at junit.framework.Assert.fail(Assert.java:56)
-    	at okio.SocketTimeoutTest.writeWithTimeout(SocketTimeoutTest.java:75)
-
-The problem: the 1MB of data can be written to the
-client socket even though the server socket is not reading.
-This is because sockets on Android are buffered by default
-by more that the amount of data in the test. This prevents
-the write timeout occurring.
-
-Socket defaults measured on a Nexus 4 running AOSP:
-send: 524288 bytes, receive: 1048576 bytes.
-IIRC, it varies by device.
-
-Only some of the buffers need to be set to fix this, but
-setting all of them seems reasonable to make it explicit.
-The buffers are set to 1/4 of the data being
-transferred to ensure that the data will
-flood the send and receive buffers with some to spare.
-Too small and the "withoutTimeout" tests will timeout
-due to inefficiency.
-
-The tests were also failing on a Linux desktop, probably
-for similar reasons. | 2014-11-26 10:52:39 | e3325331cc0929271df8ce81c55082b83b200b2c
-
-Merge pull request #72 from square/jwilson_0809_request_require
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 04:05:17 | b2af925f325eead20fc7ecaa58e78a3b3414e91c
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 01:02:32 | 21967427c2285ff9de5e95396ac3874f2e9aa34b
-
-Merge pull request #61 from matasaru/patch-1
-
-bump java version to 1.7 | 2014-06-17 17:06:22 | c71c72f3fe01abe6f404539ad8aec975d68f0027
-
-Merge pull request #53 from jgilfelt/patch-1
-
-Javadoc fix | 2014-04-28 15:19:05 | e462d43a605a140a5ba6054646850ead80a5042e
-
-Javadoc fix | 2014-04-28 11:11:23 | 74e3ead9b2896cff3030e89b70b12cdbb8139cdd
-
-Merge pull request #34 from square/jwilson_0417_input_stream_exhausted
-
-Fix a bug on input stream exhaustion. | 2014-04-17 18:00:45 | 0cf1bfa4d31339d98a4c105dbd29f74ca68e7543
-
-Fix a bug on input stream exhaustion.
-
-Previously we were throwing because readByte() requires a byte. Instead
-just return -1. | 2014-04-17 17:56:36 | 46007a3a62b98f19f0be0ba042dbe31f35c0a3c9
-
-Flatten serialization.
-
-Fix a bug that occurs if InputStream.read() returns before reading the
-requested number of bytes. | 2014-04-15 15:49:13 | a6ace31af61c54db329881e324b8bb67eef0c7b3
-
-Merge pull request #28 from roman-mazur/patch-1
-
-Remove duplicates in docs :) | 2014-04-13 00:37:06 | cc23ae57865da921fab74db3e81fa146ac89a93f
-
-Merge remote-tracking branch 'okhttp/master'
-
-* okhttp/master: (541 commits)
-  Don't explode if removing an absent file fails.
-  Fix build removing obsolete okhttp-protocols dependency
-  Push Socket into HttpConnection/SpdyConnection.
-  Only use one thread for MockSpdyPeer.
-  More 1.5 changes.
-  Sample: Crawler.
-  Fix a crash on conditional cache hits for new API.
-  Don't double pool on a conditional cache hit.
-  Empty line.
-  Changelog updates.
-  Doc: OkHttpClient should be treated as immutable once shared
-  Doc: OkHttpClient need not /always/ be a singleton
-  Document that OkHttpClient is thread-safe
-  Fix problems with connection recycling and recovery.
-  Fix problems with DeflaterSink.
-  fix #627: Merge SPDY settings when clear flag set. Revert Settings.DEFAULT_INITIAL_WINDOW_SIZE.
-  Use the peer's settings for outgoing window updates.
-  API tweaks to Okio.
-  Fix 1.5 doc and download link.
-  Update website to not use jar-with-dependencies classifier.
-  ...
-
-Conflicts:
-	.gitignore | 2014-03-17 02:09:57 | e0961bdb68cff845e30230c5336f91f671ff298b
-
-Don't require OkBuffer callers to cast.
-
-The casting masks bugs. Instead accept a long and do a range check in
-OkBuffer. | 2014-03-01 14:34:26 | a06fb5e3d4fc3846a0bcc8da8382e16a5ad8c3db
-
-Give Base64 lots of love.
-
-Fix some bugs, such as decoding of input that contains lots
-of padding or whitespace. See
-https://code.google.com/p/android/issues/detail?id=66078
-
-Improve performance by correctly guessing the output array
-size whenever the input doesn't contain whitespace.
-
-Build Base64 into ByteString, and expose it through there
-only.
-
-Use more reasonable names in the implementation. | 2014-02-17 18:41:11 | 81a09a88857deccea956197b86fb55527aced5e2
-
-Merge pull request #517 from square/jwilson_0208_buffer_fixes
-
-Fix some OkBuffer bugs. | 2014-02-08 15:20:34 | dde8e538af95f6a1868c509d7b8a1bccef03da07
-
-Fix some OkBuffer bugs.
-
-GzipSource exceptions used six hex digits instead of
-8 to print ints.
-
-readUtf8 always did an extra copy of the bytes being
-read.
-
-Moving bytes between buffers crashed when the destination
-was empty and the source was a prefix.
-
-InputStream reading returned values in -128..127 instead
-of in 0..255. | 2014-02-08 13:22:22 | fdb1c5991994632ac2296496a36d7286f15efecb
-
-Rename byteAt to getByte.
-
-Should we later support random access for other primitives
-or random bulk access, I'd like the prefix to stay constant
-(getByte, getInt, getLong, getBytes) vs. the suffix (byteAt,
-intAt, longAt). Prefixing may work better for autocomplete
-in IDEs, particularly since we already use a prefix for our
-consuming reads (readByte, readInt, readLong). | 2014-02-08 12:44:47 | b102c6d76c60861e96267f79096f6747bb575957
-
-Merge pull request #512 from square/adriancole_02_05_findbugs
-
-FindBugs sweep. | 2014-02-05 17:49:22 | 949e6874790d8979d8f9a1ff31a175b439b6eda6
-
-Merge pull request #488 from jgilfelt/patch-1
-
-Fix mockwebserver jar download 404 | 2014-01-27 14:27:45 | 54aa769fd216793f2c71b3cec69c50cc2257ac54
-
-OkBuffer API sketch.
-
-I'm unhappy with java.io:
- * No timeouts.
- * Every layer needs to copy bytes around. Always copying bytes.
- * Features like mark/reset and available() are clumsy.
- * Its awkard in mixed text/binary protocols like HTTP because
-   character decoding is separate and takes over the stream.
-
-Unfortunately java.nio isn't better, just different:
- * It's complex.
- * Buffers are fixed size.
- * No built-in buffer pooling.
- * Features like mark/reset/position are clumsy.
-
-This is an obnoxious attempt at a 3rd I/O interface, mostly
-inspired by InputStream and OutputStream, but using growable
-buffers instead of byte arrays as the core data container. | 2014-01-26 16:31:23 | 2d3cdc9e5dfb593f8eb7da38459163b902a95d7f
-
-Kotlin Gradle MPP 1.3 (#544)
-
-* Basic setup
-
-* Ignore failing test
-
-* Gradle 5.0
-
-* Better native config
-
-* Fix jvm tests
-
-* JS testing setup
-
-* Native config
-
-* Use EAP dependencies
-
-* Japicmp setup
-
-* Correct path to japicmp report
-
-* Basic JVM + AnimalSniffer setup
-
-* Enable samples module
-
-* Use jvmWithJava for running Java tests
-
-* Include more Native platforms to force test task generation
-
-* Use internal UTF-8 decoder for Kotlin/Native
-
-* Kotlin 1.3.20
-
-* Gradle 5.1
-
-* Move JMH setup into a separate module
-
-* Properly configure jmhJar task
-
-* Remove old jvm build.gradle
-
-* Replace publishing plugin with SQLDelight's custom script
-
-* Use default artifactId for JVM target
-
-* Revert JVM build.gradle rename, use new DSL for defining targets
-
-* Remove old module definitions in settings
-
-* Feedback fixes | 2019-01-30 12:50:19 | 0078fca7b325a8d9454715ada316e0a3d6e99115
-
-Merge pull request #542 from NightlyNexus/patch-1
-
-Fix some indices in Buffer.UnsafeCursor docs. | 2019-01-16 03:02:01 | 7dd5bde7b0eb160ecdcb2a32477b8e9f313a0b8b
-
-Merge pull request #504 from square/egorand/0830/ktlint-fixes
-
-Fix ktlint issues in platform modules | 2018-09-01 03:43:34 | ea0dd569ef0cbe3cc6288264c36bc6fde02074af
-
-Hide Base64, ByteStringKt, Platform, and Util code from Java
-
-These are 'internal' in Kotlin but 'public' to Java callers. Changing
-class names to prefix with '-' prevents Java from calling through. | 2018-08-26 13:45:15 | b518b5b2cf40147105a30bd37cf91c810ff59450
-
-Make Buffer exceptions consistent with RealBufferedSource
-
-This is inspired by ksperling's work on improving exception-consistency
-between Buffer and RealBufferedSource. I wasn't willing to make an
-exception-signature change for a 1.x release, but the 2.x release is a
-good opportunity to fix this longstanding problem. | 2018-07-24 20:55:10 | 487a1f2392d8a9f017dceaca15656a82ab4ed46d
-
-Retain interrupted state when throwing InterruptedIOException (Okio 2.x)
-
-This fixes Okio 2.x. A separate fix is required for Okio 1.x. | 2018-07-06 02:35:23 | 264829dae36198c2e5454a6c2ae1d4aa208c5815
-
-Merge pull request #463 from GianfrancoMS/patch-1
-
-Update README.md | 2018-06-04 20:06:26 | fffc9d42244254899bb934ca400c8a88a65ea224
-
-Merge pull request #462 from hendrawd/patch-1
-
-Update README.md | 2018-05-29 17:14:54 | 105c2411448a726fe2d2a90c2e13d7e30ff79f43
-
-Merge pull request #449 from yinyinnie/patch-1
-
-Update README.md | 2018-05-13 15:11:04 | 4b567e1f0dfeeb6c506f5b2497444d8de8ecbc47
-
-Merge pull request #424 from square/jwilson.0430.no_performance_bug
-
-Add a test for the off-by-one bug in Buffer.seek(). | 2018-05-02 13:03:23 | bf4ae6cc0b967204ebdc629b62773fa8202962fc
-
-Add a test for the off-by-one bug in Buffer.seek().
-
-There was a performance bug here, where it would return one segment too early. | 2018-05-01 03:53:32 | c2b251cc189f128071d6357e30ccba6a091adadf
-
-Merge pull request #312 from square/jwilson.0522.actually_split
-
-Fix a performance bug in AsyncTimeout.sink().write(). | 2017-05-22 14:42:26 | 20e259c08af6c96508387540a5ea53f89b1d01f5
-
-Fix a performance bug in AsyncTimeout.sink().write().
-
-Previously the behavior was correct but the intended behavior was less
-efficient than intended. In particular there were two problems:
-
- * The loop to find a segment boundary may have made more iterations
-   than necessary if the first segment was very small
- * The sink write may not have been on a segment boundary, causing more
-   data than necessary to be copied.
-
-Closes: https://github.com/square/okio/issues/311 | 2017-05-22 12:14:32 | 80f3aa2e7bb9ac9691e62ec619e6b53259d78958
-
-Import jsr305 and use it to mark @Nullable stuff.
-
-The result is that IntelliJ + Kotlin correctly infers the right nullability
-for Okio's APIs. I used IntelliJ's "Specify types explicitly" quick fix on
-the 'a' and 'b' variables below and it did the right thing.
-
-    fun specifyTypeExplicitly(source: BufferedSource) {
-      val a: String? = source.readUtf8Line()
-      val b: String = source.readUtf8LineStrict()
-    } | 2017-05-02 02:39:52 | 2320c7f6ad9d05c1b65fb1e8cc43e257965792b4
-
-Merge pull request #274 from larsgrefer/patch-1
-
-endsWith -> suffix | 2016-12-07 22:57:38 | d412a4a2f9034a9bc59a8637e477822bd54d4504
-
-endsWith -> suffix | 2016-12-07 22:54:57 | 032ad9948d5df69ee49367c90ad30f8823fc200b
-
-Merge pull request #259 from square/jwilson.0829.substring
-
-Fix a major bug where writeString() didn't always respect offsets. | 2016-08-29 12:54:40 | 927902b565479277178bdb7b0c986ce8beca07a3
-
-Fix a major bug where writeString() didn't always respect offsets.
-
-Closes: https://github.com/square/okio/issues/258 | 2016-08-29 12:16:03 | 8f5ae7376486990db25696304367f8e8b16f5534
-
-Merge pull request #253 from square/jwilson.0814.fix_gzip_sink
-
-Fix GzipSink for symmetry. | 2016-08-14 16:17:04 | 838a215b2bdbd77550ee876bc8870a61ad7219df
-
-Merge pull request #252 from square/jwilson.0813.gzip_fix
-
-Fix GzipSource to handle large files on AOSP. | 2016-08-14 04:32:14 | 4934879155da13b82be1775ac9840dbbd6b5c0cf
-
-Merge pull request #247 from cketti/base64_encode_buffer_size_fix
-
-Don't overallocate when base64-encoding. | 2016-08-07 00:11:57 | 834a35c2c8ff533f9e6d476714e7410c53cfd971
-
-Import org.junit.Assert.fail instead of junit.framework.TestCase.fail
-
-Use the JUnit 4 version in the couple of places were JUnit 3 imports
-still existed; this makes the imports more consistent and also fixes
-compilation if the JUnit 3 version is not available. | 2016-07-28 12:32:38 | 2f6e7783503aeb68d58fd7d50c47b7985d80203d
-
-Merge pull request #227 from square/jwilson.0618.hashfail
-
-Fix a major bug where HashingSource is incorrect for large writes. | 2016-06-19 01:58:13 | 2244048477890e33893613affc8f1fc82230c178
-
-Fix a major bug where HashingSource is incorrect for large writes.
-
-There was a bug where it wasn't traversing through the segments of
-the buffer being hashed. This means that HashingSource was returning
-incorrect answers for any writes that spanned multiple segment
-boundaries.
-
-The problem wasn't detected by our test cases because although
-we have tests for non-uniform segments, and for buffers that
-span multiple segments, we don't have tests for non-uniform
-buffers that span multiple segments. This has been fixed too. | 2016-06-18 22:04:20 | 657278fff2ebb521659a330d0f7fc2b66d99cfbd
-
-Merge pull request #210 from aried3r/patch-1
-
-Fix typo in changelog | 2016-04-11 16:45:29 | 2c92d8261bc932473f4580bc62f22818a76acb47
-
-Merge pull request #209 from chrisdoc/master
-
-fix wrong changelog date for Version 1.7.0 | 2016-04-11 05:19:36 | 33cb196bb5182ebcad50303660f9e44635071696
-
-fix wrong date for Version 1.7.0 | 2016-04-11 05:15:07 | 52dd9f5665f840dd4b6b4be93ac09f6c8252a791
-
-Merge pull request #174 from serj-lotutovici/sl/fix_some_javadocs
-
-Fix some lexical errors in Sink/Source javadocs. | 2015-10-28 00:39:25 | 8ab97da4901f423dd474df0f8e991e4599bbab5f
-
-Actually ignore expected AssertionError.
-
-I blundered the formatting fixing pguilbot's code. This fixes that. | 2015-08-13 19:55:21 | 10b644c910148c9f31fba141dcc0ca5851c976e3
-
-Move a cast in Buffer.indexOf().
-
-This has the happy side-effect of preventing the Lenovo S939 from
-behaving incorrectly when executing this method.
-
-The following test exercises the previous code; it fails after
-a few iterations on that device:
-https://gist.github.com/swankjesse/4396e276e43dbb0e71cc
-
-Unfortunately there's no good way to regression test that we
-haven't hit a bug in a specific lousy device. | 2015-07-31 06:48:21 | e0429cf2c81a7341d150f1f4e9fe815304b03e1a
-
-Merge pull request #157 from amincheloh/patch-1
-
-Update README.md for 1.5.0. | 2015-06-30 15:01:14 | c5d3891a5e7fc9a456df2da2bcdea7da355e2e4f
-
-Merge pull request #149 from ChristianBecker/patch-1
-
-Removed duplicated 'would' | 2015-05-17 13:15:52 | 4023ed0d4a6a09a485963a1d608030bdeeea8135
-
-Merge pull request #147 from alokmenghrajani/alok/bugbounty
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:58:21 | 3d7752f2802ee0a1c713f2566c0724465e4e2e7b
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:43:48 | aa4d51d5a3c0eda703a393750df59ba5c929d7cc
-
-Merge pull request #127 from square/jw/fix-build
-
-Update SegmentPool references to the latest. | 2015-03-12 05:20:40 | d07412cc7cb917f852442d3d8ea056e374bad402
-
-Make tests pass on Android and other platforms
-
-Previously failing with:
-  okio.SocketTimeoutTest#writeWithTimeout
-    junit.framework.AssertionFailedError
-    	at junit.framework.Assert.fail(Assert.java:56)
-    	at okio.SocketTimeoutTest.writeWithTimeout(SocketTimeoutTest.java:75)
-
-The problem: the 1MB of data can be written to the
-client socket even though the server socket is not reading.
-This is because sockets on Android are buffered by default
-by more that the amount of data in the test. This prevents
-the write timeout occurring.
-
-Socket defaults measured on a Nexus 4 running AOSP:
-send: 524288 bytes, receive: 1048576 bytes.
-IIRC, it varies by device.
-
-Only some of the buffers need to be set to fix this, but
-setting all of them seems reasonable to make it explicit.
-The buffers are set to 1/4 of the data being
-transferred to ensure that the data will
-flood the send and receive buffers with some to spare.
-Too small and the "withoutTimeout" tests will timeout
-due to inefficiency.
-
-The tests were also failing on a Linux desktop, probably
-for similar reasons. | 2014-11-26 10:52:39 | e3325331cc0929271df8ce81c55082b83b200b2c
-
-Merge pull request #72 from square/jwilson_0809_request_require
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 04:05:17 | b2af925f325eead20fc7ecaa58e78a3b3414e91c
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 01:02:32 | 21967427c2285ff9de5e95396ac3874f2e9aa34b
-
-Merge pull request #61 from matasaru/patch-1
-
-bump java version to 1.7 | 2014-06-17 17:06:22 | c71c72f3fe01abe6f404539ad8aec975d68f0027
-
-Merge pull request #53 from jgilfelt/patch-1
-
-Javadoc fix | 2014-04-28 15:19:05 | e462d43a605a140a5ba6054646850ead80a5042e
-
-Javadoc fix | 2014-04-28 11:11:23 | 74e3ead9b2896cff3030e89b70b12cdbb8139cdd
-
-Merge pull request #34 from square/jwilson_0417_input_stream_exhausted
-
-Fix a bug on input stream exhaustion. | 2014-04-17 18:00:45 | 0cf1bfa4d31339d98a4c105dbd29f74ca68e7543
-
-Fix a bug on input stream exhaustion.
-
-Previously we were throwing because readByte() requires a byte. Instead
-just return -1. | 2014-04-17 17:56:36 | 46007a3a62b98f19f0be0ba042dbe31f35c0a3c9
-
-Flatten serialization.
-
-Fix a bug that occurs if InputStream.read() returns before reading the
-requested number of bytes. | 2014-04-15 15:49:13 | a6ace31af61c54db329881e324b8bb67eef0c7b3
-
-Merge pull request #28 from roman-mazur/patch-1
-
-Remove duplicates in docs :) | 2014-04-13 00:37:06 | cc23ae57865da921fab74db3e81fa146ac89a93f
-
-Merge remote-tracking branch 'okhttp/master'
-
-* okhttp/master: (541 commits)
-  Don't explode if removing an absent file fails.
-  Fix build removing obsolete okhttp-protocols dependency
-  Push Socket into HttpConnection/SpdyConnection.
-  Only use one thread for MockSpdyPeer.
-  More 1.5 changes.
-  Sample: Crawler.
-  Fix a crash on conditional cache hits for new API.
-  Don't double pool on a conditional cache hit.
-  Empty line.
-  Changelog updates.
-  Doc: OkHttpClient should be treated as immutable once shared
-  Doc: OkHttpClient need not /always/ be a singleton
-  Document that OkHttpClient is thread-safe
-  Fix problems with connection recycling and recovery.
-  Fix problems with DeflaterSink.
-  fix #627: Merge SPDY settings when clear flag set. Revert Settings.DEFAULT_INITIAL_WINDOW_SIZE.
-  Use the peer's settings for outgoing window updates.
-  API tweaks to Okio.
-  Fix 1.5 doc and download link.
-  Update website to not use jar-with-dependencies classifier.
-  ...
-
-Conflicts:
-	.gitignore | 2014-03-17 02:09:57 | e0961bdb68cff845e30230c5336f91f671ff298b
-
-Don't require OkBuffer callers to cast.
-
-The casting masks bugs. Instead accept a long and do a range check in
-OkBuffer. | 2014-03-01 14:34:26 | a06fb5e3d4fc3846a0bcc8da8382e16a5ad8c3db
-
-Give Base64 lots of love.
-
-Fix some bugs, such as decoding of input that contains lots
-of padding or whitespace. See
-https://code.google.com/p/android/issues/detail?id=66078
-
-Improve performance by correctly guessing the output array
-size whenever the input doesn't contain whitespace.
-
-Build Base64 into ByteString, and expose it through there
-only.
-
-Use more reasonable names in the implementation. | 2014-02-17 18:41:11 | 81a09a88857deccea956197b86fb55527aced5e2
-
-Merge pull request #517 from square/jwilson_0208_buffer_fixes
-
-Fix some OkBuffer bugs. | 2014-02-08 15:20:34 | dde8e538af95f6a1868c509d7b8a1bccef03da07
-
-Fix some OkBuffer bugs.
-
-GzipSource exceptions used six hex digits instead of
-8 to print ints.
-
-readUtf8 always did an extra copy of the bytes being
-read.
-
-Moving bytes between buffers crashed when the destination
-was empty and the source was a prefix.
-
-InputStream reading returned values in -128..127 instead
-of in 0..255. | 2014-02-08 13:22:22 | fdb1c5991994632ac2296496a36d7286f15efecb
-
-Rename byteAt to getByte.
-
-Should we later support random access for other primitives
-or random bulk access, I'd like the prefix to stay constant
-(getByte, getInt, getLong, getBytes) vs. the suffix (byteAt,
-intAt, longAt). Prefixing may work better for autocomplete
-in IDEs, particularly since we already use a prefix for our
-consuming reads (readByte, readInt, readLong). | 2014-02-08 12:44:47 | b102c6d76c60861e96267f79096f6747bb575957
-
-Merge pull request #512 from square/adriancole_02_05_findbugs
-
-FindBugs sweep. | 2014-02-05 17:49:22 | 949e6874790d8979d8f9a1ff31a175b439b6eda6
-
-Merge pull request #488 from jgilfelt/patch-1
-
-Fix mockwebserver jar download 404 | 2014-01-27 14:27:45 | 54aa769fd216793f2c71b3cec69c50cc2257ac54
-
-OkBuffer API sketch.
-
-I'm unhappy with java.io:
- * No timeouts.
- * Every layer needs to copy bytes around. Always copying bytes.
- * Features like mark/reset and available() are clumsy.
- * Its awkard in mixed text/binary protocols like HTTP because
-   character decoding is separate and takes over the stream.
-
-Unfortunately java.nio isn't better, just different:
- * It's complex.
- * Buffers are fixed size.
- * No built-in buffer pooling.
- * Features like mark/reset/position are clumsy.
-
-This is an obnoxious attempt at a 3rd I/O interface, mostly
-inspired by InputStream and OutputStream, but using growable
-buffers instead of byte arrays as the core data container. | 2014-01-26 16:31:23 | 2d3cdc9e5dfb593f8eb7da38459163b902a95d7f
-
 Enable Gradle metadata publishing (#604)
 
 * Enable Gradle metadata publishing
@@ -2700,1042 +1918,6 @@ Merge pull request #209 from chrisdoc/master
 fix wrong changelog date for Version 1.7.0 | 2016-04-11 05:19:36 | 33cb196bb5182ebcad50303660f9e44635071696
 
 fix wrong date for Version 1.7.0 | 2016-04-11 05:15:07 | 52dd9f5665f840dd4b6b4be93ac09f6c8252a791
-
-Merge pull request #174 from serj-lotutovici/sl/fix_some_javadocs
-
-Fix some lexical errors in Sink/Source javadocs. | 2015-10-28 00:39:25 | 8ab97da4901f423dd474df0f8e991e4599bbab5f
-
-Actually ignore expected AssertionError.
-
-I blundered the formatting fixing pguilbot's code. This fixes that. | 2015-08-13 19:55:21 | 10b644c910148c9f31fba141dcc0ca5851c976e3
-
-Move a cast in Buffer.indexOf().
-
-This has the happy side-effect of preventing the Lenovo S939 from
-behaving incorrectly when executing this method.
-
-The following test exercises the previous code; it fails after
-a few iterations on that device:
-https://gist.github.com/swankjesse/4396e276e43dbb0e71cc
-
-Unfortunately there's no good way to regression test that we
-haven't hit a bug in a specific lousy device. | 2015-07-31 06:48:21 | e0429cf2c81a7341d150f1f4e9fe815304b03e1a
-
-Merge pull request #157 from amincheloh/patch-1
-
-Update README.md for 1.5.0. | 2015-06-30 15:01:14 | c5d3891a5e7fc9a456df2da2bcdea7da355e2e4f
-
-Merge pull request #149 from ChristianBecker/patch-1
-
-Removed duplicated 'would' | 2015-05-17 13:15:52 | 4023ed0d4a6a09a485963a1d608030bdeeea8135
-
-Merge pull request #147 from alokmenghrajani/alok/bugbounty
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:58:21 | 3d7752f2802ee0a1c713f2566c0724465e4e2e7b
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:43:48 | aa4d51d5a3c0eda703a393750df59ba5c929d7cc
-
-Merge pull request #127 from square/jw/fix-build
-
-Update SegmentPool references to the latest. | 2015-03-12 05:20:40 | d07412cc7cb917f852442d3d8ea056e374bad402
-
-Make tests pass on Android and other platforms
-
-Previously failing with:
-  okio.SocketTimeoutTest#writeWithTimeout
-    junit.framework.AssertionFailedError
-    	at junit.framework.Assert.fail(Assert.java:56)
-    	at okio.SocketTimeoutTest.writeWithTimeout(SocketTimeoutTest.java:75)
-
-The problem: the 1MB of data can be written to the
-client socket even though the server socket is not reading.
-This is because sockets on Android are buffered by default
-by more that the amount of data in the test. This prevents
-the write timeout occurring.
-
-Socket defaults measured on a Nexus 4 running AOSP:
-send: 524288 bytes, receive: 1048576 bytes.
-IIRC, it varies by device.
-
-Only some of the buffers need to be set to fix this, but
-setting all of them seems reasonable to make it explicit.
-The buffers are set to 1/4 of the data being
-transferred to ensure that the data will
-flood the send and receive buffers with some to spare.
-Too small and the "withoutTimeout" tests will timeout
-due to inefficiency.
-
-The tests were also failing on a Linux desktop, probably
-for similar reasons. | 2014-11-26 10:52:39 | e3325331cc0929271df8ce81c55082b83b200b2c
-
-Merge pull request #72 from square/jwilson_0809_request_require
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 04:05:17 | b2af925f325eead20fc7ecaa58e78a3b3414e91c
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 01:02:32 | 21967427c2285ff9de5e95396ac3874f2e9aa34b
-
-Merge pull request #61 from matasaru/patch-1
-
-bump java version to 1.7 | 2014-06-17 17:06:22 | c71c72f3fe01abe6f404539ad8aec975d68f0027
-
-Merge pull request #53 from jgilfelt/patch-1
-
-Javadoc fix | 2014-04-28 15:19:05 | e462d43a605a140a5ba6054646850ead80a5042e
-
-Javadoc fix | 2014-04-28 11:11:23 | 74e3ead9b2896cff3030e89b70b12cdbb8139cdd
-
-Merge pull request #34 from square/jwilson_0417_input_stream_exhausted
-
-Fix a bug on input stream exhaustion. | 2014-04-17 18:00:45 | 0cf1bfa4d31339d98a4c105dbd29f74ca68e7543
-
-Fix a bug on input stream exhaustion.
-
-Previously we were throwing because readByte() requires a byte. Instead
-just return -1. | 2014-04-17 17:56:36 | 46007a3a62b98f19f0be0ba042dbe31f35c0a3c9
-
-Flatten serialization.
-
-Fix a bug that occurs if InputStream.read() returns before reading the
-requested number of bytes. | 2014-04-15 15:49:13 | a6ace31af61c54db329881e324b8bb67eef0c7b3
-
-Merge pull request #28 from roman-mazur/patch-1
-
-Remove duplicates in docs :) | 2014-04-13 00:37:06 | cc23ae57865da921fab74db3e81fa146ac89a93f
-
-Merge remote-tracking branch 'okhttp/master'
-
-* okhttp/master: (541 commits)
-  Don't explode if removing an absent file fails.
-  Fix build removing obsolete okhttp-protocols dependency
-  Push Socket into HttpConnection/SpdyConnection.
-  Only use one thread for MockSpdyPeer.
-  More 1.5 changes.
-  Sample: Crawler.
-  Fix a crash on conditional cache hits for new API.
-  Don't double pool on a conditional cache hit.
-  Empty line.
-  Changelog updates.
-  Doc: OkHttpClient should be treated as immutable once shared
-  Doc: OkHttpClient need not /always/ be a singleton
-  Document that OkHttpClient is thread-safe
-  Fix problems with connection recycling and recovery.
-  Fix problems with DeflaterSink.
-  fix #627: Merge SPDY settings when clear flag set. Revert Settings.DEFAULT_INITIAL_WINDOW_SIZE.
-  Use the peer's settings for outgoing window updates.
-  API tweaks to Okio.
-  Fix 1.5 doc and download link.
-  Update website to not use jar-with-dependencies classifier.
-  ...
-
-Conflicts:
-	.gitignore | 2014-03-17 02:09:57 | e0961bdb68cff845e30230c5336f91f671ff298b
-
-Don't require OkBuffer callers to cast.
-
-The casting masks bugs. Instead accept a long and do a range check in
-OkBuffer. | 2014-03-01 14:34:26 | a06fb5e3d4fc3846a0bcc8da8382e16a5ad8c3db
-
-Give Base64 lots of love.
-
-Fix some bugs, such as decoding of input that contains lots
-of padding or whitespace. See
-https://code.google.com/p/android/issues/detail?id=66078
-
-Improve performance by correctly guessing the output array
-size whenever the input doesn't contain whitespace.
-
-Build Base64 into ByteString, and expose it through there
-only.
-
-Use more reasonable names in the implementation. | 2014-02-17 18:41:11 | 81a09a88857deccea956197b86fb55527aced5e2
-
-Merge pull request #517 from square/jwilson_0208_buffer_fixes
-
-Fix some OkBuffer bugs. | 2014-02-08 15:20:34 | dde8e538af95f6a1868c509d7b8a1bccef03da07
-
-Fix some OkBuffer bugs.
-
-GzipSource exceptions used six hex digits instead of
-8 to print ints.
-
-readUtf8 always did an extra copy of the bytes being
-read.
-
-Moving bytes between buffers crashed when the destination
-was empty and the source was a prefix.
-
-InputStream reading returned values in -128..127 instead
-of in 0..255. | 2014-02-08 13:22:22 | fdb1c5991994632ac2296496a36d7286f15efecb
-
-Rename byteAt to getByte.
-
-Should we later support random access for other primitives
-or random bulk access, I'd like the prefix to stay constant
-(getByte, getInt, getLong, getBytes) vs. the suffix (byteAt,
-intAt, longAt). Prefixing may work better for autocomplete
-in IDEs, particularly since we already use a prefix for our
-consuming reads (readByte, readInt, readLong). | 2014-02-08 12:44:47 | b102c6d76c60861e96267f79096f6747bb575957
-
-Merge pull request #512 from square/adriancole_02_05_findbugs
-
-FindBugs sweep. | 2014-02-05 17:49:22 | 949e6874790d8979d8f9a1ff31a175b439b6eda6
-
-Merge pull request #488 from jgilfelt/patch-1
-
-Fix mockwebserver jar download 404 | 2014-01-27 14:27:45 | 54aa769fd216793f2c71b3cec69c50cc2257ac54
-
-OkBuffer API sketch.
-
-I'm unhappy with java.io:
- * No timeouts.
- * Every layer needs to copy bytes around. Always copying bytes.
- * Features like mark/reset and available() are clumsy.
- * Its awkard in mixed text/binary protocols like HTTP because
-   character decoding is separate and takes over the stream.
-
-Unfortunately java.nio isn't better, just different:
- * It's complex.
- * Buffers are fixed size.
- * No built-in buffer pooling.
- * Features like mark/reset/position are clumsy.
-
-This is an obnoxious attempt at a 3rd I/O interface, mostly
-inspired by InputStream and OutputStream, but using growable
-buffers instead of byte arrays as the core data container. | 2014-01-26 16:31:23 | 2d3cdc9e5dfb593f8eb7da38459163b902a95d7f
-
-Enable Gradle metadata publishing (#604)
-
-* Enable Gradle metadata publishing
-
-* Update Node plugin
-
-* Add workaround for Node plugin bug
-
-* Correct version of the workaround | 2019-05-01 15:33:28 | a54054aaaa264a7bcf190f625bbe0b98e0312ace
-
-Merge pull request #603 from square/egorand/190430/fix-snapshot-publishing
-
-Fix snapshot publishing command | 2019-04-30 17:03:19 | bdb1e33d249e578a5752dde3be1a6fa0ad389bc3
-
-Merge pull request #602 from jaredsburrows/patch-1
-
-Update README.md - fix broken proguard link | 2019-04-30 12:57:24 | cb440ffb53a2a4527675f738789aa75b298a1321
-
-Update README.md - fix broken proguard link | 2019-04-30 04:10:46 | 90295b16aabea3ea560ac71fbeaef7bc86eba551
-
-Peek the minimum number of bytes to return a result
-
-The contract for read() is to return at least 1 byte, but we were
-attempting to read the full request. That caused us to prematurely
-do a blocking read on the upstream source.
-
-This fixes that code to defer the blocking read.
-
-Closes: https://github.com/square/okio/issues/594 | 2019-04-28 21:50:51 | 86e479564373d6872941bfc031c7169d9cb91417
-
-Update japicmp plugin
-
-This bumps japicmp to 0.13.1 which still doesn't contain the effectively-final fix, but at least provides compatibility with newer japicmp versions so that we can upgrade once that change is released. | 2019-04-05 13:57:48 | 031ea7a5118b8077904a6cdc12e273dab4e50b13
-
-Kotlin Gradle MPP 1.3 (#544)
-
-* Basic setup
-
-* Ignore failing test
-
-* Gradle 5.0
-
-* Better native config
-
-* Fix jvm tests
-
-* JS testing setup
-
-* Native config
-
-* Use EAP dependencies
-
-* Japicmp setup
-
-* Correct path to japicmp report
-
-* Basic JVM + AnimalSniffer setup
-
-* Enable samples module
-
-* Use jvmWithJava for running Java tests
-
-* Include more Native platforms to force test task generation
-
-* Use internal UTF-8 decoder for Kotlin/Native
-
-* Kotlin 1.3.20
-
-* Gradle 5.1
-
-* Move JMH setup into a separate module
-
-* Properly configure jmhJar task
-
-* Remove old jvm build.gradle
-
-* Replace publishing plugin with SQLDelight's custom script
-
-* Use default artifactId for JVM target
-
-* Revert JVM build.gradle rename, use new DSL for defining targets
-
-* Remove old module definitions in settings
-
-* Feedback fixes | 2019-01-30 12:50:19 | 0078fca7b325a8d9454715ada316e0a3d6e99115
-
-Merge pull request #542 from NightlyNexus/patch-1
-
-Fix some indices in Buffer.UnsafeCursor docs. | 2019-01-16 03:02:01 | 7dd5bde7b0eb160ecdcb2a32477b8e9f313a0b8b
-
-Merge pull request #504 from square/egorand/0830/ktlint-fixes
-
-Fix ktlint issues in platform modules | 2018-09-01 03:43:34 | ea0dd569ef0cbe3cc6288264c36bc6fde02074af
-
-Hide Base64, ByteStringKt, Platform, and Util code from Java
-
-These are 'internal' in Kotlin but 'public' to Java callers. Changing
-class names to prefix with '-' prevents Java from calling through. | 2018-08-26 13:45:15 | b518b5b2cf40147105a30bd37cf91c810ff59450
-
-Make Buffer exceptions consistent with RealBufferedSource
-
-This is inspired by ksperling's work on improving exception-consistency
-between Buffer and RealBufferedSource. I wasn't willing to make an
-exception-signature change for a 1.x release, but the 2.x release is a
-good opportunity to fix this longstanding problem. | 2018-07-24 20:55:10 | 487a1f2392d8a9f017dceaca15656a82ab4ed46d
-
-Retain interrupted state when throwing InterruptedIOException (Okio 2.x)
-
-This fixes Okio 2.x. A separate fix is required for Okio 1.x. | 2018-07-06 02:35:23 | 264829dae36198c2e5454a6c2ae1d4aa208c5815
-
-Merge pull request #463 from GianfrancoMS/patch-1
-
-Update README.md | 2018-06-04 20:06:26 | fffc9d42244254899bb934ca400c8a88a65ea224
-
-Merge pull request #462 from hendrawd/patch-1
-
-Update README.md | 2018-05-29 17:14:54 | 105c2411448a726fe2d2a90c2e13d7e30ff79f43
-
-Merge pull request #449 from yinyinnie/patch-1
-
-Update README.md | 2018-05-13 15:11:04 | 4b567e1f0dfeeb6c506f5b2497444d8de8ecbc47
-
-Merge pull request #424 from square/jwilson.0430.no_performance_bug
-
-Add a test for the off-by-one bug in Buffer.seek(). | 2018-05-02 13:03:23 | bf4ae6cc0b967204ebdc629b62773fa8202962fc
-
-Add a test for the off-by-one bug in Buffer.seek().
-
-There was a performance bug here, where it would return one segment too early. | 2018-05-01 03:53:32 | c2b251cc189f128071d6357e30ccba6a091adadf
-
-Merge pull request #312 from square/jwilson.0522.actually_split
-
-Fix a performance bug in AsyncTimeout.sink().write(). | 2017-05-22 14:42:26 | 20e259c08af6c96508387540a5ea53f89b1d01f5
-
-Fix a performance bug in AsyncTimeout.sink().write().
-
-Previously the behavior was correct but the intended behavior was less
-efficient than intended. In particular there were two problems:
-
- * The loop to find a segment boundary may have made more iterations
-   than necessary if the first segment was very small
- * The sink write may not have been on a segment boundary, causing more
-   data than necessary to be copied.
-
-Closes: https://github.com/square/okio/issues/311 | 2017-05-22 12:14:32 | 80f3aa2e7bb9ac9691e62ec619e6b53259d78958
-
-Import jsr305 and use it to mark @Nullable stuff.
-
-The result is that IntelliJ + Kotlin correctly infers the right nullability
-for Okio's APIs. I used IntelliJ's "Specify types explicitly" quick fix on
-the 'a' and 'b' variables below and it did the right thing.
-
-    fun specifyTypeExplicitly(source: BufferedSource) {
-      val a: String? = source.readUtf8Line()
-      val b: String = source.readUtf8LineStrict()
-    } | 2017-05-02 02:39:52 | 2320c7f6ad9d05c1b65fb1e8cc43e257965792b4
-
-Merge pull request #274 from larsgrefer/patch-1
-
-endsWith -> suffix | 2016-12-07 22:57:38 | d412a4a2f9034a9bc59a8637e477822bd54d4504
-
-endsWith -> suffix | 2016-12-07 22:54:57 | 032ad9948d5df69ee49367c90ad30f8823fc200b
-
-Merge pull request #259 from square/jwilson.0829.substring
-
-Fix a major bug where writeString() didn't always respect offsets. | 2016-08-29 12:54:40 | 927902b565479277178bdb7b0c986ce8beca07a3
-
-Fix a major bug where writeString() didn't always respect offsets.
-
-Closes: https://github.com/square/okio/issues/258 | 2016-08-29 12:16:03 | 8f5ae7376486990db25696304367f8e8b16f5534
-
-Merge pull request #253 from square/jwilson.0814.fix_gzip_sink
-
-Fix GzipSink for symmetry. | 2016-08-14 16:17:04 | 838a215b2bdbd77550ee876bc8870a61ad7219df
-
-Merge pull request #252 from square/jwilson.0813.gzip_fix
-
-Fix GzipSource to handle large files on AOSP. | 2016-08-14 04:32:14 | 4934879155da13b82be1775ac9840dbbd6b5c0cf
-
-Merge pull request #247 from cketti/base64_encode_buffer_size_fix
-
-Don't overallocate when base64-encoding. | 2016-08-07 00:11:57 | 834a35c2c8ff533f9e6d476714e7410c53cfd971
-
-Import org.junit.Assert.fail instead of junit.framework.TestCase.fail
-
-Use the JUnit 4 version in the couple of places were JUnit 3 imports
-still existed; this makes the imports more consistent and also fixes
-compilation if the JUnit 3 version is not available. | 2016-07-28 12:32:38 | 2f6e7783503aeb68d58fd7d50c47b7985d80203d
-
-Merge pull request #227 from square/jwilson.0618.hashfail
-
-Fix a major bug where HashingSource is incorrect for large writes. | 2016-06-19 01:58:13 | 2244048477890e33893613affc8f1fc82230c178
-
-Fix a major bug where HashingSource is incorrect for large writes.
-
-There was a bug where it wasn't traversing through the segments of
-the buffer being hashed. This means that HashingSource was returning
-incorrect answers for any writes that spanned multiple segment
-boundaries.
-
-The problem wasn't detected by our test cases because although
-we have tests for non-uniform segments, and for buffers that
-span multiple segments, we don't have tests for non-uniform
-buffers that span multiple segments. This has been fixed too. | 2016-06-18 22:04:20 | 657278fff2ebb521659a330d0f7fc2b66d99cfbd
-
-Merge pull request #210 from aried3r/patch-1
-
-Fix typo in changelog | 2016-04-11 16:45:29 | 2c92d8261bc932473f4580bc62f22818a76acb47
-
-Merge pull request #209 from chrisdoc/master
-
-fix wrong changelog date for Version 1.7.0 | 2016-04-11 05:19:36 | 33cb196bb5182ebcad50303660f9e44635071696
-
-fix wrong date for Version 1.7.0 | 2016-04-11 05:15:07 | 52dd9f5665f840dd4b6b4be93ac09f6c8252a791
-
-Merge pull request #174 from serj-lotutovici/sl/fix_some_javadocs
-
-Fix some lexical errors in Sink/Source javadocs. | 2015-10-28 00:39:25 | 8ab97da4901f423dd474df0f8e991e4599bbab5f
-
-Actually ignore expected AssertionError.
-
-I blundered the formatting fixing pguilbot's code. This fixes that. | 2015-08-13 19:55:21 | 10b644c910148c9f31fba141dcc0ca5851c976e3
-
-Move a cast in Buffer.indexOf().
-
-This has the happy side-effect of preventing the Lenovo S939 from
-behaving incorrectly when executing this method.
-
-The following test exercises the previous code; it fails after
-a few iterations on that device:
-https://gist.github.com/swankjesse/4396e276e43dbb0e71cc
-
-Unfortunately there's no good way to regression test that we
-haven't hit a bug in a specific lousy device. | 2015-07-31 06:48:21 | e0429cf2c81a7341d150f1f4e9fe815304b03e1a
-
-Merge pull request #157 from amincheloh/patch-1
-
-Update README.md for 1.5.0. | 2015-06-30 15:01:14 | c5d3891a5e7fc9a456df2da2bcdea7da355e2e4f
-
-Merge pull request #149 from ChristianBecker/patch-1
-
-Removed duplicated 'would' | 2015-05-17 13:15:52 | 4023ed0d4a6a09a485963a1d608030bdeeea8135
-
-Merge pull request #147 from alokmenghrajani/alok/bugbounty
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:58:21 | 3d7752f2802ee0a1c713f2566c0724465e4e2e7b
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:43:48 | aa4d51d5a3c0eda703a393750df59ba5c929d7cc
-
-Merge pull request #127 from square/jw/fix-build
-
-Update SegmentPool references to the latest. | 2015-03-12 05:20:40 | d07412cc7cb917f852442d3d8ea056e374bad402
-
-Make tests pass on Android and other platforms
-
-Previously failing with:
-  okio.SocketTimeoutTest#writeWithTimeout
-    junit.framework.AssertionFailedError
-    	at junit.framework.Assert.fail(Assert.java:56)
-    	at okio.SocketTimeoutTest.writeWithTimeout(SocketTimeoutTest.java:75)
-
-The problem: the 1MB of data can be written to the
-client socket even though the server socket is not reading.
-This is because sockets on Android are buffered by default
-by more that the amount of data in the test. This prevents
-the write timeout occurring.
-
-Socket defaults measured on a Nexus 4 running AOSP:
-send: 524288 bytes, receive: 1048576 bytes.
-IIRC, it varies by device.
-
-Only some of the buffers need to be set to fix this, but
-setting all of them seems reasonable to make it explicit.
-The buffers are set to 1/4 of the data being
-transferred to ensure that the data will
-flood the send and receive buffers with some to spare.
-Too small and the "withoutTimeout" tests will timeout
-due to inefficiency.
-
-The tests were also failing on a Linux desktop, probably
-for similar reasons. | 2014-11-26 10:52:39 | e3325331cc0929271df8ce81c55082b83b200b2c
-
-Merge pull request #72 from square/jwilson_0809_request_require
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 04:05:17 | b2af925f325eead20fc7ecaa58e78a3b3414e91c
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 01:02:32 | 21967427c2285ff9de5e95396ac3874f2e9aa34b
-
-Merge pull request #61 from matasaru/patch-1
-
-bump java version to 1.7 | 2014-06-17 17:06:22 | c71c72f3fe01abe6f404539ad8aec975d68f0027
-
-Merge pull request #53 from jgilfelt/patch-1
-
-Javadoc fix | 2014-04-28 15:19:05 | e462d43a605a140a5ba6054646850ead80a5042e
-
-Javadoc fix | 2014-04-28 11:11:23 | 74e3ead9b2896cff3030e89b70b12cdbb8139cdd
-
-Merge pull request #34 from square/jwilson_0417_input_stream_exhausted
-
-Fix a bug on input stream exhaustion. | 2014-04-17 18:00:45 | 0cf1bfa4d31339d98a4c105dbd29f74ca68e7543
-
-Fix a bug on input stream exhaustion.
-
-Previously we were throwing because readByte() requires a byte. Instead
-just return -1. | 2014-04-17 17:56:36 | 46007a3a62b98f19f0be0ba042dbe31f35c0a3c9
-
-Flatten serialization.
-
-Fix a bug that occurs if InputStream.read() returns before reading the
-requested number of bytes. | 2014-04-15 15:49:13 | a6ace31af61c54db329881e324b8bb67eef0c7b3
-
-Merge pull request #28 from roman-mazur/patch-1
-
-Remove duplicates in docs :) | 2014-04-13 00:37:06 | cc23ae57865da921fab74db3e81fa146ac89a93f
-
-Merge remote-tracking branch 'okhttp/master'
-
-* okhttp/master: (541 commits)
-  Don't explode if removing an absent file fails.
-  Fix build removing obsolete okhttp-protocols dependency
-  Push Socket into HttpConnection/SpdyConnection.
-  Only use one thread for MockSpdyPeer.
-  More 1.5 changes.
-  Sample: Crawler.
-  Fix a crash on conditional cache hits for new API.
-  Don't double pool on a conditional cache hit.
-  Empty line.
-  Changelog updates.
-  Doc: OkHttpClient should be treated as immutable once shared
-  Doc: OkHttpClient need not /always/ be a singleton
-  Document that OkHttpClient is thread-safe
-  Fix problems with connection recycling and recovery.
-  Fix problems with DeflaterSink.
-  fix #627: Merge SPDY settings when clear flag set. Revert Settings.DEFAULT_INITIAL_WINDOW_SIZE.
-  Use the peer's settings for outgoing window updates.
-  API tweaks to Okio.
-  Fix 1.5 doc and download link.
-  Update website to not use jar-with-dependencies classifier.
-  ...
-
-Conflicts:
-	.gitignore | 2014-03-17 02:09:57 | e0961bdb68cff845e30230c5336f91f671ff298b
-
-Don't require OkBuffer callers to cast.
-
-The casting masks bugs. Instead accept a long and do a range check in
-OkBuffer. | 2014-03-01 14:34:26 | a06fb5e3d4fc3846a0bcc8da8382e16a5ad8c3db
-
-Give Base64 lots of love.
-
-Fix some bugs, such as decoding of input that contains lots
-of padding or whitespace. See
-https://code.google.com/p/android/issues/detail?id=66078
-
-Improve performance by correctly guessing the output array
-size whenever the input doesn't contain whitespace.
-
-Build Base64 into ByteString, and expose it through there
-only.
-
-Use more reasonable names in the implementation. | 2014-02-17 18:41:11 | 81a09a88857deccea956197b86fb55527aced5e2
-
-Merge pull request #517 from square/jwilson_0208_buffer_fixes
-
-Fix some OkBuffer bugs. | 2014-02-08 15:20:34 | dde8e538af95f6a1868c509d7b8a1bccef03da07
-
-Fix some OkBuffer bugs.
-
-GzipSource exceptions used six hex digits instead of
-8 to print ints.
-
-readUtf8 always did an extra copy of the bytes being
-read.
-
-Moving bytes between buffers crashed when the destination
-was empty and the source was a prefix.
-
-InputStream reading returned values in -128..127 instead
-of in 0..255. | 2014-02-08 13:22:22 | fdb1c5991994632ac2296496a36d7286f15efecb
-
-Rename byteAt to getByte.
-
-Should we later support random access for other primitives
-or random bulk access, I'd like the prefix to stay constant
-(getByte, getInt, getLong, getBytes) vs. the suffix (byteAt,
-intAt, longAt). Prefixing may work better for autocomplete
-in IDEs, particularly since we already use a prefix for our
-consuming reads (readByte, readInt, readLong). | 2014-02-08 12:44:47 | b102c6d76c60861e96267f79096f6747bb575957
-
-Merge pull request #512 from square/adriancole_02_05_findbugs
-
-FindBugs sweep. | 2014-02-05 17:49:22 | 949e6874790d8979d8f9a1ff31a175b439b6eda6
-
-Merge pull request #488 from jgilfelt/patch-1
-
-Fix mockwebserver jar download 404 | 2014-01-27 14:27:45 | 54aa769fd216793f2c71b3cec69c50cc2257ac54
-
-OkBuffer API sketch.
-
-I'm unhappy with java.io:
- * No timeouts.
- * Every layer needs to copy bytes around. Always copying bytes.
- * Features like mark/reset and available() are clumsy.
- * Its awkard in mixed text/binary protocols like HTTP because
-   character decoding is separate and takes over the stream.
-
-Unfortunately java.nio isn't better, just different:
- * It's complex.
- * Buffers are fixed size.
- * No built-in buffer pooling.
- * Features like mark/reset/position are clumsy.
-
-This is an obnoxious attempt at a 3rd I/O interface, mostly
-inspired by InputStream and OutputStream, but using growable
-buffers instead of byte arrays as the core data container. | 2014-01-26 16:31:23 | 2d3cdc9e5dfb593f8eb7da38459163b902a95d7f
-
-Enable Gradle metadata publishing (#604)
-
-* Enable Gradle metadata publishing
-
-* Update Node plugin
-
-* Add workaround for Node plugin bug
-
-* Correct version of the workaround | 2019-05-01 15:33:28 | a54054aaaa264a7bcf190f625bbe0b98e0312ace
-
-Merge pull request #603 from square/egorand/190430/fix-snapshot-publishing
-
-Fix snapshot publishing command | 2019-04-30 17:03:19 | bdb1e33d249e578a5752dde3be1a6fa0ad389bc3
-
-Merge pull request #602 from jaredsburrows/patch-1
-
-Update README.md - fix broken proguard link | 2019-04-30 12:57:24 | cb440ffb53a2a4527675f738789aa75b298a1321
-
-Update README.md - fix broken proguard link | 2019-04-30 04:10:46 | 90295b16aabea3ea560ac71fbeaef7bc86eba551
-
-Peek the minimum number of bytes to return a result
-
-The contract for read() is to return at least 1 byte, but we were
-attempting to read the full request. That caused us to prematurely
-do a blocking read on the upstream source.
-
-This fixes that code to defer the blocking read.
-
-Closes: https://github.com/square/okio/issues/594 | 2019-04-28 21:50:51 | 86e479564373d6872941bfc031c7169d9cb91417
-
-Update japicmp plugin
-
-This bumps japicmp to 0.13.1 which still doesn't contain the effectively-final fix, but at least provides compatibility with newer japicmp versions so that we can upgrade once that change is released. | 2019-04-05 13:57:48 | 031ea7a5118b8077904a6cdc12e273dab4e50b13
-
-Kotlin Gradle MPP 1.3 (#544)
-
-* Basic setup
-
-* Ignore failing test
-
-* Gradle 5.0
-
-* Better native config
-
-* Fix jvm tests
-
-* JS testing setup
-
-* Native config
-
-* Use EAP dependencies
-
-* Japicmp setup
-
-* Correct path to japicmp report
-
-* Basic JVM + AnimalSniffer setup
-
-* Enable samples module
-
-* Use jvmWithJava for running Java tests
-
-* Include more Native platforms to force test task generation
-
-* Use internal UTF-8 decoder for Kotlin/Native
-
-* Kotlin 1.3.20
-
-* Gradle 5.1
-
-* Move JMH setup into a separate module
-
-* Properly configure jmhJar task
-
-* Remove old jvm build.gradle
-
-* Replace publishing plugin with SQLDelight's custom script
-
-* Use default artifactId for JVM target
-
-* Revert JVM build.gradle rename, use new DSL for defining targets
-
-* Remove old module definitions in settings
-
-* Feedback fixes | 2019-01-30 12:50:19 | 0078fca7b325a8d9454715ada316e0a3d6e99115
-
-Merge pull request #542 from NightlyNexus/patch-1
-
-Fix some indices in Buffer.UnsafeCursor docs. | 2019-01-16 03:02:01 | 7dd5bde7b0eb160ecdcb2a32477b8e9f313a0b8b
-
-Merge pull request #504 from square/egorand/0830/ktlint-fixes
-
-Fix ktlint issues in platform modules | 2018-09-01 03:43:34 | ea0dd569ef0cbe3cc6288264c36bc6fde02074af
-
-Hide Base64, ByteStringKt, Platform, and Util code from Java
-
-These are 'internal' in Kotlin but 'public' to Java callers. Changing
-class names to prefix with '-' prevents Java from calling through. | 2018-08-26 13:45:15 | b518b5b2cf40147105a30bd37cf91c810ff59450
-
-Make Buffer exceptions consistent with RealBufferedSource
-
-This is inspired by ksperling's work on improving exception-consistency
-between Buffer and RealBufferedSource. I wasn't willing to make an
-exception-signature change for a 1.x release, but the 2.x release is a
-good opportunity to fix this longstanding problem. | 2018-07-24 20:55:10 | 487a1f2392d8a9f017dceaca15656a82ab4ed46d
-
-Retain interrupted state when throwing InterruptedIOException (Okio 2.x)
-
-This fixes Okio 2.x. A separate fix is required for Okio 1.x. | 2018-07-06 02:35:23 | 264829dae36198c2e5454a6c2ae1d4aa208c5815
-
-Merge pull request #463 from GianfrancoMS/patch-1
-
-Update README.md | 2018-06-04 20:06:26 | fffc9d42244254899bb934ca400c8a88a65ea224
-
-Merge pull request #462 from hendrawd/patch-1
-
-Update README.md | 2018-05-29 17:14:54 | 105c2411448a726fe2d2a90c2e13d7e30ff79f43
-
-Merge pull request #449 from yinyinnie/patch-1
-
-Update README.md | 2018-05-13 15:11:04 | 4b567e1f0dfeeb6c506f5b2497444d8de8ecbc47
-
-Merge pull request #424 from square/jwilson.0430.no_performance_bug
-
-Add a test for the off-by-one bug in Buffer.seek(). | 2018-05-02 13:03:23 | bf4ae6cc0b967204ebdc629b62773fa8202962fc
-
-Add a test for the off-by-one bug in Buffer.seek().
-
-There was a performance bug here, where it would return one segment too early. | 2018-05-01 03:53:32 | c2b251cc189f128071d6357e30ccba6a091adadf
-
-Merge pull request #312 from square/jwilson.0522.actually_split
-
-Fix a performance bug in AsyncTimeout.sink().write(). | 2017-05-22 14:42:26 | 20e259c08af6c96508387540a5ea53f89b1d01f5
-
-Fix a performance bug in AsyncTimeout.sink().write().
-
-Previously the behavior was correct but the intended behavior was less
-efficient than intended. In particular there were two problems:
-
- * The loop to find a segment boundary may have made more iterations
-   than necessary if the first segment was very small
- * The sink write may not have been on a segment boundary, causing more
-   data than necessary to be copied.
-
-Closes: https://github.com/square/okio/issues/311 | 2017-05-22 12:14:32 | 80f3aa2e7bb9ac9691e62ec619e6b53259d78958
-
-Import jsr305 and use it to mark @Nullable stuff.
-
-The result is that IntelliJ + Kotlin correctly infers the right nullability
-for Okio's APIs. I used IntelliJ's "Specify types explicitly" quick fix on
-the 'a' and 'b' variables below and it did the right thing.
-
-    fun specifyTypeExplicitly(source: BufferedSource) {
-      val a: String? = source.readUtf8Line()
-      val b: String = source.readUtf8LineStrict()
-    } | 2017-05-02 02:39:52 | 2320c7f6ad9d05c1b65fb1e8cc43e257965792b4
-
-Merge pull request #274 from larsgrefer/patch-1
-
-endsWith -> suffix | 2016-12-07 22:57:38 | d412a4a2f9034a9bc59a8637e477822bd54d4504
-
-endsWith -> suffix | 2016-12-07 22:54:57 | 032ad9948d5df69ee49367c90ad30f8823fc200b
-
-Merge pull request #259 from square/jwilson.0829.substring
-
-Fix a major bug where writeString() didn't always respect offsets. | 2016-08-29 12:54:40 | 927902b565479277178bdb7b0c986ce8beca07a3
-
-Fix a major bug where writeString() didn't always respect offsets.
-
-Closes: https://github.com/square/okio/issues/258 | 2016-08-29 12:16:03 | 8f5ae7376486990db25696304367f8e8b16f5534
-
-Merge pull request #253 from square/jwilson.0814.fix_gzip_sink
-
-Fix GzipSink for symmetry. | 2016-08-14 16:17:04 | 838a215b2bdbd77550ee876bc8870a61ad7219df
-
-Merge pull request #252 from square/jwilson.0813.gzip_fix
-
-Fix GzipSource to handle large files on AOSP. | 2016-08-14 04:32:14 | 4934879155da13b82be1775ac9840dbbd6b5c0cf
-
-Merge pull request #247 from cketti/base64_encode_buffer_size_fix
-
-Don't overallocate when base64-encoding. | 2016-08-07 00:11:57 | 834a35c2c8ff533f9e6d476714e7410c53cfd971
-
-Import org.junit.Assert.fail instead of junit.framework.TestCase.fail
-
-Use the JUnit 4 version in the couple of places were JUnit 3 imports
-still existed; this makes the imports more consistent and also fixes
-compilation if the JUnit 3 version is not available. | 2016-07-28 12:32:38 | 2f6e7783503aeb68d58fd7d50c47b7985d80203d
-
-Merge pull request #227 from square/jwilson.0618.hashfail
-
-Fix a major bug where HashingSource is incorrect for large writes. | 2016-06-19 01:58:13 | 2244048477890e33893613affc8f1fc82230c178
-
-Fix a major bug where HashingSource is incorrect for large writes.
-
-There was a bug where it wasn't traversing through the segments of
-the buffer being hashed. This means that HashingSource was returning
-incorrect answers for any writes that spanned multiple segment
-boundaries.
-
-The problem wasn't detected by our test cases because although
-we have tests for non-uniform segments, and for buffers that
-span multiple segments, we don't have tests for non-uniform
-buffers that span multiple segments. This has been fixed too. | 2016-06-18 22:04:20 | 657278fff2ebb521659a330d0f7fc2b66d99cfbd
-
-Merge pull request #210 from aried3r/patch-1
-
-Fix typo in changelog | 2016-04-11 16:45:29 | 2c92d8261bc932473f4580bc62f22818a76acb47
-
-Merge pull request #209 from chrisdoc/master
-
-fix wrong changelog date for Version 1.7.0 | 2016-04-11 05:19:36 | 33cb196bb5182ebcad50303660f9e44635071696
-
-fix wrong date for Version 1.7.0 | 2016-04-11 05:15:07 | 52dd9f5665f840dd4b6b4be93ac09f6c8252a791
-
-Merge pull request #174 from serj-lotutovici/sl/fix_some_javadocs
-
-Fix some lexical errors in Sink/Source javadocs. | 2015-10-28 00:39:25 | 8ab97da4901f423dd474df0f8e991e4599bbab5f
-
-Actually ignore expected AssertionError.
-
-I blundered the formatting fixing pguilbot's code. This fixes that. | 2015-08-13 19:55:21 | 10b644c910148c9f31fba141dcc0ca5851c976e3
-
-Move a cast in Buffer.indexOf().
-
-This has the happy side-effect of preventing the Lenovo S939 from
-behaving incorrectly when executing this method.
-
-The following test exercises the previous code; it fails after
-a few iterations on that device:
-https://gist.github.com/swankjesse/4396e276e43dbb0e71cc
-
-Unfortunately there's no good way to regression test that we
-haven't hit a bug in a specific lousy device. | 2015-07-31 06:48:21 | e0429cf2c81a7341d150f1f4e9fe815304b03e1a
-
-Merge pull request #157 from amincheloh/patch-1
-
-Update README.md for 1.5.0. | 2015-06-30 15:01:14 | c5d3891a5e7fc9a456df2da2bcdea7da355e2e4f
-
-Merge pull request #149 from ChristianBecker/patch-1
-
-Removed duplicated 'would' | 2015-05-17 13:15:52 | 4023ed0d4a6a09a485963a1d608030bdeeea8135
-
-Merge pull request #147 from alokmenghrajani/alok/bugbounty
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:58:21 | 3d7752f2802ee0a1c713f2566c0724465e4e2e7b
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:43:48 | aa4d51d5a3c0eda703a393750df59ba5c929d7cc
-
-Merge pull request #127 from square/jw/fix-build
-
-Update SegmentPool references to the latest. | 2015-03-12 05:20:40 | d07412cc7cb917f852442d3d8ea056e374bad402
-
-Make tests pass on Android and other platforms
-
-Previously failing with:
-  okio.SocketTimeoutTest#writeWithTimeout
-    junit.framework.AssertionFailedError
-    	at junit.framework.Assert.fail(Assert.java:56)
-    	at okio.SocketTimeoutTest.writeWithTimeout(SocketTimeoutTest.java:75)
-
-The problem: the 1MB of data can be written to the
-client socket even though the server socket is not reading.
-This is because sockets on Android are buffered by default
-by more that the amount of data in the test. This prevents
-the write timeout occurring.
-
-Socket defaults measured on a Nexus 4 running AOSP:
-send: 524288 bytes, receive: 1048576 bytes.
-IIRC, it varies by device.
-
-Only some of the buffers need to be set to fix this, but
-setting all of them seems reasonable to make it explicit.
-The buffers are set to 1/4 of the data being
-transferred to ensure that the data will
-flood the send and receive buffers with some to spare.
-Too small and the "withoutTimeout" tests will timeout
-due to inefficiency.
-
-The tests were also failing on a Linux desktop, probably
-for similar reasons. | 2014-11-26 10:52:39 | e3325331cc0929271df8ce81c55082b83b200b2c
-
-Merge pull request #72 from square/jwilson_0809_request_require
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 04:05:17 | b2af925f325eead20fc7ecaa58e78a3b3414e91c
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 01:02:32 | 21967427c2285ff9de5e95396ac3874f2e9aa34b
-
-Merge pull request #61 from matasaru/patch-1
-
-bump java version to 1.7 | 2014-06-17 17:06:22 | c71c72f3fe01abe6f404539ad8aec975d68f0027
-
-Merge pull request #53 from jgilfelt/patch-1
-
-Javadoc fix | 2014-04-28 15:19:05 | e462d43a605a140a5ba6054646850ead80a5042e
-
-Javadoc fix | 2014-04-28 11:11:23 | 74e3ead9b2896cff3030e89b70b12cdbb8139cdd
-
-Merge pull request #34 from square/jwilson_0417_input_stream_exhausted
-
-Fix a bug on input stream exhaustion. | 2014-04-17 18:00:45 | 0cf1bfa4d31339d98a4c105dbd29f74ca68e7543
-
-Fix a bug on input stream exhaustion.
-
-Previously we were throwing because readByte() requires a byte. Instead
-just return -1. | 2014-04-17 17:56:36 | 46007a3a62b98f19f0be0ba042dbe31f35c0a3c9
-
-Flatten serialization.
-
-Fix a bug that occurs if InputStream.read() returns before reading the
-requested number of bytes. | 2014-04-15 15:49:13 | a6ace31af61c54db329881e324b8bb67eef0c7b3
-
-Merge pull request #28 from roman-mazur/patch-1
-
-Remove duplicates in docs :) | 2014-04-13 00:37:06 | cc23ae57865da921fab74db3e81fa146ac89a93f
-
-Merge remote-tracking branch 'okhttp/master'
-
-* okhttp/master: (541 commits)
-  Don't explode if removing an absent file fails.
-  Fix build removing obsolete okhttp-protocols dependency
-  Push Socket into HttpConnection/SpdyConnection.
-  Only use one thread for MockSpdyPeer.
-  More 1.5 changes.
-  Sample: Crawler.
-  Fix a crash on conditional cache hits for new API.
-  Don't double pool on a conditional cache hit.
-  Empty line.
-  Changelog updates.
-  Doc: OkHttpClient should be treated as immutable once shared
-  Doc: OkHttpClient need not /always/ be a singleton
-  Document that OkHttpClient is thread-safe
-  Fix problems with connection recycling and recovery.
-  Fix problems with DeflaterSink.
-  fix #627: Merge SPDY settings when clear flag set. Revert Settings.DEFAULT_INITIAL_WINDOW_SIZE.
-  Use the peer's settings for outgoing window updates.
-  API tweaks to Okio.
-  Fix 1.5 doc and download link.
-  Update website to not use jar-with-dependencies classifier.
-  ...
-
-Conflicts:
-	.gitignore | 2014-03-17 02:09:57 | e0961bdb68cff845e30230c5336f91f671ff298b
-
-Don't require OkBuffer callers to cast.
-
-The casting masks bugs. Instead accept a long and do a range check in
-OkBuffer. | 2014-03-01 14:34:26 | a06fb5e3d4fc3846a0bcc8da8382e16a5ad8c3db
-
-Give Base64 lots of love.
-
-Fix some bugs, such as decoding of input that contains lots
-of padding or whitespace. See
-https://code.google.com/p/android/issues/detail?id=66078
-
-Improve performance by correctly guessing the output array
-size whenever the input doesn't contain whitespace.
-
-Build Base64 into ByteString, and expose it through there
-only.
-
-Use more reasonable names in the implementation. | 2014-02-17 18:41:11 | 81a09a88857deccea956197b86fb55527aced5e2
-
-Merge pull request #517 from square/jwilson_0208_buffer_fixes
-
-Fix some OkBuffer bugs. | 2014-02-08 15:20:34 | dde8e538af95f6a1868c509d7b8a1bccef03da07
-
-Fix some OkBuffer bugs.
-
-GzipSource exceptions used six hex digits instead of
-8 to print ints.
-
-readUtf8 always did an extra copy of the bytes being
-read.
-
-Moving bytes between buffers crashed when the destination
-was empty and the source was a prefix.
-
-InputStream reading returned values in -128..127 instead
-of in 0..255. | 2014-02-08 13:22:22 | fdb1c5991994632ac2296496a36d7286f15efecb
-
-Rename byteAt to getByte.
-
-Should we later support random access for other primitives
-or random bulk access, I'd like the prefix to stay constant
-(getByte, getInt, getLong, getBytes) vs. the suffix (byteAt,
-intAt, longAt). Prefixing may work better for autocomplete
-in IDEs, particularly since we already use a prefix for our
-consuming reads (readByte, readInt, readLong). | 2014-02-08 12:44:47 | b102c6d76c60861e96267f79096f6747bb575957
-
-Merge pull request #512 from square/adriancole_02_05_findbugs
-
-FindBugs sweep. | 2014-02-05 17:49:22 | 949e6874790d8979d8f9a1ff31a175b439b6eda6
-
-Merge pull request #488 from jgilfelt/patch-1
-
-Fix mockwebserver jar download 404 | 2014-01-27 14:27:45 | 54aa769fd216793f2c71b3cec69c50cc2257ac54
-
-OkBuffer API sketch.
-
-I'm unhappy with java.io:
- * No timeouts.
- * Every layer needs to copy bytes around. Always copying bytes.
- * Features like mark/reset and available() are clumsy.
- * Its awkard in mixed text/binary protocols like HTTP because
-   character decoding is separate and takes over the stream.
-
-Unfortunately java.nio isn't better, just different:
- * It's complex.
- * Buffers are fixed size.
- * No built-in buffer pooling.
- * Features like mark/reset/position are clumsy.
-
-This is an obnoxious attempt at a 3rd I/O interface, mostly
-inspired by InputStream and OutputStream, but using growable
-buffers instead of byte arrays as the core data container. | 2014-01-26 16:31:23 | 2d3cdc9e5dfb593f8eb7da38459163b902a95d7f
 
 Try expect interfaces for Closeable, Flushable
 
@@ -3958,208 +2140,6 @@ fix wrong changelog date for Version 1.7.0 | 2016-04-11 05:19:36 | 33cb196bb5182
 
 fix wrong date for Version 1.7.0 | 2016-04-11 05:15:07 | 52dd9f5665f840dd4b6b4be93ac09f6c8252a791
 
-Merge pull request #174 from serj-lotutovici/sl/fix_some_javadocs
-
-Fix some lexical errors in Sink/Source javadocs. | 2015-10-28 00:39:25 | 8ab97da4901f423dd474df0f8e991e4599bbab5f
-
-Actually ignore expected AssertionError.
-
-I blundered the formatting fixing pguilbot's code. This fixes that. | 2015-08-13 19:55:21 | 10b644c910148c9f31fba141dcc0ca5851c976e3
-
-Move a cast in Buffer.indexOf().
-
-This has the happy side-effect of preventing the Lenovo S939 from
-behaving incorrectly when executing this method.
-
-The following test exercises the previous code; it fails after
-a few iterations on that device:
-https://gist.github.com/swankjesse/4396e276e43dbb0e71cc
-
-Unfortunately there's no good way to regression test that we
-haven't hit a bug in a specific lousy device. | 2015-07-31 06:48:21 | e0429cf2c81a7341d150f1f4e9fe815304b03e1a
-
-Merge pull request #157 from amincheloh/patch-1
-
-Update README.md for 1.5.0. | 2015-06-30 15:01:14 | c5d3891a5e7fc9a456df2da2bcdea7da355e2e4f
-
-Merge pull request #149 from ChristianBecker/patch-1
-
-Removed duplicated 'would' | 2015-05-17 13:15:52 | 4023ed0d4a6a09a485963a1d608030bdeeea8135
-
-Merge pull request #147 from alokmenghrajani/alok/bugbounty
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:58:21 | 3d7752f2802ee0a1c713f2566c0724465e4e2e7b
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:43:48 | aa4d51d5a3c0eda703a393750df59ba5c929d7cc
-
-Merge pull request #127 from square/jw/fix-build
-
-Update SegmentPool references to the latest. | 2015-03-12 05:20:40 | d07412cc7cb917f852442d3d8ea056e374bad402
-
-Make tests pass on Android and other platforms
-
-Previously failing with:
-  okio.SocketTimeoutTest#writeWithTimeout
-    junit.framework.AssertionFailedError
-    	at junit.framework.Assert.fail(Assert.java:56)
-    	at okio.SocketTimeoutTest.writeWithTimeout(SocketTimeoutTest.java:75)
-
-The problem: the 1MB of data can be written to the
-client socket even though the server socket is not reading.
-This is because sockets on Android are buffered by default
-by more that the amount of data in the test. This prevents
-the write timeout occurring.
-
-Socket defaults measured on a Nexus 4 running AOSP:
-send: 524288 bytes, receive: 1048576 bytes.
-IIRC, it varies by device.
-
-Only some of the buffers need to be set to fix this, but
-setting all of them seems reasonable to make it explicit.
-The buffers are set to 1/4 of the data being
-transferred to ensure that the data will
-flood the send and receive buffers with some to spare.
-Too small and the "withoutTimeout" tests will timeout
-due to inefficiency.
-
-The tests were also failing on a Linux desktop, probably
-for similar reasons. | 2014-11-26 10:52:39 | e3325331cc0929271df8ce81c55082b83b200b2c
-
-Merge pull request #72 from square/jwilson_0809_request_require
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 04:05:17 | b2af925f325eead20fc7ecaa58e78a3b3414e91c
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 01:02:32 | 21967427c2285ff9de5e95396ac3874f2e9aa34b
-
-Merge pull request #61 from matasaru/patch-1
-
-bump java version to 1.7 | 2014-06-17 17:06:22 | c71c72f3fe01abe6f404539ad8aec975d68f0027
-
-Merge pull request #53 from jgilfelt/patch-1
-
-Javadoc fix | 2014-04-28 15:19:05 | e462d43a605a140a5ba6054646850ead80a5042e
-
-Javadoc fix | 2014-04-28 11:11:23 | 74e3ead9b2896cff3030e89b70b12cdbb8139cdd
-
-Merge pull request #34 from square/jwilson_0417_input_stream_exhausted
-
-Fix a bug on input stream exhaustion. | 2014-04-17 18:00:45 | 0cf1bfa4d31339d98a4c105dbd29f74ca68e7543
-
-Fix a bug on input stream exhaustion.
-
-Previously we were throwing because readByte() requires a byte. Instead
-just return -1. | 2014-04-17 17:56:36 | 46007a3a62b98f19f0be0ba042dbe31f35c0a3c9
-
-Flatten serialization.
-
-Fix a bug that occurs if InputStream.read() returns before reading the
-requested number of bytes. | 2014-04-15 15:49:13 | a6ace31af61c54db329881e324b8bb67eef0c7b3
-
-Merge pull request #28 from roman-mazur/patch-1
-
-Remove duplicates in docs :) | 2014-04-13 00:37:06 | cc23ae57865da921fab74db3e81fa146ac89a93f
-
-Merge remote-tracking branch 'okhttp/master'
-
-* okhttp/master: (541 commits)
-  Don't explode if removing an absent file fails.
-  Fix build removing obsolete okhttp-protocols dependency
-  Push Socket into HttpConnection/SpdyConnection.
-  Only use one thread for MockSpdyPeer.
-  More 1.5 changes.
-  Sample: Crawler.
-  Fix a crash on conditional cache hits for new API.
-  Don't double pool on a conditional cache hit.
-  Empty line.
-  Changelog updates.
-  Doc: OkHttpClient should be treated as immutable once shared
-  Doc: OkHttpClient need not /always/ be a singleton
-  Document that OkHttpClient is thread-safe
-  Fix problems with connection recycling and recovery.
-  Fix problems with DeflaterSink.
-  fix #627: Merge SPDY settings when clear flag set. Revert Settings.DEFAULT_INITIAL_WINDOW_SIZE.
-  Use the peer's settings for outgoing window updates.
-  API tweaks to Okio.
-  Fix 1.5 doc and download link.
-  Update website to not use jar-with-dependencies classifier.
-  ...
-
-Conflicts:
-	.gitignore | 2014-03-17 02:09:57 | e0961bdb68cff845e30230c5336f91f671ff298b
-
-Don't require OkBuffer callers to cast.
-
-The casting masks bugs. Instead accept a long and do a range check in
-OkBuffer. | 2014-03-01 14:34:26 | a06fb5e3d4fc3846a0bcc8da8382e16a5ad8c3db
-
-Give Base64 lots of love.
-
-Fix some bugs, such as decoding of input that contains lots
-of padding or whitespace. See
-https://code.google.com/p/android/issues/detail?id=66078
-
-Improve performance by correctly guessing the output array
-size whenever the input doesn't contain whitespace.
-
-Build Base64 into ByteString, and expose it through there
-only.
-
-Use more reasonable names in the implementation. | 2014-02-17 18:41:11 | 81a09a88857deccea956197b86fb55527aced5e2
-
-Merge pull request #517 from square/jwilson_0208_buffer_fixes
-
-Fix some OkBuffer bugs. | 2014-02-08 15:20:34 | dde8e538af95f6a1868c509d7b8a1bccef03da07
-
-Fix some OkBuffer bugs.
-
-GzipSource exceptions used six hex digits instead of
-8 to print ints.
-
-readUtf8 always did an extra copy of the bytes being
-read.
-
-Moving bytes between buffers crashed when the destination
-was empty and the source was a prefix.
-
-InputStream reading returned values in -128..127 instead
-of in 0..255. | 2014-02-08 13:22:22 | fdb1c5991994632ac2296496a36d7286f15efecb
-
-Rename byteAt to getByte.
-
-Should we later support random access for other primitives
-or random bulk access, I'd like the prefix to stay constant
-(getByte, getInt, getLong, getBytes) vs. the suffix (byteAt,
-intAt, longAt). Prefixing may work better for autocomplete
-in IDEs, particularly since we already use a prefix for our
-consuming reads (readByte, readInt, readLong). | 2014-02-08 12:44:47 | b102c6d76c60861e96267f79096f6747bb575957
-
-Merge pull request #512 from square/adriancole_02_05_findbugs
-
-FindBugs sweep. | 2014-02-05 17:49:22 | 949e6874790d8979d8f9a1ff31a175b439b6eda6
-
-Merge pull request #488 from jgilfelt/patch-1
-
-Fix mockwebserver jar download 404 | 2014-01-27 14:27:45 | 54aa769fd216793f2c71b3cec69c50cc2257ac54
-
-OkBuffer API sketch.
-
-I'm unhappy with java.io:
- * No timeouts.
- * Every layer needs to copy bytes around. Always copying bytes.
- * Features like mark/reset and available() are clumsy.
- * Its awkard in mixed text/binary protocols like HTTP because
-   character decoding is separate and takes over the stream.
-
-Unfortunately java.nio isn't better, just different:
- * It's complex.
- * Buffers are fixed size.
- * No built-in buffer pooling.
- * Features like mark/reset/position are clumsy.
-
-This is an obnoxious attempt at a 3rd I/O interface, mostly
-inspired by InputStream and OutputStream, but using growable
-buffers instead of byte arrays as the core data container. | 2014-01-26 16:31:23 | 2d3cdc9e5dfb593f8eb7da38459163b902a95d7f
-
 Enable Gradle metadata publishing (#604)
 
 * Enable Gradle metadata publishing
@@ -4375,208 +2355,6 @@ fix wrong changelog date for Version 1.7.0 | 2016-04-11 05:19:36 | 33cb196bb5182
 
 fix wrong date for Version 1.7.0 | 2016-04-11 05:15:07 | 52dd9f5665f840dd4b6b4be93ac09f6c8252a791
 
-Merge pull request #174 from serj-lotutovici/sl/fix_some_javadocs
-
-Fix some lexical errors in Sink/Source javadocs. | 2015-10-28 00:39:25 | 8ab97da4901f423dd474df0f8e991e4599bbab5f
-
-Actually ignore expected AssertionError.
-
-I blundered the formatting fixing pguilbot's code. This fixes that. | 2015-08-13 19:55:21 | 10b644c910148c9f31fba141dcc0ca5851c976e3
-
-Move a cast in Buffer.indexOf().
-
-This has the happy side-effect of preventing the Lenovo S939 from
-behaving incorrectly when executing this method.
-
-The following test exercises the previous code; it fails after
-a few iterations on that device:
-https://gist.github.com/swankjesse/4396e276e43dbb0e71cc
-
-Unfortunately there's no good way to regression test that we
-haven't hit a bug in a specific lousy device. | 2015-07-31 06:48:21 | e0429cf2c81a7341d150f1f4e9fe815304b03e1a
-
-Merge pull request #157 from amincheloh/patch-1
-
-Update README.md for 1.5.0. | 2015-06-30 15:01:14 | c5d3891a5e7fc9a456df2da2bcdea7da355e2e4f
-
-Merge pull request #149 from ChristianBecker/patch-1
-
-Removed duplicated 'would' | 2015-05-17 13:15:52 | 4023ed0d4a6a09a485963a1d608030bdeeea8135
-
-Merge pull request #147 from alokmenghrajani/alok/bugbounty
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:58:21 | 3d7752f2802ee0a1c713f2566c0724465e4e2e7b
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:43:48 | aa4d51d5a3c0eda703a393750df59ba5c929d7cc
-
-Merge pull request #127 from square/jw/fix-build
-
-Update SegmentPool references to the latest. | 2015-03-12 05:20:40 | d07412cc7cb917f852442d3d8ea056e374bad402
-
-Make tests pass on Android and other platforms
-
-Previously failing with:
-  okio.SocketTimeoutTest#writeWithTimeout
-    junit.framework.AssertionFailedError
-    	at junit.framework.Assert.fail(Assert.java:56)
-    	at okio.SocketTimeoutTest.writeWithTimeout(SocketTimeoutTest.java:75)
-
-The problem: the 1MB of data can be written to the
-client socket even though the server socket is not reading.
-This is because sockets on Android are buffered by default
-by more that the amount of data in the test. This prevents
-the write timeout occurring.
-
-Socket defaults measured on a Nexus 4 running AOSP:
-send: 524288 bytes, receive: 1048576 bytes.
-IIRC, it varies by device.
-
-Only some of the buffers need to be set to fix this, but
-setting all of them seems reasonable to make it explicit.
-The buffers are set to 1/4 of the data being
-transferred to ensure that the data will
-flood the send and receive buffers with some to spare.
-Too small and the "withoutTimeout" tests will timeout
-due to inefficiency.
-
-The tests were also failing on a Linux desktop, probably
-for similar reasons. | 2014-11-26 10:52:39 | e3325331cc0929271df8ce81c55082b83b200b2c
-
-Merge pull request #72 from square/jwilson_0809_request_require
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 04:05:17 | b2af925f325eead20fc7ecaa58e78a3b3414e91c
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 01:02:32 | 21967427c2285ff9de5e95396ac3874f2e9aa34b
-
-Merge pull request #61 from matasaru/patch-1
-
-bump java version to 1.7 | 2014-06-17 17:06:22 | c71c72f3fe01abe6f404539ad8aec975d68f0027
-
-Merge pull request #53 from jgilfelt/patch-1
-
-Javadoc fix | 2014-04-28 15:19:05 | e462d43a605a140a5ba6054646850ead80a5042e
-
-Javadoc fix | 2014-04-28 11:11:23 | 74e3ead9b2896cff3030e89b70b12cdbb8139cdd
-
-Merge pull request #34 from square/jwilson_0417_input_stream_exhausted
-
-Fix a bug on input stream exhaustion. | 2014-04-17 18:00:45 | 0cf1bfa4d31339d98a4c105dbd29f74ca68e7543
-
-Fix a bug on input stream exhaustion.
-
-Previously we were throwing because readByte() requires a byte. Instead
-just return -1. | 2014-04-17 17:56:36 | 46007a3a62b98f19f0be0ba042dbe31f35c0a3c9
-
-Flatten serialization.
-
-Fix a bug that occurs if InputStream.read() returns before reading the
-requested number of bytes. | 2014-04-15 15:49:13 | a6ace31af61c54db329881e324b8bb67eef0c7b3
-
-Merge pull request #28 from roman-mazur/patch-1
-
-Remove duplicates in docs :) | 2014-04-13 00:37:06 | cc23ae57865da921fab74db3e81fa146ac89a93f
-
-Merge remote-tracking branch 'okhttp/master'
-
-* okhttp/master: (541 commits)
-  Don't explode if removing an absent file fails.
-  Fix build removing obsolete okhttp-protocols dependency
-  Push Socket into HttpConnection/SpdyConnection.
-  Only use one thread for MockSpdyPeer.
-  More 1.5 changes.
-  Sample: Crawler.
-  Fix a crash on conditional cache hits for new API.
-  Don't double pool on a conditional cache hit.
-  Empty line.
-  Changelog updates.
-  Doc: OkHttpClient should be treated as immutable once shared
-  Doc: OkHttpClient need not /always/ be a singleton
-  Document that OkHttpClient is thread-safe
-  Fix problems with connection recycling and recovery.
-  Fix problems with DeflaterSink.
-  fix #627: Merge SPDY settings when clear flag set. Revert Settings.DEFAULT_INITIAL_WINDOW_SIZE.
-  Use the peer's settings for outgoing window updates.
-  API tweaks to Okio.
-  Fix 1.5 doc and download link.
-  Update website to not use jar-with-dependencies classifier.
-  ...
-
-Conflicts:
-	.gitignore | 2014-03-17 02:09:57 | e0961bdb68cff845e30230c5336f91f671ff298b
-
-Don't require OkBuffer callers to cast.
-
-The casting masks bugs. Instead accept a long and do a range check in
-OkBuffer. | 2014-03-01 14:34:26 | a06fb5e3d4fc3846a0bcc8da8382e16a5ad8c3db
-
-Give Base64 lots of love.
-
-Fix some bugs, such as decoding of input that contains lots
-of padding or whitespace. See
-https://code.google.com/p/android/issues/detail?id=66078
-
-Improve performance by correctly guessing the output array
-size whenever the input doesn't contain whitespace.
-
-Build Base64 into ByteString, and expose it through there
-only.
-
-Use more reasonable names in the implementation. | 2014-02-17 18:41:11 | 81a09a88857deccea956197b86fb55527aced5e2
-
-Merge pull request #517 from square/jwilson_0208_buffer_fixes
-
-Fix some OkBuffer bugs. | 2014-02-08 15:20:34 | dde8e538af95f6a1868c509d7b8a1bccef03da07
-
-Fix some OkBuffer bugs.
-
-GzipSource exceptions used six hex digits instead of
-8 to print ints.
-
-readUtf8 always did an extra copy of the bytes being
-read.
-
-Moving bytes between buffers crashed when the destination
-was empty and the source was a prefix.
-
-InputStream reading returned values in -128..127 instead
-of in 0..255. | 2014-02-08 13:22:22 | fdb1c5991994632ac2296496a36d7286f15efecb
-
-Rename byteAt to getByte.
-
-Should we later support random access for other primitives
-or random bulk access, I'd like the prefix to stay constant
-(getByte, getInt, getLong, getBytes) vs. the suffix (byteAt,
-intAt, longAt). Prefixing may work better for autocomplete
-in IDEs, particularly since we already use a prefix for our
-consuming reads (readByte, readInt, readLong). | 2014-02-08 12:44:47 | b102c6d76c60861e96267f79096f6747bb575957
-
-Merge pull request #512 from square/adriancole_02_05_findbugs
-
-FindBugs sweep. | 2014-02-05 17:49:22 | 949e6874790d8979d8f9a1ff31a175b439b6eda6
-
-Merge pull request #488 from jgilfelt/patch-1
-
-Fix mockwebserver jar download 404 | 2014-01-27 14:27:45 | 54aa769fd216793f2c71b3cec69c50cc2257ac54
-
-OkBuffer API sketch.
-
-I'm unhappy with java.io:
- * No timeouts.
- * Every layer needs to copy bytes around. Always copying bytes.
- * Features like mark/reset and available() are clumsy.
- * Its awkard in mixed text/binary protocols like HTTP because
-   character decoding is separate and takes over the stream.
-
-Unfortunately java.nio isn't better, just different:
- * It's complex.
- * Buffers are fixed size.
- * No built-in buffer pooling.
- * Features like mark/reset/position are clumsy.
-
-This is an obnoxious attempt at a 3rd I/O interface, mostly
-inspired by InputStream and OutputStream, but using growable
-buffers instead of byte arrays as the core data container. | 2014-01-26 16:31:23 | 2d3cdc9e5dfb593f8eb7da38459163b902a95d7f
-
 Merge pull request #504 from square/egorand/0830/ktlint-fixes
 
 Fix ktlint issues in platform modules | 2018-09-01 03:43:34 | ea0dd569ef0cbe3cc6288264c36bc6fde02074af
@@ -4702,208 +2480,6 @@ fix wrong changelog date for Version 1.7.0 | 2016-04-11 05:19:36 | 33cb196bb5182
 
 fix wrong date for Version 1.7.0 | 2016-04-11 05:15:07 | 52dd9f5665f840dd4b6b4be93ac09f6c8252a791
 
-Merge pull request #174 from serj-lotutovici/sl/fix_some_javadocs
-
-Fix some lexical errors in Sink/Source javadocs. | 2015-10-28 00:39:25 | 8ab97da4901f423dd474df0f8e991e4599bbab5f
-
-Actually ignore expected AssertionError.
-
-I blundered the formatting fixing pguilbot's code. This fixes that. | 2015-08-13 19:55:21 | 10b644c910148c9f31fba141dcc0ca5851c976e3
-
-Move a cast in Buffer.indexOf().
-
-This has the happy side-effect of preventing the Lenovo S939 from
-behaving incorrectly when executing this method.
-
-The following test exercises the previous code; it fails after
-a few iterations on that device:
-https://gist.github.com/swankjesse/4396e276e43dbb0e71cc
-
-Unfortunately there's no good way to regression test that we
-haven't hit a bug in a specific lousy device. | 2015-07-31 06:48:21 | e0429cf2c81a7341d150f1f4e9fe815304b03e1a
-
-Merge pull request #157 from amincheloh/patch-1
-
-Update README.md for 1.5.0. | 2015-06-30 15:01:14 | c5d3891a5e7fc9a456df2da2bcdea7da355e2e4f
-
-Merge pull request #149 from ChristianBecker/patch-1
-
-Removed duplicated 'would' | 2015-05-17 13:15:52 | 4023ed0d4a6a09a485963a1d608030bdeeea8135
-
-Merge pull request #147 from alokmenghrajani/alok/bugbounty
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:58:21 | 3d7752f2802ee0a1c713f2566c0724465e4e2e7b
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:43:48 | aa4d51d5a3c0eda703a393750df59ba5c929d7cc
-
-Merge pull request #127 from square/jw/fix-build
-
-Update SegmentPool references to the latest. | 2015-03-12 05:20:40 | d07412cc7cb917f852442d3d8ea056e374bad402
-
-Make tests pass on Android and other platforms
-
-Previously failing with:
-  okio.SocketTimeoutTest#writeWithTimeout
-    junit.framework.AssertionFailedError
-    	at junit.framework.Assert.fail(Assert.java:56)
-    	at okio.SocketTimeoutTest.writeWithTimeout(SocketTimeoutTest.java:75)
-
-The problem: the 1MB of data can be written to the
-client socket even though the server socket is not reading.
-This is because sockets on Android are buffered by default
-by more that the amount of data in the test. This prevents
-the write timeout occurring.
-
-Socket defaults measured on a Nexus 4 running AOSP:
-send: 524288 bytes, receive: 1048576 bytes.
-IIRC, it varies by device.
-
-Only some of the buffers need to be set to fix this, but
-setting all of them seems reasonable to make it explicit.
-The buffers are set to 1/4 of the data being
-transferred to ensure that the data will
-flood the send and receive buffers with some to spare.
-Too small and the "withoutTimeout" tests will timeout
-due to inefficiency.
-
-The tests were also failing on a Linux desktop, probably
-for similar reasons. | 2014-11-26 10:52:39 | e3325331cc0929271df8ce81c55082b83b200b2c
-
-Merge pull request #72 from square/jwilson_0809_request_require
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 04:05:17 | b2af925f325eead20fc7ecaa58e78a3b3414e91c
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 01:02:32 | 21967427c2285ff9de5e95396ac3874f2e9aa34b
-
-Merge pull request #61 from matasaru/patch-1
-
-bump java version to 1.7 | 2014-06-17 17:06:22 | c71c72f3fe01abe6f404539ad8aec975d68f0027
-
-Merge pull request #53 from jgilfelt/patch-1
-
-Javadoc fix | 2014-04-28 15:19:05 | e462d43a605a140a5ba6054646850ead80a5042e
-
-Javadoc fix | 2014-04-28 11:11:23 | 74e3ead9b2896cff3030e89b70b12cdbb8139cdd
-
-Merge pull request #34 from square/jwilson_0417_input_stream_exhausted
-
-Fix a bug on input stream exhaustion. | 2014-04-17 18:00:45 | 0cf1bfa4d31339d98a4c105dbd29f74ca68e7543
-
-Fix a bug on input stream exhaustion.
-
-Previously we were throwing because readByte() requires a byte. Instead
-just return -1. | 2014-04-17 17:56:36 | 46007a3a62b98f19f0be0ba042dbe31f35c0a3c9
-
-Flatten serialization.
-
-Fix a bug that occurs if InputStream.read() returns before reading the
-requested number of bytes. | 2014-04-15 15:49:13 | a6ace31af61c54db329881e324b8bb67eef0c7b3
-
-Merge pull request #28 from roman-mazur/patch-1
-
-Remove duplicates in docs :) | 2014-04-13 00:37:06 | cc23ae57865da921fab74db3e81fa146ac89a93f
-
-Merge remote-tracking branch 'okhttp/master'
-
-* okhttp/master: (541 commits)
-  Don't explode if removing an absent file fails.
-  Fix build removing obsolete okhttp-protocols dependency
-  Push Socket into HttpConnection/SpdyConnection.
-  Only use one thread for MockSpdyPeer.
-  More 1.5 changes.
-  Sample: Crawler.
-  Fix a crash on conditional cache hits for new API.
-  Don't double pool on a conditional cache hit.
-  Empty line.
-  Changelog updates.
-  Doc: OkHttpClient should be treated as immutable once shared
-  Doc: OkHttpClient need not /always/ be a singleton
-  Document that OkHttpClient is thread-safe
-  Fix problems with connection recycling and recovery.
-  Fix problems with DeflaterSink.
-  fix #627: Merge SPDY settings when clear flag set. Revert Settings.DEFAULT_INITIAL_WINDOW_SIZE.
-  Use the peer's settings for outgoing window updates.
-  API tweaks to Okio.
-  Fix 1.5 doc and download link.
-  Update website to not use jar-with-dependencies classifier.
-  ...
-
-Conflicts:
-	.gitignore | 2014-03-17 02:09:57 | e0961bdb68cff845e30230c5336f91f671ff298b
-
-Don't require OkBuffer callers to cast.
-
-The casting masks bugs. Instead accept a long and do a range check in
-OkBuffer. | 2014-03-01 14:34:26 | a06fb5e3d4fc3846a0bcc8da8382e16a5ad8c3db
-
-Give Base64 lots of love.
-
-Fix some bugs, such as decoding of input that contains lots
-of padding or whitespace. See
-https://code.google.com/p/android/issues/detail?id=66078
-
-Improve performance by correctly guessing the output array
-size whenever the input doesn't contain whitespace.
-
-Build Base64 into ByteString, and expose it through there
-only.
-
-Use more reasonable names in the implementation. | 2014-02-17 18:41:11 | 81a09a88857deccea956197b86fb55527aced5e2
-
-Merge pull request #517 from square/jwilson_0208_buffer_fixes
-
-Fix some OkBuffer bugs. | 2014-02-08 15:20:34 | dde8e538af95f6a1868c509d7b8a1bccef03da07
-
-Fix some OkBuffer bugs.
-
-GzipSource exceptions used six hex digits instead of
-8 to print ints.
-
-readUtf8 always did an extra copy of the bytes being
-read.
-
-Moving bytes between buffers crashed when the destination
-was empty and the source was a prefix.
-
-InputStream reading returned values in -128..127 instead
-of in 0..255. | 2014-02-08 13:22:22 | fdb1c5991994632ac2296496a36d7286f15efecb
-
-Rename byteAt to getByte.
-
-Should we later support random access for other primitives
-or random bulk access, I'd like the prefix to stay constant
-(getByte, getInt, getLong, getBytes) vs. the suffix (byteAt,
-intAt, longAt). Prefixing may work better for autocomplete
-in IDEs, particularly since we already use a prefix for our
-consuming reads (readByte, readInt, readLong). | 2014-02-08 12:44:47 | b102c6d76c60861e96267f79096f6747bb575957
-
-Merge pull request #512 from square/adriancole_02_05_findbugs
-
-FindBugs sweep. | 2014-02-05 17:49:22 | 949e6874790d8979d8f9a1ff31a175b439b6eda6
-
-Merge pull request #488 from jgilfelt/patch-1
-
-Fix mockwebserver jar download 404 | 2014-01-27 14:27:45 | 54aa769fd216793f2c71b3cec69c50cc2257ac54
-
-OkBuffer API sketch.
-
-I'm unhappy with java.io:
- * No timeouts.
- * Every layer needs to copy bytes around. Always copying bytes.
- * Features like mark/reset and available() are clumsy.
- * Its awkard in mixed text/binary protocols like HTTP because
-   character decoding is separate and takes over the stream.
-
-Unfortunately java.nio isn't better, just different:
- * It's complex.
- * Buffers are fixed size.
- * No built-in buffer pooling.
- * Features like mark/reset/position are clumsy.
-
-This is an obnoxious attempt at a 3rd I/O interface, mostly
-inspired by InputStream and OutputStream, but using growable
-buffers instead of byte arrays as the core data container. | 2014-01-26 16:31:23 | 2d3cdc9e5dfb593f8eb7da38459163b902a95d7f
-
 Peek the minimum number of bytes to return a result (1.x branch)
 
 The contract for read() is to return at least 1 byte, but we were
@@ -5002,208 +2578,6 @@ Merge pull request #209 from chrisdoc/master
 fix wrong changelog date for Version 1.7.0 | 2016-04-11 05:19:36 | 33cb196bb5182ebcad50303660f9e44635071696
 
 fix wrong date for Version 1.7.0 | 2016-04-11 05:15:07 | 52dd9f5665f840dd4b6b4be93ac09f6c8252a791
-
-Merge pull request #174 from serj-lotutovici/sl/fix_some_javadocs
-
-Fix some lexical errors in Sink/Source javadocs. | 2015-10-28 00:39:25 | 8ab97da4901f423dd474df0f8e991e4599bbab5f
-
-Actually ignore expected AssertionError.
-
-I blundered the formatting fixing pguilbot's code. This fixes that. | 2015-08-13 19:55:21 | 10b644c910148c9f31fba141dcc0ca5851c976e3
-
-Move a cast in Buffer.indexOf().
-
-This has the happy side-effect of preventing the Lenovo S939 from
-behaving incorrectly when executing this method.
-
-The following test exercises the previous code; it fails after
-a few iterations on that device:
-https://gist.github.com/swankjesse/4396e276e43dbb0e71cc
-
-Unfortunately there's no good way to regression test that we
-haven't hit a bug in a specific lousy device. | 2015-07-31 06:48:21 | e0429cf2c81a7341d150f1f4e9fe815304b03e1a
-
-Merge pull request #157 from amincheloh/patch-1
-
-Update README.md for 1.5.0. | 2015-06-30 15:01:14 | c5d3891a5e7fc9a456df2da2bcdea7da355e2e4f
-
-Merge pull request #149 from ChristianBecker/patch-1
-
-Removed duplicated 'would' | 2015-05-17 13:15:52 | 4023ed0d4a6a09a485963a1d608030bdeeea8135
-
-Merge pull request #147 from alokmenghrajani/alok/bugbounty
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:58:21 | 3d7752f2802ee0a1c713f2566c0724465e4e2e7b
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:43:48 | aa4d51d5a3c0eda703a393750df59ba5c929d7cc
-
-Merge pull request #127 from square/jw/fix-build
-
-Update SegmentPool references to the latest. | 2015-03-12 05:20:40 | d07412cc7cb917f852442d3d8ea056e374bad402
-
-Make tests pass on Android and other platforms
-
-Previously failing with:
-  okio.SocketTimeoutTest#writeWithTimeout
-    junit.framework.AssertionFailedError
-    	at junit.framework.Assert.fail(Assert.java:56)
-    	at okio.SocketTimeoutTest.writeWithTimeout(SocketTimeoutTest.java:75)
-
-The problem: the 1MB of data can be written to the
-client socket even though the server socket is not reading.
-This is because sockets on Android are buffered by default
-by more that the amount of data in the test. This prevents
-the write timeout occurring.
-
-Socket defaults measured on a Nexus 4 running AOSP:
-send: 524288 bytes, receive: 1048576 bytes.
-IIRC, it varies by device.
-
-Only some of the buffers need to be set to fix this, but
-setting all of them seems reasonable to make it explicit.
-The buffers are set to 1/4 of the data being
-transferred to ensure that the data will
-flood the send and receive buffers with some to spare.
-Too small and the "withoutTimeout" tests will timeout
-due to inefficiency.
-
-The tests were also failing on a Linux desktop, probably
-for similar reasons. | 2014-11-26 10:52:39 | e3325331cc0929271df8ce81c55082b83b200b2c
-
-Merge pull request #72 from square/jwilson_0809_request_require
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 04:05:17 | b2af925f325eead20fc7ecaa58e78a3b3414e91c
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 01:02:32 | 21967427c2285ff9de5e95396ac3874f2e9aa34b
-
-Merge pull request #61 from matasaru/patch-1
-
-bump java version to 1.7 | 2014-06-17 17:06:22 | c71c72f3fe01abe6f404539ad8aec975d68f0027
-
-Merge pull request #53 from jgilfelt/patch-1
-
-Javadoc fix | 2014-04-28 15:19:05 | e462d43a605a140a5ba6054646850ead80a5042e
-
-Javadoc fix | 2014-04-28 11:11:23 | 74e3ead9b2896cff3030e89b70b12cdbb8139cdd
-
-Merge pull request #34 from square/jwilson_0417_input_stream_exhausted
-
-Fix a bug on input stream exhaustion. | 2014-04-17 18:00:45 | 0cf1bfa4d31339d98a4c105dbd29f74ca68e7543
-
-Fix a bug on input stream exhaustion.
-
-Previously we were throwing because readByte() requires a byte. Instead
-just return -1. | 2014-04-17 17:56:36 | 46007a3a62b98f19f0be0ba042dbe31f35c0a3c9
-
-Flatten serialization.
-
-Fix a bug that occurs if InputStream.read() returns before reading the
-requested number of bytes. | 2014-04-15 15:49:13 | a6ace31af61c54db329881e324b8bb67eef0c7b3
-
-Merge pull request #28 from roman-mazur/patch-1
-
-Remove duplicates in docs :) | 2014-04-13 00:37:06 | cc23ae57865da921fab74db3e81fa146ac89a93f
-
-Merge remote-tracking branch 'okhttp/master'
-
-* okhttp/master: (541 commits)
-  Don't explode if removing an absent file fails.
-  Fix build removing obsolete okhttp-protocols dependency
-  Push Socket into HttpConnection/SpdyConnection.
-  Only use one thread for MockSpdyPeer.
-  More 1.5 changes.
-  Sample: Crawler.
-  Fix a crash on conditional cache hits for new API.
-  Don't double pool on a conditional cache hit.
-  Empty line.
-  Changelog updates.
-  Doc: OkHttpClient should be treated as immutable once shared
-  Doc: OkHttpClient need not /always/ be a singleton
-  Document that OkHttpClient is thread-safe
-  Fix problems with connection recycling and recovery.
-  Fix problems with DeflaterSink.
-  fix #627: Merge SPDY settings when clear flag set. Revert Settings.DEFAULT_INITIAL_WINDOW_SIZE.
-  Use the peer's settings for outgoing window updates.
-  API tweaks to Okio.
-  Fix 1.5 doc and download link.
-  Update website to not use jar-with-dependencies classifier.
-  ...
-
-Conflicts:
-	.gitignore | 2014-03-17 02:09:57 | e0961bdb68cff845e30230c5336f91f671ff298b
-
-Don't require OkBuffer callers to cast.
-
-The casting masks bugs. Instead accept a long and do a range check in
-OkBuffer. | 2014-03-01 14:34:26 | a06fb5e3d4fc3846a0bcc8da8382e16a5ad8c3db
-
-Give Base64 lots of love.
-
-Fix some bugs, such as decoding of input that contains lots
-of padding or whitespace. See
-https://code.google.com/p/android/issues/detail?id=66078
-
-Improve performance by correctly guessing the output array
-size whenever the input doesn't contain whitespace.
-
-Build Base64 into ByteString, and expose it through there
-only.
-
-Use more reasonable names in the implementation. | 2014-02-17 18:41:11 | 81a09a88857deccea956197b86fb55527aced5e2
-
-Merge pull request #517 from square/jwilson_0208_buffer_fixes
-
-Fix some OkBuffer bugs. | 2014-02-08 15:20:34 | dde8e538af95f6a1868c509d7b8a1bccef03da07
-
-Fix some OkBuffer bugs.
-
-GzipSource exceptions used six hex digits instead of
-8 to print ints.
-
-readUtf8 always did an extra copy of the bytes being
-read.
-
-Moving bytes between buffers crashed when the destination
-was empty and the source was a prefix.
-
-InputStream reading returned values in -128..127 instead
-of in 0..255. | 2014-02-08 13:22:22 | fdb1c5991994632ac2296496a36d7286f15efecb
-
-Rename byteAt to getByte.
-
-Should we later support random access for other primitives
-or random bulk access, I'd like the prefix to stay constant
-(getByte, getInt, getLong, getBytes) vs. the suffix (byteAt,
-intAt, longAt). Prefixing may work better for autocomplete
-in IDEs, particularly since we already use a prefix for our
-consuming reads (readByte, readInt, readLong). | 2014-02-08 12:44:47 | b102c6d76c60861e96267f79096f6747bb575957
-
-Merge pull request #512 from square/adriancole_02_05_findbugs
-
-FindBugs sweep. | 2014-02-05 17:49:22 | 949e6874790d8979d8f9a1ff31a175b439b6eda6
-
-Merge pull request #488 from jgilfelt/patch-1
-
-Fix mockwebserver jar download 404 | 2014-01-27 14:27:45 | 54aa769fd216793f2c71b3cec69c50cc2257ac54
-
-OkBuffer API sketch.
-
-I'm unhappy with java.io:
- * No timeouts.
- * Every layer needs to copy bytes around. Always copying bytes.
- * Features like mark/reset and available() are clumsy.
- * Its awkard in mixed text/binary protocols like HTTP because
-   character decoding is separate and takes over the stream.
-
-Unfortunately java.nio isn't better, just different:
- * It's complex.
- * Buffers are fixed size.
- * No built-in buffer pooling.
- * Features like mark/reset/position are clumsy.
-
-This is an obnoxious attempt at a 3rd I/O interface, mostly
-inspired by InputStream and OutputStream, but using growable
-buffers instead of byte arrays as the core data container. | 2014-01-26 16:31:23 | 2d3cdc9e5dfb593f8eb7da38459163b902a95d7f
 
 Merge pull request #706 from square/egorand/200310/bug-url
 
@@ -5434,208 +2808,6 @@ fix wrong changelog date for Version 1.7.0 | 2016-04-11 05:19:36 | 33cb196bb5182
 
 fix wrong date for Version 1.7.0 | 2016-04-11 05:15:07 | 52dd9f5665f840dd4b6b4be93ac09f6c8252a791
 
-Merge pull request #174 from serj-lotutovici/sl/fix_some_javadocs
-
-Fix some lexical errors in Sink/Source javadocs. | 2015-10-28 00:39:25 | 8ab97da4901f423dd474df0f8e991e4599bbab5f
-
-Actually ignore expected AssertionError.
-
-I blundered the formatting fixing pguilbot's code. This fixes that. | 2015-08-13 19:55:21 | 10b644c910148c9f31fba141dcc0ca5851c976e3
-
-Move a cast in Buffer.indexOf().
-
-This has the happy side-effect of preventing the Lenovo S939 from
-behaving incorrectly when executing this method.
-
-The following test exercises the previous code; it fails after
-a few iterations on that device:
-https://gist.github.com/swankjesse/4396e276e43dbb0e71cc
-
-Unfortunately there's no good way to regression test that we
-haven't hit a bug in a specific lousy device. | 2015-07-31 06:48:21 | e0429cf2c81a7341d150f1f4e9fe815304b03e1a
-
-Merge pull request #157 from amincheloh/patch-1
-
-Update README.md for 1.5.0. | 2015-06-30 15:01:14 | c5d3891a5e7fc9a456df2da2bcdea7da355e2e4f
-
-Merge pull request #149 from ChristianBecker/patch-1
-
-Removed duplicated 'would' | 2015-05-17 13:15:52 | 4023ed0d4a6a09a485963a1d608030bdeeea8135
-
-Merge pull request #147 from alokmenghrajani/alok/bugbounty
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:58:21 | 3d7752f2802ee0a1c713f2566c0724465e4e2e7b
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:43:48 | aa4d51d5a3c0eda703a393750df59ba5c929d7cc
-
-Merge pull request #127 from square/jw/fix-build
-
-Update SegmentPool references to the latest. | 2015-03-12 05:20:40 | d07412cc7cb917f852442d3d8ea056e374bad402
-
-Make tests pass on Android and other platforms
-
-Previously failing with:
-  okio.SocketTimeoutTest#writeWithTimeout
-    junit.framework.AssertionFailedError
-    	at junit.framework.Assert.fail(Assert.java:56)
-    	at okio.SocketTimeoutTest.writeWithTimeout(SocketTimeoutTest.java:75)
-
-The problem: the 1MB of data can be written to the
-client socket even though the server socket is not reading.
-This is because sockets on Android are buffered by default
-by more that the amount of data in the test. This prevents
-the write timeout occurring.
-
-Socket defaults measured on a Nexus 4 running AOSP:
-send: 524288 bytes, receive: 1048576 bytes.
-IIRC, it varies by device.
-
-Only some of the buffers need to be set to fix this, but
-setting all of them seems reasonable to make it explicit.
-The buffers are set to 1/4 of the data being
-transferred to ensure that the data will
-flood the send and receive buffers with some to spare.
-Too small and the "withoutTimeout" tests will timeout
-due to inefficiency.
-
-The tests were also failing on a Linux desktop, probably
-for similar reasons. | 2014-11-26 10:52:39 | e3325331cc0929271df8ce81c55082b83b200b2c
-
-Merge pull request #72 from square/jwilson_0809_request_require
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 04:05:17 | b2af925f325eead20fc7ecaa58e78a3b3414e91c
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 01:02:32 | 21967427c2285ff9de5e95396ac3874f2e9aa34b
-
-Merge pull request #61 from matasaru/patch-1
-
-bump java version to 1.7 | 2014-06-17 17:06:22 | c71c72f3fe01abe6f404539ad8aec975d68f0027
-
-Merge pull request #53 from jgilfelt/patch-1
-
-Javadoc fix | 2014-04-28 15:19:05 | e462d43a605a140a5ba6054646850ead80a5042e
-
-Javadoc fix | 2014-04-28 11:11:23 | 74e3ead9b2896cff3030e89b70b12cdbb8139cdd
-
-Merge pull request #34 from square/jwilson_0417_input_stream_exhausted
-
-Fix a bug on input stream exhaustion. | 2014-04-17 18:00:45 | 0cf1bfa4d31339d98a4c105dbd29f74ca68e7543
-
-Fix a bug on input stream exhaustion.
-
-Previously we were throwing because readByte() requires a byte. Instead
-just return -1. | 2014-04-17 17:56:36 | 46007a3a62b98f19f0be0ba042dbe31f35c0a3c9
-
-Flatten serialization.
-
-Fix a bug that occurs if InputStream.read() returns before reading the
-requested number of bytes. | 2014-04-15 15:49:13 | a6ace31af61c54db329881e324b8bb67eef0c7b3
-
-Merge pull request #28 from roman-mazur/patch-1
-
-Remove duplicates in docs :) | 2014-04-13 00:37:06 | cc23ae57865da921fab74db3e81fa146ac89a93f
-
-Merge remote-tracking branch 'okhttp/master'
-
-* okhttp/master: (541 commits)
-  Don't explode if removing an absent file fails.
-  Fix build removing obsolete okhttp-protocols dependency
-  Push Socket into HttpConnection/SpdyConnection.
-  Only use one thread for MockSpdyPeer.
-  More 1.5 changes.
-  Sample: Crawler.
-  Fix a crash on conditional cache hits for new API.
-  Don't double pool on a conditional cache hit.
-  Empty line.
-  Changelog updates.
-  Doc: OkHttpClient should be treated as immutable once shared
-  Doc: OkHttpClient need not /always/ be a singleton
-  Document that OkHttpClient is thread-safe
-  Fix problems with connection recycling and recovery.
-  Fix problems with DeflaterSink.
-  fix #627: Merge SPDY settings when clear flag set. Revert Settings.DEFAULT_INITIAL_WINDOW_SIZE.
-  Use the peer's settings for outgoing window updates.
-  API tweaks to Okio.
-  Fix 1.5 doc and download link.
-  Update website to not use jar-with-dependencies classifier.
-  ...
-
-Conflicts:
-	.gitignore | 2014-03-17 02:09:57 | e0961bdb68cff845e30230c5336f91f671ff298b
-
-Don't require OkBuffer callers to cast.
-
-The casting masks bugs. Instead accept a long and do a range check in
-OkBuffer. | 2014-03-01 14:34:26 | a06fb5e3d4fc3846a0bcc8da8382e16a5ad8c3db
-
-Give Base64 lots of love.
-
-Fix some bugs, such as decoding of input that contains lots
-of padding or whitespace. See
-https://code.google.com/p/android/issues/detail?id=66078
-
-Improve performance by correctly guessing the output array
-size whenever the input doesn't contain whitespace.
-
-Build Base64 into ByteString, and expose it through there
-only.
-
-Use more reasonable names in the implementation. | 2014-02-17 18:41:11 | 81a09a88857deccea956197b86fb55527aced5e2
-
-Merge pull request #517 from square/jwilson_0208_buffer_fixes
-
-Fix some OkBuffer bugs. | 2014-02-08 15:20:34 | dde8e538af95f6a1868c509d7b8a1bccef03da07
-
-Fix some OkBuffer bugs.
-
-GzipSource exceptions used six hex digits instead of
-8 to print ints.
-
-readUtf8 always did an extra copy of the bytes being
-read.
-
-Moving bytes between buffers crashed when the destination
-was empty and the source was a prefix.
-
-InputStream reading returned values in -128..127 instead
-of in 0..255. | 2014-02-08 13:22:22 | fdb1c5991994632ac2296496a36d7286f15efecb
-
-Rename byteAt to getByte.
-
-Should we later support random access for other primitives
-or random bulk access, I'd like the prefix to stay constant
-(getByte, getInt, getLong, getBytes) vs. the suffix (byteAt,
-intAt, longAt). Prefixing may work better for autocomplete
-in IDEs, particularly since we already use a prefix for our
-consuming reads (readByte, readInt, readLong). | 2014-02-08 12:44:47 | b102c6d76c60861e96267f79096f6747bb575957
-
-Merge pull request #512 from square/adriancole_02_05_findbugs
-
-FindBugs sweep. | 2014-02-05 17:49:22 | 949e6874790d8979d8f9a1ff31a175b439b6eda6
-
-Merge pull request #488 from jgilfelt/patch-1
-
-Fix mockwebserver jar download 404 | 2014-01-27 14:27:45 | 54aa769fd216793f2c71b3cec69c50cc2257ac54
-
-OkBuffer API sketch.
-
-I'm unhappy with java.io:
- * No timeouts.
- * Every layer needs to copy bytes around. Always copying bytes.
- * Features like mark/reset and available() are clumsy.
- * Its awkard in mixed text/binary protocols like HTTP because
-   character decoding is separate and takes over the stream.
-
-Unfortunately java.nio isn't better, just different:
- * It's complex.
- * Buffers are fixed size.
- * No built-in buffer pooling.
- * Features like mark/reset/position are clumsy.
-
-This is an obnoxious attempt at a 3rd I/O interface, mostly
-inspired by InputStream and OutputStream, but using growable
-buffers instead of byte arrays as the core data container. | 2014-01-26 16:31:23 | 2d3cdc9e5dfb593f8eb7da38459163b902a95d7f
-
 Merge pull request #694 from edenrox/patch-2
 
 Switch travis to use openjdk8 | 2020-01-13 21:33:25 | 5e92577b611ade4fc40cece2f10e9af1cd7cbb4f
@@ -5739,208 +2911,6 @@ fix wrong changelog date for Version 1.7.0 | 2016-04-11 05:19:36 | 33cb196bb5182
 
 fix wrong date for Version 1.7.0 | 2016-04-11 05:15:07 | 52dd9f5665f840dd4b6b4be93ac09f6c8252a791
 
-Merge pull request #174 from serj-lotutovici/sl/fix_some_javadocs
-
-Fix some lexical errors in Sink/Source javadocs. | 2015-10-28 00:39:25 | 8ab97da4901f423dd474df0f8e991e4599bbab5f
-
-Actually ignore expected AssertionError.
-
-I blundered the formatting fixing pguilbot's code. This fixes that. | 2015-08-13 19:55:21 | 10b644c910148c9f31fba141dcc0ca5851c976e3
-
-Move a cast in Buffer.indexOf().
-
-This has the happy side-effect of preventing the Lenovo S939 from
-behaving incorrectly when executing this method.
-
-The following test exercises the previous code; it fails after
-a few iterations on that device:
-https://gist.github.com/swankjesse/4396e276e43dbb0e71cc
-
-Unfortunately there's no good way to regression test that we
-haven't hit a bug in a specific lousy device. | 2015-07-31 06:48:21 | e0429cf2c81a7341d150f1f4e9fe815304b03e1a
-
-Merge pull request #157 from amincheloh/patch-1
-
-Update README.md for 1.5.0. | 2015-06-30 15:01:14 | c5d3891a5e7fc9a456df2da2bcdea7da355e2e4f
-
-Merge pull request #149 from ChristianBecker/patch-1
-
-Removed duplicated 'would' | 2015-05-17 13:15:52 | 4023ed0d4a6a09a485963a1d608030bdeeea8135
-
-Merge pull request #147 from alokmenghrajani/alok/bugbounty
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:58:21 | 3d7752f2802ee0a1c713f2566c0724465e4e2e7b
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:43:48 | aa4d51d5a3c0eda703a393750df59ba5c929d7cc
-
-Merge pull request #127 from square/jw/fix-build
-
-Update SegmentPool references to the latest. | 2015-03-12 05:20:40 | d07412cc7cb917f852442d3d8ea056e374bad402
-
-Make tests pass on Android and other platforms
-
-Previously failing with:
-  okio.SocketTimeoutTest#writeWithTimeout
-    junit.framework.AssertionFailedError
-    	at junit.framework.Assert.fail(Assert.java:56)
-    	at okio.SocketTimeoutTest.writeWithTimeout(SocketTimeoutTest.java:75)
-
-The problem: the 1MB of data can be written to the
-client socket even though the server socket is not reading.
-This is because sockets on Android are buffered by default
-by more that the amount of data in the test. This prevents
-the write timeout occurring.
-
-Socket defaults measured on a Nexus 4 running AOSP:
-send: 524288 bytes, receive: 1048576 bytes.
-IIRC, it varies by device.
-
-Only some of the buffers need to be set to fix this, but
-setting all of them seems reasonable to make it explicit.
-The buffers are set to 1/4 of the data being
-transferred to ensure that the data will
-flood the send and receive buffers with some to spare.
-Too small and the "withoutTimeout" tests will timeout
-due to inefficiency.
-
-The tests were also failing on a Linux desktop, probably
-for similar reasons. | 2014-11-26 10:52:39 | e3325331cc0929271df8ce81c55082b83b200b2c
-
-Merge pull request #72 from square/jwilson_0809_request_require
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 04:05:17 | b2af925f325eead20fc7ecaa58e78a3b3414e91c
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 01:02:32 | 21967427c2285ff9de5e95396ac3874f2e9aa34b
-
-Merge pull request #61 from matasaru/patch-1
-
-bump java version to 1.7 | 2014-06-17 17:06:22 | c71c72f3fe01abe6f404539ad8aec975d68f0027
-
-Merge pull request #53 from jgilfelt/patch-1
-
-Javadoc fix | 2014-04-28 15:19:05 | e462d43a605a140a5ba6054646850ead80a5042e
-
-Javadoc fix | 2014-04-28 11:11:23 | 74e3ead9b2896cff3030e89b70b12cdbb8139cdd
-
-Merge pull request #34 from square/jwilson_0417_input_stream_exhausted
-
-Fix a bug on input stream exhaustion. | 2014-04-17 18:00:45 | 0cf1bfa4d31339d98a4c105dbd29f74ca68e7543
-
-Fix a bug on input stream exhaustion.
-
-Previously we were throwing because readByte() requires a byte. Instead
-just return -1. | 2014-04-17 17:56:36 | 46007a3a62b98f19f0be0ba042dbe31f35c0a3c9
-
-Flatten serialization.
-
-Fix a bug that occurs if InputStream.read() returns before reading the
-requested number of bytes. | 2014-04-15 15:49:13 | a6ace31af61c54db329881e324b8bb67eef0c7b3
-
-Merge pull request #28 from roman-mazur/patch-1
-
-Remove duplicates in docs :) | 2014-04-13 00:37:06 | cc23ae57865da921fab74db3e81fa146ac89a93f
-
-Merge remote-tracking branch 'okhttp/master'
-
-* okhttp/master: (541 commits)
-  Don't explode if removing an absent file fails.
-  Fix build removing obsolete okhttp-protocols dependency
-  Push Socket into HttpConnection/SpdyConnection.
-  Only use one thread for MockSpdyPeer.
-  More 1.5 changes.
-  Sample: Crawler.
-  Fix a crash on conditional cache hits for new API.
-  Don't double pool on a conditional cache hit.
-  Empty line.
-  Changelog updates.
-  Doc: OkHttpClient should be treated as immutable once shared
-  Doc: OkHttpClient need not /always/ be a singleton
-  Document that OkHttpClient is thread-safe
-  Fix problems with connection recycling and recovery.
-  Fix problems with DeflaterSink.
-  fix #627: Merge SPDY settings when clear flag set. Revert Settings.DEFAULT_INITIAL_WINDOW_SIZE.
-  Use the peer's settings for outgoing window updates.
-  API tweaks to Okio.
-  Fix 1.5 doc and download link.
-  Update website to not use jar-with-dependencies classifier.
-  ...
-
-Conflicts:
-	.gitignore | 2014-03-17 02:09:57 | e0961bdb68cff845e30230c5336f91f671ff298b
-
-Don't require OkBuffer callers to cast.
-
-The casting masks bugs. Instead accept a long and do a range check in
-OkBuffer. | 2014-03-01 14:34:26 | a06fb5e3d4fc3846a0bcc8da8382e16a5ad8c3db
-
-Give Base64 lots of love.
-
-Fix some bugs, such as decoding of input that contains lots
-of padding or whitespace. See
-https://code.google.com/p/android/issues/detail?id=66078
-
-Improve performance by correctly guessing the output array
-size whenever the input doesn't contain whitespace.
-
-Build Base64 into ByteString, and expose it through there
-only.
-
-Use more reasonable names in the implementation. | 2014-02-17 18:41:11 | 81a09a88857deccea956197b86fb55527aced5e2
-
-Merge pull request #517 from square/jwilson_0208_buffer_fixes
-
-Fix some OkBuffer bugs. | 2014-02-08 15:20:34 | dde8e538af95f6a1868c509d7b8a1bccef03da07
-
-Fix some OkBuffer bugs.
-
-GzipSource exceptions used six hex digits instead of
-8 to print ints.
-
-readUtf8 always did an extra copy of the bytes being
-read.
-
-Moving bytes between buffers crashed when the destination
-was empty and the source was a prefix.
-
-InputStream reading returned values in -128..127 instead
-of in 0..255. | 2014-02-08 13:22:22 | fdb1c5991994632ac2296496a36d7286f15efecb
-
-Rename byteAt to getByte.
-
-Should we later support random access for other primitives
-or random bulk access, I'd like the prefix to stay constant
-(getByte, getInt, getLong, getBytes) vs. the suffix (byteAt,
-intAt, longAt). Prefixing may work better for autocomplete
-in IDEs, particularly since we already use a prefix for our
-consuming reads (readByte, readInt, readLong). | 2014-02-08 12:44:47 | b102c6d76c60861e96267f79096f6747bb575957
-
-Merge pull request #512 from square/adriancole_02_05_findbugs
-
-FindBugs sweep. | 2014-02-05 17:49:22 | 949e6874790d8979d8f9a1ff31a175b439b6eda6
-
-Merge pull request #488 from jgilfelt/patch-1
-
-Fix mockwebserver jar download 404 | 2014-01-27 14:27:45 | 54aa769fd216793f2c71b3cec69c50cc2257ac54
-
-OkBuffer API sketch.
-
-I'm unhappy with java.io:
- * No timeouts.
- * Every layer needs to copy bytes around. Always copying bytes.
- * Features like mark/reset and available() are clumsy.
- * Its awkard in mixed text/binary protocols like HTTP because
-   character decoding is separate and takes over the stream.
-
-Unfortunately java.nio isn't better, just different:
- * It's complex.
- * Buffers are fixed size.
- * No built-in buffer pooling.
- * Features like mark/reset/position are clumsy.
-
-This is an obnoxious attempt at a 3rd I/O interface, mostly
-inspired by InputStream and OutputStream, but using growable
-buffers instead of byte arrays as the core data container. | 2014-01-26 16:31:23 | 2d3cdc9e5dfb593f8eb7da38459163b902a95d7f
-
 Merge pull request #312 from square/jwilson.0522.actually_split
 
 Fix a performance bug in AsyncTimeout.sink().write(). | 2017-05-22 14:42:26 | 20e259c08af6c96508387540a5ea53f89b1d01f5
@@ -6025,208 +2995,6 @@ Merge pull request #209 from chrisdoc/master
 fix wrong changelog date for Version 1.7.0 | 2016-04-11 05:19:36 | 33cb196bb5182ebcad50303660f9e44635071696
 
 fix wrong date for Version 1.7.0 | 2016-04-11 05:15:07 | 52dd9f5665f840dd4b6b4be93ac09f6c8252a791
-
-Merge pull request #174 from serj-lotutovici/sl/fix_some_javadocs
-
-Fix some lexical errors in Sink/Source javadocs. | 2015-10-28 00:39:25 | 8ab97da4901f423dd474df0f8e991e4599bbab5f
-
-Actually ignore expected AssertionError.
-
-I blundered the formatting fixing pguilbot's code. This fixes that. | 2015-08-13 19:55:21 | 10b644c910148c9f31fba141dcc0ca5851c976e3
-
-Move a cast in Buffer.indexOf().
-
-This has the happy side-effect of preventing the Lenovo S939 from
-behaving incorrectly when executing this method.
-
-The following test exercises the previous code; it fails after
-a few iterations on that device:
-https://gist.github.com/swankjesse/4396e276e43dbb0e71cc
-
-Unfortunately there's no good way to regression test that we
-haven't hit a bug in a specific lousy device. | 2015-07-31 06:48:21 | e0429cf2c81a7341d150f1f4e9fe815304b03e1a
-
-Merge pull request #157 from amincheloh/patch-1
-
-Update README.md for 1.5.0. | 2015-06-30 15:01:14 | c5d3891a5e7fc9a456df2da2bcdea7da355e2e4f
-
-Merge pull request #149 from ChristianBecker/patch-1
-
-Removed duplicated 'would' | 2015-05-17 13:15:52 | 4023ed0d4a6a09a485963a1d608030bdeeea8135
-
-Merge pull request #147 from alokmenghrajani/alok/bugbounty
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:58:21 | 3d7752f2802ee0a1c713f2566c0724465e4e2e7b
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:43:48 | aa4d51d5a3c0eda703a393750df59ba5c929d7cc
-
-Merge pull request #127 from square/jw/fix-build
-
-Update SegmentPool references to the latest. | 2015-03-12 05:20:40 | d07412cc7cb917f852442d3d8ea056e374bad402
-
-Make tests pass on Android and other platforms
-
-Previously failing with:
-  okio.SocketTimeoutTest#writeWithTimeout
-    junit.framework.AssertionFailedError
-    	at junit.framework.Assert.fail(Assert.java:56)
-    	at okio.SocketTimeoutTest.writeWithTimeout(SocketTimeoutTest.java:75)
-
-The problem: the 1MB of data can be written to the
-client socket even though the server socket is not reading.
-This is because sockets on Android are buffered by default
-by more that the amount of data in the test. This prevents
-the write timeout occurring.
-
-Socket defaults measured on a Nexus 4 running AOSP:
-send: 524288 bytes, receive: 1048576 bytes.
-IIRC, it varies by device.
-
-Only some of the buffers need to be set to fix this, but
-setting all of them seems reasonable to make it explicit.
-The buffers are set to 1/4 of the data being
-transferred to ensure that the data will
-flood the send and receive buffers with some to spare.
-Too small and the "withoutTimeout" tests will timeout
-due to inefficiency.
-
-The tests were also failing on a Linux desktop, probably
-for similar reasons. | 2014-11-26 10:52:39 | e3325331cc0929271df8ce81c55082b83b200b2c
-
-Merge pull request #72 from square/jwilson_0809_request_require
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 04:05:17 | b2af925f325eead20fc7ecaa58e78a3b3414e91c
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 01:02:32 | 21967427c2285ff9de5e95396ac3874f2e9aa34b
-
-Merge pull request #61 from matasaru/patch-1
-
-bump java version to 1.7 | 2014-06-17 17:06:22 | c71c72f3fe01abe6f404539ad8aec975d68f0027
-
-Merge pull request #53 from jgilfelt/patch-1
-
-Javadoc fix | 2014-04-28 15:19:05 | e462d43a605a140a5ba6054646850ead80a5042e
-
-Javadoc fix | 2014-04-28 11:11:23 | 74e3ead9b2896cff3030e89b70b12cdbb8139cdd
-
-Merge pull request #34 from square/jwilson_0417_input_stream_exhausted
-
-Fix a bug on input stream exhaustion. | 2014-04-17 18:00:45 | 0cf1bfa4d31339d98a4c105dbd29f74ca68e7543
-
-Fix a bug on input stream exhaustion.
-
-Previously we were throwing because readByte() requires a byte. Instead
-just return -1. | 2014-04-17 17:56:36 | 46007a3a62b98f19f0be0ba042dbe31f35c0a3c9
-
-Flatten serialization.
-
-Fix a bug that occurs if InputStream.read() returns before reading the
-requested number of bytes. | 2014-04-15 15:49:13 | a6ace31af61c54db329881e324b8bb67eef0c7b3
-
-Merge pull request #28 from roman-mazur/patch-1
-
-Remove duplicates in docs :) | 2014-04-13 00:37:06 | cc23ae57865da921fab74db3e81fa146ac89a93f
-
-Merge remote-tracking branch 'okhttp/master'
-
-* okhttp/master: (541 commits)
-  Don't explode if removing an absent file fails.
-  Fix build removing obsolete okhttp-protocols dependency
-  Push Socket into HttpConnection/SpdyConnection.
-  Only use one thread for MockSpdyPeer.
-  More 1.5 changes.
-  Sample: Crawler.
-  Fix a crash on conditional cache hits for new API.
-  Don't double pool on a conditional cache hit.
-  Empty line.
-  Changelog updates.
-  Doc: OkHttpClient should be treated as immutable once shared
-  Doc: OkHttpClient need not /always/ be a singleton
-  Document that OkHttpClient is thread-safe
-  Fix problems with connection recycling and recovery.
-  Fix problems with DeflaterSink.
-  fix #627: Merge SPDY settings when clear flag set. Revert Settings.DEFAULT_INITIAL_WINDOW_SIZE.
-  Use the peer's settings for outgoing window updates.
-  API tweaks to Okio.
-  Fix 1.5 doc and download link.
-  Update website to not use jar-with-dependencies classifier.
-  ...
-
-Conflicts:
-	.gitignore | 2014-03-17 02:09:57 | e0961bdb68cff845e30230c5336f91f671ff298b
-
-Don't require OkBuffer callers to cast.
-
-The casting masks bugs. Instead accept a long and do a range check in
-OkBuffer. | 2014-03-01 14:34:26 | a06fb5e3d4fc3846a0bcc8da8382e16a5ad8c3db
-
-Give Base64 lots of love.
-
-Fix some bugs, such as decoding of input that contains lots
-of padding or whitespace. See
-https://code.google.com/p/android/issues/detail?id=66078
-
-Improve performance by correctly guessing the output array
-size whenever the input doesn't contain whitespace.
-
-Build Base64 into ByteString, and expose it through there
-only.
-
-Use more reasonable names in the implementation. | 2014-02-17 18:41:11 | 81a09a88857deccea956197b86fb55527aced5e2
-
-Merge pull request #517 from square/jwilson_0208_buffer_fixes
-
-Fix some OkBuffer bugs. | 2014-02-08 15:20:34 | dde8e538af95f6a1868c509d7b8a1bccef03da07
-
-Fix some OkBuffer bugs.
-
-GzipSource exceptions used six hex digits instead of
-8 to print ints.
-
-readUtf8 always did an extra copy of the bytes being
-read.
-
-Moving bytes between buffers crashed when the destination
-was empty and the source was a prefix.
-
-InputStream reading returned values in -128..127 instead
-of in 0..255. | 2014-02-08 13:22:22 | fdb1c5991994632ac2296496a36d7286f15efecb
-
-Rename byteAt to getByte.
-
-Should we later support random access for other primitives
-or random bulk access, I'd like the prefix to stay constant
-(getByte, getInt, getLong, getBytes) vs. the suffix (byteAt,
-intAt, longAt). Prefixing may work better for autocomplete
-in IDEs, particularly since we already use a prefix for our
-consuming reads (readByte, readInt, readLong). | 2014-02-08 12:44:47 | b102c6d76c60861e96267f79096f6747bb575957
-
-Merge pull request #512 from square/adriancole_02_05_findbugs
-
-FindBugs sweep. | 2014-02-05 17:49:22 | 949e6874790d8979d8f9a1ff31a175b439b6eda6
-
-Merge pull request #488 from jgilfelt/patch-1
-
-Fix mockwebserver jar download 404 | 2014-01-27 14:27:45 | 54aa769fd216793f2c71b3cec69c50cc2257ac54
-
-OkBuffer API sketch.
-
-I'm unhappy with java.io:
- * No timeouts.
- * Every layer needs to copy bytes around. Always copying bytes.
- * Features like mark/reset and available() are clumsy.
- * Its awkard in mixed text/binary protocols like HTTP because
-   character decoding is separate and takes over the stream.
-
-Unfortunately java.nio isn't better, just different:
- * It's complex.
- * Buffers are fixed size.
- * No built-in buffer pooling.
- * Features like mark/reset/position are clumsy.
-
-This is an obnoxious attempt at a 3rd I/O interface, mostly
-inspired by InputStream and OutputStream, but using growable
-buffers instead of byte arrays as the core data container. | 2014-01-26 16:31:23 | 2d3cdc9e5dfb593f8eb7da38459163b902a95d7f
 
 Merge pull request #655 from emanonwzy/fix_readme
 
@@ -6447,208 +3215,6 @@ fix wrong changelog date for Version 1.7.0 | 2016-04-11 05:19:36 | 33cb196bb5182
 
 fix wrong date for Version 1.7.0 | 2016-04-11 05:15:07 | 52dd9f5665f840dd4b6b4be93ac09f6c8252a791
 
-Merge pull request #174 from serj-lotutovici/sl/fix_some_javadocs
-
-Fix some lexical errors in Sink/Source javadocs. | 2015-10-28 00:39:25 | 8ab97da4901f423dd474df0f8e991e4599bbab5f
-
-Actually ignore expected AssertionError.
-
-I blundered the formatting fixing pguilbot's code. This fixes that. | 2015-08-13 19:55:21 | 10b644c910148c9f31fba141dcc0ca5851c976e3
-
-Move a cast in Buffer.indexOf().
-
-This has the happy side-effect of preventing the Lenovo S939 from
-behaving incorrectly when executing this method.
-
-The following test exercises the previous code; it fails after
-a few iterations on that device:
-https://gist.github.com/swankjesse/4396e276e43dbb0e71cc
-
-Unfortunately there's no good way to regression test that we
-haven't hit a bug in a specific lousy device. | 2015-07-31 06:48:21 | e0429cf2c81a7341d150f1f4e9fe815304b03e1a
-
-Merge pull request #157 from amincheloh/patch-1
-
-Update README.md for 1.5.0. | 2015-06-30 15:01:14 | c5d3891a5e7fc9a456df2da2bcdea7da355e2e4f
-
-Merge pull request #149 from ChristianBecker/patch-1
-
-Removed duplicated 'would' | 2015-05-17 13:15:52 | 4023ed0d4a6a09a485963a1d608030bdeeea8135
-
-Merge pull request #147 from alokmenghrajani/alok/bugbounty
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:58:21 | 3d7752f2802ee0a1c713f2566c0724465e4e2e7b
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:43:48 | aa4d51d5a3c0eda703a393750df59ba5c929d7cc
-
-Merge pull request #127 from square/jw/fix-build
-
-Update SegmentPool references to the latest. | 2015-03-12 05:20:40 | d07412cc7cb917f852442d3d8ea056e374bad402
-
-Make tests pass on Android and other platforms
-
-Previously failing with:
-  okio.SocketTimeoutTest#writeWithTimeout
-    junit.framework.AssertionFailedError
-    	at junit.framework.Assert.fail(Assert.java:56)
-    	at okio.SocketTimeoutTest.writeWithTimeout(SocketTimeoutTest.java:75)
-
-The problem: the 1MB of data can be written to the
-client socket even though the server socket is not reading.
-This is because sockets on Android are buffered by default
-by more that the amount of data in the test. This prevents
-the write timeout occurring.
-
-Socket defaults measured on a Nexus 4 running AOSP:
-send: 524288 bytes, receive: 1048576 bytes.
-IIRC, it varies by device.
-
-Only some of the buffers need to be set to fix this, but
-setting all of them seems reasonable to make it explicit.
-The buffers are set to 1/4 of the data being
-transferred to ensure that the data will
-flood the send and receive buffers with some to spare.
-Too small and the "withoutTimeout" tests will timeout
-due to inefficiency.
-
-The tests were also failing on a Linux desktop, probably
-for similar reasons. | 2014-11-26 10:52:39 | e3325331cc0929271df8ce81c55082b83b200b2c
-
-Merge pull request #72 from square/jwilson_0809_request_require
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 04:05:17 | b2af925f325eead20fc7ecaa58e78a3b3414e91c
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 01:02:32 | 21967427c2285ff9de5e95396ac3874f2e9aa34b
-
-Merge pull request #61 from matasaru/patch-1
-
-bump java version to 1.7 | 2014-06-17 17:06:22 | c71c72f3fe01abe6f404539ad8aec975d68f0027
-
-Merge pull request #53 from jgilfelt/patch-1
-
-Javadoc fix | 2014-04-28 15:19:05 | e462d43a605a140a5ba6054646850ead80a5042e
-
-Javadoc fix | 2014-04-28 11:11:23 | 74e3ead9b2896cff3030e89b70b12cdbb8139cdd
-
-Merge pull request #34 from square/jwilson_0417_input_stream_exhausted
-
-Fix a bug on input stream exhaustion. | 2014-04-17 18:00:45 | 0cf1bfa4d31339d98a4c105dbd29f74ca68e7543
-
-Fix a bug on input stream exhaustion.
-
-Previously we were throwing because readByte() requires a byte. Instead
-just return -1. | 2014-04-17 17:56:36 | 46007a3a62b98f19f0be0ba042dbe31f35c0a3c9
-
-Flatten serialization.
-
-Fix a bug that occurs if InputStream.read() returns before reading the
-requested number of bytes. | 2014-04-15 15:49:13 | a6ace31af61c54db329881e324b8bb67eef0c7b3
-
-Merge pull request #28 from roman-mazur/patch-1
-
-Remove duplicates in docs :) | 2014-04-13 00:37:06 | cc23ae57865da921fab74db3e81fa146ac89a93f
-
-Merge remote-tracking branch 'okhttp/master'
-
-* okhttp/master: (541 commits)
-  Don't explode if removing an absent file fails.
-  Fix build removing obsolete okhttp-protocols dependency
-  Push Socket into HttpConnection/SpdyConnection.
-  Only use one thread for MockSpdyPeer.
-  More 1.5 changes.
-  Sample: Crawler.
-  Fix a crash on conditional cache hits for new API.
-  Don't double pool on a conditional cache hit.
-  Empty line.
-  Changelog updates.
-  Doc: OkHttpClient should be treated as immutable once shared
-  Doc: OkHttpClient need not /always/ be a singleton
-  Document that OkHttpClient is thread-safe
-  Fix problems with connection recycling and recovery.
-  Fix problems with DeflaterSink.
-  fix #627: Merge SPDY settings when clear flag set. Revert Settings.DEFAULT_INITIAL_WINDOW_SIZE.
-  Use the peer's settings for outgoing window updates.
-  API tweaks to Okio.
-  Fix 1.5 doc and download link.
-  Update website to not use jar-with-dependencies classifier.
-  ...
-
-Conflicts:
-	.gitignore | 2014-03-17 02:09:57 | e0961bdb68cff845e30230c5336f91f671ff298b
-
-Don't require OkBuffer callers to cast.
-
-The casting masks bugs. Instead accept a long and do a range check in
-OkBuffer. | 2014-03-01 14:34:26 | a06fb5e3d4fc3846a0bcc8da8382e16a5ad8c3db
-
-Give Base64 lots of love.
-
-Fix some bugs, such as decoding of input that contains lots
-of padding or whitespace. See
-https://code.google.com/p/android/issues/detail?id=66078
-
-Improve performance by correctly guessing the output array
-size whenever the input doesn't contain whitespace.
-
-Build Base64 into ByteString, and expose it through there
-only.
-
-Use more reasonable names in the implementation. | 2014-02-17 18:41:11 | 81a09a88857deccea956197b86fb55527aced5e2
-
-Merge pull request #517 from square/jwilson_0208_buffer_fixes
-
-Fix some OkBuffer bugs. | 2014-02-08 15:20:34 | dde8e538af95f6a1868c509d7b8a1bccef03da07
-
-Fix some OkBuffer bugs.
-
-GzipSource exceptions used six hex digits instead of
-8 to print ints.
-
-readUtf8 always did an extra copy of the bytes being
-read.
-
-Moving bytes between buffers crashed when the destination
-was empty and the source was a prefix.
-
-InputStream reading returned values in -128..127 instead
-of in 0..255. | 2014-02-08 13:22:22 | fdb1c5991994632ac2296496a36d7286f15efecb
-
-Rename byteAt to getByte.
-
-Should we later support random access for other primitives
-or random bulk access, I'd like the prefix to stay constant
-(getByte, getInt, getLong, getBytes) vs. the suffix (byteAt,
-intAt, longAt). Prefixing may work better for autocomplete
-in IDEs, particularly since we already use a prefix for our
-consuming reads (readByte, readInt, readLong). | 2014-02-08 12:44:47 | b102c6d76c60861e96267f79096f6747bb575957
-
-Merge pull request #512 from square/adriancole_02_05_findbugs
-
-FindBugs sweep. | 2014-02-05 17:49:22 | 949e6874790d8979d8f9a1ff31a175b439b6eda6
-
-Merge pull request #488 from jgilfelt/patch-1
-
-Fix mockwebserver jar download 404 | 2014-01-27 14:27:45 | 54aa769fd216793f2c71b3cec69c50cc2257ac54
-
-OkBuffer API sketch.
-
-I'm unhappy with java.io:
- * No timeouts.
- * Every layer needs to copy bytes around. Always copying bytes.
- * Features like mark/reset and available() are clumsy.
- * Its awkard in mixed text/binary protocols like HTTP because
-   character decoding is separate and takes over the stream.
-
-Unfortunately java.nio isn't better, just different:
- * It's complex.
- * Buffers are fixed size.
- * No built-in buffer pooling.
- * Features like mark/reset/position are clumsy.
-
-This is an obnoxious attempt at a 3rd I/O interface, mostly
-inspired by InputStream and OutputStream, but using growable
-buffers instead of byte arrays as the core data container. | 2014-01-26 16:31:23 | 2d3cdc9e5dfb593f8eb7da38459163b902a95d7f
-
 Kotlin Gradle MPP 1.3 (#544)
 
 * Basic setup
@@ -6829,206 +3395,4 @@ Merge pull request #209 from chrisdoc/master
 fix wrong changelog date for Version 1.7.0 | 2016-04-11 05:19:36 | 33cb196bb5182ebcad50303660f9e44635071696
 
 fix wrong date for Version 1.7.0 | 2016-04-11 05:15:07 | 52dd9f5665f840dd4b6b4be93ac09f6c8252a791
-
-Merge pull request #174 from serj-lotutovici/sl/fix_some_javadocs
-
-Fix some lexical errors in Sink/Source javadocs. | 2015-10-28 00:39:25 | 8ab97da4901f423dd474df0f8e991e4599bbab5f
-
-Actually ignore expected AssertionError.
-
-I blundered the formatting fixing pguilbot's code. This fixes that. | 2015-08-13 19:55:21 | 10b644c910148c9f31fba141dcc0ca5851c976e3
-
-Move a cast in Buffer.indexOf().
-
-This has the happy side-effect of preventing the Lenovo S939 from
-behaving incorrectly when executing this method.
-
-The following test exercises the previous code; it fails after
-a few iterations on that device:
-https://gist.github.com/swankjesse/4396e276e43dbb0e71cc
-
-Unfortunately there's no good way to regression test that we
-haven't hit a bug in a specific lousy device. | 2015-07-31 06:48:21 | e0429cf2c81a7341d150f1f4e9fe815304b03e1a
-
-Merge pull request #157 from amincheloh/patch-1
-
-Update README.md for 1.5.0. | 2015-06-30 15:01:14 | c5d3891a5e7fc9a456df2da2bcdea7da355e2e4f
-
-Merge pull request #149 from ChristianBecker/patch-1
-
-Removed duplicated 'would' | 2015-05-17 13:15:52 | 4023ed0d4a6a09a485963a1d608030bdeeea8135
-
-Merge pull request #147 from alokmenghrajani/alok/bugbounty
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:58:21 | 3d7752f2802ee0a1c713f2566c0724465e4e2e7b
-
-Includes this repo in our open source bug bounty program. | 2015-05-11 17:43:48 | aa4d51d5a3c0eda703a393750df59ba5c929d7cc
-
-Merge pull request #127 from square/jw/fix-build
-
-Update SegmentPool references to the latest. | 2015-03-12 05:20:40 | d07412cc7cb917f852442d3d8ea056e374bad402
-
-Make tests pass on Android and other platforms
-
-Previously failing with:
-  okio.SocketTimeoutTest#writeWithTimeout
-    junit.framework.AssertionFailedError
-    	at junit.framework.Assert.fail(Assert.java:56)
-    	at okio.SocketTimeoutTest.writeWithTimeout(SocketTimeoutTest.java:75)
-
-The problem: the 1MB of data can be written to the
-client socket even though the server socket is not reading.
-This is because sockets on Android are buffered by default
-by more that the amount of data in the test. This prevents
-the write timeout occurring.
-
-Socket defaults measured on a Nexus 4 running AOSP:
-send: 524288 bytes, receive: 1048576 bytes.
-IIRC, it varies by device.
-
-Only some of the buffers need to be set to fix this, but
-setting all of them seems reasonable to make it explicit.
-The buffers are set to 1/4 of the data being
-transferred to ensure that the data will
-flood the send and receive buffers with some to spare.
-Too small and the "withoutTimeout" tests will timeout
-due to inefficiency.
-
-The tests were also failing on a Linux desktop, probably
-for similar reasons. | 2014-11-26 10:52:39 | e3325331cc0929271df8ce81c55082b83b200b2c
-
-Merge pull request #72 from square/jwilson_0809_request_require
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 04:05:17 | b2af925f325eead20fc7ecaa58e78a3b3414e91c
-
-Fix a bug in indexOf(). Add indexOfElement() and request(). | 2014-08-10 01:02:32 | 21967427c2285ff9de5e95396ac3874f2e9aa34b
-
-Merge pull request #61 from matasaru/patch-1
-
-bump java version to 1.7 | 2014-06-17 17:06:22 | c71c72f3fe01abe6f404539ad8aec975d68f0027
-
-Merge pull request #53 from jgilfelt/patch-1
-
-Javadoc fix | 2014-04-28 15:19:05 | e462d43a605a140a5ba6054646850ead80a5042e
-
-Javadoc fix | 2014-04-28 11:11:23 | 74e3ead9b2896cff3030e89b70b12cdbb8139cdd
-
-Merge pull request #34 from square/jwilson_0417_input_stream_exhausted
-
-Fix a bug on input stream exhaustion. | 2014-04-17 18:00:45 | 0cf1bfa4d31339d98a4c105dbd29f74ca68e7543
-
-Fix a bug on input stream exhaustion.
-
-Previously we were throwing because readByte() requires a byte. Instead
-just return -1. | 2014-04-17 17:56:36 | 46007a3a62b98f19f0be0ba042dbe31f35c0a3c9
-
-Flatten serialization.
-
-Fix a bug that occurs if InputStream.read() returns before reading the
-requested number of bytes. | 2014-04-15 15:49:13 | a6ace31af61c54db329881e324b8bb67eef0c7b3
-
-Merge pull request #28 from roman-mazur/patch-1
-
-Remove duplicates in docs :) | 2014-04-13 00:37:06 | cc23ae57865da921fab74db3e81fa146ac89a93f
-
-Merge remote-tracking branch 'okhttp/master'
-
-* okhttp/master: (541 commits)
-  Don't explode if removing an absent file fails.
-  Fix build removing obsolete okhttp-protocols dependency
-  Push Socket into HttpConnection/SpdyConnection.
-  Only use one thread for MockSpdyPeer.
-  More 1.5 changes.
-  Sample: Crawler.
-  Fix a crash on conditional cache hits for new API.
-  Don't double pool on a conditional cache hit.
-  Empty line.
-  Changelog updates.
-  Doc: OkHttpClient should be treated as immutable once shared
-  Doc: OkHttpClient need not /always/ be a singleton
-  Document that OkHttpClient is thread-safe
-  Fix problems with connection recycling and recovery.
-  Fix problems with DeflaterSink.
-  fix #627: Merge SPDY settings when clear flag set. Revert Settings.DEFAULT_INITIAL_WINDOW_SIZE.
-  Use the peer's settings for outgoing window updates.
-  API tweaks to Okio.
-  Fix 1.5 doc and download link.
-  Update website to not use jar-with-dependencies classifier.
-  ...
-
-Conflicts:
-	.gitignore | 2014-03-17 02:09:57 | e0961bdb68cff845e30230c5336f91f671ff298b
-
-Don't require OkBuffer callers to cast.
-
-The casting masks bugs. Instead accept a long and do a range check in
-OkBuffer. | 2014-03-01 14:34:26 | a06fb5e3d4fc3846a0bcc8da8382e16a5ad8c3db
-
-Give Base64 lots of love.
-
-Fix some bugs, such as decoding of input that contains lots
-of padding or whitespace. See
-https://code.google.com/p/android/issues/detail?id=66078
-
-Improve performance by correctly guessing the output array
-size whenever the input doesn't contain whitespace.
-
-Build Base64 into ByteString, and expose it through there
-only.
-
-Use more reasonable names in the implementation. | 2014-02-17 18:41:11 | 81a09a88857deccea956197b86fb55527aced5e2
-
-Merge pull request #517 from square/jwilson_0208_buffer_fixes
-
-Fix some OkBuffer bugs. | 2014-02-08 15:20:34 | dde8e538af95f6a1868c509d7b8a1bccef03da07
-
-Fix some OkBuffer bugs.
-
-GzipSource exceptions used six hex digits instead of
-8 to print ints.
-
-readUtf8 always did an extra copy of the bytes being
-read.
-
-Moving bytes between buffers crashed when the destination
-was empty and the source was a prefix.
-
-InputStream reading returned values in -128..127 instead
-of in 0..255. | 2014-02-08 13:22:22 | fdb1c5991994632ac2296496a36d7286f15efecb
-
-Rename byteAt to getByte.
-
-Should we later support random access for other primitives
-or random bulk access, I'd like the prefix to stay constant
-(getByte, getInt, getLong, getBytes) vs. the suffix (byteAt,
-intAt, longAt). Prefixing may work better for autocomplete
-in IDEs, particularly since we already use a prefix for our
-consuming reads (readByte, readInt, readLong). | 2014-02-08 12:44:47 | b102c6d76c60861e96267f79096f6747bb575957
-
-Merge pull request #512 from square/adriancole_02_05_findbugs
-
-FindBugs sweep. | 2014-02-05 17:49:22 | 949e6874790d8979d8f9a1ff31a175b439b6eda6
-
-Merge pull request #488 from jgilfelt/patch-1
-
-Fix mockwebserver jar download 404 | 2014-01-27 14:27:45 | 54aa769fd216793f2c71b3cec69c50cc2257ac54
-
-OkBuffer API sketch.
-
-I'm unhappy with java.io:
- * No timeouts.
- * Every layer needs to copy bytes around. Always copying bytes.
- * Features like mark/reset and available() are clumsy.
- * Its awkard in mixed text/binary protocols like HTTP because
-   character decoding is separate and takes over the stream.
-
-Unfortunately java.nio isn't better, just different:
- * It's complex.
- * Buffers are fixed size.
- * No built-in buffer pooling.
- * Features like mark/reset/position are clumsy.
-
-This is an obnoxious attempt at a 3rd I/O interface, mostly
-inspired by InputStream and OutputStream, but using growable
-buffers instead of byte arrays as the core data container. | 2014-01-26 16:31:23 | 2d3cdc9e5dfb593f8eb7da38459163b902a95d7f
 
