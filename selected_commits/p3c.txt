@@ -1,0 +1,10 @@
+p3c-pmd/src/main/kotlin/com/alibaba/p3c/pmd/lang/java/rule/concurrent/LockShouldWithTryFinallyRule.kt
+120
+0
+120
+https://api.github.com/repos/alibaba/p3c/contents/p3c-pmd/src/main/kotlin/com/alibaba/p3c/pmd/lang/java/rule/concurrent/LockShouldWithTryFinallyRule.kt?ref=2ac5d2c2dfe6a3624ac74120e8ab79c0e0a9a20b
+https://github.com/alibaba/p3c/raw/2ac5d2c2dfe6a3624ac74120e8ab79c0e0a9a20b/p3c-pmd/src/main/kotlin/com/alibaba/p3c/pmd/lang/java/rule/concurrent/LockShouldWithTryFinallyRule.kt
+https://github.com/alibaba/p3c/blob/2ac5d2c2dfe6a3624ac74120e8ab79c0e0a9a20b/p3c-pmd/src/main/kotlin/com/alibaba/p3c/pmd/lang/java/rule/concurrent/LockShouldWithTryFinallyRule.kt
+
+2ac5d2c2dfe6a3624ac74120e8ab79c0e0a9a20b
+545c0089ade87905fd3d7588983ac2749e626adb

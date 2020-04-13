@@ -1,0 +1,9 @@
+timber-lint/src/test/java/timber/lint/WrongTimberUsageDetectorTest.kt
+50
+1
+51
+https://api.github.com/repos/JakeWharton/timber/contents/timber-lint/src/test/java/timber/lint/WrongTimberUsageDetectorTest.kt?ref=e4a44f0ce314c880821faec9b81a36a14e375253
+https://github.com/JakeWharton/timber/raw/e4a44f0ce314c880821faec9b81a36a14e375253/timber-lint/src/test/java/timber/lint/WrongTimberUsageDetectorTest.kt
+https://github.com/JakeWharton/timber/blob/e4a44f0ce314c880821faec9b81a36a14e375253/timber-lint/src/test/java/timber/lint/WrongTimberUsageDetectorTest.kt
+
+e4a44f0ce314c880821faec9b81a36a14e375253

@@ -1,0 +1,17 @@
+core/src/main/java/com/afollestad/materialdialogs/internal/main/DialogTitleLayout.kt
+4
+7
+11
+https://api.github.com/repos/afollestad/material-dialogs/contents/core/src/main/java/com/afollestad/materialdialogs/internal/main/DialogTitleLayout.kt?ref=985e16176a8b885f3c18e1db02ce859bca7b90f9
+https://github.com/afollestad/material-dialogs/raw/985e16176a8b885f3c18e1db02ce859bca7b90f9/core/src/main/java/com/afollestad/materialdialogs/internal/main/DialogTitleLayout.kt
+https://github.com/afollestad/material-dialogs/blob/985e16176a8b885f3c18e1db02ce859bca7b90f9/core/src/main/java/com/afollestad/materialdialogs/internal/main/DialogTitleLayout.kt
+
+core/src/main/java/com/afollestad/materialdialogs/utils/MDUtil.kt
+6
+2
+8
+https://api.github.com/repos/afollestad/material-dialogs/contents/core/src/main/java/com/afollestad/materialdialogs/utils/MDUtil.kt?ref=985e16176a8b885f3c18e1db02ce859bca7b90f9
+https://github.com/afollestad/material-dialogs/raw/985e16176a8b885f3c18e1db02ce859bca7b90f9/core/src/main/java/com/afollestad/materialdialogs/utils/MDUtil.kt
+https://github.com/afollestad/material-dialogs/blob/985e16176a8b885f3c18e1db02ce859bca7b90f9/core/src/main/java/com/afollestad/materialdialogs/utils/MDUtil.kt
+
+985e16176a8b885f3c18e1db02ce859bca7b90f9

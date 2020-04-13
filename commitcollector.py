@@ -75,8 +75,3 @@ def main():
             print(commit_count)
             if count == 19:
                 break
-
-
-
-if __name__ == '__main__':
-    main()

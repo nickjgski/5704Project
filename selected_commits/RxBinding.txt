@@ -1,0 +1,17 @@
+rxbinding-appcompat-v7-kotlin/src/main/kotlin/com/jakewharton/rxbinding2/support/v7/widget/RxSearchView.kt
+1
+1
+2
+https://api.github.com/repos/JakeWharton/RxBinding/contents/rxbinding-appcompat-v7-kotlin/src/main/kotlin/com/jakewharton/rxbinding2/support/v7/widget/RxSearchView.kt?ref=62f3913bd2ae54b50644e96e1ab489fc602b148a
+https://github.com/JakeWharton/RxBinding/raw/62f3913bd2ae54b50644e96e1ab489fc602b148a/rxbinding-appcompat-v7-kotlin/src/main/kotlin/com/jakewharton/rxbinding2/support/v7/widget/RxSearchView.kt
+https://github.com/JakeWharton/RxBinding/blob/62f3913bd2ae54b50644e96e1ab489fc602b148a/rxbinding-appcompat-v7-kotlin/src/main/kotlin/com/jakewharton/rxbinding2/support/v7/widget/RxSearchView.kt
+
+rxbinding-kotlin/src/main/kotlin/com/jakewharton/rxbinding2/widget/RxSearchView.kt
+1
+1
+2
+https://api.github.com/repos/JakeWharton/RxBinding/contents/rxbinding-kotlin/src/main/kotlin/com/jakewharton/rxbinding2/widget/RxSearchView.kt?ref=62f3913bd2ae54b50644e96e1ab489fc602b148a
+https://github.com/JakeWharton/RxBinding/raw/62f3913bd2ae54b50644e96e1ab489fc602b148a/rxbinding-kotlin/src/main/kotlin/com/jakewharton/rxbinding2/widget/RxSearchView.kt
+https://github.com/JakeWharton/RxBinding/blob/62f3913bd2ae54b50644e96e1ab489fc602b148a/rxbinding-kotlin/src/main/kotlin/com/jakewharton/rxbinding2/widget/RxSearchView.kt
+
+62f3913bd2ae54b50644e96e1ab489fc602b148a
